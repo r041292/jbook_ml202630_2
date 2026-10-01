@@ -1,1 +1,7 @@
 * -text
+/jbook_dashboard/*.md text eol=lf
+/jbook_dashboard/*.yml text eol=lf
+/jbook_dashboard/*.json text eol=lf
+/jbook_dashboard/*.css text eol=lf
+/jbook_dashboard/*.svg text eol=lf
+/.github/workflows/*.yml text eol=lf

@@ -1,0 +1,26 @@
+version: 1
+project:
+  id: 8e46f387-4cd1-4d5e-94c1-60140926bb08
+  title: "Dashboard de Precálculo: informe de desarrollo y resultados"
+  subtitle: "Del análisis reproducible a la interpretación de la evidencia académica"
+  authors:
+    - Rubiel Velasquez
+    - Valentina Figueroa
+  github: https://github.com/r041292/jbook_ml202630_2
+  description: Informe del dashboard de Precálculo, recorrido visual de sus resultados y metodología complementaria.
+  toc:
+    - file: 01_desarrollo.md
+    - file: 02_interpretaciones.md
+    - file: 03_metodologia.md
+site:
+  template: book-theme
+  title: "Informe del dashboard de Precálculo"
+  actions:
+    - title: "Abrir dashboard"
+      url: https://precalculo-dashboard.onrender.com/
+  parts:
+    primary_sidebar_footer: sidebar-footer.md
+  options:
+    logo_text: "Precálculo · Informe"
+    style: ./layout.css
+    favicon: ./favicon.svg

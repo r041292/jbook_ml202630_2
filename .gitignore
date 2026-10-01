@@ -1,4 +1,4 @@
-# Publicar exclusivamente los archivos necesarios para ejecutar el dashboard.
+# Publicar los archivos de ejecución del dashboard y el informe Jupyter Book.
 /*
 !/.gitignore
 !/.gitattributes
@@ -6,6 +6,8 @@
 !/render.yaml
 !/Dash/
 !/Precalculo/
+!/jbook_dashboard/
+!/.github/
 
 /Dash/*
 !/Dash/app.py
@@ -41,6 +43,23 @@
 /Precalculo/resultados/*
 !/Precalculo/resultados/eda.json
 !/Precalculo/resultados/modelos_lineales.json
+
+/jbook_dashboard/*
+!/jbook_dashboard/myst.yml
+!/jbook_dashboard/01_desarrollo.md
+!/jbook_dashboard/02_interpretaciones.md
+!/jbook_dashboard/03_metodologia.md
+!/jbook_dashboard/sidebar-footer.md
+!/jbook_dashboard/layout.css
+!/jbook_dashboard/favicon.svg
+!/jbook_dashboard/source_manifest.json
+!/jbook_dashboard/images/
+/jbook_dashboard/images/*
+!/jbook_dashboard/images/*.jpg
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/jbook-pages.yml
 
 # Documentación interna, instrucciones, pruebas y archivos locales.
 **/AGENTS.md

@@ -1,0 +1,47 @@
+/* Wide desktop book layout: fixed navigation rails and a readable article measure. */
+@media (min-width: 1280px) {
+  main.article-grid,
+  [class~="xl:article-grid"] {
+    grid-template-columns:
+      [screen-start] 0.5rem [screen-inset-start]
+      minmax(11rem, 12.5rem) [page-start] 2.5rem
+      [page-inset-start] minmax(6rem, 10rem) [body-outset-start] 1.5rem
+      [body-start gutter-left-start] 1rem [body-inset-start]
+      minmax(8ch, 16ch) [middle-start]
+      minmax(8ch, 16ch) [gutter-left-end]
+      minmax(8ch, 16ch)
+      minmax(8ch, 16ch) [gutter-right-start]
+      minmax(8ch, 16ch) [middle-end]
+      minmax(8ch, 16ch) [body-inset-end] 1rem
+      [body-end gutter-right-end] 2rem [body-outset-end]
+      minmax(4rem, 18rem) [page-inset-end] 3rem
+      [page-end] minmax(0, 1fr) [screen-inset-end] 0.5rem [screen-end];
+  }
+
+  /* Reuse the page tracks for the article so the right Contents panel stays aligned. */
+  article.article-grid.subgrid-gap {
+    grid-template-columns: subgrid;
+  }
+
+  /* Match the narrower separation between article and Contents in the reference. */
+  [class~="lg:col-margin-right"] {
+    margin-left: 0 !important;
+  }
+}
+
+/* Conservar capturas legibles y tablas consultables en pantallas estrechas. */
+article figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #e1e9ed;
+  border-radius: 12px;
+}
+article figcaption {
+  color: #435568;
+  line-height: 1.6;
+}
+article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}

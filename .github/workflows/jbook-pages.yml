@@ -1,0 +1,51 @@
+name: Publicar informe del dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'jbook_dashboard/**'
+      - '.github/workflows/jbook-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    defaults:
+      run:
+        working-directory: jbook_dashboard
+    env:
+      BASE_URL: /${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Instalar Jupyter Book
+        run: python -m pip install jupyter-book==2.1.6
+      - name: Construir los tres capítulos
+        run: jupyter-book build --html --strict
+      - name: Subir HTML
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: jbook_dashboard/_build/html
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
