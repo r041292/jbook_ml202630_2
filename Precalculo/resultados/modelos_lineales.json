@@ -1,0 +1,220 @@
+{
+  "train_raw": 24000,
+  "test_raw": 6000,
+  "train_valid": 24000,
+  "test_valid": 6000,
+  "excluded_train": 0,
+  "excluded_test": 0,
+  "partition": [
+    {
+      "index": 0,
+      "particion": "train válido",
+      "n": 24000,
+      "media_objetivo": 3.519003333333334,
+      "desv_objetivo": 1.135067272922759,
+      "min_objetivo": 0.5,
+      "max_objetivo": 5.0
+    },
+    {
+      "index": 1,
+      "particion": "test válido",
+      "n": 6000,
+      "media_objetivo": 3.491608333333333,
+      "desv_objetivo": 1.152948283700547,
+      "min_objetivo": 0.76,
+      "max_objetivo": 5.0
+    }
+  ],
+  "cv": [
+    {
+      "index": 0,
+      "modelo": "Dummy media",
+      "metrica": "RMSE",
+      "media_cv": 1.135040321275757,
+      "desv_cv": 0.003562400765308,
+      "media_train_cv": 1.135043021008856
+    },
+    {
+      "index": 1,
+      "modelo": "Dummy media",
+      "metrica": "MAPE",
+      "media_cv": 38.59559518777566,
+      "desv_cv": 0.287949716496916,
+      "media_train_cv": 38.59553720407105
+    },
+    {
+      "index": 2,
+      "modelo": "Dummy media",
+      "metrica": "R2",
+      "media_cv": -1.123046655e-05,
+      "desv_cv": 1.1094011075e-05,
+      "media_train_cv": 0.0
+    },
+    {
+      "index": 3,
+      "modelo": "SVM lineal",
+      "metrica": "RMSE",
+      "media_cv": 0.797361909030919,
+      "desv_cv": 0.008047881318532,
+      "media_train_cv": 0.794728314400252
+    },
+    {
+      "index": 4,
+      "modelo": "SVM lineal",
+      "metrica": "MAPE",
+      "media_cv": 23.377542885382336,
+      "desv_cv": 0.213764275957885,
+      "media_train_cv": 23.274407504870037
+    },
+    {
+      "index": 5,
+      "modelo": "SVM lineal",
+      "metrica": "R2",
+      "media_cv": 0.506445505093939,
+      "desv_cv": 0.009618101737656,
+      "media_train_cv": 0.509751884532489
+    }
+  ],
+  "test": [
+    {
+      "modelo": "Dummy media",
+      "RMSE": 1.153177645734699,
+      "MAPE_%": 39.716774916495645,
+      "R2": -0.000564670817435,
+      "MAE": 0.993549462222222
+    },
+    {
+      "modelo": "SVM lineal",
+      "RMSE": 0.908322721734072,
+      "MAPE_%": 27.755164485774937,
+      "R2": 0.379226612350859,
+      "MAE": 0.731446336781258
+    }
+  ],
+  "bootstrap": [
+    {
+      "index": 0,
+      "modelo": "Dummy media",
+      "metrica": "RMSE",
+      "estimación": 1.153177645734699,
+      "IC_2.5%": 1.138519794509541,
+      "IC_97.5%": 1.168384132096738
+    },
+    {
+      "index": 1,
+      "modelo": "Dummy media",
+      "metrica": "MAPE_%",
+      "estimación": 39.716774916495645,
+      "IC_2.5%": 38.450063953558754,
+      "IC_97.5%": 41.05611844262156
+    },
+    {
+      "index": 2,
+      "modelo": "Dummy media",
+      "metrica": "R2",
+      "estimación": -0.000564670817435,
+      "IC_2.5%": -0.002473024123575,
+      "IC_97.5%": -6.168785588e-06
+    },
+    {
+      "index": 3,
+      "modelo": "SVM lineal",
+      "metrica": "RMSE",
+      "estimación": 0.908322721734072,
+      "IC_2.5%": 0.892530172015025,
+      "IC_97.5%": 0.924130582923471
+    },
+    {
+      "index": 4,
+      "modelo": "SVM lineal",
+      "metrica": "MAPE_%",
+      "estimación": 27.755164485774937,
+      "IC_2.5%": 26.85870093251084,
+      "IC_97.5%": 28.68620976546145
+    },
+    {
+      "index": 5,
+      "modelo": "SVM lineal",
+      "metrica": "R2",
+      "estimación": 0.379226612350859,
+      "IC_2.5%": 0.357477593240559,
+      "IC_97.5%": 0.400768571272073
+    }
+  ],
+  "residuals": [
+    {
+      "modelo": "Dummy media",
+      "normaltest_p": 4.63822921071146e-200,
+      "Breusch_Pagan_p": null,
+      "Spearman_abs_resid_vs_ajustado": null,
+      "media_residuo": -0.027395,
+      "desv_residuo": 1.152852200673279
+    },
+    {
+      "modelo": "SVM lineal",
+      "normaltest_p": 1.4665e-11,
+      "Breusch_Pagan_p": 2.05276175445671e-30,
+      "Spearman_abs_resid_vs_ajustado": -0.153485251799588,
+      "media_residuo": -0.035484655540575,
+      "desv_residuo": 0.907629332954571
+    }
+  ],
+  "learning": [
+    {
+      "index": 0,
+      "n_entrenamiento": 2880,
+      "RMSE_train_media": 0.786044488307904,
+      "RMSE_train_sd": 0.002940744085407,
+      "RMSE_validacion_media": 0.803355177618816,
+      "RMSE_validacion_sd": 0.009850767884927
+    },
+    {
+      "index": 1,
+      "n_entrenamiento": 6960,
+      "RMSE_train_media": 0.799691720907703,
+      "RMSE_train_sd": 0.001941970344853,
+      "RMSE_validacion_media": 0.799726901539078,
+      "RMSE_validacion_sd": 0.008964962640868
+    },
+    {
+      "index": 2,
+      "n_entrenamiento": 11040,
+      "RMSE_train_media": 0.795274455444178,
+      "RMSE_train_sd": 0.002935018743818,
+      "RMSE_validacion_media": 0.797873500164795,
+      "RMSE_validacion_sd": 0.008471257468402
+    },
+    {
+      "index": 3,
+      "n_entrenamiento": 15120,
+      "RMSE_train_media": 0.793364903219085,
+      "RMSE_train_sd": 0.001662791468604,
+      "RMSE_validacion_media": 0.798008596839439,
+      "RMSE_validacion_sd": 0.008295620186787
+    },
+    {
+      "index": 4,
+      "n_entrenamiento": 19200,
+      "RMSE_train_media": 0.794728314400252,
+      "RMSE_train_sd": 0.001778144717187,
+      "RMSE_validacion_media": 0.797361909030919,
+      "RMSE_validacion_sd": 0.008047881318532
+    }
+  ],
+  "improvement": {
+    "reducción_RMSE_vs_dummy_%": 21.233061957650726,
+    "reducción_MAPE_vs_dummy_%": 30.117275271896933,
+    "incremento_R2_vs_dummy": 0.379791283168294
+  },
+  "time_skew": {
+    "Tiempo_empleado_en_la_verificación_de_conocimientos": 1.6947063460315668,
+    "Tiempo_Total_Tiempo": 1.2421086862685953,
+    "Tiempo_total_Aprendidos_hora": 1.3186350698182354
+  },
+  "source_sha256": {
+    "comparacion_aumentacion/Datos_Aleks_Augmented_30000_r_2_train.csv": "02ec5997bf3bfdabbbe524318037f99220e2a3336395c968c48c6ef1a8889acc",
+    "comparacion_aumentacion/Datos_Aleks_Augmented_30000_r_2_test.csv": "f4b7b2629f2007addddd8e33ed811addea477fb22162cb924428dcb8ced3bcf6",
+    "comparacion_aumentacion/seleccion.json": "178770005a09c2c6867613cb307780733711dff7edd2eeefe1018439cd1f408e"
+  },
+  "technique": "perturbacion_local"
+}

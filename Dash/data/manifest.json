@@ -1,0 +1,28 @@
+{
+  "sha256": {
+    "precalculo_regresion_lineal.ipynb": "3af0318202e5a5875077df9c6e341c31f4097fbc15434c980c45780c1b57fcaa",
+    "comparacion_aumentacion/Datos_Aleks_Augmented_30000_r_2_train.csv": "02ec5997bf3bfdabbbe524318037f99220e2a3336395c968c48c6ef1a8889acc",
+    "comparacion_aumentacion/Datos_Aleks_Augmented_30000_r_2_test.csv": "f4b7b2629f2007addddd8e33ed811addea477fb22162cb924428dcb8ced3bcf6",
+    "comparacion_aumentacion/seleccion.json": "178770005a09c2c6867613cb307780733711dff7edd2eeefe1018439cd1f408e",
+    "resultados/modelos_lineales.json": "0e80a67c85f63415d6c786aac7c2f6bd24088c519b6f9e6d22cd7b74c1f89f5b",
+    "resultados/eda.json": "456b6158e81c9726d8acf1418878b6539c72a5ab0bd5589d50c9b228976cfba5",
+    "precalculo_eda_comprehensivo.ipynb": "e259b223e3fcba72b2462cb1a2460b092e2cce625ea446a3056f22f489340b2b",
+    "00_seleccion_base_datos.md": "fae47ae14ac848989e6ca3d68a972c5dced2d7bbb72fe752a2de1aed7494cb9b",
+    "precalculo_generar_split_augmented_2.ipynb": "adab44f7e72898846da4f391c684a308d03964d7f18fd78533108b0420952288",
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "comparacion_aumentacion/comparacion_train.csv": "d36b98f5ec565d2f8af133eb4f25f379bbd641d56d6591dec8025f33f47e17a6"
+  },
+  "train_valid": 24000,
+  "test_valid": 6000,
+  "technique": "perturbacion_local",
+  "selected_alternative": 1,
+  "model_sha256": "3ee9b28b8ccd61c016a285874c44aeb0a3e060f4107b6de9ebef2716807bfa76",
+  "test_metrics": {
+    "RMSE": 0.9083227217340721,
+    "MAE": 0.7314463367812584,
+    "MAPE (%)": 27.755164485774937,
+    "R²": 0.37922661235085864
+  },
+  "method": "OOF de cinco folds para validación; ajuste completo train para test"
+}

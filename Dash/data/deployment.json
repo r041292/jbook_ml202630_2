@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "Dash/data/train.csv.gz": "cef6ffa8cb907773ec604131dfebe336ed0ae409d0889d3f271eb95b13cdaeca",
+    "Dash/data/test.csv.gz": "f30203b1e1c56173494cd5997da68e310922d5ea8f8972aa1b2342a6624cead6",
+    "Dash/data/fold_metrics.csv": "97d084c3157bce5022676a18aa938c7db370c65d493038df2dcf9120292b5991",
+    "Dash/data/coefficients.csv": "67ebd16001c2ba44b2dac00aadf9644c65fb726dde3ab58b13beadc15f8fec5b",
+    "Dash/data/augmentation.csv.gz": "0f68935f177956a9631370deff7982b183652bb021d68d194940028c2de804e4",
+    "Dash/data/comparison_details.json": "a40072d28ecb6f935a82365b89e74236784d7516fdb790ce788dd52f19aea015",
+    "Dash/data/model.joblib": "3ee9b28b8ccd61c016a285874c44aeb0a3e060f4107b6de9ebef2716807bfa76",
+    "Dash/data/manifest.json": "a2a06d613251ddefe7242416058c4de4223e9449285a83db397206e20d4ac606"
+  }
+}

@@ -1,0 +1,69 @@
+Variable,Coeficiente
+num_log__Tiempo_empleado_en_la_verificación_de_conocimientos,0.1470341910902175
+num_log__Tiempo_Total_Tiempo,-0.22336724645309292
+num_log__Tiempo_total_Aprendidos_hora,0.09121506232593493
+num_plain__Icfes_nuevo,0.5121432700753734
+num_plain__Icfes_Matematicas,-0.1507167265409015
+num_plain__Dominio_Inicial,0.1396448425917672
+num_plain__avance_precalculo_aleks,0.2530281398945545
+num_plain__Dominio_Final,0.2734647954914452
+cat__Categoria_temas_inicial_1 Geometría,0.2558676670065561
+cat__Categoria_temas_inicial_1 Repaso de álgebra y geometría,0.28997957065797925
+cat__Categoria_temas_inicial_2 Ecuaciones racionales que se reducen a lineales,0.21358977556148093
+cat__Categoria_temas_inicial_2 Ecuaciones y desigualdades,0.21311510422669394
+cat__Categoria_temas_inicial_3 Gráficos y funciones,0.6092021054053796
+"cat__Categoria_temas_inicial_3 Plano de coordenadas, distancia y punto medio",-0.6617062003525384
+cat__Categoria_temas_inicial_3 Temas Parcial 1 Cálculo I,0.12503920668168103
+cat__Categoria_temas_inicial_4 Funciones polinómicas y racionales,0.0059465317145581285
+cat__Categoria_temas_inicial_4 Pendientes y ecuaciones de rectas,0.1279683862994534
+cat__Categoria_temas_inicial_4 Temas Parcial 2 Cálculo I,-0.09811713697338535
+cat__Categoria_temas_final_1 Geometría,0.4206926133495753
+cat__Categoria_temas_final_1 Repaso de Álgebra y Geometría,-0.42482796294086567
+cat__Categoria_temas_final_2 Ecuaciones racionales que se reducen a lineales,0.8394932466388161
+cat__Categoria_temas_final_2 Ecuaciones y desigualdades,-0.16007110155963652
+cat__Categoria_temas_final_3 Gráficos y funciones,-1.589191233202468
+"cat__Categoria_temas_final_3 Plano de coordenadas, distancia y punto medio",-0.27838852146964843
+cat__Categoria_temas_final_3 Temas Parcial 1 Cálculo I,0.8103227077805536
+cat__Categoria_temas_final_4 Funciones polinómicas y racionales,-0.8923521287058978
+cat__Categoria_temas_final_4 Pendientes y ecuaciones de rectas,-0.10571853325585
+cat__Categoria_temas_final_4 Temas Parcial 2 Cálculo I,0.6516302531633253
+cat__Categoria_temas_final_5 Funciones trigonométricas,-0.5389332684697903
+cat__programa_en_matricula_Arquitectura,0.876078805262883
+cat__programa_en_matricula_Básico Negoc Internacionales,0.24567962943438146
+cat__programa_en_matricula_Ciencia de Datos,0.19894696660108163
+cat__programa_en_matricula_Contaduría Pública,0.5179431319168584
+cat__programa_en_matricula_Curso libre pregrado,-0.6929088554897299
+cat__programa_en_matricula_Economía,0.2815668369052873
+cat__programa_en_matricula_Geología,-0.15016706936597063
+cat__programa_en_matricula_Ingeniería Civil,0.09920725210989192
+cat__programa_en_matricula_Ingeniería Electrónica,-0.04552999785270342
+cat__programa_en_matricula_Ingeniería Eléctrica,-0.26305417601496073
+cat__programa_en_matricula_Ingeniería Industrial,0.37990802087611397
+cat__programa_en_matricula_Ingeniería Mecánica,0.08819545499864026
+cat__programa_en_matricula_Ingeniería Sistemas Y Computac,0.01696479088228938
+cat__programa_en_matricula_Matemáticas,0.2716553274730673
+cat__programa_en_matricula_Negocios Internacionales,0.0322730248820096
+"cat__division_en_matricula_Div Humanidades, Artes y Cs. S",0.2815668369052873
+cat__division_en_matricula_División de Ciencias Básicas,0.32043522470816427
+cat__division_en_matricula_División de Ingenierías,0.27569134499927517
+cat__division_en_matricula_Escuela Arquitectura Urb y Dis,0.876078805262883
+cat__division_en_matricula_Escuela de Negocios,0.34882813701434057
+cat__Mat_Curso_Asignatura_Relacionada_MAT1100,0.8760746033540072
+cat__Mat_Curso_Asignatura_Relacionada_MAT1101,0.3087355141275546
+cat__Mat_Curso_Asignatura_Relacionada_MAT4190,-0.4055177999098376
+cat__avance_cuartiles_0 Avance menor a 18 temas,0.32833354261125725
+cat__avance_cuartiles_0 Avance menor a 19 temas,0.15864485305737192
+cat__avance_cuartiles_0 Avance menor a 25 temas,0.14050087709251505
+cat__avance_cuartiles_1 Avance entre [ 15 - 23 temas],-0.4108826832992481
+cat__avance_cuartiles_1 Avance entre [ 18 - 37 temas],0.35717768035650255
+cat__avance_cuartiles_1 Avance entre [ 19 - 40 temas],0.06063440602164173
+cat__avance_cuartiles_1 Avance entre [ 25 - 55 temas],-0.36261383163230126
+cat__avance_cuartiles_2 Avance entre [ 23 - 29 temas],0.45783632147409814
+cat__avance_cuartiles_2 Avance entre [ 37 - 55 temas],0.23674576085038446
+cat__avance_cuartiles_2 Avance entre [ 40 - 60 temas],-0.052495227734960875
+cat__avance_cuartiles_2 Avance entre [ 55 - 80 temas],-0.08858579216071613
+cat__avance_cuartiles_3 Avance superior a 29 temas,0.8108492270263594
+cat__avance_cuartiles_3 Avance superior a 55 temas,-0.04618238046412319
+cat__avance_cuartiles_3 Avance superior a 60 temas,0.14195148278350844
+cat__avance_cuartiles_3 Avance superior a 80 temas,-0.09481905320932703
+cat__cumplimiento_temas_No alcanzo meta,0.8380699636163766

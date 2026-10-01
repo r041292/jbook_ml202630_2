@@ -1,0 +1,40 @@
+{
+  "alternativa_seleccionada": 1,
+  "tecnica": "perturbacion_local",
+  "criterio": "media de seis distancias distribucionales en sinteticos de train, cinco semillas",
+  "semillas_comparacion": [
+    20260931,
+    20261031,
+    20261131,
+    20261231,
+    20261331
+  ],
+  "semilla_test": 20260941,
+  "puntajes_medios_train": {
+    "1": 0.013586560757224397,
+    "2": 0.029090427635601858
+  },
+  "train_original_filas": 1196,
+  "test_original_filas": 301,
+  "train_estudiantes": 1184,
+  "test_estudiantes": 297,
+  "train_aumentado_filas": 24000,
+  "test_aumentado_filas": 6000,
+  "reglas_incumplidas_train": 0,
+  "reglas_incumplidas_test": 0,
+  "auditoria_test": {
+    "rechazos_reglas": 41,
+    "rechazos_duplicados": 0,
+    "respaldo_local": 0,
+    "interpolados": 0,
+    "intentos": 5740
+  },
+  "sha256": {
+    "Data\\Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "comparacion_aumentacion\\Datos_Aleks_Augmented_30000_r_2_train.csv": "02ec5997bf3bfdabbbe524318037f99220e2a3336395c968c48c6ef1a8889acc",
+    "comparacion_aumentacion\\Datos_Aleks_Augmented_30000_r_2_test.csv": "f4b7b2629f2007addddd8e33ed811addea477fb22162cb924428dcb8ced3bcf6",
+    "comparacion_aumentacion\\Datos_Aleks_test_original.csv": "72d52109434af424d779c5e1fc9cc43141fdb00bf93df73fae21ed71451449fb"
+  },
+  "evaluacion_recomendada": "test original; variantes sinteticas no son observaciones independientes"
+}

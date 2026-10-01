@@ -1,0 +1,36 @@
+{
+  "seed": 20260931,
+  "original_rows": 1196,
+  "synthetic_rows": 22804,
+  "scores": {
+    "Perturbación local": {
+      "KS_media": 0.018154720010827644,
+      "Wasserstein_media": 0.012022026523877035,
+      "TV_categorica": 0.004293531792521293,
+      "faltantes_media": 0.00012795449904118872,
+      "Spearman_error": 0.007120472074686448,
+      "TV_combinaciones": 0.03794719461879305,
+      "KS_objetivo": 0.0542082038062911,
+      "KS_max": 0.0542082038062911,
+      "puntaje": 0.013277649919957777
+    },
+    "Interpolación entre vecinos": {
+      "KS_media": 0.03867754417402512,
+      "Wasserstein_media": 0.05755233168074631,
+      "TV_categorica": 0.006370266555359945,
+      "faltantes_media": 0.00024722334500176666,
+      "Spearman_error": 0.03635115751313375,
+      "TV_combinaciones": 0.03670100709903033,
+      "KS_objetivo": 0.08078248901941165,
+      "KS_max": 0.08078248901941165,
+      "puntaje": 0.029316588394549536
+    }
+  },
+  "alternative_2_audit": {
+    "rechazos_reglas": 32,
+    "rechazos_duplicados": 13,
+    "respaldo_local": 1779,
+    "interpolados": 21025,
+    "intentos": 22849
+  }
+}

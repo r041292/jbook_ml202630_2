@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+venv/
+.env
+.env.*
+RenderDeploy/
+RenderDeployWheelCheck/
+Precalculo/Data/
+Precalculo/*.ipynb
+Precalculo/*.zip
