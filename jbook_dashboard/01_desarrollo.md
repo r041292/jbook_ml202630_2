@@ -7,6 +7,8 @@ description: Objetivos, arquitectura, decisiones de diseño y publicación del d
 
 El dashboard convierte el análisis del nivelatorio de Precálculo en una herramienta de consulta: permite explorar las características académicas, comparar la aumentación de datos y evaluar una primera predicción de la nota del primer parcial. Este Book documenta cómo se construyó, cómo se leen sus resultados y qué limitaciones deben acompañar esa lectura.
 
+Su construcción se basa en la [primera entrega del proyecto](https://r041292.github.io/jbook_ml202630_1/), donde se documentaron la selección de la base de datos, la preparación y aumentación de la muestra, el análisis exploratorio de datos (EDA) y el modelo base. El dashboard lleva esos procedimientos y resultados a una interfaz interactiva, y este informe explica su desarrollo y su interpretación.
+
 **Autores:** Rubiel Velasquez y Valentina Figueroa. **Institución:** Universidad del Norte. **Corte de resultados y capturas:** 1 de octubre de 2026.
 
 [Abrir el dashboard interactivo en Render](https://precalculo-dashboard.onrender.com/).
@@ -38,7 +40,7 @@ El tablero describe datos y desempeño de un modelo global. Los filtros seleccio
 | Contextualizar la investigación | Introducción, fuente, asignaturas y objetivo | Revisión del contenido y recursos locales |
 | Documentar las variables | Diccionario, temporalidad y reglas de negocio | Esquema compartido con el análisis |
 | Explicar la aumentación | Comparación de dos técnicas, densidades, acumuladas y cinco semillas | Concordancia de puntajes con el notebook |
-| Explorar train sin fuga | Filtros, distribuciones, cajas, Spearman y faltantes | Comparación de filas con la fuente seleccionada |
+| Realizar el análisis exploratorio de datos (EDA) | Exploración de train válido con filtros, histogramas, densidades, cajas, asociaciones de Spearman, frecuencias categóricas y faltantes | Correspondencia de filas y estadísticas con el EDA de la primera entrega; exclusión de nota_final y conservación de extremos válidos |
 | Evaluar un modelo base | Dummy media y SVM lineal, validación y test | Métricas coincidentes con exportaciones canónicas |
 | Mostrar errores y límites | Predicción frente a realidad, residuos, calibración e intervalos | Callbacks HTTP y estados vacíos |
 | Hacer una predicción consistente | Validación de entradas e inferencia con modelo guardado | Igualdad con predicciones del pipeline |
@@ -46,7 +48,9 @@ El tablero describe datos y desempeño de un modelo global. Los filtros seleccio
 
 ## Arquitectura y trazabilidad
 
-El flujo separa cálculo y consulta. La preparación académica se realiza en `Precalculo/`; `Dash/` consume resultados estructurados y archivos preparados. El servidor no ejecuta notebooks ni entrena un modelo cuando alguien modifica un filtro.
+En la [primera entrega del proyecto](https://r041292.github.io/jbook_ml202630_1/) se establecieron las metodologías y los flujos de preparación, auditoría, separación por estudiante, aumentación, EDA y modelado que sustentan el dashboard. En el espacio de trabajo, esos procedimientos, notebooks y resultados se encuentran en la carpeta `Precalculo/`.
+
+La carpeta `Dash/` consume desde `Precalculo/` las fuentes seleccionadas y las exportaciones estructuradas del análisis, y prepara con ellas los archivos que utiliza la interfaz. Así se separan el cálculo académico y la consulta interactiva, manteniendo la trazabilidad con la primera entrega. El servidor no ejecuta notebooks ni entrena un modelo cuando alguien modifica un filtro.
 
 ```text
 Fuente original privada
@@ -62,6 +66,7 @@ Fuente original privada
 
 | Componente | Responsabilidad |
 | --- | --- |
+| `Precalculo/` | Metodologías, flujos, notebooks y resultados de la primera entrega que alimentan el dashboard |
 | `app.py` | Pestañas, filtros, callbacks, métricas por grupo y ruta de salud |
 | `charts.py` | Densidades y comparación visual de originales y sintéticos |
 | `prediction.py` | Formulario, reglas de entrada, predicción y reporte de coeficientes |
