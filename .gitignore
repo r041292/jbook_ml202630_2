@@ -76,3 +76,6 @@
 **/preview*.jpg
 **/prepare_deployment.py
 **/prepare_comparison.py
+
+# README público solicitado para la portada del repositorio.
+!/README.md
