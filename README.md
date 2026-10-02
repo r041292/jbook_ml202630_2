@@ -2,6 +2,8 @@
 
 Proyecto académico de Machine Learning de la Universidad del Norte. Explora los datos del nivelatorio de Precálculo en ALEK y evalúa un modelo lineal para predecir la nota del primer parcial. Incluye un dashboard interactivo y un informe con metodología, resultados e interpretaciones, basado en la primera entrega del proyecto.
 
+**Autores:** Rubiel Velásquez y Valentina Figueroa.
+
 ## Enlaces
 
 - [Dashboard publicado en Render](https://precalculo-dashboard.onrender.com/).

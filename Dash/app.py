@@ -371,7 +371,9 @@ app.layout = html.Div([
             dcc.Tab(label='Exploración interactiva', value='explore', children=EDA, className='tab', selected_className='tab-selected')]), className='tab', selected_className='tab-selected'),
         dcc.Tab(label='03  Modelos lineales', value='models', children=MODELS, className='tab', selected_className='tab-selected'),
     ])], className='container'),
-    html.Footer([html.Strong('Precálculo · Universidad del Norte'), html.Span('Fuentes: Jupyter Book del proyecto · Resultados de la ejecución documentada'),
+    html.Footer([html.Strong('Precálculo · Universidad del Norte'),
+                 html.Span('Autores: Rubiel Velásquez y Valentina Figueroa.'),
+                 html.Span('Fuentes: Jupyter Book del proyecto · Resultados de la ejecución documentada'),
                  html.Span('Interacción: pasa el cursor, selecciona leyendas, amplía y descarga los gráficos.')], className='footer'),
 ])
 
