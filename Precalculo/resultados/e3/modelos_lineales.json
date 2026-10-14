@@ -36,13 +36,15 @@
   "source_sha256": {
     "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
     "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
-    "entregable3.py": "9abe70ec19d7c22106746453bb182182ad08b7471ffa64a6903c210caf4744c5"
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
   },
   "validation": "GroupKFold anidado: 5 folds externos y 5 internos; test temporal purgado",
   "grid": {
     "modelo__C": [
       0.01,
+      0.03,
       0.1,
+      0.3,
       1.0,
       10.0
     ],
@@ -51,14 +53,17 @@
       0.05,
       0.1,
       0.2,
-      0.5
+      0.3,
+      0.5,
+      0.75,
+      1.0
     ]
   },
   "best_params": {
-    "modelo__C": 0.1,
+    "modelo__C": 0.3,
     "modelo__epsilon": 0.5
   },
-  "selection_rmse": 0.8223703293083495,
+  "selection_rmse": 0.8216899942001522,
   "fold_audit": [
     {
       "fold": 1,
@@ -80,8 +85,8 @@
       "validation_students": 259,
       "shared_students": 0,
       "best_params": {
-        "modelo__C": 0.1,
-        "modelo__epsilon": 0.2
+        "modelo__C": 0.3,
+        "modelo__epsilon": 0.5
       }
     },
     {
@@ -93,7 +98,7 @@
       "shared_students": 0,
       "best_params": {
         "modelo__C": 0.1,
-        "modelo__epsilon": 0.5
+        "modelo__epsilon": 0.3
       }
     },
     {
@@ -124,10 +129,10 @@
   "test": [
     {
       "modelo": "SVM lineal",
-      "RMSE": 0.9446029189571116,
-      "MAE": 0.7741791584910703,
-      "MAPE_%": 29.975993021654684,
-      "R2": 0.4075358974837039
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE_%": 29.664555649494815,
+      "R2": 0.42854256499653554
     },
     {
       "modelo": "Dummy media",
@@ -141,26 +146,26 @@
     {
       "modelo": "SVM lineal",
       "metrica": "RMSE",
-      "media_cv": 0.8278460303771075,
-      "sd_cv": 0.04535752795771919
+      "media_cv": 0.8261402043795698,
+      "sd_cv": 0.04132818764881513
     },
     {
       "modelo": "SVM lineal",
       "metrica": "MAE",
-      "media_cv": 0.649710623968389,
-      "sd_cv": 0.03704153995373737
+      "media_cv": 0.6493122973954459,
+      "sd_cv": 0.035291435853238656
     },
     {
       "modelo": "SVM lineal",
       "metrica": "MAPE",
-      "media_cv": 24.049767630754356,
-      "sd_cv": 1.8146614200901137
+      "media_cv": 24.083710355836686,
+      "sd_cv": 1.8212568261172795
     },
     {
       "modelo": "SVM lineal",
       "metrica": "R2",
-      "media_cv": 0.4475079607842586,
-      "sd_cv": 0.06449655517464106
+      "media_cv": 0.45013246414805597,
+      "sd_cv": 0.05801214089926298
     },
     {
       "modelo": "Dummy media",
@@ -191,23 +196,23 @@
     {
       "modelo": "SVM lineal",
       "metrica": "RMSE",
-      "estimación": 0.9446029189571116,
-      "IC_2.5%": 0.8575381441552786,
-      "IC_97.5%": 1.032414556308439
+      "estimación": 0.9277056600182674,
+      "IC_2.5%": 0.8382320319808378,
+      "IC_97.5%": 1.018473021007051
     },
     {
       "modelo": "SVM lineal",
       "metrica": "MAPE_%",
-      "estimación": 29.975993021654684,
-      "IC_2.5%": 24.270716030121896,
-      "IC_97.5%": 36.73412780410848
+      "estimación": 29.664555649494815,
+      "IC_2.5%": 23.97839276013019,
+      "IC_97.5%": 36.508485140996676
     },
     {
       "modelo": "SVM lineal",
       "metrica": "R2",
-      "estimación": 0.4075358974837039,
-      "IC_2.5%": 0.29690061376090443,
-      "IC_97.5%": 0.4929889622693751
+      "estimación": 0.42854256499653554,
+      "IC_2.5%": 0.32051438922136316,
+      "IC_97.5%": 0.5090913913003652
     },
     {
       "modelo": "Dummy media",
@@ -234,10 +239,10 @@
   "residuals": [
     {
       "modelo": "SVM lineal",
-      "media_residuo": 0.13316332392777927,
-      "normaltest_p": 0.009522852927804224,
-      "Breusch_Pagan_p": 0.00013451924630185756,
-      "Spearman_abs_resid_vs_ajustado": -0.3585398053483159
+      "media_residuo": 0.09893312069537215,
+      "normaltest_p": 0.007499227140022293,
+      "Breusch_Pagan_p": 0.0002567873672865114,
+      "Spearman_abs_resid_vs_ajustado": -0.35185937689066593
     },
     {
       "modelo": "Dummy media",
@@ -250,27 +255,27 @@
   "learning": [
     {
       "n_entrenamiento": 261,
-      "RMSE_train_media": 0.7923425599650279,
-      "RMSE_validacion_media": 0.8858269021235067
+      "RMSE_train_media": 0.7936760785502615,
+      "RMSE_validacion_media": 0.8782380903796103
     },
     {
       "n_entrenamiento": 523,
-      "RMSE_train_media": 0.7807047642058496,
-      "RMSE_validacion_media": 0.8616180891008565
+      "RMSE_train_media": 0.7787683283088389,
+      "RMSE_validacion_media": 0.8595960458296574
     },
     {
       "n_entrenamiento": 784,
-      "RMSE_train_media": 0.7959715923709754,
-      "RMSE_validacion_media": 0.8320260183087491
+      "RMSE_train_media": 0.7934587277812085,
+      "RMSE_validacion_media": 0.8293235408410002
     },
     {
       "n_entrenamiento": 1047,
-      "RMSE_train_media": 0.7993843492844082,
-      "RMSE_validacion_media": 0.8278460303771075
+      "RMSE_train_media": 0.7987105073166658,
+      "RMSE_validacion_media": 0.8261402043795698
     }
   ],
   "improvement": {
-    "reducción_RMSE_vs_dummy_%": 24.796277846455894,
-    "reducción_MAPE_vs_dummy_%": 29.159062892069322
+    "reducción_RMSE_vs_dummy_%": 26.14153810438129,
+    "reducción_MAPE_vs_dummy_%": 29.895069044669455
   }
 }

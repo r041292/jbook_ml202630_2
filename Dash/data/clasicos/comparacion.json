@@ -2,13 +2,13 @@
   "source_sha256": {
     "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
     "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
-    "entregable3.py": "9abe70ec19d7c22106746453bb182182ad08b7471ffa64a6903c210caf4744c5",
-    "modelos_clasicos.py": "3ce3bad8744a2cf44a398c4d7f26c97790e605c1a8075ac905ed3a4f1d27f192",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "modelos_clasicos.py": "25beff3a118e819df50e12f6272aabb6c90b1e08debbfa3402b0ddd8f4c821a4",
     "preprocesamiento_clasicos.py": "9b2cc01ab5cc9d9ce9f4622cf6538ab79cee15649d05326e9db74e75facb4199",
-    "resultados/e3/modelos_lineales.json": "227d62e873da80d44056edbe6ecc8935dac73e5f61645a0f59d23cf3e0a81213",
-    "resultados/e3/train.csv.gz": "38bed64a5138a76a630d2ec4fb9d4c339b8389a21e49ae9db5a1aff5c06f802e",
-    "resultados/e3/test.csv.gz": "210d8ddb9d25a78141f2042f3167fc59732c2dc30779de82654bf16fa7da0af6",
-    "resultados/e3/fold_metrics.csv": "256569eb57ca8662cc6822bb49deef71e8134f22d9389f98395c09ac606d1023"
+    "resultados/e3/modelos_lineales.json": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/fold_metrics.csv": "3d44dd24364a8fc4708f188db799406981146b2933a942118a58b7e2f9267eaa"
   },
   "partition": {
     "source_rows": 1527,
@@ -53,7 +53,11 @@
           5,
           11,
           21,
-          41
+          31,
+          41,
+          61,
+          81,
+          101
         ],
         "modelo__weights": [
           "uniform",
@@ -64,14 +68,14 @@
           2
         ]
       },
-      "combinations": 16,
+      "combinations": 32,
       "preparation": "Mediana, log1p en tiempos, StandardScaler; moda y one-hot con referencia. Distancias sobre variables transformadas.",
       "best_params": {
-        "modelo__n_neighbors": 41,
+        "modelo__n_neighbors": 31,
         "modelo__p": 2,
         "modelo__weights": "distance"
       },
-      "selection_rmse": 0.8501390660623228,
+      "selection_rmse": 0.8482002629754986,
       "fold_audit": [
         {
           "fold": 1,
@@ -82,7 +86,7 @@
           "shared_students": 0,
           "inner_folds": 5,
           "best_params": {
-            "modelo__n_neighbors": 21,
+            "modelo__n_neighbors": 31,
             "modelo__p": 2,
             "modelo__weights": "distance"
           }
@@ -145,16 +149,16 @@
         }
       ],
       "train_metrics": {
-        "RMSE": 4.1229789822659503e-07,
-        "MAE": 1.280480490314065e-07,
-        "MAPE (%)": 4.740552218574157e-06,
-        "R²": 0.9999999999998639
+        "RMSE": 3.263069486791103e-07,
+        "MAE": 1.006186175844905e-07,
+        "MAPE (%)": 3.717621221191511e-06,
+        "R²": 0.9999999999999147
       },
       "test_metrics": {
-        "RMSE": 0.9303705248822757,
-        "MAE": 0.7673619404261682,
-        "MAPE (%)": 30.006203995633584,
-        "R²": 0.42525478928578253
+        "RMSE": 0.923269665643187,
+        "MAE": 0.7540271566884664,
+        "MAPE (%)": 29.58449530006813,
+        "R²": 0.43399455550642596
       },
       "outside_test": 0,
       "unknown_test_categories": {
@@ -166,8 +170,8 @@
         "avance_cuartiles": 0,
         "cumplimiento_temas": 0
       },
-      "model_sha256": "3563452d4fc95d69f1fc0565c60d74fd0ca73e2e4bad6dbf3da4258999329896",
-      "elapsed_seconds": 21.5
+      "model_sha256": "71cbf8885a64b26fc6878ffe112d66a344d731659df4d4dad4f0a06a0c9ca04e",
+      "elapsed_seconds": 24.28200000000652
     },
     "ridge": {
       "name": "Ridge",
@@ -176,12 +180,14 @@
           0.01,
           0.1,
           1,
+          3,
           10,
+          30,
           100,
           1000
         ]
       },
-      "combinations": 6,
+      "combinations": 8,
       "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L2.",
       "best_params": {
         "modelo__alpha": 10
@@ -271,26 +277,30 @@
         "avance_cuartiles": 0,
         "cumplimiento_temas": 0
       },
-      "model_sha256": "b27d5efd273fbc599510e05d092b2f3110b705924812c6996a98f67167c97aef",
-      "elapsed_seconds": 5.842999999993481
+      "model_sha256": "3eb7d7401260a5e2580695b42c136139e577956fb20402ca8f7b0f72c0df871c",
+      "elapsed_seconds": 17.656000000002678
     },
     "lasso": {
       "name": "Lasso",
       "grid": {
         "modelo__alpha": [
+          0.0001,
+          0.0003,
+          0.0005,
           0.001,
+          0.002,
           0.003,
           0.01,
           0.03,
           0.1
         ]
       },
-      "combinations": 5,
+      "combinations": 9,
       "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L1.",
       "best_params": {
-        "modelo__alpha": 0.001
+        "modelo__alpha": 0.0005
       },
-      "selection_rmse": 0.8277483582515993,
+      "selection_rmse": 0.8273055277179543,
       "fold_audit": [
         {
           "fold": 1,
@@ -325,7 +335,7 @@
           "shared_students": 0,
           "inner_folds": 5,
           "best_params": {
-            "modelo__alpha": 0.003
+            "modelo__alpha": 0.002
           }
         },
         {
@@ -354,16 +364,16 @@
         }
       ],
       "train_metrics": {
-        "RMSE": 0.7951283102625498,
-        "MAE": 0.6270200158921124,
-        "MAPE (%)": 23.49358544420155,
-        "R²": 0.4938260860021281
+        "RMSE": 0.7929235543762884,
+        "MAE": 0.6251372884841152,
+        "MAPE (%)": 23.40560017504795,
+        "R²": 0.4966292629903877
       },
       "test_metrics": {
-        "RMSE": 0.9194054813055,
-        "MAE": 0.7562460322990071,
-        "MAPE (%)": 29.657119350689932,
-        "R²": 0.43872247517830876
+        "RMSE": 0.919650088085005,
+        "MAE": 0.7530400905199947,
+        "MAPE (%)": 29.551966581946655,
+        "R²": 0.4384237809595437
       },
       "outside_test": 5,
       "unknown_test_categories": {
@@ -375,33 +385,36 @@
         "avance_cuartiles": 0,
         "cumplimiento_temas": 0
       },
-      "model_sha256": "867b724ff35a77d4f5ca93eeb55b8b6e9fb6c984ed8a8a691e22393a5221c1f8",
-      "elapsed_seconds": 5.938000000009197
+      "model_sha256": "73e9e392871486eee1033bcab8a81fc017c1645e77eb39ab888dd5b833b18427",
+      "elapsed_seconds": 17.656000000002678
     },
     "forest": {
       "name": "Random Forest",
       "grid": {
         "modelo__n_estimators": [
           150,
-          300
+          300,
+          500
         ],
         "modelo__max_depth": [
+          4,
           6,
           null
         ],
         "modelo__min_samples_leaf": [
           2,
-          5
+          5,
+          10
         ]
       },
-      "combinations": 8,
+      "combinations": 27,
       "preparation": "Mediana numérica, moda categórica y OrdinalEncoder (desconocidas=-1). Sin one-hot, log1p ni escalado. Los códigos imponen un orden artificial en categorías nominales.",
       "best_params": {
         "modelo__max_depth": 6,
         "modelo__min_samples_leaf": 5,
-        "modelo__n_estimators": 300
+        "modelo__n_estimators": 500
       },
-      "selection_rmse": 0.8282208100270271,
+      "selection_rmse": 0.8279076882622706,
       "fold_audit": [
         {
           "fold": 1,
@@ -426,9 +439,9 @@
           "shared_students": 0,
           "inner_folds": 5,
           "best_params": {
-            "modelo__max_depth": 6,
-            "modelo__min_samples_leaf": 5,
-            "modelo__n_estimators": 300
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 10,
+            "modelo__n_estimators": 500
           }
         },
         {
@@ -441,7 +454,7 @@
           "inner_folds": 5,
           "best_params": {
             "modelo__max_depth": null,
-            "modelo__min_samples_leaf": 5,
+            "modelo__min_samples_leaf": 10,
             "modelo__n_estimators": 150
           }
         },
@@ -455,8 +468,8 @@
           "inner_folds": 5,
           "best_params": {
             "modelo__max_depth": null,
-            "modelo__min_samples_leaf": 5,
-            "modelo__n_estimators": 300
+            "modelo__min_samples_leaf": 10,
+            "modelo__n_estimators": 150
           }
         },
         {
@@ -470,21 +483,21 @@
           "best_params": {
             "modelo__max_depth": null,
             "modelo__min_samples_leaf": 5,
-            "modelo__n_estimators": 300
+            "modelo__n_estimators": 500
           }
         }
       ],
       "train_metrics": {
-        "RMSE": 0.6843508042416437,
-        "MAE": 0.5470579140301579,
-        "MAPE (%)": 20.56359614831484,
-        "R²": 0.6250417699975477
+        "RMSE": 0.6842470630775213,
+        "MAE": 0.5474541282229926,
+        "MAPE (%)": 20.599219072319492,
+        "R²": 0.6251554416837792
       },
       "test_metrics": {
-        "RMSE": 0.9424381207934804,
-        "MAE": 0.7687303981009744,
-        "MAPE (%)": 29.767629294980896,
-        "R²": 0.41024835054314546
+        "RMSE": 0.9396351788797481,
+        "MAE": 0.765847415639248,
+        "MAPE (%)": 29.732021287169115,
+        "R²": 0.41375114058482676
       },
       "outside_test": 0,
       "unknown_test_categories": {
@@ -496,26 +509,29 @@
         "avance_cuartiles": 0,
         "cumplimiento_temas": 0
       },
-      "model_sha256": "b2aff99a49d171dc00ad1136cb4494fd048737c8e365aa31c0ee65e1c51ad779",
-      "elapsed_seconds": 173.98399999999674
+      "model_sha256": "6192f791d3c8c7324d68359bd3383bf84b825f086fcf7b2d99fc62c065121af8",
+      "elapsed_seconds": 142.54700000000594
     },
     "xgboost": {
       "name": "XGBoost",
       "grid": {
         "modelo__n_estimators": [
           150,
-          300
+          300,
+          500
         ],
         "modelo__max_depth": [
+          1,
           2,
           4
         ],
         "modelo__learning_rate": [
+          0.01,
           0.03,
           0.1
         ]
       },
-      "combinations": 8,
+      "combinations": 27,
       "preparation": "Mediana numérica y moda categórica; categorías nativas aprendidas en cada fit. Sin one-hot externo ni escalado; categorías nuevas pasan a faltantes. tree_method=hist, enable_categorical=True.",
       "best_params": {
         "modelo__learning_rate": 0.03,
@@ -533,8 +549,8 @@
           "shared_students": 0,
           "inner_folds": 5,
           "best_params": {
-            "modelo__learning_rate": 0.03,
-            "modelo__max_depth": 2,
+            "modelo__learning_rate": 0.01,
+            "modelo__max_depth": 4,
             "modelo__n_estimators": 300
           }
         },
@@ -617,17 +633,17 @@
         "avance_cuartiles": 0,
         "cumplimiento_temas": 0
       },
-      "model_sha256": "3aad693afa39d5f69172752e9b366f58195e086ea247b842f87aa3eb1e6bf884",
-      "elapsed_seconds": 202.56299999999464
+      "model_sha256": "6e8d8a168db53c16d6bcd6a403ae0414b151d6465b3490bea3adc6ad27110005",
+      "elapsed_seconds": 68.81200000000536
     }
   },
   "test": [
     {
       "Modelo": "SVM lineal",
-      "RMSE": 0.9446029189571115,
-      "MAE": 0.7741791584910703,
-      "MAPE (%)": 29.975993021654684,
-      "R²": 0.407535897483704
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
     },
     {
       "Modelo": "Dummy media",
@@ -638,10 +654,10 @@
     },
     {
       "Modelo": "KNN",
-      "RMSE": 0.9303705248822757,
-      "MAE": 0.7673619404261682,
-      "MAPE (%)": 30.006203995633584,
-      "R²": 0.42525478928578253
+      "RMSE": 0.923269665643187,
+      "MAE": 0.7540271566884664,
+      "MAPE (%)": 29.58449530006813,
+      "R²": 0.43399455550642596
     },
     {
       "Modelo": "Ridge",
@@ -652,17 +668,17 @@
     },
     {
       "Modelo": "Lasso",
-      "RMSE": 0.9194054813055,
-      "MAE": 0.7562460322990071,
-      "MAPE (%)": 29.657119350689932,
-      "R²": 0.43872247517830876
+      "RMSE": 0.919650088085005,
+      "MAE": 0.7530400905199947,
+      "MAPE (%)": 29.551966581946655,
+      "R²": 0.4384237809595437
     },
     {
       "Modelo": "Random Forest",
-      "RMSE": 0.9424381207934804,
-      "MAE": 0.7687303981009744,
-      "MAPE (%)": 29.767629294980896,
-      "R²": 0.41024835054314546
+      "RMSE": 0.9396351788797481,
+      "MAE": 0.765847415639248,
+      "MAPE (%)": 29.732021287169115,
+      "R²": 0.41375114058482676
     },
     {
       "Modelo": "XGBoost",
@@ -676,23 +692,23 @@
     {
       "Modelo": "SVM lineal",
       "Métrica": "RMSE",
-      "Estimación": 0.9446029189571115,
-      "IC 2.5%": 0.8575381441552786,
-      "IC 97.5%": 1.032414556308439
+      "Estimación": 0.9277056600182674,
+      "IC 2.5%": 0.838232031980838,
+      "IC 97.5%": 1.018473021007051
     },
     {
       "Modelo": "SVM lineal",
       "Métrica": "MAE",
-      "Estimación": 0.7741791584910703,
-      "IC 2.5%": 0.6964909830431366,
-      "IC 97.5%": 0.8573821949840054
+      "Estimación": 0.755442807950947,
+      "IC 2.5%": 0.677509264348629,
+      "IC 97.5%": 0.8380463789458336
     },
     {
       "Modelo": "SVM lineal",
       "Métrica": "R²",
-      "Estimación": 0.407535897483704,
-      "IC 2.5%": 0.29690061376090443,
-      "IC 97.5%": 0.4929889622693751
+      "Estimación": 0.4285425649965354,
+      "IC 2.5%": 0.32051438922136316,
+      "IC 97.5%": 0.5090913913003652
     },
     {
       "Modelo": "Dummy media",
@@ -718,23 +734,23 @@
     {
       "Modelo": "KNN",
       "Métrica": "RMSE",
-      "Estimación": 0.9303705248822757,
-      "IC 2.5%": 0.8467498019173398,
-      "IC 97.5%": 1.0123977773854926
+      "Estimación": 0.923269665643187,
+      "IC 2.5%": 0.8376272043733148,
+      "IC 97.5%": 1.0078188881229835
     },
     {
       "Modelo": "KNN",
       "Métrica": "MAE",
-      "Estimación": 0.7673619404261682,
-      "IC 2.5%": 0.6931683093214651,
-      "IC 97.5%": 0.8494405879865874
+      "Estimación": 0.7540271566884664,
+      "IC 2.5%": 0.6778241983494225,
+      "IC 97.5%": 0.8346536945948381
     },
     {
       "Modelo": "KNN",
       "Métrica": "R²",
-      "Estimación": 0.42525478928578253,
-      "IC 2.5%": 0.3342736040580083,
-      "IC 97.5%": 0.4984180695036698
+      "Estimación": 0.43399455550642596,
+      "IC 2.5%": 0.33739879652703947,
+      "IC 97.5%": 0.5101212107375143
     },
     {
       "Modelo": "Ridge",
@@ -760,44 +776,44 @@
     {
       "Modelo": "Lasso",
       "Métrica": "RMSE",
-      "Estimación": 0.9194054813055,
-      "IC 2.5%": 0.8343549095544154,
-      "IC 97.5%": 1.0077580206372392
+      "Estimación": 0.919650088085005,
+      "IC 2.5%": 0.8328143083739109,
+      "IC 97.5%": 1.006683716377993
     },
     {
       "Modelo": "Lasso",
       "Métrica": "MAE",
-      "Estimación": 0.7562460322990071,
-      "IC 2.5%": 0.681353611320583,
-      "IC 97.5%": 0.8373167596437139
+      "Estimación": 0.7530400905199947,
+      "IC 2.5%": 0.6776667462974516,
+      "IC 97.5%": 0.8333099660232786
     },
     {
       "Modelo": "Lasso",
       "Métrica": "R²",
-      "Estimación": 0.43872247517830876,
-      "IC 2.5%": 0.34032505064925683,
-      "IC 97.5%": 0.5171061487882053
+      "Estimación": 0.4384237809595437,
+      "IC 2.5%": 0.3391695089177242,
+      "IC 97.5%": 0.5178530906203133
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "RMSE",
-      "Estimación": 0.9424381207934804,
-      "IC 2.5%": 0.8571323200025988,
-      "IC 97.5%": 1.0318523552206873
+      "Estimación": 0.9396351788797481,
+      "IC 2.5%": 0.8545268413086643,
+      "IC 97.5%": 1.0285443647533585
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "MAE",
-      "Estimación": 0.7687303981009744,
-      "IC 2.5%": 0.6901125516874945,
-      "IC 97.5%": 0.8487494175659964
+      "Estimación": 0.765847415639248,
+      "IC 2.5%": 0.687650620172671,
+      "IC 97.5%": 0.8472291860157123
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "R²",
-      "Estimación": 0.41024835054314546,
-      "IC 2.5%": 0.31287234424387034,
-      "IC 97.5%": 0.49370275638414896
+      "Estimación": 0.41375114058482676,
+      "IC 2.5%": 0.315170113827682,
+      "IC 97.5%": 0.4968760591614236
     },
     {
       "Modelo": "XGBoost",
@@ -824,33 +840,33 @@
   "paired_differences": [
     {
       "Modelo": "KNN",
-      "Δ RMSE vs SVM": -0.014232394074835786,
-      "IC 2.5%": -0.051868063582474734,
-      "IC 97.5%": 0.025802287679517824
+      "Δ RMSE vs SVM": -0.004435994375080354,
+      "IC 2.5%": -0.04338233207135641,
+      "IC 97.5%": 0.0375927480609713
     },
     {
       "Modelo": "Ridge",
-      "Δ RMSE vs SVM": -0.027512439212206363,
-      "IC 2.5%": -0.05101967641138028,
-      "IC 97.5%": -0.009618963753904723
+      "Δ RMSE vs SVM": -0.010615180273362279,
+      "IC 2.5%": -0.03420062988148293,
+      "IC 97.5%": 0.005450711050199081
     },
     {
       "Modelo": "Lasso",
-      "Δ RMSE vs SVM": -0.02519743765161142,
-      "IC 2.5%": -0.04301540989936635,
-      "IC 97.5%": -0.00861920956162758
+      "Δ RMSE vs SVM": -0.00805557193326234,
+      "IC 2.5%": -0.01982127229563594,
+      "IC 97.5%": 0.002104775219375479
     },
     {
       "Modelo": "Random Forest",
-      "Δ RMSE vs SVM": -0.002164798163631021,
-      "IC 2.5%": -0.0362365509441551,
-      "IC 97.5%": 0.03536217204747662
+      "Δ RMSE vs SVM": 0.011929518861480748,
+      "IC 2.5%": -0.024352388618923543,
+      "IC 97.5%": 0.05086354741789556
     },
     {
       "Modelo": "XGBoost",
-      "Δ RMSE vs SVM": -0.038329263092179655,
-      "IC 2.5%": -0.0706685532791902,
-      "IC 97.5%": -0.004218856683065604
+      "Δ RMSE vs SVM": -0.02143200415333557,
+      "IC 2.5%": -0.05250086115809807,
+      "IC 97.5%": 0.012526724237992334
     }
   ],
   "selected_by_external_cv": "XGBoost",

@@ -20,6 +20,33 @@ TRAIN_PREDICTIONS = pd.read_csv(DIRECTORY / 'train_predictions.csv.gz')
 TEST_PREDICTIONS = pd.read_csv(DIRECTORY / 'test_predictions.csv.gz')
 NAMES = {key: spec['name'] for key, spec in REPORT['models'].items()}
 ALL_NAMES = {'dummy': 'Dummy media', 'svm': 'SVM lineal', **NAMES}
+MODEL_ORDER = [ALL_NAMES[key] for key in ['svm', *NAMES, 'dummy']]
+MODEL_COLORS = {'SVM lineal': '#435568', 'KNN': '#5268b9', 'Ridge': '#bc9028',
+                'Lasso': '#a573b3', 'Random Forest': '#3f925f', 'XGBoost': '#187b80', 'Dummy media': '#9aa7af'}
+
+
+def metric_bar(scores, metric):
+    """Unidades y escalas independientes; mismo orden y color de modelos."""
+    values = scores.loc[scores[metric].notna()].copy()
+    if values.empty:
+        return None
+    figure = px.bar(values, x=metric, y='Modelo', color='Modelo', orientation='h',
+                    text=metric, color_discrete_map=MODEL_COLORS,
+                    category_orders={'Modelo': MODEL_ORDER})
+    template = '%{x:.1f} %' if metric == 'MAPE (%)' else '%{x:.3f}'
+    figure.update_traces(texttemplate=template, textposition='outside', cliponaxis=False,
+                         hovertemplate='%{y}<br>' + metric + ': ' + template + '<extra></extra>')
+    reference = values.loc[values.Modelo.eq('SVM lineal'), metric]
+    if len(reference):
+        figure.add_vline(x=float(reference.iloc[0]), line_dash='dash', line_color='#435568', line_width=1.5)
+    low, high = min(0., float(values[metric].min())), max(0., float(values[metric].max()))
+    span = max(high-low, .05)
+    figure.update_xaxes(range=[low-.4*span if low < 0 else 0, high+.2*span],
+                        title={'RMSE': 'RMSE · puntos de nota', 'MAE': 'MAE · puntos de nota',
+                               'MAPE (%)': 'MAPE · porcentaje', 'R²': 'R² · adimensional'}[metric])
+    figure.update_yaxes(title=None)
+    figure.update_layout(showlegend=False, height=400, bargap=.3)
+    return figure
 
 
 @lru_cache(maxsize=5)
@@ -104,6 +131,9 @@ def create_classics(app, ui):
         notice('Los filtros describen subgrupos del mismo modelo global; no reentrenan. '
                'Sin filtros, CV muestra medias y desviaciones entre folds. Con filtros, se evalúan las '
                'predicciones OOF reunidas del subgrupo. Las métricas dan peso a cada registro.'),
+        html.Div([html.Label('Evaluación de los gráficos comparativos'), dcc.RadioItems([
+            {'label': 'Validación externa', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}],
+            'cv', id='classic-comparison-partition', inline=True, className='radio')], className='variable-select'),
         dcc.Loading(html.Div(id='classic-comparison'), type='circle', color=palette[0]),
         title('DIAGNÓSTICOS', 'Explorar un modelo', 'Contrasta predicciones, residuos y error absoluto con el SVM lineal.'),
         html.Div([html.Label('Modelo clásico'), dcc.Dropdown(
@@ -138,23 +168,33 @@ def create_classics(app, ui):
              'Una mejora en test o en un subgrupo no implica que el modelo sea superior en todos los periodos.'),
     ])
 
-    @app.callback(Output('classic-comparison', 'children'), Input('classic-program', 'value'), Input('classic-course', 'value'))
-    def compare(selected_program, selected_course):
+    @app.callback(Output('classic-comparison', 'children'), Input('classic-program', 'value'),
+                  Input('classic-course', 'value'), Input('classic-comparison-partition', 'value'))
+    def compare(selected_program, selected_course, evaluation):
         tr, te = subset(training, selected_program, selected_course), subset(test, selected_program, selected_course)
         if tr.empty and te.empty:
             return notice('No hay filas para esta combinación. Cambia los filtros o selecciona Todos.')
         scores = comparison_rows(tr, te, target, selected_program == '__all__' and selected_course == '__all__')
-        melted = scores.melt(id_vars=['Modelo', 'Evaluación'], value_vars=['RMSE', 'MAE', 'R²'],
-                             var_name='Métrica', value_name='Valor')
-        figure = px.scatter(melted, x='Valor', y='Modelo', color='Evaluación', symbol='Evaluación',
-                            facet_col='Métrica', color_discrete_sequence=[palette[0], palette[1]])
-        figure.update_xaxes(matches=None, showticklabels=True)
-        figure.for_each_annotation(lambda a: a.update(text='R<sup>2</sup>' if a.text.endswith('R²') else a.text.split('=')[-1]))
+        label = 'CV externa anidada' if evaluation == 'cv' else 'Test temporal'
+        selected = scores.loc[scores['Evaluación'].eq(label)]
+        metric_cards = []
+        for metric in ['RMSE', 'MAE', 'MAPE (%)', 'R²']:
+            direction = 'Mayor es mejor' if metric == 'R²' else 'Menor es mejor'
+            figure = metric_bar(selected, metric)
+            metric_cards.append(card(metric + ' · ' + direction,
+                label + (' · Sin valores definidos para este grupo.' if figure is None else
+                         ' · La línea discontinua marca el SVM lineal.'), figure))
         return html.Div([
-            card('Comparación de resultados', 'Cada punto corresponde a un modelo y una evaluación. '
-                 '**RMSE y MAE: menor es mejor; R²: mayor es mejor.** Los ejes de los tres paneles son independientes.', figure),
+            html.Article([html.H3('Comparación de resultados'),
+                md('**Una métrica por gráfico y una evaluación a la vez.** Selecciona validación externa '
+                   'o test temporal arriba. Los modelos mantienen el mismo orden y color en los cuatro gráficos; '
+                   'cada barra muestra su valor. Las escalas y unidades son propias de cada métrica: '
+                   'compara modelos dentro de un gráfico. La línea discontinua señala la referencia del SVM.')], className='card'),
+            (notice('No hay filas de ' + label + ' para estos filtros. La tabla conserva las evaluaciones disponibles.')
+             if selected.empty else html.Div(metric_cards, className='comparison-metric-grid')),
             html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
-                md('**Δ RMSE negativo** indica menor error que el SVM en esa misma evaluación. '
+                md('La tabla reúne **validación externa y test temporal**. '
+                   '**Δ RMSE negativo** indica menor error que el SVM en esa misma evaluación. '
                    'SD RMSE describe variación entre cinco folds externos y solo se muestra en CV global. '
                    'No es un intervalo de confianza. MAPE se expresa en porcentaje; R² no está definido '
                    'si la nota es constante o solo hay una fila. Los subgrupos pequeños requieren cautela.'),
