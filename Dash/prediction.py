@@ -4,18 +4,18 @@ import pandas as pd
 from dash import dcc, html
 
 
-def input_id(column):
-    return 'example-' + column
+def input_id(column, prefix='example'):
+    return prefix + '-' + column
 
 
-def build_form(training, numeric, categorical, labels, defaults):
+def build_form(training, numeric, categorical, labels, defaults, prefix='example'):
     numeric_fields = []
     for column in numeric:
         derived = column == 'avance_precalculo_aleks'
         integer = column in ['Icfes_nuevo', 'Icfes_Matematicas', 'Dominio_Inicial', 'Dominio_Final', 'avance_precalculo_aleks']
         numeric_fields.append(html.Div([
-            html.Label(labels.get(column, column), htmlFor=input_id(column)),
-            dcc.Input(id=input_id(column), type='number', value=float(defaults[column]),
+            html.Label(labels.get(column, column), htmlFor=input_id(column, prefix)),
+            dcc.Input(id=input_id(column, prefix), type='number', value=float(defaults[column]),
                       min=0, step=1 if integer else 'any', disabled=derived,
                       placeholder='Vacío: imputación del modelo', debounce=True),
             html.Small('Se calcula: dominio final − inicial.' if derived else
@@ -23,15 +23,15 @@ def build_form(training, numeric, categorical, labels, defaults):
                        'Temas por hora.' if column == 'Tiempo_total_Aprendidos_hora' else 'Valor numérico.'),
         ], className='example-field'))
     category_fields = [html.Div([
-        html.Label(labels.get(column, column), htmlFor=input_id(column)),
+        html.Label(labels.get(column, column), htmlFor=input_id(column, prefix)),
         dcc.Dropdown([{'label': value, 'value': value} for value in sorted(training[column].unique())],
-            defaults[column], id=input_id(column), clearable=False),
+            defaults[column], id=input_id(column, prefix), clearable=False),
     ], className='example-field') for column in categorical]
     return html.Div([
         html.H3('Características numéricas'), html.Div(numeric_fields, className='example-grid'),
         html.H3('Características categóricas'), html.Div(category_fields, className='example-grid'),
-        html.Button('Predecir nota', id='predict-button', n_clicks=0, className='primary-button'),
-        dcc.Loading(html.Div(id='prediction-result', role='status'), type='circle', color='#187b80'),
+        html.Button('Predecir nota', id='predict-button' if prefix == 'example' else prefix+'-predict-button', n_clicks=0, className='primary-button'),
+        dcc.Loading(html.Div(id='prediction-result' if prefix == 'example' else prefix+'-prediction-result', role='status'), type='circle', color='#187b80'),
     ])
 
 

@@ -15,6 +15,8 @@
 !/Dash/prediction.py
 !/Dash/prepare_data.py
 !/Dash/deployment.py
+!/Dash/classic_models.py
+!/Dash/preprocesamiento_clasicos.py
 !/Dash/requirements.txt
 !/Dash/img.jpeg
 !/Dash/assets/
@@ -33,6 +35,13 @@
 !/Dash/data/manifest.json
 !/Dash/data/deployment.json
 !/Dash/data/grid_search.csv
+!/Dash/data/clasicos/
+/Dash/data/clasicos/*
+!/Dash/data/clasicos/*.csv
+!/Dash/data/clasicos/*.csv.gz
+!/Dash/data/clasicos/*.joblib
+!/Dash/data/clasicos/xgboost.ubj
+!/Dash/data/clasicos/comparacion.json
 
 /Precalculo/*
 !/Precalculo/00_seleccion_base_datos.md
@@ -50,6 +59,9 @@
 !/Precalculo/resultados/e3/modelos_lineales.json
 !/Precalculo/resultados/e3/particion.json
 !/Precalculo/resultados/e3/grid_search.csv
+!/Precalculo/resultados/e3/clasicos/
+/Precalculo/resultados/e3/clasicos/*
+!/Precalculo/resultados/e3/clasicos/comparacion.json
 
 /jbook_dashboard/*
 !/jbook_dashboard/myst.yml

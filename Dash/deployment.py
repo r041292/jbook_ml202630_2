@@ -2,7 +2,7 @@
 import hashlib
 import json
 
-from prepare_data import BOOK, CACHE, ROOT, hashes
+from prepare_data import BOOK, CACHE, ROOT, hashes, CLASSIC_FILES
 
 PUBLIC_SOURCES = (
     '00_seleccion_base_datos.md',
@@ -10,11 +10,12 @@ PUBLIC_SOURCES = (
     'resultados/e3/modelos_lineales.json',
     'resultados/e3/particion.json',
     'resultados/e3/grid_search.csv',
+    'resultados/e3/clasicos/comparacion.json',
 )
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
     'grid_search.csv', 'model.joblib', 'manifest.json',
-)
+) + tuple('clasicos/' + name for name in CLASSIC_FILES)
 
 
 def sha256(path):
@@ -22,6 +23,9 @@ def sha256(path):
 
 
 def verify_inputs(manifest):
+    for relative, digest in manifest['artifact_sha256'].items():
+        if sha256(CACHE / relative) != digest:
+            raise RuntimeError('Artefacto alterado: ' + relative)
     packaged = CACHE / 'deployment.json'
     if not packaged.exists():
         if manifest['sha256'] != hashes():

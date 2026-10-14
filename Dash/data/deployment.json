@@ -6,6 +6,21 @@
     "Dash/data/coefficients.csv": "56b647f9562c6f3b6f574c59fe2f5143cc4652cce465d50fac40d5969970523c",
     "Dash/data/grid_search.csv": "ffbee7e33f8de8262e7c90d8910e0f0c75df7a389e259f1f8046c9e58bb9446e",
     "Dash/data/model.joblib": "a7ada6e9b506e974aabcf756204a57a8fdcf670b7b1f0ab2fc39f11316e3fd3c",
-    "Dash/data/manifest.json": "32911ccdfd3f525c6413667e0924579744645035933be296343a886540b96842"
+    "Dash/data/manifest.json": "828a9355447d5a874d7ce94b318741dc82eb258d3aadb5557fcc8e12047b395f",
+    "Dash/data/clasicos/comparacion.json": "760641386e292271e57d0bb97b13a0c9dff858a1c86113fa50937668c75c0307",
+    "Dash/data/clasicos/fold_metrics.csv": "3fbc924ec513ed9858168517811a13d132d303b3006fad067841c172b275689b",
+    "Dash/data/clasicos/train_predictions.csv.gz": "64b367f0bb0857049a5a289e0ad35b1024187205b744fee4dceaa6bbc72248e4",
+    "Dash/data/clasicos/test_predictions.csv.gz": "97f01cf70e87beb7867fee326d888c16ffad39163c7e6e15bc400c730e979e12",
+    "Dash/data/clasicos/xgboost.ubj": "5fb1d6c8c4cba29d2e0dd7ad1ee71426db7caead458443fa9f627a61a732352f",
+    "Dash/data/clasicos/knn.joblib": "3563452d4fc95d69f1fc0565c60d74fd0ca73e2e4bad6dbf3da4258999329896",
+    "Dash/data/clasicos/grid_knn.csv": "d1b5af443fb054055407aa7bc8f78204b6c5962de13203da99ec978b910b28bc",
+    "Dash/data/clasicos/ridge.joblib": "b27d5efd273fbc599510e05d092b2f3110b705924812c6996a98f67167c97aef",
+    "Dash/data/clasicos/grid_ridge.csv": "a970bb057e2364c9f730f7a0cb4c9fb610be2e740282ff868fd393ad6a3b8cb1",
+    "Dash/data/clasicos/lasso.joblib": "867b724ff35a77d4f5ca93eeb55b8b6e9fb6c984ed8a8a691e22393a5221c1f8",
+    "Dash/data/clasicos/grid_lasso.csv": "d46d20146092c367c1a6ffe055ad186733ce9f81b0d073153280d02606fbb57a",
+    "Dash/data/clasicos/forest.joblib": "b2aff99a49d171dc00ad1136cb4494fd048737c8e365aa31c0ee65e1c51ad779",
+    "Dash/data/clasicos/grid_forest.csv": "22b03bde28dec4392781f3064734208513ca46d033e09330558edd06cf04cde9",
+    "Dash/data/clasicos/xgboost.joblib": "3aad693afa39d5f69172752e9b366f58195e086ea247b842f87aa3eb1e6bf884",
+    "Dash/data/clasicos/grid_xgboost.csv": "4f863445575ccfaa3ecf0999a78fa3874955d1403905e2d40e51f6da4968b2ef"
   }
 }

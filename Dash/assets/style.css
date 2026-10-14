@@ -19,3 +19,4 @@
 .category-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.category-grid>.card{margin-bottom:0;padding:20px}.category-grid h3{font-size:16px}.category-grid .prose{font-size:12px}@media(max-width:1200px){.category-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.card:has(.metric-comparison){overflow-x:auto}.metric-comparison{min-width:650px}}
 .cv-explanation .prose{margin-top:18px}.cv-explanation .table-wrap{margin:16px 0}.cv-explanation .table-wrap th:last-child{min-width:0}
+.classic-comparison-table .table-wrap th:last-child,.classic-pipeline .table-wrap th:last-child,.classic-bootstrap .table-wrap th:last-child{min-width:0}

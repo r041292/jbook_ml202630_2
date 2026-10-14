@@ -273,10 +273,10 @@ def groupkfold_card():
            'registro de ese estudiante haya participado en el ajuste o en la selección de sus parámetros.\n\n'
            '**Tamaños reales de los folds externos:**'),
         table(fold_sizes),
-        md('**Cinco folds internos para seleccionar C y epsilon.** En cada iteración externa, solo los '
+        md('**Cinco folds internos para seleccionar hiperparámetros.** En cada iteración externa, solo los '
            'estudiantes de sus cuatro bloques de entrenamiento se redistribuyen en cinco folds internos, '
-           'manteniendo otra vez juntas todas las filas de cada persona. Se evalúan las 20 combinaciones '
-           'del grid y se elige la de menor RMSE medio interno. **El fold externo reservado no participa '
+           'manteniendo otra vez juntas todas las filas de cada persona. Se evalúan las combinaciones '
+           'del grid de cada modelo y se elige la de menor RMSE medio interno. **El fold externo reservado no participa '
            'en esa búsqueda.** Imputación, escalado y codificación también se aprenden dentro de cada ajuste.\n\n'
            '**Modelo final y test por periodo.** Tras obtener la evaluación OOF, se ejecuta una nueva '
            'búsqueda agrupada sobre todo entrenamiento y se ajusta el modelo final. Solo entonces se evalúa '
@@ -291,14 +291,20 @@ def groupkfold_card():
     return explanation
 
 
-MODELS = html.Div([
-    title('MODELOS LINEALES', 'Evaluación del modelo lineal', 'Comparación con la referencia, generalización y análisis de errores.'),
+SPLIT_CV = html.Div([
+    title('METODOLOGÍA COMPARTIDA', 'Split y validación cruzada',
+          'La misma separación por estudiante y periodo para todos los modelos predictivos.'),
     html.Div([card('Test por periodo académico',
         f'El periodo **{MODEL_REPORT["test_period"]}** se reserva como test. Train contiene los cinco periodos anteriores. '
         f'Se excluyen de train **{MODEL_REPORT["purged_overlap_rows"]} filas de estudiantes presentes en el periodo reservado**. '
         'Así se evalúan un periodo posterior y estudiantes que no participaron en entrenamiento. '
         'Las inconsistencias de negocio se excluyen antes de imputar.', split_figure()),
         groupkfold_card()], className='grid'),
+])
+
+
+MODELS = html.Div([
+    title('MODELOS LINEALES', 'Evaluación del modelo lineal', 'Comparación con la referencia, generalización y análisis de errores.'),
     card('Pipeline y búsqueda de parámetros', '**Numéricas:** mediana, log1p en tiempos y StandardScaler. '
         '**Categóricas:** moda y one-hot. **Objetivo:** escala original. **Referencia:** Dummy (media). '
         f'**Grid de LinearSVR:** C = `{MODEL_REPORT["grid"]["modelo__C"]}`; epsilon = `{MODEL_REPORT["grid"]["modelo__epsilon"]}`. '
@@ -344,6 +350,15 @@ MODELS = html.Div([
         'Los resultados describen esta muestra y este periodo; conviene comprobar estabilidad en periodos futuros.'),
 ])
 
+from classic_models import create_classics
+CLASSICS = create_classics(app, {
+    'TRAIN': TRAIN, 'TEST': TEST, 'MODEL_REPORT': MODEL_REPORT, 'FEATURES': FEATURES,
+    'NUMERIC': NUMERIC, 'CATEGORICAL': CATEGORICAL, 'LABELS': LABELS, 'DEFAULTS': DEFAULTS,
+    'COURSE': COURSE, 'PROGRAM': PROGRAM, 'TARGET': TARGET, 'PALETTE': PALETTE,
+    'card': card, 'md': md, 'table': table, 'notice': notice, 'title': title, 'stats': stats,
+    'filters': filters, 'subset': subset,
+})
+
 app.layout = html.Div([
     html.Header([html.A([html.Span('p', className='brand-mark'), html.Div([html.Strong('precálculo')])], href='/', className='brand'),
         html.Div([html.Span(className='status-dot'), 'Proyecto de investigación · 2026'], className='header-note')], className='topbar'),
@@ -352,7 +367,12 @@ app.layout = html.Div([
         dcc.Tab(label='02  EDA', value='eda', children=dcc.Tabs(id='eda-tabs', value='explore', mobile_breakpoint=0, className='sub-tabs', children=[
             dcc.Tab(label='Variables y contexto', value='variables', children=VARIABLES, className='tab', selected_className='tab-selected'),
             dcc.Tab(label='Exploración interactiva', value='explore', children=EDA, className='tab', selected_className='tab-selected')]), className='tab', selected_className='tab-selected'),
-        dcc.Tab(label='03  Modelos lineales', value='models', children=MODELS, className='tab', selected_className='tab-selected'),
+        dcc.Tab(label='03  Modelos predictivos', value='models', children=dcc.Tabs(
+            id='predictive-tabs', value='split', mobile_breakpoint=0, className='sub-tabs', children=[
+                dcc.Tab(label='Split y CV', value='split', children=SPLIT_CV, className='tab', selected_className='tab-selected'),
+                dcc.Tab(label='Modelos lineales', value='linear', children=MODELS, className='tab', selected_className='tab-selected'),
+                dcc.Tab(label='Modelos clásicos', value='classic', children=CLASSICS, className='tab', selected_className='tab-selected'),
+            ]), className='tab', selected_className='tab-selected'),
     ])], className='container'),
     html.Footer([html.Strong('Precálculo · Universidad del Norte'),
                  html.Span('Autores: Rubiel Velásquez y Valentina Figueroa.'),
