@@ -239,6 +239,58 @@ def cv_figure():
         hovertemplate='%{y} · %{x}<br>%{hovertext}<extra></extra>', xgap=5, ygap=5))
 
 
+def groupkfold_card():
+    explanation = card('GroupKFold por estudiante',
+        f'**Un grupo es un estudiante; un fold contiene varios estudiantes completos.** '
+        f'Los **{MODEL_REPORT["train_valid"]:,} registros de entrenamiento** corresponden a '
+        f'**{MODEL_REPORT["train_students"]:,} grupos de estudiantes**, distribuidos entre **cinco folds externos**. '
+        'Si una persona tiene varios registros, todos permanecen juntos: nunca participa a la vez '
+        'en entrenamiento y validación de una misma iteración.\n\n'
+        'Cada fila del esquema es una iteración: cuatro bloques entrenan y uno valida. '
+        '**Verde = Train (entrenamiento); azul = Val. (validación).** '
+        'El dibujo es conceptual: cada bloque contiene muchos estudiantes, no una sola persona.', cv_figure())
+    fold_sizes = pd.DataFrame([
+        {'Fold': f['fold'], 'Filas train': f['fit_rows'], 'Filas val.': f['validation_rows'],
+         'Estudiantes val.': f['validation_students']}
+        for f in MODEL_REPORT['fold_audit']
+    ])
+    explanation.children.append(html.Details([
+        html.Summary('Paso a paso · grupos, folds y ajuste de parámetros'),
+        md('**Por qué agrupamos por estudiante.** Una división por filas podría usar un registro de una '
+           'persona para entrenar y otro de esa misma persona para validar. Para evitarlo, GroupKFold '
+           'usa el identificador persistente del estudiante como restricción de separación. '
+           '**El identificador no es una variable predictora.**\n\n'
+           '**Agrupar estudiantes en folds no los fusiona.** Por ejemplo, si Ana tiene tres registros '
+           'y Luis tiene uno, ambos pueden pertenecer al mismo fold: se reservan juntos, pero conservan '
+           'sus cuatro filas y sus notas individuales. Sus registros no se promedian. '
+           'Es un ejemplo ilustrativo; no representa identidades de la base.\n\n'
+           '**Cinco folds externos para evaluar:**\n\n'
+           '1. Se reserva un fold completo de estudiantes y se trabaja con los otros cuatro.\n'
+           '2. Dentro de ese entrenamiento se seleccionan los parámetros con la validación interna descrita abajo.\n'
+           '3. El pipeline ganador se ajusta con todo el entrenamiento externo y predice el fold reservado.\n'
+           '4. Se repite hasta evaluar los cinco folds. Cada estudiante aparece una vez en validación externa.\n\n'
+           'Así se obtienen predicciones **OOF (fuera del fold)**: cada registro se predice sin que ningún '
+           'registro de ese estudiante haya participado en el ajuste o en la selección de sus parámetros.\n\n'
+           '**Tamaños reales de los folds externos:**'),
+        table(fold_sizes),
+        md('**Cinco folds internos para seleccionar C y epsilon.** En cada iteración externa, solo los '
+           'estudiantes de sus cuatro bloques de entrenamiento se redistribuyen en cinco folds internos, '
+           'manteniendo otra vez juntas todas las filas de cada persona. Se evalúan las 20 combinaciones '
+           'del grid y se elige la de menor RMSE medio interno. **El fold externo reservado no participa '
+           'en esa búsqueda.** Imputación, escalado y codificación también se aprenden dentro de cada ajuste.\n\n'
+           '**Modelo final y test por periodo.** Tras obtener la evaluación OOF, se ejecuta una nueva '
+           'búsqueda agrupada sobre todo entrenamiento y se ajusta el modelo final. Solo entonces se evalúa '
+           f'el test del periodo **{MODEL_REPORT["test_period"]}**, que permanece fuera de los folds y de la '
+           'selección de parámetros.\n\n'
+           '**Cómo interpretar la evaluación.** GroupKFold separa estudiantes, pero no estratifica por nota '
+           'ni impone orden temporal: la evaluación en un periodo posterior la aporta el test reservado. '
+           'Las métricas se calculan por registro; agrupar no asigna automáticamente el mismo peso a cada '
+           'estudiante si tiene varias filas. En el dashboard se reporta la media de las métricas de los '
+           'cinco folds externos cuando no hay filtros.'),
+    ], className='details cv-explanation'))
+    return explanation
+
+
 MODELS = html.Div([
     title('MODELOS LINEALES', 'Evaluación del modelo lineal', 'Comparación con la referencia, generalización y análisis de errores.'),
     html.Div([card('Test por periodo académico',
@@ -246,11 +298,7 @@ MODELS = html.Div([
         f'Se excluyen de train **{MODEL_REPORT["purged_overlap_rows"]} filas de estudiantes presentes en el periodo reservado**. '
         'Así se evalúan un periodo posterior y estudiantes que no participaron en entrenamiento. '
         'Las inconsistencias de negocio se excluyen antes de imputar.', split_figure()),
-        card('GroupKFold por estudiante', '**Cinco folds externos** producen predicciones OOF. '
-             'Todos los registros de un estudiante permanecen en el mismo bloque. '
-             'Dentro de cada entrenamiento externo, una búsqueda con **cinco folds internos agrupados** '
-             'selecciona C y epsilon sin leer el fold externo. Verde = Train (entrenamiento); azul = Val. (validación). El dibujo es conceptual. '
-             'GroupKFold no impone orden temporal; esa evaluación la aporta el test por periodo.', cv_figure())], className='grid'),
+        groupkfold_card()], className='grid'),
     card('Pipeline y búsqueda de parámetros', '**Numéricas:** mediana, log1p en tiempos y StandardScaler. '
         '**Categóricas:** moda y one-hot. **Objetivo:** escala original. **Referencia:** Dummy (media). '
         f'**Grid de LinearSVR:** C = `{MODEL_REPORT["grid"]["modelo__C"]}`; epsilon = `{MODEL_REPORT["grid"]["modelo__epsilon"]}`. '
