@@ -1,0 +1,35 @@
+{
+  "source_rows": 1527,
+  "source_students": 1506,
+  "missing_target": 30,
+  "test_period": 202530,
+  "train_periods": [
+    202310,
+    202330,
+    202410,
+    202430,
+    202510
+  ],
+  "purged_overlap_rows": 0,
+  "purged_overlap_students": 0,
+  "train_raw": 1309,
+  "test_raw": 188,
+  "excluded_train": 0,
+  "excluded_test": 0,
+  "rules_train": {
+    "dominio": 0,
+    "tiempo_cero": 0,
+    "aprendidos_cero": 0
+  },
+  "rules_test": {
+    "dominio": 0,
+    "tiempo_cero": 0,
+    "aprendidos_cero": 0
+  },
+  "train_valid": 1309,
+  "test_valid": 188,
+  "train_students": 1293,
+  "test_students": 188,
+  "shared_students": 0,
+  "outliers_removed": 0
+}

@@ -6,14 +6,14 @@ from prepare_data import BOOK, CACHE, ROOT, hashes
 
 PUBLIC_SOURCES = (
     '00_seleccion_base_datos.md',
-    'comparacion_aumentacion/comparacion_train.csv',
-    'comparacion_aumentacion/seleccion.json',
-    'resultados/eda.json',
-    'resultados/modelos_lineales.json',
+    'resultados/e3/eda.json',
+    'resultados/e3/modelos_lineales.json',
+    'resultados/e3/particion.json',
+    'resultados/e3/grid_search.csv',
 )
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
-    'augmentation.csv.gz', 'comparison_details.json', 'model.joblib', 'manifest.json',
+    'grid_search.csv', 'model.joblib', 'manifest.json',
 )
 
 

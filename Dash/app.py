@@ -16,7 +16,7 @@ from flask import send_file
 
 from prepare_data import BOOK, CACHE, ROOT, hashes, metrics
 from deployment import verify_inputs
-from charts import numeric_density, comparison_figures
+from charts import numeric_density
 from prediction import build_form, coefficient_report, input_id, predict_record
 
 manifest_path = CACHE / 'manifest.json'
@@ -33,13 +33,9 @@ TEST = pd.read_csv(CACHE / 'test.csv.gz')
 FOLDS = pd.read_csv(CACHE / 'fold_metrics.csv')
 COEFFICIENTS = pd.read_csv(CACHE / 'coefficients.csv')
 FULL_COEFFICIENTS = coefficient_report(MODEL)
-AUGMENTATION_DATA = pd.read_csv(CACHE / 'augmentation.csv.gz')
-COMPARISON_DETAILS = json.loads((CACHE / 'comparison_details.json').read_text(encoding='utf-8'))
-AUG = pd.read_csv(BOOK / 'comparacion_aumentacion/comparacion_train.csv', sep=';', decimal=',', encoding='utf-8-sig')
-SELECTION = json.loads((BOOK / 'comparacion_aumentacion/seleccion.json').read_text(encoding='utf-8'))
 DOCUMENT = (BOOK / '00_seleccion_base_datos.md').read_text(encoding='utf-8')
-MODEL_REPORT = json.loads((BOOK / 'resultados/modelos_lineales.json').read_text(encoding='utf-8'))
-EDA_REPORT = json.loads((BOOK / 'resultados/eda.json').read_text(encoding='utf-8'))
+MODEL_REPORT = json.loads((BOOK / 'resultados/e3/modelos_lineales.json').read_text(encoding='utf-8'))
+EDA_REPORT = json.loads((BOOK / 'resultados/e3/eda.json').read_text(encoding='utf-8'))
 SVM_RESULT = next(r for r in MODEL_REPORT['test'] if r['modelo'] == 'SVM lineal')
 SVM_CV = {r['metrica']: r for r in MODEL_REPORT['cv'] if r['modelo'] == 'SVM lineal'}
 SVM_CI = {r['metrica']: r for r in MODEL_REPORT['bootstrap'] if r['modelo'] == 'SVM lineal'}
@@ -47,8 +43,8 @@ SVM_DIAG = next(r for r in MODEL_REPORT['residuals'] if r['modelo'] == 'SVM line
 TARGET = 'nota_primer_parcial'
 PROGRAM = 'programa_en_matricula'
 COURSE = 'Mat_Curso_Asignatura_Relacionada'
-NUMERIC = TRAIN.drop(columns=['dummy', 'svm', TARGET]).select_dtypes(include='number').columns.tolist()
 FEATURES = list(MODEL.feature_names_in_)
+NUMERIC = TRAIN[FEATURES].select_dtypes(include='number').columns.tolist()
 CATEGORICAL = [c for c in FEATURES if c not in NUMERIC]
 DEFAULTS = TRAIN[FEATURES].dropna().iloc[0].to_dict()
 COURSES = {'MAT1011': 'Álgebra y Trigonometría', 'MAT1100': 'Cálculo I (ANEC)',
@@ -101,7 +97,9 @@ def card(title, text, figure=None, wide=False):
     children = [html.H3(title), md(text)]
     if figure is not None:
         styled = style(figure)
-        children.append(dcc.Graph(figure=styled, style={'height': f'{styled.layout.height}px', 'width': '100%'},
+        metric_comparison = any(a.text == 'R<sup>2</sup>' for a in (styled.layout.annotations or []))
+        children.append(dcc.Graph(figure=styled, className='metric-comparison' if metric_comparison else '',
+            style={'height': f'{styled.layout.height}px', 'width': '100%'},
             config={'displaylogo': False, 'scrollZoom': False,
             'toImageButtonOptions': {'format': 'png', 'scale': 2}}, responsive=True))
     return html.Article(children, className='card' + (' wide' if wide else ''))
@@ -174,29 +172,24 @@ INTRO = html.Div([
                   html.Span('Aprender hoy. Comprender los resultados mañana.', className='image-caption')], className='hero-image')], className='hero'),
     stats([('Periodo de estudio', '2023–2025', 'Seis periodos académicos'), ('Fuente original', '1.527', 'Registros académicos'),
            ('Asignaturas', '4', 'Matemáticas de primer semestre'), ('Objetivo', 'Primer parcial', 'Predicción en escala de nota')]),
-    card('Punto de partida', DOCUMENT.split('## Contexto académico e institucional')[0].split('\n', 1)[1], wide=True),
+    card('Punto de partida', 'Entregable 3: análisis de registros académicos reales de ALEK, sin generación de datos. Se evalúa la nota del primer parcial con una partición temporal y validación agrupada por estudiante.', wide=True),
     card('Contexto académico del proyecto', section(DOCUMENT, 'Contexto académico e institucional'), wide=True),
     card('La pregunta de investigación', 'Este proyecto busca responder la pregunta:\n\n'
          '**¿En qué medida los resultados del nivelatorio de precálculo y la información académica disponible '
          'permiten predecir la nota del primer parcial de la asignatura relacionada?**\n\n' +
          section(DOCUMENT, 'Propósito del proyecto'), wide=True),
-    html.Div([html.Span('01'), html.Div([html.H3('Comprender los datos'), html.P('Variables, aumentación y exploración interactiva.')]),
+    html.Div([html.Span('01'), html.Div([html.H3('Comprender los datos'), html.P('Datos reales, calidad y exploración interactiva.')]),
               html.Span('02'), html.Div([html.H3('Evaluar la predicción'), html.P('Validación, test y errores del modelo lineal.')])], className='journey'),
 ])
 
 VARIABLES = html.Div([
-    title('01 / VARIABLES', 'Variables del proyecto', 'Definiciones, fuente original y necesidad de aumentación.'),
+    title('01 / VARIABLES', 'Variables del proyecto', 'Registros reales, calidad y separación temporal.'),
     card('Diccionario del proyecto', section(DOCUMENT, 'Descripción de las variables del esquema final'), wide=True),
-    html.Div([card('Necesidad de aumentar la muestra', '**Los lineamientos del proyecto solicitan un mínimo de 20.000 registros.** '
-                  'La base original no alcanza ese tamaño; por ello se exploran técnicas controladas de aumentación.\n\n' +
-                  section(DOCUMENT, 'Estado original de la base de datos').split('Con esta cantidad de observaciones')[0]),
-              card('Exploración de alternativas para aumentación de datos',
-                  'Se evaluaron dos alternativas para ampliar la muestra conservando su estructura:\n\n'
-                  '- **Perturbación local controlada:** ruido aditivo y multiplicativo acotado alrededor de registros originales.\n'
-                  '- **Interpolación entre vecinos para regresión:** adaptación híbrida de SMOTE/SMOTER que combina '
-                  'registros compatibles y usa perturbación como respaldo cuando no hay vecinos.\n\n'
-                  'El proceso, los gráficos de comparación y la selección de técnica se encuentran en la subsección **Aumentación de datos**.')], className='grid'),
-    notice('Las variantes sintéticas amplían el conjunto de trabajo, pero no equivalen a nuevos estudiantes ni a observaciones independientes.'),
+    card('Fuente de datos reales',
+         f'Se conservan los **{MODEL_REPORT["source_rows"]:,} registros originales**. '
+         f'**{MODEL_REPORT["missing_target"]} filas sin nota del parcial** se excluyen del análisis supervisado. '
+         'No se generan registros ni se eliminan outliers válidos. Los identificadores se emplean localmente '
+         'para separar estudiantes y no se incluyen como predictores ni se exportan al dashboard.'),
     card('Reglas de negocio validadas',
          'Antes de explorar los datos o entrenar el modelo, se comprueba que cada registro sea coherente '
          'con el proceso de aprendizaje en ALEK. Estas reglas distinguen una inconsistencia del registro '
@@ -207,90 +200,15 @@ VARIABLES = html.Div([
          'registrado en la plataforma no se admite un incremento de dominio.\n'
          '3. **Si los temas aprendidos por hora son cero, los dominios deben ser iguales:** '
          'una tasa de aprendizaje nula debe ser coherente con la ausencia de avance.\n\n'
-         'Los archivos seleccionados cumplen las tres reglas: **cero incumplimientos en train y test**. '
+         f'Se excluyen **{MODEL_REPORT["excluded_train"]} filas de train** y **{MODEL_REPORT["excluded_test"]} de test** por inconsistencias. '
          'Si aparece una inconsistencia, se excluye antes de imputar; no se corrige como si fuera un faltante. '
          'Los outliers válidos se conservan. `nota_final` se reserva para auditoría y nunca entra al modelo.'),
 ])
 
 
-def augmentation():
-    frame = AUG.copy()
-    frame['Técnica'] = frame['alternativa'].map({1: 'Perturbación local', 2: 'Interpolación entre vecinos'})
-    frame['Semilla'] = frame['semilla'].astype(str)
-    scores = px.line(frame, x='Semilla', y='puntaje', color='Técnica', markers=True,
-        labels={'puntaje': 'Distancia media (menor es mejor)'}, color_discrete_sequence=PALETTE)
-    components = frame.groupby('Técnica')[['KS_media', 'Wasserstein_media', 'TV_categorica',
-        'faltantes_media', 'Spearman_error', 'TV_combinaciones']].mean().reset_index().melt(id_vars='Técnica')
-    components['variable'] = components['variable'].map({'KS_media': 'KS', 'Wasserstein_media': 'Wasserstein',
-        'TV_categorica': 'Categorías', 'faltantes_media': 'Faltantes', 'Spearman_error': 'Spearman', 'TV_combinaciones': 'Combinaciones'})
-    comparison = px.bar(components, x='variable', y='value', color='Técnica', barmode='group',
-        labels={'variable': 'Componente del puntaje', 'value': 'Distancia media'}, color_discrete_sequence=PALETTE)
-    improvement = 100 * (1 - SELECTION['puntajes_medios_train']['1'] / SELECTION['puntajes_medios_train']['2'])
-    conclusion = card('Conclusión', '**La perturbación local conserva mejor las distribuciones entre estas dos técnicas. '
-        'Esta comparación no demuestra una mejora predictiva.**\n\n'
-        'Por ese criterio se seleccionó la **alternativa 1** para todo el proyecto: EDA, modelos y dashboard. '
-        'Sus archivos de train y test cumplen las reglas de negocio sin exclusiones. La ventaja se mantiene '
-        'en las cinco semillas y en seis comparaciones al retirar un componente del puntaje. '
-        'Las variantes sintéticas amplían la base de trabajo, pero no representan nuevos estudiantes independientes.')
-    conclusion.children.append(stats([('Reducción de la distancia media', f'{improvement:.2f} %', 'Perturbación frente a interpolación'),
-                                     ('Estabilidad de la selección', '5 de 5', 'Semillas favorecen perturbación local')]))
-    return html.Div([
-        title('02 / AUMENTACIÓN', 'Comparación de técnicas de aumentación', 'Separación de estudiantes, generación de registros y contraste con la fuente original.'),
-        card('Propósito y recorrido de la aumentación',
-             'La base original no alcanza el mínimo de 20.000 registros solicitado en el proyecto. '
-             'La aumentación crea variantes sintéticas de observaciones existentes para ampliar el conjunto '
-             'de trabajo, procurando conservar sus distribuciones, categorías y relaciones académicas.\n\n'
-             'Esta sección presenta el proceso en orden: **separar estudiantes y reservar test**, '
-             '**generar registros con dos alternativas**, **contrastar los sintéticos con los originales de train** '
-             'y **seleccionar la técnica de mayor fidelidad**. La elección se hace únicamente con entrenamiento; '
-             'test permanece reservado para la evaluación posterior. Las variantes no equivalen a nuevos estudiantes.'),
-        stats([('Originales con objetivo', '1.497', '1.196 train · 301 test'),
-               ('Registros tras aumentar', '30.000', '24.000 train · 6.000 test')]),
-        html.Div([card('Segmentación por estudiante antes de aumentar',
-            'Antes de generar variantes, se establece qué estudiantes pertenecerán a entrenamiento y cuáles '
-            'a prueba. Esta separación evita que registros de una misma persona y sus variantes sintéticas '
-            'aparezcan en ambos conjuntos, lo que haría demasiado optimista la evaluación.\n\n'
-            '**Excluir filas sin objetivo → separar estudiantes → aumentar cada partición.** '
-            'Tras excluir 30 filas sin nota, se agrupan los registros por estudiante y se estratifica la separación '
-            'usando intervalos del promedio de su nota. Train conserva 1.196 filas de 1.184 estudiantes; '
-            'test, 301 filas de 297 estudiantes. No se comparten IDs. El test se reserva desde este momento y '
-            'no interviene en la elección de técnica. Las variantes se generan por separado dentro de cada partición.'),
-            card('Métodos de generación evaluados',
-            '- **Perturbación estocástica local con ruido aditivo y multiplicativo:** '
-            'modifica valores numéricos con variaciones acotadas, estimadas dentro de cada partición; recalcula el avance '
-            'y rechaza inconsistencias y duplicados.\n'
-            '- **Interpolación entre vecinos compatibles para regresión (adaptación híbrida de SMOTE/SMOTER):** '
-            'combina hasta cinco vecinos con las mismas categorías, faltantes y estados cero. '
-            'Si no hay vecinos, usa perturbación local como respaldo (7,80 % de nuevas filas de train en la semilla ilustrada).\n\n'
-            'La comparación busca fidelidad distribucional; no balancea notas raras ni ensaya SMOTER/SMOGN estándar.')], className='grid'),
-        title('CONTRASTE GRÁFICO', 'Datos originales frente a registros sintéticos',
-              'Compara las dos técnicas con los 1.196 originales de train. Solo se contrastan las filas nuevas, para que conservar originales no oculte diferencias.'),
-        html.Div([html.Label('Variable que se compara'), dcc.Dropdown([{'label': LABELS[c], 'value': c} for c in [TARGET] + NUMERIC],
-            TARGET, id='aug-variable', clearable=False)], className='variable-select'),
-        dcc.Loading(html.Div(id='augmentation-results'), type='circle', color=PALETTE[0]),
-        html.Div([card('Estabilidad del puntaje en cinco semillas',
-            'Se generan cinco versiones de cada alternativa sobre los mismos originales de train, cambiando la semilla '
-            'que controla el azar. Para cada versión se promedian seis distancias de distribuciones y asociaciones; '
-            '**menor puntaje significa mayor parecido con los originales**. La comparación nunca usa test. '
-            'La perturbación obtiene un puntaje medio de **0,013587**, frente a **0,029090** de interpolación. '
-            'La separación entre las curvas indica que la elección no depende de una sola generación.', scores),
-            card('Distancias de distribuciones y asociaciones',
-            'Cada barra es la media de un diagnóstico en las cinco semillas; menor distancia indica más fidelidad.\n\n'
-            '- **Kolmogorov–Smirnov (KS):** mayor diferencia entre las proporciones acumuladas de originales y sintéticos. '
-            'Por ejemplo, 0,05 equivale a una separación máxima de cinco puntos porcentuales. No es un p-valor.\n'
-            '- **Wasserstein normalizada:** desplazamiento necesario para aproximar una distribución a otra, dividido por '
-            'la desviación estándar original para comparar variables de distintas unidades.\n'
-            '- **Variación total:** diferencia entre proporciones de categorías o combinaciones de categorías; cero significa igualdad.\n'
-            '- **Faltantes:** diferencia de proporciones de valores ausentes.\n'
-            '- **Cambio de Spearman:** cuánto cambian las asociaciones monotónicas entre variables.\n\n'
-            'Las distancias describen aspectos distintos y sus valores no son errores de predicción.', comparison)], className='grid'),
-        conclusion,
-    ])
-
-
 EDA = html.Div([
     title('03 / EXPLORACIÓN', 'Análisis exploratorio de los datos', 'Distribuciones, calidad y asociaciones sobre entrenamiento válido.'),
-    notice(f'Técnica seleccionada: perturbación local. {len(TRAIN):,} registros válidos de train, '
+    notice(f'Datos reales sin aumentar. {len(TRAIN):,} registros válidos de train, '
            f'{EDA_REPORT["excluded"]} inconsistencias; se mantienen los outliers válidos.'),
     filters('eda', mode=True),
     html.Div([html.Label('Relacionar la nota con'), dcc.Dropdown([{'label': LABELS[c], 'value': c} for c in NUMERIC],
@@ -303,12 +221,12 @@ EDA = html.Div([
 
 def split_figure():
     train_n, test_n = MODEL_REPORT['train_raw'], MODEL_REPORT['test_raw']
-    return go.Figure(go.Sankey(arrangement='snap', node={'pad': 26, 'thickness': 16,
-        'label': [f'{train_n + test_n:,} registros · perturbación local', f'{train_n:,} train',
-                  f'{test_n:,} test reservado', f'{len(TRAIN):,} train válido · 5 folds', f'{len(TEST):,} test válido'],
-        'color': ['#879ba4', PALETTE[0], PALETTE[2], PALETTE[0], PALETTE[2]]},
-        link={'source': [0, 0, 1, 2], 'target': [1, 2, 3, 4],
-              'value': [train_n, test_n, len(TRAIN), len(TEST)], 'color': ['#cce7e5', '#dce2f5', '#cce7e5', '#dce2f5']}))
+    return go.Figure(go.Sankey(arrangement='snap', node={'pad': 35, 'thickness': 16,
+        'label': [f'{train_n + test_n:,} registros reales', f'{len(TRAIN):,} train · 202310–202510',
+                  f'{len(TEST):,} test · 202530'],
+        'color': ['#879ba4', PALETTE[0], PALETTE[2]]},
+        link={'source': [0, 0], 'target': [1, 2],
+              'value': [len(TRAIN), len(TEST)], 'color': ['#cce7e5', '#dce2f5']}))
 
 
 def cv_figure():
@@ -316,21 +234,39 @@ def cv_figure():
     np.fill_diagonal(z, 1)
     return go.Figure(go.Heatmap(z=z, x=['Bloque 1', 'Bloque 2', 'Bloque 3', 'Bloque 4', 'Bloque 5'],
         y=['Fold 1', 'Fold 2', 'Fold 3', 'Fold 4', 'Fold 5'], colorscale=[[0, '#cce7e5'], [1, '#5268b9']], showscale=False,
-        text=np.where(z == 1, 'Validación', 'Entrenamiento'), texttemplate='%{text}',
-        hovertemplate='%{y} · %{x}<br>%{text}<extra></extra>', xgap=5, ygap=5))
+        text=np.where(z == 1, 'Val.', 'Train'), texttemplate='%{text}', textfont={'size': 12},
+        hovertext=np.where(z == 1, 'Validación', 'Entrenamiento'),
+        hovertemplate='%{y} · %{x}<br>%{hovertext}<extra></extra>', xgap=5, ygap=5))
 
 
 MODELS = html.Div([
     title('MODELOS LINEALES', 'Evaluación del modelo lineal', 'Comparación con la referencia, generalización y análisis de errores.'),
-    html.Div([card('Test reservado desde el inicio', 'Los estudiantes se separaron **antes de la aumentación**. Se reutilizan los archivos '
-        'seleccionados de perturbación local, sin volver a dividirlos. El flujo muestra train y test después de '
-        'la aumentación: cero incumplimientos de reglas de negocio y ninguna fila excluida.', split_figure()),
-        card('Validación dentro del entrenamiento', '**Cinco folds estratificados por bins de nota.** En cada iteración, cuatro bloques entrenan '
-             'y uno valida. Verde = entrenamiento; azul = validación. El esquema es conceptual: los bloques se forman con filas mezcladas. '
-             'Test permanece fuera. Sin ID persistente, estos folds no pueden agruparse por estudiante.', cv_figure())], className='grid'),
-    card('Un pipeline que aprende solo del entrenamiento', '**Numéricas:** mediana, log1p en las tres medidas de tiempo y StandardScaler. '
-        '**Categóricas:** moda y one-hot. **Objetivo:** escala original. **Modelos:** DummyRegressor (media) y '
-        'LinearSVR (C = 1, ε = 0,1, semilla 42). Las transformaciones se ajustan dentro de cada fold. `nota_final` permanece excluida.'),
+    html.Div([card('Test por periodo académico',
+        f'El periodo **{MODEL_REPORT["test_period"]}** se reserva como test. Train contiene los cinco periodos anteriores. '
+        f'Se excluyen de train **{MODEL_REPORT["purged_overlap_rows"]} filas de estudiantes presentes en el periodo reservado**. '
+        'Así se evalúan un periodo posterior y estudiantes que no participaron en entrenamiento. '
+        'Las inconsistencias de negocio se excluyen antes de imputar.', split_figure()),
+        card('GroupKFold por estudiante', '**Cinco folds externos** producen predicciones OOF. '
+             'Todos los registros de un estudiante permanecen en el mismo bloque. '
+             'Dentro de cada entrenamiento externo, una búsqueda con **cinco folds internos agrupados** '
+             'selecciona C y epsilon sin leer el fold externo. Verde = Train (entrenamiento); azul = Val. (validación). El dibujo es conceptual. '
+             'GroupKFold no impone orden temporal; esa evaluación la aporta el test por periodo.', cv_figure())], className='grid'),
+    card('Pipeline y búsqueda de parámetros', '**Numéricas:** mediana, log1p en tiempos y StandardScaler. '
+        '**Categóricas:** moda y one-hot. **Objetivo:** escala original. **Referencia:** Dummy (media). '
+        f'**Grid de LinearSVR:** C = `{MODEL_REPORT["grid"]["modelo__C"]}`; epsilon = `{MODEL_REPORT["grid"]["modelo__epsilon"]}`. '
+        f'**Selección final:** C = {MODEL_REPORT["best_params"]["modelo__C"]}, '
+        f'epsilon = {MODEL_REPORT["best_params"]["modelo__epsilon"]}. '
+        'Se minimiza RMSE agrupado usando únicamente train. Todo el preprocesamiento se ajusta dentro de cada fold. '
+        'ID, periodo y nota_final quedan fuera de las predictoras.'),
+    card('Resultados de la búsqueda en train',
+         'RMSE medio de cinco folds agrupados para cada combinación. Este gráfico selecciona el modelo final; '
+         'la estimación OOF mostrada abajo proviene de validación anidada independiente.',
+         px.density_heatmap(pd.read_csv(CACHE / 'grid_search.csv').assign(
+             RMSE=lambda f: -f['mean_test_score'],
+             C=lambda f: f['param_modelo__C'].astype(str),
+             epsilon=lambda f: f['param_modelo__epsilon'].astype(str)),
+             x='C', y='epsilon', z='RMSE', histfunc='avg', text_auto='.3f',
+             color_continuous_scale='Teal', labels={'RMSE': 'RMSE medio', 'epsilon': 'Epsilon'})),
     filters('model'),
     notice('Los filtros evalúan el mismo modelo global sobre cada grupo; no entrenan modelos independientes. '
            'Validación usa predicciones fuera del fold (OOF). Test usa el modelo ajustado con todo train.'),
@@ -339,25 +275,25 @@ MODELS = html.Div([
         value='test', inline=True, className='radio')], className='variable-select'),
     dcc.Loading(html.Div(id='model-results'), type='circle', color=PALETTE[0]),
     html.Details([html.Summary('Profundizar · intervalos, aprendizaje y coeficientes'),
-        notice('Resultados globales del notebook. Esta sección no cambia con los filtros.'),
+        notice('Resultados globales de E3. Esta sección no cambia con los filtros.'),
         card('Intervalos bootstrap del 95 % · test',
              f'SVM lineal: **RMSE [{SVM_CI["RMSE"]["IC_2.5%"]:.4f}; {SVM_CI["RMSE"]["IC_97.5%"]:.4f}]**, '
              f'**MAPE [{SVM_CI["MAPE_%"]["IC_2.5%"]:.4f} %; {SVM_CI["MAPE_%"]["IC_97.5%"]:.4f} %]**, '
              f'**R² [{SVM_CI["R2"]["IC_2.5%"]:.4f}; {SVM_CI["R2"]["IC_97.5%"]:.4f}]**. '
-             '1.000 remuestreos por filas del test aumentado; las variantes no representan estudiantes independientes. '
+             '1.000 remuestreos por estudiante del periodo test; sus registros se remuestrean juntos. '
              'Los intervalos describen esta muestra y no sustituyen una evaluación externa.'),
         html.Div(id='model-extra')], className='details'),
     card('Conclusión',
         f'El SVM reduce el **RMSE en {MODEL_REPORT["improvement"]["reducción_RMSE_vs_dummy_%"]:.2f} %** '
         f'y el **MAPE en {MODEL_REPORT["improvement"]["reducción_MAPE_vs_dummy_%"]:.2f} %** frente a Dummy. '
         f'Su capacidad predictiva es parcial. La validación interna (R² = {SVM_CV["R2"]["media_cv"]:.4f}) '
-        f'supera el test (R² = {SVM_RESULT["R2"]:.4f}); '
-        'variantes sintéticas cercanas en folds distintos podrían hacer optimista la validación, hipótesis que requiere IDs persistentes. '
+        f'se contrasta con test (R² = {SVM_RESULT["R2"]:.4f}). '
+        'Ambas evaluaciones usan estudiantes separados; test también mide generalización a un periodo posterior. '
         f'Normalidad de residuos: p = {SVM_DIAG["normaltest_p"]:.3g}; '
         f'Breusch–Pagan: p = {SVM_DIAG["Breusch_Pagan_p"]:.3g}; '
         f'Spearman entre predicción y error absoluto = {SVM_DIAG["Spearman_abs_resid_vs_ajustado"]:.4f}. '
         'El modelo aporta una referencia predictiva, pero sus coeficientes no demuestran efectos causales. '
-        'Se recomienda validar por estudiante y evaluar el test original antes de avanzar hacia un uso operativo.'),
+        'Los resultados describen esta muestra y este periodo; conviene comprobar estabilidad en periodos futuros.'),
 ])
 
 app.layout = html.Div([
@@ -367,13 +303,12 @@ app.layout = html.Div([
         dcc.Tab(label='01  Introducción', value='intro', children=INTRO, className='tab', selected_className='tab-selected'),
         dcc.Tab(label='02  EDA', value='eda', children=dcc.Tabs(id='eda-tabs', value='explore', mobile_breakpoint=0, className='sub-tabs', children=[
             dcc.Tab(label='Variables y contexto', value='variables', children=VARIABLES, className='tab', selected_className='tab-selected'),
-            dcc.Tab(label='Aumentación de datos', value='augmentation', children=augmentation(), className='tab', selected_className='tab-selected'),
             dcc.Tab(label='Exploración interactiva', value='explore', children=EDA, className='tab', selected_className='tab-selected')]), className='tab', selected_className='tab-selected'),
         dcc.Tab(label='03  Modelos lineales', value='models', children=MODELS, className='tab', selected_className='tab-selected'),
     ])], className='container'),
     html.Footer([html.Strong('Precálculo · Universidad del Norte'),
                  html.Span('Autores: Rubiel Velásquez y Valentina Figueroa.'),
-                 html.Span('Fuentes: Jupyter Book del proyecto · Resultados de la ejecución documentada'),
+                 html.Span('Fuentes: datos originales de ALEK · Entregable 3 · Ejecución reproducible'),
                  html.Span('Interacción: pasa el cursor, selecciona leyendas, amplía y descarga los gráficos.')], className='footer'),
 ])
 
@@ -458,10 +393,10 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
            'interpretar un efecto aislado. El scatter y las cajas por dominio final complementan esa lectura.\n\n' +
            skew_text + ' El gráfico de faltantes identifica dónde falta medición; las frecuencias categóricas '
            'describen concentración y categorías poco representadas. Las diferencias entre grupos son descriptivas.\n\n'
-           '**Decisiones del pipeline del notebook:** se detallan abajo, junto a los gráficos que las respaldan. '
+           '**Decisiones del pipeline de E3:** se detallan abajo, junto a los gráficos que las respaldan. '
            'Los filtros describen subgrupos; no vuelven a elegir ni ajustar transformaciones. '
            'Se excluye `nota_final` por ser posterior al parcial. Las reglas de negocio se auditan antes de imputar '
-           'y las variantes sintéticas no equivalen a estudiantes independientes.'), table(treatment)], className='card')
+           'y se conservan los outliers válidos de los registros reales.'), table(treatment)], className='card')
     return html.Div([
         stats([('Registros de train', f'{len(data):,}', 'Después de aplicar filtros'), ('Nota media', f'{data[TARGET].mean():.2f}', 'Escala original'),
                ('Mediana', f'{data[TARGET].median():.2f}', 'Centro de la distribución'), ('Dispersión', f'{data[TARGET].std():.2f}', 'Desviación estándar')]),
@@ -536,31 +471,6 @@ def categorical_cards(program, course):
     return cards
 
 
-@app.callback(Output('augmentation-results', 'children'), Input('aug-variable', 'value'))
-def render_augmentation(variable):
-    density, cumulative, rows = comparison_figures(AUGMENTATION_DATA, variable, LABELS[variable], COMPARISON_COLORS)
-    return html.Div([
-        html.Div([card('Comparación de densidades: originales y sintéticos',
-            'Las curvas estiman la concentración de valores de la variable seleccionada. '
-            'Gris: originales de train; verde: perturbación local; coral: interpolación. '
-            f'Se comparan **{COMPARISON_DETAILS["original_rows"]:,} originales** y '
-            f'**{COMPARISON_DETAILS["synthetic_rows"]:,} filas nuevas por técnica**, '
-            f'para la semilla {COMPARISON_DETAILS["seed"]} del notebook. '
-            'El área de cada densidad se normaliza: las alturas no representan cantidades de estudiantes. '
-            'Curvas próximas indican formas parecidas; la suavización se interpreta junto a la acumulada.', density),
-            card('Comparación de proporciones acumuladas',
-            'Para cada valor del eje horizontal, la curva indica qué proporción de registros queda por debajo o '
-            'igual a ese valor. Curvas coincidentes describen distribuciones iguales; su separación revela diferencias. '
-            'La mayor separación vertical frente a los originales es lo que resume KS. '
-            'Las proporciones se calculan con todas las filas y se dibujan en hasta 800 umbrales observados. '
-            'Usa el cursor y la leyenda para comparar las técnicas.', cumulative)], className='grid'),
-        html.Article([html.H3('Resumen numérico de la comparación'),
-            md('Las medias, medianas y desviaciones se calculan en las unidades de la variable seleccionada, '
-               'sobre los valores disponibles. Los sintéticos se separan de los originales para contrastar cada técnica de forma justa.'),
-            table(pd.DataFrame(rows))], className='card'),
-    ])
-
-
 def metric_rows(train, test, global_view):
     rows = []
     for name, column in [('Dummy media', 'dummy'), ('SVM lineal', 'svm')]:
@@ -609,7 +519,7 @@ def render_models(program, course, partition):
     parts = [card('Resultados de validación y test', 'RMSE y MAE se expresan en puntos de nota: **menor es mejor**. '
         'R² mide mejora frente a la media: **mayor es mejor** y puede ser negativo. Los ejes de cada panel son independientes.', bars),
         html.Article([html.H3('Estadísticos y lectura de resultados'),
-            md('Sin filtros, validación muestra la **media de las métricas de cinco folds**, como el notebook. '
+            md('Sin filtros, validación muestra la **media de las métricas de cinco folds**, en el flujo E3. '
                'Con filtros, se calculan métricas agrupadas de predicciones **OOF** (incluido MAE, agregado para este dashboard). '
                'Test siempre usa predicciones de evaluación final. MAPE se expresa en porcentaje y es sensible a notas bajas.'), table(results)], className='card')]
     if data.empty:
@@ -667,7 +577,7 @@ coef_fig = px.bar(top, x='Coeficiente', y='Variable', orientation='h',
     color=np.where(top['Coeficiente'] >= 0, 'Positivo', 'Negativo'), color_discrete_sequence=PALETTE)
 MODELS.children[-2].children.append(html.Div([
     card('Curva de aprendizaje',
-         f'Resultados de la técnica seleccionada: con {int(learning.iloc[-1]["Filas de entrenamiento"]):,} filas, '
+         f'Resultados de datos reales: con {int(learning.iloc[-1]["Filas de entrenamiento"]):,} filas, '
          f'RMSE de entrenamiento = {learning.iloc[-1]["Entrenamiento"]:.4f} y validación = {learning.iloc[-1]["Validación"]:.4f}. '
          'La brecha interna se interpreta junto con el test reservado.', learning_fig),
     card('Doce coeficientes de mayor magnitud', 'Coeficientes del modelo global reproducido, en el espacio transformado. '
@@ -682,7 +592,7 @@ DEEP_DETAILS.children.append(html.Article([
        'se interpretan frente a la referencia indicada (β fijado en cero, no estimado).\n\n'
        '**LinearSVR no calcula p-valores, errores estándar ni pruebas t para sus coeficientes.** '
        'Un p-valor de OLS correspondería a otro '
-       'modelo y no puede atribuirse a este SVM. La dependencia entre avance y dominios y las variantes sintéticas '
+       'modelo y no puede atribuirse a este SVM. La dependencia entre avance y dominios y los registros repetidos por estudiante '
        'también requieren cautela antes de hacer inferencia. Las magnitudes no representan efectos causales.\n\n'
        '[Documentación del modelo](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVR.html).'),
     table(FULL_COEFFICIENTS),
@@ -695,7 +605,7 @@ MODELS.children.insert(-1, html.Details([
     html.Article([
         html.H3('Predecir una nota con el modelo ajustado'),
         md('El formulario carga un registro válido de ejemplo. Selecciona categorías y escribe las características '
-           'numéricas para obtener una predicción con **el mismo pipeline evaluado en el notebook**. '
+           'numéricas para obtener una predicción con **el mismo pipeline evaluado en E3**. '
            'No se reentrena el modelo ni se emplea test para ajustar valores.\n\n'
            'El avance se calcula automáticamente como dominio final − inicial. '
            'Los campos numéricos vacíos se imputan con la mediana aprendida en train, salvo los dominios, '

@@ -32,6 +32,7 @@
 !/Dash/data/model.joblib
 !/Dash/data/manifest.json
 !/Dash/data/deployment.json
+!/Dash/data/grid_search.csv
 
 /Precalculo/*
 !/Precalculo/00_seleccion_base_datos.md
@@ -43,6 +44,12 @@
 /Precalculo/resultados/*
 !/Precalculo/resultados/eda.json
 !/Precalculo/resultados/modelos_lineales.json
+!/Precalculo/resultados/e3/
+/Precalculo/resultados/e3/*
+!/Precalculo/resultados/e3/eda.json
+!/Precalculo/resultados/e3/modelos_lineales.json
+!/Precalculo/resultados/e3/particion.json
+!/Precalculo/resultados/e3/grid_search.csv
 
 /jbook_dashboard/*
 !/jbook_dashboard/myst.yml

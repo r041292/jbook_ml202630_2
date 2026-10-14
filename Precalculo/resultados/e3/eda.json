@@ -1,0 +1,236 @@
+{
+  "source_rows": 1527,
+  "source_students": 1506,
+  "missing_target": 30,
+  "test_period": 202530,
+  "train_periods": [
+    202310,
+    202330,
+    202410,
+    202430,
+    202510
+  ],
+  "purged_overlap_rows": 0,
+  "purged_overlap_students": 0,
+  "train_raw": 1309,
+  "test_raw": 188,
+  "excluded_train": 0,
+  "excluded_test": 0,
+  "rules_train": {
+    "dominio": 0,
+    "tiempo_cero": 0,
+    "aprendidos_cero": 0
+  },
+  "rules_test": {
+    "dominio": 0,
+    "tiempo_cero": 0,
+    "aprendidos_cero": 0
+  },
+  "train_valid": 1309,
+  "test_valid": 188,
+  "train_students": 1293,
+  "test_students": 188,
+  "shared_students": 0,
+  "outliers_removed": 0,
+  "excluded": 0,
+  "technique": "datos_reales",
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "9abe70ec19d7c22106746453bb182182ad08b7471ffa64a6903c210caf4744c5"
+  },
+  "missing_cells": 31,
+  "numeric_profile": {
+    "Icfes_nuevo": {
+      "count": 1309.0,
+      "mean": 341.157372039725,
+      "std": 47.9002338371248,
+      "min": 0.0,
+      "25%": 314.0,
+      "50%": 345.0,
+      "75%": 370.0,
+      "max": 477.0
+    },
+    "Icfes_Matematicas": {
+      "count": 1309.0,
+      "mean": 68.47364400305577,
+      "std": 10.209590319594827,
+      "min": 0.0,
+      "25%": 64.0,
+      "50%": 69.0,
+      "75%": 74.0,
+      "max": 100.0
+    },
+    "Tiempo_empleado_en_la_verificación_de_conocimientos": {
+      "count": 1288.0,
+      "mean": 0.7369306418059006,
+      "std": 0.6141132019463136,
+      "min": 0.016666667,
+      "25%": 0.316666667,
+      "50%": 0.533333333,
+      "75%": 0.95,
+      "max": 4.6
+    },
+    "Dominio_Inicial": {
+      "count": 1309.0,
+      "mean": 9.038197097020626,
+      "std": 16.16850513235363,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 2.0,
+      "75%": 10.0,
+      "max": 140.0
+    },
+    "avance_precalculo_aleks": {
+      "count": 1309.0,
+      "mean": 27.513368983957218,
+      "std": 20.387061467069373,
+      "min": 0.0,
+      "25%": 10.0,
+      "50%": 26.0,
+      "75%": 38.0,
+      "max": 121.0
+    },
+    "Dominio_Final": {
+      "count": 1309.0,
+      "mean": 36.55156608097784,
+      "std": 27.16876930320389,
+      "min": 0.0,
+      "25%": 16.0,
+      "50%": 32.0,
+      "75%": 49.0,
+      "max": 143.0
+    },
+    "Tiempo_Total_Tiempo": {
+      "count": 1304.0,
+      "mean": 18.04528374241871,
+      "std": 12.615386586376236,
+      "min": 0.0,
+      "25%": 8.162500000249999,
+      "50%": 16.033333335000002,
+      "75%": 25.49583333,
+      "max": 122.45
+    },
+    "Tiempo_total_Aprendidos_hora": {
+      "count": 1304.0,
+      "mean": 1.554244918797546,
+      "std": 0.9142494841955231,
+      "min": 0.0,
+      "25%": 0.9909382824999999,
+      "50%": 1.439966193,
+      "75%": 1.99334903475,
+      "max": 6.937600624
+    },
+    "nota_primer_parcial": {
+      "count": 1309.0,
+      "mean": 3.499358288770053,
+      "std": 1.1180295648011938,
+      "min": 0.5,
+      "25%": 2.6,
+      "50%": 3.7,
+      "75%": 4.5,
+      "max": 5.0
+    }
+  },
+  "correlation_spearman": {
+    "Icfes_nuevo": {
+      "Icfes_nuevo": 1.0,
+      "Icfes_Matematicas": 0.8349983293273922,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.36002813650595694,
+      "Dominio_Inicial": 0.5283497890389842,
+      "avance_precalculo_aleks": 0.25940390391603185,
+      "Dominio_Final": 0.43796389233269856,
+      "Tiempo_Total_Tiempo": -0.008059282820223036,
+      "Tiempo_total_Aprendidos_hora": 0.4411798287047736,
+      "nota_primer_parcial": 0.5367569758040178
+    },
+    "Icfes_Matematicas": {
+      "Icfes_nuevo": 0.8349983293273922,
+      "Icfes_Matematicas": 1.0,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.2697671885865716,
+      "Dominio_Inicial": 0.38446236051451727,
+      "avance_precalculo_aleks": 0.1768754252339572,
+      "Dominio_Final": 0.30897953312376136,
+      "Tiempo_Total_Tiempo": -0.009322382701411327,
+      "Tiempo_total_Aprendidos_hora": 0.31676222828449735,
+      "nota_primer_parcial": 0.42801145473392566
+    },
+    "Tiempo_empleado_en_la_verificación_de_conocimientos": {
+      "Icfes_nuevo": 0.36002813650595694,
+      "Icfes_Matematicas": 0.2697671885865716,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 1.0,
+      "Dominio_Inicial": 0.7612869661798204,
+      "avance_precalculo_aleks": 0.10476697276209962,
+      "Dominio_Final": 0.4258599642130404,
+      "Tiempo_Total_Tiempo": -0.03397322304047118,
+      "Tiempo_total_Aprendidos_hora": 0.15381271652254214,
+      "nota_primer_parcial": 0.36453027587839465
+    },
+    "Dominio_Inicial": {
+      "Icfes_nuevo": 0.5283497890389842,
+      "Icfes_Matematicas": 0.38446236051451727,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.7612869661798204,
+      "Dominio_Inicial": 1.0,
+      "avance_precalculo_aleks": 0.19525714256682353,
+      "Dominio_Final": 0.5804617642165046,
+      "Tiempo_Total_Tiempo": -0.08268097002476231,
+      "Tiempo_total_Aprendidos_hora": 0.40330218864984296,
+      "nota_primer_parcial": 0.4968948862651527
+    },
+    "avance_precalculo_aleks": {
+      "Icfes_nuevo": 0.25940390391603185,
+      "Icfes_Matematicas": 0.1768754252339572,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.10476697276209962,
+      "Dominio_Inicial": 0.19525714256682353,
+      "avance_precalculo_aleks": 1.0,
+      "Dominio_Final": 0.8434686748348889,
+      "Tiempo_Total_Tiempo": 0.7948653399682328,
+      "Tiempo_total_Aprendidos_hora": 0.5659775278920698,
+      "nota_primer_parcial": 0.2877773905536144
+    },
+    "Dominio_Final": {
+      "Icfes_nuevo": 0.43796389233269856,
+      "Icfes_Matematicas": 0.30897953312376136,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.4258599642130404,
+      "Dominio_Inicial": 0.5804617642165046,
+      "avance_precalculo_aleks": 0.8434686748348889,
+      "Dominio_Final": 1.0,
+      "Tiempo_Total_Tiempo": 0.5826319906016253,
+      "Tiempo_total_Aprendidos_hora": 0.565249934458029,
+      "nota_primer_parcial": 0.4558716040173824
+    },
+    "Tiempo_Total_Tiempo": {
+      "Icfes_nuevo": -0.008059282820223036,
+      "Icfes_Matematicas": -0.009322382701411327,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": -0.03397322304047118,
+      "Dominio_Inicial": -0.08268097002476231,
+      "avance_precalculo_aleks": 0.7948653399682328,
+      "Dominio_Final": 0.5826319906016253,
+      "Tiempo_Total_Tiempo": 1.0,
+      "Tiempo_total_Aprendidos_hora": 0.07039295573636659,
+      "nota_primer_parcial": 0.05289337639157711
+    },
+    "Tiempo_total_Aprendidos_hora": {
+      "Icfes_nuevo": 0.4411798287047736,
+      "Icfes_Matematicas": 0.31676222828449735,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.15381271652254214,
+      "Dominio_Inicial": 0.40330218864984296,
+      "avance_precalculo_aleks": 0.5659775278920698,
+      "Dominio_Final": 0.565249934458029,
+      "Tiempo_Total_Tiempo": 0.07039295573636659,
+      "Tiempo_total_Aprendidos_hora": 1.0,
+      "nota_primer_parcial": 0.38210437090184995
+    },
+    "nota_primer_parcial": {
+      "Icfes_nuevo": 0.5367569758040178,
+      "Icfes_Matematicas": 0.42801145473392566,
+      "Tiempo_empleado_en_la_verificación_de_conocimientos": 0.36453027587839465,
+      "Dominio_Inicial": 0.4968948862651527,
+      "avance_precalculo_aleks": 0.2877773905536144,
+      "Dominio_Final": 0.4558716040173824,
+      "Tiempo_Total_Tiempo": 0.05289337639157711,
+      "Tiempo_total_Aprendidos_hora": 0.38210437090184995,
+      "nota_primer_parcial": 1.0
+    }
+  }
+}
