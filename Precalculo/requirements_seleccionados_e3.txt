@@ -1,0 +1,9 @@
+# Adicionales del venv compartido; no crear otro entorno.
+tabicl==2.2.0
+hrt-boost @ https://github.com/Hongyi-Li-sz/HRT-Boost/archive/ed3885d7e089e489415637556b818d0284b123a6.zip
+# Conservar versiones usadas en el dashboard.
+numpy==2.3.5
+pandas==3.0.1
+scipy==1.18.1
+scikit-learn==1.9.1
+torch==2.9.1

@@ -1,0 +1,28 @@
+{
+  "checked": [
+    {
+      "model": "xbart",
+      "external_folds": 5,
+      "inner_fits": 240,
+      "oof_restored": true,
+      "selection_train_only": true,
+      "preparation_fit_rows_verified": true
+    },
+    {
+      "model": "kernel_ridge",
+      "external_folds": 5,
+      "inner_fits": 1050,
+      "oof_restored": true,
+      "selection_train_only": true,
+      "preparation_fit_rows_verified": true
+    },
+    {
+      "model": "copilot",
+      "external_folds": 5,
+      "inner_fits": 540,
+      "oof_restored": true,
+      "selection_train_only": true,
+      "preparation_fit_rows_verified": true
+    }
+  ]
+}

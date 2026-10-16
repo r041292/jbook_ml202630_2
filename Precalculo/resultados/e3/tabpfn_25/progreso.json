@@ -1,0 +1,136 @@
+{
+  "folds": [
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "Fold": 1,
+      "RMSE": 0.7230640577445268,
+      "MAE": 0.5606275124222269,
+      "MAPE (%)": 19.883768405160378,
+      "R²": 0.5811484209418636
+    },
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "Fold": 2,
+      "RMSE": 0.8465991410415382,
+      "MAE": 0.6804806960812051,
+      "MAPE (%)": 24.32247061126939,
+      "R²": 0.4196607951465733
+    },
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "Fold": 3,
+      "RMSE": 0.8365050940466273,
+      "MAE": 0.646906955242157,
+      "MAPE (%)": 26.59728682984528,
+      "R²": 0.4633671638445689
+    },
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "Fold": 4,
+      "RMSE": 0.8070733688447014,
+      "MAE": 0.6307225516916231,
+      "MAPE (%)": 22.499466566984925,
+      "R²": 0.43032899968702265
+    },
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "Fold": 5,
+      "RMSE": 0.8223501853840246,
+      "MAE": 0.6379402972911967,
+      "MAPE (%)": 24.414117550070323,
+      "R²": 0.4801609036476665
+    }
+  ],
+  "audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 98.50312850001501
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 81.78781800001161
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 76.28850719999173
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 77.38189539997256
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 53.569149700022535
+    }
+  ],
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "logicdt_propio.py": "09fbc1181b90e865e6482ca43dca9bce6556fc03cd680491837cfc1784e1a090",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "experiment": "tabpfn_25",
+    "checkpoint": {
+      "repository": "Prior-Labs/tabpfn_2_5",
+      "revision": "6c45f3a6d0d07c6c5f62572e04a0c2929de91b8b",
+      "filename": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+      "url": "https://huggingface.co/Prior-Labs/tabpfn_2_5/resolve/6c45f3a6d0d07c6c5f62572e04a0c2929de91b8b/tabpfn-v2.5-regressor-v2.5_default.ckpt",
+      "sha256": "6e0308b7e5f3a8325b798b96d986b2b282c3608b1cda6e2991425a2a261d40b8",
+      "bytes": 40831995,
+      "license_url": "https://huggingface.co/Prior-Labs/tabpfn_2_5/blob/main/LICENSE"
+    }
+  }
+}

@@ -98,3 +98,25 @@
 
 # README público solicitado para la portada del repositorio.
 !/README.md
+
+# Avances científicos E3: código, notebooks nuevos y resultados agregados.
+!/Precalculo/*.py
+!/Precalculo/*_e3.ipynb
+!/Precalculo/precalculo_entregable3.ipynb
+!/Precalculo/requirements*.txt
+!/Precalculo/cabeceras.csv
+!/Precalculo/README_E3.md
+!/Precalculo/publicacion_e3.json
+!/Precalculo/investigacion*.md
+!/Precalculo/experimentos_scopus_e3.md
+!/Precalculo/diagnostico_stacking_e3.md
+!/Precalculo/resultados/e3/**
+/Precalculo/resultados/e3/**/*.csv.gz
+/Precalculo/resultados/e3/**/*.npy
+/Precalculo/resultados/e3/**/*.joblib
+/Precalculo/resultados/e3/**/*.ubj
+/Precalculo/resultados/e3/**/*.log
+/Precalculo/resultados/e3/**/pesos_train.csv
+/Precalculo/Data/
+/Precalculo/modelos_preentrenados/
+/Precalculo/terceros/

@@ -1,0 +1,36 @@
+{
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+    "tabicl_modelo_e3.py": "9c41286f4465f4e481dcf7893c5ddee3ac83b90007521c959027e8c38362461d",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+    "grid": [
+      {}
+    ],
+    "reference": {
+      "paper": "https://proceedings.mlr.press/v306/qu26a.html",
+      "repository": "https://github.com/soda-inria/tabicl",
+      "package": "tabicl==2.2.0",
+      "model_revision": "4dcd344ece2c00be9e831fdd35bed57b5ad83e19",
+      "checkpoint": "tabicl-regressor-v2-20260212.ckpt",
+      "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a",
+      "configuration": "8 estimadores, CPU4 hilos, batch1, norm_methods=[none], outlier_threshold=infinity, sin fine-tuning ni nuevos registros"
+    },
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.4.1",
+      "tabicl": "2.2.0",
+      "torch": "2.9.1+cpu"
+    }
+  },
+  "test_used_for_selection": false,
+  "method": "5 folds externos por estudiante; 5 internos si hay grilla. TCR reutiliza parámetros base XGBoost seleccionados solo dentro del fit externo original."
+}

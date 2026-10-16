@@ -1,0 +1,289 @@
+{
+  "model": "logicDT propio (adaptado)",
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "logicdt_propio.py": "09fbc1181b90e865e6482ca43dca9bce6556fc03cd680491837cfc1784e1a090",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "experiment": "logicdt"
+  },
+  "features": [
+    "Icfes_nuevo",
+    "Icfes_Matematicas",
+    "Tiempo_empleado_en_la_verificación_de_conocimientos",
+    "Dominio_Inicial",
+    "avance_precalculo_aleks",
+    "Dominio_Final",
+    "Tiempo_Total_Tiempo",
+    "Tiempo_total_Aprendidos_hora",
+    "Categoria_temas_inicial",
+    "Categoria_temas_final",
+    "programa_en_matricula",
+    "division_en_matricula",
+    "Mat_Curso_Asignatura_Relacionada",
+    "avance_cuartiles",
+    "cumplimiento_temas"
+  ],
+  "target": "nota_primer_parcial",
+  "test": {
+    "RMSE": 0.9264376909377103,
+    "MAE": 0.7609543588043467,
+    "MAPE (%)": 29.65883903617954,
+    "R²": 0.4301036100823221
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8408090475764187,
+      "sd_cv": 0.06238342410887444,
+      "OOF_agrupado": 0.8431344608152229
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6655929369586461,
+      "sd_cv": 0.044512648796669815,
+      "OOF_agrupado": 0.6655986741118859
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 25.00494144421009,
+      "sd_cv": 2.0695395060808943,
+      "OOF_agrupado": 25.004559912594292
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.4292165649026944,
+      "sd_cv": 0.08521709488275342,
+      "OOF_agrupado": 0.430860134366004
+    }
+  ],
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__leaf_model": "ridge",
+        "modelo__max_depth": 2,
+        "modelo__max_terms": 5,
+        "modelo__ridge_alpha": 1.0
+      },
+      "seconds": 9.108883499982767
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__leaf_model": "ridge",
+        "modelo__max_depth": 2,
+        "modelo__max_terms": 3,
+        "modelo__ridge_alpha": 10.0
+      },
+      "seconds": 8.298086099995999
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__leaf_model": "ridge",
+        "modelo__max_depth": 2,
+        "modelo__max_terms": 3,
+        "modelo__ridge_alpha": 10.0
+      },
+      "seconds": 7.562021200021263
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__leaf_model": "ridge",
+        "modelo__max_depth": 2,
+        "modelo__max_terms": 3,
+        "modelo__ridge_alpha": 1.0
+      },
+      "seconds": 9.06434340000851
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__leaf_model": "ridge",
+        "modelo__max_depth": 2,
+        "modelo__max_terms": 5,
+        "modelo__ridge_alpha": 10.0
+      },
+      "seconds": 8.648539599991636
+    }
+  ],
+  "best_params": {
+    "modelo__leaf_model": "ridge",
+    "modelo__max_depth": 2,
+    "modelo__max_terms": 5,
+    "modelo__ridge_alpha": 10.0
+  },
+  "bootstrap_test": [
+    {
+      "metrica": "RMSE",
+      "estimacion": 0.9264376909377103,
+      "IC_2.5%": 0.8421051583331205,
+      "IC_97.5%": 1.0140698477409011
+    },
+    {
+      "metrica": "MAE",
+      "estimacion": 0.7609543588043467,
+      "IC_2.5%": 0.6864864835038108,
+      "IC_97.5%": 0.8420880712486517
+    },
+    {
+      "metrica": "MAPE (%)",
+      "estimacion": 29.65883903617954,
+      "IC_2.5%": 23.889152255173997,
+      "IC_97.5%": 36.45392999889132
+    },
+    {
+      "metrica": "R²",
+      "estimacion": 0.4301036100823221,
+      "IC_2.5%": 0.32841708238641976,
+      "IC_97.5%": 0.5112892669938427
+    }
+  ],
+  "paired_vs_svm": [
+    {
+      "metrica": "RMSE",
+      "nuevo_menos_SVM": -0.001267969080557041,
+      "IC_2.5%": -0.03641370031225593,
+      "IC_97.5%": 0.029835239998028205
+    },
+    {
+      "metrica": "MAE",
+      "nuevo_menos_SVM": 0.005511550853399716,
+      "IC_2.5%": -0.03174795837821689,
+      "IC_97.5%": 0.040017874335225585
+    },
+    {
+      "metrica": "MAPE (%)",
+      "nuevo_menos_SVM": -0.005716613315275509,
+      "IC_2.5%": -0.9656075839502429,
+      "IC_97.5%": 1.0021732185084729
+    },
+    {
+      "metrica": "R²",
+      "nuevo_menos_SVM": 0.0015610450857866942,
+      "IC_2.5%": -0.03712310352012056,
+      "IC_97.5%": 0.04639902402029599
+    }
+  ],
+  "comparison_test": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    },
+    {
+      "Modelo": "Dummy media",
+      "RMSE": 1.2560587320777918,
+      "MAE": 1.1044669473205142,
+      "MAPE (%)": 42.314506619222655,
+      "R²": -0.047570763085229784
+    },
+    {
+      "Modelo": "KNN",
+      "RMSE": 0.923269665643187,
+      "MAE": 0.7540271566884664,
+      "MAPE (%)": 29.58449530006813,
+      "R²": 0.43399455550642596
+    },
+    {
+      "Modelo": "Ridge",
+      "RMSE": 0.9170904797449051,
+      "MAE": 0.754510914653895,
+      "MAPE (%)": 29.57213961234537,
+      "R²": 0.4415454352835828
+    },
+    {
+      "Modelo": "Lasso",
+      "RMSE": 0.919650088085005,
+      "MAE": 0.7530400905199947,
+      "MAPE (%)": 29.551966581946655,
+      "R²": 0.4384237809595437
+    },
+    {
+      "Modelo": "Random Forest",
+      "RMSE": 0.9396351788797481,
+      "MAE": 0.765847415639248,
+      "MAPE (%)": 29.732021287169115,
+      "R²": 0.41375114058482676
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274
+    },
+    {
+      "Modelo": "logicDT propio (adaptado)",
+      "RMSE": 0.9264376909377103,
+      "MAE": 0.7609543588043467,
+      "MAPE (%)": 29.65883903617954,
+      "R²": 0.4301036100823221
+    }
+  ],
+  "method": "GroupKFold externo 5 e interno 5, selección RMSE",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1"
+  }
+}

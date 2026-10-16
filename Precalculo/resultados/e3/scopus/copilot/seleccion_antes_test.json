@@ -1,0 +1,9 @@
+{
+  "params": {
+    "alpha": 0.5,
+    "depth": 6,
+    "leaf": 30
+  },
+  "inner_rmse": 0.8278317806788964,
+  "test_used": false
+}

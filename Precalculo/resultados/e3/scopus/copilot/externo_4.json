@@ -1,0 +1,23 @@
+{
+  "metrics": {
+    "Modelo": "coPILOT",
+    "Fold": 4,
+    "RMSE": 0.8848358807322664,
+    "MAE": 0.7020095815387832,
+    "MAPE (%)": 25.489936017342185,
+    "R²": 0.3152634217429645
+  },
+  "audit": {
+    "fold": 4,
+    "best_params": {
+      "alpha": 0.2,
+      "depth": 6,
+      "leaf": 30
+    },
+    "inner_rmse": 0.851140035856824,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "shared_students": 0,
+    "seconds": 47.98719960000017
+  }
+}

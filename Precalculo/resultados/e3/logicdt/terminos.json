@@ -1,0 +1,22 @@
+[
+  {
+    "termino": 0,
+    "regla_en_escala_transformada": "num_plain__avance_precalculo_aleks > -0.85937 AND cat__programa_en_matricula_Ingeniería Mecánica > 0.5"
+  },
+  {
+    "termino": 1,
+    "regla_en_escala_transformada": "cat__Categoria_temas_inicial_1 Repaso de álgebra y geometría <= 0.5"
+  },
+  {
+    "termino": 2,
+    "regla_en_escala_transformada": "cat__programa_en_matricula_Ingeniería Electrónica <= 0.5 AND cat__division_en_matricula_División de Ingenierías <= 0.5"
+  },
+  {
+    "termino": 3,
+    "regla_en_escala_transformada": "cat__division_en_matricula_División de Ciencias Básicas <= 0.5"
+  },
+  {
+    "termino": 4,
+    "regla_en_escala_transformada": "cat__Mat_Curso_Asignatura_Relacionada_MAT1101 <= 0.5"
+  }
+]

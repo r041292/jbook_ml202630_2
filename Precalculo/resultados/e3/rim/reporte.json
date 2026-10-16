@@ -1,0 +1,421 @@
+{
+  "model": "RIM (port E3)",
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "rim_regresion_e3.py": "6892e8ebe2d39cbbd216c93062993179ee7a4df55cde3243afe21af8d94f3c2d",
+    "evaluar_rim_e3.py": "cd55fccb74226f7d682329c2444442fde4c6daa0c2da6ee005b30427169a69ae",
+    "evaluar_tabpfn25_finetuned_e3.py": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+    "resultados/e3/logicdt/reporte.json": "a0c3dfe330f19cd80ed33bc402c3cf6d31d21f5efbf11950a7cfeb0d7bbdc15b",
+    "resultados/e3/logicdt/test_predictions.csv.gz": "19ef68ad8d602d899abdd4cc18394ee2e661a91b30148d41692219781491092a",
+    "resultados/e3/tabpfn_25/reporte.json": "14fa0ce033d1ec47129be613030a2e94a5550bc97cd80a003c2977ea2f57c5e4",
+    "resultados/e3/tabpfn_25/test_predictions.csv.gz": "0c68643687529f8a9b2c4ed2a333b28236b0ca6b276b3142887deaec99df75ec",
+    "resultados/e3/tabpfn_25_finetuned/20261015_091524_448419/reporte.json": "38bcc67cbd6dde8fef4264ed3b8f053b1b2965a3313a3d53eb044ff9f14fbb53",
+    "resultados/e3/tabpfn_25_finetuned/20261015_091524_448419/test_predictions.csv.gz": "e9e37442c33f2c26f05df1dd218f3360eed49a31c8cec35bd8c71bac103bef78",
+    "grid": {
+      "n_neighbors": [
+        5,
+        15
+      ],
+      "epochs": [
+        30,
+        60
+      ],
+      "weight_decay": [
+        0.001,
+        0.01
+      ]
+    },
+    "fixed": {
+      "embedding_dim": 8,
+      "n_bins": 8,
+      "label_bins": 10,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "dropout": 0.1,
+      "random_state": 42
+    },
+    "versions": {
+      "torch": "2.9.1+cpu",
+      "scikit-learn": "1.9.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    }
+  },
+  "reference": {
+    "paper": "https://arxiv.org/abs/2108.05252",
+    "repository": "https://github.com/qinjr/RIM",
+    "revision": "a6b4cdb347f306f9cf54a98fc994bf7112b53e9e",
+    "files_consulted": [
+      "code/rim.py",
+      "code/train_reg.py",
+      "code/data_ppl/es_reader.py",
+      "code/data_ppl/hori_split.py",
+      "configs/train_params.ini"
+    ]
+  },
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "test": {
+    "RMSE": 0.9672130240627342,
+    "MAE": 0.7933472071038201,
+    "MAPE (%)": 29.543275732685775,
+    "R²": 0.3788338991335707
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8651052311828433,
+      "sd_cv": 0.026797220156839965,
+      "OOF_agrupado": 0.8655282632114152
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6714505708043379,
+      "sd_cv": 0.030527696756057508,
+      "OOF_agrupado": 0.6714588758694425
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 24.41615166318904,
+      "sd_cv": 2.1310566401964817,
+      "OOF_agrupado": 24.415883210170122
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.3973004146735756,
+      "sd_cv": 0.05055332046917808,
+      "OOF_agrupado": 0.400225724884002
+    }
+  ],
+  "best_params": {
+    "epochs": 30,
+    "n_neighbors": 15,
+    "weight_decay": 0.01
+  },
+  "fixed_params": {
+    "embedding_dim": 8,
+    "n_bins": 8,
+    "label_bins": 10,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "dropout": 0.1,
+    "random_state": 42
+  },
+  "fold_audit": [
+    {
+      "fold": 1,
+      "best_params": {
+        "epochs": 30,
+        "n_neighbors": 15,
+        "weight_decay": 0.01
+      },
+      "best_inner_rmse": 0.9105386997845659,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 172.17601650001598
+    },
+    {
+      "fold": 2,
+      "best_params": {
+        "epochs": 30,
+        "n_neighbors": 15,
+        "weight_decay": 0.01
+      },
+      "best_inner_rmse": 0.8802313131852337,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 149.5258011999831
+    },
+    {
+      "fold": 3,
+      "best_params": {
+        "epochs": 30,
+        "n_neighbors": 15,
+        "weight_decay": 0.01
+      },
+      "best_inner_rmse": 0.8486138126727132,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 161.82620250000036
+    },
+    {
+      "fold": 4,
+      "best_params": {
+        "epochs": 30,
+        "n_neighbors": 15,
+        "weight_decay": 0.01
+      },
+      "best_inner_rmse": 0.8860967403920931,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 224.8953204000136
+    },
+    {
+      "fold": 5,
+      "best_params": {
+        "epochs": 30,
+        "n_neighbors": 15,
+        "weight_decay": 0.01
+      },
+      "best_inner_rmse": 0.8697619941469268,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "seconds": 133.86673169999267
+    }
+  ],
+  "comparison_test": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    },
+    {
+      "Modelo": "Dummy media",
+      "RMSE": 1.2560587320777918,
+      "MAE": 1.1044669473205142,
+      "MAPE (%)": 42.314506619222655,
+      "R²": -0.047570763085229784
+    },
+    {
+      "Modelo": "KNN",
+      "RMSE": 0.923269665643187,
+      "MAE": 0.7540271566884664,
+      "MAPE (%)": 29.58449530006813,
+      "R²": 0.43399455550642596
+    },
+    {
+      "Modelo": "Ridge",
+      "RMSE": 0.9170904797449051,
+      "MAE": 0.754510914653895,
+      "MAPE (%)": 29.57213961234537,
+      "R²": 0.4415454352835828
+    },
+    {
+      "Modelo": "Lasso",
+      "RMSE": 0.919650088085005,
+      "MAE": 0.7530400905199947,
+      "MAPE (%)": 29.551966581946655,
+      "R²": 0.4384237809595437
+    },
+    {
+      "Modelo": "Random Forest",
+      "RMSE": 0.9396351788797481,
+      "MAE": 0.765847415639248,
+      "MAPE (%)": 29.732021287169115,
+      "R²": 0.41375114058482676
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274
+    },
+    {
+      "Modelo": "logicDT propio (adaptado)",
+      "RMSE": 0.9264376909377103,
+      "MAE": 0.7609543588043467,
+      "MAPE (%)": 29.65883903617954,
+      "R²": 0.4301036100823221
+    },
+    {
+      "Modelo": "TabPFN 2.5 original",
+      "RMSE": 0.8982773630241487,
+      "MAE": 0.7154911127496271,
+      "MAPE (%)": 27.761049655087543,
+      "R²": 0.464222605664123
+    },
+    {
+      "Modelo": "TabPFN 2.5 fine-tuned",
+      "RMSE": 0.9013701564221687,
+      "MAE": 0.7223795608003089,
+      "MAPE (%)": 28.072635223531673,
+      "R²": 0.46052686203667537
+    },
+    {
+      "Modelo": "RIM (port E3)",
+      "RMSE": 0.9672130240627342,
+      "MAE": 0.7933472071038201,
+      "MAPE (%)": 29.543275732685775,
+      "R²": 0.3788338991335707
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "referencia": "TabPFN 2.5 original",
+      "rows": [
+        {
+          "metrica": "RMSE",
+          "diferencia_ajustado_menos_referencia": 0.0689356610385855,
+          "IC_2.5%": 0.018199741432271183,
+          "IC_97.5%": 0.12047799827115328,
+          "p_bilateral": 0.00882,
+          "p_Holm_dos_pares": 0.01764
+        },
+        {
+          "metrica": "R²",
+          "diferencia_ajustado_menos_referencia": -0.0853887065305523,
+          "IC_2.5%": -0.15713206290864992,
+          "IC_97.5%": -0.022450417768307397,
+          "p_bilateral": 0.00882,
+          "p_Holm_dos_pares": 0.01764
+        }
+      ]
+    },
+    {
+      "referencia": "SVM lineal",
+      "rows": [
+        {
+          "metrica": "RMSE",
+          "diferencia_ajustado_menos_referencia": 0.039507364044466864,
+          "IC_2.5%": -0.013962540660173998,
+          "IC_97.5%": 0.09517131188181788,
+          "p_bilateral": 0.16266,
+          "p_Holm_dos_pares": 0.16266
+        },
+        {
+          "metrica": "R²",
+          "diferencia_ajustado_menos_referencia": -0.04970866586296474,
+          "IC_2.5%": -0.12601307049911692,
+          "IC_97.5%": 0.017078277908445325,
+          "p_bilateral": 0.16266,
+          "p_Holm_dos_pares": 0.16266
+        }
+      ]
+    }
+  ],
+  "family_vs_svm": [
+    {
+      "modelo": "KNN",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.004435994375080354,
+      "IC_2.5%": -0.04482134153216598,
+      "IC_97.5%": 0.036077307996767005,
+      "p_bilateral": 0.8269,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "Ridge",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.01061518027336239,
+      "IC_2.5%": -0.03206984628788756,
+      "IC_97.5%": 0.005267953526028362,
+      "p_bilateral": 0.31128,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "Lasso",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.00805557193326234,
+      "IC_2.5%": -0.020000647402608325,
+      "IC_97.5%": 0.0019282385969942222,
+      "p_bilateral": 0.1577,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "Random Forest",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": 0.011929518861480748,
+      "IC_2.5%": -0.024656773890719963,
+      "IC_97.5%": 0.04860259428270273,
+      "p_bilateral": 0.51846,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "XGBoost",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02143200415333557,
+      "IC_2.5%": -0.05470281408961654,
+      "IC_97.5%": 0.012121767377217825,
+      "p_bilateral": 0.21102,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "logicDT",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.001267969080557041,
+      "IC_2.5%": -0.036852375202219595,
+      "IC_97.5%": 0.030832939320958062,
+      "p_bilateral": 0.94434,
+      "p_Holm_nueve_metodos": 1.0
+    },
+    {
+      "modelo": "TabPFN original",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02942829699411864,
+      "IC_2.5%": -0.061618250955900705,
+      "IC_97.5%": 0.002094433910511233,
+      "p_bilateral": 0.06888,
+      "p_Holm_nueve_metodos": 0.61992
+    },
+    {
+      "modelo": "TabPFN ajustado",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02633550359609871,
+      "IC_2.5%": -0.05615994286707028,
+      "IC_97.5%": 0.002755594795713952,
+      "p_bilateral": 0.08018,
+      "p_Holm_nueve_metodos": 0.64144
+    },
+    {
+      "modelo": "RIM",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": 0.039507364044466864,
+      "IC_2.5%": -0.013962540660173998,
+      "IC_97.5%": 0.09517131188181788,
+      "p_bilateral": 0.16266,
+      "p_Holm_nueve_metodos": 1.0
+    }
+  ],
+  "method": "5x5 GroupKFold por estudiante, selección RMSE y test temporal202530. Índice/etiquetas de recuperación solo fit; autoestudiante excluido en train. Sin early stopping sobre validación; épocas son parte de la grilla.",
+  "adaptations": "PyTorch, BM25 Lucene local, mismos15 campos y preparación canónica con discretización numérica adicional y embeddings en lugar de one-hot; pool=fit excluyendo estudiante consultado en vez de reservar tercera tabla; MLP64/32, LayerNorm, target normalizado, etiquetas recuperadas discretizadas en cuantiles; regresión lineal de salida y skip de etiquetas según artículo.",
+  "statistics": "Permutación pareada bilateral99999, bootstrap10000 por estudiante, seed42; RMSE/R² comparten SSE. Holm dos pares y Holm familia conocida9vsSVM. Resultados exploratorios por reutilización adaptativa del test; una mejora confirmatoria exigiría nuevos datos reservados. No prometer alcanzar p<.05.",
+  "outputs": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\resultados\\e3\\rim",
+  "private_model": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\modelos_preentrenados\\rim_e3\\modelo_final.joblib"
+}

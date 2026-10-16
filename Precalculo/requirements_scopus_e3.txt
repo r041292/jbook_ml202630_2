@@ -1,0 +1,8 @@
+# Usar el venv compartido. Estas adiciones no sustituyen requirements.txt.
+catboost==1.2.10
+stochtree==0.4.5
+numba==0.68.0
+llvmlite==0.50.0
+# coPILOT: código local de STAN-UAntwerp/wPILOT, commit
+# 4ae908f4f1bd9ec93f1eeaebde958d6dd7ec5943 en terceros/wPILOT.
+# networkx, sklearn, numpy, pandas, scipy y matplotlib ya están en el entorno.

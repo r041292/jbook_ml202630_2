@@ -1,0 +1,9 @@
+{
+  "params": {
+    "depth": 4,
+    "leaf": 10,
+    "trees": 50
+  },
+  "inner_rmse": 0.8778570081015135,
+  "test_used": false
+}

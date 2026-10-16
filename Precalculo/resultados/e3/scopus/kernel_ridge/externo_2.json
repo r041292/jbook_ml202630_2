@@ -1,0 +1,22 @@
+{
+  "metrics": {
+    "Modelo": "Kernel Ridge RBF",
+    "Fold": 2,
+    "RMSE": 0.8393923052153036,
+    "MAE": 0.676449519375077,
+    "MAPE (%)": 23.93453165078055,
+    "R²": 0.42949923554728797
+  },
+  "audit": {
+    "fold": 2,
+    "best_params": {
+      "alpha": 0.1,
+      "gamma": 0.01
+    },
+    "inner_rmse": 0.7955229446131713,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "shared_students": 0,
+    "seconds": 17.315234600013355
+  }
+}

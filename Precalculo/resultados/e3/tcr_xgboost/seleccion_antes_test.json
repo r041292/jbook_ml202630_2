@@ -1,0 +1,12 @@
+{
+  "params": {
+    "fraction": 0.2,
+    "weight": 0.3
+  },
+  "xgboost_base_params": {
+    "modelo__learning_rate": 0.03,
+    "modelo__max_depth": 2,
+    "modelo__n_estimators": 300
+  },
+  "inner_rmse": 0.8071352262976961
+}

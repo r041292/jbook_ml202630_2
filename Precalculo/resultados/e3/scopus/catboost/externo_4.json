@@ -1,0 +1,24 @@
+{
+  "metrics": {
+    "Modelo": "CatBoost",
+    "Fold": 4,
+    "RMSE": 0.8212301363419497,
+    "MAE": 0.6514294980501696,
+    "MAPE (%)": 23.578023022158963,
+    "R²": 0.4101686744081553
+  },
+  "audit": {
+    "fold": 4,
+    "best_params": {
+      "depth": 6,
+      "iterations": 300,
+      "l2_leaf_reg": 10.0,
+      "learning_rate": 0.03
+    },
+    "inner_rmse": 0.8158953662239723,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "shared_students": 0,
+    "seconds": 1226.9664775999845
+  }
+}

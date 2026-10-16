@@ -11,3 +11,13 @@ Proyecto académico de Machine Learning de la Universidad del Norte. Explora los
 - [Jupyter Book del entregable 1: datos, EDA y modelo base](https://r041292.github.io/jbook_ml202630_1/).
 
 **Tecnologías:** Python, Dash, Plotly, scikit-learn y Jupyter Book.
+
+## Avances del entregable 3
+
+La rama `e3` reúne el dashboard con datos reales, validación por estudiante y
+test temporal, más los experimentos de18 modelos y su comparación estadística
+en RMSE y R². La entrega anterior se conserva en `main`.
+
+- [Guía de E3, notebooks y reproducción local](Precalculo/README_E3.md).
+- [Panorama completo de modelos](Precalculo/resultados/e3/resumen_completo/resumen.md).
+- [Validación completa con R²](Precalculo/resultados/e3/validacion_r2/resumen.md).

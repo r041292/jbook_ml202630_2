@@ -1,0 +1,97 @@
+{
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+    "hrt_modelo_e3.py": "78d8635bda91295447ffb36c259b000a70515b2e823b5a848430e188fc0c2676",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+    "grid": [
+      {
+        "max_depth": 1,
+        "n_estimators": 10,
+        "ridge_alpha": 1.0
+      },
+      {
+        "max_depth": 1,
+        "n_estimators": 10,
+        "ridge_alpha": 10.0
+      },
+      {
+        "max_depth": 1,
+        "n_estimators": 10,
+        "ridge_alpha": 100.0
+      },
+      {
+        "max_depth": 1,
+        "n_estimators": 30,
+        "ridge_alpha": 1.0
+      },
+      {
+        "max_depth": 1,
+        "n_estimators": 30,
+        "ridge_alpha": 10.0
+      },
+      {
+        "max_depth": 1,
+        "n_estimators": 30,
+        "ridge_alpha": 100.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 10,
+        "ridge_alpha": 1.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 10,
+        "ridge_alpha": 10.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 10,
+        "ridge_alpha": 100.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 30,
+        "ridge_alpha": 1.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 30,
+        "ridge_alpha": 10.0
+      },
+      {
+        "max_depth": 2,
+        "n_estimators": 30,
+        "ridge_alpha": 100.0
+      }
+    ],
+    "reference": {
+      "paper": "https://arxiv.org/abs/2605.23422",
+      "repository": "https://github.com/Hongyi-Li-sz/HRT-Boost",
+      "commit": "ed3885d7e089e489415637556b818d0284b123a6",
+      "package": "hrt-boost==0.1.0",
+      "fixed": {
+        "learning_rate": 0.1,
+        "min_points": 80,
+        "step_size": "auto",
+        "random_state": 42
+      }
+    },
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.4.1",
+      "hrt-boost": "0.1.0"
+    }
+  },
+  "test_used_for_selection": false,
+  "method": "5 folds externos por estudiante; 5 internos si hay grilla. TCR reutiliza parámetros base XGBoost seleccionados solo dentro del fit externo original."
+}

@@ -1,0 +1,9 @@
+{
+  "params": {
+    "max_depth": 1,
+    "n_estimators": 30,
+    "ridge_alpha": 100.0
+  },
+  "xgboost_base_params": null,
+  "inner_rmse": 0.8135612213967937
+}

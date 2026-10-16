@@ -1,0 +1,312 @@
+{
+  "model": "Kernel Ridge RBF",
+  "key": "kernel_ridge",
+  "test": {
+    "RMSE": 0.9048808096957919,
+    "MAE": 0.727607261486769,
+    "MAPE (%)": 28.32454022999043,
+    "R²": 0.4563164024205031
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8013252180008876,
+      "sd_cv": 0.038515913559798616,
+      "OOF_agrupado": 0.8022446534895579
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6292520146159228,
+      "sd_cv": 0.03438511463922962,
+      "OOF_agrupado": 0.6292470680044807
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 23.614417334720706,
+      "sd_cv": 1.9327548837029997,
+      "OOF_agrupado": 23.61373917020017
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.4827118383205658,
+      "sd_cv": 0.05148893777991482,
+      "OOF_agrupado": 0.48472509799016894
+    }
+  ],
+  "best_params": {
+    "alpha": 1.0,
+    "gamma": 0.03
+  },
+  "inner_rmse": 0.800407524926143,
+  "fold_audit": [
+    {
+      "fold": 1,
+      "best_params": {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      "inner_rmse": 0.8263981863267368,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 19.424430699989898
+    },
+    {
+      "fold": 2,
+      "best_params": {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      "inner_rmse": 0.7955229446131713,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 17.315234600013355
+    },
+    {
+      "fold": 3,
+      "best_params": {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      "inner_rmse": 0.7907142282581018,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 16.174647899984848
+    },
+    {
+      "fold": 4,
+      "best_params": {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      "inner_rmse": 0.8028830569632458,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 15.756795799999963
+    },
+    {
+      "fold": 5,
+      "best_params": {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      "inner_rmse": 0.8039043600514388,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "seconds": 15.652505100006238
+    }
+  ],
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "modelos_scopus_e3.py": "5ab966ac8cf1a573e820cf0ab6ca28f2f39ade29b1a459bf6b174c59f0ee4dc9",
+    "evaluar_scopus_e3.py": "26d4dcaf0ffbe26be0b27d217b7fbfec99585df1968b0fc56be9b46d702547ac",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "evaluar_tabpfn25_finetuned_e3.py": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "stochtree": "0.4.5",
+      "catboost": "1.2.10",
+      "numba": "0.68.0"
+    },
+    "grid": [
+      {
+        "alpha": 0.01,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 1.0
+      }
+    ],
+    "reference": {
+      "paper": "https://doi.org/10.3390/app12094252",
+      "implementation": "sklearn KernelRidge RBF, objetivo centrado dentro de cada fit",
+      "difference": "Solución exacta de KRR; no se reproduce el optimizador Truncated Newton del artículo."
+    }
+  },
+  "reference": {
+    "paper": "https://doi.org/10.3390/app12094252",
+    "implementation": "sklearn KernelRidge RBF, objetivo centrado dentro de cada fit",
+    "difference": "Solución exacta de KRR; no se reproduce el optimizador Truncated Newton del artículo."
+  },
+  "private_model": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\modelos_preentrenados\\scopus\\kernel_ridge\\modelo_final.joblib"
+}

@@ -1,0 +1,23 @@
+{
+  "metrics": {
+    "Modelo": "XBART (GFR)",
+    "Fold": 4,
+    "RMSE": 0.835432815407851,
+    "MAE": 0.6717145102024951,
+    "MAPE (%)": 24.481393051399913,
+    "R²": 0.3895907052776505
+  },
+  "audit": {
+    "fold": 4,
+    "best_params": {
+      "depth": 4,
+      "leaf": 10,
+      "trees": 50
+    },
+    "inner_rmse": 0.8684526981460603,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "shared_students": 0,
+    "seconds": 257.4673721000145
+  }
+}
