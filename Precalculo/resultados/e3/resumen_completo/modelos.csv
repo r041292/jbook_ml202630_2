@@ -1,19 +1,23 @@
-﻿Modelo,RMSE_test,delta_RMSE_vs_SVM,p_bilateral,p_Holm_global_21,p_Holm_17_vs_SVM,significancia_sin_correccion,significancia_Holm_17_vs_SVM,significancia_Holm_global_21
-TabICLv2,0.8978147945999441,-0.0298908654183233,0.02624,0.4723199999999999,0.41984,Mejora significativa,No significativa,No significativa
-TabPFN 2.5 original,0.8982773630241487,-0.0294282969941186,0.06888,1.0,0.9908999999999999,No significativa,No significativa,No significativa
-TabPFN 2.5 fine-tuned,0.9013701564221688,-0.0263355035960987,0.08018,1.0,1.0,No significativa,No significativa,No significativa
-Kernel Ridge RBF,0.9048808096957917,-0.0228248503224757,0.0962,1.0,1.0,No significativa,No significativa,No significativa
-CatBoost,0.9056693630195318,-0.0220362969987355,0.21864,1.0,1.0,No significativa,No significativa,No significativa
-XGBoost,0.9062736558649318,-0.0214320041533355,0.21102,1.0,1.0,No significativa,No significativa,No significativa
-TCR-XGBoost,0.9076952118909738,-0.0200104481272935,0.24432,1.0,1.0,No significativa,No significativa,No significativa
-Ridge,0.9170904797449052,-0.0106151802733622,0.31128,1.0,1.0,No significativa,No significativa,No significativa
-Lasso,0.919650088085005,-0.0080555719332623,0.1577,1.0,1.0,No significativa,No significativa,No significativa
-KNN,0.923269665643187,-0.0044359943750803,0.8269,1.0,1.0,No significativa,No significativa,No significativa
-HRT-Boost,0.9237199755498732,-0.003985684468394,0.78618,1.0,1.0,No significativa,No significativa,No significativa
-logicDT propio (adaptado),0.9264376909377104,-0.001267969080557,0.94434,1.0,1.0,No significativa,No significativa,No significativa
-SVM lineal,0.9277056600182674,0.0,,,,Referencia,Referencia,Referencia
-Random Forest,0.939635178879748,0.0119295188614807,0.51846,1.0,1.0,No significativa,No significativa,No significativa
-RIM (port E3),0.9672130240627342,0.0395073640444668,0.16266,1.0,1.0,No significativa,No significativa,No significativa
-XBART (GFR),0.9675145601720156,0.0398089001537481,0.12166,1.0,1.0,No significativa,No significativa,No significativa
-coPILOT,0.9706030747186324,0.0428974147003649,0.06606,1.0,0.9908999999999999,No significativa,No significativa,No significativa
-Dummy media,1.2560587320777918,0.3283530720595244,2e-05,0.00042,0.00034,Deterioro significativo,Deterioro significativo,Deterioro significativo
+﻿rango_RMSE,Modelo,RMSE_test,delta_RMSE_vs_SVM,p_bilateral,p_Holm_vs_SVM_21,p_Holm_global_55,significancia_sin_correccion,significancia_Holm_vs_SVM_21,significancia_Holm_global_55
+1,SVR RBF,0.8922248074445824,-0.0354808525736849,0.01018,0.2036,0.49882,Mejora significativa,No significativa,No significativa
+2,TabICLv2,0.8978147945999441,-0.0298908654183233,0.02624,0.49856,1.0,Mejora significativa,No significativa,No significativa
+3,TabPFN 2.5 original,0.8982773630241487,-0.0294282969941186,0.06888,1.0,1.0,No significativa,No significativa,No significativa
+4,TabPFN 2.5 fine-tuned,0.9013701564221688,-0.0263355035960985,0.08018,1.0,1.0,No significativa,No significativa,No significativa
+5,Kernel Ridge RBF,0.9048808096957917,-0.0228248503224757,0.0962,1.0,1.0,No significativa,No significativa,No significativa
+6,CatBoost,0.9056693630195318,-0.0220362969987355,0.21864,1.0,1.0,No significativa,No significativa,No significativa
+7,XGBoost,0.9062736558649318,-0.0214320041533355,0.21102,1.0,1.0,No significativa,No significativa,No significativa
+8,TCR-XGBoost,0.9076952118909738,-0.0200104481272935,0.24432,1.0,1.0,No significativa,No significativa,No significativa
+9,"TabFM 1.0.0 (PyTorch CPU, 32 vistas)",0.9087251720418906,-0.0189804879763767,0.21684,1.0,1.0,No significativa,No significativa,No significativa
+10,RaFFLE,0.9129252380186916,-0.0147804219995758,0.3457,1.0,1.0,No significativa,No significativa,No significativa
+11,Ridge,0.9170904797449052,-0.0106151802733621,0.31128,1.0,1.0,No significativa,No significativa,No significativa
+12,Lasso,0.919650088085005,-0.0080555719332623,0.1577,1.0,1.0,No significativa,No significativa,No significativa
+13,KNN,0.923269665643187,-0.0044359943750803,0.8269,1.0,1.0,No significativa,No significativa,No significativa
+14,HRT-Boost,0.9237199755498732,-0.0039856844683942,0.78618,1.0,1.0,No significativa,No significativa,No significativa
+15,logicDT propio (adaptado),0.9264376909377104,-0.0012679690805569,0.94434,1.0,1.0,No significativa,No significativa,No significativa
+16,SVM lineal,0.9277056600182674,0.0,,,,Referencia,Referencia,Referencia
+17,Random Forest,0.939635178879748,0.0119295188614806,0.51846,1.0,1.0,No significativa,No significativa,No significativa
+18,GPR–XGBoost (OOF agrupado),0.959043873389097,0.0313382133708296,0.20154,1.0,1.0,No significativa,No significativa,No significativa
+19,RIM (port E3),0.9672130240627342,0.0395073640444668,0.16266,1.0,1.0,No significativa,No significativa,No significativa
+20,XBART (GFR),0.9675145601720156,0.0398089001537482,0.12166,1.0,1.0,No significativa,No significativa,No significativa
+21,coPILOT,0.9706030747186324,0.042897414700365,0.06606,1.0,1.0,No significativa,No significativa,No significativa
+22,Dummy media,1.2560587320777918,0.3283530720595244,2e-05,0.00042,0.0011,Deterioro significativo,Deterioro significativo,Deterioro significativo

@@ -1,0 +1,17 @@
+# Entorno aislado para TabFM 1.0.1 (PyTorch CPU) en Windows/Python 3.12.
+# El conjunto de versiones parte del lock oficial del commit registrado en CONTEXT.md.
+--extra-index-url https://download.pytorch.org/whl/cpu
+numpy==2.2.0
+pandas==2.2.3
+scikit-learn==1.6.0
+scipy==1.17.1
+torch==2.12.1+cpu
+statsmodels==0.15.0
+joblib==1.4.2
+threadpoolctl==3.5.0
+absl-py==2.4.0
+jaxtyping==0.2.25
+typeguard==2.13.3
+huggingface-hub==1.21.0
+safetensors==0.8.0
+-e ./terceros/tabfm[pytorch]

@@ -1,212 +1,401 @@
 {
   "models": [
     {
+      "rango_RMSE": 1,
+      "Modelo": "SVR RBF",
+      "RMSE_test": 0.8922248074445824,
+      "delta_RMSE_vs_SVM": -0.0354808525736849,
+      "p_bilateral": 0.01018,
+      "p_Holm_vs_SVM_21": 0.2036,
+      "p_Holm_global_55": 0.49882,
+      "significancia_sin_correccion": "Mejora significativa",
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
+    },
+    {
+      "rango_RMSE": 2,
       "Modelo": "TabICLv2",
       "RMSE_test": 0.8978147945999441,
       "delta_RMSE_vs_SVM": -0.0298908654183233,
       "p_bilateral": 0.02624,
-      "p_Holm_global_21": 0.4723199999999999,
-      "p_Holm_17_vs_SVM": 0.41984,
+      "p_Holm_vs_SVM_21": 0.49856,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "Mejora significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 3,
       "Modelo": "TabPFN 2.5 original",
       "RMSE_test": 0.8982773630241487,
       "delta_RMSE_vs_SVM": -0.0294282969941186,
       "p_bilateral": 0.06888,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 0.9908999999999999,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 4,
       "Modelo": "TabPFN 2.5 fine-tuned",
       "RMSE_test": 0.9013701564221688,
-      "delta_RMSE_vs_SVM": -0.0263355035960987,
+      "delta_RMSE_vs_SVM": -0.0263355035960985,
       "p_bilateral": 0.08018,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 5,
       "Modelo": "Kernel Ridge RBF",
       "RMSE_test": 0.9048808096957917,
       "delta_RMSE_vs_SVM": -0.0228248503224757,
       "p_bilateral": 0.0962,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 6,
       "Modelo": "CatBoost",
       "RMSE_test": 0.9056693630195318,
       "delta_RMSE_vs_SVM": -0.0220362969987355,
       "p_bilateral": 0.21864,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 7,
       "Modelo": "XGBoost",
       "RMSE_test": 0.9062736558649318,
       "delta_RMSE_vs_SVM": -0.0214320041533355,
       "p_bilateral": 0.21102,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 8,
       "Modelo": "TCR-XGBoost",
       "RMSE_test": 0.9076952118909738,
       "delta_RMSE_vs_SVM": -0.0200104481272935,
       "p_bilateral": 0.24432,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 9,
+      "Modelo": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "RMSE_test": 0.9087251720418906,
+      "delta_RMSE_vs_SVM": -0.0189804879763767,
+      "p_bilateral": 0.21684,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
+    },
+    {
+      "rango_RMSE": 10,
+      "Modelo": "RaFFLE",
+      "RMSE_test": 0.9129252380186916,
+      "delta_RMSE_vs_SVM": -0.0147804219995758,
+      "p_bilateral": 0.3457,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
+    },
+    {
+      "rango_RMSE": 11,
       "Modelo": "Ridge",
       "RMSE_test": 0.9170904797449052,
-      "delta_RMSE_vs_SVM": -0.0106151802733622,
+      "delta_RMSE_vs_SVM": -0.0106151802733621,
       "p_bilateral": 0.31128,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 12,
       "Modelo": "Lasso",
       "RMSE_test": 0.919650088085005,
       "delta_RMSE_vs_SVM": -0.0080555719332623,
       "p_bilateral": 0.1577,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 13,
       "Modelo": "KNN",
       "RMSE_test": 0.923269665643187,
       "delta_RMSE_vs_SVM": -0.0044359943750803,
       "p_bilateral": 0.8269,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 14,
       "Modelo": "HRT-Boost",
       "RMSE_test": 0.9237199755498732,
-      "delta_RMSE_vs_SVM": -0.003985684468394,
+      "delta_RMSE_vs_SVM": -0.0039856844683942,
       "p_bilateral": 0.78618,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 15,
       "Modelo": "logicDT propio (adaptado)",
       "RMSE_test": 0.9264376909377104,
-      "delta_RMSE_vs_SVM": -0.001267969080557,
+      "delta_RMSE_vs_SVM": -0.0012679690805569,
       "p_bilateral": 0.94434,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 16,
       "Modelo": "SVM lineal",
       "RMSE_test": 0.9277056600182674,
       "delta_RMSE_vs_SVM": 0.0,
       "p_bilateral": null,
-      "p_Holm_global_21": null,
-      "p_Holm_17_vs_SVM": null,
+      "p_Holm_vs_SVM_21": null,
+      "p_Holm_global_55": null,
       "significancia_sin_correccion": "Referencia",
-      "significancia_Holm_17_vs_SVM": "Referencia",
-      "significancia_Holm_global_21": "Referencia"
+      "significancia_Holm_vs_SVM_21": "Referencia",
+      "significancia_Holm_global_55": "Referencia"
     },
     {
+      "rango_RMSE": 17,
       "Modelo": "Random Forest",
       "RMSE_test": 0.939635178879748,
-      "delta_RMSE_vs_SVM": 0.0119295188614807,
+      "delta_RMSE_vs_SVM": 0.0119295188614806,
       "p_bilateral": 0.51846,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 18,
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "RMSE_test": 0.959043873389097,
+      "delta_RMSE_vs_SVM": 0.0313382133708296,
+      "p_bilateral": 0.20154,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
+    },
+    {
+      "rango_RMSE": 19,
       "Modelo": "RIM (port E3)",
       "RMSE_test": 0.9672130240627342,
       "delta_RMSE_vs_SVM": 0.0395073640444668,
       "p_bilateral": 0.16266,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 20,
       "Modelo": "XBART (GFR)",
       "RMSE_test": 0.9675145601720156,
-      "delta_RMSE_vs_SVM": 0.0398089001537481,
+      "delta_RMSE_vs_SVM": 0.0398089001537482,
       "p_bilateral": 0.12166,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 1.0,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 21,
       "Modelo": "coPILOT",
       "RMSE_test": 0.9706030747186324,
-      "delta_RMSE_vs_SVM": 0.0428974147003649,
+      "delta_RMSE_vs_SVM": 0.042897414700365,
       "p_bilateral": 0.06606,
-      "p_Holm_global_21": 1.0,
-      "p_Holm_17_vs_SVM": 0.9908999999999999,
+      "p_Holm_vs_SVM_21": 1.0,
+      "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
-      "significancia_Holm_17_vs_SVM": "No significativa",
-      "significancia_Holm_global_21": "No significativa"
+      "significancia_Holm_vs_SVM_21": "No significativa",
+      "significancia_Holm_global_55": "No significativa"
     },
     {
+      "rango_RMSE": 22,
       "Modelo": "Dummy media",
       "RMSE_test": 1.2560587320777918,
       "delta_RMSE_vs_SVM": 0.3283530720595244,
       "p_bilateral": 2e-05,
-      "p_Holm_global_21": 0.00042,
-      "p_Holm_17_vs_SVM": 0.00034,
+      "p_Holm_vs_SVM_21": 0.00042,
+      "p_Holm_global_55": 0.0011,
       "significancia_sin_correccion": "Deterioro significativo",
-      "significancia_Holm_17_vs_SVM": "Deterioro significativo",
-      "significancia_Holm_global_21": "Deterioro significativo"
+      "significancia_Holm_vs_SVM_21": "Deterioro significativo",
+      "significancia_Holm_global_55": "Deterioro significativo"
     }
   ],
-  "model_count": 18,
+  "model_count": 22,
   "reference": "SVM lineal",
-  "family_vs_svm": 17,
-  "family_global": 21,
-  "sources_sha256": {
-    "resultados\\e3\\scopus\\listado_completo_18_modelos.csv": "e8ec8efab0d86e283ac48aab0c888532c4ab6121bf32d61672d49293c8a72231",
-    "resultados\\e3\\scopus\\contrastes_pareados.csv": "5dbc7e65666322f9efe58d3dfd3cbb23669c7cc1c931a50f326e2b10e5d7bfee"
+  "family_vs_svm": 21,
+  "family_global": 55,
+  "training_performed": false,
+  "direct_candidate_comparison": {
+    "model": "SVR RBF",
+    "reference": "RaFFLE",
+    "rows": [
+      {
+        "metrica": "RMSE",
+        "diferencia_candidato_menos_referencia": -0.020700430574108974,
+        "IC_2.5%": -0.05097369074582724,
+        "IC_97.5%": 0.009547800901123216,
+        "p_bilateral": 0.18704
+      },
+      {
+        "metrica": "R²",
+        "diferencia_candidato_menos_referencia": 0.024811679383993757,
+        "IC_2.5%": -0.011442226708049933,
+        "IC_97.5%": 0.06235856491134789,
+        "p_bilateral": 0.18704
+      },
+      {
+        "metrica": "MAE",
+        "diferencia_candidato_menos_referencia": -0.023058142656662173,
+        "IC_2.5%": null,
+        "IC_97.5%": null,
+        "p_bilateral": null
+      },
+      {
+        "metrica": "MAPE (%)",
+        "diferencia_candidato_menos_referencia": -0.7382748426722934,
+        "IC_2.5%": null,
+        "IC_97.5%": null,
+        "p_bilateral": null
+      }
+    ],
+    "multiplicity_note": "Contraste adicional exploratorio; no incluido en la familia Holm global de 55."
   },
-  "generator_sha256": "67da8c6d7926c3c200b5d814a3fd7847e33fd4dc15366077cfe286b826714a59",
-  "training_performed": false
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "experiment_inputs_sha256": {
+      "evaluator": "45a8c2a05043e46524415a2c51728314a6d54a56e9d8af88933365a06da0d77a",
+      "requirements": "7e646d0c4c62332bbea87b8cf49d14d75313ab2cabdf1d9f47bad20138144ed8",
+      "canonical_train": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "canonical_test": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "linear_report": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
+      "linear_fold_metrics": "3d44dd24364a8fc4708f188db799406981146b2933a942118a58b7e2f9267eaa",
+      "summary_models": "c77dd46ce3f9b17dcc32f8e57a8d3ea96f75072bcadcff4959659cfb9ea8cf93",
+      "scopus_contrasts": "5dbc7e65666322f9efe58d3dfd3cbb23669c7cc1c931a50f326e2b10e5d7bfee",
+      "classic_report": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+      "classic_test_predictions": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+      "tabicl_test": "624d908375f4394c0b83f65edad29dd2174b6a717df996fb46f439da8f771291",
+      "tabpfn_test": "0c68643687529f8a9b2c4ed2a333b28236b0ca6b276b3142887deaec99df75ec",
+      "tabfm_report": "11b0be3f0ccde6073bf2d1fc1dd49729d71aebe1b876c2931259ef2197a9eb21",
+      "tabfm_test": "7109ae49b1a0e7af6282739e75280294027df3a25e268a6c803deed4b16821bf",
+      "tcr_test": "1e34f000e5b6546d8495cb8e694e539ca8169b0a9db13b0bc93738b469fc7f09",
+      "kernel_ridge_test": "7e5043fd088b4b3030ba58644aaa37a678b51d4eb08aeaa34cc4876c3aa552e5",
+      "catboost_test": "910f2918a549050b1bf791e742315d5231fad841d8d85113d2849581a88497fc",
+      "gpr_report": "78fad46a2c3a83ae70dc0040d4d58ef5b494980dc1f216c89d154e3ebb954c3e",
+      "gpr_test": "fcde6da6e1c6dd7255353e6130e245ffc6e19dbb0a3dc9523cc118b9e41fe94a",
+      "gpr_contrasts": "b8f1f130df9bc10eb157f4be2d7956ac29bb658ff5f72463ea4765ddf522ec2a",
+      "tabpfn_finetuned_test": "e9e37442c33f2c26f05df1dd218f3360eed49a31c8cec35bd8c71bac103bef78"
+    },
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "statsmodels": "0.15.0",
+      "fast-model-trees": "0.0.5",
+      "joblib": "1.6.0"
+    },
+    "configuration": {
+      "outer_folds": 5,
+      "inner_group_folds": 5,
+      "seed": 42,
+      "test_period": 202530,
+      "svr_rbf": {
+        "kernel": "rbf",
+        "search": "RandomizedSearchCV neg_RMSE",
+        "n_iter": 64,
+        "C": "loguniform(1e-3,1e3)",
+        "epsilon": "loguniform(1e-2,1.5)",
+        "gamma": "scale, auto, logspace(-5,1,25)"
+      },
+      "raffle": {
+        "n_estimators": 100,
+        "max_model_depth": 100,
+        "min_sample_fit": 10,
+        "min_sample_alpha": 5,
+        "min_sample_leaf": 5,
+        "random_state": 42,
+        "n_features_tree": 1.0,
+        "alpha": [
+          0.01,
+          0.5,
+          1.0
+        ],
+        "n_features_node": [
+          0.7,
+          1.0
+        ],
+        "max_depth": [
+          6,
+          20
+        ],
+        "categorical_features": [
+          "Categoria_temas_inicial",
+          "Categoria_temas_final",
+          "programa_en_matricula",
+          "division_en_matricula",
+          "Mat_Curso_Asignatura_Relacionada",
+          "avance_cuartiles",
+          "cumplimiento_temas"
+        ]
+      },
+      "preprocessing": {
+        "svr_rbf": "pipeline E3 canónico: imputación, log1p/escalado numérico y one-hot",
+        "raffle": "mediana numérica; moda y ordinal categórico con índices explícitos; sin escalado"
+      },
+      "fold_source": "resultados/e3/train.csv.gz, folds externos canónicos de E3",
+      "test_used_for_selection": false
+    }
+  },
+  "sources_sha256": {
+    "resultados/e3/svr_rbf_raffle/ranking_rmse_test.csv": "658102c706bcd161da74988a77b7ba28865a9ea1ac46d9ebeabe5e35ac3df180",
+    "resultados/e3/svr_rbf_raffle/contrastes_pareados.csv": "587c0cc169fa9fb6c7c32af90c978774be58b6aa87aef2809b1d43032dab0a49",
+    "resultados/e3/svr_rbf_raffle/reporte.json": "eb7ca6428d8bb8142efb878ef7ecdd1b887e26722a0d5823a0333e1c7f84469e"
+  }
 }

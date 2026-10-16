@@ -5,24 +5,30 @@ Los notebooks se pueden consultar con sus resultados ya ejecutados.
 
 ## Resultados completos
 
-- [Panorama de los 18 métodos: RMSE, diferencias y significancia](resultados/e3/resumen_completo/resumen.md).
-- [CSV del panorama RMSE](resultados/e3/resumen_completo/modelos.csv).
+- [Panorama de los 22 métodos: RMSE, diferencias y significancia](resultados/e3/resumen_completo/resumen.md).
+- [CSV del panorama RMSE de los 22 métodos](resultados/e3/resumen_completo/modelos.csv).
 - [Validación completa con R²](resultados/e3/validacion_r2/resumen.md).
-- [CSV R², intervalos y significancia](resultados/e3/validacion_r2/modelos_r2.csv).
+- [CSV R², intervalos y significancia de los 22 métodos](resultados/e3/validacion_r2/modelos_r2.csv).
 - [R² de validación cruzada, OOF y test](resultados/e3/validacion_r2/validacion_cruzada_r2.csv).
+- [Resultados R² de cada fold](resultados/e3/validacion_r2/folds_r2.csv) y [contrastes Scopus–XGBoost](resultados/e3/validacion_r2/contrastes_r2_vs_xgboost.csv).
 - [Comparación de las cuatro propuestas Scopus](resultados/e3/scopus/resumen.md).
+- [Resultados detallados de SVR RBF y RaFFLE](resultados/e3/svr_rbf_raffle/resumen.md), con [ranking CSV](resultados/e3/svr_rbf_raffle/ranking_rmse_test.csv) y [contrastes CSV](resultados/e3/svr_rbf_raffle/contrastes_pareados.csv).
+- [Reporte TabFM](resultados/e3/tabfm/resumen.md) y [reporte GPR–XGBoost](resultados/e3/gpr_xgb/resumen.md).
 
-TabICLv2 tiene el menor RMSE test puntual,0.897815, y el mayor R²,0.464774.
-Su contraste nominal frente a SVM tiene p0.02624; Holm17=.41984 y Holm21=.47232.
-Ningún método mejora significativamente a SVM después de corrección múltiple.
-Los contrastes siguen siendo exploratorios por la reutilización del test.
-RMSE y R² comparten el contraste SSE; no son evidencias independientes.
+SVR RBF tiene el menor RMSE test puntual (0.892225) y el mayor R² (0.471418).
+Frente al anterior mejor RMSE, TabICLv2 (0.897815), la diferencia es pequeña y
+no significativa: IC95% [-0.025163; 0.014880], p=0.58678, Holm global55=1.
+Ninguno de los nuevos candidatos mejora significativamente tras corrección
+Holm global55. La prueba temporal ya fue consultada en experimentos previos,
+por lo que estos contrastes son exploratorios. RMSE y R² comparten el contraste
+SSE y no son evidencias independientes.
 
-Los18 métodos incluyen SVM lineal, Dummy, KNN, Ridge, Lasso, Random Forest,
+Los 22 métodos incluyen SVM lineal, Dummy, KNN, Ridge, Lasso, Random Forest,
 XGBoost, logicDT adaptado, RIM adaptado, TabPFN2.5 original y ajustado,
-TCR-XGBoost, TabICLv2, HRT-Boost, XBART GFR, Kernel Ridge RBF, CatBoost y coPILOT.
+TCR-XGBoost, TabICLv2, HRT-Boost, XBART GFR, Kernel Ridge RBF, CatBoost,
+coPILOT, TabFM, GPR–XGBoost, SVR RBF y RaFFLE.
 El stacking tiene un [diagnóstico OOF preliminar](diagnostico_stacking_e3.md),
-pero aún no es un modelo19 entrenado y evaluado.
+pero aún no es un modelo 23 entrenado y evaluado.
 
 ## Datos y protocolo
 
@@ -80,9 +86,29 @@ git -C terceros/wPILOT checkout 4ae908f4f1bd9ec93f1eeaebde958d6dd7ec5943
 
 Con los datos, cachés y pesos disponibles, las entradas principales son
 `entregable3.py`, `modelos_clasicos.py`, `evaluacion_nuevos_e3.py`,
-`comparacion_seleccionados_e3.py`, `evaluar_scopus_e3.py`, `resumen_completo_e3.py`
-y `validacion_r2_e3.py`. `finetune_tabpfn25_e3.py` prepara el entrenamiento local.
+`comparacion_seleccionados_e3.py`, `evaluar_scopus_e3.py`, `evaluar_tabfm_e3.py`,
+`evaluar_gpr_xgb_e3.py`, `evaluar_svr_rbf_e3.py`, `evaluar_raffle_e3.py` y
+`evaluar_svr_rbf_raffle_e3.py`. Los scripts `evaluar_svr_rbf_e3.py` y
+`evaluar_raffle_e3.py` ejecutan cada modelo por separado con el mismo motor y
+folds. Después de ambos, `evaluar_svr_rbf_raffle_e3.py` genera las comparaciones
+y el Holm global55. `requirements_svr_rbf_raffle_e3.txt` fija RaFFLE; las
+dependencias compatibles de TabFM están en `requirements_tabfm_e3.txt`.
+`finetune_tabpfn25_e3.py` prepara el entrenamiento local.
+
+Para ejecutar los dos candidatos por separado y luego comparar sus resultados,
+desde `Precalculo/`:
+
+```powershell
+.\venv\Scripts\python.exe .\evaluar_svr_rbf_e3.py
+.\venv\Scripts\python.exe .\evaluar_raffle_e3.py
+.\venv\Scripts\python.exe .\evaluar_svr_rbf_raffle_e3.py
+```
+
 Se incluyen pruebas de particiones, preparación, métricas, serialización y modelos.
+
+RaFFLE v0.0.5 calcula sus predicciones y métricas, pero su wrapper C++ nativo no
+se puede guardar con joblib; se conservan selección, reportes y predicciones
+agregadas, no un artefacto serializado del estimador.
 
 ## Investigación y auditoría
 

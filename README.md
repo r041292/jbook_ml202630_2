@@ -15,9 +15,10 @@ Proyecto académico de Machine Learning de la Universidad del Norte. Explora los
 ## Avances del entregable 3
 
 La rama `e3` reúne el dashboard con datos reales, validación por estudiante y
-test temporal, más los experimentos de18 modelos y su comparación estadística
+test temporal, más los experimentos de 22 modelos y su comparación estadística
 en RMSE y R². La entrega anterior se conserva en `main`.
 
 - [Guía de E3, notebooks y reproducción local](Precalculo/README_E3.md).
 - [Panorama completo de modelos](Precalculo/resultados/e3/resumen_completo/resumen.md).
 - [Validación completa con R²](Precalculo/resultados/e3/validacion_r2/resumen.md).
+- [Resultados SVR RBF y RaFFLE](Precalculo/resultados/e3/svr_rbf_raffle/resumen.md).
