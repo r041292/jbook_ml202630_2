@@ -1,0 +1,26 @@
+﻿rango_RMSE,Modelo,RMSE_test,p_bilateral,delta_RMSE_vs_SVM,p_Holm_vs_SVM_21,p_Holm_global_55,delta_RMSE_vs_XGBoost,p_bilateral_vs_XGBoost,p_Holm_variantes_12_vs_XGBoost,familia_ajuste
+1,SVR RBF,0.8922248074445824,0.01018,-0.0354808525736849,0.2036,0.49882,-0.014048848420349369,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+2,TabICLv2,0.8978147945999441,0.02624,-0.0298908654183233,0.49856,1.0,-0.008458861264987738,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+3,TabPFN 2.5 original,0.8982773630241487,0.06888,-0.0294282969941186,1.0,1.0,-0.00799629284078307,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+4,TabPFN 2.5 fine-tuned,0.9013701564221688,0.08018,-0.0263355035960985,1.0,1.0,-0.004903499442763026,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+5,Kernel Ridge RBF,0.9048808096957917,0.0962,-0.0228248503224757,1.0,1.0,-0.0013928461691401495,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+6,CatBoost,0.9056693630195318,0.21864,-0.0220362969987355,1.0,1.0,-0.0006042928453999785,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+7,XGBoost,0.9062736558649318,0.21102,-0.0214320041533355,1.0,1.0,0.0,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+8,TCR-XGBoost,0.9076952118909738,0.24432,-0.0200104481272935,1.0,1.0,0.0014215560260419924,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+9,"TabFM 1.0.0 (PyTorch CPU, 32 vistas)",0.9087251720418906,0.21684,-0.0189804879763767,1.0,1.0,0.0024515161769588234,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+10,XGBoost ampliado (gbtree),0.9092069214660418,,,,,0.002933265601109958,0.47478,1.0,Holm 12 contrastes exploratorios de variantes
+11,RaFFLE,0.9129252380186916,0.3457,-0.0147804219995758,1.0,1.0,0.006651582153759827,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+12,DenseWeight-XGBoost,0.9130368315421918,,,,,0.006763175677260036,0.47194,1.0,Holm 12 contrastes exploratorios de variantes
+13,Ridge,0.9170904797449052,0.31128,-0.0106151802733621,1.0,1.0,0.010816823879973403,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+14,Lasso,0.919650088085005,0.1577,-0.0080555719332623,1.0,1.0,0.013376432220073231,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+15,DART-XGBoost,0.9221665670791994,,,,,0.015892911214267613,0.0522,0.522,Holm 12 contrastes exploratorios de variantes
+16,KNN,0.923269665643187,0.8269,-0.0044359943750803,1.0,1.0,0.016996009778255217,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+17,HRT-Boost,0.9237199755498732,0.78618,-0.0039856844683942,1.0,1.0,0.01744631968494137,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+18,logicDT propio (adaptado),0.9264376909377104,0.94434,-0.0012679690805569,1.0,1.0,0.02016403507277864,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+19,SVM lineal,0.9277056600182674,,0.0,,,0.02143200415333557,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+20,Random Forest,0.939635178879748,0.51846,0.0119295188614806,1.0,1.0,0.03336152301481621,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+21,GPR–XGBoost (OOF agrupado),0.959043873389097,0.20154,0.0313382133708296,1.0,1.0,0.05277021752416522,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+22,RIM (port E3),0.9672130240627342,0.16266,0.0395073640444668,1.0,1.0,0.060939368197802435,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+23,XBART (GFR),0.9675145601720156,0.12166,0.0398089001537482,1.0,1.0,0.06124090430708384,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+24,coPILOT,0.9706030747186324,0.06606,0.042897414700365,1.0,1.0,0.06432941885370058,,,"Global E3 anterior (55), contraste de ranking vs SVM"
+25,Dummy media,1.2560587320777918,2e-05,0.3283530720595244,0.00042,0.0011,0.34978507621286004,,,"Global E3 anterior (55), contraste de ranking vs SVM"

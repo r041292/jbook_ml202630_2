@@ -14,6 +14,8 @@ Los notebooks se pueden consultar con sus resultados ya ejecutados.
 - [Comparación de las cuatro propuestas Scopus](resultados/e3/scopus/resumen.md).
 - [Resultados detallados de SVR RBF y RaFFLE](resultados/e3/svr_rbf_raffle/resumen.md), con [ranking CSV](resultados/e3/svr_rbf_raffle/ranking_rmse_test.csv) y [contrastes CSV](resultados/e3/svr_rbf_raffle/contrastes_pareados.csv).
 - [Reporte TabFM](resultados/e3/tabfm/resumen.md) y [reporte GPR–XGBoost](resultados/e3/gpr_xgb/resumen.md).
+- [Variantes metodológicas de XGBoost](resultados/e3/xgboost_variantes/resumen.md), con [ranking descriptivo de 25 modelos](resultados/e3/xgboost_variantes/ranking_global_25_modelos.csv), [contrastes Holm12](resultados/e3/xgboost_variantes/contrastes_pareados.csv) y [errores OOF por tramo](resultados/e3/xgboost_variantes/oof_por_tramo.csv).
+- [LinXGBoost con hojas lineales sobre las 67 columnas E3](resultados/e3/linxgboost/resumen.md), con [ranking RMSE de 26 modelos](resultados/e3/linxgboost/ranking_global_26_modelos.csv) y [contrastes pareados Holm7](resultados/e3/linxgboost/contrastes_pareados.csv).
 
 SVR RBF tiene el menor RMSE test puntual (0.892225) y el mayor R² (0.471418).
 Frente al anterior mejor RMSE, TabICLv2 (0.897815), la diferencia es pequeña y
@@ -27,8 +29,20 @@ Los 22 métodos incluyen SVM lineal, Dummy, KNN, Ridge, Lasso, Random Forest,
 XGBoost, logicDT adaptado, RIM adaptado, TabPFN2.5 original y ajustado,
 TCR-XGBoost, TabICLv2, HRT-Boost, XBART GFR, Kernel Ridge RBF, CatBoost,
 coPILOT, TabFM, GPR–XGBoost, SVR RBF y RaFFLE.
+Se evaluaron además tres variantes de XGBoost: búsqueda ampliada gbtree,
+DART y DenseWeight. Ninguna supera el RMSE test de XGBoost original (0.906274)
+ni el de SVR RBF (0.892225); sus p-valores ajustados Holm12 no muestran mejora
+significativa. El ranking puntual integrado incluye 25 modelos, pero conserva
+separadas la familia histórica Holm55 y la familia suplementaria Holm12.
+La auditoría con el repositorio del autor corrigió inicialización, profundidad,
+poda, escala de regularización y shrinkage del último árbol. La corrida alineada
+con esas convenciones obtuvo RMSE test 0.899069 y puesto 4 de 26. Supera
+puntualmente a XGBoost por 0.007205, pero Holm7=1.000; no hay evidencia de mejora
+significativa frente a XGBoost, SVR RBF ni TabICLv2. El barrido de cortes continuos
+usa 12 cuantiles en lugar de todos los valores distintos. Las corridas anteriores
+quedan archivadas como supersedidas y no forman parte del ranking.
 El stacking tiene un [diagnóstico OOF preliminar](diagnostico_stacking_e3.md),
-pero aún no es un modelo 23 entrenado y evaluado.
+pero aún no es otro modelo entrenado y evaluado.
 
 ## Datos y protocolo
 
@@ -88,7 +102,9 @@ Con los datos, cachés y pesos disponibles, las entradas principales son
 `entregable3.py`, `modelos_clasicos.py`, `evaluacion_nuevos_e3.py`,
 `comparacion_seleccionados_e3.py`, `evaluar_scopus_e3.py`, `evaluar_tabfm_e3.py`,
 `evaluar_gpr_xgb_e3.py`, `evaluar_svr_rbf_e3.py`, `evaluar_raffle_e3.py` y
-`evaluar_svr_rbf_raffle_e3.py`. Los scripts `evaluar_svr_rbf_e3.py` y
+`evaluar_svr_rbf_raffle_e3.py`, además de `evaluar_xgboost_variantes_e3.py` y
+sus entradas `evaluar_xgboost_ampliado_e3.py`, `evaluar_xgboost_dart_e3.py` y
+`evaluar_xgboost_denseweight_e3.py`, y `evaluar_linxgboost_e3.py`. Los scripts `evaluar_svr_rbf_e3.py` y
 `evaluar_raffle_e3.py` ejecutan cada modelo por separado con el mismo motor y
 folds. Después de ambos, `evaluar_svr_rbf_raffle_e3.py` genera las comparaciones
 y el Holm global55. `requirements_svr_rbf_raffle_e3.txt` fija RaFFLE; las
@@ -102,6 +118,18 @@ desde `Precalculo/`:
 .\venv\Scripts\python.exe .\evaluar_svr_rbf_e3.py
 .\venv\Scripts\python.exe .\evaluar_raffle_e3.py
 .\venv\Scripts\python.exe .\evaluar_svr_rbf_raffle_e3.py
+```
+
+Las variantes XGBoost se pueden ejecutar de forma independiente; cada entrada
+usa el motor común y guarda checkpoints por fold. El comparador final reutiliza
+esos resultados para generar la tabla de 25 modelos y los contrastes Holm12:
+
+```powershell
+.\venv\Scripts\python.exe .\evaluar_xgboost_ampliado_e3.py
+.\venv\Scripts\python.exe .\evaluar_xgboost_dart_e3.py
+.\venv\Scripts\python.exe .\evaluar_xgboost_denseweight_e3.py
+.\venv\Scripts\python.exe .\evaluar_xgboost_variantes_e3.py
+.\venv\Scripts\python.exe .\evaluar_linxgboost_e3.py
 ```
 
 Se incluyen pruebas de particiones, preparación, métricas, serialización y modelos.
