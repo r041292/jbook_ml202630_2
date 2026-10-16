@@ -1,5 +1,8 @@
 # GPR–XGBoost en E3
 
+En el [ranking vigente de 26 modelos](../resumen_completo/resumen.md), esta
+adaptación ocupa el puesto 22 (RMSE 0.959044) y no mejora a XGBoost original (0.906274).
+
 Adaptación del stack GPR→XGBoost de arXiv:2610.15862. GPR genera media e incertidumbre; XGBoost aprende residuos con esas señales y las variables E3.
 GPR out-of-fold por estudiante; cinco folds externos canónicos; hiperparámetros fijos antes de evaluar el test temporal.
 

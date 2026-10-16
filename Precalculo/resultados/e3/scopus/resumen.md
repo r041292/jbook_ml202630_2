@@ -1,5 +1,9 @@
 # Comparación Scopus E3
 
+Informe histórico de la etapa de 18 modelos. El [panorama vigente de 26 modelos](../resumen_completo/resumen.md)
+incluye los experimentos posteriores; los contrastes de esta etapa conservan
+las referencias y familias de ajuste indicadas en sus archivos.
+
 Mismo test temporal202530:188 estudiantes. Delta negativo de RMSE favorece al candidato.
 Los resultados y contrastes son exploratorios por reutilización del test.
 

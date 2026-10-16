@@ -1,4 +1,66 @@
 {
+  "model_count": 26,
+  "training_performed": false,
+  "new_statistical_tests_performed": false,
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "permutations": 99999,
+  "bootstrap": 10000,
+  "seed": 42,
+  "hyperparameter_selection": "RMSE original; no reoptimización",
+  "statistical_families": {
+    "Holm55": "Familia histórica de 22 modelos; 21 contrastes vs SVM y contrastes suplementarios.",
+    "Holm12": "12 contrastes de las tres variantes XGBoost.",
+    "Holm7": "7 contrastes de LinXGBoost."
+  },
+  "caveat": "Test 202530 consultado en rondas anteriores; resultados exploratorios. No rechazar H0 no demuestra equivalencia.",
+  "generator": "actualizar_comparaciones_e3.py",
+  "sources_sha256": {
+    "resultados/e3/resumen_completo/historico_22/resumen.json": "49cd89893375941adf36d5da3367bc988e01386087ada8d0d3f184fcc64cea50",
+    "resultados/e3/validacion_r2/historico_22/reporte.json": "c6f138a1531fe08a8d94bd7fc21fc3c5bc6c0b5fd8bf83503563c5c6ddf350f2",
+    "resultados/e3/validacion_r2/historico_22/folds_r2.csv": "4c3e1a513e55ae3beb96c0300a8ea6e2025100977df4bfc6d08deefe6a4eb803",
+    "resultados/e3/linxgboost/reporte.json": "66fea062cc4e7076b716a9c742ff1d844b5c80c6d14ead707527d0841e66c99e",
+    "resultados/e3/xgboost_variantes/reporte.json": "ccb23f2b5edb887ba9ff16716a3e5e56e7a37e6953239f622289e053911f2ee0",
+    "resultados/e3/xgboost_variantes/fold_metrics.csv": "dd051cbe382bfc4dd35bb369b6059bdf7f0878e611d44eaf5c255159e36f5a35",
+    "resultados/e3/svr_rbf_raffle/contrastes_pareados.csv": "587c0cc169fa9fb6c7c32af90c978774be58b6aa87aef2809b1d43032dab0a49",
+    "resultados/e3/xgboost_variantes/contrastes_pareados.csv": "c2f3939ba4e78bb37bf3191abd68074fecf44c230625b248975607e836848297",
+    "resultados/e3/linxgboost/contrastes_pareados.csv": "f94ad235c45a40e6db5889bd0ccc67e21fc3602453f88db77048e31c496f2420",
+    "resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv": "553c98c0790d3bba60615d829e42eb8527f395398763adfedae066345979a407",
+    "actualizar_comparaciones_e3.py": "7e84a196de11ff78daa020cd87c6a32cd12ee0add351f3f90baff6c947b0be0d"
+  },
   "models": [
     {
       "Modelo": "SVR RBF",
@@ -14,7 +76,13 @@
       "p_Holm_global_55": 0.49882,
       "significancia_sin_correccion": "Mejora significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 0.49882,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 1,
+      "delta_R2_vs_SVM": 0.042875808008461025,
+      "delta_R2_vs_XGBoost": 0.01677699877293376
     },
     {
       "Modelo": "TabICLv2",
@@ -30,7 +98,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "Mejora significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 2,
+      "delta_R2_vs_SVM": 0.03623169632355705,
+      "delta_R2_vs_XGBoost": 0.010132887088029785
     },
     {
       "Modelo": "TabPFN 2.5 original",
@@ -46,7 +120,31 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 3,
+      "delta_R2_vs_SVM": 0.035680040667587565,
+      "delta_R2_vs_XGBoost": 0.0095812314320603
+    },
+    {
+      "Modelo": "LinXGBoost (hojas completas E3)",
+      "Referencia": "XGBoost",
+      "R2_test": 0.46327822307051203,
+      "delta_R2": 0.008636848838449396,
+      "p_bilateral": 0.62662,
+      "IC95_delta_inferior": -0.02572041703451368,
+      "IC95_delta_superior": 0.04521765008997267,
+      "familia_principal": "Holm7",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No evaluada en esta familia",
+      "significancia_Holm_global_55": "No evaluada en esta familia",
+      "rango_RMSE": 4,
+      "delta_R2_vs_SVM": 0.034735658073976605,
+      "delta_R2_vs_XGBoost": 0.00863684883844934
     },
     {
       "Modelo": "TabPFN 2.5 fine-tuned",
@@ -62,7 +160,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 5,
+      "delta_R2_vs_SVM": 0.031984297040139886,
+      "delta_R2_vs_XGBoost": 0.005885487804612621
     },
     {
       "Modelo": "Kernel Ridge RBF",
@@ -78,7 +182,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 6,
+      "delta_R2_vs_SVM": 0.027773837423967773,
+      "delta_R2_vs_XGBoost": 0.0016750281884405083
     },
     {
       "Modelo": "CatBoost",
@@ -94,7 +204,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 7,
+      "delta_R2_vs_SVM": 0.026825844477955774,
+      "delta_R2_vs_XGBoost": 0.0007270352424285087
     },
     {
       "Modelo": "XGBoost",
@@ -110,7 +226,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 8,
+      "delta_R2_vs_SVM": 0.026098809235527265,
+      "delta_R2_vs_XGBoost": 0.0
     },
     {
       "Modelo": "TCR-XGBoost",
@@ -126,7 +248,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 9,
+      "delta_R2_vs_SVM": 0.02438659822752215,
+      "delta_R2_vs_XGBoost": -0.0017122110080051156
     },
     {
       "Modelo": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
@@ -142,7 +270,31 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 10,
+      "delta_R2_vs_SVM": 0.02314437323081875,
+      "delta_R2_vs_XGBoost": -0.002954436004708516
+    },
+    {
+      "Modelo": "XGBoost ampliado (gbtree)",
+      "Referencia": "XGBoost",
+      "R2_test": 0.4511054213338198,
+      "delta_R2": -0.0035359528982429334,
+      "p_bilateral": 0.47478,
+      "IC95_delta_inferior": -0.012925721067762526,
+      "IC95_delta_superior": 0.006358090965148943,
+      "familia_principal": "Holm12",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No evaluada en esta familia",
+      "significancia_Holm_global_55": "No evaluada en esta familia",
+      "rango_RMSE": 11,
+      "delta_R2_vs_SVM": 0.022562856337284387,
+      "delta_R2_vs_XGBoost": -0.003535952898242878
     },
     {
       "Modelo": "RaFFLE",
@@ -158,7 +310,31 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 12,
+      "delta_R2_vs_SVM": 0.01806412862446727,
+      "delta_R2_vs_XGBoost": -0.008034680611059997
+    },
+    {
+      "Modelo": "DenseWeight-XGBoost",
+      "Referencia": "XGBoost",
+      "R2_test": 0.4464713947361487,
+      "delta_R2": -0.008169979495914026,
+      "p_bilateral": 0.47194,
+      "IC95_delta_inferior": -0.0317932924440056,
+      "IC95_delta_superior": 0.013719188534557225,
+      "familia_principal": "Holm12",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No evaluada en esta familia",
+      "significancia_Holm_global_55": "No evaluada en esta familia",
+      "rango_RMSE": 13,
+      "delta_R2_vs_SVM": 0.017928829739613295,
+      "delta_R2_vs_XGBoost": -0.00816997949591397
     },
     {
       "Modelo": "Ridge",
@@ -174,7 +350,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 14,
+      "delta_R2_vs_SVM": 0.013002870287047552,
+      "delta_R2_vs_XGBoost": -0.013095938948479713
     },
     {
       "Modelo": "Lasso",
@@ -190,7 +372,31 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 15,
+      "delta_R2_vs_SVM": 0.009881215963008283,
+      "delta_R2_vs_XGBoost": -0.016217593272518982
+    },
+    {
+      "Modelo": "DART-XGBoost",
+      "Referencia": "XGBoost",
+      "R2_test": 0.4353462446863816,
+      "delta_R2": -0.019295129545681022,
+      "p_bilateral": 0.0522,
+      "IC95_delta_inferior": -0.03736074594807208,
+      "IC95_delta_superior": 0.00024310689420798686,
+      "familia_principal": "Holm12",
+      "p_Holm_familia_principal": 0.522,
+      "significancia_ajustada": "No significativa",
+      "significancia_sin_correccion": "No significativa",
+      "significancia_Holm_vs_SVM_21": "No evaluada en esta familia",
+      "significancia_Holm_global_55": "No evaluada en esta familia",
+      "rango_RMSE": 16,
+      "delta_R2_vs_SVM": 0.006803679689846187,
+      "delta_R2_vs_XGBoost": -0.019295129545681078
     },
     {
       "Modelo": "KNN",
@@ -206,7 +412,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 17,
+      "delta_R2_vs_SVM": 0.005451990509890481,
+      "delta_R2_vs_XGBoost": -0.020646818725636784
     },
     {
       "Modelo": "HRT-Boost",
@@ -222,7 +434,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 18,
+      "delta_R2_vs_SVM": 0.004899735790244164,
+      "delta_R2_vs_XGBoost": -0.0211990734452831
     },
     {
       "Modelo": "logicDT propio (adaptado)",
@@ -238,7 +456,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 19,
+      "delta_R2_vs_SVM": 0.0015610450857866942,
+      "delta_R2_vs_XGBoost": -0.02453776414974057
     },
     {
       "Modelo": "SVM lineal",
@@ -254,7 +478,13 @@
       "p_Holm_global_55": null,
       "significancia_sin_correccion": "Referencia",
       "significancia_Holm_vs_SVM_21": "Referencia",
-      "significancia_Holm_global_55": "Referencia"
+      "significancia_Holm_global_55": "Referencia",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": null,
+      "significancia_ajustada": "Referencia",
+      "rango_RMSE": 20,
+      "delta_R2_vs_SVM": 0.0,
+      "delta_R2_vs_XGBoost": -0.026098809235527265
     },
     {
       "Modelo": "Random Forest",
@@ -270,7 +500,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 21,
+      "delta_R2_vs_SVM": -0.01479142441170872,
+      "delta_R2_vs_XGBoost": -0.040890233647235985
     },
     {
       "Modelo": "GPR–XGBoost (OOF agrupado)",
@@ -286,7 +522,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 22,
+      "delta_R2_vs_SVM": -0.03926015043892539,
+      "delta_R2_vs_XGBoost": -0.06535895967445265
     },
     {
       "Modelo": "RIM (port E3)",
@@ -302,7 +544,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 23,
+      "delta_R2_vs_SVM": -0.04970866586296474,
+      "delta_R2_vs_XGBoost": -0.075807475098492
     },
     {
       "Modelo": "XBART (GFR)",
@@ -318,7 +566,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 24,
+      "delta_R2_vs_SVM": -0.05009603286763864,
+      "delta_R2_vs_XGBoost": -0.0761948421031659
     },
     {
       "Modelo": "coPILOT",
@@ -334,7 +588,13 @@
       "p_Holm_global_55": 1.0,
       "significancia_sin_correccion": "No significativa",
       "significancia_Holm_vs_SVM_21": "No significativa",
-      "significancia_Holm_global_55": "No significativa"
+      "significancia_Holm_global_55": "No significativa",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 1.0,
+      "significancia_ajustada": "No significativa",
+      "rango_RMSE": 25,
+      "delta_R2_vs_SVM": -0.05407063132220541,
+      "delta_R2_vs_XGBoost": -0.08016944055773267
     },
     {
       "Modelo": "Dummy media",
@@ -350,7 +610,13 @@
       "p_Holm_global_55": 0.0011,
       "significancia_sin_correccion": "Deterioro significativo",
       "significancia_Holm_vs_SVM_21": "Deterioro significativo",
-      "significancia_Holm_global_55": "Deterioro significativo"
+      "significancia_Holm_global_55": "Deterioro significativo",
+      "familia_principal": "Holm55",
+      "p_Holm_familia_principal": 0.0011,
+      "significancia_ajustada": "Deterioro significativo",
+      "rango_RMSE": 26,
+      "delta_R2_vs_SVM": -0.4761133280817651,
+      "delta_R2_vs_XGBoost": -0.5022121373172924
     }
   ],
   "cv": [
@@ -376,6 +642,14 @@
       "R2_SD_CV_ddof0": 0.0574235990884074,
       "R2_OOF_reunido": 0.4769030669238692,
       "R2_test": 0.464222605664123,
+      "CV_estado": "5 folds externos por estudiante"
+    },
+    {
+      "Modelo": "LinXGBoost (hojas completas E3)",
+      "R2_media_CV": 0.4247014984081188,
+      "R2_SD_CV_ddof0": 0.06963490897408928,
+      "R2_OOF_reunido": 0.4278174875181634,
+      "R2_test": 0.46327822307051203,
       "CV_estado": "5 folds externos por estudiante"
     },
     {
@@ -427,11 +701,27 @@
       "CV_estado": "5 folds externos por estudiante"
     },
     {
+      "Modelo": "XGBoost ampliado (gbtree)",
+      "R2_media_CV": 0.4688497951886278,
+      "R2_SD_CV_ddof0": 0.05426879528417135,
+      "R2_OOF_reunido": 0.4711113223076835,
+      "R2_test": 0.4511054213338198,
+      "CV_estado": "5 folds externos por estudiante"
+    },
+    {
       "Modelo": "RaFFLE",
       "R2_media_CV": 0.45389453337086205,
       "R2_SD_CV_ddof0": 0.05644649578338409,
       "R2_OOF_reunido": 0.4567470693646024,
       "R2_test": 0.4466066936210027,
+      "CV_estado": "5 folds externos por estudiante"
+    },
+    {
+      "Modelo": "DenseWeight-XGBoost",
+      "R2_media_CV": 0.4719562803274032,
+      "R2_SD_CV_ddof0": 0.04869769223830551,
+      "R2_OOF_reunido": 0.4741508261832348,
+      "R2_test": 0.4464713947361487,
       "CV_estado": "5 folds externos por estudiante"
     },
     {
@@ -448,6 +738,14 @@
       "R2_SD_CV_ddof0": 0.0646714360664739,
       "R2_OOF_reunido": 0.4485191430254809,
       "R2_test": 0.4384237809595437,
+      "CV_estado": "5 folds externos por estudiante"
+    },
+    {
+      "Modelo": "DART-XGBoost",
+      "R2_media_CV": 0.467489810814704,
+      "R2_SD_CV_ddof0": 0.04767225742904957,
+      "R2_OOF_reunido": 0.46964582968520197,
+      "R2_test": 0.4353462446863816,
       "CV_estado": "5 folds externos por estudiante"
     },
     {
@@ -531,143 +829,5 @@
       "CV_estado": "5 folds externos por estudiante"
     }
   ],
-  "vs_xgboost": [
-    {
-      "Modelo": "Kernel Ridge RBF",
-      "Referencia": "XGBoost",
-      "R2_test": 0.4563164024205032,
-      "delta_R2": 0.0016750281884405,
-      "p_bilateral": 0.90436,
-      "IC95_delta_inferior": -0.025781540156751,
-      "IC95_delta_superior": 0.0301403293310714,
-      "IC95_R2_inferior": 0.3501636999982463,
-      "IC95_R2_superior": 0.5382009054828503,
-      "p_Holm_4_vs_XGBoost": 1.0,
-      "p_Holm_global_55": 1.0
-    },
-    {
-      "Modelo": "CatBoost",
-      "Referencia": "XGBoost",
-      "R2_test": 0.4553684094744912,
-      "delta_R2": 0.0007270352424285,
-      "p_bilateral": 0.9567,
-      "IC95_delta_inferior": -0.0239013478598093,
-      "IC95_delta_superior": 0.0266476184390116,
-      "IC95_R2_inferior": 0.3532877459083539,
-      "IC95_R2_superior": 0.5365235809628879,
-      "p_Holm_4_vs_XGBoost": 1.0,
-      "p_Holm_global_55": 1.0
-    },
-    {
-      "Modelo": "XBART (GFR)",
-      "Referencia": "XGBoost",
-      "R2_test": 0.3784465321288968,
-      "delta_R2": -0.076194842103166,
-      "p_bilateral": 0.02388,
-      "IC95_delta_inferior": -0.1373242110371322,
-      "IC95_delta_superior": -0.0112227648731159,
-      "IC95_R2_inferior": 0.2919761707340398,
-      "IC95_R2_superior": 0.4476881234924957,
-      "p_Holm_4_vs_XGBoost": 0.07164,
-      "p_Holm_global_55": 0.97908
-    },
-    {
-      "Modelo": "coPILOT",
-      "Referencia": "XGBoost",
-      "R2_test": 0.37447193367433,
-      "delta_R2": -0.0801694405577327,
-      "p_bilateral": 0.00282,
-      "IC95_delta_inferior": -0.1376393611980947,
-      "IC95_delta_superior": -0.0290488834811626,
-      "IC95_R2_inferior": 0.2581278147993305,
-      "IC95_R2_superior": 0.4641381285315687,
-      "p_Holm_4_vs_XGBoost": 0.01128,
-      "p_Holm_global_55": 0.14946
-    }
-  ],
-  "partition": {
-    "source_rows": 1527,
-    "source_students": 1506,
-    "missing_target": 30,
-    "test_period": 202530,
-    "train_periods": [
-      202310,
-      202330,
-      202410,
-      202430,
-      202510
-    ],
-    "purged_overlap_rows": 0,
-    "purged_overlap_students": 0,
-    "train_raw": 1309,
-    "test_raw": 188,
-    "excluded_train": 0,
-    "excluded_test": 0,
-    "rules_train": {
-      "dominio": 0,
-      "tiempo_cero": 0,
-      "aprendidos_cero": 0
-    },
-    "rules_test": {
-      "dominio": 0,
-      "tiempo_cero": 0,
-      "aprendidos_cero": 0
-    },
-    "train_valid": 1309,
-    "test_valid": 188,
-    "train_students": 1293,
-    "test_students": 188,
-    "shared_students": 0,
-    "outliers_removed": 0
-  },
-  "model_count": 22,
-  "family_vs_svm": 21,
-  "family_global": 55,
-  "permutations": 99999,
-  "bootstrap": 10000,
-  "seed": 42,
-  "hyperparameter_selection": "RMSE original; no reoptimización",
-  "training_performed": false,
-  "provenance": {
-    "general_rmse_csv_sha256": "9b0b1cd431cd3d02d256c48f7666fddc7cadfdb4d18b3637ed1f1ebf4b8dc8f4",
-    "general_r2_csv_sha256": "db13cd0ff399ed4383f6379580bc83111fd7b88b6164e3f45f3fb0fbb4eb096a",
-    "svr_raffle_report_sha256": "eb7ca6428d8bb8142efb878ef7ecdd1b887e26722a0d5823a0333e1c7f84469e",
-    "training_performed": false
-  },
-  "fold_evaluations": 105,
-  "direct_candidate_comparison": {
-    "model": "SVR RBF",
-    "reference": "RaFFLE",
-    "rows": [
-      {
-        "metrica": "RMSE",
-        "diferencia_candidato_menos_referencia": -0.020700430574108974,
-        "IC_2.5%": -0.05097369074582724,
-        "IC_97.5%": 0.009547800901123216,
-        "p_bilateral": 0.18704
-      },
-      {
-        "metrica": "R²",
-        "diferencia_candidato_menos_referencia": 0.024811679383993757,
-        "IC_2.5%": -0.011442226708049933,
-        "IC_97.5%": 0.06235856491134789,
-        "p_bilateral": 0.18704
-      },
-      {
-        "metrica": "MAE",
-        "diferencia_candidato_menos_referencia": -0.023058142656662173,
-        "IC_2.5%": null,
-        "IC_97.5%": null,
-        "p_bilateral": null
-      },
-      {
-        "metrica": "MAPE (%)",
-        "diferencia_candidato_menos_referencia": -0.7382748426722934,
-        "IC_2.5%": null,
-        "IC_97.5%": null,
-        "p_bilateral": null
-      }
-    ],
-    "multiplicity_note": "Contraste adicional exploratorio; no incluido en la familia Holm global de 55."
-  }
+  "fold_evaluations": 125
 }

@@ -1,5 +1,9 @@
 # LinXGBoost — Entregable 3
 
+Estado vigente: puesto 4 de 26 por RMSE test. El [panorama general](../resumen_completo/resumen.md)
+y el [CSV comparativo completo](../resumen_completo/modelos.csv) incluyen todas las evaluaciones.
+La mejora puntual frente a XGBoost no es significativa y su RMSE OOF es mayor.
+
 Implementación independiente cotejada con el repositorio de [LinXGBoost (de Vito, 2017)](https://github.com/ldv1/LinXGBoost).
 Las hojas ajustan Ridge con las 67 columnas numéricas y one-hot, escaladas dentro de cada fit.
 Se alinea con el repositorio en la inicialización cero, profundidad raíz=1, poda, penalización lambda

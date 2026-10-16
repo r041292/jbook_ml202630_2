@@ -1,5 +1,9 @@
 # SVR RBF y RaFFLE en E3
 
+Este informe conserva el corte histórico de 22 modelos. En el [ranking vigente
+de 26](../resumen_completo/resumen.md), SVR RBF sigue primero y RaFFLE queda 12.
+Las pruebas Holm55 de esta etapa mantienen su familia original.
+
 Evaluación con cinco folds externos canónicos y cinco folds internos GroupKFold por estudiante.
 La preparación se ajusta dentro de cada fit; el test temporal 202530 se predice al final.
 La inferencia del test es exploratoria porque ese periodo ya se consultó en experimentos anteriores.

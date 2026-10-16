@@ -1,5 +1,8 @@
 # TabFM en E3
 
+En el [ranking vigente de 26 modelos](../resumen_completo/resumen.md), TabFM
+ocupa el puesto 10 con RMSE 0.908725, por encima del error de XGBoost original (0.906274).
+
 TabFM v1.0.0, checkpoint de regresión de Google, inferencia CPU local; no se ajustaron sus pesos.
 Mismas variables, limpieza, grupos y test temporal E3. La selección es fija: no hay tuning.
 Se conserva el test hasta completar los cinco folds externos y ajustar el estimador final.

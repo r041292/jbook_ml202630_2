@@ -3,6 +3,21 @@
   "repository": "r041292/jbook_ml202630_2",
   "files": [
     {
+      "path": "00_seleccion_base_datos.md",
+      "sha256": "fae47ae14ac848989e6ca3d68a972c5dced2d7bbb72fe752a2de1aed7494cb9b",
+      "bytes": 12564
+    },
+    {
+      "path": "README_E3.md",
+      "sha256": "b684abd78b344e5a677855705e205cb27ace3093437a2ca0a59fb194d77cdf3e",
+      "bytes": 10747
+    },
+    {
+      "path": "actualizar_comparaciones_e3.py",
+      "sha256": "7e84a196de11ff78daa020cd87c6a32cd12ee0add351f3f90baff6c947b0be0d",
+      "bytes": 23805
+    },
+    {
       "path": "auditar_scopus_e3.py",
       "sha256": "8758a8068332a75495f9326e825dc6b06306fbece11a0eed56f0fd05bf02923e",
       "bytes": 3873
@@ -11,6 +26,16 @@
       "path": "cabeceras.csv",
       "sha256": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
       "bytes": 380
+    },
+    {
+      "path": "comparacion_aumentacion/comparacion_train.csv",
+      "sha256": "d36b98f5ec565d2f8af133eb4f25f379bbd641d56d6591dec8025f33f47e17a6",
+      "bytes": 2115
+    },
+    {
+      "path": "comparacion_aumentacion/seleccion.json",
+      "sha256": "178770005a09c2c6867613cb307780733711dff7edd2eeefe1018439cd1f408e",
+      "bytes": 1555
     },
     {
       "path": "comparacion_seleccionados_e3.py",
@@ -78,6 +103,11 @@
       "bytes": 32057
     },
     {
+      "path": "evaluar_linxgboost_e3.py",
+      "sha256": "015a36e06779ffb4a2f8b18b6c1b112d33a1c6bd2789dfb7fa5a99e5a3316168",
+      "bytes": 34053
+    },
+    {
       "path": "evaluar_raffle_e3.py",
       "sha256": "9508ba9c0f38023ad3c2f275d7a5f526ce51902c7a58d0e9019bbcce69bf5bc3",
       "bytes": 538
@@ -111,6 +141,26 @@
       "path": "evaluar_tabpfn25_finetuned_e3.py",
       "sha256": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
       "bytes": 9515
+    },
+    {
+      "path": "evaluar_xgboost_ampliado_e3.py",
+      "sha256": "6de181b3a80dca190d7e06f99813e63025a21aee960ab76aceb40002a37e7516",
+      "bytes": 441
+    },
+    {
+      "path": "evaluar_xgboost_dart_e3.py",
+      "sha256": "34520d263ffe5017281e336843b89e52fa16f3dec82569a589fde66466b1aca3",
+      "bytes": 410
+    },
+    {
+      "path": "evaluar_xgboost_denseweight_e3.py",
+      "sha256": "171ec6fb10f25e31c750248cc9b9fddd2dac50bac7723316397f31d854a64bba",
+      "bytes": 448
+    },
+    {
+      "path": "evaluar_xgboost_variantes_e3.py",
+      "sha256": "d69fd083ef7e7c8647f06bef84ed690cee9ef23f59f27d848bd47985114f24d9",
+      "bytes": 36493
     },
     {
       "path": "experimentos_scopus_e3.md",
@@ -243,6 +293,11 @@
       "bytes": 1350
     },
     {
+      "path": "requirements.txt",
+      "sha256": "ae47ba0bceda3e72488f37e7f5a3e56df97af9887a351c85a787a3bf5f15add5",
+      "bytes": 463
+    },
+    {
       "path": "requirements_scopus_e3.txt",
       "sha256": "a554ad08846b27e262019cbfd712365c03ddbcb0de0b5c5e225886f307bc0c33",
       "bytes": 340
@@ -344,8 +399,8 @@
     },
     {
       "path": "resultados/e3/gpr_xgb/resumen.md",
-      "sha256": "1e175c8aff762dcd3b0f994d5857120cab08323de8827f3a0a7fa90b49138e7e",
-      "bytes": 2479
+      "sha256": "3d8fb00cc04bdf60e5f4c4251791bbd4eb9056e0efe29ea5c5814521716f4d88",
+      "bytes": 2649
     },
     {
       "path": "resultados/e3/grid_search.csv",
@@ -433,6 +488,91 @@
       "bytes": 165
     },
     {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/NOTA.md",
+      "sha256": "2b0c4b1103bc4efd4a25dfda1c9af5a30f0b0f6dc483ff5a10e54dd2adc473de",
+      "bytes": 288
+    },
+    {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/contrastes_pareados.csv",
+      "sha256": "f45edcd972730bc14a575d82ffe25f04a196061d471d872493942f3ed7b632af",
+      "bytes": 3217
+    },
+    {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/metricas_test_comparadores.csv",
+      "sha256": "6f0da10d51be311d6fc10f26e146db9dfc383084ea210d44964f8e94c0fd2734",
+      "bytes": 937
+    },
+    {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/ranking_global_26_modelos.csv",
+      "sha256": "1e893c035c5fdb54600a7a73ddd59915d682045d32baa7ca46bd08525a0f0296",
+      "bytes": 4206
+    },
+    {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/reporte.json",
+      "sha256": "8a9d59d5fdb4211cde69cd34e6bda285cbf370b1a7ea73800d6718631d86137e",
+      "bytes": 47118
+    },
+    {
+      "path": "resultados/e3/linxgboost/ablation_numeric_leaves/resumen.md",
+      "sha256": "1202ffa56390c2a9dd749a555eaa8c16255aaab7fac7999a189891a6ce244ade",
+      "bytes": 4430
+    },
+    {
+      "path": "resultados/e3/linxgboost/contrastes_pareados.csv",
+      "sha256": "f94ad235c45a40e6db5889bd0ccc67e21fc3602453f88db77048e31c496f2420",
+      "bytes": 3183
+    },
+    {
+      "path": "resultados/e3/linxgboost/metricas_test_comparadores.csv",
+      "sha256": "06c2b7f9228fa1fed98f9ccdee9fb18f013d502db18bcea3d4dba70c01054789",
+      "bytes": 944
+    },
+    {
+      "path": "resultados/e3/linxgboost/ranking_global_26_modelos.csv",
+      "sha256": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9",
+      "bytes": 8685
+    },
+    {
+      "path": "resultados/e3/linxgboost/reporte.json",
+      "sha256": "66fea062cc4e7076b716a9c742ff1d844b5c80c6d14ead707527d0841e66c99e",
+      "bytes": 49256
+    },
+    {
+      "path": "resultados/e3/linxgboost/resumen.md",
+      "sha256": "6a563c5cdf9ea295e5a351cb8f448b71fc2d5cce3526637155db0c29e08c5cf2",
+      "bytes": 5385
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/NOTA.md",
+      "sha256": "fe26d6d34a079f70749dcf9afe97733db07c8ba90ea3dc0332f46df50c5653cf",
+      "bytes": 373
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/contrastes_pareados.csv",
+      "sha256": "11a443621c0f091a4bfc9a7cb4f88df19bc616868fab06dd972bb8e3ded6653c",
+      "bytes": 3186
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/metricas_test_comparadores.csv",
+      "sha256": "f891bd6b1618313427093becd519e5fa16bdef836493e0a1928dcbb2da63623b",
+      "bytes": 941
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/ranking_global_26_modelos.csv",
+      "sha256": "bda3f0c086dea4fee803c7d7dbdaf574d188c08637da6a022103dd481ca950d0",
+      "bytes": 4194
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/reporte.json",
+      "sha256": "def6e35aa28317d92c84e6ebc309d2c50e1cf0f09cbef511110ed57b1b35563d",
+      "bytes": 47418
+    },
+    {
+      "path": "resultados/e3/linxgboost/superseded_full_onehot_pre_audit/resumen.md",
+      "sha256": "29c37f8dbefb321b8a54837d5bc5ad52309a97df6dac43cf7e11efe8b350f13a",
+      "bytes": 4556
+    },
+    {
       "path": "resultados/e3/logicdt/figura_1.png",
       "sha256": "e64c53563088ce2f88b379894b5a822a4977cf197443d032effd409ca76243f6",
       "bytes": 84164
@@ -513,19 +653,29 @@
       "bytes": 685
     },
     {
-      "path": "resultados/e3/resumen_completo/modelos.csv",
-      "sha256": "9b0b1cd431cd3d02d256c48f7666fddc7cadfdb4d18b3637ed1f1ebf4b8dc8f4",
-      "bytes": 2880
+      "path": "resultados/e3/resumen_completo/contrastes_actuales.csv",
+      "sha256": "5ea09d5aae6c3d3db0bf5b22e3de9f0d711ad5dd770fb099b9819d9ec0836830",
+      "bytes": 15479
     },
     {
-      "path": "resultados/e3/resumen_completo/resumen.json",
+      "path": "resultados/e3/resumen_completo/historico_22/resumen.json",
       "sha256": "49cd89893375941adf36d5da3367bc988e01386087ada8d0d3f184fcc64cea50",
       "bytes": 15229
     },
     {
+      "path": "resultados/e3/resumen_completo/modelos.csv",
+      "sha256": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9",
+      "bytes": 8685
+    },
+    {
+      "path": "resultados/e3/resumen_completo/resumen.json",
+      "sha256": "2d6d69b64b36f2f3d10ca86023439fddb3a2dde21aa7bf396fe1d803da069698",
+      "bytes": 26205
+    },
+    {
       "path": "resultados/e3/resumen_completo/resumen.md",
-      "sha256": "e39c99990f07de312c72b58a1d0a9f3866194fc857c1d25df5024ed069b7d11d",
-      "bytes": 3129
+      "sha256": "211412ed56d3ad673661e97dfd61d2573c05ca2531be6b54b883b8d4da58134b",
+      "bytes": 5550
     },
     {
       "path": "resultados/e3/rim/comparacion_cv_externa.csv",
@@ -606,6 +756,11 @@
       "path": "resultados/e3/rim/seleccion_final_antes_test.json",
       "sha256": "1fdcb60b13a8547d411ac661dfa3e26e73c748d2e1e2bd7156b074887573fd27",
       "bytes": 2493
+    },
+    {
+      "path": "resultados/e3/scopus/__pycache__/evaluador_entrenamiento_original.cpython-312.pyc",
+      "sha256": "8be13bd9ebae223f982668af92d6a3e8ecb7e2dd18bca71c53adf1a3f0bc61af",
+      "bytes": 17981
     },
     {
       "path": "resultados/e3/scopus/auditoria_final.json",
@@ -899,8 +1054,8 @@
     },
     {
       "path": "resultados/e3/scopus/resumen.md",
-      "sha256": "da3ce1e10b3c51423c023a5bc1e39bf53c0d1e54f1c5ecbc0a86457ff77e275c",
-      "bytes": 3422
+      "sha256": "59a4a832ca3820ef4d254b0c149ea1e5d301b0bcc4be2db4a76608d5c9b642e9",
+      "bytes": 3684
     },
     {
       "path": "resultados/e3/scopus/xbart/externo_1.json",
@@ -1024,8 +1179,8 @@
     },
     {
       "path": "resultados/e3/svr_rbf_raffle/resumen.md",
-      "sha256": "318f60404fee1bd200150bae3403dbed992654e1c999eb8ba7bb90220b5a0e5b",
-      "bytes": 5248
+      "sha256": "edd4cbba77111442cc0e68dc0a43fea41bb2f9833423534ebb07efb41f1a6a92",
+      "bytes": 5478
     },
     {
       "path": "resultados/e3/svr_rbf_raffle/svr_rbf/fold_metrics.csv",
@@ -1054,8 +1209,8 @@
     },
     {
       "path": "resultados/e3/tabfm/resumen.md",
-      "sha256": "677906d7bedb4286ad999223a14a712630b1e69dda1c1854b0faa670b5674df3",
-      "bytes": 1378
+      "sha256": "a5dda1ff9bf8505256a52189b6c2c2e6bb47bbb45c2635244445693cfe11388d",
+      "bytes": 1550
     },
     {
       "path": "resultados/e3/tabicl_v2/comparacion_test.csv",
@@ -1234,33 +1389,93 @@
     },
     {
       "path": "resultados/e3/validacion_r2/contrastes_r2_vs_xgboost.csv",
+      "sha256": "376af2f987dafbf14af6371a520d7ff9cc2c6c9fea6ef9bdd2c1702750166291",
+      "bytes": 1910
+    },
+    {
+      "path": "resultados/e3/validacion_r2/folds_r2.csv",
+      "sha256": "21436454334d7fa421f863cf6effef3deee58873ed8fff1315259ccd9f10c044",
+      "bytes": 5153
+    },
+    {
+      "path": "resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv",
       "sha256": "553c98c0790d3bba60615d829e42eb8527f395398763adfedae066345979a407",
       "bytes": 783
     },
     {
-      "path": "resultados/e3/validacion_r2/folds_r2.csv",
+      "path": "resultados/e3/validacion_r2/historico_22/folds_r2.csv",
       "sha256": "4c3e1a513e55ae3beb96c0300a8ea6e2025100977df4bfc6d08deefe6a4eb803",
       "bytes": 4172
     },
     {
-      "path": "resultados/e3/validacion_r2/modelos_r2.csv",
-      "sha256": "db13cd0ff399ed4383f6379580bc83111fd7b88b6164e3f45f3fb0fbb4eb096a",
-      "bytes": 4789
-    },
-    {
-      "path": "resultados/e3/validacion_r2/reporte.json",
+      "path": "resultados/e3/validacion_r2/historico_22/reporte.json",
       "sha256": "c6f138a1531fe08a8d94bd7fc21fc3c5bc6c0b5fd8bf83503563c5c6ddf350f2",
       "bytes": 24136
     },
     {
+      "path": "resultados/e3/validacion_r2/modelos_r2.csv",
+      "sha256": "977c13a4bf7eb5dd868bd424117ab0d0705b371c1293edec5c7eda27128732e5",
+      "bytes": 7563
+    },
+    {
+      "path": "resultados/e3/validacion_r2/reporte.json",
+      "sha256": "6292212f3eebc77060bf0cc47d835c00308937cfd3f25e8d78bc7a28a777063e",
+      "bytes": 32458
+    },
+    {
       "path": "resultados/e3/validacion_r2/resumen.md",
-      "sha256": "b4ba915b51367ea07b87c15a1d30b96f1075769ebc0890d48968896fce94a18d",
-      "bytes": 2991
+      "sha256": "9c1a0bbb3bfb25941d05bc80e8a3715620643c1a4918d66579fe4a656a6916ed",
+      "bytes": 2481
     },
     {
       "path": "resultados/e3/validacion_r2/validacion_cruzada_r2.csv",
-      "sha256": "e9f500227356c1e9620c60fba7bf601cf5cf9bbcc2e76d1f2f22683eeafbd965",
-      "bytes": 2767
+      "sha256": "9c85b2944df5a62b1ea59162b319ca7d43d93c90278ffa578a62890d4199bcea",
+      "bytes": 3299
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/contrastes_pareados.csv",
+      "sha256": "c2f3939ba4e78bb37bf3191abd68074fecf44c230625b248975607e836848297",
+      "bytes": 4692
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/fold_metrics.csv",
+      "sha256": "dd051cbe382bfc4dd35bb369b6059bdf7f0878e611d44eaf5c255159e36f5a35",
+      "bytes": 1518
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/oof_por_tramo.csv",
+      "sha256": "dfcfaa16f42a71875c93dfc8ec741a8eebc2f833fe03244205795b233604e23c",
+      "bytes": 1828
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/ranking_global_25_modelos.csv",
+      "sha256": "99ced49170a67d5cc847d152069126ddac3fba949a92b4a6d8138e0940d7dac2",
+      "bytes": 3829
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/ranking_variantes_y_referencias.csv",
+      "sha256": "ca250467f1356418d85644febe67e7fb11a626ee76799c2ba0fadefeb5465302",
+      "bytes": 779
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/reporte.json",
+      "sha256": "ccb23f2b5edb887ba9ff16716a3e5e56e7a37e6953239f622289e053911f2ee0",
+      "bytes": 123026
+    },
+    {
+      "path": "resultados/e3/xgboost_variantes/resumen.md",
+      "sha256": "6fefe5f888d4adbe99e65fed72d316d90fab79d0acbc621b761d3b603a0e3302",
+      "bytes": 6692
+    },
+    {
+      "path": "resultados/eda.json",
+      "sha256": "456b6158e81c9726d8acf1418878b6539c72a5ab0bd5589d50c9b228976cfba5",
+      "bytes": 32212
+    },
+    {
+      "path": "resultados/modelos_lineales.json",
+      "sha256": "0e80a67c85f63415d6c786aac7c2f6bd24088c519b6f9e6d22cd7b74c1f89f5b",
+      "bytes": 6224
     },
     {
       "path": "resumen_completo_e3.py",
@@ -1343,6 +1558,10 @@
       "bytes": 12748
     }
   ],
-  "scope": "Código E3, notebooks y resultados agregados para 22 modelos; incluye TabFM, GPR–XGBoost, SVR RBF y RaFFLE. Sin pesos, predicciones por registro, datos fuente ni export_vale.",
-  "local_validation": "Se actualizaron comparaciones agregadas RMSE/R² para 22 modelos desde resultados guardados. No se reejecutaron pruebas de software; no se publican predicciones por registro ni modelos privados."
+  "scope": "Código E3, notebooks y resultados agregados de 26 modelos. Familias Holm55, Holm12 y Holm7 identificadas; informes previos conservados como etapas históricas. Sin pesos, predicciones por registro, datos fuente ni export_vale.",
+  "local_validation": "Consolidación desde reportes existentes sin entrenar ni calcular pruebas nuevas: 26 modelos test, 26 filas CV, 125 pares modelo-fold, identidad RMSE/R2, medias/SD de folds, 86 contrastes con referencia/familia e idempotencia. Se verifican los hashes publicados; no se reejecutó la batería histórica de 25 pruebas.",
+  "model_count": 26,
+  "repository_documents_sha256": {
+    "README.md": "1b0faf83f0771dd4e26ccfb4bbde7cee2f5ea9ceacecd30f1933b08f9a367e75"
+  }
 }

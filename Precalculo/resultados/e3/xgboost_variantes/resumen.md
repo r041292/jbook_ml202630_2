@@ -1,5 +1,10 @@
 # Variantes metodológicas de XGBoost — E3
 
+Este informe conserva el corte histórico de 25 modelos anterior a LinXGBoost.
+El [ranking vigente incluye 26](../resumen_completo/resumen.md): XGBoost ampliado
+ocupa el puesto 11, DenseWeight el 13 y DART el 16, frente a XGBoost original
+en el 8. Ninguna variante mejora su RMSE temporal.
+
 Selección anidada 5×5 por GroupKFold de estudiante. El control gbtree amplía la búsqueda
 del XGBoost original; DART aplica dropout de árboles; DenseWeight-XGBoost pondera la loss
 según la rareza estimada de y dentro de cada fit. Selección solo con train; test 202530 al final.

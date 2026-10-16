@@ -5,55 +5,71 @@ Los notebooks se pueden consultar con sus resultados ya ejecutados.
 
 ## Resultados completos
 
-- [Panorama de los 22 métodos: RMSE, diferencias y significancia](resultados/e3/resumen_completo/resumen.md).
-- [CSV del panorama RMSE de los 22 métodos](resultados/e3/resumen_completo/modelos.csv).
-- [Validación completa con R²](resultados/e3/validacion_r2/resumen.md).
-- [CSV R², intervalos y significancia de los 22 métodos](resultados/e3/validacion_r2/modelos_r2.csv).
-- [R² de validación cruzada, OOF y test](resultados/e3/validacion_r2/validacion_cruzada_r2.csv).
-- [Resultados R² de cada fold](resultados/e3/validacion_r2/folds_r2.csv) y [contrastes Scopus–XGBoost](resultados/e3/validacion_r2/contrastes_r2_vs_xgboost.csv).
-- [Comparación de las cuatro propuestas Scopus](resultados/e3/scopus/resumen.md).
-- [Resultados detallados de SVR RBF y RaFFLE](resultados/e3/svr_rbf_raffle/resumen.md), con [ranking CSV](resultados/e3/svr_rbf_raffle/ranking_rmse_test.csv) y [contrastes CSV](resultados/e3/svr_rbf_raffle/contrastes_pareados.csv).
+- [Panorama vigente de los 26 modelos: ranking, resultados y conclusiones](resultados/e3/resumen_completo/resumen.md).
+- [CSV general de los 26 modelos: RMSE, R², descripciones y comparaciones](resultados/e3/resumen_completo/modelos.csv).
+- [Contrastes publicados consolidados: referencia, IC95%, p y familia de ajuste](resultados/e3/resumen_completo/contrastes_actuales.csv).
+- [Validación R² de los 26 modelos](resultados/e3/validacion_r2/resumen.md), con [CSV de resultados e intervalos disponibles](resultados/e3/validacion_r2/modelos_r2.csv).
+- [R² de validación cruzada, OOF y test: 26 modelos](resultados/e3/validacion_r2/validacion_cruzada_r2.csv).
+- [125 resultados R² por fold](resultados/e3/validacion_r2/folds_r2.csv) y [contrastes R² publicados frente a XGBoost](resultados/e3/validacion_r2/contrastes_r2_vs_xgboost.csv).
+- [Comparación Scopus: etapa histórica de 18 modelos](resultados/e3/scopus/resumen.md).
+- [Resultados de SVR RBF y RaFFLE: etapa histórica de 22 modelos](resultados/e3/svr_rbf_raffle/resumen.md), con [ranking de esa etapa](resultados/e3/svr_rbf_raffle/ranking_rmse_test.csv) y [contrastes Holm55](resultados/e3/svr_rbf_raffle/contrastes_pareados.csv).
 - [Reporte TabFM](resultados/e3/tabfm/resumen.md) y [reporte GPR–XGBoost](resultados/e3/gpr_xgb/resumen.md).
-- [Variantes metodológicas de XGBoost](resultados/e3/xgboost_variantes/resumen.md), con [ranking descriptivo de 25 modelos](resultados/e3/xgboost_variantes/ranking_global_25_modelos.csv), [contrastes Holm12](resultados/e3/xgboost_variantes/contrastes_pareados.csv) y [errores OOF por tramo](resultados/e3/xgboost_variantes/oof_por_tramo.csv).
+- [Variantes metodológicas de XGBoost: etapa de 25 modelos](resultados/e3/xgboost_variantes/resumen.md), con [ranking de esa etapa](resultados/e3/xgboost_variantes/ranking_global_25_modelos.csv), [contrastes Holm12](resultados/e3/xgboost_variantes/contrastes_pareados.csv) y [errores OOF por tramo](resultados/e3/xgboost_variantes/oof_por_tramo.csv).
 - [LinXGBoost con hojas lineales sobre las 67 columnas E3](resultados/e3/linxgboost/resumen.md), con [ranking RMSE de 26 modelos](resultados/e3/linxgboost/ranking_global_26_modelos.csv) y [contrastes pareados Holm7](resultados/e3/linxgboost/contrastes_pareados.csv).
 
-SVR RBF tiene el menor RMSE test puntual (0.892225) y el mayor R² (0.471418).
-Frente al anterior mejor RMSE, TabICLv2 (0.897815), la diferencia es pequeña y
-no significativa: IC95% [-0.025163; 0.014880], p=0.58678, Holm global55=1.
-Ninguno de los nuevos candidatos mejora significativamente tras corrección
-Holm global55. La prueba temporal ya fue consultada en experimentos previos,
-por lo que estos contrastes son exploratorios. RMSE y R² comparten el contraste
-SSE y no son evidencias independientes.
+## Estado actual y conclusiones
 
-Los 22 métodos incluyen SVM lineal, Dummy, KNN, Ridge, Lasso, Random Forest,
-XGBoost, logicDT adaptado, RIM adaptado, TabPFN2.5 original y ajustado,
-TCR-XGBoost, TabICLv2, HRT-Boost, XBART GFR, Kernel Ridge RBF, CatBoost,
-coPILOT, TabFM, GPR–XGBoost, SVR RBF y RaFFLE.
-Se evaluaron además tres variantes de XGBoost: búsqueda ampliada gbtree,
-DART y DenseWeight. Ninguna supera el RMSE test de XGBoost original (0.906274)
-ni el de SVR RBF (0.892225); sus p-valores ajustados Holm12 no muestran mejora
-significativa. El ranking puntual integrado incluye 25 modelos, pero conserva
-separadas la familia histórica Holm55 y la familia suplementaria Holm12.
-La auditoría con el repositorio del autor corrigió inicialización, profundidad,
-poda, escala de regularización y shrinkage del último árbol. La corrida alineada
-con esas convenciones obtuvo RMSE test 0.899069 y puesto 4 de 26. Supera
-puntualmente a XGBoost por 0.007205, pero Holm7=1.000; no hay evidencia de mejora
-significativa frente a XGBoost, SVR RBF ni TabICLv2. El barrido de cortes continuos
-usa 12 cuantiles en lugar de todos los valores distintos. Las corridas anteriores
-quedan archivadas como supersedidas y no forman parte del ranking.
+Se evaluaron 26 modelos y variantes. Los mejores resultados por RMSE test son:
+
+| Puesto | Modelo | RMSE test | R² test |
+|---:|---|---:|---:|
+| 1 | SVR RBF | 0.892225 | 0.471418 |
+| 2 | TabICLv2 | 0.897815 | 0.464774 |
+| 3 | TabPFN 2.5 original | 0.898277 | 0.464223 |
+| 4 | LinXGBoost | 0.899069 | 0.463278 |
+| 5 | TabPFN 2.5 fine-tuned | 0.901370 | 0.460527 |
+| 6 | Kernel Ridge RBF | 0.904881 | 0.456316 |
+| 7 | CatBoost | 0.905669 | 0.455368 |
+| 8 | XGBoost | 0.906274 | 0.454641 |
+
+SVR RBF es el líder puntual y la mejor opción evaluada sin deep learning.
+Reduce el RMSE de XGBoost en 0.014049 (1.55%). Su diferencia con TabICLv2
+es pequeña: IC95% de ΔRMSE [-0.025163; 0.014880], p=0.58678 y Holm55=1.000.
+El primer puesto no demuestra superioridad estadística sobre el segundo.
+
+LinXGBoost es la modificación metodológica reciente mejor situada. Sus hojas
+Ridge usan las 67 columnas E3. La auditoría con el repositorio del autor corrigió
+inicialización, profundidad, poda, escala de regularización y aporte del último árbol.
+Queda cuarto, con ΔRMSE=-0.007205 frente a XGBoost, IC95% [-0.036278; 0.021475]
+y Holm7=1.000. No demuestra mejora significativa; su RMSE OOF 0.845385
+también es mayor que el de XGBoost original (0.814822). Se aproxima el barrido
+de cortes mediante 12 cuantiles y permanece una diferencia numérica al puntuar
+candidatos. Las dos corridas previas están supersedidas y excluidas del ranking.
+
+XGBoost ampliado, DenseWeight y DART quedan 11, 13 y 16; ninguna variante
+supera el RMSE de XGBoost original. RaFFLE queda 12 y TabFM 10.
+El ranking incluye los 22 métodos históricos más esas tres variantes y LinXGBoost.
+
+Las familias Holm55 (histórica), Holm12 (variantes XGBoost) y Holm7 (LinXGBoost)
+se conservan con sus referencias originales. No se calculó un ajuste global
+único para los 26. Las celdas vacías no son p=0: indican resultados no disponibles
+o pruebas ajenas a esa familia. RMSE y R² comparten SSE y no son evidencias
+independientes. El test se consultó en varias rondas: las conclusiones son
+exploratorias y necesitan confirmación temporal independiente.
+
 El stacking tiene un [diagnóstico OOF preliminar](diagnostico_stacking_e3.md),
 pero aún no es otro modelo entrenado y evaluado.
 
 ## Datos y protocolo
 
-Se trabaja con datos reales sin aumentación,15 predictores y objetivo
+Se trabaja con datos reales sin aumentación, 15 predictores y objetivo
 `nota_primer_parcial`. `nota_final` y el identificador de estudiante no son
 predictores. Se mantienen outliers válidos y se excluyen inconsistencias de negocio.
 
-Train:1309 filas y1293 estudiantes. Test temporal: periodo202530,188 estudiantes.
+Train: 1309 filas y 1293 estudiantes. Test temporal: periodo 202530, 188 estudiantes.
 No hay estudiantes compartidos entre train y test. La selección usa GroupKFold
-anidado5×5 por estudiante y preparación aprendida dentro de cada fit. Las bases
-preentrenadas de configuración fija usan los5 externos sin búsqueda interna.
+anidado 5×5 por estudiante y preparación aprendida dentro de cada fit. Las bases
+preentrenadas de configuración fija usan los 5 externos sin búsqueda interna.
 TabPFN ajustado tiene evaluación temporal, pero sus pesos finales no ofrecen
 una nueva OOF independiente porque ya vieron todo train.
 
@@ -132,6 +148,18 @@ esos resultados para generar la tabla de 25 modelos y los contrastes Holm12:
 .\venv\Scripts\python.exe .\evaluar_linxgboost_e3.py
 ```
 
+Para actualizar el panorama vigente, los CSV RMSE/R² y las conclusiones desde
+los reportes agregados existentes, sin entrenar modelos:
+
+```powershell
+.\venv\Scripts\python.exe .\actualizar_comparaciones_e3.py
+```
+
+Este consolidado usa fuentes históricas de 22 modelos y los reportes de las
+cuatro incorporaciones. Valida 26 resultados test, 125 resultados por fold y
+la correspondencia RMSE/R². Los generadores `resumen_completo_e3.py` y
+`validacion_r2_e3.py` corresponden a etapas históricas y no generan la vista vigente.
+
 Se incluyen pruebas de particiones, preparación, métricas, serialización y modelos.
 
 RaFFLE v0.0.5 calcula sus predicciones y métricas, pero su wrapper C++ nativo no
@@ -143,9 +171,11 @@ agregadas, no un artefacto serializado del estimador.
 [Búsqueda Scopus](investigacion_scopus_no_deep_learning_e3.md),
 [documentación de experimentos](experimentos_scopus_e3.md) y
 [auditoría Scopus](resultados/e3/scopus/auditoria_final.json).
-La auditoría verificó2550 ajustes internos y que20 modelos externos restaurados
-reprodujeran sus predicciones OOF. Antes de esta publicación pasaron25 pruebas.
-`publicacion_e3.json` registra los hashes de los archivos de análisis incorporados.
+La auditoría Scopus verificó 2550 ajustes internos y que 20 modelos externos
+restaurados reprodujeran sus predicciones OOF. Las 25 pruebas registradas
+corresponden a aquella etapa. La consolidación actual valida los agregados y
+sus fuentes, sin repetir los entrenamientos ni aquella batería de pruebas.
+`publicacion_e3.json` registra los hashes de los archivos publicados.
 
 El dashboard de esta rama conserva su interfaz E3 de modelos lineales/clásicos;
 los experimentos posteriores se presentan en estos notebooks y resúmenes.
