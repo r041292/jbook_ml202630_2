@@ -1,0 +1,44 @@
+{
+  "test_period": 202530,
+  "n_rows": 188,
+  "n_students": 188,
+  "method": "Permutación pareada bilateral de etiquetas de modelo por estudiante",
+  "null": "Intercambiabilidad de las pérdidas cuadradas pareadas de ambos modelos por estudiante",
+  "statistic": "Suma de pérdidas cuadradas TabPFN menos SVM",
+  "n_permutations": 99999,
+  "n_bootstrap": 10000,
+  "seed": 42,
+  "pvalue_monte_carlo_se_approx": 0.001153323656221444,
+  "rows": [
+    {
+      "metrica": "RMSE",
+      "TabPFN": 0.8982773630241487,
+      "SVM": 0.9277056600182674,
+      "TabPFN_menos_SVM": -0.02942829699411864,
+      "IC_2.5%": -0.061618250955900705,
+      "IC_97.5%": 0.002094433910511233,
+      "p_bilateral": 0.06888,
+      "alpha": 0.05,
+      "rechaza_H0": false
+    },
+    {
+      "metrica": "R²",
+      "TabPFN": 0.464222605664123,
+      "SVM": 0.4285425649965354,
+      "TabPFN_menos_SVM": 0.035680040667587565,
+      "IC_2.5%": -0.002668558604686724,
+      "IC_97.5%": 0.07440422280215377,
+      "p_bilateral": 0.06888,
+      "alpha": 0.05,
+      "rechaza_H0": false
+    }
+  ],
+  "equivalence": "En el mismo test, RMSE=sqrt(SSE/n) y R2=1-SSE/SST. Al intercambiar predicciones SSE_A+SSE_B es constante y SST/n no cambia. Ambas diferencias son transformaciones monótonas impares de SSE_A-SSE_B, por lo que el mismo contraste pareado produce el mismo p-valor. No son dos evidencias independientes ni dos pruebas distintas.",
+  "scope": "Inferencia exploratoria condicional a estos dos modelos y al periodo 202530. Supone estudiantes independientes e intercambiabilidad pareada bajo H0; no incorpora variabilidad de reentrenamiento ni garantiza otros periodos. El test ya fue inspeccionado previamente. No rechazar H0 no prueba equivalencia.",
+  "source_sha256": {
+    "significancia_tabpfn_svm.py": "3b4666b7ee8be3203975f4c1aa8a4466e719a46c28bf0aa5e578d72f17b2e801",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/tabpfn_25/test_predictions.csv.gz": "0c68643687529f8a9b2c4ed2a333b28236b0ca6b276b3142887deaec99df75ec",
+    "resultados/e3/tabpfn_25/reporte.json": "14fa0ce033d1ec47129be613030a2e94a5550bc97cd80a003c2977ea2f57c5e4"
+  }
+}

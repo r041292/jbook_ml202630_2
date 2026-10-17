@@ -1,0 +1,879 @@
+{
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "modelos_clasicos.py": "25beff3a118e819df50e12f6272aabb6c90b1e08debbfa3402b0ddd8f4c821a4",
+    "preprocesamiento_clasicos.py": "9b2cc01ab5cc9d9ce9f4622cf6538ab79cee15649d05326e9db74e75facb4199",
+    "resultados/e3/modelos_lineales.json": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/fold_metrics.csv": "3d44dd24364a8fc4708f188db799406981146b2933a942118a58b7e2f9267eaa"
+  },
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "models": {
+    "knn": {
+      "name": "KNN",
+      "grid": {
+        "modelo__n_neighbors": [
+          5,
+          11,
+          21,
+          31,
+          41,
+          61,
+          81,
+          101
+        ],
+        "modelo__weights": [
+          "uniform",
+          "distance"
+        ],
+        "modelo__p": [
+          1,
+          2
+        ]
+      },
+      "combinations": 32,
+      "preparation": "Mediana, log1p en tiempos, StandardScaler; moda y one-hot con referencia. Distancias sobre variables transformadas.",
+      "best_params": {
+        "modelo__n_neighbors": 31,
+        "modelo__p": 2,
+        "modelo__weights": "distance"
+      },
+      "selection_rmse": 0.8482002629754986,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__n_neighbors": 31,
+            "modelo__p": 2,
+            "modelo__weights": "distance"
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__n_neighbors": 21,
+            "modelo__p": 1,
+            "modelo__weights": "distance"
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__n_neighbors": 11,
+            "modelo__p": 2,
+            "modelo__weights": "distance"
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__n_neighbors": 21,
+            "modelo__p": 1,
+            "modelo__weights": "distance"
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__n_neighbors": 21,
+            "modelo__p": 1,
+            "modelo__weights": "distance"
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 3.263069486791103e-07,
+        "MAE": 1.006186175844905e-07,
+        "MAPE (%)": 3.717621221191511e-06,
+        "R²": 0.9999999999999147
+      },
+      "test_metrics": {
+        "RMSE": 0.923269665643187,
+        "MAE": 0.7540271566884664,
+        "MAPE (%)": 29.58449530006813,
+        "R²": 0.43399455550642596
+      },
+      "outside_test": 0,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "71cbf8885a64b26fc6878ffe112d66a344d731659df4d4dad4f0a06a0c9ca04e",
+      "elapsed_seconds": 24.28200000000652
+    },
+    "ridge": {
+      "name": "Ridge",
+      "grid": {
+        "modelo__alpha": [
+          0.01,
+          0.1,
+          1,
+          3,
+          10,
+          30,
+          100,
+          1000
+        ]
+      },
+      "combinations": 8,
+      "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L2.",
+      "best_params": {
+        "modelo__alpha": 10
+      },
+      "selection_rmse": 0.8243433740966012,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 10
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 10
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 10
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 10
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 10
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 0.7965613915862796,
+        "MAE": 0.6281266989365745,
+        "MAPE (%)": 23.590160251901175,
+        "R²": 0.4919998598021075
+      },
+      "test_metrics": {
+        "RMSE": 0.9170904797449051,
+        "MAE": 0.754510914653895,
+        "MAPE (%)": 29.57213961234537,
+        "R²": 0.4415454352835828
+      },
+      "outside_test": 5,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "3eb7d7401260a5e2580695b42c136139e577956fb20402ca8f7b0f72c0df871c",
+      "elapsed_seconds": 17.656000000002678
+    },
+    "lasso": {
+      "name": "Lasso",
+      "grid": {
+        "modelo__alpha": [
+          0.0001,
+          0.0003,
+          0.0005,
+          0.001,
+          0.002,
+          0.003,
+          0.01,
+          0.03,
+          0.1
+        ]
+      },
+      "combinations": 9,
+      "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L1.",
+      "best_params": {
+        "modelo__alpha": 0.0005
+      },
+      "selection_rmse": 0.8273055277179543,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 0.001
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 0.001
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 0.002
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 0.001
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__alpha": 0.001
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 0.7929235543762884,
+        "MAE": 0.6251372884841152,
+        "MAPE (%)": 23.40560017504795,
+        "R²": 0.4966292629903877
+      },
+      "test_metrics": {
+        "RMSE": 0.919650088085005,
+        "MAE": 0.7530400905199947,
+        "MAPE (%)": 29.551966581946655,
+        "R²": 0.4384237809595437
+      },
+      "outside_test": 5,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "73e9e392871486eee1033bcab8a81fc017c1645e77eb39ab888dd5b833b18427",
+      "elapsed_seconds": 17.656000000002678
+    },
+    "forest": {
+      "name": "Random Forest",
+      "grid": {
+        "modelo__n_estimators": [
+          150,
+          300,
+          500
+        ],
+        "modelo__max_depth": [
+          4,
+          6,
+          null
+        ],
+        "modelo__min_samples_leaf": [
+          2,
+          5,
+          10
+        ]
+      },
+      "combinations": 27,
+      "preparation": "Mediana numérica, moda categórica y OrdinalEncoder (desconocidas=-1). Sin one-hot, log1p ni escalado. Los códigos imponen un orden artificial en categorías nominales.",
+      "best_params": {
+        "modelo__max_depth": 6,
+        "modelo__min_samples_leaf": 5,
+        "modelo__n_estimators": 500
+      },
+      "selection_rmse": 0.8279076882622706,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__max_depth": 6,
+            "modelo__min_samples_leaf": 5,
+            "modelo__n_estimators": 300
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 10,
+            "modelo__n_estimators": 500
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 10,
+            "modelo__n_estimators": 150
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 10,
+            "modelo__n_estimators": 150
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 5,
+            "modelo__n_estimators": 500
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 0.6842470630775213,
+        "MAE": 0.5474541282229926,
+        "MAPE (%)": 20.599219072319492,
+        "R²": 0.6251554416837792
+      },
+      "test_metrics": {
+        "RMSE": 0.9396351788797481,
+        "MAE": 0.765847415639248,
+        "MAPE (%)": 29.732021287169115,
+        "R²": 0.41375114058482676
+      },
+      "outside_test": 0,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "6192f791d3c8c7324d68359bd3383bf84b825f086fcf7b2d99fc62c065121af8",
+      "elapsed_seconds": 142.54700000000594
+    },
+    "xgboost": {
+      "name": "XGBoost",
+      "grid": {
+        "modelo__n_estimators": [
+          150,
+          300,
+          500
+        ],
+        "modelo__max_depth": [
+          1,
+          2,
+          4
+        ],
+        "modelo__learning_rate": [
+          0.01,
+          0.03,
+          0.1
+        ]
+      },
+      "combinations": 27,
+      "preparation": "Mediana numérica y moda categórica; categorías nativas aprendidas en cada fit. Sin one-hot externo ni escalado; categorías nuevas pasan a faltantes. tree_method=hist, enable_categorical=True.",
+      "best_params": {
+        "modelo__learning_rate": 0.03,
+        "modelo__max_depth": 2,
+        "modelo__n_estimators": 300
+      },
+      "selection_rmse": 0.8084831598604756,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__learning_rate": 0.01,
+            "modelo__max_depth": 4,
+            "modelo__n_estimators": 300
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__learning_rate": 0.03,
+            "modelo__max_depth": 2,
+            "modelo__n_estimators": 300
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__learning_rate": 0.03,
+            "modelo__max_depth": 2,
+            "modelo__n_estimators": 300
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__learning_rate": 0.03,
+            "modelo__max_depth": 2,
+            "modelo__n_estimators": 300
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__learning_rate": 0.03,
+            "modelo__max_depth": 2,
+            "modelo__n_estimators": 300
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 0.7255112272496529,
+        "MAE": 0.5725162524135172,
+        "MAPE (%)": 21.26757964390853,
+        "R²": 0.5785814955703497
+      },
+      "test_metrics": {
+        "RMSE": 0.9062736558649318,
+        "MAE": 0.72891823446497,
+        "MAPE (%)": 28.404774804004397,
+        "R²": 0.45464137423206274
+      },
+      "outside_test": 2,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "6e8d8a168db53c16d6bcd6a403ae0414b151d6465b3490bea3adc6ad27110005",
+      "elapsed_seconds": 68.81200000000536
+    }
+  },
+  "test": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    },
+    {
+      "Modelo": "Dummy media",
+      "RMSE": 1.2560587320777918,
+      "MAE": 1.1044669473205142,
+      "MAPE (%)": 42.314506619222655,
+      "R²": -0.047570763085229784
+    },
+    {
+      "Modelo": "KNN",
+      "RMSE": 0.923269665643187,
+      "MAE": 0.7540271566884664,
+      "MAPE (%)": 29.58449530006813,
+      "R²": 0.43399455550642596
+    },
+    {
+      "Modelo": "Ridge",
+      "RMSE": 0.9170904797449051,
+      "MAE": 0.754510914653895,
+      "MAPE (%)": 29.57213961234537,
+      "R²": 0.4415454352835828
+    },
+    {
+      "Modelo": "Lasso",
+      "RMSE": 0.919650088085005,
+      "MAE": 0.7530400905199947,
+      "MAPE (%)": 29.551966581946655,
+      "R²": 0.4384237809595437
+    },
+    {
+      "Modelo": "Random Forest",
+      "RMSE": 0.9396351788797481,
+      "MAE": 0.765847415639248,
+      "MAPE (%)": 29.732021287169115,
+      "R²": 0.41375114058482676
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274
+    }
+  ],
+  "bootstrap": [
+    {
+      "Modelo": "SVM lineal",
+      "Métrica": "RMSE",
+      "Estimación": 0.9277056600182674,
+      "IC 2.5%": 0.838232031980838,
+      "IC 97.5%": 1.018473021007051
+    },
+    {
+      "Modelo": "SVM lineal",
+      "Métrica": "MAE",
+      "Estimación": 0.755442807950947,
+      "IC 2.5%": 0.677509264348629,
+      "IC 97.5%": 0.8380463789458336
+    },
+    {
+      "Modelo": "SVM lineal",
+      "Métrica": "R²",
+      "Estimación": 0.4285425649965354,
+      "IC 2.5%": 0.32051438922136316,
+      "IC 97.5%": 0.5090913913003652
+    },
+    {
+      "Modelo": "Dummy media",
+      "Métrica": "RMSE",
+      "Estimación": 1.2560587320777918,
+      "IC 2.5%": 1.1740160261059729,
+      "IC 97.5%": 1.3444459799253647
+    },
+    {
+      "Modelo": "Dummy media",
+      "Métrica": "MAE",
+      "Estimación": 1.1044669473205142,
+      "IC 2.5%": 1.0203924934577313,
+      "IC 97.5%": 1.1943067897371715
+    },
+    {
+      "Modelo": "Dummy media",
+      "Métrica": "R²",
+      "Estimación": -0.047570763085229784,
+      "IC 2.5%": -0.151286238092695,
+      "IC 97.5%": -0.004056067956871698
+    },
+    {
+      "Modelo": "KNN",
+      "Métrica": "RMSE",
+      "Estimación": 0.923269665643187,
+      "IC 2.5%": 0.8376272043733148,
+      "IC 97.5%": 1.0078188881229835
+    },
+    {
+      "Modelo": "KNN",
+      "Métrica": "MAE",
+      "Estimación": 0.7540271566884664,
+      "IC 2.5%": 0.6778241983494225,
+      "IC 97.5%": 0.8346536945948381
+    },
+    {
+      "Modelo": "KNN",
+      "Métrica": "R²",
+      "Estimación": 0.43399455550642596,
+      "IC 2.5%": 0.33739879652703947,
+      "IC 97.5%": 0.5101212107375143
+    },
+    {
+      "Modelo": "Ridge",
+      "Métrica": "RMSE",
+      "Estimación": 0.9170904797449051,
+      "IC 2.5%": 0.8339900746021499,
+      "IC 97.5%": 1.0071806792519933
+    },
+    {
+      "Modelo": "Ridge",
+      "Métrica": "MAE",
+      "Estimación": 0.754510914653895,
+      "IC 2.5%": 0.6809849859605809,
+      "IC 97.5%": 0.8343942023838484
+    },
+    {
+      "Modelo": "Ridge",
+      "Métrica": "R²",
+      "Estimación": 0.4415454352835828,
+      "IC 2.5%": 0.3484697306119629,
+      "IC 97.5%": 0.5183798080797147
+    },
+    {
+      "Modelo": "Lasso",
+      "Métrica": "RMSE",
+      "Estimación": 0.919650088085005,
+      "IC 2.5%": 0.8328143083739109,
+      "IC 97.5%": 1.006683716377993
+    },
+    {
+      "Modelo": "Lasso",
+      "Métrica": "MAE",
+      "Estimación": 0.7530400905199947,
+      "IC 2.5%": 0.6776667462974516,
+      "IC 97.5%": 0.8333099660232786
+    },
+    {
+      "Modelo": "Lasso",
+      "Métrica": "R²",
+      "Estimación": 0.4384237809595437,
+      "IC 2.5%": 0.3391695089177242,
+      "IC 97.5%": 0.5178530906203133
+    },
+    {
+      "Modelo": "Random Forest",
+      "Métrica": "RMSE",
+      "Estimación": 0.9396351788797481,
+      "IC 2.5%": 0.8545268413086643,
+      "IC 97.5%": 1.0285443647533585
+    },
+    {
+      "Modelo": "Random Forest",
+      "Métrica": "MAE",
+      "Estimación": 0.765847415639248,
+      "IC 2.5%": 0.687650620172671,
+      "IC 97.5%": 0.8472291860157123
+    },
+    {
+      "Modelo": "Random Forest",
+      "Métrica": "R²",
+      "Estimación": 0.41375114058482676,
+      "IC 2.5%": 0.315170113827682,
+      "IC 97.5%": 0.4968760591614236
+    },
+    {
+      "Modelo": "XGBoost",
+      "Métrica": "RMSE",
+      "Estimación": 0.9062736558649318,
+      "IC 2.5%": 0.819088066182407,
+      "IC 97.5%": 0.9971039854783623
+    },
+    {
+      "Modelo": "XGBoost",
+      "Métrica": "MAE",
+      "Estimación": 0.72891823446497,
+      "IC 2.5%": 0.6520034942728408,
+      "IC 97.5%": 0.8087429199922591
+    },
+    {
+      "Modelo": "XGBoost",
+      "Métrica": "R²",
+      "Estimación": 0.45464137423206274,
+      "IC 2.5%": 0.35504416076124423,
+      "IC 97.5%": 0.537210890269134
+    }
+  ],
+  "paired_differences": [
+    {
+      "Modelo": "KNN",
+      "Δ RMSE vs SVM": -0.004435994375080354,
+      "IC 2.5%": -0.04338233207135641,
+      "IC 97.5%": 0.0375927480609713
+    },
+    {
+      "Modelo": "Ridge",
+      "Δ RMSE vs SVM": -0.010615180273362279,
+      "IC 2.5%": -0.03420062988148293,
+      "IC 97.5%": 0.005450711050199081
+    },
+    {
+      "Modelo": "Lasso",
+      "Δ RMSE vs SVM": -0.00805557193326234,
+      "IC 2.5%": -0.01982127229563594,
+      "IC 97.5%": 0.002104775219375479
+    },
+    {
+      "Modelo": "Random Forest",
+      "Δ RMSE vs SVM": 0.011929518861480748,
+      "IC 2.5%": -0.024352388618923543,
+      "IC 97.5%": 0.05086354741789556
+    },
+    {
+      "Modelo": "XGBoost",
+      "Δ RMSE vs SVM": -0.02143200415333557,
+      "IC 2.5%": -0.05250086115809807,
+      "IC 97.5%": 0.012526724237992334
+    }
+  ],
+  "selected_by_external_cv": "XGBoost",
+  "selection_scope": "Comparación exploratoria de familias por CV externa; test no selecciona modelos.",
+  "versions": {
+    "sklearn": "1.9.1",
+    "xgboost": "3.4.1"
+  },
+  "method": "Mismos cinco folds externos del SVM; cinco internos por estudiante en cada búsqueda; test 202530 purgado."
+}

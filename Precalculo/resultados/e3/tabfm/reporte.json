@@ -1,0 +1,277 @@
+{
+  "model": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+  "key": "tabfm",
+  "test": {
+    "RMSE": 0.9087251720418906,
+    "MAE": 0.723176914580325,
+    "MAPE (%)": 28.41801505391326,
+    "R²": 0.4516869382273542
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8128945373084889,
+      "sd_cv": 0.05654239126166382,
+      "OOF_agrupado": 0.8148603729508015
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6350414637634116,
+      "sd_cv": 0.041816414913820994,
+      "OOF_agrupado": 0.6350428423069195
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 23.757151775642694,
+      "sd_cv": 2.1942579515046523,
+      "OOF_agrupado": 23.756747840975574
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.4663705771395278,
+      "sd_cv": 0.07550604712014818,
+      "OOF_agrupado": 0.4683917364079222
+    }
+  ],
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "rows_in_context": 1047,
+      "best_params": {
+        "n_estimators": 32,
+        "random_state": 42
+      },
+      "seconds": 651.5205819999974
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "rows_in_context": 1047,
+      "best_params": {
+        "n_estimators": 32,
+        "random_state": 42
+      },
+      "seconds": 610.4258607999946
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "rows_in_context": 1047,
+      "best_params": {
+        "n_estimators": 32,
+        "random_state": 42
+      },
+      "seconds": 1446.8290449000197
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "rows_in_context": 1047,
+      "best_params": {
+        "n_estimators": 32,
+        "random_state": 42
+      },
+      "seconds": 1552.3280532000063
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "rows_in_context": 1048,
+      "best_params": {
+        "n_estimators": 32,
+        "random_state": 42
+      },
+      "seconds": 1710.122935099993
+    }
+  ],
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "evaluar_tabfm_e3.py": "87cc46b4d00765b976d1f043aa1b68a3bb04c56bb19ef869ed07002b956c82fb",
+    "requirements_tabfm_e3.txt": "56459f0da41d7db8d021c34fd18916fea7f5a99f12fa6071706d34b20f1d8a8e",
+    "experiment_inputs_sha256": {
+      "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+      "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+      "resultados/e3/resumen_completo/modelos.csv": "c77dd46ce3f9b17dcc32f8e57a8d3ea96f75072bcadcff4959659cfb9ea8cf93",
+      "resultados/e3/scopus/contrastes_pareados.csv": "5dbc7e65666322f9efe58d3dfd3cbb23669c7cc1c931a50f326e2b10e5d7bfee"
+    },
+    "official_tabfm_code_commit": "fbb665569425fd2f490c6576b3af967876fe11ff",
+    "weights": {
+      "repo_id": "google/tabfm-1.0.0-pytorch",
+      "revision": "77cb9cc1b4fd3a9c77fbb9552c218200bb4dab83",
+      "weights_size_bytes": 6591243724,
+      "model_type": "regression",
+      "files_sha256": {
+        "regression/config.json": "169c7a935965b45c4ed9d981201392743e498115ceddb29931eccd37e0c8f6ad",
+        "regression/model.safetensors": "bd5a615b0322a8f04a895038de6df6fbd71430eca750e1d792f31048654674a9"
+      },
+      "weights_license": "tabfm-non-commercial-v1.0",
+      "inference": "local CPU; no TabFM-Auto/LLM feature search"
+    },
+    "versions": {
+      "tabfm": "1.0.1",
+      "torch": "2.12.1+cpu",
+      "numpy": "2.2.0",
+      "pandas": "2.2.3",
+      "scikit-learn": "1.6.0",
+      "scipy": "1.17.1",
+      "statsmodels": "0.15.0",
+      "huggingface-hub": "1.21.0"
+    },
+    "configuration": {
+      "n_estimators": 32,
+      "normalization": [
+        "none",
+        "power"
+      ],
+      "max_num_rows": null,
+      "outlier_threshold": 1000000000000.0,
+      "enable_nnls": false,
+      "device": "cpu",
+      "dtype": "bfloat16",
+      "seed": 42
+    }
+  },
+  "features": [
+    "Icfes_nuevo",
+    "Icfes_Matematicas",
+    "Tiempo_empleado_en_la_verificación_de_conocimientos",
+    "Dominio_Inicial",
+    "avance_precalculo_aleks",
+    "Dominio_Final",
+    "Tiempo_Total_Tiempo",
+    "Tiempo_total_Aprendidos_hora",
+    "Categoria_temas_inicial",
+    "Categoria_temas_final",
+    "programa_en_matricula",
+    "division_en_matricula",
+    "Mat_Curso_Asignatura_Relacionada",
+    "avance_cuartiles",
+    "cumplimiento_temas"
+  ],
+  "target": "nota_primer_parcial",
+  "paired_comparisons": [
+    {
+      "referencia": "SVM lineal",
+      "rows": [
+        {
+          "metrica": "RMSE",
+          "diferencia_TabFM_menos_referencia": -0.018980487976376748,
+          "IC_2.5%": -0.04896358412078577,
+          "IC_97.5%": 0.011127193361121217,
+          "p_bilateral": 0.21684,
+          "p_Holm_global_23": 1.0,
+          "significativa_al_5%_Holm": false
+        },
+        {
+          "metrica": "R²",
+          "diferencia_TabFM_menos_referencia": 0.02314437323081875,
+          "IC_2.5%": -0.013889490435458297,
+          "IC_97.5%": 0.06030461721965879,
+          "p_bilateral": 0.21684,
+          "p_Holm_global_23": 1.0,
+          "significativa_al_5%_Holm": false
+        }
+      ],
+      "p_Holm_18_vs_SVM": 1.0,
+      "p_Holm_global_23": 1.0
+    },
+    {
+      "referencia": "XGBoost",
+      "rows": [
+        {
+          "metrica": "RMSE",
+          "diferencia_TabFM_menos_referencia": 0.0024515161769588234,
+          "IC_2.5%": -0.021853036863221313,
+          "IC_97.5%": 0.02719080734264915,
+          "p_bilateral": 0.85098,
+          "p_Holm_global_23": 1.0,
+          "significativa_al_5%_Holm": false
+        },
+        {
+          "metrica": "R²",
+          "diferencia_TabFM_menos_referencia": -0.0029544360047085716,
+          "IC_2.5%": -0.033962899000669594,
+          "IC_97.5%": 0.02668102785926156,
+          "p_bilateral": 0.85098,
+          "p_Holm_global_23": 1.0,
+          "significativa_al_5%_Holm": false
+        }
+      ],
+      "p_Holm_global_23": 1.0
+    }
+  ],
+  "family_size_vs_svm": 18,
+  "family_size_global": 23,
+  "test_used_for_selection": false,
+  "method": "GroupKFold externo 5 por estudiante; TabFM fijo zero-shot, sin ajuste de pesos ni HPO; test temporal 202530 al final.",
+  "fold_source": "resultados/e3/train.csv.gz; folds canónicos de sklearn 1.9.1 reutilizados para preservar particiones al usar sklearn 1.6.0 en venv_tabfm",
+  "limitations": [
+    "El test temporal ha sido consultado en experimentos previos; la inferencia es exploratoria.",
+    "Los pesos preentrenados usan licencia no comercial.",
+    "Se desactivó el recorte de extremos propio del preprocesador TabFM para conservar outliers E3."
+  ],
+  "postrun_artifact_correction": {
+    "scope": "Corregido el mapeo de p_Holm_global_23 en comparacion_rmse_test.csv; predicciones e inferencia TabFM sin cambios.",
+    "original_evaluator_sha256": "e54cddeade3b96f2ff36400baafa9c658d12e5ec2c0afaba29b6eb28a39927cb"
+  }
+}

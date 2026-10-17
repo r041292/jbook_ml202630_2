@@ -1,0 +1,69 @@
+{
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+    "tcr_xgboost_e3.py": "7e525b77bce1b24b3e8be9ec100ea49612997d38147eb82e2d07f051253122f7",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+    "grid": [
+      {
+        "fraction": 0.0,
+        "weight": 1.0
+      },
+      {
+        "fraction": 0.05,
+        "weight": 0.3
+      },
+      {
+        "fraction": 0.05,
+        "weight": 0.6
+      },
+      {
+        "fraction": 0.05,
+        "weight": 0.9
+      },
+      {
+        "fraction": 0.1,
+        "weight": 0.3
+      },
+      {
+        "fraction": 0.1,
+        "weight": 0.6
+      },
+      {
+        "fraction": 0.1,
+        "weight": 0.9
+      },
+      {
+        "fraction": 0.2,
+        "weight": 0.3
+      },
+      {
+        "fraction": 0.2,
+        "weight": 0.6
+      },
+      {
+        "fraction": 0.2,
+        "weight": 0.9
+      }
+    ],
+    "reference": {
+      "paper": "https://doi.org/10.1007/s10994-024-06704-x",
+      "repository": "https://github.com/montymaxzuehlke/tcr",
+      "commit": "b73caef801b002569dbb95fbb7b229f08e0a78c2"
+    },
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "xgboost": "3.4.1"
+    }
+  },
+  "test_used_for_selection": false,
+  "method": "5 folds externos por estudiante; 5 internos si hay grilla. TCR reutiliza parámetros base XGBoost seleccionados solo dentro del fit externo original."
+}

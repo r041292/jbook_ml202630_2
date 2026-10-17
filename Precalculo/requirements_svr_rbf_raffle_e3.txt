@@ -1,0 +1,4 @@
+# RaFFLE oficial (wheel CPython 3.12 / Windows x64 disponible en PyPI).
+# NumPy, pandas, scikit-learn, SciPy, statsmodels, joblib y threadpoolctl se
+# reutilizan desde el entorno compartido Precalculo/venv/.
+fast-model-trees==0.0.5

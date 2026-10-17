@@ -1,0 +1,373 @@
+{
+  "evaluation_order": [
+    "tcr_xgboost",
+    "tabicl_v2",
+    "hrt_boost"
+  ],
+  "comparison": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274,
+      "delta_RMSE_vs_SVM": -0.02143200415333557,
+      "p_bilateral_vs_SVM": 0.21102,
+      "p_Holm_familia_completa": 1.0
+    },
+    {
+      "Modelo": "TabPFN 2.5 original",
+      "RMSE": 0.8982773630241487,
+      "MAE": 0.7154911127496271,
+      "MAPE (%)": 27.761049655087543,
+      "R²": 0.464222605664123,
+      "delta_RMSE_vs_SVM": -0.02942829699411864,
+      "p_bilateral_vs_SVM": 0.06888,
+      "p_Holm_familia_completa": 0.7576799999999999
+    },
+    {
+      "Modelo": "TCR-XGBoost",
+      "RMSE": 0.9076952118909738,
+      "MAE": 0.7378903957123452,
+      "MAPE (%)": 28.57192351275065,
+      "R²": 0.45292916322405763,
+      "delta_RMSE_vs_SVM": -0.02001044812729358,
+      "p_bilateral_vs_SVM": 0.24432,
+      "p_Holm_familia_completa": 1.0,
+      "RMSE_media_CV": 0.8144757196846522
+    },
+    {
+      "Modelo": "TabICLv2",
+      "RMSE": 0.8978147945999441,
+      "MAE": 0.7171042286335153,
+      "MAPE (%)": 28.4121059370181,
+      "R²": 0.4647742613200925,
+      "delta_RMSE_vs_SVM": -0.02989086541832331,
+      "p_bilateral_vs_SVM": 0.02624,
+      "p_Holm_familia_completa": 0.31488,
+      "RMSE_media_CV": 0.8071625590732256
+    },
+    {
+      "Modelo": "HRT-Boost",
+      "RMSE": 0.9237199755498733,
+      "MAE": 0.7548471943665886,
+      "MAPE (%)": 29.64009628840521,
+      "R²": 0.4334423007867797,
+      "delta_RMSE_vs_SVM": -0.003985684468394091,
+      "p_bilateral_vs_SVM": 0.78618,
+      "p_Holm_familia_completa": 1.0,
+      "RMSE_media_CV": 0.8172635629588297
+    }
+  ],
+  "family_size": 12,
+  "family_vs_svm": [
+    {
+      "modelo": "KNN",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.004435994375080354,
+      "IC_2.5%": -0.04482134153216598,
+      "IC_97.5%": 0.036077307996767005,
+      "p_bilateral": 0.8269,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "Ridge",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.01061518027336239,
+      "IC_2.5%": -0.03206984628788756,
+      "IC_97.5%": 0.005267953526028362,
+      "p_bilateral": 0.31128,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "Lasso",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.00805557193326234,
+      "IC_2.5%": -0.020000647402608325,
+      "IC_97.5%": 0.0019282385969942222,
+      "p_bilateral": 0.1577,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "Random Forest",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": 0.011929518861480748,
+      "IC_2.5%": -0.024656773890719963,
+      "IC_97.5%": 0.04860259428270273,
+      "p_bilateral": 0.51846,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "XGBoost",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02143200415333557,
+      "IC_2.5%": -0.05470281408961654,
+      "IC_97.5%": 0.012121767377217825,
+      "p_bilateral": 0.21102,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "logicDT",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.001267969080557041,
+      "IC_2.5%": -0.036852375202219595,
+      "IC_97.5%": 0.030832939320958062,
+      "p_bilateral": 0.94434,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "TabPFN ajustado",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02633550359609871,
+      "IC_2.5%": -0.05615994286707028,
+      "IC_97.5%": 0.002755594795713952,
+      "p_bilateral": 0.08018,
+      "p_Holm_familia_conocida": 0.8018000000000001
+    },
+    {
+      "modelo": "RIM",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": 0.039507364044466864,
+      "IC_2.5%": -0.013962540660173998,
+      "IC_97.5%": 0.09517131188181788,
+      "p_bilateral": 0.16266,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "TabPFN original",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02942829699411864,
+      "IC_2.5%": -0.061618250955900705,
+      "IC_97.5%": 0.002094433910511233,
+      "p_bilateral": 0.06888,
+      "p_Holm_familia_conocida": 0.7576799999999999
+    },
+    {
+      "modelo": "TCR-XGBoost",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02001044812729358,
+      "IC_2.5%": -0.05341571385700752,
+      "IC_97.5%": 0.013774112101707403,
+      "p_bilateral": 0.24432,
+      "p_Holm_familia_conocida": 1.0
+    },
+    {
+      "modelo": "TabICLv2",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.02989086541832331,
+      "IC_2.5%": -0.057444708508430795,
+      "IC_97.5%": -0.004322126616028079,
+      "p_bilateral": 0.02624,
+      "p_Holm_familia_conocida": 0.31488
+    },
+    {
+      "modelo": "HRT-Boost",
+      "metrica": "RMSE",
+      "diferencia_ajustado_menos_referencia": -0.003985684468394091,
+      "IC_2.5%": -0.03255053424992782,
+      "IC_97.5%": 0.022813151982600123,
+      "p_bilateral": 0.78618,
+      "p_Holm_familia_conocida": 1.0
+    }
+  ],
+  "statistics": "Permutación bilateral99999, bootstrap10000 por estudiante; seed42; Holm dos pares y familia acumulada conocida. RMSE/R² son el mismo contraste SSE. Inferencia exploratoria por reutilización de test; no incorpora variabilidad por reentrenar.",
+  "sources": {
+    "tcr_xgboost": {
+      "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+      "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+      "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+      "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+      "tcr_xgboost_e3.py": "7e525b77bce1b24b3e8be9ec100ea49612997d38147eb82e2d07f051253122f7",
+      "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+      "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+      "grid": [
+        {
+          "fraction": 0.0,
+          "weight": 1.0
+        },
+        {
+          "fraction": 0.05,
+          "weight": 0.3
+        },
+        {
+          "fraction": 0.05,
+          "weight": 0.6
+        },
+        {
+          "fraction": 0.05,
+          "weight": 0.9
+        },
+        {
+          "fraction": 0.1,
+          "weight": 0.3
+        },
+        {
+          "fraction": 0.1,
+          "weight": 0.6
+        },
+        {
+          "fraction": 0.1,
+          "weight": 0.9
+        },
+        {
+          "fraction": 0.2,
+          "weight": 0.3
+        },
+        {
+          "fraction": 0.2,
+          "weight": 0.6
+        },
+        {
+          "fraction": 0.2,
+          "weight": 0.9
+        }
+      ],
+      "reference": {
+        "paper": "https://doi.org/10.1007/s10994-024-06704-x",
+        "repository": "https://github.com/montymaxzuehlke/tcr",
+        "commit": "b73caef801b002569dbb95fbb7b229f08e0a78c2"
+      },
+      "versions": {
+        "numpy": "2.3.5",
+        "pandas": "3.0.1",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.9.1",
+        "xgboost": "3.4.1"
+      }
+    },
+    "tabicl_v2": {
+      "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+      "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+      "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+      "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+      "tabicl_modelo_e3.py": "9c41286f4465f4e481dcf7893c5ddee3ac83b90007521c959027e8c38362461d",
+      "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+      "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+      "grid": [
+        {}
+      ],
+      "reference": {
+        "paper": "https://proceedings.mlr.press/v306/qu26a.html",
+        "repository": "https://github.com/soda-inria/tabicl",
+        "package": "tabicl==2.2.0",
+        "model_revision": "4dcd344ece2c00be9e831fdd35bed57b5ad83e19",
+        "checkpoint": "tabicl-regressor-v2-20260212.ckpt",
+        "sha256": "0db9cb538f114e79026bf08f45f41ad8dd7ad2de2aaca9a5ca8cd3bd9748ae7a",
+        "configuration": "8 estimadores, CPU4 hilos, batch1, norm_methods=[none], outlier_threshold=infinity, sin fine-tuning ni nuevos registros"
+      },
+      "versions": {
+        "numpy": "2.3.5",
+        "pandas": "3.0.1",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.9.1",
+        "xgboost": "3.4.1",
+        "tabicl": "2.2.0",
+        "torch": "2.9.1+cpu"
+      }
+    },
+    "hrt_boost": {
+      "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+      "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+      "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+      "comparacion_seleccionados_e3.py": "1df051541e59dafd9a19c32bec14459e40df80c7337135f1b68cae7b45baee74",
+      "hrt_modelo_e3.py": "78d8635bda91295447ffb36c259b000a70515b2e823b5a848430e188fc0c2676",
+      "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+      "resultados/e3/rim/reporte.json": "ef8e3cc1e0291085d54bb79c86f5766691d1d115c5dcb0cdaa051961ccdebb1f",
+      "grid": [
+        {
+          "max_depth": 1,
+          "n_estimators": 10,
+          "ridge_alpha": 1.0
+        },
+        {
+          "max_depth": 1,
+          "n_estimators": 10,
+          "ridge_alpha": 10.0
+        },
+        {
+          "max_depth": 1,
+          "n_estimators": 10,
+          "ridge_alpha": 100.0
+        },
+        {
+          "max_depth": 1,
+          "n_estimators": 30,
+          "ridge_alpha": 1.0
+        },
+        {
+          "max_depth": 1,
+          "n_estimators": 30,
+          "ridge_alpha": 10.0
+        },
+        {
+          "max_depth": 1,
+          "n_estimators": 30,
+          "ridge_alpha": 100.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 10,
+          "ridge_alpha": 1.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 10,
+          "ridge_alpha": 10.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 10,
+          "ridge_alpha": 100.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 30,
+          "ridge_alpha": 1.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 30,
+          "ridge_alpha": 10.0
+        },
+        {
+          "max_depth": 2,
+          "n_estimators": 30,
+          "ridge_alpha": 100.0
+        }
+      ],
+      "reference": {
+        "paper": "https://arxiv.org/abs/2605.23422",
+        "repository": "https://github.com/Hongyi-Li-sz/HRT-Boost",
+        "commit": "ed3885d7e089e489415637556b818d0284b123a6",
+        "package": "hrt-boost==0.1.0",
+        "fixed": {
+          "learning_rate": 0.1,
+          "min_points": 80,
+          "step_size": "auto",
+          "random_state": 42
+        }
+      },
+      "versions": {
+        "numpy": "2.3.5",
+        "pandas": "3.0.1",
+        "scipy": "1.18.1",
+        "scikit-learn": "1.9.1",
+        "xgboost": "3.4.1",
+        "hrt-boost": "0.1.0"
+      }
+    }
+  }
+}

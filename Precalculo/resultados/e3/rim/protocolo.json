@@ -1,0 +1,87 @@
+{
+  "grid": {
+    "n_neighbors": [
+      5,
+      15
+    ],
+    "epochs": [
+      30,
+      60
+    ],
+    "weight_decay": [
+      0.001,
+      0.01
+    ]
+  },
+  "fixed": {
+    "embedding_dim": 8,
+    "n_bins": 8,
+    "label_bins": 10,
+    "learning_rate": 0.001,
+    "batch_size": 256,
+    "dropout": 0.1,
+    "random_state": 42
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "rim_regresion_e3.py": "6892e8ebe2d39cbbd216c93062993179ee7a4df55cde3243afe21af8d94f3c2d",
+    "evaluar_rim_e3.py": "cd55fccb74226f7d682329c2444442fde4c6daa0c2da6ee005b30427169a69ae",
+    "evaluar_tabpfn25_finetuned_e3.py": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+    "resultados/e3/logicdt/reporte.json": "a0c3dfe330f19cd80ed33bc402c3cf6d31d21f5efbf11950a7cfeb0d7bbdc15b",
+    "resultados/e3/logicdt/test_predictions.csv.gz": "19ef68ad8d602d899abdd4cc18394ee2e661a91b30148d41692219781491092a",
+    "resultados/e3/tabpfn_25/reporte.json": "14fa0ce033d1ec47129be613030a2e94a5550bc97cd80a003c2977ea2f57c5e4",
+    "resultados/e3/tabpfn_25/test_predictions.csv.gz": "0c68643687529f8a9b2c4ed2a333b28236b0ca6b276b3142887deaec99df75ec",
+    "resultados/e3/tabpfn_25_finetuned/20261015_091524_448419/reporte.json": "38bcc67cbd6dde8fef4264ed3b8f053b1b2965a3313a3d53eb044ff9f14fbb53",
+    "resultados/e3/tabpfn_25_finetuned/20261015_091524_448419/test_predictions.csv.gz": "e9e37442c33f2c26f05df1dd218f3360eed49a31c8cec35bd8c71bac103bef78",
+    "grid": {
+      "n_neighbors": [
+        5,
+        15
+      ],
+      "epochs": [
+        30,
+        60
+      ],
+      "weight_decay": [
+        0.001,
+        0.01
+      ]
+    },
+    "fixed": {
+      "embedding_dim": 8,
+      "n_bins": 8,
+      "label_bins": 10,
+      "learning_rate": 0.001,
+      "batch_size": 256,
+      "dropout": 0.1,
+      "random_state": 42
+    },
+    "versions": {
+      "torch": "2.9.1+cpu",
+      "scikit-learn": "1.9.1",
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    }
+  },
+  "test_used_for_selection": false,
+  "reference": {
+    "paper": "https://arxiv.org/abs/2108.05252",
+    "repository": "https://github.com/qinjr/RIM",
+    "revision": "a6b4cdb347f306f9cf54a98fc994bf7112b53e9e",
+    "files_consulted": [
+      "code/rim.py",
+      "code/train_reg.py",
+      "code/data_ppl/es_reader.py",
+      "code/data_ppl/hori_split.py",
+      "configs/train_params.ini"
+    ]
+  },
+  "primary_comparator": "TabPFN 2.5 original",
+  "statistics": "Dos pares actuales con Holm; además familia acumulada de nueve candidatos vs SVM. Esto no corrige completamente una búsqueda adaptativa indefinida sobre test ya visto."
+}

@@ -1,0 +1,338 @@
+{
+  "model": "CatBoost",
+  "key": "catboost",
+  "test": {
+    "RMSE": 0.9056693630195318,
+    "MAE": 0.7318919716115212,
+    "MAPE (%)": 28.722882575582464,
+    "R²": 0.4553684094744912
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8162762748683484,
+      "sd_cv": 0.03660216333777534,
+      "OOF_agrupado": 0.8170922644352683
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6466089872806631,
+      "sd_cv": 0.03513154466328534,
+      "OOF_agrupado": 0.6466106336744469
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 24.311994435348396,
+      "sd_cv": 2.1786075255861883,
+      "OOF_agrupado": 24.311494649216822
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.46326746898003995,
+      "sd_cv": 0.05158157115289651,
+      "OOF_agrupado": 0.46547561264318205
+    }
+  ],
+  "best_params": {
+    "depth": 6,
+    "iterations": 300,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.03
+  },
+  "inner_rmse": 0.8141913725473501,
+  "fold_audit": [
+    {
+      "fold": 1,
+      "best_params": {
+        "depth": 6,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      "inner_rmse": 0.8361060039031718,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 775.6019105000014
+    },
+    {
+      "fold": 2,
+      "best_params": {
+        "depth": 4,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      "inner_rmse": 0.8081153360109473,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 1232.0390088999993
+    },
+    {
+      "fold": 3,
+      "best_params": {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      "inner_rmse": 0.8065467028021253,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 1235.8785199999984
+    },
+    {
+      "fold": 4,
+      "best_params": {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      "inner_rmse": 0.8158953662239723,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "seconds": 1226.9664775999845
+    },
+    {
+      "fold": 5,
+      "best_params": {
+        "depth": 2,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      "inner_rmse": 0.8154954795812293,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "seconds": 1217.7744753999868
+    }
+  ],
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "modelos_scopus_e3.py": "5ab966ac8cf1a573e820cf0ab6ca28f2f39ade29b1a459bf6b174c59f0ee4dc9",
+    "evaluar_scopus_e3.py": "c930f6b4851700fad00f23a4547c8b231ef14bf187e249890f173e9a65c8aeeb",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "evaluar_tabpfn25_finetuned_e3.py": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "stochtree": "0.4.5",
+      "catboost": "1.2.10",
+      "numba": "0.68.0"
+    },
+    "grid": [
+      {
+        "depth": 2,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 2,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 2,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 2,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 2,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 2,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 2,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 2,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 4,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 4,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 4,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 4,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 4,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 4,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 4,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 4,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 6,
+        "iterations": 300,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 6,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 6,
+        "iterations": 600,
+        "l2_leaf_reg": 3.0,
+        "learning_rate": 0.1
+      },
+      {
+        "depth": 6,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.03
+      },
+      {
+        "depth": 6,
+        "iterations": 600,
+        "l2_leaf_reg": 10.0,
+        "learning_rate": 0.1
+      }
+    ],
+    "reference": {
+      "paper": "https://proceedings.neurips.cc/paper/2018/hash/14491b756b3a51daac41c24863285549-Abstract.html",
+      "implementation": "catboost==1.2.10, CatBoostRegressor, boosting_type=Ordered",
+      "fixed": {
+        "loss_function": "RMSE",
+        "random_seed": 42,
+        "thread_count": 1,
+        "allow_writing_files": false
+      }
+    }
+  },
+  "reference": {
+    "paper": "https://proceedings.neurips.cc/paper/2018/hash/14491b756b3a51daac41c24863285549-Abstract.html",
+    "implementation": "catboost==1.2.10, CatBoostRegressor, boosting_type=Ordered",
+    "fixed": {
+      "loss_function": "RMSE",
+      "random_seed": 42,
+      "thread_count": 1,
+      "allow_writing_files": false
+    }
+  },
+  "private_model": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\modelos_preentrenados\\scopus\\catboost\\modelo_final.joblib"
+}

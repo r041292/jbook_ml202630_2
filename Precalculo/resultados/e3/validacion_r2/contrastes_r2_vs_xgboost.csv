@@ -1,0 +1,11 @@
+﻿Modelo,Referencia,metrica,diferencia_candidato_menos_referencia,IC_2.5%,IC_97.5%,p_bilateral,familia_ajuste,p_ajustado,significativa_al_5%,fuente
+SVR RBF,XGBoost,R²,0.016776998772933704,-0.013634606780528337,0.04903264298717856,0.28846,Holm55,1.0,False,resultados/e3/svr_rbf_raffle/contrastes_pareados.csv
+RaFFLE,XGBoost,R²,-0.008034680611060052,-0.03375839810058054,0.020601580807594538,0.56558,Holm55,1.0,False,resultados/e3/svr_rbf_raffle/contrastes_pareados.csv
+XGBoost ampliado (gbtree),XGBoost,R²,-0.0035359528982429334,-0.012925721067762526,0.006358090965148943,0.47478,Holm12,1.0,False,resultados/e3/xgboost_variantes/contrastes_pareados.csv
+DART-XGBoost,XGBoost,R²,-0.019295129545681022,-0.03736074594807208,0.00024310689420798686,0.0522,Holm12,0.522,False,resultados/e3/xgboost_variantes/contrastes_pareados.csv
+DenseWeight-XGBoost,XGBoost,R²,-0.008169979495914026,-0.0317932924440056,0.013719188534557225,0.47194,Holm12,1.0,False,resultados/e3/xgboost_variantes/contrastes_pareados.csv
+LinXGBoost (hojas completas E3),XGBoost,R²,0.008636848838449396,-0.02572041703451368,0.04521765008997267,0.62662,Holm7,1.0,False,resultados/e3/linxgboost/contrastes_pareados.csv
+Kernel Ridge RBF,XGBoost,R²,0.0016750281884405,-0.025781540156751,0.0301403293310714,0.90436,Holm55,1.0,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
+CatBoost,XGBoost,R²,0.0007270352424285,-0.0239013478598093,0.0266476184390116,0.9567,Holm55,1.0,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
+XBART (GFR),XGBoost,R²,-0.076194842103166,-0.1373242110371322,-0.0112227648731159,0.02388,Holm55,0.97908,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
+coPILOT,XGBoost,R²,-0.0801694405577327,-0.1376393611980947,-0.0290488834811626,0.00282,Holm55,0.14946,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv

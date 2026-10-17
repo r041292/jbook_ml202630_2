@@ -1,0 +1,60 @@
+"""Valida el paquete publicable sin fuentes privadas ni reentrenamiento."""
+import json
+
+import numpy as np
+
+import app
+import original_models as original
+from deployment import verify_inputs
+from statistical_comparison import add_inference, P_HOLM
+
+
+def validate():
+    verify_inputs(app.MANIFEST)
+    assert len(original.CATALOG) == 26
+    assert original.BEST_NAME == 'Kernel Ridge RBF'
+    assert 'gpr_solo' not in original.CATALOG
+    training, test = original.combined_frames(app.TRAIN, app.TEST)
+    assert (len(training), len(test)) == (1309, 188)
+    assert not {'nota_final', 'fila_fuente', 'estudiante', 'pidm en matricula'} & set(training)
+    cv = original.comparison_rows(training, app.TARGET, cv=True)
+    inference = add_inference(cv, cv=True)
+    assert inference[P_HOLM].notna().sum() == 24
+    assert cv.iloc[0].Modelo == original.BEST_NAME
+    np.testing.assert_allclose(original.best_model().predict(test[app.FEATURES]), test[original.BEST], atol=1e-12, rtol=0)
+    client = app.server.test_client()
+    for route in ['/', '/healthz', '/_dash-layout', '/_dash-dependencies', '/assets/style.css']:
+        assert client.get(route).status_code == 200, route
+    layout = client.get('/_dash-layout').get_json()
+    ids = []
+    def visit(value):
+        if isinstance(value, dict):
+            if 'props' in value and 'id' in value['props']:
+                ids.append(value['props']['id'])
+            for child in value.values():
+                visit(child)
+        elif isinstance(value, list):
+            for child in value:
+                visit(child)
+    visit(layout)
+    assert len(ids) == len(set(ids))
+    for prefix in ['original', 'classic']:
+        for program, course in [('__all__', '__all__'), ('Ingeniería Civil', 'MAT1101'), ('Arquitectura', 'MAT1101')]:
+            for partition in ['cv', 'test']:
+                output = prefix+'-comparison.children'
+                metadata = app.app.callback_map[output]
+                inputs = [{**item, 'value': value} for item, value in zip(metadata['inputs'], [program, course, partition])]
+                response = client.post('/_dash-update-component', json={
+                    'output': output, 'outputs': {'id': prefix+'-comparison', 'property': 'children'},
+                    'inputs': inputs, 'state': [], 'changedPropIds': [inputs[0]['id']+'.value']})
+                assert response.status_code == 200, response.get_data(as_text=True)[:1000]
+    predict = app.app.callback_map['original-prediction-result.children']['callback'].__wrapped__
+    result = str(predict(1, *[app.DEFAULTS[c] for c in app.NUMERIC+app.CATEGORICAL]))
+    assert 'Nota predicha' in result and 'Kernel Ridge RBF' in result
+    print(json.dumps({'status': 'ok', 'models': 26, 'cv_contrasts': 24,
+                      'leader': original.BEST_NAME, 'canonical_test_predictions_verified': 188,
+                      'http_and_filtered_callbacks': 'ok', 'model_refit': False}))
+
+
+if __name__ == '__main__':
+    validate()

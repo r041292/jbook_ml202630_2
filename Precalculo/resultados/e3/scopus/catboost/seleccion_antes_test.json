@@ -1,0 +1,10 @@
+{
+  "params": {
+    "depth": 6,
+    "iterations": 300,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.03
+  },
+  "inner_rmse": 0.8141913725473501,
+  "test_used": false
+}

@@ -1,0 +1,96 @@
+{
+  "fold_metrics": [
+    {
+      "Modelo": "TabICLv2",
+      "Fold": 1,
+      "RMSE": 0.7313392241673203,
+      "MAE": 0.5749759812573441,
+      "MAPE (%)": 20.811471215322108,
+      "R²": 0.5715063973110577
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Fold": 2,
+      "RMSE": 0.8517184439763417,
+      "MAE": 0.6923060291050045,
+      "MAPE (%)": 24.790230231261575,
+      "R²": 0.4126210651973844
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Fold": 3,
+      "RMSE": 0.8351485561772977,
+      "MAE": 0.6532727747655097,
+      "MAPE (%)": 26.984775083344676,
+      "R²": 0.46510623874203183
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Fold": 4,
+      "RMSE": 0.8076623319432605,
+      "MAE": 0.6323993408224965,
+      "MAPE (%)": 22.963986441464716,
+      "R²": 0.42949725964494057
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Fold": 5,
+      "RMSE": 0.809944239101908,
+      "MAE": 0.6347656670384023,
+      "MAPE (%)": 24.59921556849733,
+      "R²": 0.49572714440553733
+    }
+  ],
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {},
+      "xgboost_base_params": null,
+      "inner_rmse": null,
+      "seconds": 39.376177400001325
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {},
+      "xgboost_base_params": null,
+      "inner_rmse": null,
+      "seconds": 34.34760050001205
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {},
+      "xgboost_base_params": null,
+      "inner_rmse": null,
+      "seconds": 34.68016129999887
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {},
+      "xgboost_base_params": null,
+      "inner_rmse": null,
+      "seconds": 34.501999500003876
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "best_params": {},
+      "xgboost_base_params": null,
+      "inner_rmse": null,
+      "seconds": 34.92921709999791
+    }
+  ]
+}

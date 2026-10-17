@@ -1,0 +1,306 @@
+{
+  "model": "TabPFN 2.5 (4 estimadores, CPU)",
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "logicdt_propio.py": "09fbc1181b90e865e6482ca43dca9bce6556fc03cd680491837cfc1784e1a090",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+    "experiment": "tabpfn_25",
+    "checkpoint": {
+      "repository": "Prior-Labs/tabpfn_2_5",
+      "revision": "6c45f3a6d0d07c6c5f62572e04a0c2929de91b8b",
+      "filename": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+      "url": "https://huggingface.co/Prior-Labs/tabpfn_2_5/resolve/6c45f3a6d0d07c6c5f62572e04a0c2929de91b8b/tabpfn-v2.5-regressor-v2.5_default.ckpt",
+      "sha256": "6e0308b7e5f3a8325b798b96d986b2b282c3608b1cda6e2991425a2a261d40b8",
+      "bytes": 40831995,
+      "license_url": "https://huggingface.co/Prior-Labs/tabpfn_2_5/blob/main/LICENSE"
+    }
+  },
+  "features": [
+    "Icfes_nuevo",
+    "Icfes_Matematicas",
+    "Tiempo_empleado_en_la_verificación_de_conocimientos",
+    "Dominio_Inicial",
+    "avance_precalculo_aleks",
+    "Dominio_Final",
+    "Tiempo_Total_Tiempo",
+    "Tiempo_total_Aprendidos_hora",
+    "Categoria_temas_inicial",
+    "Categoria_temas_final",
+    "programa_en_matricula",
+    "division_en_matricula",
+    "Mat_Curso_Asignatura_Relacionada",
+    "avance_cuartiles",
+    "cumplimiento_temas"
+  ],
+  "target": "nota_primer_parcial",
+  "test": {
+    "RMSE": 0.8982773630241487,
+    "MAE": 0.7154911127496271,
+    "MAPE (%)": 27.761049655087543,
+    "R²": 0.464222605664123
+  },
+  "cv": [
+    {
+      "metrica": "RMSE",
+      "media_cv": 0.8071183694122837,
+      "sd_cv": 0.04408956444775696,
+      "OOF_agrupado": 0.808310878372452
+    },
+    {
+      "metrica": "MAE",
+      "media_cv": 0.6313356025456818,
+      "sd_cv": 0.03924624587486319,
+      "OOF_agrupado": 0.6313305569423621
+    },
+    {
+      "metrica": "MAPE (%)",
+      "media_cv": 23.54342199266606,
+      "sd_cv": 2.243837126840682,
+      "OOF_agrupado": 23.542756831812426
+    },
+    {
+      "metrica": "R²",
+      "media_cv": 0.474933256653539,
+      "sd_cv": 0.057423599088407426,
+      "OOF_agrupado": 0.4769030669238692
+    }
+  ],
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 98.50312850001501
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 81.78781800001161
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 76.28850719999173
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 77.38189539997256
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "best_params": {
+        "n_estimators": 4,
+        "device": "cpu",
+        "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+        "fit_mode": "low_memory",
+        "random_state": 42
+      },
+      "seconds": 53.569149700022535
+    }
+  ],
+  "best_params": {
+    "n_estimators": 4,
+    "device": "cpu",
+    "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+    "fit_mode": "low_memory",
+    "random_state": 42
+  },
+  "bootstrap_test": [
+    {
+      "metrica": "RMSE",
+      "estimacion": 0.8982773630241487,
+      "IC_2.5%": 0.8120193141987848,
+      "IC_97.5%": 0.9883479792201142
+    },
+    {
+      "metrica": "MAE",
+      "estimacion": 0.7154911127496271,
+      "IC_2.5%": 0.638309051058394,
+      "IC_97.5%": 0.7952030339202982
+    },
+    {
+      "metrica": "MAPE (%)",
+      "estimacion": 27.761049655087543,
+      "IC_2.5%": 22.411864495679442,
+      "IC_97.5%": 34.065447134966966
+    },
+    {
+      "metrica": "R²",
+      "estimacion": 0.464222605664123,
+      "IC_2.5%": 0.3596661502020263,
+      "IC_97.5%": 0.5494336400486239
+    }
+  ],
+  "paired_vs_svm": [
+    {
+      "metrica": "RMSE",
+      "nuevo_menos_SVM": -0.02942829699411864,
+      "IC_2.5%": -0.06275258177780449,
+      "IC_97.5%": 0.0031579517913547924
+    },
+    {
+      "metrica": "MAE",
+      "nuevo_menos_SVM": -0.039951695201319914,
+      "IC_2.5%": -0.07164755455308001,
+      "IC_97.5%": -0.006880278157004608
+    },
+    {
+      "metrica": "MAPE (%)",
+      "nuevo_menos_SVM": -1.903505994407272,
+      "IC_2.5%": -3.067358492164259,
+      "IC_97.5%": -0.7892260572746794
+    },
+    {
+      "metrica": "R²",
+      "nuevo_menos_SVM": 0.035680040667587565,
+      "IC_2.5%": -0.003704608270197876,
+      "IC_97.5%": 0.07435392570847567
+    }
+  ],
+  "comparison_test": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    },
+    {
+      "Modelo": "Dummy media",
+      "RMSE": 1.2560587320777918,
+      "MAE": 1.1044669473205142,
+      "MAPE (%)": 42.314506619222655,
+      "R²": -0.047570763085229784
+    },
+    {
+      "Modelo": "KNN",
+      "RMSE": 0.923269665643187,
+      "MAE": 0.7540271566884664,
+      "MAPE (%)": 29.58449530006813,
+      "R²": 0.43399455550642596
+    },
+    {
+      "Modelo": "Ridge",
+      "RMSE": 0.9170904797449051,
+      "MAE": 0.754510914653895,
+      "MAPE (%)": 29.57213961234537,
+      "R²": 0.4415454352835828
+    },
+    {
+      "Modelo": "Lasso",
+      "RMSE": 0.919650088085005,
+      "MAE": 0.7530400905199947,
+      "MAPE (%)": 29.551966581946655,
+      "R²": 0.4384237809595437
+    },
+    {
+      "Modelo": "Random Forest",
+      "RMSE": 0.9396351788797481,
+      "MAE": 0.765847415639248,
+      "MAPE (%)": 29.732021287169115,
+      "R²": 0.41375114058482676
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274
+    },
+    {
+      "Modelo": "TabPFN 2.5 (4 estimadores, CPU)",
+      "RMSE": 0.8982773630241487,
+      "MAE": 0.7154911127496271,
+      "MAPE (%)": 27.761049655087543,
+      "R²": 0.464222605664123
+    }
+  ],
+  "method": "GroupKFold externo 5; configuración fijada antes de evaluar, sin búsqueda",
+  "versions": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.9.1",
+    "scipy": "1.18.1",
+    "tabpfn": "6.4.1",
+    "torch": "2.9.1+cpu"
+  }
+}

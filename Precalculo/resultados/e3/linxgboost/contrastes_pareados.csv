@@ -1,0 +1,29 @@
+﻿Modelo,Referencia,metrica,diferencia_candidato_menos_referencia,IC_2.5%,IC_97.5%,p_bilateral,p_Holm_family_7,significativa_al_5%_Holm
+LinXGBoost (hojas completas E3),XGBoost,RMSE,-0.007204971646227576,-0.03627837649470053,0.02147506852154152,0.62662,1.0,False
+LinXGBoost (hojas completas E3),XGBoost,R²,0.008636848838449396,-0.02572041703451368,0.04521765008997267,0.62662,1.0,False
+LinXGBoost (hojas completas E3),XGBoost,MAE,-0.00845408178329099,,,,,False
+LinXGBoost (hojas completas E3),XGBoost,MAPE (%),-0.16991560526425076,,,,,False
+LinXGBoost (hojas completas E3),SVR RBF,RMSE,0.006843876774121682,-0.019447327376557643,0.03446141725689472,0.61372,1.0,False
+LinXGBoost (hojas completas E3),SVR RBF,R²,-0.008140149934484309,-0.042203374662159704,0.023590181928330622,0.61372,1.0,False
+LinXGBoost (hojas completas E3),SVR RBF,MAE,0.007309929649441771,,,,,False
+LinXGBoost (hojas completas E3),SVR RBF,MAPE (%),-0.05113800911677657,,,,,False
+LinXGBoost (hojas completas E3),TabICLv2,RMSE,0.0012538896187601623,-0.023455358780632072,0.028164772940998565,0.92756,1.0,False
+LinXGBoost (hojas completas E3),TabICLv2,R²,-0.0014960382495803337,-0.034072430118450195,0.02812231062534894,0.92756,1.0,False
+LinXGBoost (hojas completas E3),TabICLv2,MAE,0.003359924048163654,,,,,False
+LinXGBoost (hojas completas E3),TabICLv2,MAPE (%),-0.17724673827795456,,,,,False
+LinXGBoost (hojas completas E3),SVM lineal,RMSE,-0.028636975799563147,-0.054232669307127786,-0.0032613489705891514,0.0307,0.2149,False
+LinXGBoost (hojas completas E3),SVM lineal,R²,0.034735658073976716,0.004025904071818085,0.06737428322772153,0.0307,0.2149,False
+LinXGBoost (hojas completas E3),SVM lineal,MAE,-0.03497865526926802,,,,,False
+LinXGBoost (hojas completas E3),SVM lineal,MAPE (%),-1.429696450754669,,,,,False
+LinXGBoost (hojas completas E3),XGBoost ampliado (gbtree),RMSE,-0.010138237247337534,-0.039126789054191424,0.018146501358451896,0.48932,1.0,False
+LinXGBoost (hojas completas E3),XGBoost ampliado (gbtree),R²,0.012172801736692329,-0.021911897745693697,0.04838802668877734,0.48932,1.0,False
+LinXGBoost (hojas completas E3),XGBoost ampliado (gbtree),MAE,-0.015914808485757992,,,,,False
+LinXGBoost (hojas completas E3),XGBoost ampliado (gbtree),MAPE (%),-0.4346901639681988,,,,,False
+LinXGBoost (hojas completas E3),DART-XGBoost,RMSE,-0.02309788286049519,-0.05217030198146517,0.005472570212822086,0.11912,0.71472,False
+LinXGBoost (hojas completas E3),DART-XGBoost,R²,0.027931978384130418,-0.006850001535894607,0.06358383805708946,0.11912,0.71472,False
+LinXGBoost (hojas completas E3),DART-XGBoost,MAE,-0.030712256836786023,,,,,False
+LinXGBoost (hojas completas E3),DART-XGBoost,MAPE (%),-1.1156488166372824,,,,,False
+LinXGBoost (hojas completas E3),DenseWeight-XGBoost,RMSE,-0.013968147323487612,-0.04552855462520435,0.017781097323633633,0.3837,1.0,False
+LinXGBoost (hojas completas E3),DenseWeight-XGBoost,R²,0.01680682833436342,-0.021158122954060946,0.05705115833961352,0.3837,1.0,False
+LinXGBoost (hojas completas E3),DenseWeight-XGBoost,MAE,-0.013643282828834535,,,,,False
+LinXGBoost (hojas completas E3),DenseWeight-XGBoost,MAPE (%),-0.10555692370990499,,,,,False

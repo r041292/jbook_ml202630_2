@@ -1,0 +1,5 @@
+{
+  "parallel_code_sha256": "aa2bda197795e3c77f92b25721e6ccd90585fbdb641950017446600fcf5ba1b5",
+  "note": "Procesos independientes, 6 trabajadores de un hilo. Fit/predict/tune idénticos al evaluador auditado.",
+  "summary_code_sha256": "3e70f27ea137bc8a33b13293cc690256df4d9231c4988105a797ee1ef23dcc2f"
+}

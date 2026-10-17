@@ -1,0 +1,883 @@
+{
+  "svm": {
+    "name": "SVM lineal",
+    "description": "SVR lineal usado como referencia histórica de E3.",
+    "paper": "https://doi.org/10.1023/B:STCO.0000035301.49549.88",
+    "preparation": "Pipeline SVM canónico; Dummy estima solo la media del fit.",
+    "params": {
+      "modelo__C": 0.3,
+      "modelo__epsilon": 0.5
+    },
+    "grid": {
+      "modelo__C": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        10.0
+      ],
+      "modelo__epsilon": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "dummy": {
+    "name": "Dummy media",
+    "description": "Referencia que predice la media de train.",
+    "paper": null,
+    "preparation": "Pipeline SVM canónico; Dummy estima solo la media del fit.",
+    "params": {},
+    "grid": {},
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "knn": {
+    "name": "KNN",
+    "description": "Regresión mediante vecinos cercanos.",
+    "paper": "https://doi.org/10.2307/2685209",
+    "preparation": "Mediana, log1p en tiempos, StandardScaler; moda y one-hot con referencia. Distancias sobre variables transformadas.",
+    "params": {
+      "modelo__n_neighbors": 31,
+      "modelo__p": 2,
+      "modelo__weights": "distance"
+    },
+    "grid": {
+      "modelo__n_neighbors": [
+        5,
+        11,
+        21,
+        31,
+        41,
+        61,
+        81,
+        101
+      ],
+      "modelo__weights": [
+        "uniform",
+        "distance"
+      ],
+      "modelo__p": [
+        1,
+        2
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "ridge": {
+    "name": "Ridge",
+    "description": "Regresión lineal con penalización L2.",
+    "paper": "https://doi.org/10.1080/00401706.1970.10488634",
+    "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L2.",
+    "params": {
+      "modelo__alpha": 10
+    },
+    "grid": {
+      "modelo__alpha": [
+        0.01,
+        0.1,
+        1,
+        3,
+        10,
+        30,
+        100,
+        1000
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "lasso": {
+    "name": "Lasso",
+    "description": "Regresión lineal con penalización L1.",
+    "paper": "https://doi.org/10.1111/j.2517-6161.1996.tb02080.x",
+    "preparation": "Mismo preprocesamiento del SVM: mediana, log1p en tiempos, escalado; moda y one-hot. Penalización L1.",
+    "params": {
+      "modelo__alpha": 0.0005
+    },
+    "grid": {
+      "modelo__alpha": [
+        0.0001,
+        0.0003,
+        0.0005,
+        0.001,
+        0.002,
+        0.003,
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "forest": {
+    "name": "Random Forest",
+    "description": "Bosque de árboles de regresión.",
+    "paper": "https://doi.org/10.1023/A:1010933404324",
+    "preparation": "Mediana numérica, moda categórica y OrdinalEncoder (desconocidas=-1). Sin one-hot, log1p ni escalado. Los códigos imponen un orden artificial en categorías nominales.",
+    "params": {
+      "modelo__max_depth": 6,
+      "modelo__min_samples_leaf": 5,
+      "modelo__n_estimators": 500
+    },
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        4,
+        6,
+        null
+      ],
+      "modelo__min_samples_leaf": [
+        2,
+        5,
+        10
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "xgboost": {
+    "name": "XGBoost",
+    "description": "XGBoost de referencia con categorías nativas y búsqueda de parámetros en train.",
+    "paper": "https://doi.org/10.1145/2939672.2939785",
+    "preparation": "Mediana numérica y moda categórica; categorías nativas aprendidas en cada fit. Sin one-hot externo ni escalado; categorías nuevas pasan a faltantes. tree_method=hist, enable_categorical=True.",
+    "params": {
+      "modelo__learning_rate": 0.03,
+      "modelo__max_depth": 2,
+      "modelo__n_estimators": 300
+    },
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        4
+      ],
+      "modelo__learning_rate": [
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "method": "5 folds externos y 5 internos por estudiante; Dummy no tiene búsqueda."
+  },
+  "m0": {
+    "name": "SVR RBF",
+    "description": "SVR usa una banda epsilon de tolerancia al error y un kernel RBF para aprender relaciones no lineales.",
+    "paper": "https://doi.org/10.1023/B:STCO.0000035301.49549.88",
+    "params": {
+      "modelo__C": 2.3305614317972307,
+      "modelo__epsilon": 0.06812144081446851,
+      "modelo__gamma": 0.01
+    },
+    "method": "5 folds externos canónicos y 5 internos GroupKFold por estudiante; preprocesamiento dentro de cada fit; selección por RMSE sólo en train; test temporal 202530 al final.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [
+      "El test temporal ya fue consultado en experimentos anteriores; la inferencia es exploratoria.",
+      "Los resultados de validación publicados por los artículos usan particiones aleatorias, no la estructura por estudiante/periodo de E3."
+    ],
+    "grid": {
+      "C": "loguniform(0.001, 1000)",
+      "epsilon": "loguniform(0.01, 1.5)",
+      "gamma": "scale, auto y 25 valores logspace(1e-5, 10)",
+      "búsqueda": "64 muestras aleatorias por fit interno"
+    }
+  },
+  "m1": {
+    "name": "TabICLv2",
+    "description": "Modelo preentrenado que usa las filas de train como contexto para inferir nuevas respuestas, sin HPO local.",
+    "paper": "https://proceedings.mlr.press/v306/qu26a.html",
+    "params": {
+      "n_estimators": 8,
+      "device": "cpu",
+      "norm_methods": [
+        "none"
+      ],
+      "recorte_extremos": false
+    },
+    "method": "Selección solo train, folds por estudiante, métricas sin pesos. TabICLv2 fijo sin HPO; TCR/HRT usan 5x5 con selección interna. TCR usa base XGBoost anidada original; no parámetros del train completo en folds externos.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {}
+  },
+  "m2": {
+    "name": "TabPFN 2.5 original",
+    "description": "Transformer preentrenado que aproxima inferencia predictiva en tablas mediante aprendizaje en contexto; sin ajuste local de pesos.",
+    "paper": "https://arxiv.org/abs/2511.08667",
+    "params": {
+      "n_estimators": 4,
+      "device": "cpu",
+      "model_path": "tabpfn-v2.5-regressor-v2.5_default.ckpt",
+      "fit_mode": "low_memory",
+      "random_state": 42
+    },
+    "method": "GroupKFold externo 5; configuración fijada antes de evaluar, sin búsqueda",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {}
+  },
+  "m3": {
+    "name": "LinXGBoost (hojas completas E3)",
+    "description": "Boosting de árboles cuyas hojas ajustan regresiones Ridge locales. Port independiente con cortes cuantílicos aproximados.",
+    "paper": "https://arxiv.org/abs/1710.03634",
+    "params": {
+      "modelo__gamma": 0.05,
+      "modelo__learning_rate": 0.16,
+      "modelo__max_depth": 2,
+      "modelo__min_samples_leaf": 120,
+      "modelo__n_estimators": 5,
+      "modelo__reg_lambda": 34.16658290996042
+    },
+    "method": "20 muestras aleatorias por búsqueda interna; 5×5 folds agrupados. Port independiente, cortes cuantílicos aproximados.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. Escalado adicional de todas las columnas para las hojas lineales. ",
+    "limitations": [],
+    "grid": {
+      "modelo__n_estimators": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "modelo__learning_rate": [
+        0.03,
+        0.06,
+        0.1,
+        0.16,
+        0.22
+      ],
+      "modelo__max_depth": [
+        2,
+        3,
+        4
+      ],
+      "modelo__min_samples_leaf": [
+        80,
+        120,
+        160,
+        220
+      ],
+      "modelo__reg_lambda": "loguniform(0.1, 100.0)",
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.2,
+        1.0
+      ]
+    }
+  },
+  "m4": {
+    "name": "TabPFN 2.5 fine-tuned",
+    "description": "TabPFN 2.5 con ajuste adicional de pesos usando train; no dispone de nueva evaluación OOF independiente.",
+    "paper": "https://arxiv.org/abs/2511.08667",
+    "params": {
+      "epochs_final": 5,
+      "inference": {
+        "n_estimators": 4,
+        "random_state": 42
+      }
+    },
+    "method": "Mismo test202530, 15 variables y preparación; contexto completo de train. Pesos finales ajustados con todo train: no evaluar estos pesos en folds de train como si fueran OOF, pues ya vieron esos estudiantes. Los folds del entrenamiento seleccionaron épocas y no son una nueva CV externa anidada.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {}
+  },
+  "m5": {
+    "name": "Kernel Ridge RBF",
+    "description": "Ridge en un kernel RBF: permite relaciones no lineales mediante una solución matricial exacta; no reproduce Truncated Newton del artículo.",
+    "paper": "https://doi.org/10.3390/app12094252",
+    "params": {
+      "alpha": 1.0,
+      "gamma": 0.03
+    },
+    "method": "5 folds externos y 5 internos por estudiante; selección por RMSE solo en train.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. Objetivo centrado dentro de fit. ",
+    "limitations": [],
+    "grid": {
+      "alpha": [
+        "0.01",
+        "0.1",
+        "1.0",
+        "10.0",
+        "100.0"
+      ],
+      "gamma": [
+        "0.001",
+        "0.003",
+        "0.01",
+        "0.03",
+        "0.1",
+        "0.3",
+        "1.0"
+      ]
+    }
+  },
+  "m6": {
+    "name": "CatBoost",
+    "description": "Boosting ordenado de árboles con tratamiento de variables categóricas.",
+    "paper": "https://proceedings.neurips.cc/paper/2018/hash/14491b756b3a51daac41c24863285549-Abstract.html",
+    "params": {
+      "depth": 6,
+      "iterations": 300,
+      "l2_leaf_reg": 3.0,
+      "learning_rate": 0.03
+    },
+    "method": "5 folds externos y 5 internos por estudiante; selección por RMSE solo en train.",
+    "preparation": "Mediana/moda y tipos categóricos nativos; sin one-hot externo, log1p ni escalado. ",
+    "limitations": [],
+    "grid": {
+      "depth": [
+        "2",
+        "4",
+        "6"
+      ],
+      "iterations": [
+        "300",
+        "600"
+      ],
+      "l2_leaf_reg": [
+        "10.0",
+        "3.0"
+      ],
+      "learning_rate": [
+        "0.03",
+        "0.1"
+      ]
+    }
+  },
+  "m7": {
+    "name": "TCR-XGBoost",
+    "description": "Reduce el peso de observaciones con baja robustez local antes de ajustar XGBoost; no elimina filas.",
+    "paper": "https://doi.org/10.1007/s10994-024-06704-x",
+    "params": {
+      "fraction": 0.2,
+      "weight": 0.3
+    },
+    "method": "Selección solo train, folds por estudiante, métricas sin pesos. TabICLv2 fijo sin HPO; TCR/HRT usan 5x5 con selección interna. TCR usa base XGBoost anidada original; no parámetros del train completo en folds externos. Control: fraction=0, weight=1; otras fracciones se cruzan solo con pesos 0.3, 0.6 y 0.9.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. MinMaxScaler para distancias; predictor XGBoost con categorías nativas y base ajustada dentro del fold. ",
+    "limitations": [],
+    "grid": {
+      "fraction": [
+        0,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "weight": [
+        0.3,
+        0.6,
+        0.9,
+        1
+      ]
+    }
+  },
+  "m8": {
+    "name": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+    "description": "Modelo tabular preentrenado zero-shot, sin fine-tuning ni HPO, con 32 vistas de inferencia.",
+    "paper": "https://arxiv.org/abs/2609.37959",
+    "params": {
+      "vistas": 32,
+      "CPU": "BF16",
+      "fine_tuning": false,
+      "outlier_threshold": 1000000000000.0
+    },
+    "method": "GroupKFold externo 5 por estudiante; TabFM fijo zero-shot, sin ajuste de pesos ni HPO; test temporal 202530 al final.",
+    "preparation": "Preparación del modelo dentro de fit; se desactiva su recorte de extremos para conservar los outliers E3. ",
+    "limitations": [
+      "El test temporal ha sido consultado en experimentos previos; la inferencia es exploratoria.",
+      "Los pesos preentrenados usan licencia no comercial.",
+      "Se desactivó el recorte de extremos propio del preprocesador TabFM para conservar outliers E3."
+    ],
+    "grid": {}
+  },
+  "m9": {
+    "name": "XGBoost ampliado (gbtree)",
+    "description": "Control XGBoost con una búsqueda de hiperparámetros ampliada.",
+    "paper": "https://doi.org/10.1145/2939672.2939785",
+    "params": {
+      "modelo__colsample_bytree": 0.6,
+      "modelo__gamma": 0.3,
+      "modelo__learning_rate": 0.01097599850212944,
+      "modelo__max_depth": 2,
+      "modelo__min_child_weight": 1,
+      "modelo__n_estimators": 600,
+      "modelo__reg_alpha": 0.001,
+      "modelo__reg_lambda": 3.345674213696821,
+      "modelo__subsample": 0.8
+    },
+    "method": "Cinco folds externos e cinco internos GroupKFold por estudiante; búsqueda por RMSE solo en train; test temporal 202530 al final. 20 muestras aleatorias por búsqueda interna.",
+    "preparation": "Mediana/moda y categorías nativas de XGBoost; sin one-hot externo, log1p ni escalado. DenseWeight estima la densidad del objetivo solo dentro de fit; DART añade dropout de árboles.",
+    "limitations": [
+      "El test temporal ya se ha consultado en experimentos anteriores; inferencia exploratoria.",
+      "DenseWeight es una adaptación del esquema de pesos KDE de la literatura para XGBoost; esa combinación no es la implementación original DenseLoss."
+    ],
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ]
+    }
+  },
+  "m10": {
+    "name": "RaFFLE",
+    "description": "Bosque de árboles PILOT con modelos lineales locales y particiones adaptativas.",
+    "paper": "https://arxiv.org/abs/2502.10185",
+    "params": {
+      "modelo__alpha": 0.5,
+      "modelo__max_depth": 6,
+      "modelo__n_features_node": 0.7
+    },
+    "method": "5 folds externos canónicos y 5 internos GroupKFold por estudiante; preprocesamiento dentro de cada fit; selección por RMSE sólo en train; test temporal 202530 al final.",
+    "preparation": "Mediana numérica, moda y códigos ordinales categóricos con índices explícitos; sin escalado. ",
+    "limitations": [
+      "El test temporal ya fue consultado en experimentos anteriores; la inferencia es exploratoria.",
+      "Los resultados de validación publicados por los artículos usan particiones aleatorias, no la estructura por estudiante/periodo de E3."
+    ],
+    "grid": {
+      "alpha": [
+        0.01,
+        0.5,
+        1.0
+      ],
+      "n_features_node": [
+        0.7,
+        1.0
+      ],
+      "max_depth": [
+        6,
+        20
+      ]
+    }
+  },
+  "m11": {
+    "name": "DenseWeight-XGBoost",
+    "description": "XGBoost con pesos según la rareza del objetivo, estimada dentro de cada fit.",
+    "paper": "https://doi.org/10.1007/s10994-021-06023-5",
+    "params": {
+      "modelo__colsample_bytree": 0.8,
+      "modelo__gamma": 0.0,
+      "modelo__learning_rate": 0.020153425505297702,
+      "modelo__max_depth": 4,
+      "modelo__min_child_weight": 8,
+      "modelo__n_estimators": 250,
+      "modelo__reg_alpha": 0.001,
+      "modelo__reg_lambda": 2.024396057549301,
+      "modelo__subsample": 0.6,
+      "modelo__weight_alpha": 0.25
+    },
+    "method": "Cinco folds externos e cinco internos GroupKFold por estudiante; búsqueda por RMSE solo en train; test temporal 202530 al final. 20 muestras aleatorias por búsqueda interna.",
+    "preparation": "Mediana/moda y categorías nativas de XGBoost; sin one-hot externo, log1p ni escalado. DenseWeight estima la densidad del objetivo solo dentro de fit; DART añade dropout de árboles.",
+    "limitations": [
+      "El test temporal ya se ha consultado en experimentos anteriores; inferencia exploratoria.",
+      "DenseWeight es una adaptación del esquema de pesos KDE de la literatura para XGBoost; esa combinación no es la implementación original DenseLoss."
+    ],
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "modelo__weight_alpha": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ]
+    }
+  },
+  "m12": {
+    "name": "DART-XGBoost",
+    "description": "XGBoost con dropout de árboles durante el entrenamiento.",
+    "paper": "https://proceedings.mlr.press/v38/korlakaivinayak15.html",
+    "params": {
+      "modelo__colsample_bytree": 0.8,
+      "modelo__gamma": 0.1,
+      "modelo__learning_rate": 0.09433458442225107,
+      "modelo__max_depth": 2,
+      "modelo__min_child_weight": 1,
+      "modelo__n_estimators": 600,
+      "modelo__normalize_type": "forest",
+      "modelo__one_drop": 1,
+      "modelo__rate_drop": 0.12487968916856648,
+      "modelo__reg_alpha": 1.0,
+      "modelo__reg_lambda": 7.012604000905364,
+      "modelo__sample_type": "uniform",
+      "modelo__skip_drop": 0.004690922022358179,
+      "modelo__subsample": 0.6
+    },
+    "method": "Cinco folds externos e cinco internos GroupKFold por estudiante; búsqueda por RMSE solo en train; test temporal 202530 al final. 20 muestras aleatorias por búsqueda interna.",
+    "preparation": "Mediana/moda y categorías nativas de XGBoost; sin one-hot externo, log1p ni escalado. DenseWeight estima la densidad del objetivo solo dentro de fit; DART añade dropout de árboles.",
+    "limitations": [
+      "El test temporal ya se ha consultado en experimentos anteriores; inferencia exploratoria.",
+      "DenseWeight es una adaptación del esquema de pesos KDE de la literatura para XGBoost; esa combinación no es la implementación original DenseLoss."
+    ],
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "modelo__rate_drop": {
+        "distribution": "uniform",
+        "args": [
+          0.02,
+          0.38
+        ],
+        "kwargs": {}
+      },
+      "modelo__skip_drop": {
+        "distribution": "uniform",
+        "args": [
+          0.0,
+          0.3
+        ],
+        "kwargs": {}
+      },
+      "modelo__sample_type": [
+        "uniform",
+        "weighted"
+      ],
+      "modelo__normalize_type": [
+        "tree",
+        "forest"
+      ],
+      "modelo__one_drop": [
+        0,
+        1
+      ]
+    }
+  },
+  "m13": {
+    "name": "HRT-Boost",
+    "description": "Boosting de árboles con regresiones Ridge locales; combina particiones con tendencias lineales regularizadas.",
+    "paper": "https://arxiv.org/abs/2605.23422",
+    "params": {
+      "max_depth": 1,
+      "n_estimators": 30,
+      "ridge_alpha": 100.0
+    },
+    "method": "Selección solo train, folds por estudiante, métricas sin pesos. TabICLv2 fijo sin HPO; TCR/HRT usan 5x5 con selección interna. TCR usa base XGBoost anidada original; no parámetros del train completo en folds externos.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {
+      "max_depth": [
+        "1",
+        "2"
+      ],
+      "n_estimators": [
+        "10",
+        "30"
+      ],
+      "ridge_alpha": [
+        "1.0",
+        "10.0",
+        "100.0"
+      ]
+    }
+  },
+  "m14": {
+    "name": "logicDT propio (adaptado)",
+    "description": "Busca interacciones lógicas y combina reglas con hojas de media o Ridge; adaptación propia, no el algoritmo R exacto.",
+    "paper": "https://doi.org/10.1007/s10994-023-06488-6",
+    "params": {
+      "modelo__leaf_model": "ridge",
+      "modelo__max_depth": 2,
+      "modelo__max_terms": 5,
+      "modelo__ridge_alpha": 10.0
+    },
+    "method": "GroupKFold externo 5 e interno 5, selección RMSE",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {
+      "modelo__leaf_model": [
+        "mean",
+        "ridge"
+      ],
+      "modelo__max_depth": [
+        "2",
+        "3"
+      ],
+      "modelo__max_terms": [
+        "3",
+        "5"
+      ],
+      "modelo__ridge_alpha": [
+        "1.0",
+        "10.0"
+      ]
+    }
+  },
+  "m15": {
+    "name": "GPR–XGBoost (OOF agrupado)",
+    "description": "Un proceso gaussiano estima la respuesta y XGBoost intenta corregir su residuo; las meta-features de train se generan mediante OOF agrupado.",
+    "paper": "https://arxiv.org/abs/2610.15862",
+    "params": {
+      "kernel_GPR": "Constant*(Matern(2.5)+RBF)+White",
+      "XGBoost": "1000 árboles, learning_rate=0.01, max_leaves=31, subsample=colsample_bytree=0.8, reg_alpha=reg_lambda=1"
+    },
+    "method": "GPR exacto con OOF GroupKFold de 5 por estudiante; XGBoost aprende y-yhat_GPR con variables E3 codificadas, media y desviación GPR; mismos folds externos E3; test temporal al final.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. Variables mixtas E3: imputación, log1p y escalado numérico, one-hot categórico. XGBoost usa max_depth=0/lossguide y max_leaves=31 para contener complejidad con N pequeño. Validación agrupada por estudiante y test temporal, frente a la partición aleatoria del artículo. Conformal agrupado usa el máximo residuo absoluto OOF por estudiante.",
+    "limitations": [
+      "El preprint evalúa 582 datos de ingeniería con división aleatoria 80/20; sus métricas no predicen E3.",
+      "El test temporal ya fue consultado en experimentos anteriores; la inferencia es exploratoria.",
+      "La cobertura conformal en 202530 es descriptiva ante posible cambio temporal.",
+      "GPR exacto y cross-fitting pueden ser lentos; el progreso queda guardado por fold externo.",
+      "Parámetros XGBoost fijos del artículo/adaptación; no hay HPO específico para E3."
+    ],
+    "grid": {}
+  },
+  "m16": {
+    "name": "RIM (port E3)",
+    "description": "Recupera ejemplos similares de train mediante BM25 y usa una red para combinar información local; port E3.",
+    "paper": "https://arxiv.org/abs/2108.05252",
+    "params": {
+      "epochs": 30,
+      "n_neighbors": 15,
+      "weight_decay": 0.01
+    },
+    "method": "5x5 GroupKFold por estudiante, selección RMSE y test temporal202530. Índice/etiquetas de recuperación solo fit; autoestudiante excluido en train. Sin early stopping sobre validación; épocas son parte de la grilla.",
+    "preparation": "Preparación canónica, discretización numérica y embeddings; índice y etiquetas de recuperación solo del fit, con autoestudiante excluido. PyTorch, BM25 Lucene local, mismos15 campos y preparación canónica con discretización numérica adicional y embeddings en lugar de one-hot; pool=fit excluyendo estudiante consultado en vez de reservar tercera tabla; MLP64/32, LayerNorm, target normalizado, etiquetas recuperadas discretizadas en cuantiles; regresión lineal de salida y skip de etiquetas según artículo.",
+    "limitations": [],
+    "grid": {
+      "epochs": [
+        "30",
+        "60"
+      ],
+      "n_neighbors": [
+        "15",
+        "5"
+      ],
+      "weight_decay": [
+        "0.001",
+        "0.01"
+      ]
+    }
+  },
+  "m17": {
+    "name": "XBART (GFR)",
+    "description": "Árboles bayesianos acelerados; variante GFR de stochtree, sin fase MCMC, distinta del binario XBART original.",
+    "paper": "https://doi.org/10.1080/01621459.2021.1942012",
+    "params": {
+      "depth": 4,
+      "leaf": 10,
+      "trees": 50
+    },
+    "method": "5 folds externos y 5 internos por estudiante; selección por RMSE solo en train.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. ",
+    "limitations": [],
+    "grid": {
+      "depth": [
+        "2",
+        "4"
+      ],
+      "leaf": [
+        "10",
+        "30"
+      ],
+      "trees": [
+        "150",
+        "50"
+      ]
+    }
+  },
+  "m18": {
+    "name": "coPILOT",
+    "description": "Conjunto de árboles con modelos lineales locales basado en PILOT, usando el código de los autores.",
+    "paper": "https://doi.org/10.1007/s11634-026-00683-8",
+    "params": {
+      "alpha": 0.5,
+      "depth": 6,
+      "leaf": 30
+    },
+    "method": "5 folds externos y 5 internos por estudiante; selección por RMSE solo en train.",
+    "preparation": "Mediana/moda y códigos ordinales; sin escalado. Se conserva la truncación interna del algoritmo original. ",
+    "limitations": [],
+    "grid": {
+      "alpha": [
+        "0.2",
+        "0.5",
+        "1.0"
+      ],
+      "depth": [
+        "2",
+        "4",
+        "6"
+      ],
+      "leaf": [
+        "10",
+        "30"
+      ]
+    }
+  }
+}
