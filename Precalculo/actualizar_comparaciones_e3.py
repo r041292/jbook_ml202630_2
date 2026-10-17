@@ -260,6 +260,15 @@ Las corridas LinXGBoost supersedidas y el diagnóstico preliminar de stacking qu
 
 ## Conclusiones y alcance
 
+La comparación principal de procedimientos usa **CV externa**; este ranking
+test es un contraste temporal complementario y no selecciona la familia.
+Kernel Ridge RBF lidera CV entre los 26 candidatos activos (0.801325), con
+pipeline original guardado y verificado. GPR sola se retiró del flujo activo;
+el híbrido GPR–XGBoost se conserva. La inferencia CV se calcula por separado:
+[método, resultados y límites](../cv_externa/README.md). Regenerar tras esta
+consolidación con `python significancia_cv_externa_e3.py`; no confundir sus
+p y Holm24 con los contrastes de test presentados aquí.
+
 SVR RBF conserva el menor RMSE (0.892225) y el mayor R² (0.471418).
 Su reducción puntual de RMSE frente a XGBoost es 0.014049 (1.55%). Frente a
 TabICLv2, ΔRMSE=-0.005590, IC95% [-0.025163; 0.014880] y Holm55=1.000:
@@ -276,7 +285,7 @@ Las corridas previas de RMSE 1.012583 y 1.017309 están supersedidas.
 XGBoost original ocupa el puesto 8. La búsqueda ampliada, DenseWeight y DART
 quedan en los puestos 11, 13 y 16, respectivamente: ninguna reduce su RMSE test
 ni demuestra una mejora ajustada. RaFFLE queda 12 y TabFM 10.
-Para la preferencia de evitar deep learning, SVR RBF es el líder puntual;
+Para la preferencia de evitar deep learning, SVR RBF es el líder puntual del test;
 LinXGBoost es la modificación metodológica reciente mejor situada, sin mejora significativa demostrada.
 
 ## Interpretación de los CSV y la inferencia
@@ -338,6 +347,11 @@ Los modelos se seleccionaron por RMSE en train; no se reoptimizó por R² ni
 se ajustaron modelos al consolidar estas tablas.
 
 ## Conclusión estadística
+
+La comparación principal usa CV externa: véase el
+[reporte específico](../cv_externa/README.md), con t corregida aproximada,
+Holm24 y límites de una sola partición de cinco folds. Las cifras siguientes
+describen el contraste temporal complementario del test.
 
 LinXGBoost tiene ΔR²=+0.008637 frente a XGBoost, con Holm7=1.000.
 Su R² OOF 0.427817 es inferior al de XGBoost original (0.465031).

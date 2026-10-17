@@ -12,6 +12,8 @@ from dash import Input, Output, State, dcc, html
 
 from prepare_data import BOOK, CACHE, ROOT, metrics
 from prediction import build_form, input_id, predict_record
+from prepare_originals import CLASSIC_PAPERS
+from statistical_comparison import add_inference, display_statistics, conclusion, EXPLANATION
 
 DIRECTORY = CACHE / 'clasicos'
 REPORT = json.loads((DIRECTORY / 'comparacion.json').read_text(encoding='utf-8'))
@@ -25,14 +27,14 @@ MODEL_COLORS = {'SVM lineal': '#435568', 'KNN': '#5268b9', 'Ridge': '#bc9028',
                 'Lasso': '#a573b3', 'Random Forest': '#3f925f', 'XGBoost': '#187b80', 'Dummy media': '#9aa7af'}
 
 
-def metric_bar(scores, metric):
+def metric_bar(scores, metric, order=None, colors=None):
     """Unidades y escalas independientes; mismo orden y color de modelos."""
     values = scores.loc[scores[metric].notna()].copy()
     if values.empty:
         return None
     figure = px.bar(values, x=metric, y='Modelo', color='Modelo', orientation='h',
-                    text=metric, color_discrete_map=MODEL_COLORS,
-                    category_orders={'Modelo': MODEL_ORDER})
+                    text=metric, color_discrete_map=colors or MODEL_COLORS,
+                    category_orders={'Modelo': order or MODEL_ORDER})
     template = '%{x:.1f} %' if metric == 'MAPE (%)' else '%{x:.3f}'
     figure.update_traces(texttemplate=template, textposition='outside', cliponaxis=False,
                          hovertemplate='%{y}<br>' + metric + ': ' + template + '<extra></extra>')
@@ -110,6 +112,7 @@ def create_classics(app, ui):
         ])
         pipeline_cards.append(html.Details([
             html.Summary(spec['name'] + f' · {spec["combinations"]} combinaciones'),
+            md(f'[Artículo de fundamento]({CLASSIC_PAPERS[key]})'),
             md(spec['preparation']), table(parameters),
             md(f'RMSE del grid final en train: **{spec["selection_rmse"]:.4f}**. '
                'Es una métrica de selección; la evaluación independiente usa los folds externos y el test.'),
@@ -120,7 +123,7 @@ def create_classics(app, ui):
         notice('Todos predicen la nota del primer parcial: son modelos de regresión. '
                'Comparten los datos reales, el test 202530 y los mismos cinco folds externos por estudiante del SVM. '
                'Cada modelo ajusta sus hiperparámetros en cinco folds internos; test no participa en la búsqueda.'),
-        html.Details([html.Summary('Preparación y grillas por modelo'),
+        html.Details([html.Summary('Fundamento, documentación, preparación y grillas por modelo'),
             md('KNN, Ridge y Lasso reutilizan el preprocesamiento del SVM. Los árboles usan otra representación: '
                '**Random Forest emplea códigos ordinales** porque requiere entradas numéricas; '
                'estos códigos introducen un orden artificial en variables nominales. '
@@ -175,30 +178,42 @@ def create_classics(app, ui):
         if tr.empty and te.empty:
             return notice('No hay filas para esta combinación. Cambia los filtros o selecciona Todos.')
         scores = comparison_rows(tr, te, target, selected_program == '__all__' and selected_course == '__all__')
+        global_view = selected_program == selected_course == '__all__'
+        temporal = scores.loc[scores['Evaluación'].eq('Test temporal')]
+        cv = scores.loc[scores['Evaluación'].eq('CV externa anidada')]
         label = 'CV externa anidada' if evaluation == 'cv' else 'Test temporal'
         selected = scores.loc[scores['Evaluación'].eq(label)]
+        selected = add_inference(selected, cv=evaluation == 'cv', global_view=global_view)
+        plot_order = selected.loc[selected.RMSE.notna(), 'Modelo'].tolist()
+        order_note = 'Orden de la tabla: RMSE de menor a mayor en los cuatro gráficos.'
         metric_cards = []
         for metric in ['RMSE', 'MAE', 'MAPE (%)', 'R²']:
             direction = 'Mayor es mejor' if metric == 'R²' else 'Menor es mejor'
-            figure = metric_bar(selected, metric)
+            figure = metric_bar(selected, metric, plot_order)
             metric_cards.append(card(metric + ' · ' + direction,
-                label + (' · Sin valores definidos para este grupo.' if figure is None else
+                label + ' · ' + order_note + (' · Sin valores definidos para este grupo.' if figure is None else
                          ' · La línea discontinua marca el SVM lineal.'), figure))
         return html.Div([
             html.Article([html.H3('Comparación de resultados'),
                 md('**Una métrica por gráfico y una evaluación a la vez.** Selecciona validación externa '
-                   'o test temporal arriba. Los modelos mantienen el mismo orden y color en los cuatro gráficos; '
+                   'o test temporal arriba. Los cuatro gráficos siguen el orden de la tabla de esa evaluación '
+                   '(RMSE de menor a mayor) y conservan el color por modelo; '
                    'cada barra muestra su valor. Las escalas y unidades son propias de cada métrica: '
                    'compara modelos dentro de un gráfico. La línea discontinua señala la referencia del SVM.')], className='card'),
             (notice('No hay filas de ' + label + ' para estos filtros. La tabla conserva las evaluaciones disponibles.')
              if selected.empty else html.Div(metric_cards, className='comparison-metric-grid')),
             html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
-                md('La tabla reúne **validación externa y test temporal**. '
+                md('Consulta **validación externa y test temporal** en pestañas separadas. '
                    '**Δ RMSE negativo** indica menor error que el SVM en esa misma evaluación. '
                    'SD RMSE describe variación entre cinco folds externos y solo se muestra en CV global. '
                    'No es un intervalo de confianza. MAPE se expresa en porcentaje; R² no está definido '
                    'si la nota es constante o solo hay una fila. Los subgrupos pequeños requieren cautela.'),
-                table(scores)], className='card classic-comparison-table'),
+                md(EXPLANATION),
+                dcc.Tabs(value='cv', className='sub-tabs', children=[
+                    dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
+                    dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view)), className='tab', selected_className='tab-selected'),
+                ])], className='card classic-comparison-table'),
+            card('Conclusión de la revisión', conclusion(temporal, cv, global_view)),
         ])
 
     @app.callback(Output('classic-diagnostics', 'children'), Input('classic-program', 'value'),

@@ -26,6 +26,11 @@ se ajustaron modelos al consolidar estas tablas.
 
 ## Conclusión estadística
 
+La comparación principal usa CV externa: véase el
+[reporte específico](../cv_externa/README.md), con t corregida aproximada,
+Holm24 y límites de una sola partición de cinco folds. Las cifras siguientes
+describen el contraste temporal complementario del test.
+
 LinXGBoost tiene ΔR²=+0.008637 frente a XGBoost, con Holm7=1.000.
 Su R² OOF 0.427817 es inferior al de XGBoost original (0.468442).
 El primer puesto de SVR RBF es descriptivo; frente a TabICLv2, ΔR²=+0.006644,

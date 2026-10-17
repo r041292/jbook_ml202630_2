@@ -3,6 +3,7 @@ import hashlib
 import json
 import shutil
 from pathlib import Path
+from prepare_originals import source_paths, prepare_originals, FILES as ORIGINAL_FILES
 import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error, mean_squared_error, r2_score
 ROOT = Path(__file__).resolve().parent
@@ -19,6 +20,7 @@ SOURCES = [BOOK / name for name in ['Data/Datos_Brutos.csv', 'cabeceras.csv', 'e
     'resultados/e3/model.joblib']]
 SOURCES += [BOOK / 'modelos_clasicos.py', BOOK / 'preprocesamiento_clasicos.py']
 SOURCES += [RESULTS / 'clasicos' / name for name in CLASSIC_FILES]
+SOURCES += source_paths()
 
 def hashes():
     return {p.relative_to(BOOK).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in SOURCES}
@@ -42,8 +44,10 @@ def prepare():
     for name in CLASSIC_FILES:
         shutil.copyfile(RESULTS / 'clasicos' / name, CACHE / 'clasicos' / name)
     shutil.copyfile(BOOK / 'preprocesamiento_clasicos.py', ROOT / 'preprocesamiento_clasicos.py')
+    prepare_originals()
     artifacts = [p for p in CACHE.glob('*') if p.name in ['train.csv.gz', 'test.csv.gz', 'fold_metrics.csv',
                  'coefficients.csv', 'model.joblib', 'grid_search.csv']] + [CACHE / 'clasicos' / name for name in CLASSIC_FILES]
+    artifacts += [CACHE / 'originales' / name for name in ORIGINAL_FILES]
     (CACHE / 'manifest.json').write_text(json.dumps({
         'sha256': hashes(), 'train_valid': report['train_valid'], 'test_valid': report['test_valid'],
         'technique': 'datos_reales', 'test_period': report['test_period'], 'best_params': report['best_params'],

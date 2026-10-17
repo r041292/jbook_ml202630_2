@@ -59,7 +59,7 @@
     "resultados/e3/xgboost_variantes/contrastes_pareados.csv": "c2f3939ba4e78bb37bf3191abd68074fecf44c230625b248975607e836848297",
     "resultados/e3/linxgboost/contrastes_pareados.csv": "f94ad235c45a40e6db5889bd0ccc67e21fc3602453f88db77048e31c496f2420",
     "resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv": "553c98c0790d3bba60615d829e42eb8527f395398763adfedae066345979a407",
-    "actualizar_comparaciones_e3.py": "7e84a196de11ff78daa020cd87c6a32cd12ee0add351f3f90baff6c947b0be0d"
+    "actualizar_comparaciones_e3.py": "94c776fd6fc875bee6c6891000c55f1216d1f238107575ec0259dac27ea7defb"
   },
   "models": [
     {

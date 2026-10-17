@@ -16,6 +16,11 @@
 !/Dash/prepare_data.py
 !/Dash/deployment.py
 !/Dash/classic_models.py
+!/Dash/original_models.py
+!/Dash/prepare_originals.py
+!/Dash/statistical_comparison.py
+!/Dash/validate_package.py
+!/Dash/README.md
 !/Dash/preprocesamiento_clasicos.py
 !/Dash/requirements.txt
 !/Dash/img.jpeg
@@ -36,6 +41,12 @@
 !/Dash/data/deployment.json
 !/Dash/data/grid_search.csv
 !/Dash/data/clasicos/
+!/Dash/data/originales/
+/Dash/data/originales/*
+!/Dash/data/originales/*.csv
+!/Dash/data/originales/*.csv.gz
+!/Dash/data/originales/*.json
+!/Dash/data/originales/best.joblib
 /Dash/data/clasicos/*
 !/Dash/data/clasicos/*.csv
 !/Dash/data/clasicos/*.csv.gz
@@ -79,6 +90,7 @@
 !/.github/workflows/
 /.github/workflows/*
 !/.github/workflows/jbook-pages.yml
+!/.github/workflows/dashboard-ci.yml
 
 # Documentación interna, instrucciones, pruebas y archivos locales.
 **/AGENTS.md
@@ -98,6 +110,7 @@
 
 # README público solicitado para la portada del repositorio.
 !/README.md
+!/Dash/README.md
 
 # Avances científicos E3: código, notebooks nuevos y resultados agregados.
 !/Precalculo/*.py
@@ -120,3 +133,7 @@
 /Precalculo/Data/
 /Precalculo/modelos_preentrenados/
 /Precalculo/terceros/
+
+# Historial retirado y artefactos reconstruidos permanecen locales.
+/Precalculo/resultados/e3/historial_modelos_retirados/
+!/Precalculo/resultados/e3/cv_externa/README.md

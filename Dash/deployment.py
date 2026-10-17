@@ -3,6 +3,7 @@ import hashlib
 import json
 
 from prepare_data import BOOK, CACHE, ROOT, hashes, CLASSIC_FILES
+from prepare_originals import FILES as ORIGINAL_FILES
 
 PUBLIC_SOURCES = (
     '00_seleccion_base_datos.md',
@@ -15,7 +16,7 @@ PUBLIC_SOURCES = (
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
     'grid_search.csv', 'model.joblib', 'manifest.json',
-) + tuple('clasicos/' + name for name in CLASSIC_FILES)
+) + tuple('clasicos/' + name for name in CLASSIC_FILES) + tuple('originales/' + name for name in ORIGINAL_FILES)
 
 
 def sha256(path):

@@ -121,6 +121,9 @@ def style(fig):
         fig.update_layout(height=570, margin={'l': 165, 'r': 40, 't': 20, 'b': 155})
         fig.update_xaxes(tickangle=-40, tickfont={'size': 10})
         fig.update_yaxes(tickfont={'size': 10})
+    if fig.layout.meta == 'original-errors':
+        fig.update_layout(height=1000, margin={'l': 160, 'r': 55, 't': 30, 'b': 200})
+        fig.update_xaxes(tickangle=-55)
     return fig
 
 
@@ -351,13 +354,16 @@ MODELS = html.Div([
 ])
 
 from classic_models import create_classics
-CLASSICS = create_classics(app, {
+MODEL_UI = {
     'TRAIN': TRAIN, 'TEST': TEST, 'MODEL_REPORT': MODEL_REPORT, 'FEATURES': FEATURES,
     'NUMERIC': NUMERIC, 'CATEGORICAL': CATEGORICAL, 'LABELS': LABELS, 'DEFAULTS': DEFAULTS,
     'COURSE': COURSE, 'PROGRAM': PROGRAM, 'TARGET': TARGET, 'PALETTE': PALETTE,
     'card': card, 'md': md, 'table': table, 'notice': notice, 'title': title, 'stats': stats,
     'filters': filters, 'subset': subset,
-})
+}
+CLASSICS = create_classics(app, MODEL_UI)
+from original_models import create_originals
+ORIGINALS = create_originals(app, MODEL_UI)
 
 app.layout = html.Div([
     html.Header([html.A([html.Span('p', className='brand-mark'), html.Div([html.Strong('precálculo')])], href='/', className='brand'),
@@ -372,6 +378,7 @@ app.layout = html.Div([
                 dcc.Tab(label='Split y CV', value='split', children=SPLIT_CV, className='tab', selected_className='tab-selected'),
                 dcc.Tab(label='Modelos lineales', value='linear', children=MODELS, className='tab', selected_className='tab-selected'),
                 dcc.Tab(label='Modelos clásicos', value='classic', children=CLASSICS, className='tab', selected_className='tab-selected'),
+                dcc.Tab(label='Modelos originales', value='original', children=ORIGINALS, className='tab', selected_className='tab-selected'),
             ]), className='tab', selected_className='tab-selected'),
     ])], className='container'),
     html.Footer([html.Strong('Precálculo · Universidad del Norte'),

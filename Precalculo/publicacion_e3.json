@@ -9,13 +9,13 @@
     },
     {
       "path": "README_E3.md",
-      "sha256": "b684abd78b344e5a677855705e205cb27ace3093437a2ca0a59fb194d77cdf3e",
-      "bytes": 10747
+      "sha256": "8a98f13ab1a2940c1b147ec82f99bc7828fcb6e30698b4e449873f7bdfe9dc4a",
+      "bytes": 13670
     },
     {
       "path": "actualizar_comparaciones_e3.py",
-      "sha256": "7e84a196de11ff78daa020cd87c6a32cd12ee0add351f3f90baff6c947b0be0d",
-      "bytes": 23805
+      "sha256": "94c776fd6fc875bee6c6891000c55f1216d1f238107575ec0259dac27ea7defb",
+      "bytes": 25059
     },
     {
       "path": "auditar_scopus_e3.py",
@@ -363,6 +363,26 @@
       "bytes": 4807
     },
     {
+      "path": "resultados/e3/cv_externa/README.md",
+      "sha256": "b3fe4cc8e75624e5efadd93ac4310d6ea02ccab7b03ebc9b7a87785554cb39c8",
+      "bytes": 4587
+    },
+    {
+      "path": "resultados/e3/cv_externa/contrastes_vs_svm.csv",
+      "sha256": "70d1a91f8e83ed4e7ff3e48023e668a3d1c3e2905c7f7813865d466da4dbf317",
+      "bytes": 8194
+    },
+    {
+      "path": "resultados/e3/cv_externa/fold_metrics.csv",
+      "sha256": "ae19f7015722d35d34cded593aa666041a00c08c5edf163b3204bab32d49738b",
+      "bytes": 11663
+    },
+    {
+      "path": "resultados/e3/cv_externa/reporte.json",
+      "sha256": "2157461baebcd43c3c6d3212f17664e09e96e3d6d8baf841032f0dd4966a66ce",
+      "bytes": 5527
+    },
+    {
       "path": "resultados/e3/eda.json",
       "sha256": "5d5f213b67ce1f7c19e5ffc9bd796f432aca7825a0f9ccd4b73c3f1601282c89",
       "bytes": 7855
@@ -669,13 +689,13 @@
     },
     {
       "path": "resultados/e3/resumen_completo/resumen.json",
-      "sha256": "2d6d69b64b36f2f3d10ca86023439fddb3a2dde21aa7bf396fe1d803da069698",
+      "sha256": "bd1bbab7885adeebc726f39284bff7c2e7cbcb034e38fd4bf3dab79f090c5ea7",
       "bytes": 26205
     },
     {
       "path": "resultados/e3/resumen_completo/resumen.md",
-      "sha256": "211412ed56d3ad673661e97dfd61d2573c05ca2531be6b54b883b8d4da58134b",
-      "bytes": 5550
+      "sha256": "a57e0c6328ee808bb75d4cc005685d0abbf49f9dfab752f4fe1f2c36202cb05c",
+      "bytes": 6167
     },
     {
       "path": "resultados/e3/rim/comparacion_cv_externa.csv",
@@ -1419,13 +1439,13 @@
     },
     {
       "path": "resultados/e3/validacion_r2/reporte.json",
-      "sha256": "6292212f3eebc77060bf0cc47d835c00308937cfd3f25e8d78bc7a28a777063e",
+      "sha256": "6b25fa9f7455f6b3c6fdd1829706ac63f3337964173c6642d537357cdca29b4d",
       "bytes": 32458
     },
     {
       "path": "resultados/e3/validacion_r2/resumen.md",
-      "sha256": "9c1a0bbb3bfb25941d05bc80e8a3715620643c1a4918d66579fe4a656a6916ed",
-      "bytes": 2481
+      "sha256": "8d67cbf4638ce637476b0d4aedda356ea2989997881114a395f23b70c15ca544",
+      "bytes": 2751
     },
     {
       "path": "resultados/e3/validacion_r2/validacion_cruzada_r2.csv",
@@ -1498,6 +1518,11 @@
       "bytes": 10410
     },
     {
+      "path": "significancia_cv_externa_e3.py",
+      "sha256": "5e7b6832e24c6d88048d83c7de2a2963f2942e0a8604bed2600d63dee6ac6e65",
+      "bytes": 10606
+    },
+    {
       "path": "significancia_tabpfn_svm.py",
       "sha256": "3b4666b7ee8be3203975f4c1aa8a4466e719a46c28bf0aa5e578d72f17b2e801",
       "bytes": 8863
@@ -1553,15 +1578,21 @@
       "bytes": 5103
     },
     {
+      "path": "test_significancia_cv_externa_e3.py",
+      "sha256": "0a7ffdb0d311a9ee5003e9dae95956728f1276bd738113224b1e76366216c702",
+      "bytes": 3656
+    },
+    {
       "path": "validacion_r2_e3.py",
       "sha256": "b54d7eff5744b748823c2e805b1dcaae527bfd3604765f584802989148898a60",
       "bytes": 12748
     }
   ],
-  "scope": "Código E3, notebooks y resultados agregados de 26 modelos. Familias Holm55, Holm12 y Holm7 identificadas; informes previos conservados como etapas históricas. Sin pesos, predicciones por registro, datos fuente ni export_vale.",
-  "local_validation": "Consolidación desde reportes existentes sin entrenar ni calcular pruebas nuevas: 26 modelos test, 26 filas CV, 125 pares modelo-fold, identidad RMSE/R2, medias/SD de folds, 86 contrastes con referencia/familia e idempotencia. Se verifican los hashes publicados; no se reejecutó la batería histórica de 25 pruebas.",
   "model_count": 26,
+  "scope": "26 modelos activos; Kernel Ridge RBF elegido por CV externa, pipeline original en el paquete Dash; Holm24 CV separado de familias históricas test. GPR sola retirada del flujo activo. Sin datos brutos, IDs ni pipeline retirado.",
+  "local_validation": "24 pruebas (21 dashboard y 3 inferencia CV), validación del paquete HTTP/callbacks y reproducción de las 188 predicciones KRR. Sin reentrenar.",
   "repository_documents_sha256": {
-    "README.md": "1b0faf83f0771dd4e26ccfb4bbde7cee2f5ea9ceacecd30f1933b08f9a367e75"
+    "README.md": "8875c08c0d4c671a321eac70ae46ac70eb256a8e4d005676a74d971c15ef4b92",
+    "Dash/README.md": "dd729a60cb1470046096fd92bc57ad6256b22d2ae4a6a75c53cbcbd7f5d09bcc"
   }
 }

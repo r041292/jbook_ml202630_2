@@ -19,6 +19,47 @@ Los notebooks se pueden consultar con sus resultados ya ejecutados.
 
 ## Estado actual y conclusiones
 
+**La comparación principal de procedimientos y la orientación de la elección
+usan CV externa**, sin seleccionar la familia por test. El test temporal
+evalúa el periodo posterior y aporta evidencia complementaria; los cambios de
+ranking no se deben ocultar.
+
+La [comparación estadística CV](resultados/e3/cv_externa/README.md) incluye
+[p corregida, IC y Holm24 vs SVM](resultados/e3/cv_externa/contrastes_vs_svm.csv).
+**Kernel Ridge RBF es el candidato elegido**, con el menor RMSE medio de CV
+entre los 26 modelos activos: **0.801325**. TabPFN original obtiene0.807118,
+TabICLv2 0.807163, SVR RBF0.807765 y SVM lineal0.826140.
+
+GPR sola fue retirada como candidato por solicitud del usuario, bajo el criterio
+de trazabilidad del estimador guardado durante el experimento original. Sus
+antecedentes quedan archivados, sin formar parte de las comparaciones vigentes;
+el híbrido GPR–XGBoost sigue siendo un experimento distinto. La reconstrucción
+posterior de la ablación había reproducido sus predicciones, pero no se usa.
+
+El pipeline **original** Kernel Ridge RBF se conserva en
+`modelos_preentrenados/scopus/kernel_ridge/modelo_final.joblib`. Se carga sin
+reentrenar y reproduce las188 predicciones test (error máximo1.3e-15).
+Exploración OOF/test y simulador del tablero usan ese mismo artefacto.
+RMSE OOF reunido0.802245 difiere del RMSE medio entre folds0.801325.
+
+La t pareada corregida aproximadamente por solapamiento (Nadeau–Bengio) usa
+los cinco folds,4 grados de libertad y Holm sobre **24 contrastes CV vs SVM**.
+SVM referencia y TabPFN fine-tuned sin OOF no entran en la familia. Se recalculó
+el ajuste al retirar la ablación; la familia anteriorHolm25 queda como historial.
+**Ninguna mejora frente al SVM sobrevive Holm24**. Kernel Ridge:
+p=0.164753/Holm=1.000000. Dummy es significativamente peor
+(p=0.001215/Holm=0.029159). Los contrastes de test publicados conservan sus
+familias originales e históricas; no se confunden con la nueva familia CV.
+
+Solo hay una partición1×5 sin repeticiones: inferencia aproximada, exploratoria
+y de baja potencia, sin asumir folds independientes ni garantizar calibración
+exacta para GroupKFold. Las grillas/familias ya se exploraron sobre el mismo
+train y la selección de familia no fue anidada. El candidato elegido no es un
+ganador estadístico confirmado; no significancia no demuestra igualdad.
+El reporte específico documenta fórmula, IC marginales y fuentes metodológicas.
+
+### Contraste temporal complementario
+
 Se evaluaron 26 modelos y variantes. Los mejores resultados por RMSE test son:
 
 | Puesto | Modelo | RMSE test | R² test |
@@ -32,7 +73,8 @@ Se evaluaron 26 modelos y variantes. Los mejores resultados por RMSE test son:
 | 7 | CatBoost | 0.905669 | 0.455368 |
 | 8 | XGBoost | 0.906274 | 0.454641 |
 
-SVR RBF es el líder puntual y la mejor opción evaluada sin deep learning.
+SVR RBF es el líder puntual del test entre las opciones sin deep learning;
+no lidera CV y ese puesto temporal no define la elección de familia.
 Reduce el RMSE de XGBoost en 0.014049 (1.55%). Su diferencia con TabICLv2
 es pequeña: IC95% de ΔRMSE [-0.025163; 0.014880], p=0.58678 y Holm55=1.000.
 El primer puesto no demuestra superioridad estadística sobre el segundo.
@@ -153,6 +195,7 @@ los reportes agregados existentes, sin entrenar modelos:
 
 ```powershell
 .\venv\Scripts\python.exe .\actualizar_comparaciones_e3.py
+.\venv\Scripts\python.exe .\significancia_cv_externa_e3.py
 ```
 
 Este consolidado usa fuentes históricas de 22 modelos y los reportes de las
@@ -177,6 +220,7 @@ corresponden a aquella etapa. La consolidación actual valida los agregados y
 sus fuentes, sin repetir los entrenamientos ni aquella batería de pruebas.
 `publicacion_e3.json` registra los hashes de los archivos publicados.
 
-El dashboard de esta rama conserva su interfaz E3 de modelos lineales/clásicos;
-los experimentos posteriores se presentan en estos notebooks y resúmenes.
+El dashboard incluye Split y CV, Modelos lineales, Clásicos y Originales:
+26 modelos, significancia CV frente al SVM con Holm24, contraste temporal,
+correlación de errores y exploración/simulador de Kernel Ridge RBF guardado.
 No se reescriben los informes ni notebooks de la primera entrega.
