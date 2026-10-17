@@ -171,6 +171,9 @@ def create_classics(app, ui):
              'Una mejora en test o en un subgrupo no implica que el modelo sea superior en todos los periodos.'),
     ])
 
+    from lime_xgboost import create_lime_section
+    layout.children.append(create_lime_section(app, ui, lambda: load_model('xgboost')))
+
     @app.callback(Output('classic-comparison', 'children'), Input('classic-program', 'value'),
                   Input('classic-course', 'value'), Input('classic-comparison-partition', 'value'))
     def compare(selected_program, selected_course, evaluation):

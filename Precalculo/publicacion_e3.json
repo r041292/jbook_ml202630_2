@@ -1,5 +1,5 @@
 {
-  "branch": "e3",
+  "branch": "main",
   "repository": "r041292/jbook_ml202630_2",
   "files": [
     {
@@ -1590,9 +1590,9 @@
   ],
   "model_count": 26,
   "scope": "26 modelos activos; Kernel Ridge RBF elegido por CV externa, pipeline original en el paquete Dash; Holm24 CV separado de familias históricas test. GPR sola retirada del flujo activo. Sin datos brutos, IDs ni pipeline retirado.",
-  "local_validation": "24 pruebas (21 dashboard y 3 inferencia CV), validación del paquete HTTP/callbacks y reproducción de las 188 predicciones KRR. Sin reentrenar.",
+  "local_validation": "25 pruebas dashboard y validación del paquete: pipeline lineal gráfico, betas por valor absoluto y LIME XGBoost con vecindarios empírico/estándar. No se reentrena ningún modelo predictivo.",
   "repository_documents_sha256": {
     "README.md": "8875c08c0d4c671a321eac70ae46ac70eb256a8e4d005676a74d971c15ef4b92",
-    "Dash/README.md": "dd729a60cb1470046096fd92bc57ad6256b22d2ae4a6a75c53cbcbd7f5d09bcc"
+    "Dash/README.md": "bd1583acaf52cad372e0efe132043da5d49e07763346cf9163edee107a1d2afc"
   }
 }

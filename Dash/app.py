@@ -18,6 +18,7 @@ from prepare_data import BOOK, CACHE, ROOT, hashes, metrics
 from deployment import verify_inputs
 from charts import numeric_density
 from prediction import build_form, coefficient_report, input_id, predict_record
+from model_interpretation import linear_pipeline_section, beta_examples
 
 manifest_path = CACHE / 'manifest.json'
 if not manifest_path.exists():
@@ -304,6 +305,9 @@ SPLIT_CV = html.Div([
         'Las inconsistencias de negocio se excluyen antes de imputar.', split_figure()),
         groupkfold_card()], className='grid'),
 ])
+SPLIT_CV.children.append(linear_pipeline_section(MODEL, {
+    'LABELS': LABELS, 'md': md, 'table': table, 'title': title, 'notice': notice,
+}))
 
 
 MODELS = html.Div([
@@ -646,10 +650,11 @@ learning = pd.DataFrame(MODEL_REPORT['learning'])[['n_entrenamiento', 'RMSE_trai
     columns={'n_entrenamiento': 'Filas de entrenamiento', 'RMSE_train_media': 'Entrenamiento', 'RMSE_validacion_media': 'Validación'})
 learning_fig = px.line(learning.melt(id_vars='Filas de entrenamiento', var_name='Evaluación', value_name='RMSE'),
     x='Filas de entrenamiento', y='RMSE', color='Evaluación', markers=True, color_discrete_sequence=PALETTE)
-top = COEFFICIENTS.assign(magnitude=COEFFICIENTS['Coeficiente'].abs()).nlargest(12, 'magnitude').sort_values('Coeficiente')
+top = COEFFICIENTS.assign(magnitude=COEFFICIENTS['Coeficiente'].abs()).nlargest(12, 'magnitude')
 top['Variable'] = top['Variable'].str.replace(r'^.*?__', '', regex=True)
 coef_fig = px.bar(top, x='Coeficiente', y='Variable', orientation='h',
-    color=np.where(top['Coeficiente'] >= 0, 'Positivo', 'Negativo'), color_discrete_sequence=PALETTE)
+    color=np.where(top['Coeficiente'] >= 0, 'Positivo', 'Negativo'), color_discrete_sequence=PALETTE,
+    category_orders={'Variable': top['Variable'].tolist()})
 MODELS.children[-2].children.append(html.Div([
     card('Curva de aprendizaje',
          f'Resultados de datos reales: con {int(learning.iloc[-1]["Filas de entrenamiento"]):,} filas, '
@@ -663,13 +668,32 @@ DEEP_DETAILS = MODELS.children[-2]
 DEEP_DETAILS.children.append(html.Article([
     html.H3('Reporte completo de coeficientes (β) y disponibilidad de p-valores'),
     md('Se reportan **todos los términos del SVM lineal**, su intercepto y las categorías de referencia. '
+       '**Orden descendente de |β|**: los términos de mayor magnitud aparecen primero, incluido el intercepto; '
+       'las referencias fijadas en cero quedan al final. El CSV descargado conserva ese mismo orden. '
        'Las numéricas están estandarizadas; los tiempos además pasan por log1p. Los coeficientes categóricos '
        'se interpretan frente a la referencia indicada (β fijado en cero, no estimado).\n\n'
        '**LinearSVR no calcula p-valores, errores estándar ni pruebas t para sus coeficientes.** '
+       'Los p de las comparaciones entre modelos del tablero no evalúan sus β. '
        'Un p-valor de OLS correspondería a otro '
        'modelo y no puede atribuirse a este SVM. La dependencia entre avance y dominios y los registros repetidos por estudiante '
        'también requieren cautela antes de hacer inferencia. Las magnitudes no representan efectos causales.\n\n'
        '[Documentación del modelo](https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVR.html).'),
+    md('**Cómo leer β.** Si una numérica entra como `z=(x−μ)/σ`, aumentar una unidad de z '
+       '(una desviación estándar aprendida en train) cambia la predicción en β puntos, manteniendo fijas '
+       'las demás columnas transformadas. En unidades originales el cambio es `β·Δx/σ`. '
+       '**En tiempos/tasa con log1p**, de x a x+Δ el cambio es `β·ln[(1+x+Δ)/(1+x)]/σ_log`: '
+       'β no representa el efecto de una hora adicional constante.\n\n'
+       '**Categorías:** β es la diferencia respecto a la categoría de referencia, no respecto al promedio del grupo. '
+       '**Intercepto:** corresponde a numéricas transformadas centradas y todas las categorías de referencia; '
+       'esa combinación puede no existir como estudiante real. **|β| no es una importancia global:** '
+       'compara cambios de 1 DE numérica con saltos 0→1 categóricos, unidades distintas.\n\n'
+       '**Dependencias:** avance = dominio final − dominio inicial. No es factible cambiar el avance '
+       'manteniendo ambos dominios fijos. Estos son contrastes algebraicos condicionales del modelo, '
+       'no intervenciones educativas ni efectos causales. La regularización y la redundancia afectan los coeficientes.'),
+    html.Details([html.Summary('Ejemplos de lectura en unidades originales'),
+                  md('Cálculos obtenidos del escalador y los coeficientes guardados. Para log1p se usa la mediana train '
+                     'como punto inicial; no son simulaciones de cambios conjuntamente factibles.'),
+                  table(beta_examples(MODEL, LABELS))], className='details'),
     table(FULL_COEFFICIENTS),
     html.Button('Descargar reporte de coeficientes', id='download-coefficients-button', n_clicks=0, className='secondary-button'),
     dcc.Download(id='coefficient-download'),

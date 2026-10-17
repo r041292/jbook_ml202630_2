@@ -20,6 +20,8 @@
 !/Dash/prepare_originals.py
 !/Dash/statistical_comparison.py
 !/Dash/validate_package.py
+!/Dash/model_interpretation.py
+!/Dash/lime_xgboost.py
 !/Dash/README.md
 !/Dash/preprocesamiento_clasicos.py
 !/Dash/requirements.txt

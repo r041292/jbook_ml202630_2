@@ -1,15 +1,49 @@
 # Dashboard · Entregable 3
 
 El flujo activo usa datos reales, test 202530 y GroupKFold anidado por estudiante.
-Modelos predictivos se organiza en Split y CV, Modelos lineales y Modelos clásicos.
+Modelos predictivos se organiza en Split y CV, Modelos lineales, Clásicos y Originales.
 Ejecutar también Precalculo/modelos_clasicos.py después de entregable3.py y antes
  de prepare_data.py para evaluar KNN, Ridge, Lasso, Random Forest y XGBoost.
 El notebook nuevo precalculo_modelos_clasicos_e3.ipynb inspecciona esos resultados.
 Desde la raíz ejecutar entregable3.py, Dash/prepare_data.py y Dash/app.py usando
 Precalculo/venv/Scripts/python.exe. Resultados en Precalculo/resultados/e3/.
 No ejecutar actualizar_analisis.py: los notebooks anteriores permanecen intactos.
-El dashboard de E3 está en desarrollo local en el branch e3; los Books publicados
+El trabajo vigente del dashboard continúa en main; los Books publicados
 son antecedentes y se producirá uno nuevo. Ver CONTEXT.md para la reproducción completa.
+
+## Interpretación del pipeline, betas y XGBoost
+
+Al final de Split y CV se muestra el flujo del pipeline compartido por LinearSVR,
+Ridge y Lasso: mediana, log1p en tiempos/tasa, StandardScaler, moda y one-hot con
+referencia. El número de columnas, estadísticas y referencias se leen del
+artefacto guardado. Se distingue fit en train de transform en validación/test.
+
+El reporte completo de betas y su CSV se ordenan por |β| descendente. Incluye
+intercepto y referencias en cero, interpretación por desviación estándar, cambios
+en unidades originales y la fórmula exacta de log1p. Son asociaciones matemáticas
+condicionales, sin p inventados; avance y dominios no pueden variarse independientemente.
+
+Clásicos incorpora LIME para el XGBoost guardado (no cambia con el selector de
+familia). Permite elegir un caso anónimo de test o train y respeta los filtros.
+En train explica el ajuste final, nunca su predicción OOF. Los parámetros del
+explicador usan solo train, sin usar notas de test ni reentrenar XGBoost.
+
+Por defecto se usa una **variante empírica**: remuestreo de filas completas de
+train y núcleo/regresión local de la librería LIME. Se conservan las relaciones
+de las filas observadas, pero puede faltar soporte cercano al caso. Se ofrece
+también LIME estándar con perturbaciones independientes y diagnóstico de
+coherencia dominios/avance. Esta comprobación no valida todas las restricciones.
+Semilla42, cuartiles y todos los15 términos. Se muestran predicción XGBoost,
+aproximación LIME, error local, fidelidad R² ponderada y descomposición aditiva.
+Ese R² es ajuste del sustituto sobre su vecindario, no rendimiento predictivo ni
+validación externa. Un R² alto puede coexistir con un error grande en el caso.
+Los aportes no son causas ni importancia global; semilla fija no garantiza
+estabilidad ante otras semillas. Las explicaciones se generan solo al pulsar el
+botón y se limpian al cambiar caso/filtros/método. Dependencia:lime==0.2.0.1.
+
+Referencias: [artículo LIME](https://arxiv.org/abs/1602.04938),
+[API oficial](https://lime-ml.readthedocs.io/en/latest/lime.html) y
+[tutorial de regresión](https://marcotcr.github.io/lime/tutorials/Using%2Blime%2Bfor%2Bregression.html).
 
 ## Comparación vigente: CV externa y test temporal
 

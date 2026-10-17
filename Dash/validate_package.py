@@ -51,6 +51,12 @@ def validate():
     predict = app.app.callback_map['original-prediction-result.children']['callback'].__wrapped__
     result = str(predict(1, *[app.DEFAULTS[c] for c in app.NUMERIC+app.CATEGORICAL]))
     assert 'Nota predicha' in result and 'Kernel Ridge RBF' in result
+    from classic_models import load_model
+    from lime_xgboost import explain_xgboost
+    explanation = explain_xgboost(load_model('xgboost'), app.TRAIN, app.TEST.iloc[[0]], app.LABELS, 1000)
+    assert explanation['neighborhood'] == 'empirical' and explanation['incoherent_fraction'] == 0
+    assert np.isfinite(explanation['fidelity'])
+    np.testing.assert_allclose(explanation['prediction'], float(load_model('xgboost').predict(app.TEST[app.FEATURES].iloc[[0]])[0]), atol=1e-10)
     print(json.dumps({'status': 'ok', 'models': 26, 'cv_contrasts': 24,
                       'leader': original.BEST_NAME, 'canonical_test_predictions_verified': 188,
                       'http_and_filtered_callbacks': 'ok', 'model_refit': False}))

@@ -88,4 +88,6 @@ def coefficient_report(model):
         if dropped is not None:
             rows.append({'Variable / término': f'{column} = {categories[dropped]}', 'β': 0.0,
                          'Rol': 'Categoría de referencia: fijado en 0'})
-    return pd.DataFrame(rows)
+    report = pd.DataFrame(rows)
+    report['|β|'] = report['β'].abs()
+    return report.sort_values('|β|', ascending=False, kind='stable').reset_index(drop=True)

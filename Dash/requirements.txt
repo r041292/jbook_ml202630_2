@@ -8,4 +8,5 @@ scipy==1.18.1
 statsmodels==0.15.0
 joblib==1.6.0
 xgboost==3.4.1
+lime==0.2.0.1
 gunicorn==23.0.0; sys_platform != "win32"
