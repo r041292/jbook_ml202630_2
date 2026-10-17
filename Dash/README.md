@@ -53,12 +53,23 @@ Referencias: [artículo LIME](https://arxiv.org/abs/1602.04938),
 simulador usan ese artefacto. Abre en OOF; RMSE reunido0.802245 difiere de la
 media entre folds0.801325. Las tablas y gráficos siguen RMSE ascendente.
 
+Se añade **Truncated Newton KRR RBF** al inventario de modelos originales:
+RMSE medio CV0.809646, OOF0.810569 y test2025300.907802. Frente al SVM lineal,
+su contraste CV da ΔRMSE−0.016494, p=0.168940 y Holm25=1.000000. Está disponible en
+comparaciones, diagnósticos, correlación de errores y simulador. Kernel Ridge
+RBF exacto sigue como líder CV. En test, TR-KRR vs SVM da ΔRMSE−0.019903,
+p=0.12010/Holm2=0.24020; vs XGBoost, ΔRMSE+0.001529,
+p=0.90418/Holm2=0.90418. Este suplemento Holm2 cubre solo las dos referencias
+de TR-KRR y permanece separado de la familia global de test Holm55; ninguno de
+los contrastes del test es significativo.
+
 GPR sola se retiró del inventario activo, la inferencia CV, la matriz de errores
 y el simulador por solicitud del usuario. Se conservan los antecedentes
 archivados; el híbrido GPR–XGBoost permanece como experimento distinto.
-La nueva familia **Holm24 CV vs SVM** incluye los24 competidores activos con
-OOF frente al SVM; se conserva también al mostrar solo Clásicos. Kernel Ridge
-p=0.16475/Holm24=1.00000: ninguna mejora evaluada es significativa tras Holm24.
+La familia **Holm25 CV vs SVM** incluye los25 competidores con OOF frente al SVM;
+se conserva también al mostrar solo Clásicos. Kernel Ridge
+p=0.16475/Holm25=1.00000 y TR-KRR p=0.16894/Holm25=1.00000. Ninguna mejora
+evaluada es significativa después de Holm25.
 
 La t pareada corregida por solapamiento (aproximación Nadeau–Bengio) usa5 folds
 sin repeticiones y4 grados de libertad: inferencia exploratoria de baja potencia,

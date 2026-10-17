@@ -66,8 +66,8 @@
     }
   ],
   "correction_ratio": 0.25000028032405464,
-  "family_size": 24,
-  "family": "Holm24 CV vs SVM",
+  "family_size": 25,
+  "family": "Holm25 CV vs SVM",
   "training_performed": false,
   "test_used": false,
   "excluded_candidates": {
@@ -78,7 +78,7 @@
     "Una sola partición de cinco folds, sin repeticiones: aproximación de baja potencia.",
     "La corrección aproxima la dependencia por solapamiento; no garantiza inferencia exacta para GroupKFold.",
     "Comparación exploratoria: búsqueda histórica de familias y grillas sobre el mismo train; familia no anidada.",
-    "IC marginales sin corrección múltiple; Holm se aplica solo a los 24 p de RMSE vs SVM.",
+    "IC marginales sin corrección múltiple; Holm se aplica solo a los 25 p de RMSE vs SVM.",
     "No es un contraste entre todos los pares ni demuestra equivalencia cuando p>=0.05."
   ],
   "sources_sha256": {
@@ -101,10 +101,11 @@
     "resultados/e3/xgboost_variantes/dart/fold_metrics.csv": "ca5d3d3e245ce4ff215f50bf8eb640b39c7cdf34d77dedcee734523e892ed6d3",
     "resultados/e3/xgboost_variantes/denseweight/fold_metrics.csv": "d9e40a685442394e091fca7ca467618dfbeec9c63c53ccbbc19b7deb1b936244",
     "resultados/e3/linxgboost/fold_metrics.csv": "da6294494152b31b97c450ef211740f171ff4c93c460e5b9c913e3cc368dc817",
+    "resultados/e3/tn_krr/fold_metrics.csv": "56ede359c9cf38f12d321f447ad959410f41fa091ffbe3f64f56a33864cf8d20",
     "resultados/e3/modelos_lineales.json": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
     "resultados/e3/resumen_completo/modelos.csv": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9"
   },
-  "generator_sha256": "5e7b6832e24c6d88048d83c7de2a2963f2942e0a8604bed2600d63dee6ac6e65",
+  "generator_sha256": "fe3d14e4ca23b6b396cc8d5393a7097d7a98f94b6d673a708b9477b87224c2a9",
   "references": [
     "https://doi.org/10.1023/A:1024068626366",
     "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html",

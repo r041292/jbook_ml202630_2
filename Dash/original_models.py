@@ -1,6 +1,8 @@
 """Panorama de las implementaciones originales evaluadas en E3."""
 import json
+import sys
 from functools import lru_cache
+from pathlib import Path
 
 import joblib
 import numpy as np
@@ -14,6 +16,11 @@ from prediction import build_form, input_id, predict_record
 from classic_models import metric_bar
 from statistical_comparison import add_inference, display_statistics, conclusion, EXPLANATION
 
+ROOT = Path(__file__).resolve().parent
+BOOK = ROOT.parent / 'Precalculo'
+if BOOK.is_dir() and str(BOOK) not in sys.path:
+    # The saved TR-KRR pipeline contains this project estimator class.
+    sys.path.insert(0, str(BOOK))
 DIRECTORY = CACHE / 'originales'
 CATALOG = json.loads((DIRECTORY / 'catalog.json').read_text(encoding='utf-8'))
 FOLDS = pd.read_csv(DIRECTORY / 'folds.csv')
@@ -21,17 +28,28 @@ CONTRASTS = pd.read_csv(DIRECTORY / 'contrasts.csv')
 PREDICTIONS = {part: pd.read_csv(DIRECTORY / f'{part}.csv.gz') for part in ['train', 'test']}
 BEST = 'm5'  # Kernel Ridge RBF: menor RMSE medio CV del inventario activo.
 BEST_NAME = CATALOG[BEST]['name']
+TN_KRR = 'm19'
+MODEL_FILES = {BEST: 'best.joblib', TN_KRR: 'tn_krr.joblib'}
+DIAGNOSTIC_MODELS = [key for key in CATALOG if key in PREDICTIONS['train'] and key in PREDICTIONS['test']]
+PREDICTION_MODELS = [key for key in MODEL_FILES if key in CATALOG]
 ORDER = [spec['name'] for spec in CATALOG.values()]
 COLORS = {name: f'hsl({i*137.5 % 360:.0f},48%,43%)' for i, name in enumerate(ORDER)}
 SHORT_NAMES = {'TabFM 1.0.0 (PyTorch CPU, 32 vistas)': 'TabFM · 32 vistas',
                'LinXGBoost (hojas completas E3)': 'LinXGBoost E3', 'GPR–XGBoost (OOF agrupado)': 'GPR–XGBoost',
                'logicDT propio (adaptado)': 'logicDT adaptado', 'TabPFN 2.5 original': 'TabPFN original',
-               'TabPFN 2.5 fine-tuned': 'TabPFN fine-tuned', 'XGBoost ampliado (gbtree)': 'XGBoost ampliado'}
+               'TabPFN 2.5 fine-tuned': 'TabPFN fine-tuned', 'XGBoost ampliado (gbtree)': 'XGBoost ampliado',
+               'Truncated Newton KRR RBF': 'TR-KRR RBF'}
 
 
-@lru_cache(maxsize=1)
+@lru_cache(maxsize=2)
+def model_for(key):
+    if key not in MODEL_FILES:
+        raise KeyError('No hay un pipeline de predicción guardado para ' + str(key))
+    return joblib.load(DIRECTORY / MODEL_FILES[key])
+
+
 def best_model():
-    return joblib.load(DIRECTORY / 'best.joblib')
+    return model_for(BEST)
 
 
 def combined_frames(training, test):
@@ -98,7 +116,7 @@ def create_originals(app, ui):
         ], className='details classic-pipeline'))
     layout = html.Div([
         title('MODELOS ORIGINALES', 'Panorama completo de modelos',
-              '26 modelos y variantes evaluados, incluidos los clásicos.'),
+              f'{len(CATALOG)} modelos y variantes evaluados, incluidos los clásicos.'),
         notice('Datos reales, test temporal 202530 y cinco folds externos por estudiante. Las búsquedas usan solo train; '
                'los modelos preentrenados con configuración fija no requieren grilla. El test reutilizado y las comparaciones entre familias son exploratorios.'),
         html.Details([html.Summary('Fundamento, documentación, preparación y búsqueda por modelo'),
@@ -111,9 +129,13 @@ def create_originals(app, ui):
             {'label': 'CV externa', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}], 'cv',
             id='original-comparison-partition', inline=True, className='radio')], className='variable-select'),
         dcc.Loading(html.Div(id='original-comparison')),
-        title('DIAGNÓSTICOS', 'Explorar el líder de CV externa · Kernel Ridge RBF',
-              'Menor RMSE medio de CV externa entre los candidatos activos (0.801325), con pipeline original guardado y verificado, sin superioridad estadística demostrada frente al SVM. '
+        title('DIAGNÓSTICOS', 'Explorar predicciones de los modelos originales',
+              'Por defecto se muestra el líder de CV externa, Kernel Ridge RBF (RMSE medio 0.801325). El selector permite revisar TR-KRR y los demás modelos con predicciones OOF disponibles. '
               'Los diagnósticos OOF reúnen las predicciones de los cinco folds; su RMSE agrupado puede diferir de la media entre folds.'),
+        html.Div([html.Label('Modelo'), dcc.Dropdown(
+            [{'label': CATALOG[key]['name'], 'value': key} for key in DIAGNOSTIC_MODELS],
+            value=BEST, id='original-diagnostic-model', clearable=False, searchable=True)],
+            className='variable-select'),
         dcc.RadioItems([{'label': 'Test temporal', 'value': 'test'}, {'label': 'Validación OOF', 'value': 'cv'}],
                        'cv', id='original-diagnostic-partition', inline=True, className='radio'),
         dcc.Loading(html.Div(id='original-diagnostics')),
@@ -123,8 +145,11 @@ def create_originals(app, ui):
                'no constituyen una corrección global única para todos los modelos. Ausencias indican contraste no publicado. '
                'No rechazar una diferencia no demuestra equivalencia.'),
             table(CONTRASTS.drop(columns=['fuente']))], className='details classic-bootstrap'),
-        html.Details([html.Summary('Ejemplo de predicción · Kernel Ridge RBF'),
-            md('Pipeline guardado del modelo mostrado en los diagnósticos. Los filtros no cambian este modelo.'),
+        html.Details([html.Summary('Ejemplo de predicción · modelos Kernel Ridge'),
+            md('Elige entre Kernel Ridge RBF exacto y TR-KRR. Ambos usan el pipeline de predictores guardado; los filtros no reentrenan los modelos.'),
+            html.Div([html.Label('Modelo para predecir'), dcc.Dropdown(
+                [{'label': CATALOG[key]['name'], 'value': key} for key in PREDICTION_MODELS],
+                value=BEST, id='original-prediction-model', clearable=False)], className='variable-select'),
             html.Article(build_form(ui['TRAIN'], ui['NUMERIC'], ui['CATEGORICAL'], ui['LABELS'], ui['DEFAULTS'], prefix='original'), className='card')], className='details'),
         title('COMPLEMENTARIEDAD', 'Correlación de errores entre modelos',
               'Residuos con signo: nota real − predicción. OOF permite explorar complementariedad sin ajustar pesos con test.'),
@@ -165,21 +190,24 @@ def create_originals(app, ui):
             card('Conclusión de la revisión', conclusion(temporal, cv, global_view))])
 
     @app.callback(Output('original-diagnostics', 'children'), Input('original-program', 'value'),
-                  Input('original-course', 'value'), Input('original-diagnostic-partition', 'value'))
-    def diagnostics(selected_program, selected_course, partition):
+                  Input('original-course', 'value'), Input('original-diagnostic-partition', 'value'),
+                  Input('original-diagnostic-model', 'value'))
+    def diagnostics(selected_program, selected_course, partition, model_key):
         data = subset(test if partition == 'test' else training, selected_program, selected_course)
         if data.empty:
             return notice('No hay filas en esta partición para los filtros seleccionados.')
-        score = metrics(data[target], data[BEST])
-        prediction = px.scatter(data, x=target, y=BEST, color=course, opacity=.5,
-                                labels={target: 'Nota real', BEST: 'Nota predicha'}, hover_data=[program])
-        low, high = min(.4, data[BEST].min()), max(5.1, data[BEST].max())
+        model_key = model_key if model_key in DIAGNOSTIC_MODELS else BEST
+        model_name = CATALOG[model_key]['name']
+        score = metrics(data[target], data[model_key])
+        prediction = px.scatter(data, x=target, y=model_key, color=course, opacity=.5,
+                                labels={target: 'Nota real', model_key: 'Nota predicha'}, hover_data=[program])
+        low, high = min(.4, data[model_key].min()), max(5.1, data[model_key].max())
         prediction.add_trace(go.Scatter(x=[low, high], y=[low, high], mode='lines', name='Ideal', line={'dash': 'dash'}))
-        residual = px.scatter(data.assign(Residuo=data[target]-data[BEST]), x=BEST, y='Residuo', color=course,
-                              labels={BEST: 'Nota predicha'}, opacity=.5)
+        residual = px.scatter(data.assign(Residuo=data[target]-data[model_key]), x=model_key, y='Residuo', color=course,
+                              labels={model_key: 'Nota predicha'}, opacity=.5)
         residual.add_hline(y=0, line_dash='dash')
-        errors = pd.DataFrame({BEST_NAME: abs(data[target]-data[BEST]), 'SVM lineal': abs(data[target]-data.svm)}).melt(var_name='Modelo', value_name='Error absoluto')
-        return html.Div([stats([('Modelo', BEST_NAME, 'Mínimo medio CV activo'), ('Filas', str(len(data)), 'Test temporal' if partition == 'test' else 'OOF reunido'),
+        errors = pd.DataFrame({model_name: abs(data[target]-data[model_key]), 'SVM lineal': abs(data[target]-data.svm)}).melt(var_name='Modelo', value_name='Error absoluto')
+        return html.Div([stats([('Modelo', model_name, 'Selección del usuario'), ('Filas', str(len(data)), 'Test temporal' if partition == 'test' else 'OOF reunido'),
                                ('RMSE test' if partition == 'test' else 'RMSE OOF reunido', f'{score["RMSE"]:.4f}', 'Puntos de nota'), ('R²', '—' if score['R²'] is None else f'{score["R²"]:.4f}', 'Adimensional')]),
             html.Div([card('Predicción frente a realidad', 'Predicciones sin recorte.', prediction),
                       card('Residuos frente a predicción', 'Residuo positivo indica subestimación.', residual)], className='grid'),
@@ -221,15 +249,17 @@ def create_originals(app, ui):
         return float(final)-float(initial) if initial is not None and final is not None else None
 
     @app.callback(Output('original-prediction-result', 'children'), Input('original-predict-button', 'n_clicks'),
+                  State('original-prediction-model', 'value'),
                   *[State(input_id(c, 'original'), 'value') for c in ui['NUMERIC']+ui['CATEGORICAL']])
-    def predict(clicks, *values):
+    def predict(clicks, model_key, *values):
         if not clicks:
             return notice('Configura las características y pulsa «Predecir nota».')
         try:
-            prediction, _, extrapolated = predict_record(best_model(), dict(zip(ui['NUMERIC']+ui['CATEGORICAL'], values)), ui['TRAIN'])
+            model_key = model_key if model_key in PREDICTION_MODELS else BEST
+            prediction, _, extrapolated = predict_record(model_for(model_key), dict(zip(ui['NUMERIC']+ui['CATEGORICAL'], values)), ui['TRAIN'])
         except (ValueError, TypeError) as error:
             return notice('Revisa las características: ' + str(error))
-        parts = [stats([('Nota predicha', f'{prediction:.3f}', BEST_NAME)])]
+        parts = [stats([('Nota predicha', f'{prediction:.3f}', CATALOG[model_key]['name'])])]
         if extrapolated:
             parts.append(notice('Fuera del rango train: ' + ', '.join(ui['LABELS'][c] for c in extrapolated)))
         if not .5 <= prediction <= 5:

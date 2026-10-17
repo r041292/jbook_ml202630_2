@@ -879,5 +879,35 @@
         "30"
       ]
     }
+  },
+  "m19": {
+    "name": "Truncated Newton KRR RBF",
+    "description": "Kernel Ridge RBF con el sistema dual resuelto por gradiente conjugado truncado (TR-KRR), siguiendo el método del artículo.",
+    "paper": "https://doi.org/10.3390/app12094252",
+    "params": {
+      "alpha": 0.1,
+      "gamma": 0.01
+    },
+    "method": "5 folds externos y 5 internos por estudiante; selección por RMSE solo en train.",
+    "preparation": "Mediana numérica, log1p de tiempos y StandardScaler; moda y one-hot categórico con referencia. Todo se aprende en cada fit. Sin centrar el objetivo. Límite CG: 200 iteraciones, residuo L2 ≤0.5 y 25 iteraciones sin mejora; inicia con coeficientes cero. ",
+    "limitations": [],
+    "grid": {
+      "alpha": [
+        "0.01",
+        "0.1",
+        "1.0",
+        "10.0",
+        "100.0"
+      ],
+      "gamma": [
+        "0.001",
+        "0.003",
+        "0.01",
+        "0.03",
+        "0.1",
+        "0.3",
+        "1.0"
+      ]
+    }
   }
 }

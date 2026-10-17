@@ -1,6 +1,7 @@
 """Exportación sin entrenamiento: inventario E3 y predicciones alineadas, sin IDs."""
 import json
 import shutil
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -11,7 +12,7 @@ BOOK = ROOT.parent / 'Precalculo'
 RESULTS = BOOK / 'resultados/e3'
 DEST = ROOT / 'data/originales'
 FILES = ('catalog.json', 'train.csv.gz', 'test.csv.gz', 'folds.csv', 'contrasts.csv', 'inventory.csv', 'best.joblib',
-         'cv_inference.csv', 'cv_inference.json')
+         'tn_krr.joblib', 'cv_inference.csv', 'cv_inference.json')
 
 # Nombre publicado, carpeta canónica, referencia de fundamento (no garantiza mejora E3).
 EXPERIMENTS = [
@@ -34,6 +35,7 @@ EXPERIMENTS = [
     ('RIM (port E3)', 'rim', 'https://arxiv.org/abs/2108.05252'),
     ('XBART (GFR)', 'scopus/xbart', 'https://doi.org/10.1080/01621459.2021.1942012'),
     ('coPILOT', 'scopus/copilot', 'https://doi.org/10.1007/s11634-026-00683-8'),
+    ('Truncated Newton KRR RBF', 'tn_krr', 'https://doi.org/10.3390/app12094252'),
 ]
 CLASSIC_PAPERS = {
     'svm': 'https://doi.org/10.1023/B:STCO.0000035301.49549.88',
@@ -51,6 +53,7 @@ DETAILS = {
     'tabpfn_25_finetuned/20261015_091524_448419': ('TabPFN 2.5 con ajuste adicional de pesos usando train; no dispone de nueva evaluación OOF independiente.', CANONICAL_PREP),
     'linxgboost': ('Boosting de árboles cuyas hojas ajustan regresiones Ridge locales. Port independiente con cortes cuantílicos aproximados.', CANONICAL_PREP + ' Escalado adicional de todas las columnas para las hojas lineales.'),
     'scopus/kernel_ridge': ('Ridge en un kernel RBF: permite relaciones no lineales mediante una solución matricial exacta; no reproduce Truncated Newton del artículo.', CANONICAL_PREP + ' Objetivo centrado dentro de fit.'),
+    'tn_krr': ('Kernel Ridge RBF con el sistema dual resuelto por gradiente conjugado truncado (TR-KRR), siguiendo el método del artículo.', CANONICAL_PREP + ' Sin centrar el objetivo. Límite CG: 200 iteraciones, residuo L2 ≤0.5 y 25 iteraciones sin mejora; inicia con coeficientes cero.'),
     'scopus/catboost': ('Boosting ordenado de árboles con tratamiento de variables categóricas.', 'Mediana/moda y tipos categóricos nativos; sin one-hot externo, log1p ni escalado.'),
     'scopus/copilot': ('Conjunto de árboles con modelos lineales locales basado en PILOT, usando el código de los autores.', 'Mediana/moda y códigos ordinales; sin escalado. Se conserva la truncación interna del algoritmo original.'),
     'scopus/xbart': ('Árboles bayesianos acelerados; variante GFR de stochtree, sin fase MCMC, distinta del binario XBART original.', CANONICAL_PREP),
@@ -75,6 +78,15 @@ def source_paths():
             paths.append(train)
         paths += list(directory.glob('grid*.csv')) + list(directory.glob('fold_metrics.csv'))
     paths += [BOOK / 'modelos_preentrenados/scopus/kernel_ridge/modelo_final.joblib']
+    tn_directory = RESULTS / 'tn_krr'
+    paths += [BOOK / 'tn_krr_e3.py', BOOK / 'evaluar_tn_krr_e3.py',
+              BOOK / 'significancia_tn_krr_e3.py',
+              BOOK / 'modelos_preentrenados/tn_krr/modelo_final.joblib']
+    paths += [tn_directory / name for name in
+              ['reporte.json', 'protocolo.json', 'seleccion_antes_test.json',
+               'train_predictions.csv.gz', 'test_predictions.csv.gz', 'fold_metrics.csv',
+               'contrastes_test.csv', 'contrastes_test.json']]
+    paths += list(tn_directory.glob('grid*.csv'))
     paths += [BOOK / 'significancia_cv_externa_e3.py', RESULTS / 'cv_externa/contrastes_vs_svm.csv',
               RESULTS / 'cv_externa/reporte.json', RESULTS / 'cv_externa/fold_metrics.csv']
     return sorted(set(paths))
@@ -88,6 +100,41 @@ def prepare_originals():
     from prepare_data import metrics
     DEST.mkdir(exist_ok=True)
     inventory = pd.read_csv(RESULTS / 'resumen_completo/modelos.csv').set_index('Modelo')
+    tn_name = 'Truncated Newton KRR RBF'
+    tn_report = json.loads((RESULTS / 'tn_krr/reporte.json').read_text(encoding='utf-8'))
+    tn_score = tn_report['test']
+    tn_contrasts = pd.read_csv(RESULTS / 'tn_krr/contrastes_test.csv')
+    tn_vs_svm = tn_contrasts.loc[tn_contrasts.Referencia.eq('SVM lineal') & tn_contrasts.metrica.eq('RMSE')].iloc[0]
+    tn_vs_xgb = tn_contrasts.loc[tn_contrasts.Referencia.eq('XGBoost') & tn_contrasts.metrica.eq('RMSE')].iloc[0]
+    tn_svm_rmse = float(inventory.loc['SVM lineal', 'RMSE_test'])
+    tn_xgb_rmse = float(inventory.loc['XGBoost', 'RMSE_test'])
+    tn_row = {column: np.nan for column in inventory.columns}
+    tn_row.update({
+        'rango_RMSE': int((inventory['RMSE_test'] < tn_score['RMSE']).sum()) + 1,
+        'RMSE_test': tn_score['RMSE'],
+        'delta_RMSE_vs_SVM': tn_score['RMSE'] - tn_svm_rmse,
+        'p_bilateral': tn_vs_svm.p_bilateral,
+        'p_Holm_vs_SVM_21': np.nan,
+        'p_Holm_global_55': np.nan,
+        'significancia_sin_correccion': 'No evaluada',
+        'significancia_Holm_vs_SVM_21': 'No evaluada',
+        'significancia_Holm_global_55': 'No evaluada',
+        'delta_RMSE_vs_XGBoost': tn_score['RMSE'] - tn_xgb_rmse,
+        'descripcion': 'KRR RBF con Truncated Newton resuelto por gradiente conjugado truncado.',
+        'estado': 'Evaluado; test temporal exploratorio; contrastes no recalculados',
+        'R2_test': tn_score['R²'],
+        'Referencia_inferencia': 'SVM lineal',
+        'familia_principal': tn_vs_svm.familia_ajuste,
+        'p_bilateral_referencia': tn_vs_svm.p_bilateral,
+        'p_Holm_familia_principal': tn_vs_svm.p_ajustado,
+        'significancia_ajustada': 'No significativa' if tn_vs_svm.p_ajustado >= 0.05 else 'Significativa',
+        'p_bilateral_vs_XGBoost': tn_vs_xgb.p_bilateral,
+        'p_Holm_LinXGBoost_family_7_vs_XGBoost': np.nan,
+        'p_Holm_variantes_12_vs_XGBoost': np.nan,
+    })
+    inventory.loc[tn_name] = tn_row
+    inventory = inventory.sort_values('RMSE_test', kind='stable')
+    inventory['rango_RMSE'] = np.arange(1, len(inventory) + 1)
     classic = json.loads((RESULTS / 'clasicos/comparacion.json').read_text(encoding='utf-8'))
     frames = [pd.read_csv(RESULTS / f'{part}.csv.gz') for part in ['train', 'test']]
     predictions = [pd.read_csv(RESULTS / f'clasicos/{part}_predictions.csv.gz') for part in ['train', 'test']]
@@ -167,12 +214,16 @@ def prepare_originals():
             extra = pd.read_csv(directory / 'fold_metrics.csv')
             extra['Modelo'] = name
             folds = pd.concat([folds, extra], ignore_index=True)
-    assert len(catalog) == 26 and folds.groupby('Modelo').size().eq(5).all()
+    assert len(catalog) == 27 and folds.groupby('Modelo').size().eq(5).all()
     for part, frame in zip(['train', 'test'], predictions):
         # Solo predicciones y fold; las características públicas ya están en la caché común.
         frame.to_csv(DEST / f'{part}.csv.gz', index=False)
     folds.to_csv(DEST / 'folds.csv', index=False)
     canonical_cv = pd.read_csv(RESULTS / 'cv_externa/fold_metrics.csv')
+    if tn_name not in set(canonical_cv.Modelo):
+        tn_folds = pd.read_csv(RESULTS / 'tn_krr/fold_metrics.csv')
+        tn_folds['Modelo'] = tn_name
+        canonical_cv = pd.concat([canonical_cv, tn_folds], ignore_index=True)
     columns = ['Modelo', 'Fold', 'RMSE', 'MAE', 'MAPE (%)', 'R²']
     pd.testing.assert_frame_equal(folds[columns].sort_values(['Modelo', 'Fold']).reset_index(drop=True),
                                  canonical_cv[columns].sort_values(['Modelo', 'Fold']).reset_index(drop=True),
@@ -182,14 +233,23 @@ def prepare_originals():
     contrasts = pd.read_csv(RESULTS / 'resumen_completo/contrastes_actuales.csv')
     retired = {'GPR sola', 'GPR solo', 'GPR sola (ablación)'}
     contrasts = contrasts.loc[~contrasts.Modelo.isin(retired) & ~contrasts.Referencia.isin(retired)]
+    contrasts = pd.concat([contrasts, tn_contrasts], ignore_index=True)
     contrasts.to_csv(DEST / 'contrasts.csv', index=False)
-    shutil.copyfile(RESULTS / 'resumen_completo/modelos.csv', DEST / 'inventory.csv')
+    inventory.reset_index().to_csv(DEST / 'inventory.csv', index=False)
     import joblib
     model_path = BOOK / 'modelos_preentrenados/scopus/kernel_ridge/modelo_final.joblib'
+    if str(BOOK) not in sys.path:
+        sys.path.insert(0, str(BOOK))
     model = joblib.load(model_path)
     np.testing.assert_allclose(model.predict(frames[1][list(model.feature_names_in_)]),
                                predictions[1]['m5'], atol=1e-12, rtol=0)
     shutil.copyfile(model_path, DEST / 'best.joblib')
+    tn_model_path = BOOK / 'modelos_preentrenados/tn_krr/modelo_final.joblib'
+    tn_model = joblib.load(tn_model_path)
+    tn_prediction = predictions[1]['m19']
+    np.testing.assert_allclose(tn_model.predict(frames[1][list(tn_model.feature_names_in_)]),
+                               tn_prediction, atol=1e-10, rtol=0)
+    shutil.copyfile(tn_model_path, DEST / 'tn_krr.joblib')
     catalog['m0']['grid'] = {'C': 'loguniform(0.001, 1000)', 'epsilon': 'loguniform(0.01, 1.5)',
                              'gamma': 'scale, auto y 25 valores logspace(1e-5, 10)', 'búsqueda': '64 muestras aleatorias por fit interno'}
     (DEST / 'catalog.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2), encoding='utf-8')

@@ -49,6 +49,7 @@
 !/Dash/data/originales/*.csv.gz
 !/Dash/data/originales/*.json
 !/Dash/data/originales/best.joblib
+!/Dash/data/originales/tn_krr.joblib
 /Dash/data/clasicos/*
 !/Dash/data/clasicos/*.csv
 !/Dash/data/clasicos/*.csv.gz

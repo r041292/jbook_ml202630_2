@@ -12,6 +12,8 @@ PUBLIC_SOURCES = (
     'resultados/e3/particion.json',
     'resultados/e3/grid_search.csv',
     'resultados/e3/clasicos/comparacion.json',
+    'entregable3.py',
+    'tn_krr_e3.py',
 )
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',

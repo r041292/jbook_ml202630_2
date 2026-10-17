@@ -81,3 +81,7 @@ Kernel Ridge RBF,XGBoost,R²,0.0016750281884405,-0.025781540156751,0.03014032933
 CatBoost,XGBoost,R²,0.0007270352424285,-0.0239013478598093,0.0266476184390116,0.9567,Holm55,1.0,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
 XBART (GFR),XGBoost,R²,-0.076194842103166,-0.1373242110371322,-0.0112227648731159,0.02388,Holm55,0.97908,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
 coPILOT,XGBoost,R²,-0.0801694405577327,-0.1376393611980947,-0.0290488834811626,0.00282,Holm55,0.14946,False,resultados/e3/validacion_r2/historico_22/contrastes_r2_vs_xgboost.csv
+Truncated Newton KRR RBF,SVM lineal,RMSE,-0.0199033063050753,-0.0453216459332584,0.0046463903381269,0.1201,Holm2 TR-KRR vs SVM/XGBoost,0.2402,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,SVM lineal,R²,0.0242574411604947,-0.0058116959841617,0.0559277745447302,0.1201,Holm2 TR-KRR vs SVM/XGBoost,0.2402,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,XGBoost,RMSE,0.0015286978482602,-0.0224678972484852,0.0250097364323264,0.90418,Holm2 TR-KRR vs SVM/XGBoost,0.90418,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,XGBoost,R²,-0.0018413680750325,-0.0302126312974755,0.0278039825538231,0.90418,Holm2 TR-KRR vs SVM/XGBoost,0.90418,False,resultados/e3/tn_krr/contrastes_test.csv

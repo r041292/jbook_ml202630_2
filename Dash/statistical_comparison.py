@@ -18,10 +18,11 @@ EXPLANATION = (
     'El p-valor mide evidencia contra la igualdad, no el tamaño de la diferencia. '
     '**Significativa** significa p de Holm < 0.05; se distingue mejora de deterioro. '
     '**CV global:** t pareada corregida por el solapamiento de los entrenamientos '
-    '(aproximación Nadeau–Bengio), cinco folds, 4 grados de libertad y **Holm24 CV vs SVM** '
-    'sobre los 24 competidores activos con OOF. Una sola partición sin repeticiones: '
+    '(aproximación Nadeau–Bengio), cinco folds, 4 grados de libertad y **Holm25 CV vs SVM** '
+    'sobre los 25 competidores con OOF, incluido TR-KRR. Una sola partición sin repeticiones: '
     'inferencia aproximada y exploratoria, de baja potencia; no se asumen folds independientes. '
     '**Test global:** se conservan las familias publicadas Holm55 o Holm7, distintas de la familia CV. '
+    'TR-KRR añade un análisis complementario Holm2 para sus dos referencias (SVM y XGBoost); no forma parte de Holm55. '
     'La comparación de procedimientos se apoya principalmente en CV; el test contrasta el periodo posterior. '
     'Los subgrupos no tienen contraste calculado; TabPFN fine-tuned no tiene OOF independiente. '
     '«—» significa no evaluado, nunca p=0.'
@@ -45,6 +46,10 @@ def add_inference(scores, *, cv=False, global_view=True):
                     raise ValueError('El contraste CV no coincide con las métricas: ' + name)
                 row.update({P_RAW: saved.p_bilateral, P_HOLM: saved.p_Holm,
                             'Familia de Holm': saved.familia_ajuste, RESULT: saved.conclusion})
+        elif cv and global_view:
+            state = scores.loc[scores.Modelo.eq(name), 'Estado']
+            row[RESULT] = ('Sin contraste CV publicado' if state.empty or
+                           state.iloc[0] != 'Sin OOF independiente' else 'Sin OOF independiente')
         elif not cv and global_view:
             if name in INVENTORY.index:
                 saved = INVENTORY.loc[name]
@@ -81,9 +86,9 @@ def conclusion(test_scores, cv_scores, global_view):
     row = inference.loc[inference.Modelo.eq(best_cv.Modelo)].iloc[0]
     text = f'**La comparación principal usa CV externa. {best_cv.Modelo}** tiene el menor RMSE medio (**{best_cv.RMSE:.6f}**). '
     if pd.notna(row[P_HOLM]):
-        text += f'Frente al **SVM lineal**: p bilateral corregida = **{row[P_RAW]:.5f}**; p Holm24 = **{row[P_HOLM]:.5f}**. '
+        text += f'Frente al **SVM lineal**: p bilateral corregida = **{row[P_RAW]:.5f}**; p Holm25 = **{row[P_HOLM]:.5f}**. '
     if not inference[RESULT].eq('Mejora significativa').any():
-        text += '**Ninguna mejora evaluada frente al SVM es significativa después de Holm24 en CV**; no hay un ganador estadístico demostrado. '
+        text += '**Ninguna mejora evaluada frente al SVM es significativa después de Holm25 en CV**; no hay un ganador estadístico demostrado. '
     if not test_scores.empty:
         best_test = test_scores.dropna(subset=['RMSE']).sort_values('RMSE').iloc[0]
         text += f'Como contraste temporal, **{best_test.Modelo}** lidera el test (**{best_test.RMSE:.6f}**); esto no reemplaza la elección basada en CV. '

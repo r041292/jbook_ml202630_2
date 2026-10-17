@@ -6,7 +6,7 @@
     "Dash/data/coefficients.csv": "339e68184f5c73eff47a50fdec5ac9bcbbb478f4b171716bf2ac4d362cf63e51",
     "Dash/data/grid_search.csv": "d407b30baa993eacc2bd6f4e38e2f0e200aa2b4b8f0cb1267e2007a63f1bc8ed",
     "Dash/data/model.joblib": "f99d914265e772f1effb9cdad7c780f4c1a9b6646c6ad69a762fb637d5463ccd",
-    "Dash/data/manifest.json": "0d8d9c6567b419610904d143f6204b5d63453341ad6926fd0a771def3fb0509c",
+    "Dash/data/manifest.json": "27646e1242a261a6b22186bec28340259498758abf8dd2e2fa8745c6dc4fd26d",
     "Dash/data/clasicos/comparacion.json": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
     "Dash/data/clasicos/fold_metrics.csv": "11b781ee2a7aa2a73852b03784671cea442ca03d70a840327fe97461c917f9be",
     "Dash/data/clasicos/train_predictions.csv.gz": "a867be77bb31dbe11d0b2d46691ec048a7dafdb4c54f8f9175754ba932668818",
@@ -22,14 +22,15 @@
     "Dash/data/clasicos/grid_forest.csv": "72b9a3f7f40404efd0be298930b5dbb291e46789c6559afc80630acf54fc84c6",
     "Dash/data/clasicos/xgboost.joblib": "6e8d8a168db53c16d6bcd6a403ae0414b151d6465b3490bea3adc6ad27110005",
     "Dash/data/clasicos/grid_xgboost.csv": "70e0654a701272e2831db0bd5d0dd7d3b4df14eeb45b9a3fd9680157edd4f99f",
-    "Dash/data/originales/catalog.json": "dd559f20216ef3cfec28c2aef863e5cd0aa089648e812f09a6023e8f1303a866",
-    "Dash/data/originales/train.csv.gz": "6d0b7e7c32131ba20473bbc984bb98ecfba7790de383c56f3760877e0458506e",
-    "Dash/data/originales/test.csv.gz": "9ba9b6b00f4e32548256c83ec4d0396f14c87ebb4741a0f0dac1763b56591267",
-    "Dash/data/originales/folds.csv": "ad459a1d4d9d115bb9daa73cd51f5bed460bf817a426814507911ef05f2b79d2",
-    "Dash/data/originales/contrasts.csv": "b40f53a9ac72d88224c67e4bfe985db37e758840b44fb3e322d2e8db964d17c4",
-    "Dash/data/originales/inventory.csv": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9",
+    "Dash/data/originales/catalog.json": "17a5c627291024e19ef9746eaa084d0dc313c65917e76e3986203572b628b8d8",
+    "Dash/data/originales/train.csv.gz": "d135ae192fb65bad122f1e3ce9d554a03de978eda4a1e3ddd4f7c33f7c9d8d92",
+    "Dash/data/originales/test.csv.gz": "6ac26ddd07bc9f2a510da27916ab91dac280834d7b5927866e0f2bd767695d59",
+    "Dash/data/originales/folds.csv": "3f12f5561cfe200a88f118a8558d3257e4b556bb5c785b50c3cf257d64a3d1c1",
+    "Dash/data/originales/contrasts.csv": "922148e8548f35f46e7a990499a886157e4fec33d881bdb6d7ab565a88e8ea2f",
+    "Dash/data/originales/inventory.csv": "7797619b83a1df296181b49b38967d78a1015ffe0558f325023d9fabe6f28a8c",
     "Dash/data/originales/best.joblib": "2dee1a446b4c6000249cf494b4400277fc81f0de82c7d286c3774ed2acea1c62",
-    "Dash/data/originales/cv_inference.csv": "70d1a91f8e83ed4e7ff3e48023e668a3d1c3e2905c7f7813865d466da4dbf317",
-    "Dash/data/originales/cv_inference.json": "2157461baebcd43c3c6d3212f17664e09e96e3d6d8baf841032f0dd4966a66ce"
+    "Dash/data/originales/tn_krr.joblib": "de91e89b90f7c5c7ac58b0d196530aebc13285a1c40026029d032365eb34b14f",
+    "Dash/data/originales/cv_inference.csv": "7f008fcd8d8dc43344e273a1e48d6b7804689dc4fe17dc432ca6a925e35122a9",
+    "Dash/data/originales/cv_inference.json": "9a1caddfd7ae5a97497ece24b448e7d13c2ab8c797fa884048c4c0bcedb7ae7a"
   }
 }
