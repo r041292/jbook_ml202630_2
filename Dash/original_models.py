@@ -119,6 +119,9 @@ def create_originals(app, ui):
               f'{len(CATALOG)} modelos y variantes evaluados, incluidos los clásicos.'),
         notice('Datos reales, test temporal 202530 y cinco folds externos por estudiante. Las búsquedas usan solo train; '
                'los modelos preentrenados con configuración fija no requieren grilla. El test reutilizado y las comparaciones entre familias son exploratorios.'),
+        notice('Este inventario conserva las ejecuciones históricas, incluido su SVM de referencia y los clásicos con Grid Search. '
+               'Las nuevas ejecuciones que comparan cinco estrategias se consultan en Modelos lineales y Modelos clásicos; '
+               'sus predicciones y referencias no se mezclan con estos contrastes históricos.'),
         html.Details([html.Summary('Fundamento, documentación, preparación y búsqueda por modelo'),
             md('Cada ficha explica la implementación evaluada y enlaza su fundamento. Los ports, variantes y ablaciones se identifican explícitamente; '
                'el paper describe el método y no demuestra una mejora en estos datos. Los rangos de grilla reflejan los candidatos realmente evaluados.'), *docs], className='details'),

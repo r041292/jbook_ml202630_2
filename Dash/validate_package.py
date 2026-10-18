@@ -63,6 +63,17 @@ def validate():
                                classics.TEST_PREDICTIONS.decision_tree, atol=1e-12, rtol=0)
     assert (classics.FRIEDMAN['n_models'], classics.FRIEDMAN['n_folds']) == (7, 5)
     assert 'decision_tree' in classics.NAMES and 'dummy' not in classics.ALL_NAMES
+    if app.MODEL_REPORT.get('optimization'):
+        np.testing.assert_allclose(app.MODEL.predict(app.TEST[app.FEATURES]), app.TEST.svm, atol=1e-12, rtol=0)
+        for key in classics.NAMES:
+            np.testing.assert_allclose(load_model(key).predict(app.TEST[app.FEATURES]),
+                                       classics.TEST_PREDICTIONS[key], atol=1e-12, rtol=0)
+        for spec in [app.MODEL_REPORT, *classics.REPORT['models'].values()]:
+            optimization = spec['optimization']
+            assert len(optimization['methods']) == len(optimization['external_selections']) == 5
+            assert len(optimization['evolution']) == 4
+            assert abs(spec['selection_rmse']-min(m['RMSE'] for m in optimization['methods'])) < 1e-12
+            assert sum(r['stage'] == 'Búsqueda' for r in optimization['timings']) == 30
     from lime_xgboost import explain_xgboost
     explanation = explain_xgboost(load_model('xgboost'), app.TRAIN, app.TEST.iloc[[0]], app.LABELS, 1000)
     assert explanation['neighborhood'] == 'empirical' and explanation['incoherent_fraction'] == 0

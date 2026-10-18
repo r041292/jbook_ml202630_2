@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.015674500005843583, "rows": 1, "status": "completa", "recorded": "2026-10-18T11:26:08.901716-05:00", "started": "2026-10-18T11:26:08.883688-05:00"}
+{"stage": "Total del experimento", "batch": "TruncatedNewtonKernelRidgeRegressor · inferencia de aplicación", "seconds": 0.023032400000374764, "rows": null, "status": "completa", "recorded": "2026-10-18T11:26:08.903724-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

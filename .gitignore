@@ -152,3 +152,6 @@
 !/tiempos/
 !/tiempos/**
 !/Precalculo/decision_tree_e3.md
+!/Precalculo/busquedas_e3.md
+!/Dash/search_results.py
+!/Dash/data/svm_report.json

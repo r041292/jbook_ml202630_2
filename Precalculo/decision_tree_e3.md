@@ -1,5 +1,9 @@
 # Decision Tree · regresión E3 · 18 de octubre de 2026
 
+Este documento conserva la primera ejecución con Grid Search. La evaluación
+posterior de cinco estrategias se documenta en [busquedas_e3.md](busquedas_e3.md)
+y mantiene estos resultados históricos sin sobrescribirlos.
+
 Se incorpora un árbol CART a **Modelos clásicos**. Predice la nota del primer
 parcial mediante cortes binarios y medias de las hojas. Implementación:
 `evaluar_decision_tree_e3.py`, con `sklearn.tree.DecisionTreeRegressor`,

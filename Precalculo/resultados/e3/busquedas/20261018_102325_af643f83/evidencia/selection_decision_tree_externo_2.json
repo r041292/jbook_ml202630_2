@@ -1,0 +1,163 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 20
+      },
+      "RMSE": 0.9040399380447909,
+      "sd_RMSE": 0.047409254481750034,
+      "search_seconds": 10.661469099999522,
+      "evaluated_configurations": 72,
+      "full_configurations": 72,
+      "completed_fits": 360,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 24,
+        "modelo__ccp_alpha": 0.0012811363267554588
+      },
+      "RMSE": 0.8894061906808485,
+      "sd_RMSE": 0.04495935699845486,
+      "search_seconds": 1.0738858000040636,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 23,
+        "modelo__ccp_alpha": 0.003533205367330943
+      },
+      "RMSE": 0.8950456967584296,
+      "sd_RMSE": 0.04000294495209809,
+      "search_seconds": 1.35365649999585,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__max_depth": 6,
+        "modelo__min_samples_leaf": 23,
+        "modelo__ccp_alpha": 0.0032428273441532187
+      },
+      "RMSE": 0.8947630302411221,
+      "sd_RMSE": 0.04015807259739298,
+      "search_seconds": 0.8711493999944651,
+      "evaluated_configurations": 13,
+      "full_configurations": 13,
+      "completed_fits": 65,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 24,
+        "modelo__ccp_alpha": 0.0012811363267554588
+      },
+      "RMSE": 0.8894061906808485,
+      "sd_RMSE": 0.04495935699845486,
+      "search_seconds": 1.729168000005302,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Random Search",
+  "best_params": {
+    "modelo__max_depth": 8,
+    "modelo__min_samples_leaf": 24,
+    "modelo__ccp_alpha": 0.0012811363267554588
+  },
+  "selection_rmse": 0.8894061906808485,
+  "space": {
+    "modelo__max_depth": [
+      "cat",
+      [
+        2,
+        3,
+        4,
+        6,
+        8,
+        null
+      ]
+    ],
+    "modelo__min_samples_leaf": [
+      "int",
+      2,
+      30
+    ],
+    "modelo__ccp_alpha": [
+      "real",
+      0.0,
+      0.01
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.9275003557805663,
+      "mean_RMSE": 0.944919279759612,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8456951609814617
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8947630302411221,
+      "mean_RMSE": 0.9239071484964636,
+      "unique_fraction": 0.5,
+      "gene_entropy": 0.4235678247755373
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8947630302411221,
+      "mean_RMSE": 0.9110990114952388,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.2672932291366185
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8947630302411221,
+      "mean_RMSE": 0.8947630302411221,
+      "unique_fraction": 0.125,
+      "gene_entropy": 0.0
+    }
+  ],
+  "outer": "externo_2",
+  "trials_file": "trials_decision_tree_externo_2.jsonl"
+}

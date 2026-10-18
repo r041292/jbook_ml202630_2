@@ -2,7 +2,7 @@
 import hashlib
 import json
 
-from prepare_data import BOOK, CACHE, ROOT, hashes, CLASSIC_FILES
+from prepare_data import BOOK, CACHE, ROOT, hashes, CLASSIC_FILES, ACTIVE_RESULTS, RESULTS, ACTIVE_POINTER
 from prepare_originals import FILES as ORIGINAL_FILES
 
 PUBLIC_SOURCES = (
@@ -17,10 +17,17 @@ PUBLIC_SOURCES = (
     'evaluar_decision_tree_e3.py',
     'modelos_clasicos.py',
     'preprocesamiento_clasicos.py',
+    'busquedas_hiperparametros_e3.py',
+    'evaluar_busquedas_e3.py',
+    'activar_busqueda_e3.py',
 )
+if ACTIVE_RESULTS != RESULTS:
+    PUBLIC_SOURCES += (ACTIVE_POINTER.relative_to(BOOK).as_posix(),)
+    PUBLIC_SOURCES += tuple((ACTIVE_RESULTS / name).relative_to(BOOK).as_posix() for name in
+                            ['modelos_lineales.json', 'protocolo.json', 'completo.json', 'seleccion_antes_test.json', 'clasicos/comparacion.json'])
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
-    'grid_search.csv', 'model.joblib', 'manifest.json',
+    'grid_search.csv', 'model.joblib', 'manifest.json', 'svm_report.json',
 ) + tuple('clasicos/' + name for name in CLASSIC_FILES) + tuple('originales/' + name for name in ORIGINAL_FILES)
 
 

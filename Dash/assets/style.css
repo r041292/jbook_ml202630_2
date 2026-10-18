@@ -27,3 +27,4 @@
 
 /* Etiquetas completas: espacio para nombres de asignaturas y controles multilínea. */
 .pills{flex-wrap:wrap}.Select-value-label{white-space:normal!important}.density-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.density-grid h3{min-height:0}.radio label{white-space:normal}@media(max-width:700px){.density-grid{grid-template-columns:1fr}}
+.optimization-results .table-wrap th{white-space:normal;min-width:0}.optimization-results .table-wrap th:last-child{min-width:0}.optimization-results .table-wrap{margin:18px 0}.optimization-results{min-width:0}.optimization-results .prose code{white-space:normal;overflow-wrap:anywhere}

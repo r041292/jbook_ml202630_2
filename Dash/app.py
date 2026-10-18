@@ -39,7 +39,7 @@ FOLDS = pd.read_csv(CACHE / 'fold_metrics.csv')
 COEFFICIENTS = pd.read_csv(CACHE / 'coefficients.csv')
 FULL_COEFFICIENTS = coefficient_report(MODEL)
 DOCUMENT = (BOOK / '00_seleccion_base_datos.md').read_text(encoding='utf-8')
-MODEL_REPORT = json.loads((BOOK / 'resultados/e3/modelos_lineales.json').read_text(encoding='utf-8'))
+MODEL_REPORT = json.loads((CACHE / 'svm_report.json').read_text(encoding='utf-8'))
 EDA_REPORT = json.loads((BOOK / 'resultados/e3/eda.json').read_text(encoding='utf-8'))
 SVM_RESULT = next(r for r in MODEL_REPORT['test'] if r['modelo'] == 'SVM lineal')
 SVM_CV = {r['metrica']: r for r in MODEL_REPORT['cv'] if r['modelo'] == 'SVM lineal'}
@@ -286,7 +286,8 @@ def groupkfold_card():
         md('**Cinco folds internos para seleccionar hiperparámetros.** En cada iteración externa, solo los '
            'estudiantes de sus cuatro bloques de entrenamiento se redistribuyen en cinco folds internos, '
            'manteniendo otra vez juntas todas las filas de cada persona. Se evalúan las combinaciones '
-           'del grid de cada modelo y se elige la de menor RMSE medio interno. **El fold externo reservado no participa '
+           'del grid y las propuestas de Random Search, TPE, DEAP y Successive Halving. Se elige método y configuración '
+           'por menor RMSE medio interno a fidelidad completa. **El fold externo reservado no participa '
            'en esa búsqueda.** Imputación, escalado y codificación también se aprenden dentro de cada ajuste.\n\n'
            '**Modelo final y test por periodo.** Tras obtener la evaluación OOF, se ejecuta una nueva '
            'búsqueda agrupada sobre todo entrenamiento y se ajusta el modelo final. Solo entonces se evalúa '
@@ -324,9 +325,11 @@ MODELS = html.Div([
         f'**Selección final:** C = {MODEL_REPORT["best_params"]["modelo__C"]}, '
         f'epsilon = {MODEL_REPORT["best_params"]["modelo__epsilon"]}. '
         'Se minimiza RMSE agrupado usando únicamente train. Todo el preprocesamiento se ajusta dentro de cada fold. '
+        'La configuración final resulta de comparar las cinco estrategias en validación interna, cuando están disponibles. '
         'ID, periodo y nota_final quedan fuera de las predictoras.'),
     card('Resultados de la búsqueda en train',
-         'RMSE medio de cinco folds agrupados para cada combinación. Este gráfico selecciona el modelo final; '
+         'Grid Search conservada: RMSE medio de cinco folds agrupados para cada combinación. '
+         'La selección final compara además Random, TPE, DEAP y Halving cuando están disponibles; '
          'la estimación OOF mostrada abajo proviene de validación anidada independiente.',
          px.density_heatmap(pd.read_csv(CACHE / 'grid_search.csv').assign(
              RMSE=lambda f: -f['mean_test_score'],
@@ -353,7 +356,7 @@ MODELS = html.Div([
     card('Conclusión',
         f'El SVM reduce el **RMSE en {MODEL_REPORT["improvement"]["reducción_RMSE_vs_dummy_%"]:.2f} %** '
         f'y el **MAPE en {MODEL_REPORT["improvement"]["reducción_MAPE_vs_dummy_%"]:.2f} %** frente a Dummy. '
-        f'Su capacidad predictiva es parcial. La validación interna (R² = {SVM_CV["R2"]["media_cv"]:.4f}) '
+        f'Su capacidad predictiva es parcial. La validación externa (R² = {SVM_CV["R2"]["media_cv"]:.4f}) '
         f'se contrasta con test (R² = {SVM_RESULT["R2"]:.4f}). '
         'Ambas evaluaciones usan estudiantes separados; test también mide generalización a un periodo posterior. '
         f'Normalidad de residuos: p = {SVM_DIAG["normaltest_p"]:.3g}; '
@@ -362,6 +365,18 @@ MODELS = html.Div([
         'El modelo aporta una referencia predictiva, pero sus coeficientes no demuestran efectos causales. '
         'Los resultados describen esta muestra y este periodo; conviene comprobar estabilidad en periodos futuros.'),
 ])
+
+from search_results import optimization_section
+HISTORICAL_SVM = json.loads((BOOK / 'resultados/e3/modelos_lineales.json').read_text(encoding='utf-8'))
+MODELS.children.insert(3, html.Details([
+    html.Summary('Resultados de las cinco búsquedas en train · selección y tiempos'),
+    optimization_section(MODEL_REPORT, {'md': md, 'table': table, 'card': card}),
+    html.Details([html.Summary('Referencia histórica · Grid Search anterior'),
+        md(f'Parámetros históricos: `{json.dumps(HISTORICAL_SVM["best_params"], ensure_ascii=False)}`. '
+           f'RMSE interno histórico: **{HISTORICAL_SVM["selection_rmse"]:.6f}**. '
+           'Sus reportes y predicciones se conservan en resultados/e3; la ejecución nueva tiene una carpeta versionada independiente.')
+    ], className='details'),
+], className='details'))
 
 from classic_models import create_classics
 MODEL_UI = {
@@ -808,7 +823,8 @@ MODELS.children[-2].children.append(html.Div([
     card('Curva de aprendizaje',
          f'Resultados de datos reales: con {int(learning.iloc[-1]["Filas de entrenamiento"]):,} filas, '
          f'RMSE de entrenamiento = {learning.iloc[-1]["Entrenamiento"]:.4f} y validación = {learning.iloc[-1]["Validación"]:.4f}. '
-         'La brecha interna se interpreta junto con el test reservado.', learning_fig),
+         'La brecha interna se interpreta junto con el test reservado. '
+         + MODEL_REPORT.get('learning_method', ''), learning_fig),
     card('Doce coeficientes de mayor magnitud', 'Coeficientes del modelo global reproducido, en el espacio transformado. '
          'Las numéricas están escaladas y las categorías se comparan contra referencias; la magnitud no es importancia causal '
          'y las redundancias dificultan interpretaciones aisladas.', coef_fig)], className='grid'))

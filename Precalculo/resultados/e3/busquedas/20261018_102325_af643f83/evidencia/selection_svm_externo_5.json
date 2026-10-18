@@ -1,0 +1,146 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.2
+      },
+      "RMSE": 0.8279504472321589,
+      "sd_RMSE": 0.02909321108869713,
+      "search_seconds": 15.168865300001926,
+      "evaluated_configurations": 48,
+      "full_configurations": 48,
+      "completed_fits": 240,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__C": 0.21391566866988704,
+        "modelo__epsilon": 0.2272387217847769
+      },
+      "RMSE": 0.8276920750924128,
+      "sd_RMSE": 0.027930705173155594,
+      "search_seconds": 2.459739300000365,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__C": 0.1494199542205304,
+        "modelo__epsilon": 0.6174544729930211
+      },
+      "RMSE": 0.828735511194059,
+      "sd_RMSE": 0.022419823156901914,
+      "search_seconds": 2.8037058999980218,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__C": 0.07381827474625785,
+        "modelo__epsilon": 0.23279088636103018
+      },
+      "RMSE": 0.8289523688670156,
+      "sd_RMSE": 0.029393466754679364,
+      "search_seconds": 2.4852074999944307,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__C": 0.21391566866988704,
+        "modelo__epsilon": 0.2272387217847769
+      },
+      "RMSE": 0.8276920750924128,
+      "sd_RMSE": 0.027930705173155594,
+      "search_seconds": 3.6288802999988548,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Random Search",
+  "best_params": {
+    "modelo__C": 0.21391566866988704,
+    "modelo__epsilon": 0.2272387217847769
+  },
+  "selection_rmse": 0.8276920750924128,
+  "space": {
+    "modelo__C": [
+      "log",
+      0.01,
+      10.0
+    ],
+    "modelo__epsilon": [
+      "real",
+      0.0,
+      1.0
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8296291320517266,
+      "mean_RMSE": 0.8438953993306562,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.7759398437049279
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8289523688670156,
+      "mean_RMSE": 0.8333390035577337,
+      "unique_fraction": 0.75,
+      "gene_entropy": 0.43293164689846625
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8289523688670156,
+      "mean_RMSE": 0.831623611093485,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.39334551085908864
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8289523688670156,
+      "mean_RMSE": 0.8363224143607288,
+      "unique_fraction": 0.5,
+      "gene_entropy": 0.2674737612764549
+    }
+  ],
+  "outer": "externo_5",
+  "trials_file": "trials_svm_externo_5.jsonl"
+}

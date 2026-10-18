@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parent
 BOOK = ROOT.parent / 'Precalculo'
 CACHE = ROOT / 'data'
 RESULTS = BOOK / 'resultados/e3'
+ACTIVE_POINTER = RESULTS / 'busqueda_activa.json'
+ACTIVE_RESULTS = RESULTS
+if ACTIVE_POINTER.exists():
+    active = json.loads(ACTIVE_POINTER.read_text(encoding='utf-8'))
+    ACTIVE_RESULTS = RESULTS / 'busquedas' / active['run_id']
+    if not (ACTIVE_RESULTS / 'completo.json').is_file():
+        raise RuntimeError('La búsqueda activa no está completa.')
 CLASSIC_KEYS = ('knn', 'ridge', 'lasso', 'forest', 'xgboost', 'decision_tree')
 CLASSIC_FILES = ['comparacion.json', 'fold_metrics.csv', 'train_predictions.csv.gz', 'test_predictions.csv.gz', 'xgboost.ubj'] + [
     name for key in CLASSIC_KEYS for name in (f'{key}.joblib', f'grid_{key}.csv')]
@@ -22,6 +29,13 @@ SOURCES += [BOOK / 'modelos_clasicos.py', BOOK / 'preprocesamiento_clasicos.py']
 SOURCES += [BOOK / 'evaluar_decision_tree_e3.py']
 SOURCES += [RESULTS / 'clasicos' / name for name in CLASSIC_FILES]
 SOURCES += source_paths()
+SOURCES += [BOOK / 'busquedas_hiperparametros_e3.py', BOOK / 'evaluar_busquedas_e3.py', BOOK / 'activar_busqueda_e3.py']
+if ACTIVE_RESULTS != RESULTS:
+    SOURCES += [ACTIVE_POINTER, ACTIVE_RESULTS / 'modelos_lineales.json', ACTIVE_RESULTS / 'protocolo.json',
+                ACTIVE_RESULTS / 'seleccion_antes_test.json', ACTIVE_RESULTS / 'completo.json']
+    SOURCES += [ACTIVE_RESULTS / name for name in ['train.csv.gz', 'test.csv.gz', 'fold_metrics.csv',
+                 'coefficients.csv', 'model.joblib', 'grid_search.csv']]
+    SOURCES += [ACTIVE_RESULTS / 'clasicos' / name for name in CLASSIC_FILES]
 
 def hashes():
     return {p.relative_to(BOOK).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in SOURCES}
@@ -33,27 +47,29 @@ def metrics(y, pred):
             'R²': float(r2_score(y, pred)) if len(y) > 1 and np.var(y) > 0 else None}
 
 def prepare():
-    report = json.loads((RESULTS / 'modelos_lineales.json').read_text(encoding='utf-8'))
-    classics = json.loads((RESULTS / 'clasicos/comparacion.json').read_text(encoding='utf-8'))
+    report = json.loads((ACTIVE_RESULTS / 'modelos_lineales.json').read_text(encoding='utf-8'))
+    classics = json.loads((ACTIVE_RESULTS / 'clasicos/comparacion.json').read_text(encoding='utf-8'))
     for name, digest in {**report['source_sha256'], **classics['source_sha256']}.items():
         if hashlib.sha256((BOOK / name).read_bytes()).hexdigest() != digest:
             raise RuntimeError('Reejecuta entregable3.py: cambió la fuente ' + name)
     CACHE.mkdir(exist_ok=True)
     for name in ['train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv', 'model.joblib', 'grid_search.csv']:
-        shutil.copyfile(RESULTS / name, CACHE / name)
+        shutil.copyfile(ACTIVE_RESULTS / name, CACHE / name)
+    shutil.copyfile(ACTIVE_RESULTS / 'modelos_lineales.json', CACHE / 'svm_report.json')
     (CACHE / 'clasicos').mkdir(exist_ok=True)
     for name in CLASSIC_FILES:
-        shutil.copyfile(RESULTS / 'clasicos' / name, CACHE / 'clasicos' / name)
+        shutil.copyfile(ACTIVE_RESULTS / 'clasicos' / name, CACHE / 'clasicos' / name)
     shutil.copyfile(BOOK / 'preprocesamiento_clasicos.py', ROOT / 'preprocesamiento_clasicos.py')
     prepare_originals()
     artifacts = [p for p in CACHE.glob('*') if p.name in ['train.csv.gz', 'test.csv.gz', 'fold_metrics.csv',
                  'coefficients.csv', 'model.joblib', 'grid_search.csv']] + [CACHE / 'clasicos' / name for name in CLASSIC_FILES]
-    artifacts += [CACHE / 'originales' / name for name in ORIGINAL_FILES]
+    artifacts += [CACHE / 'originales' / name for name in ORIGINAL_FILES] + [CACHE / 'svm_report.json']
     (CACHE / 'manifest.json').write_text(json.dumps({
         'sha256': hashes(), 'train_valid': report['train_valid'], 'test_valid': report['test_valid'],
         'technique': 'datos_reales', 'test_period': report['test_period'], 'best_params': report['best_params'],
         'model_sha256': hashlib.sha256((CACHE / 'model.joblib').read_bytes()).hexdigest(),
         'method': report['validation'],
+        'active_search': report.get('run_id'),
         'artifact_sha256': {p.relative_to(CACHE).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in artifacts},
     }, indent=2, ensure_ascii=False), encoding='utf-8')
     print('Dashboard sincronizado con E3.')

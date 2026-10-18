@@ -1,0 +1,157 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__learning_rate": 0.03,
+        "modelo__max_depth": 2,
+        "modelo__n_estimators": 300
+      },
+      "RMSE": 0.806572851108883,
+      "sd_RMSE": 0.006482637108202314,
+      "search_seconds": 124.71820470000239,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 280,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.015469324832553224
+      },
+      "RMSE": 0.8072878407973217,
+      "sd_RMSE": 0.011306495391640498,
+      "search_seconds": 82.84106849999807,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 216,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.019659691974579667
+      },
+      "RMSE": 0.8077735732041974,
+      "sd_RMSE": 0.011063852222826366,
+      "search_seconds": 90.02603060000547,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 395,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.014304724560230872
+      },
+      "RMSE": 0.8056390428036332,
+      "sd_RMSE": 0.011463930544336948,
+      "search_seconds": 27.806098299995938,
+      "evaluated_configurations": 10,
+      "full_configurations": 10,
+      "completed_fits": 50,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 280,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.015469324832553224
+      },
+      "RMSE": 0.8072878407973217,
+      "sd_RMSE": 0.011306495391640498,
+      "search_seconds": 89.0506269999969,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Genética DEAP",
+  "best_params": {
+    "modelo__n_estimators": 395,
+    "modelo__max_depth": 3,
+    "modelo__learning_rate": 0.014304724560230872
+  },
+  "selection_rmse": 0.8056390428036332,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "int",
+      1,
+      6
+    ],
+    "modelo__learning_rate": [
+      "log",
+      0.01,
+      0.1
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8056390428036332,
+      "mean_RMSE": 0.8189778323042984,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8446771201542882
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8056390428036332,
+      "mean_RMSE": 0.8123064545527767,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.5663527468793927
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8056390428036332,
+      "mean_RMSE": 0.8081357119989763,
+      "unique_fraction": 0.375,
+      "gene_entropy": 0.41169625571618534
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8056390428036332,
+      "mean_RMSE": 0.8056390428036332,
+      "unique_fraction": 0.125,
+      "gene_entropy": 0.0
+    }
+  ],
+  "outer": "externo_4",
+  "trials_file": "trials_xgboost_externo_4.jsonl"
+}

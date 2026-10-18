@@ -1,0 +1,157 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__learning_rate": 0.03,
+        "modelo__max_depth": 2,
+        "modelo__n_estimators": 300
+      },
+      "RMSE": 0.7907440043217179,
+      "sd_RMSE": 0.02391750695180561,
+      "search_seconds": 69.94561019999674,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 423,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.029290110069785873
+      },
+      "RMSE": 0.7924541280792394,
+      "sd_RMSE": 0.020878564268457255,
+      "search_seconds": 48.13754090000293,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 459,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.013085037506687928
+      },
+      "RMSE": 0.7901692662768275,
+      "sd_RMSE": 0.023322193672779986,
+      "search_seconds": 65.53139509999892,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 341,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.03883878934020126
+      },
+      "RMSE": 0.7917739605011318,
+      "sd_RMSE": 0.021339730252671964,
+      "search_seconds": 33.841349999995145,
+      "evaluated_configurations": 13,
+      "full_configurations": 13,
+      "completed_fits": 65,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 423,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.029290110069785873
+      },
+      "RMSE": 0.7924541280792394,
+      "sd_RMSE": 0.020878564268457255,
+      "search_seconds": 135.705312099999,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Bayesiana TPE",
+  "best_params": {
+    "modelo__n_estimators": 459,
+    "modelo__max_depth": 3,
+    "modelo__learning_rate": 0.013085037506687928
+  },
+  "selection_rmse": 0.7901692662768275,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "int",
+      1,
+      6
+    ],
+    "modelo__learning_rate": [
+      "log",
+      0.01,
+      0.1
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.7917739605011318,
+      "mean_RMSE": 0.8037970907052876,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8446771201542882
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.7917739605011318,
+      "mean_RMSE": 0.7938444282931058,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.4644036925543702
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.7917739605011318,
+      "mean_RMSE": 0.7962673163938205,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.2829309141492997
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.7917739605011318,
+      "mean_RMSE": 0.7920532417382065,
+      "unique_fraction": 0.25,
+      "gene_entropy": 0.0603960492443996
+    }
+  ],
+  "outer": "externo_3",
+  "trials_file": "trials_xgboost_externo_3.jsonl"
+}

@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.021331999996618833, "rows": 1, "status": "completa", "recorded": "2026-10-18T11:28:29.772278-05:00", "started": "2026-10-18T11:28:29.755794-05:00"}
+{"stage": "Total del experimento", "batch": "TransformedTargetRegressor · inferencia de aplicación", "seconds": 0.04967409999517258, "rows": null, "status": "completa", "recorded": "2026-10-18T11:28:29.772278-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

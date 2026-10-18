@@ -14,9 +14,11 @@ from prepare_data import BOOK, CACHE, ROOT, metrics
 from prediction import build_form, input_id, predict_record
 from prepare_originals import CLASSIC_PAPERS
 from classic_friedman import friedman_comparison, summary, display_statistics, conclusion, EXPLANATION
+from search_results import optimization_section
 
 DIRECTORY = CACHE / 'clasicos'
 REPORT = json.loads((DIRECTORY / 'comparacion.json').read_text(encoding='utf-8'))
+HISTORICAL_REPORT = json.loads((BOOK / 'resultados/e3/clasicos/comparacion.json').read_text(encoding='utf-8'))
 FOLDS = pd.read_csv(DIRECTORY / 'fold_metrics.csv')
 TRAIN_PREDICTIONS = pd.read_csv(DIRECTORY / 'train_predictions.csv.gz')
 TEST_PREDICTIONS = pd.read_csv(DIRECTORY / 'test_predictions.csv.gz')
@@ -59,7 +61,10 @@ def load_model(key):
     if hashlib.sha256(path.read_bytes()).hexdigest() != REPORT['models'][key]['model_sha256']:
         raise RuntimeError('El pipeline no corresponde a los resultados: ' + key)
     if key == 'xgboost':
-        expected = REPORT['source_sha256']['preprocesamiento_clasicos.py']
+        expected = REPORT['source_sha256'].get('preprocesamiento_clasicos.py')
+        if expected is None:
+            # Multibúsqueda versiona el código en protocolo/manifiesto.
+            expected = json.loads((CACHE / 'manifest.json').read_text(encoding='utf-8'))['sha256']['preprocesamiento_clasicos.py']
         if hashlib.sha256((ROOT / 'preprocesamiento_clasicos.py').read_bytes()).hexdigest() != expected:
             raise RuntimeError('Cambió el preprocesamiento nativo de XGBoost.')
     return joblib.load(path)
@@ -109,15 +114,23 @@ def create_classics(app, ui):
     for key, spec in REPORT['models'].items():
         parameters = pd.DataFrame([
             {'Parámetro': p.replace('modelo__', ''), 'Grid': str(values),
-             'Elegido en train': str(spec['best_params'][p])}
+             'Elegido entre todas las búsquedas': str(spec['best_params'][p])}
             for p, values in spec['grid'].items()
         ])
         pipeline_cards.append(html.Details([
-            html.Summary(spec['name'] + f' · {spec["combinations"]} combinaciones'),
+            html.Summary(spec['name'] + f' · {spec["combinations"]} combinaciones Grid'
+                         + (' + cuatro estrategias' if spec.get('optimization') else '')),
             md(f'[Artículo de fundamento]({CLASSIC_PAPERS[key]})'),
             md(spec['preparation']), table(parameters),
-            md(f'RMSE del grid final en train: **{spec["selection_rmse"]:.4f}**. '
+            md(f'RMSE de selección conjunta final en train: **{spec["selection_rmse"]:.4f}**. '
                'Es una métrica de selección; la evaluación independiente usa los folds externos y el test.'),
+            optimization_section(spec, ui),
+            html.Details([html.Summary('Referencia histórica · Grid Search anterior'),
+                md('Se conserva la ejecución anterior para trazabilidad. No se mezclan sus predicciones '
+                   'con los nuevos folds ni se usan sus resultados de test para elegir parámetros.'),
+                md(f'Parámetros: `{json.dumps(HISTORICAL_REPORT["models"][key]["best_params"], ensure_ascii=False)}`. '
+                   f'RMSE test histórico: **{HISTORICAL_REPORT["models"][key]["test_metrics"]["RMSE"]:.6f}**.')
+            ], className='details'),
         ], className='details classic-pipeline'))
     layout = html.Div([
         title('MODELOS CLÁSICOS', 'Comparación de modelos predictivos',
@@ -125,6 +138,9 @@ def create_classics(app, ui):
         notice('Todos predicen la nota del primer parcial: son modelos de regresión. '
                'Comparten los datos reales, el test 202530 y los mismos cinco folds externos por estudiante del SVM. '
                'Cada modelo ajusta sus hiperparámetros en cinco folds internos; test no participa en la búsqueda.'),
+        notice('La ejecución actual compara Grid Search, Random Search, Bayesiana TPE, Genética DEAP y Successive Halving. '
+               'Cada fold externo incluye su propia selección interna de método y parámetros; el ajuste final repite la comparación en todo train.'
+               if REPORT.get('run_id') else 'Ejecución histórica con Grid Search.'),
         html.Details([html.Summary('Fundamento, documentación, preparación y grillas por modelo'),
             md('KNN, Ridge y Lasso reutilizan el preprocesamiento del SVM. Los árboles usan otra representación: '
                '**Decision Tree emplea one-hot completo**, sin escalado ni log1p, para evitar un orden artificial en las categorías. '

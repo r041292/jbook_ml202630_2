@@ -1,0 +1,162 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 10,
+        "modelo__n_estimators": 500
+      },
+      "RMSE": 0.8176149791665706,
+      "sd_RMSE": 0.032233501316095335,
+      "search_seconds": 30.534835700003896,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 375,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 10
+      },
+      "RMSE": 0.8181817137751084,
+      "sd_RMSE": 0.032005234949136326,
+      "search_seconds": 18.220593400001235,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 500,
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 11
+      },
+      "RMSE": 0.8181244986179994,
+      "sd_RMSE": 0.03160663869443541,
+      "search_seconds": 32.874358900000516,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 341,
+        "modelo__max_depth": 12,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.8180463322255616,
+      "sd_RMSE": 0.03208968462427215,
+      "search_seconds": 22.9246359999961,
+      "evaluated_configurations": 13,
+      "full_configurations": 13,
+      "completed_fits": 65,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 411,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.818418509996407,
+      "sd_RMSE": 0.032681233467331,
+      "search_seconds": 31.23116189999564,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Grid Search",
+  "best_params": {
+    "modelo__max_depth": null,
+    "modelo__min_samples_leaf": 10,
+    "modelo__n_estimators": 500
+  },
+  "selection_rmse": 0.8176149791665706,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "cat",
+      [
+        4,
+        6,
+        8,
+        12,
+        null
+      ]
+    ],
+    "modelo__min_samples_leaf": [
+      "int",
+      2,
+      20
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8201565369563548,
+      "mean_RMSE": 0.8263903183263097,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8406808199604029
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8180463322255616,
+      "mean_RMSE": 0.8199017586740152,
+      "unique_fraction": 0.5,
+      "gene_entropy": 0.43751011742097434
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8180463322255616,
+      "mean_RMSE": 0.8190273335793343,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.312903042182625
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8180463322255616,
+      "mean_RMSE": 0.8180463322255616,
+      "unique_fraction": 0.125,
+      "gene_entropy": 0.0
+    }
+  ],
+  "outer": "externo_2",
+  "trials_file": "trials_forest_externo_2.jsonl"
+}

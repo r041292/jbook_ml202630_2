@@ -1,0 +1,157 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__learning_rate": 0.03,
+        "modelo__max_depth": 2,
+        "modelo__n_estimators": 300
+      },
+      "RMSE": 0.8084831598604756,
+      "sd_RMSE": 0.04164844491526372,
+      "search_seconds": 127.33442629999627,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 423,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.029290110069785873
+      },
+      "RMSE": 0.8084812919056421,
+      "sd_RMSE": 0.04363478918246291,
+      "search_seconds": 76.96746649999841,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 442,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.015199348301309814
+      },
+      "RMSE": 0.8080751215680039,
+      "sd_RMSE": 0.038603141101299254,
+      "search_seconds": 97.47953400000551,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 341,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.03883878934020126
+      },
+      "RMSE": 0.8080851986480404,
+      "sd_RMSE": 0.0424898598175226,
+      "search_seconds": 37.153901500001666,
+      "evaluated_configurations": 11,
+      "full_configurations": 11,
+      "completed_fits": 55,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 423,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.029290110069785873
+      },
+      "RMSE": 0.8084812919056421,
+      "sd_RMSE": 0.04363478918246291,
+      "search_seconds": 97.42915320000611,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Bayesiana TPE",
+  "best_params": {
+    "modelo__n_estimators": 442,
+    "modelo__max_depth": 2,
+    "modelo__learning_rate": 0.015199348301309814
+  },
+  "selection_rmse": 0.8080751215680039,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "int",
+      1,
+      6
+    ],
+    "modelo__learning_rate": [
+      "log",
+      0.01,
+      0.1
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8080851986480404,
+      "mean_RMSE": 0.8187216755626707,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8446771201542882
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8080851986480404,
+      "mean_RMSE": 0.8097559933698237,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.4644036925543702
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8080851986480404,
+      "mean_RMSE": 0.8095400086979164,
+      "unique_fraction": 0.375,
+      "gene_entropy": 0.16023515741700733
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8080851986480404,
+      "mean_RMSE": 0.8081359436919352,
+      "unique_fraction": 0.25,
+      "gene_entropy": 0.0603960492443996
+    }
+  ],
+  "outer": "final_train",
+  "trials_file": "trials_xgboost_final_train.jsonl"
+}

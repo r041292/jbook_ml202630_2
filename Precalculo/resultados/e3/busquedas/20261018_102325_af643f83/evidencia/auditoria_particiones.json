@@ -1,0 +1,15 @@
+{
+  "fits_internos": 22650,
+  "grupos_compartidos": 0,
+  "particiones_diferentes_entre_metodos": 0,
+  "fits_fallidos": 0,
+  "versions": {
+    "optuna": "5.0.0",
+    "deap": "1.4.3",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "joblib": "1.6.0"
+  }
+}

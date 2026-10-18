@@ -1,0 +1,162 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 10,
+        "modelo__n_estimators": 150
+      },
+      "RMSE": 0.8205344108970687,
+      "sd_RMSE": 0.01599426264879293,
+      "search_seconds": 29.379702400001406,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 411,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.8196813652906881,
+      "sd_RMSE": 0.014007043084540687,
+      "search_seconds": 18.221025400001963,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 229,
+        "modelo__max_depth": 12,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.81978762992658,
+      "sd_RMSE": 0.013280362750723885,
+      "search_seconds": 20.030227899995225,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 228,
+        "modelo__max_depth": 12,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.819741273512528,
+      "sd_RMSE": 0.013302655669379977,
+      "search_seconds": 13.191320899997663,
+      "evaluated_configurations": 13,
+      "full_configurations": 13,
+      "completed_fits": 65,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 411,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 8
+      },
+      "RMSE": 0.8196813652906881,
+      "sd_RMSE": 0.014007043084540687,
+      "search_seconds": 21.72859949999838,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Random Search",
+  "best_params": {
+    "modelo__n_estimators": 411,
+    "modelo__max_depth": null,
+    "modelo__min_samples_leaf": 8
+  },
+  "selection_rmse": 0.8196813652906881,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "cat",
+      [
+        4,
+        6,
+        8,
+        12,
+        null
+      ]
+    ],
+    "modelo__min_samples_leaf": [
+      "int",
+      2,
+      20
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8236175740843402,
+      "mean_RMSE": 0.8317310701277199,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8406808199604029
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.819741273512528,
+      "mean_RMSE": 0.8230732738991218,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.5208434507543077
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.819741273512528,
+      "mean_RMSE": 0.8218071727067252,
+      "unique_fraction": 0.75,
+      "gene_entropy": 0.4486838521400027
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.819741273512528,
+      "mean_RMSE": 0.819741273512528,
+      "unique_fraction": 0.125,
+      "gene_entropy": 0.0
+    }
+  ],
+  "outer": "externo_4",
+  "trials_file": "trials_forest_externo_4.jsonl"
+}

@@ -1,0 +1,157 @@
+{
+  "methods": [
+    {
+      "method": "Grid Search",
+      "best_params": {
+        "modelo__learning_rate": 0.03,
+        "modelo__max_depth": 2,
+        "modelo__n_estimators": 300
+      },
+      "RMSE": 0.8030535872306805,
+      "sd_RMSE": 0.025552245995366436,
+      "search_seconds": 87.00327489999472,
+      "evaluated_configurations": 27,
+      "full_configurations": 27,
+      "completed_fits": 135,
+      "failed_fits": 0
+    },
+    {
+      "method": "Random Search",
+      "best_params": {
+        "modelo__n_estimators": 423,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.029290110069785873
+      },
+      "RMSE": 0.8049744581023557,
+      "sd_RMSE": 0.029684657982126203,
+      "search_seconds": 60.322320500003116,
+      "evaluated_configurations": 16,
+      "full_configurations": 16,
+      "completed_fits": 80,
+      "failed_fits": 0
+    },
+    {
+      "method": "Bayesiana TPE",
+      "best_params": {
+        "modelo__n_estimators": 214,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.03347776308515933
+      },
+      "RMSE": 0.802666169302538,
+      "sd_RMSE": 0.023815192866051608,
+      "search_seconds": 99.3111796000012,
+      "evaluated_configurations": 20,
+      "full_configurations": 20,
+      "completed_fits": 100,
+      "failed_fits": 0
+    },
+    {
+      "method": "Genética DEAP",
+      "best_params": {
+        "modelo__n_estimators": 341,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.03883878934020126
+      },
+      "RMSE": 0.8019778694410084,
+      "sd_RMSE": 0.03065502404454377,
+      "search_seconds": 50.42829860000347,
+      "evaluated_configurations": 11,
+      "full_configurations": 11,
+      "completed_fits": 55,
+      "failed_fits": 0
+    },
+    {
+      "method": "Successive Halving",
+      "best_params": {
+        "modelo__n_estimators": 280,
+        "modelo__max_depth": 3,
+        "modelo__learning_rate": 0.015469324832553224
+      },
+      "RMSE": 0.8058100047064369,
+      "sd_RMSE": 0.028671058637438084,
+      "search_seconds": 134.0912552000009,
+      "evaluated_configurations": 28,
+      "full_configurations": 4,
+      "completed_fits": 140,
+      "failed_fits": 0
+    }
+  ],
+  "selected_method": "Genética DEAP",
+  "best_params": {
+    "modelo__n_estimators": 341,
+    "modelo__max_depth": 2,
+    "modelo__learning_rate": 0.03883878934020126
+  },
+  "selection_rmse": 0.8019778694410084,
+  "space": {
+    "modelo__n_estimators": [
+      "int",
+      150,
+      500
+    ],
+    "modelo__max_depth": [
+      "int",
+      1,
+      6
+    ],
+    "modelo__learning_rate": [
+      "log",
+      0.01,
+      0.1
+    ]
+  },
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "evolution": [
+    {
+      "generation": 0,
+      "best_RMSE": 0.8019778694410084,
+      "mean_RMSE": 0.8137395567325654,
+      "unique_fraction": 1.0,
+      "gene_entropy": 0.8446771201542882
+    },
+    {
+      "generation": 1,
+      "best_RMSE": 0.8019778694410084,
+      "mean_RMSE": 0.8039464323609908,
+      "unique_fraction": 0.625,
+      "gene_entropy": 0.4644036925543702
+    },
+    {
+      "generation": 2,
+      "best_RMSE": 0.8019778694410084,
+      "mean_RMSE": 0.8040235832150251,
+      "unique_fraction": 0.375,
+      "gene_entropy": 0.16023515741700733
+    },
+    {
+      "generation": 3,
+      "best_RMSE": 0.8019778694410084,
+      "mean_RMSE": 0.8022973179893107,
+      "unique_fraction": 0.25,
+      "gene_entropy": 0.0603960492443996
+    }
+  ],
+  "outer": "externo_5",
+  "trials_file": "trials_xgboost_externo_5.jsonl"
+}

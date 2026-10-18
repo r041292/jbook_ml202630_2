@@ -1,5 +1,42 @@
 # Dashboard · Entregable 3
 
+## Actualización de búsqueda · SVM y seis clásicos
+
+Se añade a Grid Search una comparación anidada con Random Search, Optuna/TPE,
+DEAP y Successive Halving manual. Cada entrenamiento externo selecciona método
+y parámetros solo con sus cinco folds internos; train completo repite la
+comparación para el refit final. Solo compiten candidatos a fidelidad completa,
+por RMSE; el tiempo no decide. Se conservan reportes, predicciones y código E3
+anteriores. Originales mantiene su inventario y SVM históricos, identificado
+en pantalla, sin mezclar sus contrastes con las nuevas predicciones.
+
+Las fichas clásicas y «Resultados de las cinco búsquedas en train · selección
+y tiempos» en SVM documentan surrogate TPE/EI, exploración/explotación,
+operadores DEAP/probabilidades/población/elitismo, diversidad por generación y
+fold, fidelidad de grupos anidados y factor de reducción. Incluyen resultados
+por estrategia, configuración elegida y tiempos de búsqueda y refit. La inferencia
+permanece registrada por lote en la evidencia técnica y el documento central.
+El mapa de Grid Search sigue visible; su mejor punto puede diferir del ganador
+conjunto. Más detalles: [protocolo y reproducción](../Precalculo/busquedas_e3.md).
+
+Nuevas ejecuciones versionadas: `resultados/e3/busquedas/<run_id>`. La caché lee
+`busqueda_activa.json` únicamente con `completo.json`; los artefactos históricos
+no se sobrescriben. Los tiempos crudos se conservan en `TIEMPOS_EJECUCION.md`,
+`tiempos/` y en los JSONL de ensayos/folds. Los tiempos internos paralelos están
+incluidos en la búsqueda y no se suman como pared. Test reutilizado: descriptivo,
+no nueva evaluación ciega. Los presupuestos/espacios difieren entre métodos;
+no es una comparación de eficiencia con presupuesto uniforme ni garantiza óptimo.
+
+```powershell
+.\Precalculo\venv\Scripts\python.exe -m pip install -r .\Precalculo\requirements_busquedas_e3.txt
+.\Precalculo\venv\Scripts\python.exe .\Precalculo\evaluar_busquedas_e3.py
+.\Precalculo\venv\Scripts\python.exe .\Precalculo\activar_busqueda_e3.py <run_id_completo>
+.\Precalculo\venv\Scripts\python.exe .\Dash\run_measured.py .\Dash\prepare_data.py
+```
+
+La activación de una nueva ejecución se realiza después de verificar todos los
+modelos; ejecutar el evaluador por sí solo no cambia el tablero en curso.
+
 El flujo activo usa datos reales, test 202530 y GroupKFold anidado por estudiante.
 Modelos predictivos se organiza en Split y CV, Modelos lineales, Clásicos y Originales.
 Ejecutar también Precalculo/modelos_clasicos.py después de entregable3.py y antes
@@ -15,7 +52,12 @@ No ejecutar actualizar_analisis.py: los notebooks anteriores permanecen intactos
 El trabajo vigente del dashboard continúa en main; los Books publicados
 son antecedentes y se producirá uno nuevo. Ver CONTEXT.md para la reproducción completa.
 
-## Comparación de Modelos clásicos con Friedman
+## Comparación histórica de Modelos clásicos con Friedman
+
+Este bloque describe la ejecución Grid anterior, conservada para trazabilidad.
+En la ejecución multibúsqueda, tablas, rangos, Friedman y bootstrap se recalculan
+desde sus predicciones/folds nuevos; las cifras activas se consultan en el tablero
+y en el informe de la carpeta versionada.
 
 Solo concursan siete modelos: KNN, Ridge, Lasso, Random Forest, XGBoost, Decision Tree y SVM
 lineal. Dummy se excluye de tablas, gráficos, rangos, Friedman y bootstrap

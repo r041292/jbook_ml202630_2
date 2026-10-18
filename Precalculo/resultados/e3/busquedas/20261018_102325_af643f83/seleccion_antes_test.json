@@ -1,0 +1,57 @@
+{
+  "run_id": "20261018_102325_af643f83",
+  "models": {
+    "svm": {
+      "params": {
+        "modelo__C": 0.24380003254969343,
+        "modelo__epsilon": 0.5129861497934312
+      },
+      "method": "Bayesiana TPE"
+    },
+    "knn": {
+      "params": {
+        "modelo__n_neighbors": 26,
+        "modelo__weights": "distance",
+        "modelo__p": 2
+      },
+      "method": "Genética DEAP"
+    },
+    "ridge": {
+      "params": {
+        "modelo__alpha": 9.846738873614559
+      },
+      "method": "Bayesiana TPE"
+    },
+    "lasso": {
+      "params": {
+        "modelo__alpha": 0.000668479287039075
+      },
+      "method": "Genética DEAP"
+    },
+    "forest": {
+      "params": {
+        "modelo__max_depth": 6,
+        "modelo__min_samples_leaf": 5,
+        "modelo__n_estimators": 500
+      },
+      "method": "Grid Search"
+    },
+    "xgboost": {
+      "params": {
+        "modelo__n_estimators": 442,
+        "modelo__max_depth": 2,
+        "modelo__learning_rate": 0.015199348301309814
+      },
+      "method": "Bayesiana TPE"
+    },
+    "decision_tree": {
+      "params": {
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 24,
+        "modelo__ccp_alpha": 0.0012811363267554588
+      },
+      "method": "Random Search"
+    }
+  },
+  "test_used_for_selection": false
+}
