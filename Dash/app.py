@@ -19,6 +19,10 @@ from deployment import verify_inputs
 from charts import numeric_density
 from prediction import build_form, coefficient_report, input_id, predict_record
 from model_interpretation import linear_pipeline_section, beta_examples
+from display_labels import COURSES, course_text, display_tree
+from eda_statistics import (normality, group_test, frequency_test, missing_test,
+                            comparison_text, association_tests)
+from residual_diagnostics import residual_diagnostics, format_p, diagnostic_reading
 
 manifest_path = CACHE / 'manifest.json'
 if not manifest_path.exists():
@@ -48,8 +52,6 @@ FEATURES = list(MODEL.feature_names_in_)
 NUMERIC = TRAIN[FEATURES].select_dtypes(include='number').columns.tolist()
 CATEGORICAL = [c for c in FEATURES if c not in NUMERIC]
 DEFAULTS = TRAIN[FEATURES].dropna().iloc[0].to_dict()
-COURSES = {'MAT1011': 'Álgebra y Trigonometría', 'MAT1100': 'Cálculo I (ANEC)',
-           'MAT1101': 'Cálculo I', 'MAT4190': 'Matemáticas Fundamentales'}
 LABELS = {TARGET: 'Nota del primer parcial', 'Icfes_nuevo': 'Saber 11 · global',
           'Icfes_Matematicas': 'Saber 11 · matemáticas', 'Dominio_Inicial': 'Dominio inicial (temas)',
           'Dominio_Final': 'Dominio final (temas)', 'avance_precalculo_aleks': 'Avance en ALEK (temas)',
@@ -87,15 +89,18 @@ def section(text, title):
 
 
 def md(text):
-    return dcc.Markdown(text, className='prose', link_target='_blank')
+    return dcc.Markdown(course_text(text), className='prose', link_target='_blank')
 
 
 def notice(text):
-    return html.Div(text, className='notice')
+    return html.Div(course_text(text), className='notice')
 
 
-def card(title, text, figure=None, wide=False):
+def card(title, text, figure=None, wide=False, details=None):
     children = [html.H3(title), md(text)]
+    if details:
+        children.append(html.Details([html.Summary('Cómo se analizó y cómo leer el gráfico'),
+                                     md(details)], className='details'))
     if figure is not None:
         styled = style(figure)
         metric_comparison = any(a.text == 'R<sup>2</sup>' for a in (styled.layout.annotations or []))
@@ -107,11 +112,12 @@ def card(title, text, figure=None, wide=False):
 
 
 def style(fig):
+    fig = go.Figure(display_tree(fig.to_dict()))
     graph_height = fig.layout.height or 410
-    fig.update_layout(template='plotly_white', font={'family': 'Segoe UI, Arial, sans-serif', 'size': 12, 'color': '#435568'},
+    fig.update_layout(template='plotly_white', font={'family': 'Segoe UI, Arial, sans-serif', 'size': 15, 'color': '#435568'},
         paper_bgcolor='white', plot_bgcolor='white', margin={'l': 40, 'r': 24, 't': 30, 'b': 70},
         legend={'orientation': 'h', 'y': -0.25, 'x': 0}, height=graph_height,
-        colorway=PALETTE, hoverlabel={'bgcolor': '#fff', 'font_size': 13})
+        colorway=PALETTE, hoverlabel={'bgcolor': '#fff', 'font_size': 16})
     fig.update_xaxes(gridcolor='#edf1f3', zerolinecolor='#dfe6e9', automargin=True)
     fig.update_yaxes(gridcolor='#edf1f3', zerolinecolor='#dfe6e9', automargin=True)
     if any(annotation.text == 'R<sup>2</sup>' for annotation in (fig.layout.annotations or [])):
@@ -120,8 +126,8 @@ def style(fig):
         fig.update_annotations(y=1.02, yanchor='bottom')
     if any(trace.type == 'heatmap' and len(trace.y) > 5 for trace in fig.data):
         fig.update_layout(height=570, margin={'l': 165, 'r': 40, 't': 20, 'b': 155})
-        fig.update_xaxes(tickangle=-40, tickfont={'size': 10})
-        fig.update_yaxes(tickfont={'size': 10})
+        fig.update_xaxes(tickangle=-40, tickfont={'size': 13})
+        fig.update_yaxes(tickfont={'size': 13})
     if fig.layout.meta == 'original-errors':
         fig.update_layout(height=1000, margin={'l': 160, 'r': 55, 't': 30, 'b': 200})
         fig.update_xaxes(tickangle=-55)
@@ -135,7 +141,7 @@ def stats(items):
 
 def table(frame):
     return html.Div(html.Table([html.Thead(html.Tr([html.Th(c) for c in frame.columns])),
-        html.Tbody([html.Tr([html.Td('—' if pd.isna(v) else f'{v:.4f}' if isinstance(v, (float, np.floating)) else str(v))
+        html.Tbody([html.Tr([html.Td('—' if pd.isna(v) else f'{v:.4f}' if isinstance(v, (float, np.floating)) else course_text(str(v)))
                             for v in row]) for row in frame.itertuples(index=False, name=None)])]), className='table-wrap')
 
 
@@ -152,7 +158,7 @@ def filters(prefix, mode=False):
             className='radio', persistence=True, persistence_type='session')], className='view-select'))
     for column, suffix, label in [(PROGRAM, 'program', 'Programa académico'), (COURSE, 'course', 'Asignatura')]:
         values = sorted(set(TRAIN[column]) | set(TEST[column]))
-        options = [{'label': 'Todos', 'value': '__all__'}] + [{'label': f'{v} · {COURSES[v]}' if v in COURSES else v, 'value': v} for v in values]
+        options = [{'label': 'Todos', 'value': '__all__'}] + [{'label': course_text(v), 'value': v} for v in values]
         children.append(html.Div([html.Label(label, htmlFor=f'{prefix}-{suffix}'),
             dcc.Dropdown(options, '__all__', id=f'{prefix}-{suffix}', clearable=False,
                 persistence=True, persistence_type='session')], className='filter-field'))
@@ -176,7 +182,7 @@ INTRO = html.Div([
                   html.Span('Aprender hoy. Comprender los resultados mañana.', className='image-caption')], className='hero-image')], className='hero'),
     stats([('Periodo de estudio', '2023–2025', 'Seis periodos académicos'), ('Fuente original', '1.527', 'Registros académicos'),
            ('Asignaturas', '4', 'Matemáticas de primer semestre'), ('Objetivo', 'Primer parcial', 'Predicción en escala de nota')]),
-    card('Punto de partida', 'Entregable 3: análisis de registros académicos reales de ALEK, sin generación de datos. Se evalúa la nota del primer parcial con una partición temporal y validación agrupada por estudiante.', wide=True),
+    card('Punto de partida', 'Entregable 3: análisis de registros académicos de ALEK. Se evalúa la nota del primer parcial con una partición temporal y validación agrupada por estudiante.', wide=True),
     card('Contexto académico del proyecto', section(DOCUMENT, 'Contexto académico e institucional'), wide=True),
     card('La pregunta de investigación', 'Este proyecto busca responder la pregunta:\n\n'
          '**¿En qué medida los resultados del nivelatorio de precálculo y la información académica disponible '
@@ -192,7 +198,7 @@ VARIABLES = html.Div([
     card('Fuente de datos reales',
          f'Se conservan los **{MODEL_REPORT["source_rows"]:,} registros originales**. '
          f'**{MODEL_REPORT["missing_target"]} filas sin nota del parcial** se excluyen del análisis supervisado. '
-         'No se generan registros ni se eliminan outliers válidos. Los identificadores se emplean localmente '
+         'Se conservan los outliers válidos. Los identificadores se emplean localmente '
          'para separar estudiantes y no se incluyen como predictores ni se exportan al dashboard.'),
     card('Reglas de negocio validadas',
          'Antes de explorar los datos o entrenar el modelo, se comprueba que cada registro sea coherente '
@@ -212,7 +218,7 @@ VARIABLES = html.Div([
 
 EDA = html.Div([
     title('03 / EXPLORACIÓN', 'Análisis exploratorio de los datos', 'Distribuciones, calidad y asociaciones sobre entrenamiento válido.'),
-    notice(f'Datos reales sin aumentar. {len(TRAIN):,} registros válidos de train, '
+    notice(f'{len(TRAIN):,} registros válidos de train, '
            f'{EDA_REPORT["excluded"]} inconsistencias; se mantienen los outliers válidos.'),
     filters('eda', mode=True),
     html.Div([html.Label('Relacionar la nota con'), dcc.Dropdown([{'label': LABELS[c], 'value': c} for c in NUMERIC],
@@ -238,7 +244,7 @@ def cv_figure():
     np.fill_diagonal(z, 1)
     return go.Figure(go.Heatmap(z=z, x=['Bloque 1', 'Bloque 2', 'Bloque 3', 'Bloque 4', 'Bloque 5'],
         y=['Fold 1', 'Fold 2', 'Fold 3', 'Fold 4', 'Fold 5'], colorscale=[[0, '#cce7e5'], [1, '#5268b9']], showscale=False,
-        text=np.where(z == 1, 'Val.', 'Train'), texttemplate='%{text}', textfont={'size': 12},
+        text=np.where(z == 1, 'Val.', 'Train'), texttemplate='%{text}', textfont={'size': 15},
         hovertext=np.where(z == 1, 'Validación', 'Entrenamiento'),
         hovertemplate='%{y} · %{x}<br>%{hovertext}<extra></extra>', xgap=5, ygap=5))
 
@@ -408,7 +414,8 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
     box = px.box(data, y=by, x=TARGET, color=by, points=False, labels=LABELS, color_discrete_map=GROUP_COLORS)
     box.update_layout(showlegend=False)
     box.update_layout(height=max(410, 110 + 30 * data[by].nunique()))
-    box.update_yaxes(tickmode='array', tickvals=data[by].unique(), ticktext=data[by].unique())
+    box.update_yaxes(tickmode='array', tickvals=data[by].unique(),
+        ticktext=['<br>'.join(textwrap.wrap(course_text(str(v)), width=28)) for v in data[by].unique()])
     box.update_xaxes(range=[.4, 5.1])
     sampled = data.sample(min(2500, len(data)), random_state=42)
     scatter = px.scatter(sampled, x=variable, y=TARGET, color=group or COURSE, labels=LABELS,
@@ -418,6 +425,10 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
         distribution.update_layout(height=700)
         scatter.update_layout(height=700)
     rho = data[[variable, TARGET]].corr(method='spearman').iloc[0, 1]
+    tests = eda_associations(program, course)
+    significant = int(tests['p Holm'].lt(.05).sum())
+    matrix_evidence = (f' **Resultado de la matriz:** {significant} de {len(tests)} pares de variables '
+        'muestran evidencia de asociación después de corregir por las múltiples comparaciones (p Holm < 0.05).')
     correlation = data[NUMERIC + [TARGET]].corr(method='spearman')
     heatmap = go.Figure(go.Heatmap(z=correlation.to_numpy(), x=[LABELS[c] for c in correlation.columns],
         y=[LABELS[c] for c in correlation.index], zmin=-1, zmax=1, zmid=0,
@@ -431,6 +442,30 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
     strongest = associations.abs().idxmax() if not associations.empty else None
     strongest_text = (f'En el grupo filtrado, **{LABELS[strongest]}** tiene la mayor asociación monotónica con la nota '
                       f'(ρ = {associations[strongest]:.3f}). La asociación no implica causalidad.') if strongest else 'No hay variación suficiente para estimar asociaciones.'
+    paired_n = int(data[[variable, TARGET]].dropna().shape[0])
+    direction = ('los valores más altos de esta variable tienden a acompañarse de notas más altas' if rho > 0 else
+                 'los valores más altos de esta variable tienden a acompañarse de notas más bajas' if rho < 0 else
+                 'no se observa una tendencia creciente o decreciente')
+    scatter_summary = (f'Se revisó la relación entre **{LABELS[variable]}** y la **nota del primer parcial** '
+        f'en **{paired_n:,} registros completos** del grupo filtrado. Con **Spearman (ρ = {rho:.3f})**, '
+        f'{direction}. Se usa este método porque compara el orden de los valores y permite estudiar '
+        'tendencias que no tienen que seguir una línea recta. La asociación no demuestra causalidad.'
+        if pd.notna(rho) else
+        f'Se revisó la relación entre **{LABELS[variable]}** y la **nota del primer parcial**, '
+        'pero no hay suficientes valores con variación para calcular Spearman en este grupo.')
+    predictor_pairs = tests.loc[tests['Variable A'].ne(LABELS[TARGET]) & tests['Variable B'].ne(LABELS[TARGET])]
+    leading_pairs = (predictor_pairs.assign(magnitude=predictor_pairs['ρ'].abs()).nlargest(2, 'magnitude')
+                     if not predictor_pairs.empty else predictor_pairs)
+    redundancy_summary = (' Entre las predictoras, los pares con mayor asociación en valor absoluto son '
+        + '; '.join(f'**{row["Variable A"]} / {row["Variable B"]}** (ρ = {row["ρ"]:.3f})'
+                    for _, row in leading_pairs.iterrows())
+        + '. Estas relaciones ayudan a revisar si aportan información parecida; no justifican eliminar variables por sí solas.'
+        if not leading_pairs.empty else ' No hay pares de predictoras con datos suficientes y variación para resumir su asociación.')
+    matrix_summary = (f'Con **Spearman**, se revisaron las asociaciones entre las variables numéricas. '
+        + (f'**{LABELS[strongest]}** es la más asociada con la nota en valor absoluto '
+           f'(ρ = {associations[strongest]:.3f}).' if strongest else
+           'No hay variación suficiente para identificar la variable más asociada con la nota.')
+        + redundancy_summary)
     counts = data[category].fillna('Sin dato').value_counts().rename_axis('Categoría').reset_index(name='Filas')
     counts['Porcentaje'] = 100 * counts['Filas'] / len(data)
     category_colors = {name: GROUP_COLORS.get(name, PALETTE[i] if i < len(PALETTE) else
@@ -441,6 +476,8 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
     categorical.update_traces(texttemplate='%{x:.1f} %', textposition='outside',
         hovertemplate='%{y}<br>%{customdata[0]} filas<br>%{x:.2f} %<extra></extra>')
     categorical.update_layout(showlegend=False, height=max(410, 110 + 32 * len(counts)), xaxis_title='Porcentaje del grupo filtrado')
+    categorical.update_yaxes(tickmode='array', tickvals=counts['Categoría'],
+        ticktext=['<br>'.join(textwrap.wrap(course_text(str(v)), width=28)) for v in counts['Categoría']])
     categorical.update_xaxes(range=[0, max(5, counts['Porcentaje'].max() * 1.16)])
     bins = np.unique(TRAIN['Dominio_Final'].quantile([0, .25, .5, .75, 1]).to_numpy())
     domain_data = data.copy()
@@ -477,29 +514,88 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
            'Se excluye `nota_final` por ser posterior al parcial. Las reglas de negocio se auditan antes de imputar '
            'y se conservan los outliers válidos de los registros reales.'), table(treatment)], className='card')
     return html.Div([
+        notice('Las pruebas usan los datos de entrenamiento que quedan al aplicar los filtros, sin rellenar los faltantes. '
+               'En los resultados, n es la cantidad de registros y gl son los grados de libertad del contraste. '
+               'Un p < 0.05 se interpreta como evidencia contra la situación de referencia que explica cada tarjeta; '
+               'un p mayor no demuestra que esa situación sea cierta. Son resultados exploratorios: algunos estudiantes '
+               'pueden tener más de un registro y aquí no se corrige esa dependencia. Solo la matriz ajusta sus p '
+               'por realizar muchas comparaciones. Una asociación no demuestra que una variable cause cambios en otra.'),
         stats([('Registros de train', f'{len(data):,}', 'Después de aplicar filtros'), ('Nota media', f'{data[TARGET].mean():.2f}', 'Escala original'),
                ('Mediana', f'{data[TARGET].median():.2f}', 'Centro de la distribución'), ('Dispersión', f'{data[TARGET].std():.2f}', 'Desviación estándar')]),
         html.Div([card('Cómo se distribuyen las notas', 'Cada color representa una categoría de la vista seleccionada. '
             'Los porcentajes se normalizan dentro de cada categoría, por lo que permiten comparar grupos de distinto tamaño. '
-            'La línea marca la media de todas las filas filtradas. El notebook conserva la escala original y los extremos válidos.', distribution),
+            'La línea marca la media de todas las filas filtradas. Se conserva la escala original y los extremos válidos.\n\n' + normality(data[TARGET]), distribution),
             card('Diferencias entre grupos', 'La caja muestra el 50 % central y la línea interior, la mediana. '
             'Los bigotes describen la dispersión; los extremos siguen incluidos aunque no se dibujen como puntos. '
-            'Las diferencias son descriptivas y no demuestran un efecto del programa o de la asignatura.', box)], className='grid'),
-        html.Div([card('Una relación para explorar', f'Spearman sobre todas las filas filtradas: **ρ = {rho:.3f}**. '
-            f'La nube dibuja una muestra reproducible de **{len(sampled):,} de {len(data):,}** filas para mantener fluidez; '
-            'los cálculos usan el grupo completo. Cambia la variable arriba y usa la leyenda para aislar categorías.', scatter),
-            card('Asociaciones y redundancia', strongest_text + ' El avance depende de los dominios inicial y final, '
-            'por lo que sus asociaciones deben revisarse junto con la redundancia. `nota_final` está excluida. '
-            'La matriz usa pares disponibles, sin imputación.', heatmap)], className='grid'),
+            'Las diferencias no demuestran un efecto del programa o de la asignatura.\n\n' + group_test(data, by, TARGET), box)], className='grid'),
+        html.Div([card('Una relación para explorar', scatter_summary, scatter, details=
+            f'La nube dibuja una muestra reproducible de **{len(sampled):,} de {len(data):,}** filas; '
+            'los cálculos usan todos los registros completos del grupo filtrado. Cambia la variable arriba '
+            'y usa la leyenda para aislar categorías.\n\n' +
+            '**¿Por qué Spearman?** Queremos saber si, cuando una variable aumenta, la otra tiende a aumentar '
+            'o disminuir, aunque esa relación no siga una línea recta. Spearman ordena los valores de menor a mayor '
+            'y compara sus posiciones; por eso, un valor extremo influye menos por su tamaño. Pearson, en cambio, '
+            'mide qué tan bien se describe la relación con una línea recta usando los valores originales. '
+            'Que los datos no sigan una distribución normal no basta para descartar Pearson.\n\n' +
+            comparison_text(data, variable, TARGET)),
+            card('Asociaciones y redundancia', matrix_summary, heatmap, details=
+            '**¿Qué muestra esta matriz?** Resume las relaciones entre todas las variables numéricas, '
+            'incluida la nota del parcial. Busca una variable en las filas y otra en las columnas: '
+            'la celda donde se cruzan representa su correlación de Spearman. Pasa el cursor para ver el valor.\n\n'
+            '**Cómo leer los colores.** Verde azulado indica que ambas variables tienden a aumentar juntas; '
+            'rosado indica que una tiende a disminuir cuando la otra aumenta. Un tono cercano al blanco '
+            'indica poca relación de este tipo. Cuanto más intenso es el color, mayor es la correlación en '
+            'valor absoluto. La diagonal vale 1 porque compara cada variable consigo misma; '
+            'los dos lados de la diagonal repiten los mismos pares.\n\n'
+            '**¿Dónde aparece la redundancia?** En las relaciones entre las propias predictoras: '
+            'dos variables muy asociadas pueden aportar parte de la misma información al modelo. '
+            'Por ejemplo, el avance se calcula como dominio final menos dominio inicial, por lo que estas '
+            'tres medidas están relacionadas por definición. Esto ayuda a interpretar sus coeficientes '
+            'con cautela; no es motivo suficiente para eliminar automáticamente una variable. '
+            'La fila o columna de la nota, en cambio, permite revisar qué predictoras se asocian con el resultado académico.\n\n'
+            '**¿Qué aporta la tabla de abajo?** Presenta cada par una sola vez, con el valor de la correlación, '
+            'la cantidad de registros usados y la evidencia estadística. Permite distinguir una relación '
+            'intensa de una relación con p pequeño: son aspectos diferentes. ' + matrix_evidence)], className='grid'),
+        html.Details([html.Summary('Estadísticos de todas las asociaciones de la matriz'),
+            md('**De la matriz a la tabla.** Cada fila desarrolla una celda de la matriz: '
+               '**Variable A** y **Variable B** identifican el par comparado. No se incluyen la diagonal '
+               'ni las repeticiones en orden inverso. Se muestran tanto relaciones entre predictoras '
+               'como relaciones de una predictora con la nota; **no es una tabla de importancia del modelo**.\n\n'
+               '**n** cuenta los registros que tienen ambos valores y puede cambiar entre filas por los datos '
+               'faltantes. **ρ (Spearman)** es el número representado por el color de esa celda; '
+               'su signo indica la dirección y su cercanía a −1 o +1, la intensidad. '
+               'Las filas están ordenadas de menor a mayor **p ajustado (Holm)**, no por intensidad de correlación.\n\n'
+               '**¿Por qué hay dos p? Ambos corresponden a Spearman; no son un p de Pearson y otro de Spearman.**\n\n'
+               '- **p sin ajuste (Spearman):** evalúa la ausencia de asociación para ese par de variables, '
+               'considerándolo de manera individual.\n'
+               '- **p ajustado (Holm):** parte del mismo contraste y tiene en cuenta que se están revisando '
+               'muchos pares a la vez. Esto reduce el riesgo de señalar asociaciones por azar. **Usamos esta '
+               'columna para la conclusión de la matriz:** un valor menor que 0.05 indica evidencia de asociación.\n\n'
+               'Estos p preguntan por la asociación entre variables; **no comparan Pearson con Spearman**. '
+               'Esa es la función del p de la diferencia ρ − r mostrado junto a la nube de puntos. '
+               'Un p pequeño tampoco significa que la relación sea fuerte: para eso se observa el tamaño de ρ.\n\n'
+               '**Cálculo y límites.** «Asintótico» usa una aproximación para más de 500 registros; '
+               '«Permutación» compara el resultado con 1999 reordenamientos al azar de una variable para '
+               '500 registros o menos (semilla 42, corrección +1). Se omiten pares sin variación o con menos de '
+               '5 registros completos. El ajuste Holm cubre los pares de esta vista, no la exploración de muchos filtros. '
+               'La notación 1.0e−03 equivale a 0.001.'),
+            table(tests.assign(**{c: tests[c].map(lambda p: f'{p:.3e}' if p > 0 else '< 1e-300') for c in ['p', 'p Holm']})
+                  .rename(columns={'ρ': 'ρ (Spearman)', 'p': 'p sin ajuste (Spearman)',
+                                   'p Holm': 'p ajustado (Holm)', 'Método p': 'Cómo se calculó p'})),
+            md('Fuentes: [Shapiro–Wilk](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html), '
+               '[Kruskal–Wallis](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kruskal.html), '
+               '[Spearman](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html), '
+               '[bootstrap pareado](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html).')], className='details'),
         html.Div([card('Frecuencias de las variables categóricas',
             f'Variable seleccionada: **{LABELS[category]}**. Cada barra muestra su participación en el grupo filtrado; '
             'el cursor indica el número de filas. Cambia la variable para revisar todas las categorías; '
-            'no se agrupan ni eliminan las poco frecuentes.', categorical),
+            'no se agrupan ni eliminan las poco frecuentes.\n\n' + frequency_test(data[category]), categorical),
             card('Nota del primer parcial por dominio final',
             'El dominio final se divide en intervalos definidos por los cuartiles de todo train. '
             'Los límites se mantienen al filtrar, para que los grupos sean comparables. '
             'Las cajas permiten ver si el centro y la dispersión de la nota cambian con los temas dominados. '
-            'Los extremos válidos permanecen incluidos aunque no se dibujen como puntos; esta asociación no demuestra causalidad.', domain_box)], className='grid'),
+            'Los extremos válidos permanecen incluidos aunque no se dibujen como puntos; esta asociación no demuestra causalidad.\n\n' +
+            group_test(domain_data, 'Intervalo de dominio final', TARGET), domain_box)], className='grid'),
         html.Article([html.H3('Distribución y densidad de las variables numéricas'),
             md('Los histogramas muestran densidad (área total uno), no número de filas. Las curvas suaves **KDE** '
                'estiman dónde se concentran los valores: un pico más alto indica mayor concentración por unidad del eje. '
@@ -511,20 +607,30 @@ def render_eda(program, course, mode, variable, category='cumplimiento_temas'):
             md('Cada gráfico muestra todas las categorías de una variable y su proporción dentro del grupo filtrado. '
                'Las barras permiten identificar categorías predominantes y poco representadas. '
                'El cursor muestra el número de filas y el porcentaje; los filtros de programa y asignatura '
-               'se aplican a los siete gráficos. Las categorías no se agrupan ni se eliminan.'),
+               'se aplican a los siete gráficos.\n\n'
+               '**Prueba utilizada: chi-cuadrado de bondad de ajuste.** Evalúa si los conteos difieren '
+               'de una misma frecuencia por categoría. **χ²** es el estadístico de la prueba; '
+               '**gl**, sus grados de libertad (número de categorías menos uno); y **p**, el valor que '
+               'usamos para evaluar la diferencia. Un **p < 0.05** indica diferencias estadísticamente '
+               'significativas entre los conteos.'),
             html.Div(categorical_cards(program, course), className='category-grid')], className='card'),
         card('Dónde faltan mediciones', 'Las ausencias se concentran en tiempos en el análisis global. '
             'La barra muestra el porcentaje del grupo filtrado. No se imputan para EDA; en el modelo, '
-            'la mediana se aprende dentro del pipeline y del fold.', missfig),
+            'la mediana se aprende dentro del pipeline y del fold.\n\n' + missing_test(data[NUMERIC].rename(columns=LABELS)), missfig),
         conclusion,
     ])
+
+
+@lru_cache(maxsize=24)
+def eda_associations(program, course):
+    return association_tests(subset(TRAIN, program, course), NUMERIC + [TARGET], LABELS)
 
 
 @lru_cache(maxsize=24)
 def density_cards(program, course):
     data = subset(TRAIN, program, course)
     return [card(LABELS[column], f'{int(data[column].notna().sum()):,} valores disponibles · '
-        f'{int(data[column].isna().sum()):,} ausentes.',
+        f'{int(data[column].isna().sum()):,} ausentes.\n\n' + normality(data[column]),
         numeric_density(data[column], LABELS[column], PALETTE[index % len(PALETTE)]))
         for index, column in enumerate(NUMERIC + [TARGET])]
 
@@ -543,17 +649,17 @@ def categorical_cards(program, course):
         figure.update_traces(texttemplate='%{x:.1f} %', textposition='outside',
             hovertemplate='%{y}<br>%{customdata[0]} filas<br>%{x:.2f} %<extra></extra>')
         figure.update_yaxes(title=None, tickmode='array', tickvals=counts['Categoría'],
-            ticktext=['<br>'.join(textwrap.wrap(str(value), width=28)) for value in counts['Categoría']])
+            ticktext=['<br>'.join(textwrap.wrap(course_text(str(value)), width=28)) for value in counts['Categoría']])
         figure.update_xaxes(title='Porcentaje del grupo filtrado', range=[0, max(5, counts['Porcentaje'].max() * 1.18)])
         figure.update_layout(showlegend=False, height=max(340, 140 + 38 * len(counts)))
-        cards.append(card(LABELS[column], f'{len(counts)} categorías · {len(data):,} filas en el grupo filtrado.', figure))
+        cards.append(card(LABELS[column], f'{len(counts)} categorías · {len(data):,} filas en el grupo filtrado.\n\n' + frequency_test(data[column]), figure))
     return cards
 
 
 def metric_rows(train, test, global_view):
     rows = []
-    for name, column in [('Dummy media', 'dummy'), ('SVM lineal', 'svm')]:
-        for label, data in [('Validación (5 folds)', train), ('Test reservado', test)]:
+    for label, data in [('Validación (5 folds)', train), ('Test reservado', test)]:
+        for name, column in [('Dummy media', 'dummy'), ('SVM lineal', 'svm')]:
             if data.empty:
                 continue
             values = metrics(data[TARGET], data[column])
@@ -575,7 +681,11 @@ def metric_rows(train, test, global_view):
                     conclusion += ' Contrastar con test.'
             if len(data) < 30:
                 conclusion += ' Grupo con menos de 30 filas: lectura inestable.'
-            rows.append({'Modelo': name, 'Evaluación': label, 'n': len(data), **values, 'Conclusión': conclusion})
+            diagnostic = residual_diagnostics(data, TARGET, column, NUMERIC)
+            conclusion += ' ' + diagnostic_reading(diagnostic)
+            rows.append({'Evaluación': label, 'Modelo': name, 'n': len(data), **values,
+                         'p-valor (White)': diagnostic['white_p'], 'p-valor (BDS)': diagnostic['bds_p'],
+                         'Conclusión': conclusion})
     return pd.DataFrame(rows)
 
 
@@ -587,20 +697,59 @@ def render_models(program, course, partition):
         return notice('No hay filas para esta combinación. Cambia los filtros o selecciona Todos.')
     global_view = program == '__all__' and course == '__all__'
     results = metric_rows(train, test, global_view)
-    melted = results.melt(id_vars=['Modelo', 'Evaluación'], value_vars=['RMSE', 'MAE', 'R²'], var_name='Métrica', value_name='Valor')
+    melted = results.melt(id_vars=['Modelo', 'Evaluación'], value_vars=['RMSE', 'MAE'], var_name='Métrica', value_name='Valor')
     bars = px.bar(melted, x='Evaluación', y='Valor', color='Modelo', facet_col='Métrica',
         barmode='group', color_discrete_map=MODEL_COLORS)
     bars.update_yaxes(matches=None, showticklabels=True)
     bars.for_each_annotation(lambda a: a.update(
-        text='R<sup>2</sup>' if a.text.split('=')[-1] == 'R²' else a.text.split('=')[-1],
+        text=a.text.split('=')[-1],
         font={'color': '#435568', 'size': 14}, opacity=1))
     data = test if partition == 'test' else train
+    diagnostic_rows = []
+    for label, frame in [('Validación (5 folds)', train), ('Test reservado', test)]:
+        if frame.empty:
+            continue
+        for name, column in [('Dummy media', 'dummy'), ('SVM lineal', 'svm')]:
+            diagnostic = residual_diagnostics(frame, TARGET, column, NUMERIC)
+            diagnostic_rows.append({'Evaluación': label, 'Modelo': name,
+                'n White': diagnostic['white_n'], 'LM White': diagnostic['white_lm'],
+                'gl White': diagnostic['white_df'], 'Estado White': diagnostic['white_status'],
+                'n BDS': diagnostic['bds_n'], 'Estadístico BDS': diagnostic['bds_stat'],
+                'ε BDS': diagnostic['bds_epsilon'], 'Estado BDS': diagnostic['bds_status']})
+    shown_results = results.assign(**{c: results[c].map(format_p) for c in ['p-valor (White)', 'p-valor (BDS)']})
     parts = [card('Resultados de validación y test', 'RMSE y MAE se expresan en puntos de nota: **menor es mejor**. '
-        'R² mide mejora frente a la media: **mayor es mejor** y puede ser negativo. Los ejes de cada panel son independientes.', bars),
+        'Los ejes de cada panel son independientes.', bars),
         html.Article([html.H3('Estadísticos y lectura de resultados'),
             md('Sin filtros, validación muestra la **media de las métricas de cinco folds**, en el flujo E3. '
                'Con filtros, se calculan métricas agrupadas de predicciones **OOF** (incluido MAE, agregado para este dashboard). '
-               'Test siempre usa predicciones de evaluación final. MAPE se expresa en porcentaje y es sensible a notas bajas.'), table(results)], className='card')]
+               'Test siempre usa predicciones de evaluación final. MAPE se expresa en porcentaje y es sensible a notas bajas.\n\n'
+               '**White:** p < 0.05 indica evidencia de varianza no constante de los errores. '
+               '**BDS:** p < 0.05 rechaza que los residuos sean independientes y tengan la misma distribución (IID). '
+               'Un p mayor no demuestra que los supuestos se cumplan. Los diagnósticos de validación usan todos '
+               'los residuos OOF reunidos, no el promedio de p de los folds. Son contrastes exploratorios sin ajuste múltiple.'),
+            table(shown_results),
+            html.Details([html.Summary('Cómo se calcularon White y BDS'),
+                md('**Residuo = nota observada − predicción.** Se usan las predicciones guardadas de cada '
+                   'modelo y el subgrupo filtrado, sin reentrenar.\n\n'
+                   '**Test de White: evalúa la constancia de la varianza de los errores (homocedasticidad).** '
+                   'El p-valor del estadístico LM contrasta varianza constante frente a cambios asociados '
+                   'a las ocho predictoras numéricas, con constante, cuadrados e interacciones; no incluye las '
+                   'categóricas. Se usan registros completos, sin imputar. Se escalan las numéricas para estabilidad '
+                   'de cálculo y el rango del diseño determina los grados de libertad. Se requieren al menos '
+                   '30 registros completos y 10 grados de libertad residuales en la regresión auxiliar.\n\n'
+                   '**Test de BDS: evalúa la independencia de los residuos.** Su hipótesis incluye también '
+                   'que los residuos tengan la misma distribución (IID). Se usa dimensión 2 y '
+                   'ε = 1.5 veces la desviación estándar muestral de los residuos; '
+                   'p bilateral. Se requieren al menos 30 residuos con variación. Se conserva el orden del CSV '
+                   'al aplicar filtros: estos registros no forman una trayectoria temporal individual. '
+                   'El resultado depende de ese orden y rechazar IID no identifica si falla la independencia, '
+                   'la igualdad de distribución o ambas. En OOF se reúnen cinco modelos ajustados distintos.\n\n'
+                   'Los registros repetidos de estudiantes no se corrigen por grupo en estas pruebas. '
+                   '«No estimable» indica insuficiencia de datos, variables constantes o cálculo degenerado; '
+                   'la tabla siguiente detalla el motivo.\n\n'
+                   'Fuentes: [White](https://www.statsmodels.org/stable/generated/statsmodels.stats.diagnostic.het_white.html) '
+                   'y [BDS](https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.bds.html), statsmodels.'),
+                table(pd.DataFrame(diagnostic_rows))], className='details')], className='card')]
     if data.empty:
         parts.append(notice('No hay filas en la partición elegida para estos filtros. Cambia a la otra partición.'))
         return html.Div(parts)
@@ -608,7 +757,7 @@ def render_models(program, course, partition):
     baseline = metrics(data[TARGET], data['dummy'])
     gain = (1 - score['RMSE'] / baseline['RMSE']) * 100 if baseline['RMSE'] else 0
     parts.insert(0, stats([('Filas evaluadas', f'{len(data):,}', 'Test' if partition == 'test' else 'Validación OOF'),
-        ('R² · SVM', f'{score["R²"]:.3f}' if score['R²'] is not None else 'No definido', 'Grupo seleccionado'),
+        ('RMSE · SVM', f'{score["RMSE"]:.3f}', 'Puntos de nota · menor es mejor'),
         ('Error absoluto', f'{score["MAE"]:.3f}', 'MAE · puntos de nota'), ('Mejora vs Dummy', f'{gain:.1f} %', 'Reducción del RMSE')]))
     sample = data.sample(min(3000, len(data)), random_state=42).copy()
     pred = px.scatter(sample, x=TARGET, y='svm', color=COURSE, labels={**LABELS, 'svm': 'Nota predicha · SVM'},
@@ -747,7 +896,9 @@ def render_prediction(clicks, *values):
 
 @app.callback(Output('coefficient-download', 'data'), Input('download-coefficients-button', 'n_clicks'), prevent_initial_call=True)
 def download_coefficients(clicks):
-    return dcc.send_data_frame(FULL_COEFFICIENTS.to_csv, 'coeficientes_svm_lineal.csv', index=False)
+    displayed = FULL_COEFFICIENTS.copy()
+    displayed['Variable / término'] = displayed['Variable / término'].map(course_text)
+    return dcc.send_data_frame(displayed.to_csv, 'coeficientes_svm_lineal.csv', index=False)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=8050, debug=False)

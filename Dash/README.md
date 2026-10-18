@@ -11,6 +11,83 @@ No ejecutar actualizar_analisis.py: los notebooks anteriores permanecen intactos
 El trabajo vigente del dashboard continúa en main; los Books publicados
 son antecedentes y se producirá uno nuevo. Ver CONTEXT.md para la reproducción completa.
 
+## Diagnósticos de residuos en Modelos lineales
+
+La tabla añade `p-valor (White)` y `p-valor (BDS)` para Dummy/SVM en validación
+OOF reunida y test, recalculados con los filtros. Las métricas conservan sus
+definiciones; los p OOF no son medias de p por fold. La gráfica comparativa
+solo muestra RMSE/MAE; R² permanece en la tabla.
+
+White usa LM con las ocho numéricas originales, constante, cuadrados e
+interacciones, casos completos sin imputar; no incluye categóricas. Escalado
+y eliminación QR de dependencias exactas estabilizan el cálculo sin cambiar
+el espacio auxiliar. Mínimo30 casos y10 grados de libertad residuales. BDS
+usa dimensión2, epsilon=1.5 DE muestral, mínimo30 residuos y orden del CSV
+conservado al filtrar. Su hipótesis es IID, no independencia aislada, y ese
+orden no constituye una trayectoria temporal individual. Rechazar IID no
+identifica cuál de los dos supuestos falla. OOF reúne distintos ajustes.
+
+Son diagnósticos exploratorios sin ajuste múltiple ni corrección por registros
+repetidos por estudiante, y no se usan para elegir modelos. No rechazar no prueba
+los supuestos. El desplegable muestra estadísticos, n, parámetros y motivos de
+casos no estimables. No se cambian fuentes, predicciones ni modelos.
+
+Fuentes oficiales: [White](https://www.statsmodels.org/stable/generated/statsmodels.stats.diagnostic.het_white.html)
+y [BDS](https://www.statsmodels.org/stable/generated/statsmodels.tsa.stattools.bds.html).
+
+## Contrastes del EDA y presentación
+
+Cada filtro recalcula las evidencias sobre train disponible: Shapiro–Wilk
+(W, p, n) en notas y densidades; Kruskal–Wallis (H, gl, p y medianas)
+en cajas; χ² frente a proporciones iguales en categorías observadas; Q de
+Cochran para los indicadores de ausencia emparejados por registro. No se
+imputan valores ni se usa test. Los grupos pequeños/constantes tienen
+estados explícitos sin inventar estadísticos.
+
+Cada tarjeta categórica identifica la prueba chi-cuadrado de bondad de ajuste
+y resume la comparación de conteos. La introducción conjunta define χ², gl y p,
+sin repetir aclaraciones extensas en cada gráfica.
+
+Spearman se justifica por el interés en asociaciones monotónicas y el uso de
+rangos, con menor sensibilidad a magnitudes extremas. No se decide por un
+p de normalidad. Para la variable elegida, se compara con Pearson mediante
+Δ = ρ − r, bootstrap de pares completos (1999 réplicas, semilla 42, rangos
+recalculados), IC95% percentil y p bilateral aproximado de la distribución
+centrada bajo H₀. No mide superioridad de un método. La matriz ofrece ρ, n,
+p bilateral y Holm sobre todos sus pares estimables: p asintótico con n > 500,
+permutación (1999 réplicas, corrección +1) con n ≤ 500.
+
+Inferencia exploratoria: filas independientes es una aproximación; no hay
+IDs en la caché para corregir dependencia por estudiante. Solo la familia
+de la matriz tiene ajuste múltiple y no cubre la búsqueda entre filtros.
+Los χ² categóricos usan uniformidad como referencia explícita, sin exigir
+equilibrio institucional; Q usa aproximación χ², limitada con ausencias raras.
+No se interpreta un resultado no significativo como equivalencia o normalidad.
+
+Las dos tarjetas de correlación presentan conclusiones visibles que siguen
+los filtros: variable elegida frente a la nota, dirección y coeficiente Spearman;
+y variables/pares con mayor asociación en valor absoluto en la matriz. Sus
+explicaciones extensas se conservan en desplegables cerrados por defecto.
+Se retira de la interfaz el apartado histórico sobre una elección de Pearson.
+
+Las tarjetas explican cada contraste con «¿Qué revisa/compara?» y una lectura
+del resultado. La comparación pareada se define como calcular ρ y r con los
+mismos registros y restarlos. La tabla distingue «p sin ajuste (Spearman)» de
+«p ajustado (Holm)»: ambos prueban asociación Spearman frente a cero; ninguno
+es el p de comparar métodos. Los notebooks EDA anteriores revisados calculaban
+ambos coeficientes, sin documentar una elección de Pearson como más apropiado.
+
+Fuentes: documentación oficial de SciPy para
+[Shapiro–Wilk](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html),
+[Kruskal–Wallis](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kruskal.html),
+[Spearman](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html),
+[bootstrap pareado](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html).
+
+`display_labels.py` presenta código y nombre en controles, gráficos, hover,
+textos y tablas. Los códigos originales siguen en filtros, datos y modelos.
+Fuentes CSS +3 px, gráficos 15 px (hover 16), con densidades en dos columnas
+y una en pantallas estrechas. `eda_statistics.py` no añade dependencias.
+
 ## Interpretación del pipeline, betas y XGBoost
 
 Al final de Split y CV se muestra el flujo del pipeline compartido por LinearSVR,

@@ -158,7 +158,8 @@ def create_lime_section(app, ui, load_xgboost):
                   Input('classic-program', 'value'), Input('classic-course', 'value'), Input('classic-lime-partition', 'value'))
     def cases(program, course, partition):
         frame = select_frame(partition, program, course)
-        options = [{'label': f'Caso {int(i)+1:04d} · {row[ui["COURSE"]]}', 'value': int(i)} for i, row in frame.iterrows()]
+        from display_labels import course_text
+        options = [{'label': f'Caso {int(i)+1:04d} · {course_text(row[ui["COURSE"]])}', 'value': int(i)} for i, row in frame.iterrows()]
         return options, options[0]['value'] if options else None, not bool(options)
 
     @lru_cache(maxsize=32)

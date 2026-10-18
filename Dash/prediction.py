@@ -2,6 +2,7 @@
 import numpy as np
 import pandas as pd
 from dash import dcc, html
+from display_labels import course_text
 
 
 def input_id(column, prefix='example'):
@@ -24,7 +25,7 @@ def build_form(training, numeric, categorical, labels, defaults, prefix='example
         ], className='example-field'))
     category_fields = [html.Div([
         html.Label(labels.get(column, column), htmlFor=input_id(column, prefix)),
-        dcc.Dropdown([{'label': value, 'value': value} for value in sorted(training[column].unique())],
+        dcc.Dropdown([{'label': course_text(value), 'value': value} for value in sorted(training[column].unique())],
             defaults[column], id=input_id(column, prefix), clearable=False),
     ], className='example-field') for column in categorical]
     return html.Div([

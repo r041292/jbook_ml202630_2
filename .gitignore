@@ -22,6 +22,9 @@
 !/Dash/validate_package.py
 !/Dash/model_interpretation.py
 !/Dash/lime_xgboost.py
+!/Dash/eda_statistics.py
+!/Dash/display_labels.py
+!/Dash/residual_diagnostics.py
 !/Dash/README.md
 !/Dash/preprocesamiento_clasicos.py
 !/Dash/requirements.txt
