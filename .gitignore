@@ -83,8 +83,9 @@
 /jbook_dashboard/*
 !/jbook_dashboard/myst.yml
 !/jbook_dashboard/01_desarrollo.md
-!/jbook_dashboard/02_interpretaciones.md
-!/jbook_dashboard/03_metodologia.md
+!/jbook_dashboard/02_introduccion_eda.md
+!/jbook_dashboard/03_modelos.md
+!/jbook_dashboard/04_metodologia.md
 !/jbook_dashboard/sidebar-footer.md
 !/jbook_dashboard/layout.css
 !/jbook_dashboard/favicon.svg

@@ -10,8 +10,9 @@ project:
   description: Informe del dashboard de Precálculo, recorrido visual de sus resultados y metodología complementaria.
   toc:
     - file: 01_desarrollo.md
-    - file: 02_interpretaciones.md
-    - file: 03_metodologia.md
+    - file: 02_introduccion_eda.md
+    - file: 03_modelos.md
+    - file: 04_metodologia.md
 site:
   template: book-theme
   title: "Informe del dashboard de Precálculo"
