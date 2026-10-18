@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.009632500004954636, "rows": 1, "status": "completa", "recorded": "2026-10-18T17:46:38.152245-05:00", "started": "2026-10-18T17:46:38.142228-05:00"}
+{"stage": "Total del experimento", "batch": "Ridge · inferencia de aplicación", "seconds": 0.016593400010606274, "rows": null, "status": "completa", "recorded": "2026-10-18T17:46:38.152245-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

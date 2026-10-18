@@ -131,6 +131,9 @@ def style(fig):
     if fig.layout.meta == 'original-errors':
         fig.update_layout(height=1000, margin={'l': 160, 'r': 55, 't': 30, 'b': 200})
         fig.update_xaxes(tickangle=-55)
+    if fig.layout.meta in ('shap-summary', 'shap-waterfall'):
+        fig.update_layout(margin={'l': 220, 'r': 100, 't': 40, 'b': 100},
+                          legend={'orientation': 'h', 'y': -.12, 'x': 0})
     return fig
 
 

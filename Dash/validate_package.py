@@ -63,6 +63,22 @@ def validate():
                                classics.TEST_PREDICTIONS.decision_tree, atol=1e-12, rtol=0)
     assert (classics.FRIEDMAN['n_models'], classics.FRIEDMAN['n_folds']) == (7, 5)
     assert 'decision_tree' in classics.NAMES and 'dummy' not in classics.ALL_NAMES
+    from student_comparison import load as load_student_comparison, section as student_section, holm
+    student = load_student_comparison(app.CACHE)
+    assert (student['n_students'], student['n_records'], student['family_size']) == (188, 188, 6)
+    assert student['active_run'] == classics.REPORT.get('run_id') and student['reps'] == 49999
+    np.testing.assert_allclose([r['p_holm'] for r in student['rows']], holm([r['p_raw'] for r in student['rows']]))
+    tables = []
+    from dash import html
+    student_layout = student_section(student, {'md': lambda value: html.Div(value),
+        'table': lambda frame: tables.append(frame) or html.Div()})
+    assert tables[0]['Δ MSE'].is_monotonic_increasing
+    assert 'Etapa 3' in str(student_layout)
+    comparison = app.app.callback_map['classic-comparison.children']['callback'].__wrapped__('__all__', '__all__', 'cv')
+    text = str(comparison)
+    assert text.index('Seis comparaciones frente al SVM') < text.index('Tamaño del efecto · pérdidas MSE por fold')
+    shap = app.app.callback_map['classic-shap-result.children']['callback'].__wrapped__('__all__', '__all__', 'all')
+    assert 'Caso 0124' in str(shap) and 'Caso 0118' in str(shap)
     if app.MODEL_REPORT.get('optimization'):
         np.testing.assert_allclose(app.MODEL.predict(app.TEST[app.FEATURES]), app.TEST.svm, atol=1e-12, rtol=0)
         for key in classics.NAMES:
@@ -81,7 +97,9 @@ def validate():
     np.testing.assert_allclose(explanation['prediction'], float(load_model('xgboost').predict(app.TEST[app.FEATURES].iloc[[0]])[0]), atol=1e-10)
     print(json.dumps({'status': 'ok', 'models': 27, 'classic_models': 7, 'cv_contrasts': 25,
                       'leader': original.BEST_NAME, 'canonical_test_predictions_verified': 188,
-                      'http_and_filtered_callbacks': 'ok', 'model_refit': False}))
+                      'http_and_filtered_callbacks': 'ok', 'model_refit': False,
+                      'student_contrasts_holm': 6, 'student_table_sorted': True,
+                      'shap_global_and_two_local_cases': 'ok'}))
 
 
 if __name__ == '__main__':

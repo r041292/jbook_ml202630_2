@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.010421900005894713, "rows": 1, "status": "completa", "recorded": "2026-10-18T17:46:44.264178-05:00", "started": "2026-10-18T17:46:44.252132-05:00"}
+{"stage": "Total del experimento", "batch": "LinearSVR · inferencia de aplicación", "seconds": 0.01600650000909809, "rows": null, "status": "completa", "recorded": "2026-10-18T17:46:44.264178-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

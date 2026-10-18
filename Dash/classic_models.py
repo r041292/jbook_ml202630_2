@@ -14,6 +14,8 @@ from prepare_data import BOOK, CACHE, ROOT, metrics
 from prediction import build_form, input_id, predict_record
 from prepare_originals import CLASSIC_PAPERS
 from classic_friedman import friedman_comparison, summary, display_statistics, conclusion, EXPLANATION
+from classic_posthoc import analyze, section as statistical_section
+from student_comparison import load as load_student_comparison
 from search_results import optimization_section
 
 DIRECTORY = CACHE / 'clasicos'
@@ -26,6 +28,8 @@ NAMES = {key: spec['name'] for key, spec in REPORT['models'].items()}
 ALL_NAMES = {'svm': 'SVM lineal', **NAMES}
 MODEL_ORDER = [ALL_NAMES[key] for key in ['svm', *NAMES]]
 FRIEDMAN = friedman_comparison(FOLDS, ALL_NAMES.values())
+POSTHOC = analyze(FOLDS, ALL_NAMES.values(), FRIEDMAN)
+STUDENT_COMPARISON = load_student_comparison(CACHE)
 MODEL_COLORS = {'SVM lineal': '#435568', 'KNN': '#5268b9', 'Ridge': '#bc9028',
                 'Lasso': '#a573b3', 'Random Forest': '#3f925f', 'XGBoost': '#187b80',
                 'Decision Tree': '#db7355'}
@@ -190,6 +194,9 @@ def create_classics(app, ui):
              'Una mejora en test o en un subgrupo no implica que el modelo sea superior en todos los periodos.'),
     ])
 
+    from shap_xgboost import create_shap_section
+    layout.children.append(create_shap_section(app, ui, lambda: load_model('xgboost'), REPORT,
+                                              TEST_PREDICTIONS['xgboost'].to_numpy()))
     from lime_xgboost import create_lime_section
     layout.children.append(create_lime_section(app, ui, lambda: load_model('xgboost')))
 
@@ -240,7 +247,8 @@ def create_classics(app, ui):
                       'no se asignan rangos ni p-valores globales a sus filas. ')
                    + ' R² no está definido si la nota es constante o solo hay una fila. '
                    'Los subgrupos pequeños requieren cautela.'),
-                md(EXPLANATION),
+                html.Details([html.Summary('Test de Friedman · explicación, hipótesis y limitaciones'),
+                              md(EXPLANATION)], className='details'),
                 md(summary(FRIEDMAN)) if global_view else md('Friedman no se aplica a los subgrupos filtrados.'),
                 html.Details([html.Summary('Rangos por fold y rango promedio · CV global'),
                     table(FRIEDMAN['ranking'])], className='details') if global_view else None,
@@ -249,6 +257,9 @@ def create_classics(app, ui):
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view, result=FRIEDMAN)), className='tab', selected_className='tab-selected'),
                 ])], className='card classic-comparison-table'),
             card('Conclusión de la revisión', conclusion(temporal, cv, global_view, FRIEDMAN)),
+            statistical_section(POSTHOC, FRIEDMAN, REPORT, ui, STUDENT_COMPARISON) if global_view else
+            notice('Comparación estadística disponible solo con Todos en ambos filtros. '
+                   'Friedman no se aplica a los subgrupos filtrados; sus métricas son descriptivas.'),
         ])
 
     @app.callback(Output('classic-diagnostics', 'children'), Input('classic-program', 'value'),

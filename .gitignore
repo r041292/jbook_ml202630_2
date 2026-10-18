@@ -156,3 +156,9 @@
 !/Precalculo/busquedas_e3.md
 !/Dash/search_results.py
 !/Dash/data/svm_report.json
+
+# Comparación estadística ampliada y SHAP; solo resúmenes sin IDs.
+!/Dash/classic_posthoc.py
+!/Dash/shap_xgboost.py
+!/Dash/student_comparison.py
+!/Dash/data/clasicos/comparacion_svm_bootstrap.json

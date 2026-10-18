@@ -257,6 +257,7 @@
     "originales/tn_krr.joblib": "de91e89b90f7c5c7ac58b0d196530aebc13285a1c40026029d032365eb34b14f",
     "originales/cv_inference.csv": "7f008fcd8d8dc43344e273a1e48d6b7804689dc4fe17dc432ca6a925e35122a9",
     "originales/cv_inference.json": "9a1caddfd7ae5a97497ece24b448e7d13c2ab8c797fa884048c4c0bcedb7ae7a",
-    "svm_report.json": "17e6d385486f5da5f0f8b0833f0a1b274fd4cabd50f4e3c96542c59e0887c6fc"
+    "svm_report.json": "17e6d385486f5da5f0f8b0833f0a1b274fd4cabd50f4e3c96542c59e0887c6fc",
+    "clasicos/comparacion_svm_bootstrap.json": "56b86d1665515a3bb65ad1cacd412dc8fe2b7c33686cb897673cb9028100fae9"
   }
 }

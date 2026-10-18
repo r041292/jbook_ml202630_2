@@ -52,6 +52,133 @@ No ejecutar actualizar_analisis.py: los notebooks anteriores permanecen intactos
 El trabajo vigente del dashboard continúa en main; los Books publicados
 son antecedentes y se producirá uno nuevo. Ver CONTEXT.md para la reproducción completa.
 
+## SHAP global y local en Modelos clásicos
+
+`shap_xgboost.py` amplía la interpretabilidad de XGBoost, el menor RMSE medio
+CV externa de la ejecución activa, sin atribuirle superioridad estadística
+confirmada. Usa TreeSHAP exacto nativo de XGBoost: `pred_contribs=True`,
+`approx_contribs=False`, CPU. No requiere instalar `shap`. Se transforma con el
+pipeline guardado y se respeta el vocabulario de categorías aprendido en train.
+La referencia implícita es el cover de las rutas de los árboles de entrenamiento
+(tree-path-dependent), no un fondo construido con test. No reentrena.
+
+El summary plot interactivo incluye las 15 variables y todos los puntos de
+las 1.497 filas válidas por defecto (1.309 train + 188 test), sin muestrearlas.
+Se puede cambiar a train o test y aplicar los filtros académicos. En train se
+explica el modelo final, no OOF; no es una evaluación de generalización.
+Orden por media |SHAP| y tabla de proporciones sobre suma de medias absolutas.
+Azul/rojo representan valores numéricos bajos/altos normalizados por variable;
+las categorías se muestran grises para no inventar un orden. Los valores son
+los que recibió el árbol tras la imputación; jitter con semilla42 solo visual.
+
+Dos waterfalls incluyen base, los15 aportes completos y predicción, junto con
+la nota real como referencia: menor y mayor error absoluto en test (dentro de
+los filtros, empates por orden anónimo). La selección es ilustrativa, posterior
+a la evaluación; no elige modelo ni parámetros. No se inventa un umbral de
+«clasificación correcta» para regresión. Si el filtro tiene menos de2 casos
+test, se informa la limitación. Lecturas automáticas describen aportes positivos,
+negativos y diferencias entre casos; no interpretan SHAP como causa del error.
+Un desplegable compara con el LIME existente: sustituto lineal ponderado frente
+a atribuciones aditivas de Shapley, exactitud/aproximación, fondo, correlaciones,
+interacciones y vecindarios imposibles. Los números anónimos permiten inspeccionar
+los mismos casos en LIME; los pesos de condiciones LIME no son SHAP intercambiables.
+
+En cada arranque se calculan una vez los SHAP completos y se reutilizan en
+callbacks, sin nuevas inferencias al filtrar. Se verifican las188 predicciones
+test guardadas (atol1e-12) y base+suma SHAP=predicción en1497 filas (atol1e-5,
+por float32). El primer cálculo registró residuo máximo5.852431e-6 puntos.
+`TimingRun` instrumenta antes de ejecutar: transformación/DMatrix, inferencia
+del pipeline, TreeSHAP, validación y total (no sumar con etapas). Configuración,
+hashes, entorno, estado/fallos y duraciones quedan en `tiempos/` y en el registro
+central; no se registran valores de personas. Sin búsquedas ni refits.
+
+Fuentes: [SHAP](https://arxiv.org/abs/1705.07874),
+[TreeExplainer y referencias de dependencia](https://shap.readthedocs.io/en/latest/generated/shap.TreeExplainer.html),
+[XGBoost · contribuciones](https://xgboost.readthedocs.io/en/stable/prediction.html),
+[LIME](https://arxiv.org/abs/1602.04938).
+
+## Comparación estadística ampliada de Modelos clásicos
+
+La etapa3 contiene «Seis comparaciones frente al SVM · test por estudiante»,
+después de las comparaciones de finalistas y antes de los efectos por fold.
+La tabla principal se ordena por ΔMSE ascendente.
+Se usan predicciones guardadas de los seis clásicos y el SVM: media de errores
+cuadráticos por estudiante, pesos iguales entre estudiantes. No se filtra la
+familia por MCS ni se usa Friedman de CV como puerta de estos contrastes test.
+Bootstrap-t bilateral centrado bajo H0,49.999 réplicas/semilla20261018, índices
+emparejados entre los siete modelos, SD muestral y p=(1+excedencias)/(B+1).
+Holm sobre los seis p; α0.05. IC BCa95 individuales de ΔMSE y ΔRMSE, con
+jackknife retirando estudiantes completos. Cohen d_z descriptivo sobre las
+diferencias MSE. BCa degenerado no se sustituye silenciosamente. Los IC no son
+simultáneos ni son duales del contraste bootstrap-t: pueden excluir0 sin que
+Holm detecte diferencia. Se conservan diagnósticos de SE cero y error Monte Carlo.
+
+Fuente privada: `load_partitions()` reconstruye los grupos por ID y valida
+fila a fila predictores/objetivo/periodo con el test activo y sus hashes. Los IDs
+solo se usan en memoria y no llegan al dashboard. Solo se exporta el resumen
+`data/clasicos/comparacion_svm_bootstrap.json`, con procedencia/hashes.
+Regenerar desde raíz con `Precalculo/venv/Scripts/python.exe -X utf8 Dash/student_comparison.py`;
+también se regenera al preparar datos. La CLI registra el artefacto nuevo en
+manifest.json. No entrena ni ejecuta predict. Carga del dashboard verifica
+hashes de datos/código; la exportación futura incluye el módulo y el JSON.
+
+Evidencia de cada preparación: resultados.json y distribuciones_bootstrap.npz
+en tiempos/<analysis_run>, más metadatos/eventos y TIEMPOS_EJECUCION.md.
+No se sobrescribe el historial; el JSON de caché señala la ejecución activa.
+Resultado actual:188estudiantes/188registros; ninguna diferencia con p Holm<0.05.
+Decision Tree p crudo0.01666, Holm0.09996; Lasso p crudo0.16564, Holm0.8282;
+KNN/Ridge/Random Forest/XGBoost Holm1. El IC BCa individual de Lasso excluye0,
+igual que el de Decision Tree; no contradice la ausencia de significancia familiar.
+Alcance exploratorio posterior a revisión de test202530, modelos finales fijos,
+supone independencia entre estudiantes y no verifica independencia por clase/
+cohorte. No incluye variabilidad de entrenamiento ni otros periodos. No se
+reelige familia o hiperparámetros con estos resultados. Los históricos de CV,
+MCS y bootstrap previo se conservan.
+
+La sección principal de Clásicos presenta las conclusiones, tabla ómnibus,
+MCS exploratorio (α = 0.10), pares de finalistas, tamaños del efecto e IC del
+95 % de RMSE. La documentación metodológica se puede desplegar. Solo se muestra
+inferencia con Todos en ambos filtros; cambiar los gráficos entre CV/test no
+cambia el alcance CV del contraste. No hay selección por test.
+
+`classic_posthoc.py` calcula MCS T_R/eliminación e_R sobre MSE por fold
+(RMSE²), con pesos iguales y 3.125 remuestreos emparejados exhaustivos de los
+cinco folds; centra bajo H0, reutiliza índices y acumula p por máximo monótono.
+Pérdidas idénticas dan t=0; diferencias constantes no nulas dan t infinito.
+No requiere otra dependencia ni ajusta/predice con modelos. La aproximación
+NO corrige la dependencia entre entrenamientos solapados y NO garantiza
+cobertura nominal del 90 %. No es un conjunto confirmatorio defendible.
+El rechazo de Friedman a α=0.05 habilita este post hoc exploratorio; sin rechazo,
+no se calcula MCS ni se generan sus pares.
+
+Ejecución activa 20261018_102325_af643f83: Friedman χ²=17.828571428571,
+gl=6, p=0.006675192720. MCS exploratorio conserva XGBoost (p=1), SVM lineal
+y Ridge (ambos p=0.7664); sus tres IC por folds de ΔMSE incluyen cero.
+GW/CW y DM-HLN figuran no aplicables: no hay secuencia de pronósticos,
+horizonte definido ni diseño condicional/anidamiento establecido para CW.
+GW puede admitir tanto modelos anidados como no anidados bajo sus condiciones.
+No se trata el orden de filas o folds como tiempo, ni se fabrica un bootstrap
+estacionario. Los p crudos DM y su ajuste Holm permanecen no aplicables. El bootstrap por
+folds de diferencias es exploratorio, no estacionario ni simultáneo/corregido
+por selección del MCS; no captura incertidumbre de reentrenamiento.
+
+Se muestran los 21 pares con Cliff marginal (25 cruces de pérdidas) y Cohen
+emparejado d_z (media/SD muestral de las cinco diferencias MSE); negativos
+favorecen A. No se afirma simetría con cinco observaciones ni relevancia práctica
+por umbrales no acordados; SD cero queda no estimable. Los IC de métricas en
+test reutilizan el bootstrap por estudiante ya exportado (1.000 réplicas,
+pipelines fijos), separados del post hoc CV. No hay ganador confirmado por pares.
+
+Validar con `Precalculo/venv/Scripts/python.exe -X utf8 Dash/run_measured.py --tests`.
+La suite registra cualquier fit/predict que ejecute en el registro central de
+tiempos, incluido el sustituto LIME; el análisis estadístico usa resultados
+guardados y no reentrena los siete modelos.
+
+Referencias: [MCS](https://doi.org/10.3982/ECTA5771),
+[GW](https://doi.org/10.1111/j.1468-0262.2006.00718.x),
+[CW](https://www.kansascityfed.org/documents/5368/pdf-RWP05-05.pdf),
+[DM-HLN](https://doi.org/10.1016/S0169-2070(96)00719-4).
+
 ## Comparación histórica de Modelos clásicos con Friedman
 
 Este bloque describe la ejecución Grid anterior, conservada para trazabilidad.

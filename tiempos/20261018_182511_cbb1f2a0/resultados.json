@@ -1,0 +1,208 @@
+{
+  "n_students": 188,
+  "n_models": 7,
+  "family_size": 6,
+  "reps": 49999,
+  "seed": 20261018,
+  "rows": [
+    {
+      "model": "KNN",
+      "reference": "SVM lineal",
+      "delta_mse": -0.01112692325900268,
+      "delta_rmse": -0.006002282335262565,
+      "t_observed": -0.3042669404436981,
+      "p_raw": 0.76264,
+      "null_exceedances": 38131,
+      "mc_se_raw": 0.0019027551123411417,
+      "zero_se_resamples": 0,
+      "cohen_dz": -0.022190947340455208,
+      "bca_mse": {
+        "low": -0.08403929963227928,
+        "high": 0.05917523699373859,
+        "state": "Calculado",
+        "bias_z0": -0.002531747896922693,
+        "acceleration": -0.005179682453721004,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": -0.04501505731740036,
+        "high": 0.03232378333280172,
+        "state": "Calculado",
+        "bias_z0": -0.002632015367489191,
+        "acceleration": -0.004906065908017973,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 1.0,
+      "conclusion": "Diferencia no detectada"
+    },
+    {
+      "model": "Ridge",
+      "reference": "SVM lineal",
+      "delta_mse": -0.023735431647519643,
+      "delta_rmse": -0.012851267915486853,
+      "t_observed": -1.281992304096981,
+      "p_raw": 0.2712,
+      "null_exceedances": 13559,
+      "mc_se_raw": 0.001988237979167795,
+      "zero_se_resamples": 0,
+      "cohen_dz": -0.0934988982687362,
+      "bca_mse": {
+        "low": -0.08537066320219966,
+        "high": 0.0008626254258591017,
+        "state": "Calculado",
+        "bias_z0": -0.10167029591124108,
+        "acceleration": -0.10059337193971592,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": -0.0451729104286112,
+        "high": 0.00048673201203654854,
+        "state": "Calculado",
+        "bias_z0": -0.09960438405088225,
+        "acceleration": -0.10132129152333637,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 1.0,
+      "conclusion": "Diferencia no detectada"
+    },
+    {
+      "model": "Lasso",
+      "reference": "SVM lineal",
+      "delta_mse": -0.01879475759311965,
+      "delta_rmse": -0.010161399519898917,
+      "t_observed": -1.5191253885476401,
+      "p_raw": 0.16564,
+      "null_exceedances": 8281,
+      "mc_se_raw": 0.0016625652138974308,
+      "zero_se_resamples": 0,
+      "cohen_dz": -0.11079360594236864,
+      "bca_mse": {
+        "low": -0.05329557553118904,
+        "high": -0.0005314382706100991,
+        "state": "Calculado",
+        "bias_z0": -0.07152634298357222,
+        "acceleration": -0.06956231565806066,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": -0.028126331759466737,
+        "high": -0.00027078920331194395,
+        "state": "Calculado",
+        "bias_z0": -0.06996830796294946,
+        "acceleration": -0.06928591721417238,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 0.8282,
+      "conclusion": "Diferencia no detectada"
+    },
+    {
+      "model": "Random Forest",
+      "reference": "SVM lineal",
+      "delta_mse": 0.018214827625508464,
+      "delta_rmse": 0.009743012140578378,
+      "t_observed": 0.5356788142158381,
+      "p_raw": 0.594,
+      "null_exceedances": 29699,
+      "mc_se_raw": 0.0021962186747975145,
+      "zero_se_resamples": 0,
+      "cohen_dz": 0.03906839284059774,
+      "bca_mse": {
+        "low": -0.048998599092075094,
+        "high": 0.08475976821778966,
+        "state": "Calculado",
+        "bias_z0": -0.0033840223098066465,
+        "acceleration": -0.0004600575802878651,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": -0.026184223118958384,
+        "high": 0.04562362875868873,
+        "state": "Calculado",
+        "bias_z0": -0.005389384667047052,
+        "acceleration": -0.001178049003626527,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 1.0,
+      "conclusion": "Diferencia no detectada"
+    },
+    {
+      "model": "XGBoost",
+      "reference": "SVM lineal",
+      "delta_mse": -0.0298367551361242,
+      "delta_rmse": -0.016183960238459805,
+      "t_observed": -0.964299020167163,
+      "p_raw": 0.34392,
+      "null_exceedances": 17195,
+      "mc_se_raw": 0.0021243518845564615,
+      "zero_se_resamples": 0,
+      "cohen_dz": -0.07032873418905564,
+      "bca_mse": {
+        "low": -0.09102225655263932,
+        "high": 0.031011938696155168,
+        "state": "Calculado",
+        "bias_z0": 0.0016293416862461876,
+        "acceleration": -0.0023572608071878265,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": -0.04913859642229635,
+        "high": 0.017089421477730998,
+        "state": "Calculado",
+        "bias_z0": 0.004988310719797844,
+        "acceleration": -0.0004616953683370051,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 1.0,
+      "conclusion": "Diferencia no detectada"
+    },
+    {
+      "model": "Decision Tree",
+      "reference": "SVM lineal",
+      "delta_mse": 0.15623079621446723,
+      "delta_rmse": 0.08051875856663626,
+      "t_observed": 2.4078546560678387,
+      "p_raw": 0.01666,
+      "null_exceedances": 832,
+      "mc_se_raw": 0.0005724119505293563,
+      "zero_se_resamples": 0,
+      "cohen_dz": 0.17561084946775055,
+      "bca_mse": {
+        "low": 0.03211119899500063,
+        "high": 0.28730718246629783,
+        "state": "Calculado",
+        "bias_z0": 0.009951677540310632,
+        "acceleration": 0.0041382136249697435,
+        "tail_warning": false
+      },
+      "bca_rmse": {
+        "low": 0.014903814934702143,
+        "high": 0.14562576248780632,
+        "state": "Calculado",
+        "bias_z0": -0.004085897174042554,
+        "acceleration": -0.0016097240073107697,
+        "tail_warning": false
+      },
+      "test_state": "Calculado",
+      "p_holm": 0.09996000000000001,
+      "conclusion": "Diferencia no detectada"
+    }
+  ],
+  "active_run": "20261018_102325_af643f83",
+  "analysis_run": "20261018_182511_cbb1f2a0",
+  "input_sha256": {
+    "test.csv.gz": "9d88f0fe5bbd523c66e0d17a134f3b7e79136497ec2c4435c86e14aa3497ce97",
+    "clasicos/test_predictions.csv.gz": "67c1c290111dd65514661cdae44270f38b7155ba67da5fb96e3d0cff4bb7d83f",
+    "clasicos/comparacion.json": "0c1980f7ed7331547f64bbcd31536cee19a24f8bcab7e253a276b065affe10d6"
+  },
+  "script_sha256": "8f8dc89dc9bcf41281ecc80335c4a8ec5ea17b10e3927304bc589fe17155a819",
+  "n_records": 188,
+  "students_with_repeated_records": 0,
+  "max_records_per_student": 1,
+  "scope": "Exploratorio posterior a revisión de test202530; modelos finales fijos; sin selección",
+  "weighting": "Igual por estudiante; RMSE = raíz de la media de MSE por estudiante"
+}

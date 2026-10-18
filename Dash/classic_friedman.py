@@ -12,11 +12,12 @@ EXPLANATION = (
     '**H₀: todos los modelos tienen rendimiento equivalente en rangos (rangos promedio iguales).** '
     'Se muestra χ² de Friedman corregido por empates, gl = modelos − 1 y p asintótico, con α = 0.05. '
     'El contraste es global: rechazar H₀ indica diferencias entre al menos dos modelos, '
-    'sin identificar pares ni demostrar que el primero supere al SVM. No se realizan post hoc. **Comparaciones frente al SVM:** Friedman se usa para tres o más modelos; no se aplica a pares modelo–SVM. Wilcoxon sería otro contraste, pero requiere diferencias independientes: los cinco folds con entrenamientos solapados no justifican ese supuesto. Por ello no se añaden p-valores por pares. '
+    'sin identificar pares ni demostrar que el primero supere al SVM. La sección principal documenta el post hoc MCS exploratorio, los tamaños de efecto y los límites de las comparaciones dirigidas. **Comparaciones frente al SVM:** Friedman se usa para tres o más modelos; no se aplica a pares modelo–SVM. Wilcoxon sería otro contraste, pero requiere diferencias independientes: los cinco folds con entrenamientos solapados no justifican ese supuesto. Por ello no se añaden p-valores Wilcoxon por pares. '
     '**Limitaciones:** solo hay cinco folds, por debajo de la recomendación de SciPy de más de '
     'diez bloques y más de seis modelos para la aproximación χ²; los entrenamientos se solapan y Friedman no corrige '
     'esa dependencia. La lectura es exploratoria. No rechazar H₀ no demuestra equivalencia. '
-    'Se usa únicamente CV global; test y subgrupos conservan métricas descriptivas. '
+    'Friedman usa únicamente CV global; los subgrupos conservan métricas descriptivas. '
+    'La ampliación bootstrap por estudiante del test se presenta aparte, con sus propios supuestos y ajuste Holm. '
     '[Friedman en SciPy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.friedmanchisquare.html) · '
     '[Supuestos de Wilcoxon](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html).'
 )
@@ -54,7 +55,7 @@ def summary(result):
             f'gl = **{result["df"]}**, p asintótico = **{result["pvalue"]:.6g}** '
             f'({result["n_folds"]} folds × {result["n_models"]} modelos; α = 0.05). '
             + decision + ' Resultado exploratorio por los cinco folds y el solapamiento de entrenamientos. '
-            'No se identifica un ganador estadístico ni diferencias por pares sin un análisis post hoc.')
+            'El post hoc exploratorio y sus límites se documentan en la sección principal; no se identifica un ganador estadístico confirmado.')
 
 
 def display_statistics(scores, *, cv=False, global_view=True, result=None):
@@ -73,4 +74,5 @@ def conclusion(test_scores, cv_scores, global_view, result):
     if not available.empty:
         best = available.iloc[0]
         text += f' **{best.Modelo}** tiene el menor RMSE medio CV (**{best.RMSE:.6f}**), un orden descriptivo distinto del rango promedio.'
-    return text + ' El test temporal es descriptivo y no participa en Friedman ni en la elección de modelos.'
+    return text + (' El test temporal no participa en Friedman ni en la elección de modelos. '
+                   'Sus comparaciones por estudiante se presentan aparte como ampliación exploratoria.')

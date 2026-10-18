@@ -18,6 +18,7 @@ if ACTIVE_POINTER.exists():
     if not (ACTIVE_RESULTS / 'completo.json').is_file():
         raise RuntimeError('La búsqueda activa no está completa.')
 CLASSIC_KEYS = ('knn', 'ridge', 'lasso', 'forest', 'xgboost', 'decision_tree')
+STUDENT_ARTIFACT = 'clasicos/comparacion_svm_bootstrap.json'
 CLASSIC_FILES = ['comparacion.json', 'fold_metrics.csv', 'train_predictions.csv.gz', 'test_predictions.csv.gz', 'xgboost.ubj'] + [
     name for key in CLASSIC_KEYS for name in (f'{key}.joblib', f'grid_{key}.csv')]
 SOURCES = [BOOK / name for name in ['Data/Datos_Brutos.csv', 'cabeceras.csv', 'entregable3.py',
@@ -61,9 +62,12 @@ def prepare():
         shutil.copyfile(ACTIVE_RESULTS / 'clasicos' / name, CACHE / 'clasicos' / name)
     shutil.copyfile(BOOK / 'preprocesamiento_clasicos.py', ROOT / 'preprocesamiento_clasicos.py')
     prepare_originals()
+    from student_comparison import prepare as prepare_student_comparison
+    prepare_student_comparison(CACHE, BOOK, ACTIVE_RESULTS)
     artifacts = [p for p in CACHE.glob('*') if p.name in ['train.csv.gz', 'test.csv.gz', 'fold_metrics.csv',
                  'coefficients.csv', 'model.joblib', 'grid_search.csv']] + [CACHE / 'clasicos' / name for name in CLASSIC_FILES]
     artifacts += [CACHE / 'originales' / name for name in ORIGINAL_FILES] + [CACHE / 'svm_report.json']
+    artifacts += [CACHE / STUDENT_ARTIFACT]
     (CACHE / 'manifest.json').write_text(json.dumps({
         'sha256': hashes(), 'train_valid': report['train_valid'], 'test_valid': report['test_valid'],
         'technique': 'datos_reales', 'test_period': report['test_period'], 'best_params': report['best_params'],
