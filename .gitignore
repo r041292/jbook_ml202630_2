@@ -143,3 +143,12 @@
 # Historial retirado y artefactos reconstruidos permanecen locales.
 /Precalculo/resultados/e3/historial_modelos_retirados/
 !/Precalculo/resultados/e3/cv_externa/README.md
+
+# Decision Tree: mediciones reproducibles sin datos de entrada personales.
+!/Dash/classic_friedman.py
+!/Dash/model_timing.py
+!/Dash/run_measured.py
+!/TIEMPOS_EJECUCION.md
+!/tiempos/
+!/tiempos/**
+!/Precalculo/decision_tree_e3.md

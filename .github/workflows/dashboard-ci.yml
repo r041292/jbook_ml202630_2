@@ -34,4 +34,11 @@ jobs:
           cache: pip
           cache-dependency-path: Dash/requirements.txt
       - run: python -m pip install -r Dash/requirements.txt
-      - run: python Dash/validate_package.py
+      - run: python Dash/run_measured.py Dash/validate_package.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tiempos-dashboard-${{ github.run_id }}
+          path: |
+            TIEMPOS_EJECUCION.md
+            tiempos/

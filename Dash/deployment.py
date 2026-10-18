@@ -14,6 +14,9 @@ PUBLIC_SOURCES = (
     'resultados/e3/clasicos/comparacion.json',
     'entregable3.py',
     'tn_krr_e3.py',
+    'evaluar_decision_tree_e3.py',
+    'modelos_clasicos.py',
+    'preprocesamiento_clasicos.py',
 )
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',

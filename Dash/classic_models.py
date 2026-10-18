@@ -13,7 +13,7 @@ from dash import Input, Output, State, dcc, html
 from prepare_data import BOOK, CACHE, ROOT, metrics
 from prediction import build_form, input_id, predict_record
 from prepare_originals import CLASSIC_PAPERS
-from statistical_comparison import add_inference, display_statistics, conclusion, EXPLANATION
+from classic_friedman import friedman_comparison, summary, display_statistics, conclusion, EXPLANATION
 
 DIRECTORY = CACHE / 'clasicos'
 REPORT = json.loads((DIRECTORY / 'comparacion.json').read_text(encoding='utf-8'))
@@ -21,10 +21,12 @@ FOLDS = pd.read_csv(DIRECTORY / 'fold_metrics.csv')
 TRAIN_PREDICTIONS = pd.read_csv(DIRECTORY / 'train_predictions.csv.gz')
 TEST_PREDICTIONS = pd.read_csv(DIRECTORY / 'test_predictions.csv.gz')
 NAMES = {key: spec['name'] for key, spec in REPORT['models'].items()}
-ALL_NAMES = {'dummy': 'Dummy media', 'svm': 'SVM lineal', **NAMES}
-MODEL_ORDER = [ALL_NAMES[key] for key in ['svm', *NAMES, 'dummy']]
+ALL_NAMES = {'svm': 'SVM lineal', **NAMES}
+MODEL_ORDER = [ALL_NAMES[key] for key in ['svm', *NAMES]]
+FRIEDMAN = friedman_comparison(FOLDS, ALL_NAMES.values())
 MODEL_COLORS = {'SVM lineal': '#435568', 'KNN': '#5268b9', 'Ridge': '#bc9028',
-                'Lasso': '#a573b3', 'Random Forest': '#3f925f', 'XGBoost': '#187b80', 'Dummy media': '#9aa7af'}
+                'Lasso': '#a573b3', 'Random Forest': '#3f925f', 'XGBoost': '#187b80',
+                'Decision Tree': '#db7355'}
 
 
 def metric_bar(scores, metric, order=None, colors=None):
@@ -51,7 +53,7 @@ def metric_bar(scores, metric, order=None, colors=None):
     return figure
 
 
-@lru_cache(maxsize=5)
+@lru_cache(maxsize=6)
 def load_model(key):
     path = DIRECTORY / f'{key}.joblib'
     if hashlib.sha256(path.read_bytes()).hexdigest() != REPORT['models'][key]['model_sha256']:
@@ -119,12 +121,13 @@ def create_classics(app, ui):
         ], className='details classic-pipeline'))
     layout = html.Div([
         title('MODELOS CLÁSICOS', 'Comparación de modelos predictivos',
-              'KNN, Ridge, Lasso, Random Forest y XGBoost frente al SVM lineal y la referencia de la media.'),
+              'KNN, Ridge, Lasso, Random Forest, XGBoost y Decision Tree frente al SVM lineal.'),
         notice('Todos predicen la nota del primer parcial: son modelos de regresión. '
                'Comparten los datos reales, el test 202530 y los mismos cinco folds externos por estudiante del SVM. '
                'Cada modelo ajusta sus hiperparámetros en cinco folds internos; test no participa en la búsqueda.'),
         html.Details([html.Summary('Fundamento, documentación, preparación y grillas por modelo'),
             md('KNN, Ridge y Lasso reutilizan el preprocesamiento del SVM. Los árboles usan otra representación: '
+               '**Decision Tree emplea one-hot completo**, sin escalado ni log1p, para evitar un orden artificial en las categorías. '
                '**Random Forest emplea códigos ordinales** porque requiere entradas numéricas; '
                'estos códigos introducen un orden artificial en variables nominales. '
                '**XGBoost usa particiones categóricas nativas**, sin columnas one-hot externas. '
@@ -150,10 +153,10 @@ def create_classics(app, ui):
             md('Intervalos percentiles del 95 % con **1.000 remuestreos de estudiantes** del test. '
                'Las comparaciones usan los mismos estudiantes remuestreados para cada modelo y el SVM. '
                '**Δ RMSE = RMSE del modelo − RMSE del SVM**: valores negativos favorecen al modelo. '
-               'Son comparaciones exploratorias de cinco familias, sin corrección por comparaciones múltiples; '
+               'Son comparaciones exploratorias de seis familias, sin corrección por comparaciones múltiples; '
                'los intervalos no justifican por sí solos declarar superioridad general ni elegir usando test.'),
-            table(pd.DataFrame(REPORT['paired_differences'])),
-            table(pd.DataFrame(REPORT['bootstrap'])),
+            table(pd.DataFrame([row for row in REPORT['paired_differences'] if row['Modelo'] in ALL_NAMES.values()])),
+            table(pd.DataFrame([row for row in REPORT['bootstrap'] if row['Modelo'] in ALL_NAMES.values()])),
         ], className='details classic-bootstrap'),
         html.Details([html.Summary('Ejemplo de predicción · modelo clásico seleccionado'),
             card('Predecir con el pipeline seleccionado',
@@ -186,7 +189,7 @@ def create_classics(app, ui):
         cv = scores.loc[scores['Evaluación'].eq('CV externa anidada')]
         label = 'CV externa anidada' if evaluation == 'cv' else 'Test temporal'
         selected = scores.loc[scores['Evaluación'].eq(label)]
-        selected = add_inference(selected, cv=evaluation == 'cv', global_view=global_view)
+        selected = selected.sort_values('RMSE', na_position='last', kind='stable')
         plot_order = selected.loc[selected.RMSE.notna(), 'Modelo'].tolist()
         order_note = 'Orden de la tabla: RMSE de menor a mayor en los cuatro gráficos.'
         metric_cards = []
@@ -205,18 +208,31 @@ def create_classics(app, ui):
                    'compara modelos dentro de un gráfico. La línea discontinua señala la referencia del SVM.')], className='card'),
             (notice('No hay filas de ' + label + ' para estos filtros. La tabla conserva las evaluaciones disponibles.')
              if selected.empty else html.Div(metric_cards, className='comparison-metric-grid')),
-            html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
-                md('Consulta **validación externa y test temporal** en pestañas separadas. '
-                   '**Δ RMSE negativo** indica menor error que el SVM en esa misma evaluación. '
-                   'SD RMSE describe variación entre cinco folds externos y solo se muestra en CV global. '
-                   'No es un intervalo de confianza. MAPE se expresa en porcentaje; R² no está definido '
-                   'si la nota es constante o solo hay una fila. Los subgrupos pequeños requieren cautela.'),
+            html.Article([html.H3('Estadísticos de los modelos y test de Friedman'),
+                md('Cada fila resume un modelo, la evaluación y el número de registros (**n**). '
+                   'El orden es de menor a mayor **RMSE**. RMSE y MAE se expresan en puntos de nota '
+                   '(menor es mejor); MAPE en porcentaje (menor es mejor) y R² es adimensional '
+                   '(mayor es mejor). **Δ RMSE vs SVM** resta el RMSE del SVM al del modelo: '
+                   'un valor negativo indica menor error, sin implicar significancia estadística. '
+                   + ('En CV global, las métricas son medias de cinco folds externos; '
+                      '**SD RMSE folds** es su desviación estándar poblacional, no un intervalo de confianza. '
+                      '**Rango promedio** promedia las posiciones por RMSE dentro de los folds: '
+                      'menor rango es mejor y puede diferir del orden por RMSE medio. '
+                      'Las métricas de test se calculan sobre los registros reservados.' if global_view else
+                      'Las métricas del subgrupo se calculan sobre sus registros: predicciones OOF reunidas '
+                      'en validación y predicciones reservadas en test. SD RMSE folds no se estima para el subgrupo; '
+                      'no se asignan rangos ni p-valores globales a sus filas. ')
+                   + ' R² no está definido si la nota es constante o solo hay una fila. '
+                   'Los subgrupos pequeños requieren cautela.'),
                 md(EXPLANATION),
+                md(summary(FRIEDMAN)) if global_view else md('Friedman no se aplica a los subgrupos filtrados.'),
+                html.Details([html.Summary('Rangos por fold y rango promedio · CV global'),
+                    table(FRIEDMAN['ranking'])], className='details') if global_view else None,
                 dcc.Tabs(value='cv', className='sub-tabs', children=[
                     dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
-                    dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view)), className='tab', selected_className='tab-selected'),
+                    dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view, result=FRIEDMAN)), className='tab', selected_className='tab-selected'),
                 ])], className='card classic-comparison-table'),
-            card('Conclusión de la revisión', conclusion(temporal, cv, global_view)),
+            card('Conclusión de la revisión', conclusion(temporal, cv, global_view, FRIEDMAN)),
         ])
 
     @app.callback(Output('classic-diagnostics', 'children'), Input('classic-program', 'value'),

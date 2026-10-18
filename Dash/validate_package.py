@@ -57,12 +57,18 @@ def validate():
     tn_result = str(predict(1, original.TN_KRR, *[app.DEFAULTS[c] for c in app.NUMERIC+app.CATEGORICAL]))
     assert 'Truncated Newton KRR RBF' in tn_result
     from classic_models import load_model
+    import classic_models as classics
+    tree = load_model('decision_tree')
+    np.testing.assert_allclose(tree.predict(app.TEST[app.FEATURES]),
+                               classics.TEST_PREDICTIONS.decision_tree, atol=1e-12, rtol=0)
+    assert (classics.FRIEDMAN['n_models'], classics.FRIEDMAN['n_folds']) == (7, 5)
+    assert 'decision_tree' in classics.NAMES and 'dummy' not in classics.ALL_NAMES
     from lime_xgboost import explain_xgboost
     explanation = explain_xgboost(load_model('xgboost'), app.TRAIN, app.TEST.iloc[[0]], app.LABELS, 1000)
     assert explanation['neighborhood'] == 'empirical' and explanation['incoherent_fraction'] == 0
     assert np.isfinite(explanation['fidelity'])
     np.testing.assert_allclose(explanation['prediction'], float(load_model('xgboost').predict(app.TEST[app.FEATURES].iloc[[0]])[0]), atol=1e-10)
-    print(json.dumps({'status': 'ok', 'models': 27, 'cv_contrasts': 24,
+    print(json.dumps({'status': 'ok', 'models': 27, 'classic_models': 7, 'cv_contrasts': 25,
                       'leader': original.BEST_NAME, 'canonical_test_predictions_verified': 188,
                       'http_and_filtered_callbacks': 'ok', 'model_refit': False}))
 

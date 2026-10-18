@@ -1,0 +1,107 @@
+{
+  "run_id": "20261018_095829_5b05000d",
+  "best_params": {
+    "modelo__ccp_alpha": 0.0,
+    "modelo__max_depth": 6,
+    "modelo__min_samples_leaf": 20
+  },
+  "selection_rmse": 0.9071261045485516,
+  "grid": {
+    "modelo__max_depth": [
+      2,
+      3,
+      4,
+      6,
+      8,
+      null
+    ],
+    "modelo__min_samples_leaf": [
+      2,
+      5,
+      10,
+      20
+    ],
+    "modelo__ccp_alpha": [
+      0.0,
+      0.001,
+      0.01
+    ]
+  },
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "inner_folds": 5,
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 20
+      }
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "inner_folds": 5,
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 20
+      }
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "inner_folds": 5,
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": 8,
+        "modelo__min_samples_leaf": 20
+      }
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "inner_folds": 5,
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": null,
+        "modelo__min_samples_leaf": 20
+      }
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "inner_folds": 5,
+      "best_params": {
+        "modelo__ccp_alpha": 0.001,
+        "modelo__max_depth": 6,
+        "modelo__min_samples_leaf": 20
+      }
+    }
+  ],
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+  }
+}

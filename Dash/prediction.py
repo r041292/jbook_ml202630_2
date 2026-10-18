@@ -69,7 +69,8 @@ def predict_record(model, values, training):
     if not match.any():
         raise ValueError('La combinación de programa, asignatura y división no aparece en entrenamiento. Revisa las tres selecciones.')
     frame = pd.DataFrame([record], columns=columns)
-    prediction = float(model.predict(frame)[0])
+    from model_timing import predict_application
+    prediction = float(predict_application(model, frame)[0])
     extrapolated = [c for c in numeric if np.isfinite(record[c]) and
                     not training[c].min() <= record[c] <= training[c].max()]
     return prediction, record, extrapolated

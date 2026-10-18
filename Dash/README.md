@@ -4,12 +4,42 @@ El flujo activo usa datos reales, test 202530 y GroupKFold anidado por estudiant
 Modelos predictivos se organiza en Split y CV, Modelos lineales, Clásicos y Originales.
 Ejecutar también Precalculo/modelos_clasicos.py después de entregable3.py y antes
  de prepare_data.py para evaluar KNN, Ridge, Lasso, Random Forest y XGBoost.
+Para añadir Decision Tree sin reentrenar esos modelos, ejecutar después
+`Precalculo/evaluar_decision_tree_e3.py` y sincronizar con
+`python Dash/run_measured.py Dash/prepare_data.py` usando el entorno compartido.
+Protocolo, resultados y reproducción: [Decision Tree E3](../Precalculo/decision_tree_e3.md).
 El notebook nuevo precalculo_modelos_clasicos_e3.ipynb inspecciona esos resultados.
 Desde la raíz ejecutar entregable3.py, Dash/prepare_data.py y Dash/app.py usando
 Precalculo/venv/Scripts/python.exe. Resultados en Precalculo/resultados/e3/.
 No ejecutar actualizar_analisis.py: los notebooks anteriores permanecen intactos.
 El trabajo vigente del dashboard continúa en main; los Books publicados
 son antecedentes y se producirá uno nuevo. Ver CONTEXT.md para la reproducción completa.
+
+## Comparación de Modelos clásicos con Friedman
+
+Solo concursan siete modelos: KNN, Ridge, Lasso, Random Forest, XGBoost, Decision Tree y SVM
+lineal. Dummy se excluye de tablas, gráficos, rangos, Friedman y bootstrap
+mostrados en esta sección; los artefactos canónicos se conservan completos.
+`classic_friedman.py` usa los35 RMSE de esos modelos en los cinco folds externos
+emparejados, con rangos por fold (menor RMSE = rango1; empates promediados).
+χ²17.485714286, gl6, p asintótico0.007654544: se rechaza H0 a α0.05;
+el resultado global no identifica diferencias entre pares. Cinco folds no satisfacen la
+recomendación de SciPy para el p χ²; además los entrenamientos se solapan.
+Lectura exploratoria. Test y subgrupos conservan métricas descriptivas.
+
+No se aplica Friedman a pares modelo–SVM: la implementación exige tres o más
+modelos. Wilcoxon sería un contraste distinto y exige diferencias independientes;
+no se añade sobre estos cinco folds solapados. ΔRMSE vs SVM sigue siendo
+una diferencia descriptiva. No hay post hoc ni p-valores por pares nuevos.
+Solo se entrenó el nuevo árbol; los demás modelos conservan sus ajustes.
+Decision Tree usa mediana numérica, moda y one-hot completo, sin escalado ni
+log1p. Su grid de profundidad, mínimo por hoja y poda se ajusta en train;
+test no selecciona parámetros. Se incluye en tablas, barras, rangos,
+bootstrap, diagnósticos, filtros y simulador. El inventario Originales se conserva.
+Tiempos de búsqueda/refit/inferencia: `../TIEMPOS_EJECUCION.md` y `../tiempos/`;
+no se añaden componentes visuales de tiempo.
+Fuentes: [Friedman](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.friedmanchisquare.html)
+y [Wilcoxon](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.wilcoxon.html).
 
 ## Diagnósticos de residuos en Modelos lineales
 

@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parent
 BOOK = ROOT.parent / 'Precalculo'
 CACHE = ROOT / 'data'
 RESULTS = BOOK / 'resultados/e3'
-CLASSIC_KEYS = ('knn', 'ridge', 'lasso', 'forest', 'xgboost')
+CLASSIC_KEYS = ('knn', 'ridge', 'lasso', 'forest', 'xgboost', 'decision_tree')
 CLASSIC_FILES = ['comparacion.json', 'fold_metrics.csv', 'train_predictions.csv.gz', 'test_predictions.csv.gz', 'xgboost.ubj'] + [
     name for key in CLASSIC_KEYS for name in (f'{key}.joblib', f'grid_{key}.csv')]
 SOURCES = [BOOK / name for name in ['Data/Datos_Brutos.csv', 'cabeceras.csv', 'entregable3.py',
@@ -19,6 +19,7 @@ SOURCES = [BOOK / name for name in ['Data/Datos_Brutos.csv', 'cabeceras.csv', 'e
     'resultados/e3/test.csv.gz', 'resultados/e3/fold_metrics.csv', 'resultados/e3/coefficients.csv',
     'resultados/e3/model.joblib']]
 SOURCES += [BOOK / 'modelos_clasicos.py', BOOK / 'preprocesamiento_clasicos.py']
+SOURCES += [BOOK / 'evaluar_decision_tree_e3.py']
 SOURCES += [RESULTS / 'clasicos' / name for name in CLASSIC_FILES]
 SOURCES += source_paths()
 

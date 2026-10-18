@@ -635,6 +635,134 @@
       },
       "model_sha256": "6e8d8a168db53c16d6bcd6a403ae0414b151d6465b3490bea3adc6ad27110005",
       "elapsed_seconds": 68.81200000000536
+    },
+    "decision_tree": {
+      "name": "Decision Tree",
+      "grid": {
+        "modelo__max_depth": [
+          2,
+          3,
+          4,
+          6,
+          8,
+          null
+        ],
+        "modelo__min_samples_leaf": [
+          2,
+          5,
+          10,
+          20
+        ],
+        "modelo__ccp_alpha": [
+          0.0,
+          0.001,
+          0.01
+        ]
+      },
+      "combinations": 72,
+      "preparation": "CART de regresión: cortes binarios que reducen error cuadrático; cada hoja predice la media del fit. Mediana numérica; moda y one-hot categórico completo (desconocidas ignoradas). Sin escalado ni log1p; imputación y vocabulario aprendidos dentro de cada fit. Profundidad, mínimo por hoja y poda por complejidad se seleccionan solo en train. Semilla 42.",
+      "best_params": {
+        "modelo__ccp_alpha": 0.0,
+        "modelo__max_depth": 6,
+        "modelo__min_samples_leaf": 20
+      },
+      "selection_rmse": 0.9071261045485516,
+      "fold_audit": [
+        {
+          "fold": 1,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__ccp_alpha": 0.001,
+            "modelo__max_depth": 8,
+            "modelo__min_samples_leaf": 20
+          }
+        },
+        {
+          "fold": 2,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__ccp_alpha": 0.001,
+            "modelo__max_depth": 8,
+            "modelo__min_samples_leaf": 20
+          }
+        },
+        {
+          "fold": 3,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__ccp_alpha": 0.001,
+            "modelo__max_depth": 8,
+            "modelo__min_samples_leaf": 20
+          }
+        },
+        {
+          "fold": 4,
+          "fit_rows": 1047,
+          "validation_rows": 262,
+          "fit_students": 1034,
+          "validation_students": 259,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__ccp_alpha": 0.001,
+            "modelo__max_depth": null,
+            "modelo__min_samples_leaf": 20
+          }
+        },
+        {
+          "fold": 5,
+          "fit_rows": 1048,
+          "validation_rows": 261,
+          "fit_students": 1035,
+          "validation_students": 258,
+          "shared_students": 0,
+          "inner_folds": 5,
+          "best_params": {
+            "modelo__ccp_alpha": 0.001,
+            "modelo__max_depth": 6,
+            "modelo__min_samples_leaf": 20
+          }
+        }
+      ],
+      "train_metrics": {
+        "RMSE": 0.7680205518380384,
+        "MAE": 0.6064802067790375,
+        "MAPE (%)": 22.584890675283077,
+        "R²": 0.5277510403555574
+      },
+      "test_metrics": {
+        "RMSE": 1.0297965161014342,
+        "MAE": 0.8436078275529243,
+        "MAPE (%)": 30.36709523582868,
+        "R²": 0.29584817139813335
+      },
+      "outside_test": 0,
+      "unknown_test_categories": {
+        "Categoria_temas_inicial": 1,
+        "Categoria_temas_final": 0,
+        "programa_en_matricula": 0,
+        "division_en_matricula": 0,
+        "Mat_Curso_Asignatura_Relacionada": 0,
+        "avance_cuartiles": 0,
+        "cumplimiento_temas": 0
+      },
+      "model_sha256": "2970799627fb7581121cab13c04eb79cc8ae547a825fef6d3b1233ad0cee4713",
+      "timing_run_id": "20261018_095829_5b05000d"
     }
   },
   "test": [
@@ -686,6 +814,13 @@
       "MAE": 0.72891823446497,
       "MAPE (%)": 28.404774804004397,
       "R²": 0.45464137423206274
+    },
+    {
+      "Modelo": "Decision Tree",
+      "RMSE": 1.0297965161014342,
+      "MAE": 0.8436078275529243,
+      "MAPE (%)": 30.36709523582868,
+      "R²": 0.29584817139813335
     }
   ],
   "bootstrap": [
@@ -700,7 +835,7 @@
       "Modelo": "SVM lineal",
       "Métrica": "MAE",
       "Estimación": 0.755442807950947,
-      "IC 2.5%": 0.677509264348629,
+      "IC 2.5%": 0.6775092643486289,
       "IC 97.5%": 0.8380463789458336
     },
     {
@@ -743,7 +878,7 @@
       "Métrica": "MAE",
       "Estimación": 0.7540271566884664,
       "IC 2.5%": 0.6778241983494225,
-      "IC 97.5%": 0.8346536945948381
+      "IC 97.5%": 0.8346536945948383
     },
     {
       "Modelo": "KNN",
@@ -755,7 +890,7 @@
     {
       "Modelo": "Ridge",
       "Métrica": "RMSE",
-      "Estimación": 0.9170904797449051,
+      "Estimación": 0.917090479744905,
       "IC 2.5%": 0.8339900746021499,
       "IC 97.5%": 1.0071806792519933
     },
@@ -764,13 +899,13 @@
       "Métrica": "MAE",
       "Estimación": 0.754510914653895,
       "IC 2.5%": 0.6809849859605809,
-      "IC 97.5%": 0.8343942023838484
+      "IC 97.5%": 0.8343942023838482
     },
     {
       "Modelo": "Ridge",
       "Métrica": "R²",
-      "Estimación": 0.4415454352835828,
-      "IC 2.5%": 0.3484697306119629,
+      "Estimación": 0.44154543528358303,
+      "IC 2.5%": 0.3484697306119631,
       "IC 97.5%": 0.5183798080797147
     },
     {
@@ -778,41 +913,41 @@
       "Métrica": "RMSE",
       "Estimación": 0.919650088085005,
       "IC 2.5%": 0.8328143083739109,
-      "IC 97.5%": 1.006683716377993
+      "IC 97.5%": 1.0066837163779927
     },
     {
       "Modelo": "Lasso",
       "Métrica": "MAE",
       "Estimación": 0.7530400905199947,
-      "IC 2.5%": 0.6776667462974516,
+      "IC 2.5%": 0.6776667462974514,
       "IC 97.5%": 0.8333099660232786
     },
     {
       "Modelo": "Lasso",
       "Métrica": "R²",
       "Estimación": 0.4384237809595437,
-      "IC 2.5%": 0.3391695089177242,
+      "IC 2.5%": 0.3391695089177243,
       "IC 97.5%": 0.5178530906203133
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "RMSE",
       "Estimación": 0.9396351788797481,
-      "IC 2.5%": 0.8545268413086643,
+      "IC 2.5%": 0.8545268413086642,
       "IC 97.5%": 1.0285443647533585
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "MAE",
       "Estimación": 0.765847415639248,
-      "IC 2.5%": 0.687650620172671,
+      "IC 2.5%": 0.6876506201726709,
       "IC 97.5%": 0.8472291860157123
     },
     {
       "Modelo": "Random Forest",
       "Métrica": "R²",
       "Estimación": 0.41375114058482676,
-      "IC 2.5%": 0.315170113827682,
+      "IC 2.5%": 0.3151701138276819,
       "IC 97.5%": 0.4968760591614236
     },
     {
@@ -820,7 +955,7 @@
       "Métrica": "RMSE",
       "Estimación": 0.9062736558649318,
       "IC 2.5%": 0.819088066182407,
-      "IC 97.5%": 0.9971039854783623
+      "IC 97.5%": 0.9971039854783624
     },
     {
       "Modelo": "XGBoost",
@@ -833,8 +968,29 @@
       "Modelo": "XGBoost",
       "Métrica": "R²",
       "Estimación": 0.45464137423206274,
-      "IC 2.5%": 0.35504416076124423,
+      "IC 2.5%": 0.355044160761244,
       "IC 97.5%": 0.537210890269134
+    },
+    {
+      "Modelo": "Decision Tree",
+      "Métrica": "RMSE",
+      "Estimación": 1.0297965161014342,
+      "IC 2.5%": 0.9385542607403087,
+      "IC 97.5%": 1.1159364972642387
+    },
+    {
+      "Modelo": "Decision Tree",
+      "Métrica": "MAE",
+      "Estimación": 0.8436078275529243,
+      "IC 2.5%": 0.7618571708385978,
+      "IC 97.5%": 0.9340519447783162
+    },
+    {
+      "Modelo": "Decision Tree",
+      "Métrica": "R²",
+      "Estimación": 0.29584817139813335,
+      "IC 2.5%": 0.1358380492940191,
+      "IC 97.5%": 0.41237813154049285
     }
   ],
   "paired_differences": [
@@ -842,19 +998,19 @@
       "Modelo": "KNN",
       "Δ RMSE vs SVM": -0.004435994375080354,
       "IC 2.5%": -0.04338233207135641,
-      "IC 97.5%": 0.0375927480609713
+      "IC 97.5%": 0.03759274806097119
     },
     {
       "Modelo": "Ridge",
-      "Δ RMSE vs SVM": -0.010615180273362279,
-      "IC 2.5%": -0.03420062988148293,
-      "IC 97.5%": 0.005450711050199081
+      "Δ RMSE vs SVM": -0.01061518027336239,
+      "IC 2.5%": -0.03420062988148294,
+      "IC 97.5%": 0.005450711050198973
     },
     {
       "Modelo": "Lasso",
       "Δ RMSE vs SVM": -0.00805557193326234,
-      "IC 2.5%": -0.01982127229563594,
-      "IC 97.5%": 0.002104775219375479
+      "IC 2.5%": -0.01982127229563605,
+      "IC 97.5%": 0.002104775219375476
     },
     {
       "Modelo": "Random Forest",
@@ -865,8 +1021,14 @@
     {
       "Modelo": "XGBoost",
       "Δ RMSE vs SVM": -0.02143200415333557,
-      "IC 2.5%": -0.05250086115809807,
+      "IC 2.5%": -0.05250086115809796,
       "IC 97.5%": 0.012526724237992334
+    },
+    {
+      "Modelo": "Decision Tree",
+      "Δ RMSE vs SVM": 0.10209085608316681,
+      "IC 2.5%": 0.029898672636393148,
+      "IC 97.5%": 0.17163965894229766
     }
   ],
   "selected_by_external_cv": "XGBoost",
@@ -875,5 +1037,14 @@
     "sklearn": "1.9.1",
     "xgboost": "3.4.1"
   },
-  "method": "Mismos cinco folds externos del SVM; cinco internos por estudiante en cada búsqueda; test 202530 purgado."
+  "method": "Mismos cinco folds externos del SVM; cinco internos por estudiante en cada búsqueda; test 202530 purgado.",
+  "decision_tree_provenance": {
+    "script_sha256": "c09c41a98a0c80563526f85a0cae008a7e2dfc9145d3d8df16a9327fdee62c06",
+    "source_sha256": {
+      "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+      "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+      "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+    },
+    "timing_run_id": "20261018_095829_5b05000d"
+  }
 }

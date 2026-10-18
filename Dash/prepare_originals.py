@@ -38,6 +38,7 @@ EXPERIMENTS = [
     ('Truncated Newton KRR RBF', 'tn_krr', 'https://doi.org/10.3390/app12094252'),
 ]
 CLASSIC_PAPERS = {
+    'decision_tree': 'https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html',
     'svm': 'https://doi.org/10.1023/B:STCO.0000035301.49549.88',
     'knn': 'https://doi.org/10.2307/2685209',
     'ridge': 'https://doi.org/10.1080/00401706.1970.10488634',
@@ -139,7 +140,9 @@ def prepare_originals():
     frames = [pd.read_csv(RESULTS / f'{part}.csv.gz') for part in ['train', 'test']]
     predictions = [pd.read_csv(RESULTS / f'clasicos/{part}_predictions.csv.gz') for part in ['train', 'test']]
     catalog = {}
-    for key, name in {'svm': 'SVM lineal', 'dummy': 'Dummy media', **{k: v['name'] for k, v in classic['models'].items()}}.items():
+    # Decision Tree se incorpora a Clásicos; el inventario/contrastes de Originales
+    # conservan sus 27 modelos y familias de hipótesis vigentes.
+    for key, name in {'svm': 'SVM lineal', 'dummy': 'Dummy media', **{k: v['name'] for k, v in classic['models'].items() if k != 'decision_tree'}}.items():
         spec = classic['models'].get(key, {})
         catalog[key] = {'name': name, 'description': inventory.loc[name, 'descripcion'],
                         'paper': CLASSIC_PAPERS.get(key), 'preparation': spec.get('preparation', 'Pipeline SVM canónico; Dummy estima solo la media del fit.'),
@@ -148,6 +151,8 @@ def prepare_originals():
     svm = json.loads((RESULTS / 'modelos_lineales.json').read_text(encoding='utf-8'))
     catalog['svm'].update(params=svm['best_params'], grid=svm['grid'])
     folds = pd.read_csv(RESULTS / 'clasicos/fold_metrics.csv')
+    folds = folds.loc[~folds.Modelo.eq('Decision Tree')].copy()
+    predictions = [frame.drop(columns='decision_tree', errors='ignore') for frame in predictions]
     for index, (name, folder, paper) in enumerate(EXPERIMENTS):
         key = f'm{index}'
         directory = RESULTS / folder
