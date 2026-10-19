@@ -9,12 +9,14 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from dash import Input, Output, State, dcc, html
+from dash import Input, Output, dcc, html
 
 from prepare_data import CACHE, metrics
-from prediction import build_form, input_id, predict_record
 from classic_models import metric_bar
-from statistical_comparison import add_inference, display_statistics, conclusion, EXPLANATION
+from original_analysis import table_statistics, section as original_statistics
+from classic_friedman import summary as friedman_summary
+from search_results import optimization_section
+from lazy_content import defer_details
 
 ROOT = Path(__file__).resolve().parent
 BOOK = ROOT.parent / 'Precalculo'
@@ -26,12 +28,13 @@ CATALOG = json.loads((DIRECTORY / 'catalog.json').read_text(encoding='utf-8'))
 FOLDS = pd.read_csv(DIRECTORY / 'folds.csv')
 CONTRASTS = pd.read_csv(DIRECTORY / 'contrasts.csv')
 PREDICTIONS = {part: pd.read_csv(DIRECTORY / f'{part}.csv.gz') for part in ['train', 'test']}
-BEST = 'm5'  # Kernel Ridge RBF: menor RMSE medio CV del inventario activo.
+ACTIVE = json.loads((DIRECTORY/'active.json').read_text(encoding='utf-8'))
+ANALYSIS = json.loads((DIRECTORY/'analysis.json').read_text(encoding='utf-8'))
+BEST = ACTIVE['best_key']
 BEST_NAME = CATALOG[BEST]['name']
 TN_KRR = 'm19'
 MODEL_FILES = {BEST: 'best.joblib', TN_KRR: 'tn_krr.joblib'}
 DIAGNOSTIC_MODELS = [key for key in CATALOG if key in PREDICTIONS['train'] and key in PREDICTIONS['test']]
-PREDICTION_MODELS = [key for key in MODEL_FILES if key in CATALOG]
 ORDER = [spec['name'] for spec in CATALOG.values()]
 COLORS = {name: f'hsl({i*137.5 % 360:.0f},48%,43%)' for i, name in enumerate(ORDER)}
 SHORT_NAMES = {'TabFM 1.0.0 (PyTorch CPU, 32 vistas)': 'TabFM · 32 vistas',
@@ -73,6 +76,8 @@ def comparison_rows(frame, target, cv=False, global_view=True):
         reference = FOLDS.loc[FOLDS.Modelo.eq('SVM lineal')].select_dtypes('number').mean()
     rows = []
     for key, spec in CATALOG.items():
+        if key == 'dummy':
+            continue
         if key not in frame:
             if cv:
                 rows.append({'Modelo': spec['name'], 'Estado': 'Sin OOF independiente', 'n': 0})
@@ -84,8 +89,13 @@ def comparison_rows(frame, target, cv=False, global_view=True):
             score = folds[['RMSE', 'MAE', 'MAPE (%)', 'R²']].mean().to_dict()
             sd = float(folds.RMSE.std(ddof=0))
         rows.append({'Modelo': spec['name'], 'Estado': 'Media de 5 folds' if cv and global_view else 'OOF reunido' if cv else 'Test temporal',
+                     'Estado de búsqueda':spec.get('status','Histórico'),
                      'n': len(frame), **score, 'SD RMSE folds': sd, 'Δ RMSE vs SVM': score['RMSE']-reference['RMSE']})
     return pd.DataFrame(rows).sort_values('RMSE', na_position='last')
+
+
+def display_statistics(scores, *, cv=False, global_view=True):
+    return table_statistics(scores,cv=cv,global_view=global_view,analysis=ANALYSIS)
 
 
 def error_correlation(frame, target):
@@ -112,6 +122,8 @@ def create_originals(app, ui):
             md(f'[Artículo de fundamento]({spec["paper"]})' if spec.get('paper') else 'Referencia de control: media del objetivo aprendida solo en fit; sin paper específico.'),
             md(spec.get('preparation', '')), md(spec.get('method', '')),
             table(parameters) if not parameters.empty else md('Sin grilla de hiperparámetros; configuración fija o ajuste propio del estimador.'),
+            md('**Estado:** '+spec.get('status','Histórico')),
+            optimization_section(spec,ui) if spec.get('optimization') else None,
             md(' '.join(spec.get('limitations', []))),
         ], className='details classic-pipeline'))
     layout = html.Div([
@@ -119,9 +131,18 @@ def create_originals(app, ui):
               f'{len(CATALOG)} modelos y variantes evaluados, incluidos los clásicos.'),
         notice('Datos reales, test temporal 202530 y cinco folds externos por estudiante. Las búsquedas usan solo train; '
                'los modelos preentrenados con configuración fija no requieren grilla. El test reutilizado y las comparaciones entre familias son exploratorios.'),
-        notice('Este inventario conserva las ejecuciones históricas, incluido su SVM de referencia y los clásicos con Grid Search. '
-               'Las nuevas ejecuciones que comparan cinco estrategias se consultan en Modelos lineales y Modelos clásicos; '
-               'sus predicciones y referencias no se mezclan con estos contrastes históricos.'),
+        notice('SVR RBF, Kernel Ridge y TR-KRR comparan Grid, Random, TPE, DEAP y Successive Halving. '
+               'SVM y clásicos reutilizan su ejecución multibúsqueda activa. Los modelos costosos conservan '
+               'resultados históricos identificados; los preentrenados fijos no reciben búsquedas ficticias. '
+               'La familia con menor RMSE medio CV es exploratoria, no un ganador estadístico confirmado.'),
+        html.Details([html.Summary('Modelos pendientes · coste, estado y preparación'),
+            table(pd.DataFrame([{'Modelo':p['name'],'Estado':p['state'],
+                'Preparación':p.get('preparation_state','No requiere nueva ejecución'),
+                'Candidatos Grid pendientes':p.get('prepared',{}).get('grid_size'),
+                'Revisar presupuesto Grid': 'Sí · más de 1.000 candidatos' if p.get('prepared',{}).get('grid_size',0)>1000 else 'Según coste del modelo'}
+                for p in json.loads((DIRECTORY/'pendientes.json').read_text(encoding='utf-8'))])),
+            md('La selección de ejecuciones de menor coste fue autorizada antes de ejecutarlas. '
+               'El resto requiere revisión de presupuesto/dependencias; se conserva su evidencia histórica.')],className='details'),
         html.Details([html.Summary('Fundamento, documentación, preparación y búsqueda por modelo'),
             md('Cada ficha explica la implementación evaluada y enlaza su fundamento. Los ports, variantes y ablaciones se identifican explícitamente; '
                'el paper describe el método y no demuestra una mejora en estos datos. Los rangos de grilla reflejan los candidatos realmente evaluados.'), *docs], className='details'),
@@ -132,8 +153,9 @@ def create_originals(app, ui):
             {'label': 'CV externa', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}], 'cv',
             id='original-comparison-partition', inline=True, className='radio')], className='variable-select'),
         dcc.Loading(html.Div(id='original-comparison')),
+        html.Details([html.Summary('Diagnósticos · explorar predicciones de los modelos originales'),
         title('DIAGNÓSTICOS', 'Explorar predicciones de los modelos originales',
-              'Por defecto se muestra el líder de CV externa, Kernel Ridge RBF (RMSE medio 0.801325). El selector permite revisar TR-KRR y los demás modelos con predicciones OOF disponibles. '
+              f'Por defecto se muestra el líder de CV externa, {BEST_NAME} (RMSE medio {ACTIVE["best_mean_cv"]:.6f}). El selector permite revisar los demás modelos con predicciones OOF disponibles. '
               'Los diagnósticos OOF reúnen las predicciones de los cinco folds; su RMSE agrupado puede diferir de la media entre folds.'),
         html.Div([html.Label('Modelo'), dcc.Dropdown(
             [{'label': CATALOG[key]['name'], 'value': key} for key in DIAGNOSTIC_MODELS],
@@ -141,25 +163,25 @@ def create_originals(app, ui):
             className='variable-select'),
         dcc.RadioItems([{'label': 'Test temporal', 'value': 'test'}, {'label': 'Validación OOF', 'value': 'cv'}],
                        'cv', id='original-diagnostic-partition', inline=True, className='radio'),
-        dcc.Loading(html.Div(id='original-diagnostics')),
-        html.Details([html.Summary('Incertidumbre y contrastes globales publicados'),
-            md('Contrastes pareados por estudiante del test. Δ = candidato − referencia; para RMSE negativo favorece al candidato. '
+        dcc.Loading(html.Div(id='original-diagnostics'))],className='details'),
+        html.Details([html.Summary('Archivo histórico · contrastes anteriores a esta actualización'),
+            md('Estos contrastes corresponden a las ejecuciones anteriores: no se reutilizan sus p-valores '
+               'para las predicciones actualizadas. Contrastes pareados por estudiante del test. Δ = candidato − referencia; para RMSE negativo favorece al candidato. '
                'IC marginales del 95 %, p bilateral y p ajustado conservan su familia publicada (Holm55, Holm12 o Holm7); '
                'no constituyen una corrección global única para todos los modelos. Ausencias indican contraste no publicado. '
                'No rechazar una diferencia no demuestra equivalencia.'),
             table(CONTRASTS.drop(columns=['fuente']))], className='details classic-bootstrap'),
-        html.Details([html.Summary('Ejemplo de predicción · modelos Kernel Ridge'),
-            md('Elige entre Kernel Ridge RBF exacto y TR-KRR. Ambos usan el pipeline de predictores guardado; los filtros no reentrenan los modelos.'),
-            html.Div([html.Label('Modelo para predecir'), dcc.Dropdown(
-                [{'label': CATALOG[key]['name'], 'value': key} for key in PREDICTION_MODELS],
-                value=BEST, id='original-prediction-model', clearable=False)], className='variable-select'),
-            html.Article(build_form(ui['TRAIN'], ui['NUMERIC'], ui['CATEGORICAL'], ui['LABELS'], ui['DEFAULTS'], prefix='original'), className='card')], className='details'),
+        html.Details([html.Summary('Complementariedad · correlación de errores'),
         title('COMPLEMENTARIEDAD', 'Correlación de errores entre modelos',
               'Residuos con signo: nota real − predicción. OOF permite explorar complementariedad sin ajustar pesos con test.'),
         dcc.RadioItems([{'label': 'OOF de entrenamiento', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}],
                       'cv', id='original-correlation-partition', inline=True, className='radio'),
-        dcc.Loading(html.Div(id='original-correlation')),
+        dcc.Loading(html.Div(id='original-correlation'))],className='details'),
     ])
+
+    from original_interpretation import create_section as create_interpretation
+    layout.children.append(html.Details([html.Summary('Interpretabilidad SHAP y LIME · abrir análisis del líder CV'),
+        create_interpretation(app,ui,DIRECTORY)],className='details'))
 
     @app.callback(Output('original-comparison', 'children'), Input('original-program', 'value'),
                   Input('original-course', 'value'), Input('original-comparison-partition', 'value'))
@@ -169,8 +191,8 @@ def create_originals(app, ui):
             return notice('No hay filas para estos filtros.')
         global_view = selected_program == selected_course == '__all__'
         cv, temporal = comparison_rows(tr, target, True, global_view), comparison_rows(te, target, False, global_view)
-        scores = add_inference(cv if evaluation == 'cv' else temporal,
-                               cv=evaluation == 'cv', global_view=global_view)
+        scores = display_statistics(cv if evaluation == 'cv' else temporal,
+                                    cv=evaluation == 'cv', global_view=global_view)
         plot_order = scores.loc[scores.RMSE.notna(), 'Modelo'].tolist()
         order_note = 'Orden de la tabla: RMSE de menor a mayor en los cuatro gráficos.'
         cards = []
@@ -180,17 +202,20 @@ def create_originals(app, ui):
                 figure.update_layout(height=850)
                 figure.update_yaxes(tickvals=plot_order, ticktext=[SHORT_NAMES.get(name, name) for name in plot_order])
             cards.append(card(metric, order_note + ' Línea discontinua: SVM lineal. ' + ('Mayor es mejor.' if metric == 'R²' else 'Menor es mejor.'), figure))
-        return html.Div([
+        return defer_details(html.Div([
             html.Div(cards, className='comparison-metric-grid') if not scores.empty else notice('No hay filas en esta evaluación.'),
             html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
                 md('Δ RMSE negativo favorece al modelo. SD describe variación entre folds, no un IC. MAPE en porcentaje. '
                    'R² no se define con una sola fila o nota constante.'),
-                md(EXPLANATION),
                 dcc.Tabs(value='cv', className='sub-tabs', children=[
                     dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view)), className='tab', selected_className='tab-selected'),
                 ])], className='card classic-comparison-table'),
-            card('Conclusión de la revisión', conclusion(temporal, cv, global_view))])
+            card('Conclusión de la revisión',
+                 (friedman_summary(ANALYSIS['omnibus'])+f' **{BEST_NAME}** tiene el menor RMSE medio CV '
+                  f'(**{ACTIVE["best_mean_cv"]:.6f}**); no se elige por test. Las etapas2/3 separan CV y test.'
+                  if global_view else 'Las métricas del subgrupo son descriptivas; selecciona Todos/Todos para inferencia global.')),
+            original_statistics(ANALYSIS,ui) if global_view else None]),'original-comparison')
 
     @app.callback(Output('original-diagnostics', 'children'), Input('original-program', 'value'),
                   Input('original-course', 'value'), Input('original-diagnostic-partition', 'value'),
@@ -245,28 +270,5 @@ def create_originals(app, ui):
         matrix_card.className += ' original-error-matrix'
         return html.Div([matrix_card,
             html.Details([html.Summary('Valores de la matriz'), table(corr.reset_index(names='Modelo'))], className='details')])
-
-    @app.callback(Output(input_id('avance_precalculo_aleks', 'original'), 'value'),
-                  Input(input_id('Dominio_Inicial', 'original'), 'value'), Input(input_id('Dominio_Final', 'original'), 'value'))
-    def advance(initial, final):
-        return float(final)-float(initial) if initial is not None and final is not None else None
-
-    @app.callback(Output('original-prediction-result', 'children'), Input('original-predict-button', 'n_clicks'),
-                  State('original-prediction-model', 'value'),
-                  *[State(input_id(c, 'original'), 'value') for c in ui['NUMERIC']+ui['CATEGORICAL']])
-    def predict(clicks, model_key, *values):
-        if not clicks:
-            return notice('Configura las características y pulsa «Predecir nota».')
-        try:
-            model_key = model_key if model_key in PREDICTION_MODELS else BEST
-            prediction, _, extrapolated = predict_record(model_for(model_key), dict(zip(ui['NUMERIC']+ui['CATEGORICAL'], values)), ui['TRAIN'])
-        except (ValueError, TypeError) as error:
-            return notice('Revisa las características: ' + str(error))
-        parts = [stats([('Nota predicha', f'{prediction:.3f}', CATALOG[model_key]['name'])])]
-        if extrapolated:
-            parts.append(notice('Fuera del rango train: ' + ', '.join(ui['LABELS'][c] for c in extrapolated)))
-        if not .5 <= prediction <= 5:
-            parts.append(notice('Predicción fuera de 0,5–5,0; se conserva sin recorte.'))
-        return html.Div(parts)
 
     return layout

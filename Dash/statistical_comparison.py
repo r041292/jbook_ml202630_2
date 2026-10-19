@@ -4,7 +4,8 @@ import pandas as pd
 
 from prepare_data import CACHE
 
-INVENTORY = pd.read_csv(CACHE / 'originales/inventory.csv').set_index('Modelo')
+HISTORICAL_INVENTORY = CACHE / 'originales/historical_inventory.csv'
+INVENTORY = pd.read_csv(HISTORICAL_INVENTORY if HISTORICAL_INVENTORY.exists() else CACHE / 'originales/inventory.csv').set_index('Modelo')
 CONTRASTS = pd.read_csv(CACHE / 'originales/contrasts.csv')
 CV_INFERENCE = pd.read_csv(CACHE / 'originales/cv_inference.csv').set_index('Modelo')
 REFERENCE = 'SVM lineal'

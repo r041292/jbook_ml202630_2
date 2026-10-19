@@ -17,6 +17,7 @@ from classic_friedman import friedman_comparison, summary, display_statistics, c
 from classic_posthoc import analyze, section as statistical_section
 from student_comparison import load as load_student_comparison
 from search_results import optimization_section
+from lazy_content import defer_details
 
 DIRECTORY = CACHE / 'clasicos'
 REPORT = json.loads((DIRECTORY / 'comparacion.json').read_text(encoding='utf-8'))
@@ -161,14 +162,15 @@ def create_classics(app, ui):
             {'label': 'Validación externa', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}],
             'cv', id='classic-comparison-partition', inline=True, className='radio')], className='variable-select'),
         dcc.Loading(html.Div(id='classic-comparison'), type='circle', color=palette[0]),
-        title('DIAGNÓSTICOS', 'Explorar un modelo', 'Contrasta predicciones, residuos y error absoluto con el SVM lineal.'),
         html.Div([html.Label('Modelo clásico'), dcc.Dropdown(
             [{'label': name, 'value': key} for key, name in NAMES.items()], default,
             id='classic-model', clearable=False)], className='variable-select'),
+        html.Details([html.Summary('Diagnósticos · explorar un modelo'),
+        title('DIAGNÓSTICOS', 'Explorar un modelo', 'Contrasta predicciones, residuos y error absoluto con el SVM lineal.'),
         html.Div([html.Label('Evaluación'), dcc.RadioItems([
             {'label': 'Test temporal', 'value': 'test'}, {'label': 'Validación OOF', 'value': 'validation'}],
             'test', id='classic-partition', inline=True, className='radio')], className='variable-select'),
-        dcc.Loading(html.Div(id='classic-diagnostics'), type='circle', color=palette[0]),
+        dcc.Loading(html.Div(id='classic-diagnostics'), type='circle', color=palette[0])],className='details'),
         html.Details([html.Summary('Incertidumbre global · bootstrap por estudiante'),
             md('Intervalos percentiles del 95 % con **1.000 remuestreos de estudiantes** del test. '
                'Las comparaciones usan los mismos estudiantes remuestreados para cada modelo y el SVM. '
@@ -195,10 +197,12 @@ def create_classics(app, ui):
     ])
 
     from shap_xgboost import create_shap_section
-    layout.children.append(create_shap_section(app, ui, lambda: load_model('xgboost'), REPORT,
-                                              TEST_PREDICTIONS['xgboost'].to_numpy()))
+    layout.children.append(html.Details([html.Summary('Interpretabilidad SHAP · abrir análisis global y local'),
+        create_shap_section(app, ui, lambda: load_model('xgboost'), REPORT,
+                            TEST_PREDICTIONS['xgboost'].to_numpy())],className='details'))
     from lime_xgboost import create_lime_section
-    layout.children.append(create_lime_section(app, ui, lambda: load_model('xgboost')))
+    layout.children.append(html.Details([html.Summary('LIME · abrir explicación interactiva'),
+        create_lime_section(app, ui, lambda: load_model('xgboost'))],className='details'))
 
     @app.callback(Output('classic-comparison', 'children'), Input('classic-program', 'value'),
                   Input('classic-course', 'value'), Input('classic-comparison-partition', 'value'))
@@ -222,7 +226,7 @@ def create_classics(app, ui):
             metric_cards.append(card(metric + ' · ' + direction,
                 label + ' · ' + order_note + (' · Sin valores definidos para este grupo.' if figure is None else
                          ' · La línea discontinua marca el SVM lineal.'), figure))
-        return html.Div([
+        return defer_details(html.Div([
             html.Article([html.H3('Comparación de resultados'),
                 md('**Una métrica por gráfico y una evaluación a la vez.** Selecciona validación externa '
                    'o test temporal arriba. Los cuatro gráficos siguen el orden de la tabla de esa evaluación '
@@ -260,7 +264,7 @@ def create_classics(app, ui):
             statistical_section(POSTHOC, FRIEDMAN, REPORT, ui, STUDENT_COMPARISON) if global_view else
             notice('Comparación estadística disponible solo con Todos en ambos filtros. '
                    'Friedman no se aplica a los subgrupos filtrados; sus métricas son descriptivas.'),
-        ])
+        ]),'classic-comparison')
 
     @app.callback(Output('classic-diagnostics', 'children'), Input('classic-program', 'value'),
                   Input('classic-course', 'value'), Input('classic-model', 'value'), Input('classic-partition', 'value'))

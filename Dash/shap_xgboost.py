@@ -10,6 +10,7 @@ import xgboost as xgb
 from dash import Input, Output, dcc, html
 
 from model_timing import TimingRun, file_hash
+from lazy_content import defer_details
 
 
 def markdown_value(value):
@@ -241,8 +242,9 @@ def create_shap_section(app, ui, load_xgboost, report, saved_test_predictions):
     ], className='shap-section')
 
     @app.callback(Output('classic-shap-result', 'children'), Input('classic-program', 'value'),
-                  Input('classic-course', 'value'), Input('classic-shap-scope', 'value'))
-    def render(program, course, scope):
+                  Input('classic-course', 'value'), Input('classic-shap-scope', 'value'),
+                  Input('classic-shap-result','id'))
+    def render(program, course, scope, _ready=None):
         if scope not in ('all', 'train', 'test'):
             return notice('Selecciona un conjunto disponible para el resumen SHAP.')
         subset = ui['subset'](frame, program, course)
@@ -278,7 +280,7 @@ def create_shap_section(app, ui, load_xgboost, report, saved_test_predictions):
                         'Los ejemplos no cambian al alternar el conjunto del resumen global.'))
         if not len(candidates):
             parts.append(notice('No hay casos de test con estos filtros para los waterfalls.'))
-            return html.Div(parts)
+            return defer_details(html.Div(parts),'classic-shap')
         errors = np.abs(result['predictions'][candidates] - result['actual'][candidates])
         order = candidates[np.argsort(errors, kind='stable')]
         chosen = [('Menor error absoluto', order[0])]
@@ -321,6 +323,6 @@ def create_shap_section(app, ui, load_xgboost, report, saved_test_predictions):
                 + description + '. Son cambios en la atribución de las predicciones; no efectos causales '
                 'ni una descomposición del error observado. La precisión del primer caso no valida por sí sola '
                 'el modelo y el segundo ilustra una limitación de sus predicciones.'))
-        return html.Div(parts)
+        return defer_details(html.Div(parts),'classic-shap')
 
     return layout

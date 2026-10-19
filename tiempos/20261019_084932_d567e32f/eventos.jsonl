@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.03334480000194162, "rows": 1, "status": "completa", "recorded": "2026-10-19T08:49:33.008311-05:00", "started": "2026-10-19T08:49:32.978483-05:00"}
+{"stage": "Total del experimento", "batch": "KNeighborsRegressor · inferencia de aplicación", "seconds": 0.04322170000523329, "rows": null, "status": "completa", "recorded": "2026-10-19T08:49:33.008311-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

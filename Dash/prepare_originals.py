@@ -12,7 +12,8 @@ BOOK = ROOT.parent / 'Precalculo'
 RESULTS = BOOK / 'resultados/e3'
 DEST = ROOT / 'data/originales'
 FILES = ('catalog.json', 'train.csv.gz', 'test.csv.gz', 'folds.csv', 'contrasts.csv', 'inventory.csv', 'best.joblib',
-         'tn_krr.joblib', 'cv_inference.csv', 'cv_inference.json')
+         'tn_krr.joblib', 'cv_inference.csv', 'cv_inference.json', 'active.json', 'analysis.json', 'explanations.json', 'pendientes.json', 'historical_inventory.csv')
+ACTIVE_POINTER = RESULTS / 'originales_busqueda_activa.json'
 
 # Nombre publicado, carpeta canónica, referencia de fundamento (no garantiza mejora E3).
 EXPERIMENTS = [
@@ -90,6 +91,12 @@ def source_paths():
     paths += list(tn_directory.glob('grid*.csv'))
     paths += [BOOK / 'significancia_cv_externa_e3.py', RESULTS / 'cv_externa/contrastes_vs_svm.csv',
               RESULTS / 'cv_externa/reporte.json', RESULTS / 'cv_externa/fold_metrics.csv']
+    if ACTIVE_POINTER.exists():
+        pointer=json.loads(ACTIVE_POINTER.read_text(encoding='utf-8'))
+        active=RESULTS/'originales_busquedas'/pointer['run_id']
+        paths += [ACTIVE_POINTER,active/'completo.json',active/'protocolo.json', *[active/name for name in FILES],
+                  BOOK/'busquedas_originales_e3.py',BOOK/'evaluar_originales_busquedas_e3.py']
+        paths += [BOOK/'originales_busquedas_e3.md']
     return sorted(set(paths))
 
 
@@ -98,6 +105,18 @@ def text_list(value):
 
 
 def prepare_originals():
+    if not ACTIVE_POINTER.exists():
+        return prepare_historical_originals()
+    pointer=json.loads(ACTIVE_POINTER.read_text(encoding='utf-8'))
+    active=RESULTS/'originales_busquedas'/pointer['run_id']
+    completed=json.loads((active/'completo.json').read_text(encoding='utf-8'))
+    if completed['run_id']!=pointer['run_id']:
+        raise ValueError('La ejecución Originales no está completa.')
+    DEST.mkdir(exist_ok=True)
+    for name in FILES: shutil.copyfile(active/name,DEST/name)
+
+
+def prepare_historical_originals():
     from prepare_data import metrics
     DEST.mkdir(exist_ok=True)
     inventory = pd.read_csv(RESULTS / 'resumen_completo/modelos.csv').set_index('Modelo')

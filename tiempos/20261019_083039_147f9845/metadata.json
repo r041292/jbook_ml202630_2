@@ -1,0 +1,74 @@
+{
+  "label": "Originales · multibúsqueda de menor coste",
+  "run_id": "20261019_083039_147f9845",
+  "started": "2026-10-19T08:30:39.022374-05:00",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "cpu": "AMD64 Family 25 Model 117 Stepping 2, AuthenticAMD",
+  "logical_cpus": 12,
+  "device": "CPU; 4 procesos internos, 1 hilo por proceso; GPU no utilizada",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "sklearn": "1.9.1",
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 12,
+      "prefix": "libscipy_openblas",
+      "filepath": "C:\\Users\\Rubiel\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-9e3e5a4229c1ca39f10dc82bba9e2b2b.dll",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 12,
+      "prefix": "vcomp",
+      "filepath": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\venv\\Lib\\site-packages\\sklearn\\.libs\\vcomp140.dll",
+      "version": null
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 12,
+      "prefix": "libscipy_openblas",
+      "filepath": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\venv\\Lib\\site-packages\\scipy.libs\\libscipy_openblas-197ee2fc9b4d071f7e048078cac74115.dll",
+      "version": "0.3.31.dev",
+      "threading_layer": "pthreads",
+      "architecture": "SkylakeX"
+    }
+  ],
+  "ram": "No medida",
+  "script": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\evaluar_originales_busquedas_e3.py",
+  "script_sha256": "823d2a34ae83736e77ba1a86caa104abeb04174245158c6eff295bfea3e661ca",
+  "search_sha256": "81c3e4bfdfa98ecd8d2f8da0c6ff3ea34be8966074ff2a32b7e58976fd404ef0",
+  "models": [
+    "m0",
+    "m5",
+    "m19"
+  ],
+  "budget": {
+    "random_trials": 16,
+    "bayes_trials": 20,
+    "startup_trials": 6,
+    "ei_candidates": 24,
+    "population": 8,
+    "generations": 3,
+    "elites": 1,
+    "tournament": 3,
+    "crossover_probability": 0.8,
+    "uniform_crossover_gene_probability": 0.5,
+    "mutation_probability": 0.3,
+    "halving_candidates": 16,
+    "reduction_factor": 2,
+    "fidelities": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "n_jobs": 4,
+    "seed": 42
+  },
+  "data": "Train1309/test188; GroupKFold5x5 por estudiante",
+  "scope": "Solo modelos elegidos; históricos/costosos y modelos fijos se conservan identificados"
+}

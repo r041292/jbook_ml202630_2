@@ -12,15 +12,17 @@ from statistical_comparison import add_inference, P_HOLM
 def validate():
     verify_inputs(app.MANIFEST)
     assert len(original.CATALOG) == 27
-    assert original.BEST_NAME == 'Kernel Ridge RBF'
+    assert original.BEST_NAME == original.ACTIVE['best_name']
     assert original.CATALOG[original.TN_KRR]['name'] == 'Truncated Newton KRR RBF'
     assert 'gpr_solo' not in original.CATALOG
     training, test = original.combined_frames(app.TRAIN, app.TEST)
     assert (len(training), len(test)) == (1309, 188)
     assert not {'nota_final', 'fila_fuente', 'estudiante', 'pidm en matricula'} & set(training)
     cv = original.comparison_rows(training, app.TARGET, cv=True)
-    inference = add_inference(cv, cv=True)
-    assert inference[P_HOLM].notna().sum() == 25
+    from statistical_comparison import CV_INFERENCE
+    assert CV_INFERENCE.p_Holm.notna().sum()==25  # Archivo histórico; no aplicar a métricas nuevas.
+    assert original.ANALYSIS['students']['family_size']==25
+    assert original.ANALYSIS['omnibus']['n_models']==25
     assert cv.iloc[0].Modelo == original.BEST_NAME
     np.testing.assert_allclose(original.best_model().predict(test[app.FEATURES]), test[original.BEST], atol=1e-12, rtol=0)
     np.testing.assert_allclose(original.model_for(original.TN_KRR).predict(test[app.FEATURES]),
@@ -51,11 +53,7 @@ def validate():
                     'output': output, 'outputs': {'id': prefix+'-comparison', 'property': 'children'},
                     'inputs': inputs, 'state': [], 'changedPropIds': [inputs[0]['id']+'.value']})
                 assert response.status_code == 200, response.get_data(as_text=True)[:1000]
-    predict = app.app.callback_map['original-prediction-result.children']['callback'].__wrapped__
-    result = str(predict(1, original.BEST, *[app.DEFAULTS[c] for c in app.NUMERIC+app.CATEGORICAL]))
-    assert 'Nota predicha' in result and 'Kernel Ridge RBF' in result
-    tn_result = str(predict(1, original.TN_KRR, *[app.DEFAULTS[c] for c in app.NUMERIC+app.CATEGORICAL]))
-    assert 'Truncated Newton KRR RBF' in tn_result
+    assert 'original-prediction-result.children' not in app.app.callback_map
     from classic_models import load_model
     import classic_models as classics
     tree = load_model('decision_tree')

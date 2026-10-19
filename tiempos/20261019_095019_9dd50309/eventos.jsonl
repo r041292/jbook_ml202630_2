@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.1015633000060916, "rows": 1, "status": "completa", "recorded": "2026-10-19T09:50:19.315996-05:00", "started": "2026-10-19T09:50:19.213516-05:00"}
+{"stage": "Total del experimento", "batch": "DecisionTreeRegressor · inferencia de aplicación", "seconds": 0.1531216999865137, "rows": null, "status": "completa", "recorded": "2026-10-19T09:50:19.318996-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

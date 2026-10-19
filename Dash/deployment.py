@@ -4,6 +4,7 @@ import json
 
 from prepare_data import BOOK, CACHE, ROOT, hashes, CLASSIC_FILES, ACTIVE_RESULTS, RESULTS, ACTIVE_POINTER, STUDENT_ARTIFACT
 from prepare_originals import FILES as ORIGINAL_FILES
+from prepare_originals import ACTIVE_POINTER as ORIGINAL_POINTER
 
 PUBLIC_SOURCES = (
     '00_seleccion_base_datos.md',
@@ -25,6 +26,13 @@ if ACTIVE_RESULTS != RESULTS:
     PUBLIC_SOURCES += (ACTIVE_POINTER.relative_to(BOOK).as_posix(),)
     PUBLIC_SOURCES += tuple((ACTIVE_RESULTS / name).relative_to(BOOK).as_posix() for name in
                             ['modelos_lineales.json', 'protocolo.json', 'completo.json', 'seleccion_antes_test.json', 'clasicos/comparacion.json'])
+if ORIGINAL_POINTER.exists():
+    original_active=json.loads(ORIGINAL_POINTER.read_text(encoding='utf-8'))
+    original_directory=RESULTS/'originales_busquedas'/original_active['run_id']
+    PUBLIC_SOURCES += (ORIGINAL_POINTER.relative_to(BOOK).as_posix(),
+                       'busquedas_originales_e3.py','evaluar_originales_busquedas_e3.py','originales_busquedas_e3.md')
+    PUBLIC_SOURCES += tuple((original_directory/name).relative_to(BOOK).as_posix()
+                            for name in (*ORIGINAL_FILES,'completo.json','protocolo.json'))
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
     'grid_search.csv', 'model.joblib', 'manifest.json', 'svm_report.json', STUDENT_ARTIFACT,

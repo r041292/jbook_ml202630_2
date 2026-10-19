@@ -70,7 +70,10 @@ COMPARISON_COLORS = {'Originales de train': '#435568', 'Perturbación local': PA
                      'Interpolación entre vecinos': PALETTE[1]}
 
 app = Dash(__name__, title='Precálculo | Evidencia académica', assets_folder=str(ROOT / 'assets'))
+app.config.suppress_callback_exceptions = True
 server = app.server
+from lazy_content import defer_details, install as install_lazy_content
+install_lazy_content(app)
 
 
 @server.route('/healthz')
@@ -393,27 +396,55 @@ CLASSICS = create_classics(app, MODEL_UI)
 from original_models import create_originals
 ORIGINALS = create_originals(app, MODEL_UI)
 
+def eda_navigation():
+    return html.Div([dcc.Tabs(id='eda-tabs',value='explore',mobile_breakpoint=0,className='sub-tabs',
+        persistence=True,persistence_type='session',children=[
+            dcc.Tab(label='Variables y contexto',value='variables',className='tab',selected_className='tab-selected'),
+            dcc.Tab(label='Exploración interactiva',value='explore',className='tab',selected_className='tab-selected')]),
+        html.Div(id='eda-page')])
+
+
+def predictive_navigation():
+    return html.Div([dcc.Tabs(id='predictive-tabs',value='split',mobile_breakpoint=0,className='sub-tabs',
+        persistence=True,persistence_type='session',children=[
+            dcc.Tab(label='Split y CV',value='split',className='tab',selected_className='tab-selected'),
+            dcc.Tab(label='Modelos lineales',value='linear',className='tab',selected_className='tab-selected'),
+            dcc.Tab(label='Modelos clásicos',value='classic',className='tab',selected_className='tab-selected'),
+            dcc.Tab(label='Modelos originales',value='original',className='tab',selected_className='tab-selected')]),
+        html.Div(id='predictive-page')])
+
+
 app.layout = html.Div([
     html.Header([html.A([html.Span('p', className='brand-mark'), html.Div([html.Strong('precálculo')])], href='/', className='brand'),
         html.Div([html.Span(className='status-dot'), 'Proyecto de investigación · 2026'], className='header-note')], className='topbar'),
     html.Main([dcc.Tabs(id='main-tabs', value='intro', mobile_breakpoint=0, className='main-tabs', children=[
-        dcc.Tab(label='01  Introducción', value='intro', children=INTRO, className='tab', selected_className='tab-selected'),
-        dcc.Tab(label='02  EDA', value='eda', children=dcc.Tabs(id='eda-tabs', value='explore', mobile_breakpoint=0, className='sub-tabs', children=[
-            dcc.Tab(label='Variables y contexto', value='variables', children=VARIABLES, className='tab', selected_className='tab-selected'),
-            dcc.Tab(label='Exploración interactiva', value='explore', children=EDA, className='tab', selected_className='tab-selected')]), className='tab', selected_className='tab-selected'),
-        dcc.Tab(label='03  Modelos predictivos', value='models', children=dcc.Tabs(
-            id='predictive-tabs', value='split', mobile_breakpoint=0, className='sub-tabs', children=[
-                dcc.Tab(label='Split y CV', value='split', children=SPLIT_CV, className='tab', selected_className='tab-selected'),
-                dcc.Tab(label='Modelos lineales', value='linear', children=MODELS, className='tab', selected_className='tab-selected'),
-                dcc.Tab(label='Modelos clásicos', value='classic', children=CLASSICS, className='tab', selected_className='tab-selected'),
-                dcc.Tab(label='Modelos originales', value='original', children=ORIGINALS, className='tab', selected_className='tab-selected'),
-            ]), className='tab', selected_className='tab-selected'),
-    ])], className='container'),
+        dcc.Tab(label='01  Introducción', value='intro', className='tab', selected_className='tab-selected'),
+        dcc.Tab(label='02  EDA', value='eda', className='tab', selected_className='tab-selected'),
+        dcc.Tab(label='03  Modelos predictivos', value='models', className='tab', selected_className='tab-selected'),
+    ],persistence=True,persistence_type='session'),html.Div(id='main-page',children=defer_details(INTRO,'intro'))], className='container'),
     html.Footer([html.Strong('Precálculo · Universidad del Norte'),
                  html.Span('Autores: Rubiel Velásquez y Valentina Figueroa.'),
                  html.Span('Fuentes: datos originales de ALEK · Entregable 3 · Ejecución reproducible'),
                  html.Span('Interacción: pasa el cursor, selecciona leyendas, amplía y descarga los gráficos.')], className='footer'),
 ])
+
+
+@app.callback(Output('main-page','children'),Input('main-tabs','value'))
+def render_main_page(value):
+    if value=='models':return predictive_navigation()
+    if value=='eda':return eda_navigation()
+    return defer_details(INTRO,'intro')
+
+
+@app.callback(Output('eda-page','children'),Input('eda-tabs','value'))
+def render_eda_page(value):
+    return defer_details(VARIABLES if value=='variables' else EDA,'eda-'+str(value))
+
+
+@app.callback(Output('predictive-page','children'),Input('predictive-tabs','value'))
+def render_predictive_page(value):
+    pages={'split':SPLIT_CV,'linear':MODELS,'classic':CLASSICS,'original':ORIGINALS}
+    return defer_details(pages.get(value,SPLIT_CV),'predictive-'+str(value))
 
 
 @app.callback(Output('eda-results', 'children'), Input('eda-program', 'value'), Input('eda-course', 'value'),

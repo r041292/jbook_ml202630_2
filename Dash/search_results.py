@@ -75,7 +75,17 @@ en trabajos anteriores: su reevaluación es descriptiva, no una nueva prueba cie
 '''
 
 
-def optimization_section(spec, ui):
+def optimization_section(spec,ui):
+    if not spec.get('optimization'):
+        return ui['md']('Esta ejecución histórica no tiene comparación de cinco estrategias.')
+    import hashlib
+    from lazy_content import lazy_factory
+    key=hashlib.sha256(json.dumps(spec,sort_keys=True,default=str).encode()).hexdigest()
+    return lazy_factory('Resultados de las cinco búsquedas · métodos, diversidad y tiempos',
+                        lambda:_optimization_content(spec,ui),key)
+
+
+def _optimization_content(spec, ui):
     optimization = spec.get('optimization')
     if not optimization:
         return ui['md']('Esta ejecución histórica usó únicamente Grid Search; tiempos no medidos salvo evidencia registrada.')

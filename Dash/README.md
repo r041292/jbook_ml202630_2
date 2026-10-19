@@ -1,5 +1,45 @@
 # Dashboard · Entregable 3
 
+## Navegación liviana y carga bajo demanda
+
+Solo se envía la pestaña seleccionada. Las fichas, tablas de detalle, búsquedas,
+diagnósticos y SHAP/LIME se cargan al abrir sus desplegables; al cerrarlos sus
+gráficos se desmontan del navegador. Los filtros y pestañas se conservan durante
+la sesión. No se recortan observaciones ni se cambian métricas/modelos.
+
+`lazy_content.py` difiere los cuerpos de `html.Details`, incluidos los anidados.
+Los cuerpos se guardan por hash en `Dash/.ui_cache/`, caché descartable de UI
+compartida entre workers del mismo servicio, excluida de Git y del paquete.
+Las factorías estáticas de búsquedas construyen tablas/curvas únicamente al
+abrirse; no ejecutan fit/predict. Nunca usar `validation_layout` con el árbol
+completo, pues volvería a enviarlo al cliente. Los callbacks SHAP requieren
+que su contenedor esté montado; abrir filtros no solicita SHAP oculto.
+
+Las respuestas JSON admiten gzip sin dependencias nuevas. Medición local del
+esqueleto inicial:1.167.572→10.867bytes,2.572bytes con gzip (no incluye librerías
+JS,imágenes o análisis solicitados después). Esqueleto de pestaña clásica10.231
+bytes yOriginales9.572bytes;comparaciones/gráficos activos llegan por sus propios
+callbacks. Los desplegables cerrados no incluyen sus tablas/figuras en el DOM.
+
+## Originales actualizado · 19-oct-2026
+
+Originales alinea sus tres etapas estadísticas con Clásicos: Friedman/MCS
+exploratorios sobre25modelos con OOF, y25comparaciones por estudiante contra
+el SVM activo con bootstrap-t,ICBCa yHolm25. Dummy y TabPFN fine-tuned no entran
+al ómnibus; este último sí conserva su comparación exploratoria en test.
+Los contrastes históricos se archivan y no se reutilizan con predicciones nuevas.
+
+SVR RBF,Kernel Ridge RBF yTR-KRR completaron cinco búsquedas anidadas. SVM y
+clásicos reutilizan las búsquedas vigentes; costosos/fijos se identifican. Líder
+CV:Kernel Ridge RBF,RMSE0.8009641. Solo ese modelo recibe SHAP aproximado por
+permutaciones yLIME,con resumen global ydoscasos test. No se elige por test.
+Resultados versionados en originales_busquedas/ y activados mediante puntero,
+sin sobrescribir históricos. Filtros de interpretabilidad reutilizan valores
+guardados; no disparan nuevos fits/predict.
+
+Protocolo,alcances,comandos ylista de12pendientes con tamaño de rejilla:
+[Originales · multibúsqueda](../Precalculo/originales_busquedas_e3.md).
+
 ## Actualización de búsqueda · SVM y seis clásicos
 
 Se añade a Grid Search una comparación anidada con Random Search, Optuna/TPE,
