@@ -7335,3 +7335,81 @@ La plantilla anterior no representa una ejecución real.
 | Inferencia | Ridge | 0.000104900 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
 | Inferencia | XGBRegressor | 0.011272600 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
 | Total del experimento | Verificación/preparación · ..\RenderDeploy\Dash\validate_package.py | 10.768957500 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |
+
+### Ejecución `20261019_132158_1ab868b0`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-19T13:21:58.576157-05:00 a 2026-10-19T13:21:58.834401-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_132158_1ab868b0/metadata.json](tiempos/20261019_132158_1ab868b0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_132158_1ab868b0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013772500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016205400 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.149046800 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000514200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.259076300 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261019_132355_4b56185c`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-19T13:23:55.276940-05:00 a 2026-10-19T13:23:55.539753-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_132355_4b56185c/metadata.json](tiempos/20261019_132355_4b56185c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_132355_4b56185c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014626100 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016617900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.149106000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000589400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.262731500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261019_132840_b23080f2`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-19T13:28:40.295670-05:00 a 2026-10-19T13:28:40.607288-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_132840_b23080f2/metadata.json](tiempos/20261019_132840_b23080f2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_132840_b23080f2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.026787300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.069632700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.179092100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000617000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.315055600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261019_132835_7a7fe9cd`
+
+- **Modelo/motivo:** Verificación/preparación · Dash/validate_package.py.
+- **Fecha/zona:** 2026-10-19T13:28:35.261026-05:00 a 2026-10-19T13:28:47.185674-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_132835_7a7fe9cd/metadata.json](tiempos/20261019_132835_7a7fe9cd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_132835_7a7fe9cd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | XGBRegressor | 0.035414400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | TransformedTargetRegressor | 0.034128500 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | TruncatedNewtonKernelRidgeRegressor | 0.012112300 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | DecisionTreeRegressor | 0.004179600 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | LinearSVR | 0.013223400 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | KNeighborsRegressor | 0.030682800 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Ridge | 0.000177900 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Ridge | 0.007586500 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Lasso | 0.007077400 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | RandomForestRegressor | 0.036550700 | 188 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | XGBRegressor | 0.014742200 | 188 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | DecisionTreeRegressor | 0.005138700 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | XGBRegressor | 0.017725300 | 1 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | XGBRegressor | 0.019989000 | 1000 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Entrenamiento/refit | Ridge | 0.001098100 | 1000 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Ridge | 0.000141100 | 1000 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Ridge | 0.000129100 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | XGBRegressor | 0.016018100 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Total del experimento | Verificación/preparación · Dash/validate_package.py | 11.924062800 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |

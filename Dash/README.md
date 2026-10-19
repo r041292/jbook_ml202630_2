@@ -530,3 +530,13 @@ Para actualizar todo el análisis después de modificar la generación seleccion
 Después, actualizar ambos documentos de contexto y reiniciar el servidor.
 
 Referencias técnicas: [callbacks de Dash](https://dash.plotly.com/basic-callbacks) y [pestañas de Dash](https://dash.plotly.com/dash-core-components/tabs).
+
+## Verificación de publicación limpia
+
+La validación previa al push debe ejecutarse sobre una copia extraída del índice
+de Git (checkout-index), no sobre el checkout con archivos ignorados locales.
+Ejecutar allí `python Dash/run_measured.py Dash/validate_package.py` con el
+entorno compartido. Los CSV comprimidos y pipelines de Originales se publican
+únicamente en `Dash/data/originales/`; su hash también se verifica contra la
+fuente canónica registrada en manifest.json. No se requieren copias binarias
+en `Precalculo/resultados/e3/originales_busquedas/`.

@@ -26,13 +26,21 @@ if ACTIVE_RESULTS != RESULTS:
     PUBLIC_SOURCES += (ACTIVE_POINTER.relative_to(BOOK).as_posix(),)
     PUBLIC_SOURCES += tuple((ACTIVE_RESULTS / name).relative_to(BOOK).as_posix() for name in
                             ['modelos_lineales.json', 'protocolo.json', 'completo.json', 'seleccion_antes_test.json', 'clasicos/comparacion.json'])
+ORIGINAL_ARTIFACT_SOURCES = {}
 if ORIGINAL_POINTER.exists():
     original_active=json.loads(ORIGINAL_POINTER.read_text(encoding='utf-8'))
     original_directory=RESULTS/'originales_busquedas'/original_active['run_id']
     PUBLIC_SOURCES += (ORIGINAL_POINTER.relative_to(BOOK).as_posix(),
                        'busquedas_originales_e3.py','evaluar_originales_busquedas_e3.py','originales_busquedas_e3.md')
+    # Models/predictions are published once in Dash/data, not duplicated in Book.
+    # Keep the canonical source hash binding even when that duplicate is absent.
+    ORIGINAL_ARTIFACT_SOURCES = {
+        'originales/'+name: (original_directory/name).relative_to(BOOK).as_posix()
+        for name in ORIGINAL_FILES if name.endswith(('.csv.gz', '.joblib'))
+    }
     PUBLIC_SOURCES += tuple((original_directory/name).relative_to(BOOK).as_posix()
-                            for name in (*ORIGINAL_FILES,'completo.json','protocolo.json'))
+                            for name in (*ORIGINAL_FILES,'completo.json','protocolo.json')
+                            if 'originales/'+name not in ORIGINAL_ARTIFACT_SOURCES)
 ARTIFACTS = (
     'train.csv.gz', 'test.csv.gz', 'fold_metrics.csv', 'coefficients.csv',
     'grid_search.csv', 'model.joblib', 'manifest.json', 'svm_report.json', STUDENT_ARTIFACT,
@@ -59,6 +67,9 @@ def verify_inputs(manifest):
     for relative, digest in expected['artifacts'].items():
         if sha256(ROOT.parent / relative) != digest:
             raise RuntimeError(f'Artefacto de despliegue alterado: {relative}')
+    for artifact, source in ORIGINAL_ARTIFACT_SOURCES.items():
+        if sha256(CACHE / artifact) != manifest['sha256'][source]:
+            raise RuntimeError('Artefacto no corresponde a la fuente canónica: ' + artifact)
     for relative in PUBLIC_SOURCES:
         if sha256(BOOK / relative) != manifest['sha256'][relative]:
             raise RuntimeError(f'Fuente pública alterada: {relative}')
