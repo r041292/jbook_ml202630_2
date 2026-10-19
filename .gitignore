@@ -85,7 +85,13 @@
 !/jbook_dashboard/01_desarrollo.md
 !/jbook_dashboard/02_introduccion_eda.md
 !/jbook_dashboard/03_modelos.md
-!/jbook_dashboard/04_metodologia.md
+!/jbook_dashboard/04_modelos_clasicos.md
+!/jbook_dashboard/05_metodologia.md
+!/jbook_dashboard/analisis_clasicos/
+/jbook_dashboard/analisis_clasicos/*
+!/jbook_dashboard/analisis_clasicos/*.py
+!/jbook_dashboard/analisis_clasicos/salidas/
+/jbook_dashboard/analisis_clasicos/salidas/semillas/busquedas/
 !/jbook_dashboard/sidebar-footer.md
 !/jbook_dashboard/layout.css
 !/jbook_dashboard/favicon.svg
@@ -93,6 +99,7 @@
 !/jbook_dashboard/images/
 /jbook_dashboard/images/*
 !/jbook_dashboard/images/*.jpg
+!/jbook_dashboard/images/clasicos/
 /.github/*
 !/.github/workflows/
 /.github/workflows/*

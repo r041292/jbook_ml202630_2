@@ -1,0 +1,16 @@
+{
+  "friedman": {
+    "statistic": 17.828571428571422,
+    "pvalue": 0.006675192720488011,
+    "df": 6,
+    "n_folds": 5,
+    "n_models": 7
+  },
+  "nemenyi_cd": 4.029101041175314,
+  "mcs_finalists": [
+    "XGBoost",
+    "SVM lineal",
+    "Ridge"
+  ],
+  "timing_run_id": "20261018_192945_d0b41ede"
+}

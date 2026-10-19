@@ -1,0 +1,85 @@
+Modelo,key,semilla,Método,RMSE interno,sd RMSE interno,best_params,evaluaciones,búsqueda_s
+SVM lineal,svm,1,Random Search,0.8243975786665926,0.045855970401926904,"{""modelo__C"": 0.0812053210825192, ""modelo__epsilon"": 0.4534978894806515}",16,1.4738870000001043
+SVM lineal,svm,1,Bayesiana TPE,0.8209666063154097,0.04690245187469382,"{""modelo__C"": 0.15498955191377137, ""modelo__epsilon"": 0.538816734003357}",20,1.9094198000093456
+SVM lineal,svm,1,Genética DEAP,0.8239868917542328,0.04712055036440716,"{""modelo__C"": 0.3064116413927601, ""modelo__epsilon"": 0.4494910647887381}",14,1.4520112000027439
+SVM lineal,svm,1,Successive Halving,0.8243975786665926,0.045855970401926904,"{""modelo__C"": 0.0812053210825192, ""modelo__epsilon"": 0.4534978894806515}",28,2.055069199996069
+SVM lineal,svm,2,Random Search,0.8217674533197765,0.046448707499870304,"{""modelo__C"": 0.10911438186379148, ""modelo__epsilon"": 0.5110659735695771}",16,1.4659647999942536
+SVM lineal,svm,2,Bayesiana TPE,0.8209594738027853,0.04692340862009687,"{""modelo__C"": 0.42271453334994463, ""modelo__epsilon"": 0.5199473762519304}",20,2.028006499996991
+SVM lineal,svm,2,Genética DEAP,0.820906343813246,0.04487644806591099,"{""modelo__C"": 0.19588849106868456, ""modelo__epsilon"": 0.6068017336408379}",13,1.4338016999972751
+SVM lineal,svm,2,Successive Halving,0.8217674533197765,0.046448707499870304,"{""modelo__C"": 0.10911438186379148, ""modelo__epsilon"": 0.5110659735695771}",28,2.020397400003276
+SVM lineal,svm,3,Random Search,0.8208333145140255,0.04407029560814333,"{""modelo__C"": 0.19583218123698384, ""modelo__epsilon"": 0.5867985714381407}",16,1.4366880000015954
+SVM lineal,svm,3,Bayesiana TPE,0.8217721702304314,0.04653391233343809,"{""modelo__C"": 0.07459577266393833, ""modelo__epsilon"": 0.510827605197663}",20,1.7646172999957344
+SVM lineal,svm,3,Genética DEAP,0.822432076192382,0.044674613081667605,"{""modelo__C"": 0.1287850644494753, ""modelo__epsilon"": 0.6039200385961945}",14,1.6558176000107778
+SVM lineal,svm,3,Successive Halving,0.8208333145140255,0.04407029560814333,"{""modelo__C"": 0.19583218123698384, ""modelo__epsilon"": 0.5867985714381407}",28,2.04799799999455
+KNN,knn,1,Random Search,0.8511245682954783,0.02850536755344969,"{""modelo__n_neighbors"": 32, ""modelo__weights"": ""uniform"", ""modelo__p"": 2}",16,1.368393600001582
+KNN,knn,1,Bayesiana TPE,0.8506470331501301,0.03434995701285423,"{""modelo__n_neighbors"": 28, ""modelo__weights"": ""distance"", ""modelo__p"": 1}",18,1.6751019000075758
+KNN,knn,1,Genética DEAP,0.8504729116419171,0.033615858025859216,"{""modelo__n_neighbors"": 29, ""modelo__weights"": ""distance"", ""modelo__p"": 1}",15,1.3771256000036374
+KNN,knn,1,Successive Halving,0.8511245682954783,0.02850536755344969,"{""modelo__n_neighbors"": 32, ""modelo__weights"": ""uniform"", ""modelo__p"": 2}",28,2.0025912999990396
+KNN,knn,2,Random Search,0.8492137544877304,0.03267331986613976,"{""modelo__n_neighbors"": 24, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",16,1.4346195999969495
+KNN,knn,2,Bayesiana TPE,0.8508107120591303,0.034920689463018594,"{""modelo__n_neighbors"": 24, ""modelo__weights"": ""distance"", ""modelo__p"": 1}",19,1.7853251000051387
+KNN,knn,2,Genética DEAP,0.850181724395777,0.029339463418450014,"{""modelo__n_neighbors"": 46, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",16,1.3855652999918675
+KNN,knn,2,Successive Halving,0.8492137544877304,0.03267331986613976,"{""modelo__n_neighbors"": 24, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",28,2.1548838000016985
+KNN,knn,3,Random Search,0.8481186874579534,0.03262364595813872,"{""modelo__n_neighbors"": 26, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",16,1.383118400000967
+KNN,knn,3,Bayesiana TPE,0.8505860158235313,0.02864956127334928,"{""modelo__n_neighbors"": 30, ""modelo__weights"": ""uniform"", ""modelo__p"": 2}",19,1.6234166999929585
+KNN,knn,3,Genética DEAP,0.8483095587496351,0.03144517769037797,"{""modelo__n_neighbors"": 28, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",12,1.0659962999925483
+KNN,knn,3,Successive Halving,0.8481186874579534,0.03262364595813872,"{""modelo__n_neighbors"": 26, ""modelo__weights"": ""distance"", ""modelo__p"": 2}",28,2.045901400008006
+Ridge,ridge,1,Random Search,0.824513864125025,0.047868620525297875,"{""modelo__alpha"": 5.597169235133793}",16,1.2010747999884188
+Ridge,ridge,1,Bayesiana TPE,0.8243436758891474,0.04712312380150051,"{""modelo__alpha"": 10.068062835737024}",20,1.4796613000071375
+Ridge,ridge,1,Genética DEAP,0.8245216477132994,0.04788525137163252,"{""modelo__alpha"": 5.51686473187044}",15,1.06255930000043
+Ridge,ridge,1,Successive Halving,0.824513864125025,0.047868620525297875,"{""modelo__alpha"": 5.597169235133793}",28,2.0794077000027755
+Ridge,ridge,2,Random Search,0.824343420616289,0.04713086812789025,"{""modelo__alpha"": 10.011580179354516}",16,1.127198199988925
+Ridge,ridge,2,Bayesiana TPE,0.8243445451148285,0.04723456397030479,"{""modelo__alpha"": 9.2780746496043}",20,1.4142542999907164
+Ridge,ridge,2,Genética DEAP,0.8251000884500879,0.04594341969485979,"{""modelo__alpha"": 22.317832161554705}",13,0.9291701000038302
+Ridge,ridge,2,Successive Halving,0.824343420616289,0.04713086812789025,"{""modelo__alpha"": 10.011580179354516}",28,1.8950637000089046
+Ridge,ridge,3,Random Search,0.8243537105405541,0.047337526989409295,"{""modelo__alpha"": 8.589993934895778}",16,1.2046887000033166
+Ridge,ridge,3,Bayesiana TPE,0.8243731528870235,0.046897552920650815,"{""modelo__alpha"": 11.824399739826342}",20,1.4552026000019396
+Ridge,ridge,3,Genética DEAP,0.8243467323235929,0.04707006080514547,"{""modelo__alpha"": 10.46165015890676}",12,0.8847399999940535
+Ridge,ridge,3,Successive Halving,0.8243537105405541,0.047337526989409295,"{""modelo__alpha"": 8.589993934895778}",28,1.8700780999934068
+Lasso,lasso,1,Random Search,0.8274792724836872,0.04966367696946589,"{""modelo__alpha"": 0.0008120532108251925}",16,1.377147299994249
+Lasso,lasso,1,Bayesiana TPE,0.8272701299226666,0.0497049149531136,"{""modelo__alpha"": 0.0005303077951991135}",20,2.0024906000035116
+Lasso,lasso,1,Genética DEAP,0.8272192070220052,0.04970330728921318,"{""modelo__alpha"": 0.0005823808382847415}",15,1.2679313000116963
+Lasso,lasso,1,Successive Halving,0.8285317181166268,0.049521353260724335,"{""modelo__alpha"": 0.001688874619356286}",28,1.9486885000078473
+Lasso,lasso,2,Random Search,0.8272125752198433,0.04970003514198434,"{""modelo__alpha"": 0.0006093073300084794}",16,1.4665302000066731
+Lasso,lasso,2,Bayesiana TPE,0.8274207510908276,0.04961948016949228,"{""modelo__alpha"": 0.00042344211896472837}",20,2.096824699998251
+Lasso,lasso,2,Genética DEAP,0.8275331432206455,0.049691616213803205,"{""modelo__alpha"": 0.0008402516476824107}",13,1.0580627000017557
+Lasso,lasso,2,Successive Halving,0.8286334758971062,0.04934878245006409,"{""modelo__alpha"": 0.0018550431656121132}",28,1.9123909000045387
+Lasso,lasso,3,Random Search,0.827289886972404,0.04970933060042682,"{""modelo__alpha"": 0.0005133712219686929}",16,1.3967487000045367
+Lasso,lasso,3,Bayesiana TPE,0.8272439911459012,0.04968836547051159,"{""modelo__alpha"": 0.000673042649341962}",20,1.8954040999960853
+Lasso,lasso,3,Genética DEAP,0.8272139507540139,0.049701265645734266,"{""modelo__alpha"": 0.0005942150904437931}",12,1.1164299999945797
+Lasso,lasso,3,Successive Halving,0.8283754296047103,0.049707187516019,"{""modelo__alpha"": 0.0014917105851575325}",28,1.9941143000032753
+Random Forest,forest,1,Random Search,0.8289883822531904,0.026118511600138103,"{""modelo__n_estimators"": 482, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 10}",16,19.570971799999825
+Random Forest,forest,1,Bayesiana TPE,0.8277652675340693,0.026411134458583986,"{""modelo__n_estimators"": 436, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 6}",20,31.42642230000638
+Random Forest,forest,1,Genética DEAP,0.8291975416618731,0.027165056466965494,"{""modelo__n_estimators"": 406, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 10}",13,15.8821661999973
+Random Forest,forest,1,Successive Halving,0.8289883822531904,0.026118511600138103,"{""modelo__n_estimators"": 482, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 10}",28,22.69424230000004
+Random Forest,forest,2,Random Search,0.8292087035904838,0.02563498782332563,"{""modelo__n_estimators"": 380, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 4}",16,19.992191400000593
+Random Forest,forest,2,Bayesiana TPE,0.8284039463252422,0.026270439632037703,"{""modelo__n_estimators"": 303, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 5}",20,27.051247900002636
+Random Forest,forest,2,Genética DEAP,0.8282447137530863,0.026033298265921705,"{""modelo__n_estimators"": 362, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 5}",18,25.981754300009925
+Random Forest,forest,2,Successive Halving,0.8292087035904838,0.02563498782332563,"{""modelo__n_estimators"": 380, ""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 4}",28,25.138010199996643
+Random Forest,forest,3,Random Search,0.8281616537773739,0.025856002097925594,"{""modelo__n_estimators"": 394, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 2}",16,22.91887169999245
+Random Forest,forest,3,Bayesiana TPE,0.8280353706500204,0.02583789716197588,"{""modelo__n_estimators"": 416, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 2}",20,30.855594400010887
+Random Forest,forest,3,Genética DEAP,0.8291565329750468,0.026923785163663415,"{""modelo__n_estimators"": 443, ""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 10}",15,19.448598199989647
+Random Forest,forest,3,Successive Halving,0.8281616537773739,0.025856002097925594,"{""modelo__n_estimators"": 394, ""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 2}",28,27.13711450000119
+XGBoost,xgboost,1,Random Search,0.8085601069336372,0.04203433327098051,"{""modelo__n_estimators"": 482, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.026504917024335824}",16,12.020407000003615
+XGBoost,xgboost,1,Bayesiana TPE,0.8073302979390652,0.041464255608795256,"{""modelo__n_estimators"": 433, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.022294540026973925}",20,16.250148300008732
+XGBoost,xgboost,1,Genética DEAP,0.8105670192598083,0.039540010060513914,"{""modelo__n_estimators"": 239, ""modelo__max_depth"": 3, ""modelo__learning_rate"": 0.02815082096801253}",12,10.001444299996365
+XGBoost,xgboost,1,Successive Halving,0.8085601069336372,0.04203433327098051,"{""modelo__n_estimators"": 482, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.026504917024335824}",28,17.824632100004237
+XGBoost,xgboost,2,Random Search,0.8094226151289895,0.037262553964417626,"{""modelo__n_estimators"": 287, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.022179955249224587}",16,13.64234610000858
+XGBoost,xgboost,2,Bayesiana TPE,0.8078176651316757,0.040515112927729476,"{""modelo__n_estimators"": 375, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.02574477171545129}",20,15.366403099993477
+XGBoost,xgboost,2,Genética DEAP,0.8092633137377477,0.042682036043453477,"{""modelo__n_estimators"": 385, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.04035935023290481}",17,15.420854999989388
+XGBoost,xgboost,2,Successive Halving,0.8094226151289895,0.037262553964417626,"{""modelo__n_estimators"": 287, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.022179955249224587}",28,19.308507100009592
+XGBoost,xgboost,3,Random Search,0.806550786622914,0.041537150334451094,"{""modelo__n_estimators"": 491, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.02060563497132738}",16,12.800672199999099
+XGBoost,xgboost,3,Bayesiana TPE,0.8065879172260818,0.03994454929393456,"{""modelo__n_estimators"": 453, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.018024807983226143}",20,16.84733079999569
+XGBoost,xgboost,3,Genética DEAP,0.8144859716194851,0.036453876205496845,"{""modelo__n_estimators"": 233, ""modelo__max_depth"": 4, ""modelo__learning_rate"": 0.01669313258573819}",13,9.889589200000046
+XGBoost,xgboost,3,Successive Halving,0.806550786622914,0.041537150334451094,"{""modelo__n_estimators"": 491, ""modelo__max_depth"": 2, ""modelo__learning_rate"": 0.02060563497132738}",28,18.955193300003884
+Decision Tree,decision_tree,1,Random Search,0.9045797319798703,0.028871402619172773,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 29, ""modelo__ccp_alpha"": 0.0014415961271963373}",16,1.03060959999857
+Decision Tree,decision_tree,1,Bayesiana TPE,0.8997766284805749,0.029407312288051223,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 24, ""modelo__ccp_alpha"": 2.6644213016674925e-05}",20,1.3635766000079457
+Decision Tree,decision_tree,1,Genética DEAP,0.8999190707718867,0.029432920523297774,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 24, ""modelo__ccp_alpha"": 0.000938595867742349}",15,1.0015763000119478
+Decision Tree,decision_tree,1,Successive Halving,0.9045797319798703,0.028871402619172773,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 29, ""modelo__ccp_alpha"": 0.0014415961271963373}",28,1.6181505999993533
+Decision Tree,decision_tree,2,Random Search,0.9023998134949875,0.02517618100561885,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 18, ""modelo__ccp_alpha"": 0.0015006226330533613}",16,1.011909699998796
+Decision Tree,decision_tree,2,Bayesiana TPE,0.8997766284805749,0.029407312288051223,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 24, ""modelo__ccp_alpha"": 9.870423463372412e-06}",20,1.351798499992583
+Decision Tree,decision_tree,2,Genética DEAP,0.9017512293334636,0.023199332875605494,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 18, ""modelo__ccp_alpha"": 0.0005655136772680869}",22,1.4356746999983443
+Decision Tree,decision_tree,2,Successive Halving,0.9115790520943652,0.020130946414885238,"{""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 20, ""modelo__ccp_alpha"": 0.004065423976755364}",28,1.6029973999975482
+Decision Tree,decision_tree,3,Random Search,0.8990173871353718,0.029758148112963043,"{""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 27, ""modelo__ccp_alpha"": 0.001023199219220744}",16,1.0403056999930413
+Decision Tree,decision_tree,3,Bayesiana TPE,0.9059521987051129,0.03050089576327395,"{""modelo__max_depth"": null, ""modelo__min_samples_leaf"": 19, ""modelo__ccp_alpha"": 0.0028348786243220982}",20,1.332845199998701
+Decision Tree,decision_tree,3,Genética DEAP,0.9073181415450691,0.028948017001061026,"{""modelo__max_depth"": 6, ""modelo__min_samples_leaf"": 20, ""modelo__ccp_alpha"": 0.0006552885923981311}",13,0.8610206000012113
+Decision Tree,decision_tree,3,Successive Halving,0.8990173871353718,0.029758148112963043,"{""modelo__max_depth"": 8, ""modelo__min_samples_leaf"": 27, ""modelo__ccp_alpha"": 0.001023199219220744}",28,1.603752999988501

@@ -23,8 +23,9 @@ La evidencia principal es una reducción del RMSE de **25,97 %** frente a predec
 | --- | --- |
 | [Informe del desarrollo](01_desarrollo.md) | ¿Cómo se transformó el análisis en un dashboard reproducible y publicable? |
 | [Introducción y EDA](02_introduccion_eda.md) | ¿Qué describen los datos reales y qué muestran las páginas de contexto y exploración? |
-| [Modelos](03_modelos.md) | ¿Cómo se separan los datos, cómo se valida el modelo y qué resultados producen los modelos lineales? |
-| [Metodología y detalles adicionales](04_metodologia.md) | ¿Cómo se calculan las métricas, qué diagnósticos complementarios existen y qué falta validar? |
+| [Modelos lineales](03_modelos.md) | ¿Cómo se separan los datos, cómo se valida el modelo y qué resultados producen los modelos lineales? |
+| [Modelos clásicos](04_modelos_clasicos.md) | ¿Cómo se optimizan, evalúan, interpretan y comparan estadísticamente KNN, Ridge, Lasso, Random Forest, XGBoost y Decision Tree frente al SVM? |
+| [Metodología y detalles adicionales](05_metodologia.md) | ¿Cómo se calculan las métricas, qué diagnósticos complementarios existen y qué falta validar? |
 
 El recorrido completo sigue un mismo hilo: describir los datos, evaluar un modelo y explicar sus límites. La siguiente sección delimita el problema y la muestra que se usa en todo el informe.
 
@@ -91,7 +92,7 @@ Se adoptó un fondo claro, tarjetas blancas, colores diferenciados por categorí
 
 Los filtros de programa y asignatura se combinan. Los grupos sin registros tienen un mensaje explícito; R² se muestra como no definido cuando el grupo no permite calcularlo. Las leyendas permiten aislar categorías y Plotly conserva herramientas de zoom, hover y descarga PNG.
 
-Para mantener fluidez, los scatter dibujan hasta 2.500 filas en EDA y 3.000 en modelos, con semilla fija. Las métricas, correlaciones, densidades y resúmenes se calculan con todas las filas disponibles del subconjunto. En este informe las capturas son estáticas: muestran la vista general del dashboard y el ejemplo de predicción descrito en el capítulo de Modelos.
+Para mantener fluidez, los scatter dibujan hasta 2.500 filas en EDA y 3.000 en modelos, con semilla fija. Las métricas, correlaciones, densidades y resúmenes se calculan con todas las filas disponibles del subconjunto. En este informe las capturas son estáticas: muestran la vista general del dashboard y el ejemplo de predicción descrito en el capítulo de Modelos lineales.
 
 ```{figure} images/01_introduccion.jpg
 :alt: Página de introducción del dashboard con contexto institucional, fuente, asignaturas y pregunta de investigación.

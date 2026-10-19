@@ -1,0 +1,43 @@
+Modelo,Búsqueda,Método elegido,RMSE interno
+SVM lineal,externo_1,Grid Search,0.8481706139291824
+SVM lineal,externo_2,Genética DEAP,0.8073535097202909
+SVM lineal,externo_3,Grid Search,0.8158923714280275
+SVM lineal,externo_4,Bayesiana TPE,0.8347951693842817
+SVM lineal,externo_5,Random Search,0.8276920750924128
+SVM lineal,final_train,Bayesiana TPE,0.8210734179505117
+KNN,externo_1,Genética DEAP,0.8658646913260972
+KNN,externo_2,Grid Search,0.8395745971794112
+KNN,externo_3,Grid Search,0.831966308247442
+KNN,externo_4,Bayesiana TPE,0.8494797520283204
+KNN,externo_5,Bayesiana TPE,0.8478419973919775
+KNN,final_train,Genética DEAP,0.8481186874579534
+Ridge,externo_1,Genética DEAP,0.8485971858905936
+Ridge,externo_2,Grid Search,0.8049450883706453
+Ridge,externo_3,Grid Search,0.813858493072569
+Ridge,externo_4,Bayesiana TPE,0.8379425836080227
+Ridge,externo_5,Bayesiana TPE,0.831330884413593
+Ridge,final_train,Bayesiana TPE,0.8243429469726241
+Lasso,externo_1,Random Search,0.8532759293761405
+Lasso,externo_2,Random Search,0.8052155623048833
+Lasso,externo_3,Random Search,0.8170007481066877
+Lasso,externo_4,Bayesiana TPE,0.841046227788808
+Lasso,externo_5,Bayesiana TPE,0.833739178990391
+Lasso,final_train,Genética DEAP,0.8272365181568666
+Random Forest,externo_1,Grid Search,0.8364915721604715
+Random Forest,externo_2,Grid Search,0.8176149791665706
+Random Forest,externo_3,Bayesiana TPE,0.8082207225071258
+Random Forest,externo_4,Random Search,0.8196813652906881
+Random Forest,externo_5,Grid Search,0.8236738836025645
+Random Forest,final_train,Grid Search,0.8279076882622706
+XGBoost,externo_1,Grid Search,0.8329067048256826
+XGBoost,externo_2,Bayesiana TPE,0.8004806938098884
+XGBoost,externo_3,Bayesiana TPE,0.7901692662768275
+XGBoost,externo_4,Genética DEAP,0.8056390428036332
+XGBoost,externo_5,Genética DEAP,0.8019778694410084
+XGBoost,final_train,Bayesiana TPE,0.8080751215680039
+Decision Tree,externo_1,Bayesiana TPE,0.9082773193391794
+Decision Tree,externo_2,Random Search,0.8894061906808485
+Decision Tree,externo_3,Bayesiana TPE,0.876847148788715
+Decision Tree,externo_4,Random Search,0.9120774280276283
+Decision Tree,externo_5,Random Search,0.8808745708984228
+Decision Tree,final_train,Random Search,0.9026339865067247

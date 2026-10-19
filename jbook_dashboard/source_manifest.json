@@ -33,10 +33,11 @@
     "Dash/data/test.csv.gz": "9d88f0fe5bbd523c66e0d17a134f3b7e79136497ec2c4435c86e14aa3497ce97"
   },
   "chapters_sha256": {
-    "01_desarrollo.md": "f314c7fa8235cfbe6155d6bb6ba814c7c618351fd83a09dbd8ccf39fc81002a9",
+    "01_desarrollo.md": "63c27147743f2e480e61287f03fe67bc7cb93f6a4d8983be0c9c3b103b11fcd3",
     "02_introduccion_eda.md": "a838ca09608554dd8032e2b9453b6d06dfc606e97eedc42e97681a5676bc1f8a",
-    "03_modelos.md": "8edcf24b5c870e8fab94197e15b024e486ff65406fdd6fc31e3a75ecb60d7bf1",
-    "04_metodologia.md": "d3f13c83c57420181295e4e0e7c56d839e461d28a963db328edf26e95aac625d"
+    "03_modelos.md": "f701af6c9223b3788a95b146b25c18101d211476142d9ee3bfac9777d85ef8f5",
+    "04_modelos_clasicos.md": "aae48ed753b7c36a5fe2827c432d85c05bba3cae7d20d99ae38ecf70e206bc29",
+    "05_metodologia.md": "d3f13c83c57420181295e4e0e7c56d839e461d28a963db328edf26e95aac625d"
   },
   "screenshots_sha256": {
     "images/01_introduccion.jpg": "1595164ebf02018004524705823789edc8f27f31c1e28631e4ae307e7197b3e8",
@@ -64,5 +65,39 @@
     "images/23_modelos_reporte.jpg": "e1a24176cca4dc7a25b25a7c21b488340b5749e4a37fb173a4114939f23d1310",
     "images/24_modelos_simulador.jpg": "eee4a408c82195d61630d5c4684ba978bd3df0e865a11c94f650d45aceadc7a5",
     "images/25_modelos_conclusion.jpg": "811961b614d15427bd2addcb9e0062ec2cd524f13577026a9f3ff20faa5415a1"
+  },
+  "clasicos": {
+    "fecha": "2026-10-18",
+    "ejecucion_activa": "20261018_102325_af643f83",
+    "generador": "analisis_clasicos/generar_clasicos.py",
+    "generador_sha256": "a12b324812672f14d0d8902707feb94affd9d9e03750a756ec0c41382b9d7bd0",
+    "semillas": "analisis_clasicos/experimentos_semillas.py",
+    "semillas_sha256": "c85c697c9403c3d3cb0e427bdced49d3c2a44e5cfa3dff4252860d1009c75473",
+    "figuras_sha256": {
+      "images/clasicos/eval_decision_tree.png": "99653925c7d88806cdba061d121b3fc419a042544eef03c96410c11ea2d9fe09",
+      "images/clasicos/eval_forest.png": "36510847fdd20c27ee0a8fb266c2d0704eb1d3ef6b6170f2447567cb53000ef5",
+      "images/clasicos/eval_knn.png": "95a3b3e734cccaa07cfd85722b60bddd5a4123a3c3e43ea917fc69fd14000f80",
+      "images/clasicos/eval_lasso.png": "ad3b8a6de07b12fd0d2cf082ab1ea783fdf59ac5e1abfb51451a90beef0e9388",
+      "images/clasicos/eval_resumen_rmse_mae.png": "531411e4922cdfd0398a444252ab51d7570121ff46aa337ec0da687ccd593e1c",
+      "images/clasicos/eval_ridge.png": "e8b19c1c731470135f76ae958c1ea79d27f5b02c487986f7ffbe736061ac6002",
+      "images/clasicos/eval_svm.png": "8bea15ebd6b6c183973b8e47d067bc79d6bc11308fc55275623e2e037e21219e",
+      "images/clasicos/eval_xgboost.png": "85e2ba10e9ae227b744864d77e88ce605db5a424b7185b3273798c672c98fcd8",
+      "images/clasicos/hpo_anytime_evaluaciones.png": "aca82bedc03e3f19504361e1286ef7bb9d749adb45cb6429f7b10489f586250f",
+      "images/clasicos/hpo_anytime_tiempo.png": "ce05952c9dce01654a6985a9f2a18b8f4b16202be87f3e88dd249b1cbf2edca0",
+      "images/clasicos/hpo_convergencia_tpe_deap.png": "ed9e20e74a27edccf45379ed2a572580dfb7e766b6305b4a026a18b70c76ee49",
+      "images/clasicos/hpo_deap_generaciones.png": "61e1312dce1b4abcdbe10e9dcb0085f80f746c676ea22ef7a10af0308e78c515",
+      "images/clasicos/hpo_tiempos.png": "81bf5d91af698fe08a0f8206a8039a0dc429859e0ff6ac36098d346cf15ee048",
+      "images/clasicos/robustez_folds_semillas.png": "ecdfd2960a7d5b7f0800b698521bc2b1011fc9ded55561c025cbd695dad0f49b",
+      "images/clasicos/shap_decision_tree.png": "f3c704eb9acaff9171b7f052d164830587536846d57e56be9eda734fb9556e8c",
+      "images/clasicos/shap_forest.png": "481377e8b0ffaa9851a32bf7dcb0835a36dbd7f8c6b85f96fd2d2765e16af4a5",
+      "images/clasicos/shap_importancia_modelos.png": "af3b6698f1365a2cda1ea26e160216383d557ba7df42ebb5f17872402f30c5d9",
+      "images/clasicos/shap_knn.png": "99fd9d247e5360974826e2e18ae2431503199b159504269eb5b108c7c90131e1",
+      "images/clasicos/shap_lasso.png": "472d90026f16468cc0acdf431172b93bff240c09669b4ee62f309ca5941c4cff",
+      "images/clasicos/shap_ridge.png": "6326a3a2a329b14d3e8f9388da5f5ff18e7ed0ab522e61fe477d768e6caf80f3",
+      "images/clasicos/shap_svm.png": "bb4a07394963ca91c583c66704b9cfc1df5b61133a990d58e827fe04a404f852",
+      "images/clasicos/shap_validacion_estimador.png": "0ba4c8e424bbad83ce4e3e4ca8491f1966b12184d0a6650ab6b79399455f2f70",
+      "images/clasicos/shap_xgboost.png": "9529e6059708556e79b0aaae13b5b9566a5e1e14abba6264d29d667188d9d844",
+      "images/clasicos/stats_friedman_nemenyi.png": "7c75b7637e567160b8c95748a4a621a22eb57274b976b9aef9968ec690636fef"
+    }
   }
 }

@@ -1,13 +1,13 @@
 ---
-title: Modelos
-description: Split y validación cruzada, búsqueda de hiperparámetros y resultados de los modelos lineales.
+title: Modelos lineales
+description: Split y validación cruzada compartidos, búsqueda de hiperparámetros y resultados del SVM lineal frente a Dummy.
 ---
 
-# Modelos
+# Modelos lineales
 
-Este capítulo sigue la pestaña **03 Modelos predictivos** del dashboard y documenta el modelo lineal que sirve de referencia para las demás familias. Todas las familias descritas en el tablero usan la misma separación y los mismos folds externos.
+Este capítulo sigue las subpestañas **Split y CV** y **Modelos lineales** de **03 Modelos predictivos** en el dashboard y documenta el modelo lineal que sirve de referencia para las demás familias. Todas las familias descritas en el tablero usan la misma separación y los mismos folds externos.
 
-El capítulo se organiza en dos bloques. **Split y CV** fija la metodología que comparten todas las familias: cómo se reserva el test, cómo se agrupan los estudiantes y cómo se construye el pipeline. **Modelos lineales** documenta la implementación concreta del SVM, la comparación de estrategias de búsqueda, la evaluación frente a Dummy y el análisis de errores que sirve de base para las demás familias.
+El capítulo se organiza en dos bloques. **Split y CV** fija la metodología que comparten todas las familias: cómo se reserva el test, cómo se agrupan los estudiantes y cómo se construye el pipeline. **SVM lineal y modelo de referencia** documenta la implementación concreta del SVM, la comparación de estrategias de búsqueda, la evaluación frente a Dummy y el análisis de errores que sirve de base para las demás familias.
 
 ## Split y CV
 
@@ -131,7 +131,7 @@ Cada fold interno ajusta de nuevo imputadores, escaladores y vocabulario categó
 
 Con la separación, los folds y el pipeline ya documentados, el capítulo pasa al modelo que se usa como referencia. Las decisiones de esta sección se mantienen fijas en todos los experimentos lineales.
 
-## Modelos lineales
+## SVM lineal y modelo de referencia
 
 Esta sección detalla la implementación de los modelos lineales y la comparación de estrategias de búsqueda. Primero se describe cómo se entrena el SVM epsilon-sensible y el modelo Dummy que sirve de comparación; después se presentan las cinco estrategias de hiperparámetros, las métricas en validación y test, los errores, los intervalos, la curva de aprendizaje, los coeficientes y el simulador. El objetivo no es solo reportar un resultado, sino dejar explícito cómo se obtuvo y qué límites tiene.
 
@@ -388,4 +388,4 @@ Las cifras anteriores corresponden a la vista general. Al filtrar por programa o
 
 Al elegir programa o asignatura cambian tamaño, distribuciones, asociaciones y errores del grupo seleccionado. El modelo y sus parámetros se mantienen: los filtros evalúan el modelo global sobre un subconjunto, no entrenan modelos independientes. Conviene leer primero el número de filas, después MAE/RMSE y finalmente R² junto con la variación de la nota. Un R² menor puede reflejar que el grupo tenga notas más homogéneas y no necesariamente un aumento equivalente del error absoluto. Con menos de 30 filas el tablero señala lectura inestable; con una sola fila o nota constante no calcula R².
 
-Con esta base metodológica y el desempeño del modelo lineal documentados, los capítulos siguientes pueden comparar otras familias con el mismo criterio.
+Con esta base metodológica y el desempeño del modelo lineal documentados, el capítulo [Modelos clásicos](04_modelos_clasicos.md) compara seis familias adicionales con el mismo criterio.
