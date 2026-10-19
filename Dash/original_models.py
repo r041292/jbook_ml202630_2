@@ -164,13 +164,6 @@ def create_originals(app, ui):
         dcc.RadioItems([{'label': 'Test temporal', 'value': 'test'}, {'label': 'Validación OOF', 'value': 'cv'}],
                        'cv', id='original-diagnostic-partition', inline=True, className='radio'),
         dcc.Loading(html.Div(id='original-diagnostics'))],className='details'),
-        html.Details([html.Summary('Archivo histórico · contrastes anteriores a esta actualización'),
-            md('Estos contrastes corresponden a las ejecuciones anteriores: no se reutilizan sus p-valores '
-               'para las predicciones actualizadas. Contrastes pareados por estudiante del test. Δ = candidato − referencia; para RMSE negativo favorece al candidato. '
-               'IC marginales del 95 %, p bilateral y p ajustado conservan su familia publicada (Holm55, Holm12 o Holm7); '
-               'no constituyen una corrección global única para todos los modelos. Ausencias indican contraste no publicado. '
-               'No rechazar una diferencia no demuestra equivalencia.'),
-            table(CONTRASTS.drop(columns=['fuente']))], className='details classic-bootstrap'),
         html.Details([html.Summary('Complementariedad · correlación de errores'),
         title('COMPLEMENTARIEDAD', 'Correlación de errores entre modelos',
               'Residuos con signo: nota real − predicción. OOF permite explorar complementariedad sin ajustar pesos con test.'),
