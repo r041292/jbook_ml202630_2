@@ -21,9 +21,14 @@ def validate():
     cv = original.comparison_rows(training, app.TARGET, cv=True)
     from statistical_comparison import CV_INFERENCE
     assert CV_INFERENCE.p_Holm.notna().sum()==25  # Archivo histórico; no aplicar a métricas nuevas.
-    assert original.ANALYSIS['students']['family_size']==25
-    assert original.ANALYSIS['omnibus']['n_models']==25
+    assert original.ANALYSIS['students']['family_size']==14  # 11 modelos de librería importada fuera de las pruebas
+    assert original.ANALYSIS['omnibus']['n_models']==15
     assert cv.iloc[0].Modelo == original.BEST_NAME
+    from model_groups import IMPORT_ONLY, validate as validate_groups
+    validate_groups(original.CATALOG)
+    assert not set(IMPORT_ONLY.values()) & set(cv.Modelo), 'Los modelos de librería importada deben estar ocultos por defecto.'
+    assert set(IMPORT_ONLY.values()) <= set(original.comparison_rows(training, app.TARGET, cv=True, show_imports=True).Modelo)
+    assert set(original.ANALYSIS['excluded_library']) == set(IMPORT_ONLY.values())
     np.testing.assert_allclose(original.best_model().predict(test[app.FEATURES]), test[original.BEST], atol=1e-12, rtol=0)
     np.testing.assert_allclose(original.model_for(original.TN_KRR).predict(test[app.FEATURES]),
                                test[original.TN_KRR], atol=1e-10, rtol=0)
@@ -46,13 +51,15 @@ def validate():
     for prefix in ['original', 'classic']:
         for program, course in [('__all__', '__all__'), ('Ingeniería Civil', 'MAT1101'), ('Arquitectura', 'MAT1101')]:
             for partition in ['cv', 'test']:
-                output = prefix+'-comparison.children'
-                metadata = app.app.callback_map[output]
-                inputs = [{**item, 'value': value} for item, value in zip(metadata['inputs'], [program, course, partition])]
-                response = client.post('/_dash-update-component', json={
-                    'output': output, 'outputs': {'id': prefix+'-comparison', 'property': 'children'},
-                    'inputs': inputs, 'state': [], 'changedPropIds': [inputs[0]['id']+'.value']})
-                assert response.status_code == 200, response.get_data(as_text=True)[:1000]
+                # Originales tiene además el estado del botón de modelos de librería importada (oculto/visible).
+                for extra in ([[False], [True]] if prefix == 'original' else [[]]):
+                    output = prefix+'-comparison.children'
+                    metadata = app.app.callback_map[output]
+                    inputs = [{**item, 'value': value} for item, value in zip(metadata['inputs'], [program, course, partition, *extra])]
+                    response = client.post('/_dash-update-component', json={
+                        'output': output, 'outputs': {'id': prefix+'-comparison', 'property': 'children'},
+                        'inputs': inputs, 'state': [], 'changedPropIds': [inputs[0]['id']+'.value']})
+                    assert response.status_code == 200, response.get_data(as_text=True)[:1000]
     assert 'original-prediction-result.children' not in app.app.callback_map
     from classic_models import load_model
     import classic_models as classics

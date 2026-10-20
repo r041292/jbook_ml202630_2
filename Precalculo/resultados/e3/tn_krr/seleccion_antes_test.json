@@ -1,0 +1,8 @@
+{
+  "params": {
+    "alpha": 0.1,
+    "gamma": 0.01
+  },
+  "inner_rmse": 0.8036854518220189,
+  "test_used": false
+}

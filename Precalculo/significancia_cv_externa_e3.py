@@ -12,11 +12,13 @@ BOOK = Path(__file__).resolve().parent
 RESULTS = BOOK / 'resultados/e3'
 OUTPUT = RESULTS / 'cv_externa'
 REFERENCE = 'SVM lineal'
-FAMILY = 'Holm24 CV vs SVM'
+FAMILY = 'Holm25 CV vs SVM'
 FOLD_FOLDERS = ['clasicos', 'scopus/xbart', 'scopus/catboost', 'scopus/copilot', 'scopus/kernel_ridge',
                 'logicdt', 'tabpfn_25', 'rim', 'tabicl_v2', 'hrt_boost', 'tcr_xgboost', 'tabfm',
                 'gpr_xgb', 'svr_rbf_raffle/svr_rbf', 'svr_rbf_raffle/raffle',
-                'xgboost_variantes/gbtree', 'xgboost_variantes/dart', 'xgboost_variantes/denseweight', 'linxgboost']
+                'xgboost_variantes/gbtree', 'xgboost_variantes/dart', 'xgboost_variantes/denseweight',
+                'linxgboost', 'tn_krr']
+TN_MODEL = 'Truncated Newton KRR RBF'
 
 
 def input_paths():
@@ -50,7 +52,7 @@ def build():
     folds = pd.concat(frames, ignore_index=True)[['Modelo', 'Fold', 'RMSE', 'MAE', 'MAPE (%)', 'R²']]
     folds['Modelo'] = folds.Modelo.replace({'TabPFN 2.5 (4 estimadores, CPU)': 'TabPFN 2.5 original'})
     inventory = pd.read_csv(RESULTS / 'resumen_completo/modelos.csv')
-    expected = set(inventory.Modelo) - {'TabPFN 2.5 fine-tuned'}
+    expected = (set(inventory.Modelo) - {'TabPFN 2.5 fine-tuned'}) | {TN_MODEL}
     if set(folds.Modelo) != expected or folds.duplicated(['Modelo', 'Fold']).any():
         raise ValueError('Inventario o pares modelo-fold incompatibles.')
     for name, group in folds.groupby('Modelo'):
@@ -77,8 +79,8 @@ def build():
         rows.append(row)
     table = pd.DataFrame(rows)
     tested = table.Modelo.ne(REFERENCE)
-    if tested.sum() != 24 or table.loc[tested, 'p_bilateral'].isna().any():
-        raise ValueError('Se esperaban 24 contrastes válidos vs SVM.')
+    if tested.sum() != 25 or table.loc[tested, 'p_bilateral'].isna().any():
+        raise ValueError('Se esperaban 25 contrastes válidos vs SVM, incluido TR-KRR.')
     table['p_Holm'] = np.nan
     table.loc[tested, 'p_Holm'] = multipletests(table.loc[tested, 'p_bilateral'], method='holm')[1]
     table['conclusion'] = ['Referencia' if row.Modelo == REFERENCE else
@@ -94,14 +96,14 @@ def build():
     report = dict(reference=REFERENCE, primary_metric='media aritmética RMSE de 5 folds externos',
                   method='t pareada corregida Nadeau–Bengio; adaptación exploratoria a 1×5 GroupKFold',
                   formula='SE=sqrt((1/5+mean(n_val_estudiantes/n_fit_estudiantes))*var(delta_RMSE,ddof=1)); t=mean(delta)/SE; df=4; p=2*sf(abs(t))',
-                  fold_audit=audit, correction_ratio=ratio, family_size=24, family=FAMILY,
+                  fold_audit=audit, correction_ratio=ratio, family_size=25, family=FAMILY,
                   training_performed=False, test_used=False,
                   excluded_candidates={'GPR sola (ablación)': 'Retirada por solicitud del usuario por trazabilidad del artefacto original; se conserva el antecedente archivado.'},
                   family_redefined_after_review=True,
                   limitations=['Una sola partición de cinco folds, sin repeticiones: aproximación de baja potencia.',
                                'La corrección aproxima la dependencia por solapamiento; no garantiza inferencia exacta para GroupKFold.',
                                'Comparación exploratoria: búsqueda histórica de familias y grillas sobre el mismo train; familia no anidada.',
-                               'IC marginales sin corrección múltiple; Holm se aplica solo a los 24 p de RMSE vs SVM.',
+                               'IC marginales sin corrección múltiple; Holm se aplica solo a los 25 p de RMSE vs SVM.',
                                'No es un contraste entre todos los pares ni demuestra equivalencia cuando p>=0.05.'],
                   sources_sha256={p.relative_to(BOOK).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},
                   generator_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
@@ -116,12 +118,12 @@ def build():
              'Se reutilizan los cinco folds externos canónicos, sin entrenar ni usar métricas o predicciones de test en el cálculo. Se empareja el RMSE de cada modelo con SVM en el mismo fold.',
              'Adaptación aproximada del test t corregido de Nadeau–Bengio: `SE²=(1/5+q)*s²`, `t=media(delta)/SE`, 4 grados de libertad, p bilateral.',
              f'`s²` usa ddof=1; `q` es la media de estudiantes_validación/estudiantes_fit ({ratio:.9f}). El RMSE sigue ponderando registros dentro de cada fold.',
-             'Holm corrige conjuntamente los **24 contrastes RMSE vs SVM** del inventario activo. SVM y TabPFN fine-tuned no entran en la familia. GPR sola fue retirada por trazabilidad del artefacto original; el híbrido GPR–XGBoost sigue siendo un experimento distinto.',
+             'Holm corrige conjuntamente los **25 contrastes RMSE vs SVM**, incluido TR-KRR. SVM y TabPFN fine-tuned no entran en la familia. GPR sola fue retirada por trazabilidad del artefacto original; el híbrido GPR–XGBoost sigue siendo un experimento distinto.',
              'Se conserva la misma familia en el tablero clásico; no se recalcula Holm sobre sus cinco modelos.', '',
              'Hay una sola partición 1×5, no CV repetida: la corrección es una aproximación exploratoria, con poca potencia. Los folds no son observaciones independientes.',
              'No se usa t ordinaria ni permutación IID de filas OOF. No se garantiza calibración exacta de p para GroupKFold. Los IC95% son marginales.',
              'La familia y las grillas se han explorado sobre el mismo train; esto no evalúa de forma independiente un selector de familia anidado.', '',
-             '## Resultados', '', '| Modelo | RMSE medio CV | Δ vs SVM | p bilateral corregida | p Holm24 | Conclusión |',
+             '## Resultados', '', '| Modelo | RMSE medio CV | Δ vs SVM | p bilateral corregida | p Holm25 | Conclusión |',
              '|---|---:|---:|---:|---:|---|']
     for row in table.itertuples():
         fmt = lambda value: '—' if pd.isna(value) else f'{value:.6f}'
@@ -129,8 +131,8 @@ def build():
     best = table.iloc[0]
     improved = table.conclusion.eq('Mejora significativa').sum()
     lines += ['', '## Conclusión', '',
-              f'{best.Modelo} lidera numéricamente CV: RMSE medio {best.RMSE_CV:.6f}; p bilateral {best.p_bilateral:.6f}, Holm24 {best.p_Holm:.6f} frente al SVM.',
-              f'{improved} mejoras frente al SVM sobreviven Holm24. Ausencia de significancia no prueba igualdad.',
+              f'{best.Modelo} lidera numéricamente CV: RMSE medio {best.RMSE_CV:.6f}; p bilateral {best.p_bilateral:.6f}, Holm25 {best.p_Holm:.6f} frente al SVM.',
+              f'{improved} mejoras frente al SVM sobreviven Holm25. Ausencia de significancia no prueba igualdad.',
               'El mínimo de CV es un candidato para validación futura, no un ganador confirmado. SVR RBF conserva el mínimo descriptivo del test, sin reemplazar el criterio CV.', '',
               '## Referencias', '', *[f'- {url}' for url in report['references']], '',
               'Reproducir: `venv/Scripts/python.exe significancia_cv_externa_e3.py`. No reentrena ni cambia predicciones.']

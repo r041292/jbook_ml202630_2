@@ -7413,3 +7413,7208 @@ La plantilla anterior no representa una ejecución real.
 | Inferencia | Ridge | 0.000129100 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
 | Inferencia | XGBRegressor | 0.016018100 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
 | Total del experimento | Verificación/preparación · Dash/validate_package.py | 11.924062800 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |
+
+### Ejecución `20261019_135934_5d3fe987`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-19T13:59:34.841710-05:00 a 2026-10-19T14:37:06.357957-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_135934_5d3fe987/metadata.json](tiempos/20261019_135934_5d3fe987/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_135934_5d3fe987/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m7 / external_1 / Grid Search | 7.869524800 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Búsqueda | m7 / external_1 / Random Search | 2.756288500 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Búsqueda | m7 / external_1 / Bayesiana TPE | 3.055653400 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m7 / external_1 / Genética DEAP | 3.513033700 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Búsqueda | m7 / external_1 / Successive Halving | 4.933441300 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Entrenamiento/refit | m7 / externo1 | 0.217556300 | 1047 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m7 / OOF externo1 | 0.012707200 | 262 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Búsqueda | m7 / external_2 / Grid Search | 4.319124500 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Búsqueda | m7 / external_2 / Random Search | 2.613284000 | 1047 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m7 / external_2 / Bayesiana TPE | 5.419188500 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Búsqueda | m7 / external_2 / Genética DEAP | 5.071408700 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Búsqueda | m7 / external_2 / Successive Halving | 8.284888000 | 1047 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Entrenamiento/refit | m7 / externo2 | 0.318421900 | 1047 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m7 / OOF externo2 | 0.018950000 | 262 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Búsqueda | m7 / external_3 / Grid Search | 7.974330400 | 1047 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m7 / external_3 / Random Search | 3.878925300 | 1047 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Búsqueda | m7 / external_3 / Bayesiana TPE | 3.794600200 | 1047 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Búsqueda | m7 / external_3 / Genética DEAP | 3.400125200 | 1047 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | m7 / external_3 / Successive Halving | 5.232702300 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit | m7 / externo3 | 0.236144600 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | m7 / OOF externo3 | 0.015603000 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | m7 / external_4 / Grid Search | 4.643138600 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Búsqueda | m7 / external_4 / Random Search | 2.773273900 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Búsqueda | m7 / external_4 / Bayesiana TPE | 3.289987900 | 1047 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | m7 / external_4 / Genética DEAP | 3.744304500 | 1047 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Búsqueda | m7 / external_4 / Successive Halving | 2.789708300 | 1047 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Entrenamiento/refit | m7 / externo4 | 0.224597700 | 1047 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | m7 / OOF externo4 | 0.013424200 | 262 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Búsqueda | m7 / external_5 / Grid Search | 4.481720400 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Búsqueda | m7 / external_5 / Random Search | 2.665882900 | 1048 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | m7 / external_5 / Bayesiana TPE | 2.678783700 | 1048 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Búsqueda | m7 / external_5 / Genética DEAP | 3.078003900 | 1048 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Búsqueda | m7 / external_5 / Successive Halving | 4.991671700 | 1048 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Entrenamiento/refit | m7 / externo5 | 0.231166400 | 1048 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | m7 / OOF externo5 | 0.013186900 | 261 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Búsqueda | m7 / final / Grid Search | 5.126816600 | 1309 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | m7 / final / Random Search | 3.131016900 | 1309 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Búsqueda | m7 / final / Bayesiana TPE | 3.586656400 | 1309 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Búsqueda | m7 / final / Genética DEAP | 4.118715800 | 1309 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | m7 / final / Successive Halving | 2.864540500 | 1309 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit | m7 / final | 0.316886300 | 1309 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Búsqueda | m14 / external_1 / Grid Search | 3.748004500 | 1047 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Búsqueda | m14 / external_1 / Random Search | 2.188675200 | 1047 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Búsqueda | m14 / external_1 / Bayesiana TPE | 2.103817100 | 1047 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Búsqueda | m14 / external_1 / Genética DEAP | 2.093576500 | 1047 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Búsqueda | m14 / external_1 / Successive Halving | 2.860851500 | 1047 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Entrenamiento/refit | m14 / externo1 | 0.086289300 | 1047 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | m14 / OOF externo1 | 0.005863900 | 262 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Búsqueda | m14 / external_2 / Grid Search | 3.655778800 | 1047 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Búsqueda | m14 / external_2 / Random Search | 2.237321900 | 1047 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Búsqueda | m14 / external_2 / Bayesiana TPE | 2.126746900 | 1047 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Búsqueda | m14 / external_2 / Genética DEAP | 2.192112900 | 1047 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Búsqueda | m14 / external_2 / Successive Halving | 2.529401400 | 1047 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Entrenamiento/refit | m14 / externo2 | 0.066992700 | 1047 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | m14 / OOF externo2 | 0.009588900 | 262 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Búsqueda | m14 / external_3 / Grid Search | 3.740084200 | 1047 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Búsqueda | m14 / external_3 / Random Search | 2.052217700 | 1047 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Búsqueda | m14 / external_3 / Bayesiana TPE | 2.138321700 | 1047 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Búsqueda | m14 / external_3 / Genética DEAP | 2.491866200 | 1047 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Búsqueda | m14 / external_3 / Successive Halving | 2.279188900 | 1047 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Entrenamiento/refit | m14 / externo3 | 0.103533500 | 1047 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | m14 / OOF externo3 | 0.005672600 | 262 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Búsqueda | m14 / external_4 / Grid Search | 3.672931700 | 1047 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Búsqueda | m14 / external_4 / Random Search | 2.085400400 | 1047 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Búsqueda | m14 / external_4 / Bayesiana TPE | 1.947342400 | 1047 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Búsqueda | m14 / external_4 / Genética DEAP | 2.385224100 | 1047 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Búsqueda | m14 / external_4 / Successive Halving | 2.352875400 | 1047 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Entrenamiento/refit | m14 / externo4 | 0.149720400 | 1047 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | m14 / OOF externo4 | 0.006601300 | 262 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Búsqueda | m14 / external_5 / Grid Search | 3.625908400 | 1048 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Búsqueda | m14 / external_5 / Random Search | 2.035014800 | 1048 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Búsqueda | m14 / external_5 / Bayesiana TPE | 2.050925200 | 1048 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Búsqueda | m14 / external_5 / Genética DEAP | 1.698249800 | 1048 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Búsqueda | m14 / external_5 / Successive Halving | 2.292084700 | 1048 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Entrenamiento/refit | m14 / externo5 | 0.080814200 | 1048 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | m14 / OOF externo5 | 0.005811700 | 261 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Búsqueda | m14 / final / Grid Search | 3.922044700 | 1309 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Búsqueda | m14 / final / Random Search | 2.364572100 | 1309 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Búsqueda | m14 / final / Bayesiana TPE | 2.437222500 | 1309 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Búsqueda | m14 / final / Genética DEAP | 2.674739500 | 1309 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Búsqueda | m14 / final / Successive Halving | 2.616154700 | 1309 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Entrenamiento/refit | m14 / final | 0.108541200 | 1309 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Búsqueda | m16 / external_1 / Grid Search | 92.247609600 | 1047 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Búsqueda | m16 / external_1 / Random Search | 86.251787200 | 1047 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Búsqueda | m16 / external_1 / Bayesiana TPE | 49.725135800 | 1047 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Búsqueda | m16 / external_1 / Genética DEAP | 42.956356200 | 1047 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Búsqueda | m16 / external_1 / Successive Halving | 56.592280800 | 1047 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Entrenamiento/refit | m16 / externo1 | 4.562005700 | 1047 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | m16 / OOF externo1 | 0.034168200 | 262 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Búsqueda | m16 / external_2 / Grid Search | 65.526934300 | 1047 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Búsqueda | m16 / external_2 / Random Search | 65.697829800 | 1047 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Búsqueda | m16 / external_2 / Bayesiana TPE | 48.034539400 | 1047 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Búsqueda | m16 / external_2 / Genética DEAP | 40.798895300 | 1047 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Búsqueda | m16 / external_2 / Successive Halving | 51.109527700 | 1047 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Entrenamiento/refit | m16 / externo2 | 3.415743000 | 1047 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | m16 / OOF externo2 | 0.034398500 | 262 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Búsqueda | m16 / external_3 / Grid Search | 65.224753400 | 1047 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Búsqueda | m16 / external_3 / Random Search | 65.044678500 | 1047 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Búsqueda | m16 / external_3 / Bayesiana TPE | 41.515280500 | 1047 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Búsqueda | m16 / external_3 / Genética DEAP | 53.637410300 | 1047 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Búsqueda | m16 / external_3 / Successive Halving | 71.979129800 | 1047 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Entrenamiento/refit | m16 / externo3 | 4.922755700 | 1047 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | m16 / OOF externo3 | 0.055392900 | 262 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Búsqueda | m16 / external_4 / Grid Search | 103.019123200 | 1047 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Búsqueda | m16 / external_4 / Random Search | 93.796170300 | 1047 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Búsqueda | m16 / external_4 / Bayesiana TPE | 40.890282900 | 1047 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Búsqueda | m16 / external_4 / Genética DEAP | 34.814768300 | 1047 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Búsqueda | m16 / external_4 / Successive Halving | 62.253257700 | 1047 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Entrenamiento/refit | m16 / externo4 | 4.679307500 | 1047 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | m16 / OOF externo4 | 0.046928300 | 262 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Búsqueda | m16 / external_5 / Grid Search | 100.537650900 | 1048 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Búsqueda | m16 / external_5 / Random Search | 56.809119200 | 1048 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Búsqueda | m16 / external_5 / Bayesiana TPE | 40.310958700 | 1048 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Búsqueda | m16 / external_5 / Genética DEAP | 35.759646900 | 1048 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Búsqueda | m16 / external_5 / Successive Halving | 80.264630900 | 1048 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Entrenamiento/refit | m16 / externo5 | 4.872793600 | 1048 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | m16 / OOF externo5 | 0.047259700 | 261 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Búsqueda | m16 / final / Grid Search | 125.205267800 | 1309 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Búsqueda | m16 / final / Random Search | 102.278122900 | 1309 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Búsqueda | m16 / final / Bayesiana TPE | 92.949610100 | 1309 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Búsqueda | m16 / final / Genética DEAP | 69.818257800 | 1309 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Búsqueda | m16 / final / Successive Halving | 76.919343000 | 1309 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Entrenamiento/refit | m16 / final | 6.381577800 | 1309 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | m7 / test202530 | 0.018742800 | 188 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | m14 / test202530 | 0.009626600 | 188 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | m16 / test202530 | 0.039524400 | 188 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 2251.511168200 | No aplica | 1 | completa | Total; eventos.jsonl línea 127 |
+
+### Ejecución `20261019_144732_b7acf148`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-19T14:47:32.749066-05:00 a 2026-10-20T08:45:40.761058-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261019_144732_b7acf148/metadata.json](tiempos/20261019_144732_b7acf148/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261019_144732_b7acf148/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m3 / external_1 / Grid Search | 479.478751100 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Búsqueda | m3 / external_1 / Random Search | 105.845589600 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Búsqueda | m3 / external_1 / Bayesiana TPE | 81.622710500 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m3 / external_1 / Genética DEAP | 131.630042300 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Búsqueda | m3 / external_1 / Successive Halving | 39.282466900 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Entrenamiento/refit | m3 / externo1 | 3.862963000 | 1047 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m3 / OOF externo1 | 0.005751500 | 262 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Búsqueda | m3 / external_2 / Grid Search | 600.939372600 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Búsqueda | m3 / external_2 / Random Search | 132.656395000 | 1047 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m3 / external_2 / Bayesiana TPE | 148.042213900 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Búsqueda | m3 / external_2 / Genética DEAP | 169.070693100 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Búsqueda | m3 / external_2 / Successive Halving | 63.305440500 | 1047 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Entrenamiento/refit | m3 / externo2 | 6.457532400 | 1047 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m3 / OOF externo2 | 0.014175600 | 262 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Búsqueda | m3 / external_3 / Grid Search | 660.344024700 | 1047 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m3 / external_3 / Random Search | 153.187499300 | 1047 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Búsqueda | m3 / external_3 / Bayesiana TPE | 97.985925300 | 1047 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Búsqueda | m3 / external_3 / Genética DEAP | 137.048659900 | 1047 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | m3 / external_3 / Successive Halving | 39.361920500 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit | m3 / externo3 | 1.036503500 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | m3 / OOF externo3 | 0.004991900 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | m3 / external_4 / Grid Search | 609.800712400 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Búsqueda | m3 / external_4 / Random Search | 157.989809500 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Búsqueda | m3 / external_4 / Bayesiana TPE | 129.154703200 | 1047 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | m3 / external_4 / Genética DEAP | 190.311638500 | 1047 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Búsqueda | m3 / external_4 / Successive Halving | 81.671249500 | 1047 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Entrenamiento/refit | m3 / externo4 | 1.720153000 | 1047 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | m3 / OOF externo4 | 0.008807200 | 262 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Búsqueda | m3 / external_5 / Grid Search | 739.794724200 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Búsqueda | m3 / external_5 / Random Search | 181.433652500 | 1048 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | m3 / external_5 / Bayesiana TPE | 150.279606500 | 1048 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Búsqueda | m3 / external_5 / Genética DEAP | 189.808657200 | 1048 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Búsqueda | m3 / external_5 / Successive Halving | 97.048880600 | 1048 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Entrenamiento/refit | m3 / externo5 | 9.029020400 | 1048 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | m3 / OOF externo5 | 0.010356600 | 261 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Búsqueda | m3 / final / Grid Search | 1165.486713500 | 1309 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | m3 / final / Random Search | 289.137687200 | 1309 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Búsqueda | m3 / final / Bayesiana TPE | 272.387306500 | 1309 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Búsqueda | m3 / final / Genética DEAP | 197.221140900 | 1309 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | m3 / final / Successive Halving | 119.364618500 | 1309 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit | m3 / final | 7.294028400 | 1309 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Búsqueda | m11 / external_1 / Grid Search | 75.400779900 | 1047 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Búsqueda | m11 / external_1 / Random Search | 10.921322800 | 1047 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Búsqueda | m11 / external_1 / Bayesiana TPE | 13.229195500 | 1047 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Búsqueda | m11 / external_1 / Genética DEAP | 13.894698700 | 1047 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Búsqueda | m11 / external_1 / Successive Halving | 16.105889700 | 1047 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Entrenamiento/refit | m11 / externo1 | 0.331022500 | 1047 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | m11 / OOF externo1 | 0.012384800 | 262 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Búsqueda | m11 / external_2 / Grid Search | 79.493223500 | 1047 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Búsqueda | m11 / external_2 / Random Search | 10.706268600 | 1047 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Búsqueda | m11 / external_2 / Bayesiana TPE | 13.558867200 | 1047 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Búsqueda | m11 / external_2 / Genética DEAP | 15.321874600 | 1047 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Búsqueda | m11 / external_2 / Successive Halving | 15.091230500 | 1047 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Entrenamiento/refit | m11 / externo2 | 0.334413200 | 1047 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | m11 / OOF externo2 | 0.014138700 | 262 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Búsqueda | m11 / external_3 / Grid Search | 74.596339300 | 1047 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Búsqueda | m11 / external_3 / Random Search | 10.082457100 | 1047 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Búsqueda | m11 / external_3 / Bayesiana TPE | 12.258256500 | 1047 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Búsqueda | m11 / external_3 / Genética DEAP | 17.837811000 | 1047 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Búsqueda | m11 / external_3 / Successive Halving | 15.365244500 | 1047 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Entrenamiento/refit | m11 / externo3 | 0.297079000 | 1047 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | m11 / OOF externo3 | 0.014120800 | 262 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Búsqueda | m11 / external_4 / Grid Search | 74.286642300 | 1047 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Búsqueda | m11 / external_4 / Random Search | 9.992271500 | 1047 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Búsqueda | m11 / external_4 / Bayesiana TPE | 11.995130900 | 1047 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Búsqueda | m11 / external_4 / Genética DEAP | 17.163314500 | 1047 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Búsqueda | m11 / external_4 / Successive Halving | 14.518728600 | 1047 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Entrenamiento/refit | m11 / externo4 | 0.257828500 | 1047 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | m11 / OOF externo4 | 0.013544500 | 262 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Búsqueda | m11 / external_5 / Grid Search | 74.561893800 | 1048 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Búsqueda | m11 / external_5 / Random Search | 9.987520700 | 1048 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Búsqueda | m11 / external_5 / Bayesiana TPE | 11.883004000 | 1048 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Búsqueda | m11 / external_5 / Genética DEAP | 12.080330400 | 1048 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Búsqueda | m11 / external_5 / Successive Halving | 15.055301600 | 1048 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Entrenamiento/refit | m11 / externo5 | 0.420188000 | 1048 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | m11 / OOF externo5 | 0.012133000 | 261 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Búsqueda | m11 / final / Grid Search | 76.247547800 | 1309 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Búsqueda | m11 / final / Random Search | 10.312497900 | 1309 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Búsqueda | m11 / final / Bayesiana TPE | 12.526601900 | 1309 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Búsqueda | m11 / final / Genética DEAP | 17.990733800 | 1309 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Búsqueda | m11 / final / Successive Halving | 14.664536200 | 1309 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Entrenamiento/refit | m11 / final | 0.453470600 | 1309 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Búsqueda | m15 / external_1 / Grid Search | 216.097431100 | 1047 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Búsqueda | m15 / external_1 / Random Search | 51.863724700 | 1047 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Búsqueda | m15 / external_1 / Bayesiana TPE | 47.004286400 | 1047 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Búsqueda | m15 / external_1 / Genética DEAP | 60.540188800 | 1047 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Búsqueda | m15 / external_1 / Successive Halving | 85.409667200 | 1047 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Entrenamiento/refit | m15 / externo1 | 64.339446400 | 1047 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | m15 / OOF externo1 | 0.050828100 | 262 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Búsqueda | m15 / external_2 / Grid Search | 225.488601100 | 1047 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Búsqueda | m15 / external_2 / Random Search | 50.560582900 | 1047 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Búsqueda | m15 / external_2 / Bayesiana TPE | 44.459568200 | 1047 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Búsqueda | m15 / external_2 / Genética DEAP | 57.765861200 | 1047 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Búsqueda | m15 / external_2 / Successive Halving | 82.586399200 | 1047 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Entrenamiento/refit | m15 / externo2 | 56.321498300 | 1047 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | m15 / OOF externo2 | 0.043161600 | 262 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Búsqueda | m15 / external_3 / Grid Search | 201.350551500 | 1047 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Búsqueda | m15 / external_3 / Random Search | 75.423928600 | 1047 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Búsqueda | m15 / external_3 / Bayesiana TPE | 50.292160000 | 1047 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Búsqueda | m15 / external_3 / Genética DEAP | 91.294682000 | 1047 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Búsqueda | m15 / external_3 / Successive Halving | 138.313128000 | 1047 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Entrenamiento/refit | m15 / externo3 | 98.689269200 | 1047 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | m15 / OOF externo3 | 0.064533400 | 262 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Búsqueda | m15 / external_4 / Grid Search | 290.767064000 | 1047 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Búsqueda | m15 / external_4 / Random Search | 40.851012700 | 1047 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Búsqueda | m15 / external_4 / Bayesiana TPE | 36.503201400 | 1047 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Búsqueda | m15 / external_4 / Genética DEAP | 48.237783700 | 1047 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Búsqueda | m15 / external_4 / Successive Halving | 68.170871200 | 1047 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Entrenamiento/refit | m15 / externo4 | 44.967770700 | 1047 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | m15 / OOF externo4 | 0.033660300 | 262 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Búsqueda | m15 / external_5 / Grid Search | 169.358439700 | 1048 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Búsqueda | m15 / external_5 / Random Search | 43.319106500 | 1048 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Búsqueda | m15 / external_5 / Bayesiana TPE | 39.225580000 | 1048 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Búsqueda | m15 / external_5 / Genética DEAP | 49.013539400 | 1048 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Búsqueda | m15 / external_5 / Successive Halving | 52769.815659700 | 1048 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Entrenamiento/refit | m15 / externo5 | 81.743745900 | 1048 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | m15 / OOF externo5 | 0.082246600 | 261 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Búsqueda | m15 / final / Grid Search | 246.204303600 | 1309 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Búsqueda | m15 / final / Random Search | 114.067097400 | 1309 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Búsqueda | m15 / final / Bayesiana TPE | 101.723267300 | 1309 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Búsqueda | m15 / final / Genética DEAP | 113.847300800 | 1309 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Búsqueda | m15 / final / Successive Halving | 186.611232800 | 1309 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Entrenamiento/refit | m15 / final | 131.584943500 | 1309 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | m3 / test202530 | 0.018192500 | 188 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | m11 / test202530 | 0.030688600 | 188 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | m15 / test202530 | 0.063004200 | 188 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 64695.534238700 | No aplica | 1 | completa | Total; eventos.jsonl línea 127 |
+
+### Ejecución `20261020_084619_644d4c7d`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-20T08:46:19.407735-05:00 a 2026-10-20T09:03:06.986249-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_084619_644d4c7d/metadata.json](tiempos/20261020_084619_644d4c7d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_084619_644d4c7d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m7 / external_1 / Grid Search | 95.060820800 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Búsqueda | m7 / external_1 / Random Search | 20.843491800 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Búsqueda | m7 / external_1 / Bayesiana TPE | 23.300473200 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m7 / external_1 / Genética DEAP | 12.183796800 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Búsqueda | m7 / external_1 / Successive Halving | 29.703867300 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Entrenamiento/refit | m7 / externo1 | 0.526168100 | 1047 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m7 / OOF externo1 | 0.021328000 | 262 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Búsqueda | m7 / external_2 / Grid Search | 87.661157500 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Búsqueda | m7 / external_2 / Random Search | 20.001650800 | 1047 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m7 / external_2 / Bayesiana TPE | 19.891458900 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Búsqueda | m7 / external_2 / Genética DEAP | 12.553189300 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Búsqueda | m7 / external_2 / Successive Halving | 27.131691200 | 1047 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Entrenamiento/refit | m7 / externo2 | 0.508868600 | 1047 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m7 / OOF externo2 | 0.016881200 | 262 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Búsqueda | m7 / external_3 / Grid Search | 81.886937900 | 1047 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m7 / external_3 / Random Search | 18.463593100 | 1047 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Búsqueda | m7 / external_3 / Bayesiana TPE | 18.905248900 | 1047 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Búsqueda | m7 / external_3 / Genética DEAP | 12.258849900 | 1047 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | m7 / external_3 / Successive Halving | 26.552168200 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit | m7 / externo3 | 0.288236400 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | m7 / OOF externo3 | 0.016287000 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | m7 / external_4 / Grid Search | 84.655443500 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Búsqueda | m7 / external_4 / Random Search | 18.609377100 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Búsqueda | m7 / external_4 / Bayesiana TPE | 19.823249300 | 1047 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | m7 / external_4 / Genética DEAP | 12.421053600 | 1047 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Búsqueda | m7 / external_4 / Successive Halving | 26.779021500 | 1047 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Entrenamiento/refit | m7 / externo4 | 0.344337100 | 1047 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | m7 / OOF externo4 | 0.017045000 | 262 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Búsqueda | m7 / external_5 / Grid Search | 85.307284100 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Búsqueda | m7 / external_5 / Random Search | 18.556816400 | 1048 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | m7 / external_5 / Bayesiana TPE | 18.549845100 | 1048 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Búsqueda | m7 / external_5 / Genética DEAP | 11.245478500 | 1048 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Búsqueda | m7 / external_5 / Successive Halving | 25.091294000 | 1048 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Entrenamiento/refit | m7 / externo5 | 0.361103500 | 1048 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | m7 / OOF externo5 | 0.016026500 | 261 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Búsqueda | m7 / final / Grid Search | 92.547721000 | 1309 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | m7 / final / Random Search | 20.724545100 | 1309 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Búsqueda | m7 / final / Bayesiana TPE | 22.428811800 | 1309 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Búsqueda | m7 / final / Genética DEAP | 11.663904800 | 1309 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | m7 / final / Successive Halving | 28.597255000 | 1309 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit | m7 / final | 0.418164200 | 1309 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | m7 / test202530 | 0.016945800 | 188 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 1007.577652500 | No aplica | 1 | completa | Total; eventos.jsonl línea 43 |
+
+### Ejecución `20261020_094655_be2749de`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T09:46:55.764760-05:00 a 2026-10-20T09:46:59.411596-05:00; America/Bogota.
+- **Estado:** fallida. **Entorno/configuración/código/datos:** [tiempos/20261020_094655_be2749de/metadata.json](tiempos/20261020_094655_be2749de/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_094655_be2749de/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.046563000 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.021172700 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.011420100 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m14 / validación serialización test | 0.006547900 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m16 / validación serialización test | 0.104059900 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m3 / validación serialización test | 0.006615400 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m11 / validación serialización test | 0.034495000 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Total del experimento | Originales · verificación y activación | 3.643279900 | No aplica | 1 | fallida | Total; eventos.jsonl línea 8 |
+
+### Ejecución `20261020_094734_fda9e11c`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T09:47:34.272874-05:00 a 2026-10-20T09:47:39.495984-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_094734_fda9e11c/metadata.json](tiempos/20261020_094734_fda9e11c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_094734_fda9e11c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.365707300 | 25 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm25 Originales | 2.727104700 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 5.215880800 | No aplica | 1 | completa | Total; eventos.jsonl línea 3 |
+
+### Ejecución `20261020_094739_a5b4b683`
+
+- **Modelo/motivo:** Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME.
+- **Fecha/zona:** 2026-10-20T09:47:39.929372-05:00 a 2026-10-20T09:48:42.052826-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_094739_a5b4b683/metadata.json](tiempos/20261020_094739_a5b4b683/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_094739_a5b4b683/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote0 | 0.082379100 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote1 | 0.010686800 | 32 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote2 | 0.076012400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote3 | 0.073237800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote4 | 0.065766800 | 1497 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote5 | 0.067531300 | 1497 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote6 | 0.070734100 | 1497 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote7 | 0.072161800 | 1497 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote8 | 0.073027300 | 1497 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote9 | 0.066738800 | 1497 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote10 | 0.082999100 | 1497 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote11 | 0.075279000 | 1497 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote12 | 0.058947000 | 1497 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote13 | 0.059471900 | 1497 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote14 | 0.057044100 | 1497 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote15 | 0.058696700 | 1497 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote16 | 0.062099800 | 1497 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote17 | 0.058706000 | 1497 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote18 | 0.064009000 | 1497 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote19 | 0.058001600 | 1497 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote20 | 0.057011900 | 1497 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote21 | 0.083102800 | 1497 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote22 | 0.064979300 | 1497 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote23 | 0.056954500 | 1497 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote24 | 0.057112200 | 1497 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote25 | 0.059979100 | 1497 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote26 | 0.060948000 | 1497 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote27 | 0.068270900 | 1497 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote28 | 0.062819500 | 1497 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote29 | 0.061993700 | 1497 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote30 | 0.059851300 | 1497 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote31 | 0.061001600 | 1497 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote32 | 0.065107900 | 1497 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote33 | 0.061450300 | 1497 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote34 | 0.059809200 | 1497 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote35 | 0.061376500 | 1497 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote36 | 0.062322600 | 1497 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote37 | 0.060758100 | 1497 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote38 | 0.060857000 | 1497 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote39 | 0.063561300 | 1497 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote40 | 0.062289400 | 1497 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote41 | 0.064015700 | 1497 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote42 | 0.059179000 | 1497 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote43 | 0.063694400 | 1497 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote44 | 0.061300300 | 1497 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote45 | 0.060985800 | 1497 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote46 | 0.059617100 | 1497 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote47 | 0.063338200 | 1497 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote48 | 0.062825700 | 1497 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote49 | 0.071314000 | 1497 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote50 | 0.062992600 | 1497 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote51 | 0.060466700 | 1497 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote52 | 0.059068600 | 1497 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote53 | 0.059805200 | 1497 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote54 | 0.063201700 | 1497 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote55 | 0.062426200 | 1497 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote56 | 0.062032900 | 1497 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote57 | 0.065161700 | 1497 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote58 | 0.062359400 | 1497 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote59 | 0.061101200 | 1497 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote60 | 0.061286000 | 1497 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote61 | 0.060252200 | 1497 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote62 | 0.060685900 | 1497 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote63 | 0.060826700 | 1497 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote64 | 0.062595700 | 1497 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote65 | 0.062701000 | 1497 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote66 | 0.062963700 | 1497 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote67 | 0.062613900 | 1497 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote68 | 0.062892900 | 1497 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote69 | 0.062173500 | 1497 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote70 | 0.062871600 | 1497 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote71 | 0.064738100 | 1497 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote72 | 0.061048600 | 1497 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote73 | 0.059422100 | 1497 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote74 | 0.062204400 | 1497 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote75 | 0.062707400 | 1497 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote76 | 0.064352400 | 1497 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote77 | 0.060101800 | 1497 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote78 | 0.067296200 | 1497 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote79 | 0.072478000 | 1497 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote80 | 0.057695900 | 1497 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote81 | 0.060783800 | 1497 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote82 | 0.060636900 | 1497 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote83 | 0.062066400 | 1497 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote84 | 0.062012400 | 1497 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote85 | 0.064237200 | 1497 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote86 | 0.062837000 | 1497 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote87 | 0.062349200 | 1497 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote88 | 0.066633300 | 1497 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote89 | 0.063171800 | 1497 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote90 | 0.062101400 | 1497 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote91 | 0.061420300 | 1497 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote92 | 0.063069500 | 1497 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote93 | 0.060888800 | 1497 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote94 | 0.063839600 | 1497 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote95 | 0.065206600 | 1497 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote96 | 0.068897100 | 1497 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote97 | 0.063864400 | 1497 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote98 | 0.062160900 | 1497 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote99 | 0.060549000 | 1497 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote100 | 0.058364400 | 1497 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote101 | 0.062085800 | 1497 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote102 | 0.064777000 | 1497 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote103 | 0.064557500 | 1497 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote104 | 0.063681200 | 1497 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote105 | 0.058885000 | 1497 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote106 | 0.062874700 | 1497 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote107 | 0.074432600 | 1497 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote108 | 0.062068500 | 1497 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote109 | 0.066335300 | 1497 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote110 | 0.067700600 | 1497 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote111 | 0.063900500 | 1497 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote112 | 0.063289700 | 1497 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote113 | 0.068711300 | 1497 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote114 | 0.063920000 | 1497 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote115 | 0.073653800 | 1497 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote116 | 0.072431700 | 1497 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote117 | 0.075240200 | 1497 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote118 | 0.078041400 | 1497 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote119 | 0.074497100 | 1497 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote120 | 0.075835400 | 1497 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote121 | 0.076087700 | 1497 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote122 | 0.074101100 | 1497 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote123 | 0.077678900 | 1497 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote124 | 0.079458700 | 1497 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote125 | 0.076097000 | 1497 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote126 | 0.074137200 | 1497 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote127 | 0.072878900 | 1497 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote128 | 0.069991200 | 1497 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote129 | 0.071013900 | 1497 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote130 | 0.077770900 | 1497 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote131 | 0.075101400 | 1497 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote132 | 0.074260400 | 1497 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote133 | 0.073464400 | 1497 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote134 | 0.075237300 | 1497 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote135 | 0.072203600 | 1497 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote136 | 0.073695200 | 1497 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote137 | 0.076498500 | 1497 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote138 | 0.075123400 | 1497 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote139 | 0.079189700 | 1497 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote140 | 0.074600400 | 1497 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote141 | 0.074748400 | 1497 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote142 | 0.074833100 | 1497 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote143 | 0.073221100 | 1497 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote144 | 0.074530100 | 1497 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote145 | 0.073281500 | 1497 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote146 | 0.072135000 | 1497 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote147 | 0.072426800 | 1497 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote148 | 0.075820300 | 1497 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote149 | 0.076541400 | 1497 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote150 | 0.078154300 | 1497 | 1 | completa | Total; eventos.jsonl línea 151 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote151 | 0.076786000 | 1497 | 1 | completa | Total; eventos.jsonl línea 152 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote152 | 0.065798400 | 1497 | 1 | completa | Total; eventos.jsonl línea 153 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote153 | 0.067241900 | 1497 | 1 | completa | Total; eventos.jsonl línea 154 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote154 | 0.070915400 | 1497 | 1 | completa | Total; eventos.jsonl línea 155 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote155 | 0.060998600 | 1497 | 1 | completa | Total; eventos.jsonl línea 156 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote156 | 0.062612500 | 1497 | 1 | completa | Total; eventos.jsonl línea 157 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote157 | 0.063305200 | 1497 | 1 | completa | Total; eventos.jsonl línea 158 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote158 | 0.062329300 | 1497 | 1 | completa | Total; eventos.jsonl línea 159 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote159 | 0.063485500 | 1497 | 1 | completa | Total; eventos.jsonl línea 160 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote160 | 0.061960700 | 1497 | 1 | completa | Total; eventos.jsonl línea 161 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote161 | 0.063476500 | 1497 | 1 | completa | Total; eventos.jsonl línea 162 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote162 | 0.063542300 | 1497 | 1 | completa | Total; eventos.jsonl línea 163 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote163 | 0.065864900 | 1497 | 1 | completa | Total; eventos.jsonl línea 164 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote164 | 0.064739000 | 1497 | 1 | completa | Total; eventos.jsonl línea 165 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote165 | 0.065247900 | 1497 | 1 | completa | Total; eventos.jsonl línea 166 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote166 | 0.063283400 | 1497 | 1 | completa | Total; eventos.jsonl línea 167 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote167 | 0.063877900 | 1497 | 1 | completa | Total; eventos.jsonl línea 168 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote168 | 0.066506500 | 1497 | 1 | completa | Total; eventos.jsonl línea 169 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote169 | 0.066383100 | 1497 | 1 | completa | Total; eventos.jsonl línea 170 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote170 | 0.065148100 | 1497 | 1 | completa | Total; eventos.jsonl línea 171 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote171 | 0.072254700 | 1497 | 1 | completa | Total; eventos.jsonl línea 172 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote172 | 0.065536800 | 1497 | 1 | completa | Total; eventos.jsonl línea 173 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote173 | 0.062167800 | 1497 | 1 | completa | Total; eventos.jsonl línea 174 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote174 | 0.063400100 | 1497 | 1 | completa | Total; eventos.jsonl línea 175 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote175 | 0.064957900 | 1497 | 1 | completa | Total; eventos.jsonl línea 176 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote176 | 0.065746000 | 1497 | 1 | completa | Total; eventos.jsonl línea 177 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote177 | 0.066658800 | 1497 | 1 | completa | Total; eventos.jsonl línea 178 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote178 | 0.066801300 | 1497 | 1 | completa | Total; eventos.jsonl línea 179 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote179 | 0.063446200 | 1497 | 1 | completa | Total; eventos.jsonl línea 180 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote180 | 0.066108400 | 1497 | 1 | completa | Total; eventos.jsonl línea 181 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote181 | 0.064990100 | 1497 | 1 | completa | Total; eventos.jsonl línea 182 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote182 | 0.068637400 | 1497 | 1 | completa | Total; eventos.jsonl línea 183 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote183 | 0.067918900 | 1497 | 1 | completa | Total; eventos.jsonl línea 184 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote184 | 0.065541700 | 1497 | 1 | completa | Total; eventos.jsonl línea 185 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote185 | 0.067968200 | 1497 | 1 | completa | Total; eventos.jsonl línea 186 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote186 | 0.072806100 | 1497 | 1 | completa | Total; eventos.jsonl línea 187 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote187 | 0.067504300 | 1497 | 1 | completa | Total; eventos.jsonl línea 188 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote188 | 0.068652800 | 1497 | 1 | completa | Total; eventos.jsonl línea 189 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote189 | 0.067744500 | 1497 | 1 | completa | Total; eventos.jsonl línea 190 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote190 | 0.070392400 | 1497 | 1 | completa | Total; eventos.jsonl línea 191 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote191 | 0.081099900 | 1497 | 1 | completa | Total; eventos.jsonl línea 192 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote192 | 0.070561700 | 1497 | 1 | completa | Total; eventos.jsonl línea 193 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote193 | 0.069984700 | 1497 | 1 | completa | Total; eventos.jsonl línea 194 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote194 | 0.066836300 | 1497 | 1 | completa | Total; eventos.jsonl línea 195 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote195 | 0.063376200 | 1497 | 1 | completa | Total; eventos.jsonl línea 196 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote196 | 0.066579400 | 1497 | 1 | completa | Total; eventos.jsonl línea 197 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote197 | 0.070538900 | 1497 | 1 | completa | Total; eventos.jsonl línea 198 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote198 | 0.065570900 | 1497 | 1 | completa | Total; eventos.jsonl línea 199 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote199 | 0.062790100 | 1497 | 1 | completa | Total; eventos.jsonl línea 200 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote200 | 0.062674000 | 1497 | 1 | completa | Total; eventos.jsonl línea 201 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote201 | 0.063764800 | 1497 | 1 | completa | Total; eventos.jsonl línea 202 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote202 | 0.064231500 | 1497 | 1 | completa | Total; eventos.jsonl línea 203 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote203 | 0.065954700 | 1497 | 1 | completa | Total; eventos.jsonl línea 204 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote204 | 0.066827900 | 1497 | 1 | completa | Total; eventos.jsonl línea 205 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote205 | 0.075726400 | 1497 | 1 | completa | Total; eventos.jsonl línea 206 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote206 | 0.066815600 | 1497 | 1 | completa | Total; eventos.jsonl línea 207 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote207 | 0.062069100 | 1497 | 1 | completa | Total; eventos.jsonl línea 208 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote208 | 0.062876300 | 1497 | 1 | completa | Total; eventos.jsonl línea 209 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote209 | 0.064550900 | 1497 | 1 | completa | Total; eventos.jsonl línea 210 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote210 | 0.067031900 | 1497 | 1 | completa | Total; eventos.jsonl línea 211 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote211 | 0.064561800 | 1497 | 1 | completa | Total; eventos.jsonl línea 212 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote212 | 0.068574500 | 1497 | 1 | completa | Total; eventos.jsonl línea 213 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote213 | 0.064160500 | 1497 | 1 | completa | Total; eventos.jsonl línea 214 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote214 | 0.064431500 | 1497 | 1 | completa | Total; eventos.jsonl línea 215 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote215 | 0.064116000 | 1497 | 1 | completa | Total; eventos.jsonl línea 216 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote216 | 0.066554600 | 1497 | 1 | completa | Total; eventos.jsonl línea 217 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote217 | 0.068227400 | 1497 | 1 | completa | Total; eventos.jsonl línea 218 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote218 | 0.069458000 | 1497 | 1 | completa | Total; eventos.jsonl línea 219 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote219 | 0.071249500 | 1497 | 1 | completa | Total; eventos.jsonl línea 220 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote220 | 0.066686700 | 1497 | 1 | completa | Total; eventos.jsonl línea 221 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote221 | 0.065967100 | 1497 | 1 | completa | Total; eventos.jsonl línea 222 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote222 | 0.066092600 | 1497 | 1 | completa | Total; eventos.jsonl línea 223 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote223 | 0.067107000 | 1497 | 1 | completa | Total; eventos.jsonl línea 224 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote224 | 0.090670800 | 1497 | 1 | completa | Total; eventos.jsonl línea 225 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote225 | 0.102371700 | 1497 | 1 | completa | Total; eventos.jsonl línea 226 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote226 | 0.068781400 | 1497 | 1 | completa | Total; eventos.jsonl línea 227 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote227 | 0.062689100 | 1497 | 1 | completa | Total; eventos.jsonl línea 228 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote228 | 0.063257800 | 1497 | 1 | completa | Total; eventos.jsonl línea 229 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote229 | 0.062120000 | 1497 | 1 | completa | Total; eventos.jsonl línea 230 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote230 | 0.064780200 | 1497 | 1 | completa | Total; eventos.jsonl línea 231 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote231 | 0.066182000 | 1497 | 1 | completa | Total; eventos.jsonl línea 232 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote232 | 0.067544600 | 1497 | 1 | completa | Total; eventos.jsonl línea 233 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote233 | 0.068645700 | 1497 | 1 | completa | Total; eventos.jsonl línea 234 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote234 | 0.069448200 | 1497 | 1 | completa | Total; eventos.jsonl línea 235 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote235 | 0.071276000 | 1497 | 1 | completa | Total; eventos.jsonl línea 236 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote236 | 0.067604300 | 1497 | 1 | completa | Total; eventos.jsonl línea 237 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote237 | 0.068514100 | 1497 | 1 | completa | Total; eventos.jsonl línea 238 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote238 | 0.066580100 | 1497 | 1 | completa | Total; eventos.jsonl línea 239 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote239 | 0.069848100 | 1497 | 1 | completa | Total; eventos.jsonl línea 240 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote240 | 0.067352900 | 1497 | 1 | completa | Total; eventos.jsonl línea 241 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote241 | 0.062449500 | 1497 | 1 | completa | Total; eventos.jsonl línea 242 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote242 | 0.065374400 | 1497 | 1 | completa | Total; eventos.jsonl línea 243 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote243 | 0.064209500 | 1497 | 1 | completa | Total; eventos.jsonl línea 244 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote244 | 0.065686500 | 1497 | 1 | completa | Total; eventos.jsonl línea 245 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote245 | 0.065047700 | 1497 | 1 | completa | Total; eventos.jsonl línea 246 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote246 | 0.065976300 | 1497 | 1 | completa | Total; eventos.jsonl línea 247 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote247 | 0.066429400 | 1497 | 1 | completa | Total; eventos.jsonl línea 248 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote248 | 0.064928300 | 1497 | 1 | completa | Total; eventos.jsonl línea 249 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote249 | 0.063400800 | 1497 | 1 | completa | Total; eventos.jsonl línea 250 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote250 | 0.062086700 | 1497 | 1 | completa | Total; eventos.jsonl línea 251 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote251 | 0.068661000 | 1497 | 1 | completa | Total; eventos.jsonl línea 252 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote252 | 0.065729500 | 1497 | 1 | completa | Total; eventos.jsonl línea 253 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote253 | 0.062829900 | 1497 | 1 | completa | Total; eventos.jsonl línea 254 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote254 | 0.067895900 | 1497 | 1 | completa | Total; eventos.jsonl línea 255 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote255 | 0.063285400 | 1497 | 1 | completa | Total; eventos.jsonl línea 256 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote256 | 0.064481700 | 1497 | 1 | completa | Total; eventos.jsonl línea 257 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote257 | 0.066227000 | 1497 | 1 | completa | Total; eventos.jsonl línea 258 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote258 | 0.064560800 | 1497 | 1 | completa | Total; eventos.jsonl línea 259 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote259 | 0.064826200 | 1497 | 1 | completa | Total; eventos.jsonl línea 260 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote260 | 0.063335400 | 1497 | 1 | completa | Total; eventos.jsonl línea 261 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote261 | 0.062729000 | 1497 | 1 | completa | Total; eventos.jsonl línea 262 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote262 | 0.064288800 | 1497 | 1 | completa | Total; eventos.jsonl línea 263 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote263 | 0.065842500 | 1497 | 1 | completa | Total; eventos.jsonl línea 264 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote264 | 0.066193500 | 1497 | 1 | completa | Total; eventos.jsonl línea 265 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote265 | 0.063683700 | 1497 | 1 | completa | Total; eventos.jsonl línea 266 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote266 | 0.065788700 | 1497 | 1 | completa | Total; eventos.jsonl línea 267 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote267 | 0.065702600 | 1497 | 1 | completa | Total; eventos.jsonl línea 268 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote268 | 0.064123700 | 1497 | 1 | completa | Total; eventos.jsonl línea 269 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote269 | 0.065215800 | 1497 | 1 | completa | Total; eventos.jsonl línea 270 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote270 | 0.064204800 | 1497 | 1 | completa | Total; eventos.jsonl línea 271 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote271 | 0.065711900 | 1497 | 1 | completa | Total; eventos.jsonl línea 272 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote272 | 0.067301600 | 1497 | 1 | completa | Total; eventos.jsonl línea 273 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote273 | 0.066249200 | 1497 | 1 | completa | Total; eventos.jsonl línea 274 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote274 | 0.060252700 | 1497 | 1 | completa | Total; eventos.jsonl línea 275 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote275 | 0.061767500 | 1497 | 1 | completa | Total; eventos.jsonl línea 276 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote276 | 0.061627500 | 1497 | 1 | completa | Total; eventos.jsonl línea 277 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote277 | 0.064267000 | 1497 | 1 | completa | Total; eventos.jsonl línea 278 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote278 | 0.066278200 | 1497 | 1 | completa | Total; eventos.jsonl línea 279 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote279 | 0.064676500 | 1497 | 1 | completa | Total; eventos.jsonl línea 280 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote280 | 0.064906900 | 1497 | 1 | completa | Total; eventos.jsonl línea 281 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote281 | 0.065984100 | 1497 | 1 | completa | Total; eventos.jsonl línea 282 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote282 | 0.064308200 | 1497 | 1 | completa | Total; eventos.jsonl línea 283 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote283 | 0.060905400 | 1497 | 1 | completa | Total; eventos.jsonl línea 284 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote284 | 0.066053400 | 1497 | 1 | completa | Total; eventos.jsonl línea 285 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote285 | 0.065613000 | 1497 | 1 | completa | Total; eventos.jsonl línea 286 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote286 | 0.061241500 | 1497 | 1 | completa | Total; eventos.jsonl línea 287 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote287 | 0.068519700 | 1497 | 1 | completa | Total; eventos.jsonl línea 288 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote288 | 0.064946700 | 1497 | 1 | completa | Total; eventos.jsonl línea 289 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote289 | 0.065196000 | 1497 | 1 | completa | Total; eventos.jsonl línea 290 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote290 | 0.062986500 | 1497 | 1 | completa | Total; eventos.jsonl línea 291 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote291 | 0.060649900 | 1497 | 1 | completa | Total; eventos.jsonl línea 292 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote292 | 0.061611600 | 1497 | 1 | completa | Total; eventos.jsonl línea 293 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote293 | 0.061458600 | 1497 | 1 | completa | Total; eventos.jsonl línea 294 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote294 | 0.064128300 | 1497 | 1 | completa | Total; eventos.jsonl línea 295 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote295 | 0.064330000 | 1497 | 1 | completa | Total; eventos.jsonl línea 296 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote296 | 0.062553900 | 1497 | 1 | completa | Total; eventos.jsonl línea 297 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote297 | 0.060169800 | 1497 | 1 | completa | Total; eventos.jsonl línea 298 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote298 | 0.061567200 | 1497 | 1 | completa | Total; eventos.jsonl línea 299 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote299 | 0.059765300 | 1497 | 1 | completa | Total; eventos.jsonl línea 300 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote300 | 0.063593100 | 1497 | 1 | completa | Total; eventos.jsonl línea 301 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote301 | 0.073095300 | 1497 | 1 | completa | Total; eventos.jsonl línea 302 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote302 | 0.069603800 | 1497 | 1 | completa | Total; eventos.jsonl línea 303 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote303 | 0.068597500 | 1497 | 1 | completa | Total; eventos.jsonl línea 304 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote304 | 0.069400300 | 1497 | 1 | completa | Total; eventos.jsonl línea 305 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote305 | 0.065654600 | 1497 | 1 | completa | Total; eventos.jsonl línea 306 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote306 | 0.067891000 | 1497 | 1 | completa | Total; eventos.jsonl línea 307 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote307 | 0.066689200 | 1497 | 1 | completa | Total; eventos.jsonl línea 308 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote308 | 0.067909400 | 1497 | 1 | completa | Total; eventos.jsonl línea 309 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote309 | 0.065465600 | 1497 | 1 | completa | Total; eventos.jsonl línea 310 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote310 | 0.063290700 | 1497 | 1 | completa | Total; eventos.jsonl línea 311 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote311 | 0.063641000 | 1497 | 1 | completa | Total; eventos.jsonl línea 312 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote312 | 0.063791800 | 1497 | 1 | completa | Total; eventos.jsonl línea 313 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote313 | 0.067922800 | 1497 | 1 | completa | Total; eventos.jsonl línea 314 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote314 | 0.061029500 | 1497 | 1 | completa | Total; eventos.jsonl línea 315 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote315 | 0.062550200 | 1497 | 1 | completa | Total; eventos.jsonl línea 316 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote316 | 0.067099900 | 1497 | 1 | completa | Total; eventos.jsonl línea 317 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote317 | 0.063766600 | 1497 | 1 | completa | Total; eventos.jsonl línea 318 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote318 | 0.065396000 | 1497 | 1 | completa | Total; eventos.jsonl línea 319 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote319 | 0.064973500 | 1497 | 1 | completa | Total; eventos.jsonl línea 320 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote320 | 0.064673600 | 1497 | 1 | completa | Total; eventos.jsonl línea 321 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote321 | 0.065836500 | 1497 | 1 | completa | Total; eventos.jsonl línea 322 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote322 | 0.064574800 | 1497 | 1 | completa | Total; eventos.jsonl línea 323 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote323 | 0.064568800 | 1497 | 1 | completa | Total; eventos.jsonl línea 324 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote324 | 0.065047300 | 1497 | 1 | completa | Total; eventos.jsonl línea 325 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote325 | 0.067116600 | 1497 | 1 | completa | Total; eventos.jsonl línea 326 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote326 | 0.065866300 | 1497 | 1 | completa | Total; eventos.jsonl línea 327 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote327 | 0.070856900 | 1497 | 1 | completa | Total; eventos.jsonl línea 328 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote328 | 0.070919100 | 1497 | 1 | completa | Total; eventos.jsonl línea 329 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote329 | 0.070402900 | 1497 | 1 | completa | Total; eventos.jsonl línea 330 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote330 | 0.067162400 | 1497 | 1 | completa | Total; eventos.jsonl línea 331 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote331 | 0.081066900 | 1497 | 1 | completa | Total; eventos.jsonl línea 332 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote332 | 0.072495700 | 1497 | 1 | completa | Total; eventos.jsonl línea 333 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote333 | 0.074348600 | 1497 | 1 | completa | Total; eventos.jsonl línea 334 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote334 | 0.082626000 | 1497 | 1 | completa | Total; eventos.jsonl línea 335 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote335 | 0.074766400 | 1497 | 1 | completa | Total; eventos.jsonl línea 336 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote336 | 0.068051400 | 1497 | 1 | completa | Total; eventos.jsonl línea 337 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote337 | 0.070229800 | 1497 | 1 | completa | Total; eventos.jsonl línea 338 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote338 | 0.066909000 | 1497 | 1 | completa | Total; eventos.jsonl línea 339 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote339 | 0.066567400 | 1497 | 1 | completa | Total; eventos.jsonl línea 340 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote340 | 0.064058300 | 1497 | 1 | completa | Total; eventos.jsonl línea 341 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote341 | 0.068549100 | 1497 | 1 | completa | Total; eventos.jsonl línea 342 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote342 | 0.065691600 | 1497 | 1 | completa | Total; eventos.jsonl línea 343 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote343 | 0.070931100 | 1497 | 1 | completa | Total; eventos.jsonl línea 344 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote344 | 0.092542300 | 1497 | 1 | completa | Total; eventos.jsonl línea 345 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote345 | 0.086887900 | 1497 | 1 | completa | Total; eventos.jsonl línea 346 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote346 | 0.074328800 | 1497 | 1 | completa | Total; eventos.jsonl línea 347 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote347 | 0.076480700 | 1497 | 1 | completa | Total; eventos.jsonl línea 348 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote348 | 0.064618000 | 1497 | 1 | completa | Total; eventos.jsonl línea 349 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote349 | 0.061044300 | 1497 | 1 | completa | Total; eventos.jsonl línea 350 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote350 | 0.066070800 | 1497 | 1 | completa | Total; eventos.jsonl línea 351 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote351 | 0.064303000 | 1497 | 1 | completa | Total; eventos.jsonl línea 352 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote352 | 0.067885500 | 1497 | 1 | completa | Total; eventos.jsonl línea 353 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote353 | 0.067824700 | 1497 | 1 | completa | Total; eventos.jsonl línea 354 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote354 | 0.062083100 | 1497 | 1 | completa | Total; eventos.jsonl línea 355 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote355 | 0.065523400 | 1497 | 1 | completa | Total; eventos.jsonl línea 356 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote356 | 0.068726200 | 1497 | 1 | completa | Total; eventos.jsonl línea 357 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote357 | 0.066298700 | 1497 | 1 | completa | Total; eventos.jsonl línea 358 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote358 | 0.066745500 | 1497 | 1 | completa | Total; eventos.jsonl línea 359 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote359 | 0.069429100 | 1497 | 1 | completa | Total; eventos.jsonl línea 360 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote360 | 0.064996800 | 1497 | 1 | completa | Total; eventos.jsonl línea 361 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote361 | 0.066342100 | 1497 | 1 | completa | Total; eventos.jsonl línea 362 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote362 | 0.069885900 | 1497 | 1 | completa | Total; eventos.jsonl línea 363 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote363 | 0.069718700 | 1497 | 1 | completa | Total; eventos.jsonl línea 364 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote364 | 0.065888200 | 1497 | 1 | completa | Total; eventos.jsonl línea 365 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote365 | 0.065463400 | 1497 | 1 | completa | Total; eventos.jsonl línea 366 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote366 | 0.064800900 | 1497 | 1 | completa | Total; eventos.jsonl línea 367 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote367 | 0.071934300 | 1497 | 1 | completa | Total; eventos.jsonl línea 368 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote368 | 0.067021900 | 1497 | 1 | completa | Total; eventos.jsonl línea 369 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote369 | 0.068817000 | 1497 | 1 | completa | Total; eventos.jsonl línea 370 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote370 | 0.065554000 | 1497 | 1 | completa | Total; eventos.jsonl línea 371 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote371 | 0.066891200 | 1497 | 1 | completa | Total; eventos.jsonl línea 372 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote372 | 0.068687300 | 1497 | 1 | completa | Total; eventos.jsonl línea 373 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote373 | 0.069689900 | 1497 | 1 | completa | Total; eventos.jsonl línea 374 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote374 | 0.067013000 | 1497 | 1 | completa | Total; eventos.jsonl línea 375 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote375 | 0.064623900 | 1497 | 1 | completa | Total; eventos.jsonl línea 376 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote376 | 0.067106600 | 1497 | 1 | completa | Total; eventos.jsonl línea 377 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote377 | 0.064145600 | 1497 | 1 | completa | Total; eventos.jsonl línea 378 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote378 | 0.064877700 | 1497 | 1 | completa | Total; eventos.jsonl línea 379 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote379 | 0.068042200 | 1497 | 1 | completa | Total; eventos.jsonl línea 380 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote380 | 0.064617300 | 1497 | 1 | completa | Total; eventos.jsonl línea 381 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote381 | 0.066229700 | 1497 | 1 | completa | Total; eventos.jsonl línea 382 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote382 | 0.067185700 | 1497 | 1 | completa | Total; eventos.jsonl línea 383 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote383 | 0.061122700 | 1497 | 1 | completa | Total; eventos.jsonl línea 384 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote384 | 0.065567800 | 1497 | 1 | completa | Total; eventos.jsonl línea 385 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote385 | 0.064339800 | 1497 | 1 | completa | Total; eventos.jsonl línea 386 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote386 | 0.069293800 | 1497 | 1 | completa | Total; eventos.jsonl línea 387 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote387 | 0.083732500 | 1497 | 1 | completa | Total; eventos.jsonl línea 388 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote388 | 0.062819100 | 1497 | 1 | completa | Total; eventos.jsonl línea 389 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote389 | 0.062252100 | 1497 | 1 | completa | Total; eventos.jsonl línea 390 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote390 | 0.061500100 | 1497 | 1 | completa | Total; eventos.jsonl línea 391 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote391 | 0.064849200 | 1497 | 1 | completa | Total; eventos.jsonl línea 392 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote392 | 0.065761900 | 1497 | 1 | completa | Total; eventos.jsonl línea 393 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote393 | 0.065577900 | 1497 | 1 | completa | Total; eventos.jsonl línea 394 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote394 | 0.062392800 | 1497 | 1 | completa | Total; eventos.jsonl línea 395 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote395 | 0.061414700 | 1497 | 1 | completa | Total; eventos.jsonl línea 396 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote396 | 0.064255400 | 1497 | 1 | completa | Total; eventos.jsonl línea 397 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote397 | 0.063855500 | 1497 | 1 | completa | Total; eventos.jsonl línea 398 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote398 | 0.063658900 | 1497 | 1 | completa | Total; eventos.jsonl línea 399 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote399 | 0.062016700 | 1497 | 1 | completa | Total; eventos.jsonl línea 400 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote400 | 0.063888300 | 1497 | 1 | completa | Total; eventos.jsonl línea 401 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote401 | 0.066942800 | 1497 | 1 | completa | Total; eventos.jsonl línea 402 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote402 | 0.064913700 | 1497 | 1 | completa | Total; eventos.jsonl línea 403 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote403 | 0.065328600 | 1497 | 1 | completa | Total; eventos.jsonl línea 404 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote404 | 0.065646900 | 1497 | 1 | completa | Total; eventos.jsonl línea 405 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote405 | 0.067231300 | 1497 | 1 | completa | Total; eventos.jsonl línea 406 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote406 | 0.066796700 | 1497 | 1 | completa | Total; eventos.jsonl línea 407 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote407 | 0.064514900 | 1497 | 1 | completa | Total; eventos.jsonl línea 408 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote408 | 0.063084400 | 1497 | 1 | completa | Total; eventos.jsonl línea 409 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote409 | 0.066964900 | 1497 | 1 | completa | Total; eventos.jsonl línea 410 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote410 | 0.061967700 | 1497 | 1 | completa | Total; eventos.jsonl línea 411 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote411 | 0.067263900 | 1497 | 1 | completa | Total; eventos.jsonl línea 412 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote412 | 0.061751600 | 1497 | 1 | completa | Total; eventos.jsonl línea 413 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote413 | 0.065400600 | 1497 | 1 | completa | Total; eventos.jsonl línea 414 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote414 | 0.068192400 | 1497 | 1 | completa | Total; eventos.jsonl línea 415 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote415 | 0.074179800 | 1497 | 1 | completa | Total; eventos.jsonl línea 416 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote416 | 0.072711300 | 1497 | 1 | completa | Total; eventos.jsonl línea 417 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote417 | 0.069165400 | 1497 | 1 | completa | Total; eventos.jsonl línea 418 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote418 | 0.066554700 | 1497 | 1 | completa | Total; eventos.jsonl línea 419 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote419 | 0.072085700 | 1497 | 1 | completa | Total; eventos.jsonl línea 420 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote420 | 0.066164000 | 1497 | 1 | completa | Total; eventos.jsonl línea 421 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote421 | 0.066392100 | 1497 | 1 | completa | Total; eventos.jsonl línea 422 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote422 | 0.068668500 | 1497 | 1 | completa | Total; eventos.jsonl línea 423 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote423 | 0.083043400 | 1497 | 1 | completa | Total; eventos.jsonl línea 424 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote424 | 0.067405200 | 1497 | 1 | completa | Total; eventos.jsonl línea 425 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote425 | 0.076054100 | 1497 | 1 | completa | Total; eventos.jsonl línea 426 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote426 | 0.072866900 | 1497 | 1 | completa | Total; eventos.jsonl línea 427 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote427 | 0.072265000 | 1497 | 1 | completa | Total; eventos.jsonl línea 428 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote428 | 0.065805800 | 1497 | 1 | completa | Total; eventos.jsonl línea 429 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote429 | 0.065896900 | 1497 | 1 | completa | Total; eventos.jsonl línea 430 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote430 | 0.067449100 | 1497 | 1 | completa | Total; eventos.jsonl línea 431 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote431 | 0.070555100 | 1497 | 1 | completa | Total; eventos.jsonl línea 432 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote432 | 0.073732400 | 1497 | 1 | completa | Total; eventos.jsonl línea 433 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote433 | 0.065161800 | 1497 | 1 | completa | Total; eventos.jsonl línea 434 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote434 | 0.075904300 | 1497 | 1 | completa | Total; eventos.jsonl línea 435 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote435 | 0.073314200 | 1497 | 1 | completa | Total; eventos.jsonl línea 436 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote436 | 0.064519800 | 1497 | 1 | completa | Total; eventos.jsonl línea 437 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote437 | 0.072161500 | 1497 | 1 | completa | Total; eventos.jsonl línea 438 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote438 | 0.068596000 | 1497 | 1 | completa | Total; eventos.jsonl línea 439 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote439 | 0.065877900 | 1497 | 1 | completa | Total; eventos.jsonl línea 440 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote440 | 0.080541700 | 1497 | 1 | completa | Total; eventos.jsonl línea 441 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote441 | 0.072760400 | 1497 | 1 | completa | Total; eventos.jsonl línea 442 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote442 | 0.079153500 | 1497 | 1 | completa | Total; eventos.jsonl línea 443 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote443 | 0.071490600 | 1497 | 1 | completa | Total; eventos.jsonl línea 444 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote444 | 0.086739500 | 1497 | 1 | completa | Total; eventos.jsonl línea 445 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote445 | 0.075367500 | 1497 | 1 | completa | Total; eventos.jsonl línea 446 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote446 | 0.063963300 | 1497 | 1 | completa | Total; eventos.jsonl línea 447 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote447 | 0.065476700 | 1497 | 1 | completa | Total; eventos.jsonl línea 448 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote448 | 0.080821200 | 1497 | 1 | completa | Total; eventos.jsonl línea 449 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote449 | 0.083473200 | 1497 | 1 | completa | Total; eventos.jsonl línea 450 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote450 | 0.069530200 | 1497 | 1 | completa | Total; eventos.jsonl línea 451 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote451 | 0.063615700 | 1497 | 1 | completa | Total; eventos.jsonl línea 452 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote452 | 0.067763500 | 1497 | 1 | completa | Total; eventos.jsonl línea 453 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote453 | 0.072139900 | 1497 | 1 | completa | Total; eventos.jsonl línea 454 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote454 | 0.068294300 | 1497 | 1 | completa | Total; eventos.jsonl línea 455 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote455 | 0.070471700 | 1497 | 1 | completa | Total; eventos.jsonl línea 456 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote456 | 0.075434800 | 1497 | 1 | completa | Total; eventos.jsonl línea 457 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote457 | 0.074199900 | 1497 | 1 | completa | Total; eventos.jsonl línea 458 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote458 | 0.073370900 | 1497 | 1 | completa | Total; eventos.jsonl línea 459 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote459 | 0.066493200 | 1497 | 1 | completa | Total; eventos.jsonl línea 460 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote460 | 0.083446300 | 1497 | 1 | completa | Total; eventos.jsonl línea 461 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote461 | 0.083459000 | 1497 | 1 | completa | Total; eventos.jsonl línea 462 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote462 | 0.074239100 | 1497 | 1 | completa | Total; eventos.jsonl línea 463 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote463 | 0.081261900 | 1497 | 1 | completa | Total; eventos.jsonl línea 464 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote464 | 0.067883800 | 1497 | 1 | completa | Total; eventos.jsonl línea 465 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote465 | 0.076578200 | 1497 | 1 | completa | Total; eventos.jsonl línea 466 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote466 | 0.067271800 | 1497 | 1 | completa | Total; eventos.jsonl línea 467 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote467 | 0.066203300 | 1497 | 1 | completa | Total; eventos.jsonl línea 468 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote468 | 0.072845800 | 1497 | 1 | completa | Total; eventos.jsonl línea 469 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote469 | 0.075150400 | 1497 | 1 | completa | Total; eventos.jsonl línea 470 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote470 | 0.066837400 | 1497 | 1 | completa | Total; eventos.jsonl línea 471 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote471 | 0.067838500 | 1497 | 1 | completa | Total; eventos.jsonl línea 472 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote472 | 0.064213400 | 1497 | 1 | completa | Total; eventos.jsonl línea 473 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote473 | 0.063757400 | 1497 | 1 | completa | Total; eventos.jsonl línea 474 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote474 | 0.066718200 | 1497 | 1 | completa | Total; eventos.jsonl línea 475 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote475 | 0.068146000 | 1497 | 1 | completa | Total; eventos.jsonl línea 476 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote476 | 0.067678600 | 1497 | 1 | completa | Total; eventos.jsonl línea 477 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote477 | 0.063285300 | 1497 | 1 | completa | Total; eventos.jsonl línea 478 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote478 | 0.064413100 | 1497 | 1 | completa | Total; eventos.jsonl línea 479 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote479 | 0.064094900 | 1497 | 1 | completa | Total; eventos.jsonl línea 480 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote480 | 0.067648700 | 1497 | 1 | completa | Total; eventos.jsonl línea 481 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote481 | 0.068654300 | 1497 | 1 | completa | Total; eventos.jsonl línea 482 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote482 | 0.068962700 | 1497 | 1 | completa | Total; eventos.jsonl línea 483 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote483 | 0.063967900 | 1497 | 1 | completa | Total; eventos.jsonl línea 484 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote484 | 0.062800000 | 1497 | 1 | completa | Total; eventos.jsonl línea 485 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote485 | 0.064257500 | 1497 | 1 | completa | Total; eventos.jsonl línea 486 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote486 | 0.073200000 | 1497 | 1 | completa | Total; eventos.jsonl línea 487 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote487 | 0.077250100 | 1497 | 1 | completa | Total; eventos.jsonl línea 488 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote488 | 0.075270900 | 1497 | 1 | completa | Total; eventos.jsonl línea 489 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote489 | 0.065156100 | 1497 | 1 | completa | Total; eventos.jsonl línea 490 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote490 | 0.072490500 | 1497 | 1 | completa | Total; eventos.jsonl línea 491 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote491 | 0.071772200 | 1497 | 1 | completa | Total; eventos.jsonl línea 492 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote492 | 0.068253100 | 1497 | 1 | completa | Total; eventos.jsonl línea 493 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote493 | 0.073358800 | 1497 | 1 | completa | Total; eventos.jsonl línea 494 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote494 | 0.088900000 | 1497 | 1 | completa | Total; eventos.jsonl línea 495 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote495 | 0.075164800 | 1497 | 1 | completa | Total; eventos.jsonl línea 496 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote496 | 0.068639200 | 1497 | 1 | completa | Total; eventos.jsonl línea 497 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote497 | 0.067622900 | 1497 | 1 | completa | Total; eventos.jsonl línea 498 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote498 | 0.070357400 | 1497 | 1 | completa | Total; eventos.jsonl línea 499 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote499 | 0.071860300 | 1497 | 1 | completa | Total; eventos.jsonl línea 500 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote500 | 0.067823000 | 1497 | 1 | completa | Total; eventos.jsonl línea 501 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote501 | 0.071017500 | 1497 | 1 | completa | Total; eventos.jsonl línea 502 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote502 | 0.068238300 | 1497 | 1 | completa | Total; eventos.jsonl línea 503 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote503 | 0.066794500 | 1497 | 1 | completa | Total; eventos.jsonl línea 504 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote504 | 0.066337700 | 1497 | 1 | completa | Total; eventos.jsonl línea 505 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote505 | 0.074087100 | 1497 | 1 | completa | Total; eventos.jsonl línea 506 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote506 | 0.068635800 | 1497 | 1 | completa | Total; eventos.jsonl línea 507 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote507 | 0.067173500 | 1497 | 1 | completa | Total; eventos.jsonl línea 508 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote508 | 0.065471900 | 1497 | 1 | completa | Total; eventos.jsonl línea 509 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote509 | 0.063341800 | 1497 | 1 | completa | Total; eventos.jsonl línea 510 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote510 | 0.067335900 | 1497 | 1 | completa | Total; eventos.jsonl línea 511 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote511 | 0.064308800 | 1497 | 1 | completa | Total; eventos.jsonl línea 512 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote512 | 0.077752100 | 1497 | 1 | completa | Total; eventos.jsonl línea 513 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote513 | 0.073322000 | 1497 | 1 | completa | Total; eventos.jsonl línea 514 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote514 | 0.072029400 | 1497 | 1 | completa | Total; eventos.jsonl línea 515 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote515 | 0.065648700 | 1497 | 1 | completa | Total; eventos.jsonl línea 516 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote516 | 0.067690300 | 1497 | 1 | completa | Total; eventos.jsonl línea 517 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote517 | 0.066196900 | 1497 | 1 | completa | Total; eventos.jsonl línea 518 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote518 | 0.066363700 | 1497 | 1 | completa | Total; eventos.jsonl línea 519 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote519 | 0.071123500 | 1497 | 1 | completa | Total; eventos.jsonl línea 520 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote520 | 0.064776100 | 1497 | 1 | completa | Total; eventos.jsonl línea 521 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote521 | 0.064427900 | 1497 | 1 | completa | Total; eventos.jsonl línea 522 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote522 | 0.064719000 | 1497 | 1 | completa | Total; eventos.jsonl línea 523 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote523 | 0.062137100 | 1497 | 1 | completa | Total; eventos.jsonl línea 524 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote524 | 0.064670800 | 1497 | 1 | completa | Total; eventos.jsonl línea 525 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote525 | 0.066924200 | 1497 | 1 | completa | Total; eventos.jsonl línea 526 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote526 | 0.065247800 | 1497 | 1 | completa | Total; eventos.jsonl línea 527 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote527 | 0.066720600 | 1497 | 1 | completa | Total; eventos.jsonl línea 528 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote528 | 0.063382300 | 1497 | 1 | completa | Total; eventos.jsonl línea 529 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote529 | 0.063156800 | 1497 | 1 | completa | Total; eventos.jsonl línea 530 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote530 | 0.064819200 | 1497 | 1 | completa | Total; eventos.jsonl línea 531 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote531 | 0.064005400 | 1497 | 1 | completa | Total; eventos.jsonl línea 532 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote532 | 0.064985600 | 1497 | 1 | completa | Total; eventos.jsonl línea 533 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote533 | 0.066944400 | 1497 | 1 | completa | Total; eventos.jsonl línea 534 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote534 | 0.066030500 | 1497 | 1 | completa | Total; eventos.jsonl línea 535 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote535 | 0.062634100 | 1497 | 1 | completa | Total; eventos.jsonl línea 536 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote536 | 0.063014200 | 1497 | 1 | completa | Total; eventos.jsonl línea 537 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote537 | 0.063639200 | 1497 | 1 | completa | Total; eventos.jsonl línea 538 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote538 | 0.063141200 | 1497 | 1 | completa | Total; eventos.jsonl línea 539 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote539 | 0.064728300 | 1497 | 1 | completa | Total; eventos.jsonl línea 540 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote540 | 0.063930900 | 1497 | 1 | completa | Total; eventos.jsonl línea 541 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote541 | 0.075405400 | 1497 | 1 | completa | Total; eventos.jsonl línea 542 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote542 | 0.073764700 | 1497 | 1 | completa | Total; eventos.jsonl línea 543 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote543 | 0.085711600 | 1497 | 1 | completa | Total; eventos.jsonl línea 544 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote544 | 0.071076800 | 1497 | 1 | completa | Total; eventos.jsonl línea 545 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote545 | 0.065922100 | 1497 | 1 | completa | Total; eventos.jsonl línea 546 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote546 | 0.064546600 | 1497 | 1 | completa | Total; eventos.jsonl línea 547 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote547 | 0.067591100 | 1497 | 1 | completa | Total; eventos.jsonl línea 548 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote548 | 0.062399400 | 1497 | 1 | completa | Total; eventos.jsonl línea 549 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote549 | 0.076704600 | 1497 | 1 | completa | Total; eventos.jsonl línea 550 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote550 | 0.062184400 | 1497 | 1 | completa | Total; eventos.jsonl línea 551 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote551 | 0.060701500 | 1497 | 1 | completa | Total; eventos.jsonl línea 552 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote552 | 0.061879900 | 1497 | 1 | completa | Total; eventos.jsonl línea 553 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote553 | 0.067794900 | 1497 | 1 | completa | Total; eventos.jsonl línea 554 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote554 | 0.067645500 | 1497 | 1 | completa | Total; eventos.jsonl línea 555 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote555 | 0.071350800 | 1497 | 1 | completa | Total; eventos.jsonl línea 556 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote556 | 0.068700000 | 1497 | 1 | completa | Total; eventos.jsonl línea 557 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote557 | 0.075934200 | 1497 | 1 | completa | Total; eventos.jsonl línea 558 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote558 | 0.064191500 | 1497 | 1 | completa | Total; eventos.jsonl línea 559 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote559 | 0.062913100 | 1497 | 1 | completa | Total; eventos.jsonl línea 560 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote560 | 0.060350200 | 1497 | 1 | completa | Total; eventos.jsonl línea 561 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote561 | 0.061536100 | 1497 | 1 | completa | Total; eventos.jsonl línea 562 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote562 | 0.063747500 | 1497 | 1 | completa | Total; eventos.jsonl línea 563 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote563 | 0.066610400 | 1497 | 1 | completa | Total; eventos.jsonl línea 564 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote564 | 0.065317300 | 1497 | 1 | completa | Total; eventos.jsonl línea 565 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote565 | 0.064101400 | 1497 | 1 | completa | Total; eventos.jsonl línea 566 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote566 | 0.066311800 | 1497 | 1 | completa | Total; eventos.jsonl línea 567 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote567 | 0.061931700 | 1497 | 1 | completa | Total; eventos.jsonl línea 568 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote568 | 0.062071700 | 1497 | 1 | completa | Total; eventos.jsonl línea 569 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote569 | 0.065555300 | 1497 | 1 | completa | Total; eventos.jsonl línea 570 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote570 | 0.066289600 | 1497 | 1 | completa | Total; eventos.jsonl línea 571 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote571 | 0.065822200 | 1497 | 1 | completa | Total; eventos.jsonl línea 572 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote572 | 0.064659100 | 1497 | 1 | completa | Total; eventos.jsonl línea 573 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote573 | 0.065575500 | 1497 | 1 | completa | Total; eventos.jsonl línea 574 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote574 | 0.063104400 | 1497 | 1 | completa | Total; eventos.jsonl línea 575 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote575 | 0.065533400 | 1497 | 1 | completa | Total; eventos.jsonl línea 576 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote576 | 0.066981300 | 1497 | 1 | completa | Total; eventos.jsonl línea 577 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote577 | 0.064517000 | 1497 | 1 | completa | Total; eventos.jsonl línea 578 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote578 | 0.065004900 | 1497 | 1 | completa | Total; eventos.jsonl línea 579 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote579 | 0.067704800 | 1497 | 1 | completa | Total; eventos.jsonl línea 580 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote580 | 0.062391300 | 1497 | 1 | completa | Total; eventos.jsonl línea 581 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote581 | 0.061025600 | 1497 | 1 | completa | Total; eventos.jsonl línea 582 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote582 | 0.060998400 | 1497 | 1 | completa | Total; eventos.jsonl línea 583 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote583 | 0.062629300 | 1497 | 1 | completa | Total; eventos.jsonl línea 584 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote584 | 0.064601000 | 1497 | 1 | completa | Total; eventos.jsonl línea 585 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote585 | 0.063435500 | 1497 | 1 | completa | Total; eventos.jsonl línea 586 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote586 | 0.064185000 | 1497 | 1 | completa | Total; eventos.jsonl línea 587 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote587 | 0.064769800 | 1497 | 1 | completa | Total; eventos.jsonl línea 588 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote588 | 0.066125200 | 1497 | 1 | completa | Total; eventos.jsonl línea 589 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote589 | 0.064229400 | 1497 | 1 | completa | Total; eventos.jsonl línea 590 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote590 | 0.064021300 | 1497 | 1 | completa | Total; eventos.jsonl línea 591 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote591 | 0.066705200 | 1497 | 1 | completa | Total; eventos.jsonl línea 592 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote592 | 0.064148600 | 1497 | 1 | completa | Total; eventos.jsonl línea 593 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote593 | 0.067037500 | 1497 | 1 | completa | Total; eventos.jsonl línea 594 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote594 | 0.066470300 | 1497 | 1 | completa | Total; eventos.jsonl línea 595 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote595 | 0.066018000 | 1497 | 1 | completa | Total; eventos.jsonl línea 596 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote596 | 0.062455300 | 1497 | 1 | completa | Total; eventos.jsonl línea 597 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote597 | 0.062235300 | 1497 | 1 | completa | Total; eventos.jsonl línea 598 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote598 | 0.062752700 | 1497 | 1 | completa | Total; eventos.jsonl línea 599 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote599 | 0.062333600 | 1497 | 1 | completa | Total; eventos.jsonl línea 600 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote600 | 0.065406100 | 1497 | 1 | completa | Total; eventos.jsonl línea 601 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote601 | 0.064938200 | 1497 | 1 | completa | Total; eventos.jsonl línea 602 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote602 | 0.065545500 | 1497 | 1 | completa | Total; eventos.jsonl línea 603 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote603 | 0.067996300 | 1497 | 1 | completa | Total; eventos.jsonl línea 604 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote604 | 0.062886000 | 1497 | 1 | completa | Total; eventos.jsonl línea 605 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote605 | 0.068394800 | 1497 | 1 | completa | Total; eventos.jsonl línea 606 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote606 | 0.066263500 | 1497 | 1 | completa | Total; eventos.jsonl línea 607 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote607 | 0.066083400 | 1497 | 1 | completa | Total; eventos.jsonl línea 608 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote608 | 0.065661800 | 1497 | 1 | completa | Total; eventos.jsonl línea 609 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote609 | 0.065092900 | 1497 | 1 | completa | Total; eventos.jsonl línea 610 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote610 | 0.066672000 | 1497 | 1 | completa | Total; eventos.jsonl línea 611 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote611 | 0.062978800 | 1497 | 1 | completa | Total; eventos.jsonl línea 612 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote612 | 0.065410400 | 1497 | 1 | completa | Total; eventos.jsonl línea 613 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote613 | 0.066279900 | 1497 | 1 | completa | Total; eventos.jsonl línea 614 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote614 | 0.064527500 | 1497 | 1 | completa | Total; eventos.jsonl línea 615 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote615 | 0.065550600 | 1497 | 1 | completa | Total; eventos.jsonl línea 616 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote616 | 0.094912100 | 1497 | 1 | completa | Total; eventos.jsonl línea 617 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote617 | 0.069295800 | 1497 | 1 | completa | Total; eventos.jsonl línea 618 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote618 | 0.063304400 | 1497 | 1 | completa | Total; eventos.jsonl línea 619 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote619 | 0.061789300 | 1497 | 1 | completa | Total; eventos.jsonl línea 620 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote620 | 0.061738400 | 1497 | 1 | completa | Total; eventos.jsonl línea 621 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote621 | 0.065502400 | 1497 | 1 | completa | Total; eventos.jsonl línea 622 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote622 | 0.066561500 | 1497 | 1 | completa | Total; eventos.jsonl línea 623 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote623 | 0.068775000 | 1497 | 1 | completa | Total; eventos.jsonl línea 624 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote624 | 0.070530100 | 1497 | 1 | completa | Total; eventos.jsonl línea 625 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote625 | 0.070381100 | 1497 | 1 | completa | Total; eventos.jsonl línea 626 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote626 | 0.061456100 | 1497 | 1 | completa | Total; eventos.jsonl línea 627 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote627 | 0.064514300 | 1497 | 1 | completa | Total; eventos.jsonl línea 628 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote628 | 0.063268200 | 1497 | 1 | completa | Total; eventos.jsonl línea 629 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote629 | 0.063871400 | 1497 | 1 | completa | Total; eventos.jsonl línea 630 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote630 | 0.064917100 | 1497 | 1 | completa | Total; eventos.jsonl línea 631 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote631 | 0.067561500 | 1497 | 1 | completa | Total; eventos.jsonl línea 632 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote632 | 0.063787400 | 1497 | 1 | completa | Total; eventos.jsonl línea 633 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote633 | 0.069689200 | 1497 | 1 | completa | Total; eventos.jsonl línea 634 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote634 | 0.070739000 | 1497 | 1 | completa | Total; eventos.jsonl línea 635 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote635 | 0.068469600 | 1497 | 1 | completa | Total; eventos.jsonl línea 636 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote636 | 0.064866000 | 1497 | 1 | completa | Total; eventos.jsonl línea 637 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote637 | 0.066971100 | 1497 | 1 | completa | Total; eventos.jsonl línea 638 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote638 | 0.063890600 | 1497 | 1 | completa | Total; eventos.jsonl línea 639 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote639 | 0.066535700 | 1497 | 1 | completa | Total; eventos.jsonl línea 640 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote640 | 0.066042800 | 1497 | 1 | completa | Total; eventos.jsonl línea 641 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote641 | 0.064944700 | 1497 | 1 | completa | Total; eventos.jsonl línea 642 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote642 | 0.065635500 | 1497 | 1 | completa | Total; eventos.jsonl línea 643 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote643 | 0.062843200 | 1497 | 1 | completa | Total; eventos.jsonl línea 644 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote644 | 0.065822600 | 1497 | 1 | completa | Total; eventos.jsonl línea 645 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote645 | 0.067257000 | 1497 | 1 | completa | Total; eventos.jsonl línea 646 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote646 | 0.063259500 | 1497 | 1 | completa | Total; eventos.jsonl línea 647 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote647 | 0.066266500 | 1497 | 1 | completa | Total; eventos.jsonl línea 648 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote648 | 0.063480300 | 1497 | 1 | completa | Total; eventos.jsonl línea 649 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote649 | 0.061111700 | 1497 | 1 | completa | Total; eventos.jsonl línea 650 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote650 | 0.070705500 | 1497 | 1 | completa | Total; eventos.jsonl línea 651 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote651 | 0.061910800 | 1497 | 1 | completa | Total; eventos.jsonl línea 652 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote652 | 0.066940500 | 1497 | 1 | completa | Total; eventos.jsonl línea 653 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote653 | 0.070545100 | 1497 | 1 | completa | Total; eventos.jsonl línea 654 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote654 | 0.068308000 | 1497 | 1 | completa | Total; eventos.jsonl línea 655 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote655 | 0.064277100 | 1497 | 1 | completa | Total; eventos.jsonl línea 656 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote656 | 0.067948100 | 1497 | 1 | completa | Total; eventos.jsonl línea 657 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote657 | 0.064562600 | 1497 | 1 | completa | Total; eventos.jsonl línea 658 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote658 | 0.065640900 | 1497 | 1 | completa | Total; eventos.jsonl línea 659 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote659 | 0.068635300 | 1497 | 1 | completa | Total; eventos.jsonl línea 660 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote660 | 0.062276700 | 1497 | 1 | completa | Total; eventos.jsonl línea 661 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote661 | 0.059789100 | 1497 | 1 | completa | Total; eventos.jsonl línea 662 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote662 | 0.063514900 | 1497 | 1 | completa | Total; eventos.jsonl línea 663 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote663 | 0.066059100 | 1497 | 1 | completa | Total; eventos.jsonl línea 664 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote664 | 0.063466100 | 1497 | 1 | completa | Total; eventos.jsonl línea 665 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote665 | 0.080092400 | 1497 | 1 | completa | Total; eventos.jsonl línea 666 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote666 | 0.085129800 | 1497 | 1 | completa | Total; eventos.jsonl línea 667 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote667 | 0.185911100 | 1497 | 1 | completa | Total; eventos.jsonl línea 668 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote668 | 0.065878300 | 1497 | 1 | completa | Total; eventos.jsonl línea 669 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote669 | 0.064574200 | 1497 | 1 | completa | Total; eventos.jsonl línea 670 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote670 | 0.060714300 | 1497 | 1 | completa | Total; eventos.jsonl línea 671 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote671 | 0.060124900 | 1497 | 1 | completa | Total; eventos.jsonl línea 672 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote672 | 0.061705600 | 1497 | 1 | completa | Total; eventos.jsonl línea 673 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote673 | 0.064928900 | 1497 | 1 | completa | Total; eventos.jsonl línea 674 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote674 | 0.070764900 | 1497 | 1 | completa | Total; eventos.jsonl línea 675 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote675 | 0.066544000 | 1497 | 1 | completa | Total; eventos.jsonl línea 676 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote676 | 0.067735700 | 1497 | 1 | completa | Total; eventos.jsonl línea 677 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote677 | 0.064955400 | 1497 | 1 | completa | Total; eventos.jsonl línea 678 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote678 | 0.065948500 | 1497 | 1 | completa | Total; eventos.jsonl línea 679 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote679 | 0.064559800 | 1497 | 1 | completa | Total; eventos.jsonl línea 680 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote680 | 0.064890900 | 1497 | 1 | completa | Total; eventos.jsonl línea 681 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote681 | 0.065642400 | 1497 | 1 | completa | Total; eventos.jsonl línea 682 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote682 | 0.064859700 | 1497 | 1 | completa | Total; eventos.jsonl línea 683 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote683 | 0.063733500 | 1497 | 1 | completa | Total; eventos.jsonl línea 684 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote684 | 0.062846100 | 1497 | 1 | completa | Total; eventos.jsonl línea 685 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote685 | 0.065216200 | 1497 | 1 | completa | Total; eventos.jsonl línea 686 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote686 | 0.062239400 | 1497 | 1 | completa | Total; eventos.jsonl línea 687 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote687 | 0.063828600 | 1497 | 1 | completa | Total; eventos.jsonl línea 688 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote688 | 0.065217000 | 1497 | 1 | completa | Total; eventos.jsonl línea 689 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote689 | 0.063932200 | 1497 | 1 | completa | Total; eventos.jsonl línea 690 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote690 | 0.062567400 | 1497 | 1 | completa | Total; eventos.jsonl línea 691 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote691 | 0.064483800 | 1497 | 1 | completa | Total; eventos.jsonl línea 692 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote692 | 0.066358100 | 1497 | 1 | completa | Total; eventos.jsonl línea 693 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote693 | 0.065589300 | 1497 | 1 | completa | Total; eventos.jsonl línea 694 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote694 | 0.063158100 | 1497 | 1 | completa | Total; eventos.jsonl línea 695 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote695 | 0.061738000 | 1497 | 1 | completa | Total; eventos.jsonl línea 696 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote696 | 0.063980500 | 1497 | 1 | completa | Total; eventos.jsonl línea 697 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote697 | 0.064003300 | 1497 | 1 | completa | Total; eventos.jsonl línea 698 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote698 | 0.065444100 | 1497 | 1 | completa | Total; eventos.jsonl línea 699 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote699 | 0.064482600 | 1497 | 1 | completa | Total; eventos.jsonl línea 700 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote700 | 0.065437300 | 1497 | 1 | completa | Total; eventos.jsonl línea 701 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote701 | 0.065674400 | 1497 | 1 | completa | Total; eventos.jsonl línea 702 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote702 | 0.063725800 | 1497 | 1 | completa | Total; eventos.jsonl línea 703 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote703 | 0.063966400 | 1497 | 1 | completa | Total; eventos.jsonl línea 704 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote704 | 0.063046300 | 1497 | 1 | completa | Total; eventos.jsonl línea 705 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote705 | 0.061676000 | 1497 | 1 | completa | Total; eventos.jsonl línea 706 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote706 | 0.069653300 | 1497 | 1 | completa | Total; eventos.jsonl línea 707 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote707 | 0.062589200 | 1497 | 1 | completa | Total; eventos.jsonl línea 708 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote708 | 0.060167500 | 1497 | 1 | completa | Total; eventos.jsonl línea 709 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote709 | 0.066957500 | 1497 | 1 | completa | Total; eventos.jsonl línea 710 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote710 | 0.064131700 | 1497 | 1 | completa | Total; eventos.jsonl línea 711 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote711 | 0.064691500 | 1497 | 1 | completa | Total; eventos.jsonl línea 712 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote712 | 0.061573900 | 1497 | 1 | completa | Total; eventos.jsonl línea 713 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote713 | 0.065221600 | 1497 | 1 | completa | Total; eventos.jsonl línea 714 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote714 | 0.067514700 | 1497 | 1 | completa | Total; eventos.jsonl línea 715 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote715 | 0.065456500 | 1497 | 1 | completa | Total; eventos.jsonl línea 716 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote716 | 0.064367400 | 1497 | 1 | completa | Total; eventos.jsonl línea 717 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote717 | 0.063086300 | 1497 | 1 | completa | Total; eventos.jsonl línea 718 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote718 | 0.063469100 | 1497 | 1 | completa | Total; eventos.jsonl línea 719 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote719 | 0.065294600 | 1497 | 1 | completa | Total; eventos.jsonl línea 720 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote720 | 0.062193200 | 1497 | 1 | completa | Total; eventos.jsonl línea 721 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote721 | 0.062005300 | 1497 | 1 | completa | Total; eventos.jsonl línea 722 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote722 | 0.063093800 | 1497 | 1 | completa | Total; eventos.jsonl línea 723 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote723 | 0.066047000 | 1497 | 1 | completa | Total; eventos.jsonl línea 724 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote724 | 0.064613200 | 1497 | 1 | completa | Total; eventos.jsonl línea 725 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote725 | 0.062645800 | 1497 | 1 | completa | Total; eventos.jsonl línea 726 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote726 | 0.064546000 | 1497 | 1 | completa | Total; eventos.jsonl línea 727 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote727 | 0.064331500 | 1497 | 1 | completa | Total; eventos.jsonl línea 728 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote728 | 0.060658600 | 1497 | 1 | completa | Total; eventos.jsonl línea 729 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote729 | 0.063710200 | 1497 | 1 | completa | Total; eventos.jsonl línea 730 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote730 | 0.065004200 | 1497 | 1 | completa | Total; eventos.jsonl línea 731 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote731 | 0.076493200 | 1497 | 1 | completa | Total; eventos.jsonl línea 732 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote732 | 0.063429400 | 1497 | 1 | completa | Total; eventos.jsonl línea 733 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote733 | 0.061135600 | 1497 | 1 | completa | Total; eventos.jsonl línea 734 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote734 | 0.062985600 | 1497 | 1 | completa | Total; eventos.jsonl línea 735 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote735 | 0.065839600 | 1497 | 1 | completa | Total; eventos.jsonl línea 736 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote736 | 0.065095100 | 1497 | 1 | completa | Total; eventos.jsonl línea 737 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote737 | 0.064671600 | 1497 | 1 | completa | Total; eventos.jsonl línea 738 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote738 | 0.065864600 | 1497 | 1 | completa | Total; eventos.jsonl línea 739 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote739 | 0.064542900 | 1497 | 1 | completa | Total; eventos.jsonl línea 740 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote740 | 0.062600100 | 1497 | 1 | completa | Total; eventos.jsonl línea 741 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote741 | 0.065533700 | 1497 | 1 | completa | Total; eventos.jsonl línea 742 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote742 | 0.063321000 | 1497 | 1 | completa | Total; eventos.jsonl línea 743 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote743 | 0.062754900 | 1497 | 1 | completa | Total; eventos.jsonl línea 744 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote744 | 0.070976400 | 1497 | 1 | completa | Total; eventos.jsonl línea 745 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote745 | 0.062048700 | 1497 | 1 | completa | Total; eventos.jsonl línea 746 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote746 | 0.063769800 | 1497 | 1 | completa | Total; eventos.jsonl línea 747 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote747 | 0.082696000 | 1497 | 1 | completa | Total; eventos.jsonl línea 748 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote748 | 0.073133800 | 1497 | 1 | completa | Total; eventos.jsonl línea 749 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote749 | 0.061123600 | 1497 | 1 | completa | Total; eventos.jsonl línea 750 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote750 | 0.064890700 | 1497 | 1 | completa | Total; eventos.jsonl línea 751 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote751 | 0.064490200 | 1497 | 1 | completa | Total; eventos.jsonl línea 752 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote752 | 0.067455900 | 1497 | 1 | completa | Total; eventos.jsonl línea 753 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote753 | 0.063326200 | 1497 | 1 | completa | Total; eventos.jsonl línea 754 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote754 | 0.062848300 | 1497 | 1 | completa | Total; eventos.jsonl línea 755 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote755 | 0.062300100 | 1497 | 1 | completa | Total; eventos.jsonl línea 756 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote756 | 0.063741100 | 1497 | 1 | completa | Total; eventos.jsonl línea 757 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote757 | 0.067859400 | 1497 | 1 | completa | Total; eventos.jsonl línea 758 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote758 | 0.064087800 | 1497 | 1 | completa | Total; eventos.jsonl línea 759 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote759 | 0.067471500 | 1497 | 1 | completa | Total; eventos.jsonl línea 760 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote760 | 0.066722600 | 1497 | 1 | completa | Total; eventos.jsonl línea 761 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote761 | 0.064507900 | 1497 | 1 | completa | Total; eventos.jsonl línea 762 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote762 | 0.060941200 | 1497 | 1 | completa | Total; eventos.jsonl línea 763 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote763 | 0.068287600 | 1497 | 1 | completa | Total; eventos.jsonl línea 764 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote764 | 0.066366000 | 1497 | 1 | completa | Total; eventos.jsonl línea 765 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote765 | 0.065911100 | 1497 | 1 | completa | Total; eventos.jsonl línea 766 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote766 | 0.064938600 | 1497 | 1 | completa | Total; eventos.jsonl línea 767 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote767 | 0.063260200 | 1497 | 1 | completa | Total; eventos.jsonl línea 768 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote768 | 0.068672600 | 1497 | 1 | completa | Total; eventos.jsonl línea 769 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote769 | 0.065695900 | 1497 | 1 | completa | Total; eventos.jsonl línea 770 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote770 | 0.064176400 | 1497 | 1 | completa | Total; eventos.jsonl línea 771 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote771 | 0.063895700 | 1497 | 1 | completa | Total; eventos.jsonl línea 772 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote772 | 0.065667200 | 1497 | 1 | completa | Total; eventos.jsonl línea 773 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote773 | 0.063371500 | 1497 | 1 | completa | Total; eventos.jsonl línea 774 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote774 | 0.068163200 | 1497 | 1 | completa | Total; eventos.jsonl línea 775 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote775 | 0.065686200 | 1497 | 1 | completa | Total; eventos.jsonl línea 776 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote776 | 0.064736800 | 1497 | 1 | completa | Total; eventos.jsonl línea 777 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote777 | 0.061211600 | 1497 | 1 | completa | Total; eventos.jsonl línea 778 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote778 | 0.063328500 | 1497 | 1 | completa | Total; eventos.jsonl línea 779 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote779 | 0.060681300 | 1497 | 1 | completa | Total; eventos.jsonl línea 780 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote780 | 0.065749400 | 1497 | 1 | completa | Total; eventos.jsonl línea 781 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote781 | 0.089813100 | 1497 | 1 | completa | Total; eventos.jsonl línea 782 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote782 | 0.092235900 | 1497 | 1 | completa | Total; eventos.jsonl línea 783 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote783 | 0.071314600 | 1497 | 1 | completa | Total; eventos.jsonl línea 784 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote784 | 0.064333900 | 1497 | 1 | completa | Total; eventos.jsonl línea 785 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote785 | 0.064138500 | 1497 | 1 | completa | Total; eventos.jsonl línea 786 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote786 | 0.065612100 | 1497 | 1 | completa | Total; eventos.jsonl línea 787 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote787 | 0.070316200 | 1497 | 1 | completa | Total; eventos.jsonl línea 788 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote788 | 0.064679100 | 1497 | 1 | completa | Total; eventos.jsonl línea 789 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote789 | 0.064311200 | 1497 | 1 | completa | Total; eventos.jsonl línea 790 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote790 | 0.064385200 | 1497 | 1 | completa | Total; eventos.jsonl línea 791 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote791 | 0.068468000 | 1497 | 1 | completa | Total; eventos.jsonl línea 792 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote792 | 0.070488700 | 1497 | 1 | completa | Total; eventos.jsonl línea 793 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote793 | 0.062995800 | 1497 | 1 | completa | Total; eventos.jsonl línea 794 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote794 | 0.063213600 | 1497 | 1 | completa | Total; eventos.jsonl línea 795 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote795 | 0.065729800 | 1497 | 1 | completa | Total; eventos.jsonl línea 796 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote796 | 0.066595300 | 1497 | 1 | completa | Total; eventos.jsonl línea 797 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote797 | 0.065733200 | 1497 | 1 | completa | Total; eventos.jsonl línea 798 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote798 | 0.060482000 | 1497 | 1 | completa | Total; eventos.jsonl línea 799 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote799 | 0.060275200 | 1497 | 1 | completa | Total; eventos.jsonl línea 800 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote800 | 0.059353900 | 1497 | 1 | completa | Total; eventos.jsonl línea 801 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote801 | 0.059913100 | 1497 | 1 | completa | Total; eventos.jsonl línea 802 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote802 | 0.061571600 | 1497 | 1 | completa | Total; eventos.jsonl línea 803 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote803 | 0.061594100 | 1497 | 1 | completa | Total; eventos.jsonl línea 804 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote804 | 0.063447100 | 1497 | 1 | completa | Total; eventos.jsonl línea 805 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote805 | 0.064108200 | 1497 | 1 | completa | Total; eventos.jsonl línea 806 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote806 | 0.061493000 | 1497 | 1 | completa | Total; eventos.jsonl línea 807 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote807 | 0.061958500 | 1497 | 1 | completa | Total; eventos.jsonl línea 808 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote808 | 0.059874000 | 1497 | 1 | completa | Total; eventos.jsonl línea 809 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote809 | 0.061002200 | 1497 | 1 | completa | Total; eventos.jsonl línea 810 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote810 | 0.064345600 | 1497 | 1 | completa | Total; eventos.jsonl línea 811 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote811 | 0.063961600 | 1497 | 1 | completa | Total; eventos.jsonl línea 812 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote812 | 0.062471400 | 1497 | 1 | completa | Total; eventos.jsonl línea 813 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote813 | 0.064294700 | 1497 | 1 | completa | Total; eventos.jsonl línea 814 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote814 | 0.070822600 | 1497 | 1 | completa | Total; eventos.jsonl línea 815 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote815 | 0.061614100 | 1497 | 1 | completa | Total; eventos.jsonl línea 816 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote816 | 0.062528500 | 1497 | 1 | completa | Total; eventos.jsonl línea 817 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote817 | 0.067285800 | 1497 | 1 | completa | Total; eventos.jsonl línea 818 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote818 | 0.063183300 | 1497 | 1 | completa | Total; eventos.jsonl línea 819 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote819 | 0.060878600 | 1497 | 1 | completa | Total; eventos.jsonl línea 820 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote820 | 0.062352400 | 1497 | 1 | completa | Total; eventos.jsonl línea 821 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote821 | 0.059968200 | 1497 | 1 | completa | Total; eventos.jsonl línea 822 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote822 | 0.062131200 | 1497 | 1 | completa | Total; eventos.jsonl línea 823 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote823 | 0.061804800 | 1497 | 1 | completa | Total; eventos.jsonl línea 824 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote824 | 0.061138500 | 1497 | 1 | completa | Total; eventos.jsonl línea 825 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote825 | 0.064203200 | 1497 | 1 | completa | Total; eventos.jsonl línea 826 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote826 | 0.062950400 | 1497 | 1 | completa | Total; eventos.jsonl línea 827 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote827 | 0.062808000 | 1497 | 1 | completa | Total; eventos.jsonl línea 828 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote828 | 0.063371800 | 1497 | 1 | completa | Total; eventos.jsonl línea 829 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote829 | 0.062749100 | 1497 | 1 | completa | Total; eventos.jsonl línea 830 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote830 | 0.063141000 | 1497 | 1 | completa | Total; eventos.jsonl línea 831 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote831 | 0.062265100 | 1497 | 1 | completa | Total; eventos.jsonl línea 832 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote832 | 0.063352000 | 1497 | 1 | completa | Total; eventos.jsonl línea 833 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote833 | 0.066705200 | 1497 | 1 | completa | Total; eventos.jsonl línea 834 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote834 | 0.064756900 | 1497 | 1 | completa | Total; eventos.jsonl línea 835 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote835 | 0.065668900 | 1497 | 1 | completa | Total; eventos.jsonl línea 836 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote836 | 0.068872700 | 1497 | 1 | completa | Total; eventos.jsonl línea 837 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote837 | 0.065774900 | 1497 | 1 | completa | Total; eventos.jsonl línea 838 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote838 | 0.062705100 | 1497 | 1 | completa | Total; eventos.jsonl línea 839 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote839 | 0.068553100 | 1497 | 1 | completa | Total; eventos.jsonl línea 840 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote840 | 0.063028000 | 1497 | 1 | completa | Total; eventos.jsonl línea 841 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote841 | 0.067321800 | 1497 | 1 | completa | Total; eventos.jsonl línea 842 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote842 | 0.068257000 | 1497 | 1 | completa | Total; eventos.jsonl línea 843 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote843 | 0.070240200 | 1497 | 1 | completa | Total; eventos.jsonl línea 844 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote844 | 0.068444300 | 1497 | 1 | completa | Total; eventos.jsonl línea 845 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote845 | 0.072484400 | 1497 | 1 | completa | Total; eventos.jsonl línea 846 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote846 | 0.069277900 | 1497 | 1 | completa | Total; eventos.jsonl línea 847 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote847 | 0.074074000 | 1497 | 1 | completa | Total; eventos.jsonl línea 848 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote848 | 0.078171100 | 1497 | 1 | completa | Total; eventos.jsonl línea 849 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote849 | 0.079490800 | 1497 | 1 | completa | Total; eventos.jsonl línea 850 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote850 | 0.065685600 | 1497 | 1 | completa | Total; eventos.jsonl línea 851 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote851 | 0.064880000 | 1497 | 1 | completa | Total; eventos.jsonl línea 852 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote852 | 0.065606300 | 1497 | 1 | completa | Total; eventos.jsonl línea 853 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote853 | 0.066477000 | 1497 | 1 | completa | Total; eventos.jsonl línea 854 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote854 | 0.075298100 | 1497 | 1 | completa | Total; eventos.jsonl línea 855 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote855 | 0.065652000 | 1497 | 1 | completa | Total; eventos.jsonl línea 856 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote856 | 0.065485500 | 1497 | 1 | completa | Total; eventos.jsonl línea 857 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote857 | 0.065150000 | 1497 | 1 | completa | Total; eventos.jsonl línea 858 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote858 | 0.062842000 | 1497 | 1 | completa | Total; eventos.jsonl línea 859 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote859 | 0.062995200 | 1497 | 1 | completa | Total; eventos.jsonl línea 860 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote860 | 0.067679000 | 1497 | 1 | completa | Total; eventos.jsonl línea 861 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote861 | 0.142526300 | 1497 | 1 | completa | Total; eventos.jsonl línea 862 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote862 | 0.109870900 | 1497 | 1 | completa | Total; eventos.jsonl línea 863 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote863 | 0.108442600 | 1497 | 1 | completa | Total; eventos.jsonl línea 864 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote864 | 0.098476400 | 1497 | 1 | completa | Total; eventos.jsonl línea 865 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote865 | 0.096316300 | 1497 | 1 | completa | Total; eventos.jsonl línea 866 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote866 | 0.100078800 | 1497 | 1 | completa | Total; eventos.jsonl línea 867 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote867 | 0.096872000 | 1497 | 1 | completa | Total; eventos.jsonl línea 868 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote868 | 0.098703900 | 1497 | 1 | completa | Total; eventos.jsonl línea 869 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote869 | 0.100679700 | 1497 | 1 | completa | Total; eventos.jsonl línea 870 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote870 | 0.095525800 | 1497 | 1 | completa | Total; eventos.jsonl línea 871 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote871 | 0.113548000 | 1497 | 1 | completa | Total; eventos.jsonl línea 872 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote872 | 0.122415200 | 1497 | 1 | completa | Total; eventos.jsonl línea 873 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote873 | 0.102863900 | 1497 | 1 | completa | Total; eventos.jsonl línea 874 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote874 | 0.099296200 | 1497 | 1 | completa | Total; eventos.jsonl línea 875 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote875 | 0.097392100 | 1497 | 1 | completa | Total; eventos.jsonl línea 876 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote876 | 0.095805700 | 1497 | 1 | completa | Total; eventos.jsonl línea 877 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote877 | 0.096935100 | 1497 | 1 | completa | Total; eventos.jsonl línea 878 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote878 | 0.099693000 | 1497 | 1 | completa | Total; eventos.jsonl línea 879 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote879 | 0.097508400 | 1497 | 1 | completa | Total; eventos.jsonl línea 880 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote880 | 0.096208600 | 1497 | 1 | completa | Total; eventos.jsonl línea 881 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote881 | 0.097104100 | 1497 | 1 | completa | Total; eventos.jsonl línea 882 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote882 | 0.094784100 | 1497 | 1 | completa | Total; eventos.jsonl línea 883 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote883 | 0.098586500 | 1497 | 1 | completa | Total; eventos.jsonl línea 884 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote884 | 0.102377900 | 1497 | 1 | completa | Total; eventos.jsonl línea 885 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote885 | 0.097907600 | 1497 | 1 | completa | Total; eventos.jsonl línea 886 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote886 | 0.096623900 | 1497 | 1 | completa | Total; eventos.jsonl línea 887 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote887 | 0.097458800 | 1497 | 1 | completa | Total; eventos.jsonl línea 888 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote888 | 0.096697600 | 1497 | 1 | completa | Total; eventos.jsonl línea 889 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote889 | 0.095413000 | 1497 | 1 | completa | Total; eventos.jsonl línea 890 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote890 | 0.097173200 | 1497 | 1 | completa | Total; eventos.jsonl línea 891 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote891 | 0.095747700 | 1497 | 1 | completa | Total; eventos.jsonl línea 892 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote892 | 0.112658300 | 1497 | 1 | completa | Total; eventos.jsonl línea 893 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote893 | 0.111098400 | 1497 | 1 | completa | Total; eventos.jsonl línea 894 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote894 | 0.107341100 | 1497 | 1 | completa | Total; eventos.jsonl línea 895 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote895 | 0.098855500 | 1497 | 1 | completa | Total; eventos.jsonl línea 896 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote896 | 0.115441300 | 1497 | 1 | completa | Total; eventos.jsonl línea 897 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote897 | 0.134787400 | 1497 | 1 | completa | Total; eventos.jsonl línea 898 |
+| Explicación SHAP | 64caminos/32referencias · completo | 61.801367100 | 1497 | 1 | completa | Total; eventos.jsonl línea 899 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.013698200 | 1 | 1 | completa | Total; eventos.jsonl línea 900 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.037494300 | 1000 | 1 | completa | Total; eventos.jsonl línea 901 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.018424800 | 1000 | 1 | completa | Total; eventos.jsonl línea 902 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000343200 | 1000 | 1 | completa | Total; eventos.jsonl línea 903 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000167500 | 1 | 1 | completa | Total; eventos.jsonl línea 904 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.010179000 | 1 | 1 | completa | Total; eventos.jsonl línea 905 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.039897100 | 1000 | 1 | completa | Total; eventos.jsonl línea 906 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.001833000 | 1000 | 1 | completa | Total; eventos.jsonl línea 907 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000237600 | 1000 | 1 | completa | Total; eventos.jsonl línea 908 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000160600 | 1 | 1 | completa | Total; eventos.jsonl línea 909 |
+| Total del experimento | Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME | 62.128673200 | No aplica | 1 | completa | Total; eventos.jsonl línea 910 |
+
+### Ejecución `20261020_094729_599b6321`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T09:47:29.138435-05:00 a 2026-10-20T09:48:44.898316-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_094729_599b6321/metadata.json](tiempos/20261020_094729_599b6321/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_094729_599b6321/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.017818600 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.017382900 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.011197100 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m14 / validación serialización test | 0.005864400 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m16 / validación serialización test | 0.043113600 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m3 / validación serialización test | 0.010960300 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m11 / validación serialización test | 0.017077300 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m15 / validación serialización test | 0.051929100 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m7 / validación serialización test | 0.015566900 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Total del experimento | Originales · verificación y activación | 75.756084500 | No aplica | 1 | completa | Total; eventos.jsonl línea 10 |
+
+### Ejecución `20261020_094924_7f0db1db`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T09:49:24.978467-05:00 a 2026-10-20T09:49:25.244123-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_094924_7f0db1db/metadata.json](tiempos/20261020_094924_7f0db1db/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_094924_7f0db1db/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.017931700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017885200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.159390400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000475200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.272836200 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_095024_22fed2ed`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T09:50:24.293698-05:00 a 2026-10-20T09:50:24.562404-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095024_22fed2ed/metadata.json](tiempos/20261020_095024_22fed2ed/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095024_22fed2ed/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014971400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017209700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.154161900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000580800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.270610800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_095048_ab0ddff4`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T09:50:48.542768-05:00 a 2026-10-20T09:50:48.818895-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095048_ab0ddff4/metadata.json](tiempos/20261020_095048_ab0ddff4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095048_ab0ddff4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015138200 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017598400 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.150865600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000582700 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.279654400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_095101_31f3a020`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.462218-05:00 a 2026-10-20T09:51:01.500074-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_31f3a020/metadata.json](tiempos/20261020_095101_31f3a020/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_31f3a020/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.028870700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.033792900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095101_cdaf0009`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.518674-05:00 a 2026-10-20T09:51:01.533453-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_cdaf0009/metadata.json](tiempos/20261020_095101_cdaf0009/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_cdaf0009/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006989500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013375700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095101_ffdb65a9`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.557480-05:00 a 2026-10-20T09:51:01.570180-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_ffdb65a9/metadata.json](tiempos/20261020_095101_ffdb65a9/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_ffdb65a9/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006751000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.013608200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095101_43dcdd53`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.801907-05:00 a 2026-10-20T09:51:01.849508-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_43dcdd53/metadata.json](tiempos/20261020_095101_43dcdd53/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_43dcdd53/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.031369300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.049169300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095101_072529d6`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.895759-05:00 a 2026-10-20T09:51:01.915192-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_072529d6/metadata.json](tiempos/20261020_095101_072529d6/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_072529d6/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012831100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.020979700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095101_e9dd118f`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:01.940152-05:00 a 2026-10-20T09:51:01.948805-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095101_e9dd118f/metadata.json](tiempos/20261020_095101_e9dd118f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095101_e9dd118f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005175800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010496700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095107_f9f81eb8`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:07.375716-05:00 a 2026-10-20T09:51:07.391923-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095107_f9f81eb8/metadata.json](tiempos/20261020_095107_f9f81eb8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095107_f9f81eb8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006802200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.013359600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095107_a083558b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:07.412152-05:00 a 2026-10-20T09:51:07.412152-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095107_a083558b/metadata.json](tiempos/20261020_095107_a083558b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095107_a083558b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006349900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011290300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095107_aa4e3de4`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:07.433196-05:00 a 2026-10-20T09:51:07.446530-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095107_aa4e3de4/metadata.json](tiempos/20261020_095107_aa4e3de4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095107_aa4e3de4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005236600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.013047600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095107_96b6dfef`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:07.453690-05:00 a 2026-10-20T09:51:07.465589-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095107_96b6dfef/metadata.json](tiempos/20261020_095107_96b6dfef/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095107_96b6dfef/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005097600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010153700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_095107_b2fea5d1`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T09:51:07.472211-05:00 a 2026-10-20T09:51:07.484988-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_095107_b2fea5d1/metadata.json](tiempos/20261020_095107_b2fea5d1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_095107_b2fea5d1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005027300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010207500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_100140_8f327baf`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-20T10:01:40.820240-05:00 a 2026-10-20T10:38:43.853634-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_100140_8f327baf/metadata.json](tiempos/20261020_100140_8f327baf/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_100140_8f327baf/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m7 / external_1 / Grid Search | 10.831763200 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Búsqueda | m7 / external_1 / Random Search | 4.397360300 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Búsqueda | m7 / external_1 / Bayesiana TPE | 5.282116100 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m7 / external_1 / Genética DEAP | 5.083513700 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Búsqueda | m7 / external_1 / Successive Halving | 7.446138400 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Entrenamiento/refit | m7 / externo1 | 0.360795800 | 1047 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m7 / OOF externo1 | 0.014520000 | 262 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Búsqueda | m7 / external_2 / Grid Search | 6.307522100 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Búsqueda | m7 / external_2 / Random Search | 3.727007800 | 1047 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m7 / external_2 / Bayesiana TPE | 3.726703300 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Búsqueda | m7 / external_2 / Genética DEAP | 4.977844700 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Búsqueda | m7 / external_2 / Successive Halving | 6.858086900 | 1047 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Entrenamiento/refit | m7 / externo2 | 0.288501600 | 1047 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m7 / OOF externo2 | 0.014630900 | 262 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Búsqueda | m7 / external_3 / Grid Search | 8.645763000 | 1047 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m7 / external_3 / Random Search | 5.271504100 | 1047 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Búsqueda | m7 / external_3 / Bayesiana TPE | 6.102097300 | 1047 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Búsqueda | m7 / external_3 / Genética DEAP | 6.122041800 | 1047 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | m7 / external_3 / Successive Halving | 10.188035700 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit | m7 / externo3 | 0.416896800 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | m7 / OOF externo3 | 0.025887000 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | m7 / external_4 / Grid Search | 7.734864100 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Búsqueda | m7 / external_4 / Random Search | 4.610419000 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Búsqueda | m7 / external_4 / Bayesiana TPE | 5.379783500 | 1047 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | m7 / external_4 / Genética DEAP | 6.100102500 | 1047 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Búsqueda | m7 / external_4 / Successive Halving | 6.036526200 | 1047 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Entrenamiento/refit | m7 / externo4 | 0.372340400 | 1047 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | m7 / OOF externo4 | 0.013107900 | 262 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Búsqueda | m7 / external_5 / Grid Search | 6.380333900 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Búsqueda | m7 / external_5 / Random Search | 3.889779600 | 1048 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | m7 / external_5 / Bayesiana TPE | 4.510804500 | 1048 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Búsqueda | m7 / external_5 / Genética DEAP | 5.128265000 | 1048 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Búsqueda | m7 / external_5 / Successive Halving | 4.494641600 | 1048 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Entrenamiento/refit | m7 / externo5 | 0.293761600 | 1048 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | m7 / OOF externo5 | 0.011863700 | 261 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Búsqueda | m7 / final / Grid Search | 8.291467200 | 1309 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | m7 / final / Random Search | 5.076715200 | 1309 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Búsqueda | m7 / final / Bayesiana TPE | 6.735952800 | 1309 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Búsqueda | m7 / final / Genética DEAP | 5.041013800 | 1309 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | m7 / final / Successive Halving | 8.634053800 | 1309 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit | m7 / final | 0.412488700 | 1309 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Búsqueda | m14 / external_1 / Grid Search | 95.239066700 | 1047 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Búsqueda | m14 / external_1 / Random Search | 50.857375800 | 1047 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Búsqueda | m14 / external_1 / Bayesiana TPE | 51.702268500 | 1047 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Búsqueda | m14 / external_1 / Genética DEAP | 25.417727400 | 1047 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Búsqueda | m14 / external_1 / Successive Halving | 48.617004500 | 1047 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Entrenamiento/refit | m14 / externo1 | 1.791725700 | 1047 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | m14 / OOF externo1 | 0.006729800 | 262 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Búsqueda | m14 / external_2 / Grid Search | 92.823816300 | 1047 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Búsqueda | m14 / external_2 / Random Search | 50.852006300 | 1047 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Búsqueda | m14 / external_2 / Bayesiana TPE | 41.689765400 | 1047 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Búsqueda | m14 / external_2 / Genética DEAP | 21.701308800 | 1047 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Búsqueda | m14 / external_2 / Successive Halving | 51.724513800 | 1047 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Entrenamiento/refit | m14 / externo2 | 0.997448600 | 1047 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | m14 / OOF externo2 | 0.007398900 | 262 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Búsqueda | m14 / external_3 / Grid Search | 91.757180900 | 1047 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Búsqueda | m14 / external_3 / Random Search | 49.496983700 | 1047 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Búsqueda | m14 / external_3 / Bayesiana TPE | 51.994389400 | 1047 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Búsqueda | m14 / external_3 / Genética DEAP | 35.438384700 | 1047 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Búsqueda | m14 / external_3 / Successive Halving | 89.227037800 | 1047 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Entrenamiento/refit | m14 / externo3 | 2.119376700 | 1047 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | m14 / OOF externo3 | 0.012346000 | 262 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Búsqueda | m14 / external_4 / Grid Search | 114.743355300 | 1047 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Búsqueda | m14 / external_4 / Random Search | 97.517724400 | 1047 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Búsqueda | m14 / external_4 / Bayesiana TPE | 83.896717400 | 1047 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Búsqueda | m14 / external_4 / Genética DEAP | 31.360157100 | 1047 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Búsqueda | m14 / external_4 / Successive Halving | 76.008475100 | 1047 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Entrenamiento/refit | m14 / externo4 | 1.812519600 | 1047 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | m14 / OOF externo4 | 0.009525600 | 262 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Búsqueda | m14 / external_5 / Grid Search | 153.012066200 | 1048 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Búsqueda | m14 / external_5 / Random Search | 86.797916300 | 1048 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Búsqueda | m14 / external_5 / Bayesiana TPE | 48.085222000 | 1048 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Búsqueda | m14 / external_5 / Genética DEAP | 19.835432200 | 1048 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Búsqueda | m14 / external_5 / Successive Halving | 49.989820900 | 1048 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Entrenamiento/refit | m14 / externo5 | 0.985498600 | 1048 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | m14 / OOF externo5 | 0.006354600 | 261 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Búsqueda | m14 / final / Grid Search | 127.891330800 | 1309 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Búsqueda | m14 / final / Random Search | 77.912688900 | 1309 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Búsqueda | m14 / final / Bayesiana TPE | 88.667705500 | 1309 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Búsqueda | m14 / final / Genética DEAP | 41.639588900 | 1309 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Búsqueda | m14 / final / Successive Halving | 81.399535700 | 1309 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Entrenamiento/refit | m14 / final | 1.577525100 | 1309 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | m7 / test202530 | 0.011625800 | 188 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | m14 / test202530 | 0.005291700 | 188 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 2223.031270200 | No aplica | 1 | completa | Total; eventos.jsonl línea 85 |
+
+### Ejecución `20261020_103916_fb6c8c6d`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-20T10:39:16.320569-05:00 a 2026-10-20T15:00:59.272144-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_103916_fb6c8c6d/metadata.json](tiempos/20261020_103916_fb6c8c6d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_103916_fb6c8c6d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m3 / external_1 / Grid Search | 543.425049200 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Búsqueda | m3 / external_1 / Random Search | 101.182006800 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Búsqueda | m3 / external_1 / Bayesiana TPE | 165.131378300 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m3 / external_1 / Genética DEAP | 180.231551000 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Búsqueda | m3 / external_1 / Successive Halving | 28.356482800 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Entrenamiento/refit | m3 / externo1 | 6.228079800 | 1047 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m3 / OOF externo1 | 0.010592400 | 262 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Búsqueda | m3 / external_2 / Grid Search | 611.741285400 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Búsqueda | m3 / external_2 / Random Search | 140.821529900 | 1047 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m3 / external_2 / Bayesiana TPE | 139.893470600 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Búsqueda | m3 / external_2 / Genética DEAP | 141.351955900 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Búsqueda | m3 / external_2 / Successive Halving | 31.654728600 | 1047 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Entrenamiento/refit | m3 / externo2 | 3.708894500 | 1047 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m3 / OOF externo2 | 0.018824600 | 262 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Búsqueda | m3 / external_3 / Grid Search | 500.703310400 | 1047 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m3 / external_3 / Random Search | 112.326741400 | 1047 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Búsqueda | m3 / external_3 / Bayesiana TPE | 122.402468900 | 1047 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Búsqueda | m3 / external_3 / Genética DEAP | 130.246791100 | 1047 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | m3 / external_3 / Successive Halving | 37.546835000 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit | m3 / externo3 | 2.327618300 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | m3 / OOF externo3 | 0.010255400 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | m3 / external_4 / Grid Search | 601.832580400 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Búsqueda | m3 / external_4 / Random Search | 80.943225300 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Búsqueda | m3 / external_4 / Bayesiana TPE | 155.585054900 | 1047 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | m3 / external_4 / Genética DEAP | 186.040746900 | 1047 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Búsqueda | m3 / external_4 / Successive Halving | 36.694500900 | 1047 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Entrenamiento/refit | m3 / externo4 | 1.498496700 | 1047 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | m3 / OOF externo4 | 0.005342300 | 262 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Búsqueda | m3 / external_5 / Grid Search | 551.178216800 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Búsqueda | m3 / external_5 / Random Search | 114.455027900 | 1048 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | m3 / external_5 / Bayesiana TPE | 98.911863100 | 1048 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Búsqueda | m3 / external_5 / Genética DEAP | 130.904899400 | 1048 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Búsqueda | m3 / external_5 / Successive Halving | 31.279395800 | 1048 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Entrenamiento/refit | m3 / externo5 | 2.012433600 | 1048 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | m3 / OOF externo5 | 0.005377300 | 261 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Búsqueda | m3 / final / Grid Search | 637.125214900 | 1309 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | m3 / final / Random Search | 122.822778700 | 1309 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Búsqueda | m3 / final / Bayesiana TPE | 175.712824900 | 1309 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Búsqueda | m3 / final / Genética DEAP | 169.878307000 | 1309 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | m3 / final / Successive Halving | 62.824476700 | 1309 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit | m3 / final | 3.588037200 | 1309 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Búsqueda | m15 / external_1 / Grid Search | 397.112704800 | 1047 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Búsqueda | m15 / external_1 / Random Search | 76.659261900 | 1047 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Búsqueda | m15 / external_1 / Bayesiana TPE | 69.634642300 | 1047 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Búsqueda | m15 / external_1 / Genética DEAP | 64.340306800 | 1047 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Búsqueda | m15 / external_1 / Successive Halving | 104.681728500 | 1047 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Entrenamiento/refit | m15 / externo1 | 241.388924000 | 1047 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | m15 / OOF externo1 | 0.063818500 | 262 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Búsqueda | m15 / external_2 / Grid Search | 469.866016200 | 1047 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Búsqueda | m15 / external_2 / Random Search | 81.402914300 | 1047 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Búsqueda | m15 / external_2 / Bayesiana TPE | 71.748554700 | 1047 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Búsqueda | m15 / external_2 / Genética DEAP | 91.283995400 | 1047 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Búsqueda | m15 / external_2 / Successive Halving | 169.346079600 | 1047 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Entrenamiento/refit | m15 / externo2 | 231.180101900 | 1047 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | m15 / OOF externo2 | 0.065822900 | 262 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Búsqueda | m15 / external_3 / Grid Search | 521.353903200 | 1047 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Búsqueda | m15 / external_3 / Random Search | 92.346011800 | 1047 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Búsqueda | m15 / external_3 / Bayesiana TPE | 90.714408000 | 1047 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Búsqueda | m15 / external_3 / Genética DEAP | 104.567191200 | 1047 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Búsqueda | m15 / external_3 / Successive Halving | 171.460981400 | 1047 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Entrenamiento/refit | m15 / externo3 | 260.913393500 | 1047 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | m15 / OOF externo3 | 0.056399400 | 262 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Búsqueda | m15 / external_4 / Grid Search | 539.384809900 | 1047 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Búsqueda | m15 / external_4 / Random Search | 79.354109800 | 1047 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Búsqueda | m15 / external_4 / Bayesiana TPE | 75.111475100 | 1047 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Búsqueda | m15 / external_4 / Genética DEAP | 101.002789700 | 1047 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Búsqueda | m15 / external_4 / Successive Halving | 187.223794800 | 1047 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Entrenamiento/refit | m15 / externo4 | 262.588139700 | 1047 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | m15 / OOF externo4 | 0.062175100 | 262 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Búsqueda | m15 / external_5 / Grid Search | 584.419969900 | 1048 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Búsqueda | m15 / external_5 / Random Search | 87.599341700 | 1048 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Búsqueda | m15 / external_5 / Bayesiana TPE | 82.532555200 | 1048 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Búsqueda | m15 / external_5 / Genética DEAP | 107.786319100 | 1048 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Búsqueda | m15 / external_5 / Successive Halving | 194.701501400 | 1048 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Entrenamiento/refit | m15 / externo5 | 256.782455900 | 1048 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | m15 / OOF externo5 | 0.067174700 | 261 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Búsqueda | m15 / final / Grid Search | 215.706811800 | 1309 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Búsqueda | m15 / final / Random Search | 97.767787600 | 1309 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Búsqueda | m15 / final / Bayesiana TPE | 91.866045000 | 1309 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Búsqueda | m15 / final / Genética DEAP | 115.016215200 | 1309 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Búsqueda | m15 / final / Successive Halving | 244.375414000 | 1309 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Entrenamiento/refit | m15 / final | 294.258208700 | 1309 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Búsqueda | m16 / external_1 / Grid Search | 116.316443000 | 1047 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Búsqueda | m16 / external_1 / Random Search | 111.625343900 | 1047 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Búsqueda | m16 / external_1 / Bayesiana TPE | 62.476002900 | 1047 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Búsqueda | m16 / external_1 / Genética DEAP | 48.685837000 | 1047 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Búsqueda | m16 / external_1 / Successive Halving | 59.802373800 | 1047 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Entrenamiento/refit | m16 / externo1 | 5.080655600 | 1047 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | m16 / OOF externo1 | 0.043487700 | 262 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Búsqueda | m16 / external_2 / Grid Search | 78.345626600 | 1047 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Búsqueda | m16 / external_2 / Random Search | 77.451033900 | 1047 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Búsqueda | m16 / external_2 / Bayesiana TPE | 57.254305800 | 1047 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Búsqueda | m16 / external_2 / Genética DEAP | 45.014195300 | 1047 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Búsqueda | m16 / external_2 / Successive Halving | 47.443196400 | 1047 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Entrenamiento/refit | m16 / externo2 | 3.504116300 | 1047 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | m16 / OOF externo2 | 0.044788600 | 262 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Búsqueda | m16 / external_3 / Grid Search | 67.677504300 | 1047 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Búsqueda | m16 / external_3 / Random Search | 109.136264400 | 1047 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Búsqueda | m16 / external_3 / Bayesiana TPE | 80.906353100 | 1047 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Búsqueda | m16 / external_3 / Genética DEAP | 70.604126500 | 1047 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Búsqueda | m16 / external_3 / Successive Halving | 79.011814200 | 1047 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Entrenamiento/refit | m16 / externo3 | 4.823984100 | 1047 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | m16 / OOF externo3 | 0.080728600 | 262 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Búsqueda | m16 / external_4 / Grid Search | 110.064559400 | 1047 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Búsqueda | m16 / external_4 / Random Search | 112.339695600 | 1047 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Búsqueda | m16 / external_4 / Bayesiana TPE | 83.838637100 | 1047 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Búsqueda | m16 / external_4 / Genética DEAP | 68.021103400 | 1047 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Búsqueda | m16 / external_4 / Successive Halving | 78.812839300 | 1047 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Entrenamiento/refit | m16 / externo4 | 5.777543200 | 1047 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | m16 / OOF externo4 | 0.063938700 | 262 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Búsqueda | m16 / external_5 / Grid Search | 102.682539600 | 1048 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Búsqueda | m16 / external_5 / Random Search | 115.295976300 | 1048 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Búsqueda | m16 / external_5 / Bayesiana TPE | 80.845862100 | 1048 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Búsqueda | m16 / external_5 / Genética DEAP | 69.908999100 | 1048 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Búsqueda | m16 / external_5 / Successive Halving | 91.372144300 | 1048 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Entrenamiento/refit | m16 / externo5 | 5.799137400 | 1048 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | m16 / OOF externo5 | 0.059476300 | 261 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Búsqueda | m16 / final / Grid Search | 127.263055600 | 1309 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Búsqueda | m16 / final / Random Search | 120.989066100 | 1309 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Búsqueda | m16 / final / Bayesiana TPE | 103.063828300 | 1309 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Búsqueda | m16 / final / Genética DEAP | 80.696542600 | 1309 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Búsqueda | m16 / final / Successive Halving | 114.537980500 | 1309 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Entrenamiento/refit | m16 / final | 7.459867200 | 1309 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | m3 / test202530 | 0.010712000 | 188 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | m15 / test202530 | 0.084637700 | 188 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | m16 / test202530 | 0.052550900 | 188 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 15701.583850900 | No aplica | 1 | completa | Total; eventos.jsonl línea 127 |
+
+### Ejecución `20261020_150158_b9f15fad`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T15:01:58.456741-05:00 a 2026-10-20T15:02:06.139726-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150158_b9f15fad/metadata.json](tiempos/20261020_150158_b9f15fad/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150158_b9f15fad/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.455621500 | 25 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm25 Originales | 3.849696200 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 7.673485300 | No aplica | 1 | completa | Total; eventos.jsonl línea 3 |
+
+### Ejecución `20261020_150206_2d7cbf9a`
+
+- **Modelo/motivo:** Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME.
+- **Fecha/zona:** 2026-10-20T15:02:06.521375-05:00 a 2026-10-20T15:03:12.028229-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150206_2d7cbf9a/metadata.json](tiempos/20261020_150206_2d7cbf9a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150206_2d7cbf9a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote0 | 0.096082900 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote1 | 0.010472500 | 32 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote2 | 0.118118900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote3 | 0.100546100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote4 | 0.095428400 | 1497 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote5 | 0.096205900 | 1497 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote6 | 0.092614300 | 1497 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote7 | 0.112578200 | 1497 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote8 | 0.094754600 | 1497 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote9 | 0.094898500 | 1497 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote10 | 0.119869900 | 1497 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote11 | 0.118726900 | 1497 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote12 | 0.099853600 | 1497 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote13 | 0.099705700 | 1497 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote14 | 0.098836600 | 1497 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote15 | 0.096338200 | 1497 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote16 | 0.095751700 | 1497 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote17 | 0.093952900 | 1497 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote18 | 0.097193900 | 1497 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote19 | 0.096671300 | 1497 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote20 | 0.094784000 | 1497 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote21 | 0.101657200 | 1497 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote22 | 0.096977700 | 1497 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote23 | 0.100047700 | 1497 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote24 | 0.095550500 | 1497 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote25 | 0.097053100 | 1497 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote26 | 0.098464200 | 1497 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote27 | 0.096990800 | 1497 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote28 | 0.100052800 | 1497 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote29 | 0.096199800 | 1497 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote30 | 0.096307700 | 1497 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote31 | 0.094942400 | 1497 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote32 | 0.098839200 | 1497 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote33 | 0.100142400 | 1497 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote34 | 0.096603000 | 1497 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote35 | 0.098391500 | 1497 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote36 | 0.110005600 | 1497 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote37 | 0.098150700 | 1497 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote38 | 0.095565500 | 1497 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote39 | 0.092057600 | 1497 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote40 | 0.098191500 | 1497 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote41 | 0.088892200 | 1497 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote42 | 0.092915700 | 1497 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote43 | 0.091920400 | 1497 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote44 | 0.092301600 | 1497 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote45 | 0.094069300 | 1497 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote46 | 0.089029000 | 1497 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote47 | 0.092643900 | 1497 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote48 | 0.090741900 | 1497 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote49 | 0.093875000 | 1497 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote50 | 0.091715100 | 1497 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote51 | 0.095571700 | 1497 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote52 | 0.093240500 | 1497 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote53 | 0.090697200 | 1497 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote54 | 0.094137000 | 1497 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote55 | 0.088881700 | 1497 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote56 | 0.093644900 | 1497 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote57 | 0.091420500 | 1497 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote58 | 0.106676400 | 1497 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote59 | 0.099162200 | 1497 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote60 | 0.092499000 | 1497 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote61 | 0.099452500 | 1497 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote62 | 0.091147100 | 1497 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote63 | 0.093369400 | 1497 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote64 | 0.088884000 | 1497 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote65 | 0.096122700 | 1497 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote66 | 0.092162100 | 1497 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote67 | 0.089742400 | 1497 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote68 | 0.092602300 | 1497 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote69 | 0.091681400 | 1497 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote70 | 0.092628800 | 1497 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote71 | 0.090085100 | 1497 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote72 | 0.093185400 | 1497 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote73 | 0.095516700 | 1497 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote74 | 0.090859700 | 1497 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote75 | 0.093731400 | 1497 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote76 | 0.093566400 | 1497 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote77 | 0.092726700 | 1497 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote78 | 0.087549300 | 1497 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote79 | 0.092069400 | 1497 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote80 | 0.091640900 | 1497 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote81 | 0.096822200 | 1497 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote82 | 0.091585600 | 1497 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote83 | 0.090362600 | 1497 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote84 | 0.092966100 | 1497 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote85 | 0.092153800 | 1497 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote86 | 0.094832100 | 1497 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote87 | 0.091471900 | 1497 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote88 | 0.089970700 | 1497 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote89 | 0.088750300 | 1497 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote90 | 0.091776200 | 1497 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote91 | 0.090812100 | 1497 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote92 | 0.090837100 | 1497 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote93 | 0.101628000 | 1497 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote94 | 0.089219200 | 1497 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote95 | 0.090427800 | 1497 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote96 | 0.096242800 | 1497 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote97 | 0.111958800 | 1497 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote98 | 0.117494200 | 1497 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote99 | 0.082289800 | 1497 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote100 | 0.058732300 | 1497 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote101 | 0.062045400 | 1497 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote102 | 0.060256400 | 1497 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote103 | 0.060185900 | 1497 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote104 | 0.060575600 | 1497 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote105 | 0.059987500 | 1497 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote106 | 0.091335600 | 1497 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote107 | 0.092571600 | 1497 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote108 | 0.090630000 | 1497 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote109 | 0.099616000 | 1497 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote110 | 0.095124200 | 1497 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote111 | 0.092337400 | 1497 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote112 | 0.090844300 | 1497 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote113 | 0.095711700 | 1497 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote114 | 0.090699900 | 1497 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote115 | 0.092490800 | 1497 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote116 | 0.092390500 | 1497 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote117 | 0.094990900 | 1497 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote118 | 0.092265400 | 1497 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote119 | 0.093776100 | 1497 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote120 | 0.092812500 | 1497 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote121 | 0.090497100 | 1497 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote122 | 0.094578600 | 1497 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote123 | 0.091509500 | 1497 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote124 | 0.094541000 | 1497 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote125 | 0.095929900 | 1497 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote126 | 0.093614900 | 1497 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote127 | 0.091316400 | 1497 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote128 | 0.122496800 | 1497 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote129 | 0.111964700 | 1497 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote130 | 0.117545100 | 1497 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote131 | 0.104445500 | 1497 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote132 | 0.096335600 | 1497 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote133 | 0.105234700 | 1497 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote134 | 0.102523300 | 1497 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote135 | 0.107258700 | 1497 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote136 | 0.119589100 | 1497 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote137 | 0.126109400 | 1497 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote138 | 0.108963200 | 1497 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote139 | 0.107054100 | 1497 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote140 | 0.112555300 | 1497 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote141 | 0.113634100 | 1497 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote142 | 0.111431200 | 1497 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote143 | 0.117276400 | 1497 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote144 | 0.113877700 | 1497 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote145 | 0.115874500 | 1497 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote146 | 0.106615100 | 1497 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote147 | 0.109261400 | 1497 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote148 | 0.111239800 | 1497 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote149 | 0.108545500 | 1497 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote150 | 0.122601700 | 1497 | 1 | completa | Total; eventos.jsonl línea 151 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote151 | 0.067552100 | 1497 | 1 | completa | Total; eventos.jsonl línea 152 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote152 | 0.064419100 | 1497 | 1 | completa | Total; eventos.jsonl línea 153 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote153 | 0.066242300 | 1497 | 1 | completa | Total; eventos.jsonl línea 154 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote154 | 0.065049600 | 1497 | 1 | completa | Total; eventos.jsonl línea 155 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote155 | 0.068234700 | 1497 | 1 | completa | Total; eventos.jsonl línea 156 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote156 | 0.065236500 | 1497 | 1 | completa | Total; eventos.jsonl línea 157 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote157 | 0.065956400 | 1497 | 1 | completa | Total; eventos.jsonl línea 158 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote158 | 0.067436000 | 1497 | 1 | completa | Total; eventos.jsonl línea 159 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote159 | 0.064970400 | 1497 | 1 | completa | Total; eventos.jsonl línea 160 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote160 | 0.064593500 | 1497 | 1 | completa | Total; eventos.jsonl línea 161 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote161 | 0.065974200 | 1497 | 1 | completa | Total; eventos.jsonl línea 162 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote162 | 0.066027700 | 1497 | 1 | completa | Total; eventos.jsonl línea 163 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote163 | 0.069438600 | 1497 | 1 | completa | Total; eventos.jsonl línea 164 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote164 | 0.069248400 | 1497 | 1 | completa | Total; eventos.jsonl línea 165 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote165 | 0.069605000 | 1497 | 1 | completa | Total; eventos.jsonl línea 166 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote166 | 0.073273300 | 1497 | 1 | completa | Total; eventos.jsonl línea 167 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote167 | 0.072246000 | 1497 | 1 | completa | Total; eventos.jsonl línea 168 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote168 | 0.077401500 | 1497 | 1 | completa | Total; eventos.jsonl línea 169 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote169 | 0.073387900 | 1497 | 1 | completa | Total; eventos.jsonl línea 170 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote170 | 0.063762200 | 1497 | 1 | completa | Total; eventos.jsonl línea 171 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote171 | 0.063393700 | 1497 | 1 | completa | Total; eventos.jsonl línea 172 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote172 | 0.065290400 | 1497 | 1 | completa | Total; eventos.jsonl línea 173 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote173 | 0.067517200 | 1497 | 1 | completa | Total; eventos.jsonl línea 174 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote174 | 0.069195100 | 1497 | 1 | completa | Total; eventos.jsonl línea 175 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote175 | 0.068232300 | 1497 | 1 | completa | Total; eventos.jsonl línea 176 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote176 | 0.075535900 | 1497 | 1 | completa | Total; eventos.jsonl línea 177 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote177 | 0.074711400 | 1497 | 1 | completa | Total; eventos.jsonl línea 178 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote178 | 0.079274700 | 1497 | 1 | completa | Total; eventos.jsonl línea 179 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote179 | 0.076508900 | 1497 | 1 | completa | Total; eventos.jsonl línea 180 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote180 | 0.079634600 | 1497 | 1 | completa | Total; eventos.jsonl línea 181 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote181 | 0.074818200 | 1497 | 1 | completa | Total; eventos.jsonl línea 182 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote182 | 0.067969200 | 1497 | 1 | completa | Total; eventos.jsonl línea 183 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote183 | 0.066328900 | 1497 | 1 | completa | Total; eventos.jsonl línea 184 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote184 | 0.067233100 | 1497 | 1 | completa | Total; eventos.jsonl línea 185 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote185 | 0.077956100 | 1497 | 1 | completa | Total; eventos.jsonl línea 186 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote186 | 0.078089000 | 1497 | 1 | completa | Total; eventos.jsonl línea 187 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote187 | 0.073945800 | 1497 | 1 | completa | Total; eventos.jsonl línea 188 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote188 | 0.078276600 | 1497 | 1 | completa | Total; eventos.jsonl línea 189 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote189 | 0.081737300 | 1497 | 1 | completa | Total; eventos.jsonl línea 190 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote190 | 0.085179100 | 1497 | 1 | completa | Total; eventos.jsonl línea 191 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote191 | 0.084541100 | 1497 | 1 | completa | Total; eventos.jsonl línea 192 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote192 | 0.077733500 | 1497 | 1 | completa | Total; eventos.jsonl línea 193 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote193 | 0.069432100 | 1497 | 1 | completa | Total; eventos.jsonl línea 194 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote194 | 0.060672700 | 1497 | 1 | completa | Total; eventos.jsonl línea 195 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote195 | 0.058131100 | 1497 | 1 | completa | Total; eventos.jsonl línea 196 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote196 | 0.063296400 | 1497 | 1 | completa | Total; eventos.jsonl línea 197 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote197 | 0.067673900 | 1497 | 1 | completa | Total; eventos.jsonl línea 198 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote198 | 0.064243900 | 1497 | 1 | completa | Total; eventos.jsonl línea 199 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote199 | 0.062896500 | 1497 | 1 | completa | Total; eventos.jsonl línea 200 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote200 | 0.062994600 | 1497 | 1 | completa | Total; eventos.jsonl línea 201 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote201 | 0.062193200 | 1497 | 1 | completa | Total; eventos.jsonl línea 202 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote202 | 0.060702200 | 1497 | 1 | completa | Total; eventos.jsonl línea 203 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote203 | 0.059098800 | 1497 | 1 | completa | Total; eventos.jsonl línea 204 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote204 | 0.059616100 | 1497 | 1 | completa | Total; eventos.jsonl línea 205 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote205 | 0.060759900 | 1497 | 1 | completa | Total; eventos.jsonl línea 206 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote206 | 0.070285400 | 1497 | 1 | completa | Total; eventos.jsonl línea 207 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote207 | 0.067959800 | 1497 | 1 | completa | Total; eventos.jsonl línea 208 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote208 | 0.063508300 | 1497 | 1 | completa | Total; eventos.jsonl línea 209 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote209 | 0.069022900 | 1497 | 1 | completa | Total; eventos.jsonl línea 210 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote210 | 0.065529900 | 1497 | 1 | completa | Total; eventos.jsonl línea 211 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote211 | 0.066452100 | 1497 | 1 | completa | Total; eventos.jsonl línea 212 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote212 | 0.067042200 | 1497 | 1 | completa | Total; eventos.jsonl línea 213 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote213 | 0.065140000 | 1497 | 1 | completa | Total; eventos.jsonl línea 214 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote214 | 0.066421100 | 1497 | 1 | completa | Total; eventos.jsonl línea 215 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote215 | 0.064868800 | 1497 | 1 | completa | Total; eventos.jsonl línea 216 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote216 | 0.065604300 | 1497 | 1 | completa | Total; eventos.jsonl línea 217 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote217 | 0.068757300 | 1497 | 1 | completa | Total; eventos.jsonl línea 218 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote218 | 0.064578900 | 1497 | 1 | completa | Total; eventos.jsonl línea 219 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote219 | 0.067901600 | 1497 | 1 | completa | Total; eventos.jsonl línea 220 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote220 | 0.063967000 | 1497 | 1 | completa | Total; eventos.jsonl línea 221 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote221 | 0.064692600 | 1497 | 1 | completa | Total; eventos.jsonl línea 222 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote222 | 0.063387700 | 1497 | 1 | completa | Total; eventos.jsonl línea 223 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote223 | 0.063836300 | 1497 | 1 | completa | Total; eventos.jsonl línea 224 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote224 | 0.063975400 | 1497 | 1 | completa | Total; eventos.jsonl línea 225 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote225 | 0.064577300 | 1497 | 1 | completa | Total; eventos.jsonl línea 226 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote226 | 0.067969200 | 1497 | 1 | completa | Total; eventos.jsonl línea 227 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote227 | 0.071155400 | 1497 | 1 | completa | Total; eventos.jsonl línea 228 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote228 | 0.075393500 | 1497 | 1 | completa | Total; eventos.jsonl línea 229 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote229 | 0.082497300 | 1497 | 1 | completa | Total; eventos.jsonl línea 230 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote230 | 0.070820600 | 1497 | 1 | completa | Total; eventos.jsonl línea 231 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote231 | 0.073024900 | 1497 | 1 | completa | Total; eventos.jsonl línea 232 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote232 | 0.073652400 | 1497 | 1 | completa | Total; eventos.jsonl línea 233 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote233 | 0.072989400 | 1497 | 1 | completa | Total; eventos.jsonl línea 234 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote234 | 0.070600500 | 1497 | 1 | completa | Total; eventos.jsonl línea 235 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote235 | 0.070317400 | 1497 | 1 | completa | Total; eventos.jsonl línea 236 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote236 | 0.068150600 | 1497 | 1 | completa | Total; eventos.jsonl línea 237 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote237 | 0.062974900 | 1497 | 1 | completa | Total; eventos.jsonl línea 238 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote238 | 0.066139900 | 1497 | 1 | completa | Total; eventos.jsonl línea 239 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote239 | 0.061421400 | 1497 | 1 | completa | Total; eventos.jsonl línea 240 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote240 | 0.065892900 | 1497 | 1 | completa | Total; eventos.jsonl línea 241 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote241 | 0.063086400 | 1497 | 1 | completa | Total; eventos.jsonl línea 242 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote242 | 0.065903300 | 1497 | 1 | completa | Total; eventos.jsonl línea 243 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote243 | 0.060245000 | 1497 | 1 | completa | Total; eventos.jsonl línea 244 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote244 | 0.066769200 | 1497 | 1 | completa | Total; eventos.jsonl línea 245 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote245 | 0.062333600 | 1497 | 1 | completa | Total; eventos.jsonl línea 246 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote246 | 0.066663600 | 1497 | 1 | completa | Total; eventos.jsonl línea 247 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote247 | 0.074015100 | 1497 | 1 | completa | Total; eventos.jsonl línea 248 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote248 | 0.074962800 | 1497 | 1 | completa | Total; eventos.jsonl línea 249 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote249 | 0.074239800 | 1497 | 1 | completa | Total; eventos.jsonl línea 250 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote250 | 0.076737900 | 1497 | 1 | completa | Total; eventos.jsonl línea 251 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote251 | 0.076967000 | 1497 | 1 | completa | Total; eventos.jsonl línea 252 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote252 | 0.078085900 | 1497 | 1 | completa | Total; eventos.jsonl línea 253 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote253 | 0.080367800 | 1497 | 1 | completa | Total; eventos.jsonl línea 254 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote254 | 0.075611200 | 1497 | 1 | completa | Total; eventos.jsonl línea 255 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote255 | 0.076471300 | 1497 | 1 | completa | Total; eventos.jsonl línea 256 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote256 | 0.076406200 | 1497 | 1 | completa | Total; eventos.jsonl línea 257 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote257 | 0.064928900 | 1497 | 1 | completa | Total; eventos.jsonl línea 258 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote258 | 0.064375100 | 1497 | 1 | completa | Total; eventos.jsonl línea 259 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote259 | 0.065452300 | 1497 | 1 | completa | Total; eventos.jsonl línea 260 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote260 | 0.061830600 | 1497 | 1 | completa | Total; eventos.jsonl línea 261 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote261 | 0.061865900 | 1497 | 1 | completa | Total; eventos.jsonl línea 262 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote262 | 0.061494400 | 1497 | 1 | completa | Total; eventos.jsonl línea 263 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote263 | 0.062609100 | 1497 | 1 | completa | Total; eventos.jsonl línea 264 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote264 | 0.068167300 | 1497 | 1 | completa | Total; eventos.jsonl línea 265 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote265 | 0.067629200 | 1497 | 1 | completa | Total; eventos.jsonl línea 266 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote266 | 0.065707600 | 1497 | 1 | completa | Total; eventos.jsonl línea 267 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote267 | 0.067771200 | 1497 | 1 | completa | Total; eventos.jsonl línea 268 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote268 | 0.064793000 | 1497 | 1 | completa | Total; eventos.jsonl línea 269 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote269 | 0.065598100 | 1497 | 1 | completa | Total; eventos.jsonl línea 270 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote270 | 0.066387800 | 1497 | 1 | completa | Total; eventos.jsonl línea 271 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote271 | 0.076140800 | 1497 | 1 | completa | Total; eventos.jsonl línea 272 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote272 | 0.073368000 | 1497 | 1 | completa | Total; eventos.jsonl línea 273 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote273 | 0.076119600 | 1497 | 1 | completa | Total; eventos.jsonl línea 274 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote274 | 0.086808200 | 1497 | 1 | completa | Total; eventos.jsonl línea 275 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote275 | 0.077899600 | 1497 | 1 | completa | Total; eventos.jsonl línea 276 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote276 | 0.078620600 | 1497 | 1 | completa | Total; eventos.jsonl línea 277 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote277 | 0.075729900 | 1497 | 1 | completa | Total; eventos.jsonl línea 278 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote278 | 0.075558400 | 1497 | 1 | completa | Total; eventos.jsonl línea 279 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote279 | 0.072728000 | 1497 | 1 | completa | Total; eventos.jsonl línea 280 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote280 | 0.072921400 | 1497 | 1 | completa | Total; eventos.jsonl línea 281 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote281 | 0.069647100 | 1497 | 1 | completa | Total; eventos.jsonl línea 282 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote282 | 0.070767700 | 1497 | 1 | completa | Total; eventos.jsonl línea 283 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote283 | 0.071563900 | 1497 | 1 | completa | Total; eventos.jsonl línea 284 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote284 | 0.071233300 | 1497 | 1 | completa | Total; eventos.jsonl línea 285 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote285 | 0.082153300 | 1497 | 1 | completa | Total; eventos.jsonl línea 286 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote286 | 0.069151100 | 1497 | 1 | completa | Total; eventos.jsonl línea 287 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote287 | 0.064181200 | 1497 | 1 | completa | Total; eventos.jsonl línea 288 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote288 | 0.060821100 | 1497 | 1 | completa | Total; eventos.jsonl línea 289 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote289 | 0.061391900 | 1497 | 1 | completa | Total; eventos.jsonl línea 290 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote290 | 0.061415900 | 1497 | 1 | completa | Total; eventos.jsonl línea 291 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote291 | 0.060718800 | 1497 | 1 | completa | Total; eventos.jsonl línea 292 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote292 | 0.063100100 | 1497 | 1 | completa | Total; eventos.jsonl línea 293 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote293 | 0.069873100 | 1497 | 1 | completa | Total; eventos.jsonl línea 294 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote294 | 0.069631500 | 1497 | 1 | completa | Total; eventos.jsonl línea 295 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote295 | 0.059882100 | 1497 | 1 | completa | Total; eventos.jsonl línea 296 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote296 | 0.059757200 | 1497 | 1 | completa | Total; eventos.jsonl línea 297 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote297 | 0.060079300 | 1497 | 1 | completa | Total; eventos.jsonl línea 298 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote298 | 0.060182600 | 1497 | 1 | completa | Total; eventos.jsonl línea 299 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote299 | 0.062964400 | 1497 | 1 | completa | Total; eventos.jsonl línea 300 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote300 | 0.063013100 | 1497 | 1 | completa | Total; eventos.jsonl línea 301 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote301 | 0.062578900 | 1497 | 1 | completa | Total; eventos.jsonl línea 302 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote302 | 0.064174000 | 1497 | 1 | completa | Total; eventos.jsonl línea 303 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote303 | 0.064987000 | 1497 | 1 | completa | Total; eventos.jsonl línea 304 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote304 | 0.066709000 | 1497 | 1 | completa | Total; eventos.jsonl línea 305 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote305 | 0.067160500 | 1497 | 1 | completa | Total; eventos.jsonl línea 306 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote306 | 0.067915300 | 1497 | 1 | completa | Total; eventos.jsonl línea 307 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote307 | 0.067569900 | 1497 | 1 | completa | Total; eventos.jsonl línea 308 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote308 | 0.065963600 | 1497 | 1 | completa | Total; eventos.jsonl línea 309 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote309 | 0.073775000 | 1497 | 1 | completa | Total; eventos.jsonl línea 310 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote310 | 0.063545500 | 1497 | 1 | completa | Total; eventos.jsonl línea 311 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote311 | 0.066163300 | 1497 | 1 | completa | Total; eventos.jsonl línea 312 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote312 | 0.064416800 | 1497 | 1 | completa | Total; eventos.jsonl línea 313 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote313 | 0.066414200 | 1497 | 1 | completa | Total; eventos.jsonl línea 314 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote314 | 0.059850600 | 1497 | 1 | completa | Total; eventos.jsonl línea 315 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote315 | 0.059883000 | 1497 | 1 | completa | Total; eventos.jsonl línea 316 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote316 | 0.059704700 | 1497 | 1 | completa | Total; eventos.jsonl línea 317 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote317 | 0.059915300 | 1497 | 1 | completa | Total; eventos.jsonl línea 318 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote318 | 0.060467400 | 1497 | 1 | completa | Total; eventos.jsonl línea 319 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote319 | 0.061569300 | 1497 | 1 | completa | Total; eventos.jsonl línea 320 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote320 | 0.061442700 | 1497 | 1 | completa | Total; eventos.jsonl línea 321 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote321 | 0.061691200 | 1497 | 1 | completa | Total; eventos.jsonl línea 322 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote322 | 0.061979200 | 1497 | 1 | completa | Total; eventos.jsonl línea 323 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote323 | 0.064495300 | 1497 | 1 | completa | Total; eventos.jsonl línea 324 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote324 | 0.062566100 | 1497 | 1 | completa | Total; eventos.jsonl línea 325 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote325 | 0.062005500 | 1497 | 1 | completa | Total; eventos.jsonl línea 326 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote326 | 0.062820600 | 1497 | 1 | completa | Total; eventos.jsonl línea 327 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote327 | 0.058928500 | 1497 | 1 | completa | Total; eventos.jsonl línea 328 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote328 | 0.062832800 | 1497 | 1 | completa | Total; eventos.jsonl línea 329 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote329 | 0.062585000 | 1497 | 1 | completa | Total; eventos.jsonl línea 330 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote330 | 0.062232100 | 1497 | 1 | completa | Total; eventos.jsonl línea 331 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote331 | 0.059865400 | 1497 | 1 | completa | Total; eventos.jsonl línea 332 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote332 | 0.059711500 | 1497 | 1 | completa | Total; eventos.jsonl línea 333 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote333 | 0.064084800 | 1497 | 1 | completa | Total; eventos.jsonl línea 334 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote334 | 0.061365900 | 1497 | 1 | completa | Total; eventos.jsonl línea 335 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote335 | 0.060800100 | 1497 | 1 | completa | Total; eventos.jsonl línea 336 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote336 | 0.061319800 | 1497 | 1 | completa | Total; eventos.jsonl línea 337 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote337 | 0.067190600 | 1497 | 1 | completa | Total; eventos.jsonl línea 338 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote338 | 0.070015900 | 1497 | 1 | completa | Total; eventos.jsonl línea 339 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote339 | 0.067723000 | 1497 | 1 | completa | Total; eventos.jsonl línea 340 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote340 | 0.064658000 | 1497 | 1 | completa | Total; eventos.jsonl línea 341 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote341 | 0.064961700 | 1497 | 1 | completa | Total; eventos.jsonl línea 342 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote342 | 0.064505300 | 1497 | 1 | completa | Total; eventos.jsonl línea 343 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote343 | 0.062866700 | 1497 | 1 | completa | Total; eventos.jsonl línea 344 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote344 | 0.065239500 | 1497 | 1 | completa | Total; eventos.jsonl línea 345 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote345 | 0.065492300 | 1497 | 1 | completa | Total; eventos.jsonl línea 346 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote346 | 0.064457300 | 1497 | 1 | completa | Total; eventos.jsonl línea 347 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote347 | 0.060892200 | 1497 | 1 | completa | Total; eventos.jsonl línea 348 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote348 | 0.068245100 | 1497 | 1 | completa | Total; eventos.jsonl línea 349 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote349 | 0.064113900 | 1497 | 1 | completa | Total; eventos.jsonl línea 350 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote350 | 0.064330400 | 1497 | 1 | completa | Total; eventos.jsonl línea 351 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote351 | 0.061754200 | 1497 | 1 | completa | Total; eventos.jsonl línea 352 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote352 | 0.061987600 | 1497 | 1 | completa | Total; eventos.jsonl línea 353 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote353 | 0.063998600 | 1497 | 1 | completa | Total; eventos.jsonl línea 354 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote354 | 0.062832000 | 1497 | 1 | completa | Total; eventos.jsonl línea 355 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote355 | 0.066059900 | 1497 | 1 | completa | Total; eventos.jsonl línea 356 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote356 | 0.065102200 | 1497 | 1 | completa | Total; eventos.jsonl línea 357 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote357 | 0.061724500 | 1497 | 1 | completa | Total; eventos.jsonl línea 358 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote358 | 0.062462400 | 1497 | 1 | completa | Total; eventos.jsonl línea 359 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote359 | 0.064111200 | 1497 | 1 | completa | Total; eventos.jsonl línea 360 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote360 | 0.067809400 | 1497 | 1 | completa | Total; eventos.jsonl línea 361 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote361 | 0.064781700 | 1497 | 1 | completa | Total; eventos.jsonl línea 362 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote362 | 0.062726700 | 1497 | 1 | completa | Total; eventos.jsonl línea 363 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote363 | 0.062402700 | 1497 | 1 | completa | Total; eventos.jsonl línea 364 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote364 | 0.064018400 | 1497 | 1 | completa | Total; eventos.jsonl línea 365 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote365 | 0.065329100 | 1497 | 1 | completa | Total; eventos.jsonl línea 366 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote366 | 0.067226200 | 1497 | 1 | completa | Total; eventos.jsonl línea 367 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote367 | 0.062412600 | 1497 | 1 | completa | Total; eventos.jsonl línea 368 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote368 | 0.063481300 | 1497 | 1 | completa | Total; eventos.jsonl línea 369 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote369 | 0.063119100 | 1497 | 1 | completa | Total; eventos.jsonl línea 370 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote370 | 0.063014600 | 1497 | 1 | completa | Total; eventos.jsonl línea 371 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote371 | 0.068141600 | 1497 | 1 | completa | Total; eventos.jsonl línea 372 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote372 | 0.067592200 | 1497 | 1 | completa | Total; eventos.jsonl línea 373 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote373 | 0.061238100 | 1497 | 1 | completa | Total; eventos.jsonl línea 374 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote374 | 0.058781500 | 1497 | 1 | completa | Total; eventos.jsonl línea 375 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote375 | 0.061240300 | 1497 | 1 | completa | Total; eventos.jsonl línea 376 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote376 | 0.069264000 | 1497 | 1 | completa | Total; eventos.jsonl línea 377 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote377 | 0.070370000 | 1497 | 1 | completa | Total; eventos.jsonl línea 378 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote378 | 0.065772400 | 1497 | 1 | completa | Total; eventos.jsonl línea 379 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote379 | 0.065638000 | 1497 | 1 | completa | Total; eventos.jsonl línea 380 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote380 | 0.064764900 | 1497 | 1 | completa | Total; eventos.jsonl línea 381 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote381 | 0.061426700 | 1497 | 1 | completa | Total; eventos.jsonl línea 382 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote382 | 0.061117300 | 1497 | 1 | completa | Total; eventos.jsonl línea 383 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote383 | 0.062112700 | 1497 | 1 | completa | Total; eventos.jsonl línea 384 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote384 | 0.060183800 | 1497 | 1 | completa | Total; eventos.jsonl línea 385 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote385 | 0.065022600 | 1497 | 1 | completa | Total; eventos.jsonl línea 386 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote386 | 0.063570000 | 1497 | 1 | completa | Total; eventos.jsonl línea 387 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote387 | 0.067984100 | 1497 | 1 | completa | Total; eventos.jsonl línea 388 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote388 | 0.066382700 | 1497 | 1 | completa | Total; eventos.jsonl línea 389 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote389 | 0.064914700 | 1497 | 1 | completa | Total; eventos.jsonl línea 390 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote390 | 0.067441700 | 1497 | 1 | completa | Total; eventos.jsonl línea 391 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote391 | 0.066124100 | 1497 | 1 | completa | Total; eventos.jsonl línea 392 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote392 | 0.068707600 | 1497 | 1 | completa | Total; eventos.jsonl línea 393 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote393 | 0.066763600 | 1497 | 1 | completa | Total; eventos.jsonl línea 394 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote394 | 0.065353200 | 1497 | 1 | completa | Total; eventos.jsonl línea 395 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote395 | 0.063317400 | 1497 | 1 | completa | Total; eventos.jsonl línea 396 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote396 | 0.066041200 | 1497 | 1 | completa | Total; eventos.jsonl línea 397 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote397 | 0.079110200 | 1497 | 1 | completa | Total; eventos.jsonl línea 398 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote398 | 0.076481000 | 1497 | 1 | completa | Total; eventos.jsonl línea 399 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote399 | 0.072986900 | 1497 | 1 | completa | Total; eventos.jsonl línea 400 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote400 | 0.064706100 | 1497 | 1 | completa | Total; eventos.jsonl línea 401 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote401 | 0.063941100 | 1497 | 1 | completa | Total; eventos.jsonl línea 402 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote402 | 0.065512100 | 1497 | 1 | completa | Total; eventos.jsonl línea 403 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote403 | 0.063226000 | 1497 | 1 | completa | Total; eventos.jsonl línea 404 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote404 | 0.061835100 | 1497 | 1 | completa | Total; eventos.jsonl línea 405 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote405 | 0.062287900 | 1497 | 1 | completa | Total; eventos.jsonl línea 406 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote406 | 0.063814100 | 1497 | 1 | completa | Total; eventos.jsonl línea 407 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote407 | 0.068703100 | 1497 | 1 | completa | Total; eventos.jsonl línea 408 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote408 | 0.066825700 | 1497 | 1 | completa | Total; eventos.jsonl línea 409 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote409 | 0.068131000 | 1497 | 1 | completa | Total; eventos.jsonl línea 410 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote410 | 0.069305600 | 1497 | 1 | completa | Total; eventos.jsonl línea 411 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote411 | 0.067632300 | 1497 | 1 | completa | Total; eventos.jsonl línea 412 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote412 | 0.063055300 | 1497 | 1 | completa | Total; eventos.jsonl línea 413 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote413 | 0.067566800 | 1497 | 1 | completa | Total; eventos.jsonl línea 414 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote414 | 0.063113800 | 1497 | 1 | completa | Total; eventos.jsonl línea 415 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote415 | 0.068714200 | 1497 | 1 | completa | Total; eventos.jsonl línea 416 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote416 | 0.067313700 | 1497 | 1 | completa | Total; eventos.jsonl línea 417 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote417 | 0.063399400 | 1497 | 1 | completa | Total; eventos.jsonl línea 418 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote418 | 0.059045300 | 1497 | 1 | completa | Total; eventos.jsonl línea 419 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote419 | 0.058713300 | 1497 | 1 | completa | Total; eventos.jsonl línea 420 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote420 | 0.058526900 | 1497 | 1 | completa | Total; eventos.jsonl línea 421 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote421 | 0.058581900 | 1497 | 1 | completa | Total; eventos.jsonl línea 422 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote422 | 0.060915800 | 1497 | 1 | completa | Total; eventos.jsonl línea 423 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote423 | 0.060860100 | 1497 | 1 | completa | Total; eventos.jsonl línea 424 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote424 | 0.062782400 | 1497 | 1 | completa | Total; eventos.jsonl línea 425 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote425 | 0.071844700 | 1497 | 1 | completa | Total; eventos.jsonl línea 426 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote426 | 0.063982200 | 1497 | 1 | completa | Total; eventos.jsonl línea 427 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote427 | 0.064874500 | 1497 | 1 | completa | Total; eventos.jsonl línea 428 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote428 | 0.065332700 | 1497 | 1 | completa | Total; eventos.jsonl línea 429 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote429 | 0.062303500 | 1497 | 1 | completa | Total; eventos.jsonl línea 430 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote430 | 0.061930400 | 1497 | 1 | completa | Total; eventos.jsonl línea 431 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote431 | 0.065697900 | 1497 | 1 | completa | Total; eventos.jsonl línea 432 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote432 | 0.066547600 | 1497 | 1 | completa | Total; eventos.jsonl línea 433 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote433 | 0.064587800 | 1497 | 1 | completa | Total; eventos.jsonl línea 434 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote434 | 0.063579100 | 1497 | 1 | completa | Total; eventos.jsonl línea 435 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote435 | 0.066717400 | 1497 | 1 | completa | Total; eventos.jsonl línea 436 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote436 | 0.065882300 | 1497 | 1 | completa | Total; eventos.jsonl línea 437 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote437 | 0.067039900 | 1497 | 1 | completa | Total; eventos.jsonl línea 438 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote438 | 0.065690000 | 1497 | 1 | completa | Total; eventos.jsonl línea 439 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote439 | 0.065272700 | 1497 | 1 | completa | Total; eventos.jsonl línea 440 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote440 | 0.064744100 | 1497 | 1 | completa | Total; eventos.jsonl línea 441 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote441 | 0.063295400 | 1497 | 1 | completa | Total; eventos.jsonl línea 442 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote442 | 0.062098100 | 1497 | 1 | completa | Total; eventos.jsonl línea 443 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote443 | 0.061660600 | 1497 | 1 | completa | Total; eventos.jsonl línea 444 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote444 | 0.063026800 | 1497 | 1 | completa | Total; eventos.jsonl línea 445 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote445 | 0.070622900 | 1497 | 1 | completa | Total; eventos.jsonl línea 446 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote446 | 0.071518500 | 1497 | 1 | completa | Total; eventos.jsonl línea 447 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote447 | 0.069150800 | 1497 | 1 | completa | Total; eventos.jsonl línea 448 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote448 | 0.064570200 | 1497 | 1 | completa | Total; eventos.jsonl línea 449 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote449 | 0.064336000 | 1497 | 1 | completa | Total; eventos.jsonl línea 450 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote450 | 0.063264200 | 1497 | 1 | completa | Total; eventos.jsonl línea 451 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote451 | 0.065234800 | 1497 | 1 | completa | Total; eventos.jsonl línea 452 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote452 | 0.064952000 | 1497 | 1 | completa | Total; eventos.jsonl línea 453 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote453 | 0.067927300 | 1497 | 1 | completa | Total; eventos.jsonl línea 454 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote454 | 0.066962500 | 1497 | 1 | completa | Total; eventos.jsonl línea 455 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote455 | 0.065164500 | 1497 | 1 | completa | Total; eventos.jsonl línea 456 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote456 | 0.073142900 | 1497 | 1 | completa | Total; eventos.jsonl línea 457 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote457 | 0.077199600 | 1497 | 1 | completa | Total; eventos.jsonl línea 458 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote458 | 0.079835000 | 1497 | 1 | completa | Total; eventos.jsonl línea 459 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote459 | 0.078324000 | 1497 | 1 | completa | Total; eventos.jsonl línea 460 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote460 | 0.081267600 | 1497 | 1 | completa | Total; eventos.jsonl línea 461 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote461 | 0.081089500 | 1497 | 1 | completa | Total; eventos.jsonl línea 462 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote462 | 0.077407100 | 1497 | 1 | completa | Total; eventos.jsonl línea 463 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote463 | 0.078364200 | 1497 | 1 | completa | Total; eventos.jsonl línea 464 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote464 | 0.071336200 | 1497 | 1 | completa | Total; eventos.jsonl línea 465 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote465 | 0.070359400 | 1497 | 1 | completa | Total; eventos.jsonl línea 466 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote466 | 0.073510400 | 1497 | 1 | completa | Total; eventos.jsonl línea 467 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote467 | 0.068556900 | 1497 | 1 | completa | Total; eventos.jsonl línea 468 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote468 | 0.081559600 | 1497 | 1 | completa | Total; eventos.jsonl línea 469 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote469 | 0.071717100 | 1497 | 1 | completa | Total; eventos.jsonl línea 470 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote470 | 0.070097000 | 1497 | 1 | completa | Total; eventos.jsonl línea 471 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote471 | 0.065386100 | 1497 | 1 | completa | Total; eventos.jsonl línea 472 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote472 | 0.063214400 | 1497 | 1 | completa | Total; eventos.jsonl línea 473 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote473 | 0.069540800 | 1497 | 1 | completa | Total; eventos.jsonl línea 474 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote474 | 0.076118100 | 1497 | 1 | completa | Total; eventos.jsonl línea 475 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote475 | 0.079659900 | 1497 | 1 | completa | Total; eventos.jsonl línea 476 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote476 | 0.078897700 | 1497 | 1 | completa | Total; eventos.jsonl línea 477 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote477 | 0.082456600 | 1497 | 1 | completa | Total; eventos.jsonl línea 478 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote478 | 0.079276900 | 1497 | 1 | completa | Total; eventos.jsonl línea 479 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote479 | 0.082303000 | 1497 | 1 | completa | Total; eventos.jsonl línea 480 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote480 | 0.079879300 | 1497 | 1 | completa | Total; eventos.jsonl línea 481 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote481 | 0.075739800 | 1497 | 1 | completa | Total; eventos.jsonl línea 482 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote482 | 0.074072900 | 1497 | 1 | completa | Total; eventos.jsonl línea 483 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote483 | 0.079670200 | 1497 | 1 | completa | Total; eventos.jsonl línea 484 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote484 | 0.068381200 | 1497 | 1 | completa | Total; eventos.jsonl línea 485 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote485 | 0.063858300 | 1497 | 1 | completa | Total; eventos.jsonl línea 486 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote486 | 0.064299500 | 1497 | 1 | completa | Total; eventos.jsonl línea 487 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote487 | 0.063744200 | 1497 | 1 | completa | Total; eventos.jsonl línea 488 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote488 | 0.068718800 | 1497 | 1 | completa | Total; eventos.jsonl línea 489 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote489 | 0.071076000 | 1497 | 1 | completa | Total; eventos.jsonl línea 490 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote490 | 0.075919300 | 1497 | 1 | completa | Total; eventos.jsonl línea 491 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote491 | 0.076861100 | 1497 | 1 | completa | Total; eventos.jsonl línea 492 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote492 | 0.073325400 | 1497 | 1 | completa | Total; eventos.jsonl línea 493 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote493 | 0.077003700 | 1497 | 1 | completa | Total; eventos.jsonl línea 494 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote494 | 0.074998900 | 1497 | 1 | completa | Total; eventos.jsonl línea 495 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote495 | 0.079160000 | 1497 | 1 | completa | Total; eventos.jsonl línea 496 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote496 | 0.076764500 | 1497 | 1 | completa | Total; eventos.jsonl línea 497 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote497 | 0.077001500 | 1497 | 1 | completa | Total; eventos.jsonl línea 498 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote498 | 0.079707700 | 1497 | 1 | completa | Total; eventos.jsonl línea 499 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote499 | 0.078901900 | 1497 | 1 | completa | Total; eventos.jsonl línea 500 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote500 | 0.072339600 | 1497 | 1 | completa | Total; eventos.jsonl línea 501 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote501 | 0.064231400 | 1497 | 1 | completa | Total; eventos.jsonl línea 502 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote502 | 0.064934000 | 1497 | 1 | completa | Total; eventos.jsonl línea 503 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote503 | 0.062454700 | 1497 | 1 | completa | Total; eventos.jsonl línea 504 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote504 | 0.063598000 | 1497 | 1 | completa | Total; eventos.jsonl línea 505 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote505 | 0.066237500 | 1497 | 1 | completa | Total; eventos.jsonl línea 506 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote506 | 0.067643800 | 1497 | 1 | completa | Total; eventos.jsonl línea 507 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote507 | 0.070790000 | 1497 | 1 | completa | Total; eventos.jsonl línea 508 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote508 | 0.064856100 | 1497 | 1 | completa | Total; eventos.jsonl línea 509 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote509 | 0.072780800 | 1497 | 1 | completa | Total; eventos.jsonl línea 510 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote510 | 0.075566700 | 1497 | 1 | completa | Total; eventos.jsonl línea 511 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote511 | 0.073720300 | 1497 | 1 | completa | Total; eventos.jsonl línea 512 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote512 | 0.071553100 | 1497 | 1 | completa | Total; eventos.jsonl línea 513 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote513 | 0.065541500 | 1497 | 1 | completa | Total; eventos.jsonl línea 514 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote514 | 0.067369400 | 1497 | 1 | completa | Total; eventos.jsonl línea 515 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote515 | 0.063402500 | 1497 | 1 | completa | Total; eventos.jsonl línea 516 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote516 | 0.062602200 | 1497 | 1 | completa | Total; eventos.jsonl línea 517 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote517 | 0.064095500 | 1497 | 1 | completa | Total; eventos.jsonl línea 518 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote518 | 0.063774000 | 1497 | 1 | completa | Total; eventos.jsonl línea 519 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote519 | 0.062643500 | 1497 | 1 | completa | Total; eventos.jsonl línea 520 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote520 | 0.084836900 | 1497 | 1 | completa | Total; eventos.jsonl línea 521 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote521 | 0.083391500 | 1497 | 1 | completa | Total; eventos.jsonl línea 522 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote522 | 0.082804800 | 1497 | 1 | completa | Total; eventos.jsonl línea 523 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote523 | 0.083612500 | 1497 | 1 | completa | Total; eventos.jsonl línea 524 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote524 | 0.085664100 | 1497 | 1 | completa | Total; eventos.jsonl línea 525 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote525 | 0.081238500 | 1497 | 1 | completa | Total; eventos.jsonl línea 526 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote526 | 0.069309600 | 1497 | 1 | completa | Total; eventos.jsonl línea 527 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote527 | 0.072382700 | 1497 | 1 | completa | Total; eventos.jsonl línea 528 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote528 | 0.072024600 | 1497 | 1 | completa | Total; eventos.jsonl línea 529 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote529 | 0.072071100 | 1497 | 1 | completa | Total; eventos.jsonl línea 530 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote530 | 0.072201500 | 1497 | 1 | completa | Total; eventos.jsonl línea 531 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote531 | 0.069799800 | 1497 | 1 | completa | Total; eventos.jsonl línea 532 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote532 | 0.077343300 | 1497 | 1 | completa | Total; eventos.jsonl línea 533 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote533 | 0.074505600 | 1497 | 1 | completa | Total; eventos.jsonl línea 534 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote534 | 0.077168500 | 1497 | 1 | completa | Total; eventos.jsonl línea 535 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote535 | 0.074142000 | 1497 | 1 | completa | Total; eventos.jsonl línea 536 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote536 | 0.074729400 | 1497 | 1 | completa | Total; eventos.jsonl línea 537 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote537 | 0.075194200 | 1497 | 1 | completa | Total; eventos.jsonl línea 538 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote538 | 0.071588500 | 1497 | 1 | completa | Total; eventos.jsonl línea 539 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote539 | 0.076528400 | 1497 | 1 | completa | Total; eventos.jsonl línea 540 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote540 | 0.073463000 | 1497 | 1 | completa | Total; eventos.jsonl línea 541 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote541 | 0.074431800 | 1497 | 1 | completa | Total; eventos.jsonl línea 542 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote542 | 0.077098000 | 1497 | 1 | completa | Total; eventos.jsonl línea 543 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote543 | 0.068973500 | 1497 | 1 | completa | Total; eventos.jsonl línea 544 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote544 | 0.059147800 | 1497 | 1 | completa | Total; eventos.jsonl línea 545 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote545 | 0.057828100 | 1497 | 1 | completa | Total; eventos.jsonl línea 546 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote546 | 0.059656000 | 1497 | 1 | completa | Total; eventos.jsonl línea 547 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote547 | 0.060761800 | 1497 | 1 | completa | Total; eventos.jsonl línea 548 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote548 | 0.061477900 | 1497 | 1 | completa | Total; eventos.jsonl línea 549 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote549 | 0.061891100 | 1497 | 1 | completa | Total; eventos.jsonl línea 550 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote550 | 0.060480800 | 1497 | 1 | completa | Total; eventos.jsonl línea 551 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote551 | 0.065489500 | 1497 | 1 | completa | Total; eventos.jsonl línea 552 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote552 | 0.065715500 | 1497 | 1 | completa | Total; eventos.jsonl línea 553 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote553 | 0.062667300 | 1497 | 1 | completa | Total; eventos.jsonl línea 554 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote554 | 0.059584500 | 1497 | 1 | completa | Total; eventos.jsonl línea 555 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote555 | 0.060414200 | 1497 | 1 | completa | Total; eventos.jsonl línea 556 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote556 | 0.060782500 | 1497 | 1 | completa | Total; eventos.jsonl línea 557 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote557 | 0.062969400 | 1497 | 1 | completa | Total; eventos.jsonl línea 558 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote558 | 0.063474000 | 1497 | 1 | completa | Total; eventos.jsonl línea 559 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote559 | 0.066777300 | 1497 | 1 | completa | Total; eventos.jsonl línea 560 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote560 | 0.062943300 | 1497 | 1 | completa | Total; eventos.jsonl línea 561 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote561 | 0.066282600 | 1497 | 1 | completa | Total; eventos.jsonl línea 562 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote562 | 0.063369700 | 1497 | 1 | completa | Total; eventos.jsonl línea 563 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote563 | 0.063012000 | 1497 | 1 | completa | Total; eventos.jsonl línea 564 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote564 | 0.063942700 | 1497 | 1 | completa | Total; eventos.jsonl línea 565 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote565 | 0.064417400 | 1497 | 1 | completa | Total; eventos.jsonl línea 566 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote566 | 0.064283900 | 1497 | 1 | completa | Total; eventos.jsonl línea 567 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote567 | 0.067528900 | 1497 | 1 | completa | Total; eventos.jsonl línea 568 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote568 | 0.067866600 | 1497 | 1 | completa | Total; eventos.jsonl línea 569 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote569 | 0.065131300 | 1497 | 1 | completa | Total; eventos.jsonl línea 570 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote570 | 0.065633000 | 1497 | 1 | completa | Total; eventos.jsonl línea 571 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote571 | 0.065047700 | 1497 | 1 | completa | Total; eventos.jsonl línea 572 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote572 | 0.061708400 | 1497 | 1 | completa | Total; eventos.jsonl línea 573 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote573 | 0.064875500 | 1497 | 1 | completa | Total; eventos.jsonl línea 574 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote574 | 0.066203600 | 1497 | 1 | completa | Total; eventos.jsonl línea 575 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote575 | 0.066155700 | 1497 | 1 | completa | Total; eventos.jsonl línea 576 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote576 | 0.065975000 | 1497 | 1 | completa | Total; eventos.jsonl línea 577 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote577 | 0.065935600 | 1497 | 1 | completa | Total; eventos.jsonl línea 578 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote578 | 0.064512000 | 1497 | 1 | completa | Total; eventos.jsonl línea 579 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote579 | 0.063910600 | 1497 | 1 | completa | Total; eventos.jsonl línea 580 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote580 | 0.062697000 | 1497 | 1 | completa | Total; eventos.jsonl línea 581 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote581 | 0.063922500 | 1497 | 1 | completa | Total; eventos.jsonl línea 582 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote582 | 0.063838700 | 1497 | 1 | completa | Total; eventos.jsonl línea 583 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote583 | 0.064856300 | 1497 | 1 | completa | Total; eventos.jsonl línea 584 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote584 | 0.067528600 | 1497 | 1 | completa | Total; eventos.jsonl línea 585 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote585 | 0.064903200 | 1497 | 1 | completa | Total; eventos.jsonl línea 586 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote586 | 0.065815800 | 1497 | 1 | completa | Total; eventos.jsonl línea 587 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote587 | 0.063834200 | 1497 | 1 | completa | Total; eventos.jsonl línea 588 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote588 | 0.069385600 | 1497 | 1 | completa | Total; eventos.jsonl línea 589 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote589 | 0.068610300 | 1497 | 1 | completa | Total; eventos.jsonl línea 590 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote590 | 0.064530800 | 1497 | 1 | completa | Total; eventos.jsonl línea 591 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote591 | 0.058809400 | 1497 | 1 | completa | Total; eventos.jsonl línea 592 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote592 | 0.058806000 | 1497 | 1 | completa | Total; eventos.jsonl línea 593 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote593 | 0.059256500 | 1497 | 1 | completa | Total; eventos.jsonl línea 594 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote594 | 0.063775300 | 1497 | 1 | completa | Total; eventos.jsonl línea 595 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote595 | 0.063092100 | 1497 | 1 | completa | Total; eventos.jsonl línea 596 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote596 | 0.062526000 | 1497 | 1 | completa | Total; eventos.jsonl línea 597 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote597 | 0.068286500 | 1497 | 1 | completa | Total; eventos.jsonl línea 598 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote598 | 0.061460500 | 1497 | 1 | completa | Total; eventos.jsonl línea 599 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote599 | 0.066984600 | 1497 | 1 | completa | Total; eventos.jsonl línea 600 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote600 | 0.063332300 | 1497 | 1 | completa | Total; eventos.jsonl línea 601 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote601 | 0.061037000 | 1497 | 1 | completa | Total; eventos.jsonl línea 602 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote602 | 0.060149500 | 1497 | 1 | completa | Total; eventos.jsonl línea 603 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote603 | 0.060595600 | 1497 | 1 | completa | Total; eventos.jsonl línea 604 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote604 | 0.066103100 | 1497 | 1 | completa | Total; eventos.jsonl línea 605 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote605 | 0.066896000 | 1497 | 1 | completa | Total; eventos.jsonl línea 606 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote606 | 0.064649200 | 1497 | 1 | completa | Total; eventos.jsonl línea 607 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote607 | 0.063127800 | 1497 | 1 | completa | Total; eventos.jsonl línea 608 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote608 | 0.063840900 | 1497 | 1 | completa | Total; eventos.jsonl línea 609 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote609 | 0.062250300 | 1497 | 1 | completa | Total; eventos.jsonl línea 610 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote610 | 0.065512600 | 1497 | 1 | completa | Total; eventos.jsonl línea 611 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote611 | 0.061854700 | 1497 | 1 | completa | Total; eventos.jsonl línea 612 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote612 | 0.063637600 | 1497 | 1 | completa | Total; eventos.jsonl línea 613 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote613 | 0.067972400 | 1497 | 1 | completa | Total; eventos.jsonl línea 614 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote614 | 0.063115600 | 1497 | 1 | completa | Total; eventos.jsonl línea 615 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote615 | 0.064376700 | 1497 | 1 | completa | Total; eventos.jsonl línea 616 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote616 | 0.063339800 | 1497 | 1 | completa | Total; eventos.jsonl línea 617 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote617 | 0.060906900 | 1497 | 1 | completa | Total; eventos.jsonl línea 618 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote618 | 0.064880800 | 1497 | 1 | completa | Total; eventos.jsonl línea 619 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote619 | 0.063870900 | 1497 | 1 | completa | Total; eventos.jsonl línea 620 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote620 | 0.063914700 | 1497 | 1 | completa | Total; eventos.jsonl línea 621 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote621 | 0.064232100 | 1497 | 1 | completa | Total; eventos.jsonl línea 622 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote622 | 0.061606300 | 1497 | 1 | completa | Total; eventos.jsonl línea 623 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote623 | 0.060601900 | 1497 | 1 | completa | Total; eventos.jsonl línea 624 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote624 | 0.065167200 | 1497 | 1 | completa | Total; eventos.jsonl línea 625 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote625 | 0.067229900 | 1497 | 1 | completa | Total; eventos.jsonl línea 626 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote626 | 0.063913100 | 1497 | 1 | completa | Total; eventos.jsonl línea 627 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote627 | 0.063732300 | 1497 | 1 | completa | Total; eventos.jsonl línea 628 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote628 | 0.062361800 | 1497 | 1 | completa | Total; eventos.jsonl línea 629 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote629 | 0.063509800 | 1497 | 1 | completa | Total; eventos.jsonl línea 630 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote630 | 0.064814400 | 1497 | 1 | completa | Total; eventos.jsonl línea 631 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote631 | 0.060883800 | 1497 | 1 | completa | Total; eventos.jsonl línea 632 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote632 | 0.062269600 | 1497 | 1 | completa | Total; eventos.jsonl línea 633 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote633 | 0.064514900 | 1497 | 1 | completa | Total; eventos.jsonl línea 634 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote634 | 0.063056200 | 1497 | 1 | completa | Total; eventos.jsonl línea 635 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote635 | 0.063936400 | 1497 | 1 | completa | Total; eventos.jsonl línea 636 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote636 | 0.062724800 | 1497 | 1 | completa | Total; eventos.jsonl línea 637 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote637 | 0.061773000 | 1497 | 1 | completa | Total; eventos.jsonl línea 638 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote638 | 0.058607300 | 1497 | 1 | completa | Total; eventos.jsonl línea 639 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote639 | 0.057753100 | 1497 | 1 | completa | Total; eventos.jsonl línea 640 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote640 | 0.060756600 | 1497 | 1 | completa | Total; eventos.jsonl línea 641 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote641 | 0.061886500 | 1497 | 1 | completa | Total; eventos.jsonl línea 642 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote642 | 0.062388100 | 1497 | 1 | completa | Total; eventos.jsonl línea 643 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote643 | 0.060378400 | 1497 | 1 | completa | Total; eventos.jsonl línea 644 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote644 | 0.063321600 | 1497 | 1 | completa | Total; eventos.jsonl línea 645 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote645 | 0.060092000 | 1497 | 1 | completa | Total; eventos.jsonl línea 646 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote646 | 0.059426500 | 1497 | 1 | completa | Total; eventos.jsonl línea 647 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote647 | 0.061817500 | 1497 | 1 | completa | Total; eventos.jsonl línea 648 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote648 | 0.058701100 | 1497 | 1 | completa | Total; eventos.jsonl línea 649 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote649 | 0.060570200 | 1497 | 1 | completa | Total; eventos.jsonl línea 650 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote650 | 0.061573600 | 1497 | 1 | completa | Total; eventos.jsonl línea 651 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote651 | 0.064107300 | 1497 | 1 | completa | Total; eventos.jsonl línea 652 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote652 | 0.063683200 | 1497 | 1 | completa | Total; eventos.jsonl línea 653 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote653 | 0.065354500 | 1497 | 1 | completa | Total; eventos.jsonl línea 654 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote654 | 0.062485100 | 1497 | 1 | completa | Total; eventos.jsonl línea 655 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote655 | 0.065169300 | 1497 | 1 | completa | Total; eventos.jsonl línea 656 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote656 | 0.063464700 | 1497 | 1 | completa | Total; eventos.jsonl línea 657 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote657 | 0.063257100 | 1497 | 1 | completa | Total; eventos.jsonl línea 658 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote658 | 0.065561300 | 1497 | 1 | completa | Total; eventos.jsonl línea 659 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote659 | 0.063782600 | 1497 | 1 | completa | Total; eventos.jsonl línea 660 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote660 | 0.061257700 | 1497 | 1 | completa | Total; eventos.jsonl línea 661 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote661 | 0.060512600 | 1497 | 1 | completa | Total; eventos.jsonl línea 662 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote662 | 0.066436400 | 1497 | 1 | completa | Total; eventos.jsonl línea 663 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote663 | 0.062255800 | 1497 | 1 | completa | Total; eventos.jsonl línea 664 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote664 | 0.065183800 | 1497 | 1 | completa | Total; eventos.jsonl línea 665 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote665 | 0.062502900 | 1497 | 1 | completa | Total; eventos.jsonl línea 666 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote666 | 0.068596700 | 1497 | 1 | completa | Total; eventos.jsonl línea 667 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote667 | 0.067582700 | 1497 | 1 | completa | Total; eventos.jsonl línea 668 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote668 | 0.067181800 | 1497 | 1 | completa | Total; eventos.jsonl línea 669 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote669 | 0.062021300 | 1497 | 1 | completa | Total; eventos.jsonl línea 670 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote670 | 0.060958000 | 1497 | 1 | completa | Total; eventos.jsonl línea 671 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote671 | 0.063037500 | 1497 | 1 | completa | Total; eventos.jsonl línea 672 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote672 | 0.062489200 | 1497 | 1 | completa | Total; eventos.jsonl línea 673 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote673 | 0.063839900 | 1497 | 1 | completa | Total; eventos.jsonl línea 674 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote674 | 0.062537600 | 1497 | 1 | completa | Total; eventos.jsonl línea 675 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote675 | 0.065441400 | 1497 | 1 | completa | Total; eventos.jsonl línea 676 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote676 | 0.064213600 | 1497 | 1 | completa | Total; eventos.jsonl línea 677 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote677 | 0.063093500 | 1497 | 1 | completa | Total; eventos.jsonl línea 678 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote678 | 0.063637700 | 1497 | 1 | completa | Total; eventos.jsonl línea 679 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote679 | 0.063466500 | 1497 | 1 | completa | Total; eventos.jsonl línea 680 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote680 | 0.065169200 | 1497 | 1 | completa | Total; eventos.jsonl línea 681 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote681 | 0.062755200 | 1497 | 1 | completa | Total; eventos.jsonl línea 682 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote682 | 0.061882200 | 1497 | 1 | completa | Total; eventos.jsonl línea 683 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote683 | 0.059639600 | 1497 | 1 | completa | Total; eventos.jsonl línea 684 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote684 | 0.060006000 | 1497 | 1 | completa | Total; eventos.jsonl línea 685 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote685 | 0.057319600 | 1497 | 1 | completa | Total; eventos.jsonl línea 686 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote686 | 0.060319500 | 1497 | 1 | completa | Total; eventos.jsonl línea 687 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote687 | 0.058112700 | 1497 | 1 | completa | Total; eventos.jsonl línea 688 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote688 | 0.063923700 | 1497 | 1 | completa | Total; eventos.jsonl línea 689 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote689 | 0.060507000 | 1497 | 1 | completa | Total; eventos.jsonl línea 690 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote690 | 0.061517300 | 1497 | 1 | completa | Total; eventos.jsonl línea 691 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote691 | 0.061390300 | 1497 | 1 | completa | Total; eventos.jsonl línea 692 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote692 | 0.065304100 | 1497 | 1 | completa | Total; eventos.jsonl línea 693 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote693 | 0.165581800 | 1497 | 1 | completa | Total; eventos.jsonl línea 694 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote694 | 0.058056000 | 1497 | 1 | completa | Total; eventos.jsonl línea 695 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote695 | 0.060144500 | 1497 | 1 | completa | Total; eventos.jsonl línea 696 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote696 | 0.062134400 | 1497 | 1 | completa | Total; eventos.jsonl línea 697 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote697 | 0.063131000 | 1497 | 1 | completa | Total; eventos.jsonl línea 698 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote698 | 0.065168000 | 1497 | 1 | completa | Total; eventos.jsonl línea 699 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote699 | 0.061218700 | 1497 | 1 | completa | Total; eventos.jsonl línea 700 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote700 | 0.064058500 | 1497 | 1 | completa | Total; eventos.jsonl línea 701 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote701 | 0.063284200 | 1497 | 1 | completa | Total; eventos.jsonl línea 702 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote702 | 0.063354300 | 1497 | 1 | completa | Total; eventos.jsonl línea 703 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote703 | 0.065883500 | 1497 | 1 | completa | Total; eventos.jsonl línea 704 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote704 | 0.061249600 | 1497 | 1 | completa | Total; eventos.jsonl línea 705 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote705 | 0.067808200 | 1497 | 1 | completa | Total; eventos.jsonl línea 706 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote706 | 0.061783700 | 1497 | 1 | completa | Total; eventos.jsonl línea 707 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote707 | 0.059547500 | 1497 | 1 | completa | Total; eventos.jsonl línea 708 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote708 | 0.061942800 | 1497 | 1 | completa | Total; eventos.jsonl línea 709 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote709 | 0.060117600 | 1497 | 1 | completa | Total; eventos.jsonl línea 710 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote710 | 0.061445700 | 1497 | 1 | completa | Total; eventos.jsonl línea 711 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote711 | 0.064710900 | 1497 | 1 | completa | Total; eventos.jsonl línea 712 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote712 | 0.068601600 | 1497 | 1 | completa | Total; eventos.jsonl línea 713 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote713 | 0.063719900 | 1497 | 1 | completa | Total; eventos.jsonl línea 714 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote714 | 0.064276200 | 1497 | 1 | completa | Total; eventos.jsonl línea 715 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote715 | 0.062377000 | 1497 | 1 | completa | Total; eventos.jsonl línea 716 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote716 | 0.061260400 | 1497 | 1 | completa | Total; eventos.jsonl línea 717 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote717 | 0.064034300 | 1497 | 1 | completa | Total; eventos.jsonl línea 718 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote718 | 0.064926200 | 1497 | 1 | completa | Total; eventos.jsonl línea 719 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote719 | 0.064683900 | 1497 | 1 | completa | Total; eventos.jsonl línea 720 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote720 | 0.065921900 | 1497 | 1 | completa | Total; eventos.jsonl línea 721 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote721 | 0.069492300 | 1497 | 1 | completa | Total; eventos.jsonl línea 722 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote722 | 0.067644300 | 1497 | 1 | completa | Total; eventos.jsonl línea 723 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote723 | 0.069901100 | 1497 | 1 | completa | Total; eventos.jsonl línea 724 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote724 | 0.062491400 | 1497 | 1 | completa | Total; eventos.jsonl línea 725 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote725 | 0.064502900 | 1497 | 1 | completa | Total; eventos.jsonl línea 726 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote726 | 0.066750600 | 1497 | 1 | completa | Total; eventos.jsonl línea 727 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote727 | 0.069713200 | 1497 | 1 | completa | Total; eventos.jsonl línea 728 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote728 | 0.064707600 | 1497 | 1 | completa | Total; eventos.jsonl línea 729 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote729 | 0.061881000 | 1497 | 1 | completa | Total; eventos.jsonl línea 730 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote730 | 0.059463600 | 1497 | 1 | completa | Total; eventos.jsonl línea 731 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote731 | 0.058086800 | 1497 | 1 | completa | Total; eventos.jsonl línea 732 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote732 | 0.059090300 | 1497 | 1 | completa | Total; eventos.jsonl línea 733 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote733 | 0.059593300 | 1497 | 1 | completa | Total; eventos.jsonl línea 734 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote734 | 0.062077300 | 1497 | 1 | completa | Total; eventos.jsonl línea 735 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote735 | 0.064460900 | 1497 | 1 | completa | Total; eventos.jsonl línea 736 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote736 | 0.059375000 | 1497 | 1 | completa | Total; eventos.jsonl línea 737 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote737 | 0.060862200 | 1497 | 1 | completa | Total; eventos.jsonl línea 738 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote738 | 0.059639400 | 1497 | 1 | completa | Total; eventos.jsonl línea 739 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote739 | 0.059443800 | 1497 | 1 | completa | Total; eventos.jsonl línea 740 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote740 | 0.059616500 | 1497 | 1 | completa | Total; eventos.jsonl línea 741 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote741 | 0.063074900 | 1497 | 1 | completa | Total; eventos.jsonl línea 742 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote742 | 0.061208000 | 1497 | 1 | completa | Total; eventos.jsonl línea 743 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote743 | 0.062581300 | 1497 | 1 | completa | Total; eventos.jsonl línea 744 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote744 | 0.065046800 | 1497 | 1 | completa | Total; eventos.jsonl línea 745 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote745 | 0.066522000 | 1497 | 1 | completa | Total; eventos.jsonl línea 746 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote746 | 0.063048600 | 1497 | 1 | completa | Total; eventos.jsonl línea 747 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote747 | 0.063718200 | 1497 | 1 | completa | Total; eventos.jsonl línea 748 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote748 | 0.064190400 | 1497 | 1 | completa | Total; eventos.jsonl línea 749 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote749 | 0.064005600 | 1497 | 1 | completa | Total; eventos.jsonl línea 750 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote750 | 0.063214300 | 1497 | 1 | completa | Total; eventos.jsonl línea 751 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote751 | 0.064815900 | 1497 | 1 | completa | Total; eventos.jsonl línea 752 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote752 | 0.064318000 | 1497 | 1 | completa | Total; eventos.jsonl línea 753 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote753 | 0.074688400 | 1497 | 1 | completa | Total; eventos.jsonl línea 754 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote754 | 0.068114900 | 1497 | 1 | completa | Total; eventos.jsonl línea 755 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote755 | 0.068177600 | 1497 | 1 | completa | Total; eventos.jsonl línea 756 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote756 | 0.068887700 | 1497 | 1 | completa | Total; eventos.jsonl línea 757 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote757 | 0.066542600 | 1497 | 1 | completa | Total; eventos.jsonl línea 758 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote758 | 0.068377900 | 1497 | 1 | completa | Total; eventos.jsonl línea 759 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote759 | 0.067455100 | 1497 | 1 | completa | Total; eventos.jsonl línea 760 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote760 | 0.067289800 | 1497 | 1 | completa | Total; eventos.jsonl línea 761 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote761 | 0.069819900 | 1497 | 1 | completa | Total; eventos.jsonl línea 762 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote762 | 0.065007200 | 1497 | 1 | completa | Total; eventos.jsonl línea 763 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote763 | 0.064462800 | 1497 | 1 | completa | Total; eventos.jsonl línea 764 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote764 | 0.066322600 | 1497 | 1 | completa | Total; eventos.jsonl línea 765 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote765 | 0.065260100 | 1497 | 1 | completa | Total; eventos.jsonl línea 766 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote766 | 0.063951500 | 1497 | 1 | completa | Total; eventos.jsonl línea 767 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote767 | 0.064746800 | 1497 | 1 | completa | Total; eventos.jsonl línea 768 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote768 | 0.066167500 | 1497 | 1 | completa | Total; eventos.jsonl línea 769 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote769 | 0.065508000 | 1497 | 1 | completa | Total; eventos.jsonl línea 770 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote770 | 0.065053700 | 1497 | 1 | completa | Total; eventos.jsonl línea 771 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote771 | 0.063409000 | 1497 | 1 | completa | Total; eventos.jsonl línea 772 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote772 | 0.068484100 | 1497 | 1 | completa | Total; eventos.jsonl línea 773 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote773 | 0.074640100 | 1497 | 1 | completa | Total; eventos.jsonl línea 774 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote774 | 0.080252600 | 1497 | 1 | completa | Total; eventos.jsonl línea 775 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote775 | 0.076350000 | 1497 | 1 | completa | Total; eventos.jsonl línea 776 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote776 | 0.074956800 | 1497 | 1 | completa | Total; eventos.jsonl línea 777 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote777 | 0.073385600 | 1497 | 1 | completa | Total; eventos.jsonl línea 778 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote778 | 0.071232500 | 1497 | 1 | completa | Total; eventos.jsonl línea 779 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote779 | 0.074850600 | 1497 | 1 | completa | Total; eventos.jsonl línea 780 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote780 | 0.071309600 | 1497 | 1 | completa | Total; eventos.jsonl línea 781 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote781 | 0.075636100 | 1497 | 1 | completa | Total; eventos.jsonl línea 782 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote782 | 0.076154600 | 1497 | 1 | completa | Total; eventos.jsonl línea 783 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote783 | 0.072584600 | 1497 | 1 | completa | Total; eventos.jsonl línea 784 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote784 | 0.064836400 | 1497 | 1 | completa | Total; eventos.jsonl línea 785 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote785 | 0.059525200 | 1497 | 1 | completa | Total; eventos.jsonl línea 786 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote786 | 0.057452200 | 1497 | 1 | completa | Total; eventos.jsonl línea 787 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote787 | 0.064336800 | 1497 | 1 | completa | Total; eventos.jsonl línea 788 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote788 | 0.062030600 | 1497 | 1 | completa | Total; eventos.jsonl línea 789 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote789 | 0.064634900 | 1497 | 1 | completa | Total; eventos.jsonl línea 790 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote790 | 0.061462200 | 1497 | 1 | completa | Total; eventos.jsonl línea 791 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote791 | 0.061648600 | 1497 | 1 | completa | Total; eventos.jsonl línea 792 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote792 | 0.062765100 | 1497 | 1 | completa | Total; eventos.jsonl línea 793 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote793 | 0.063074700 | 1497 | 1 | completa | Total; eventos.jsonl línea 794 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote794 | 0.065419800 | 1497 | 1 | completa | Total; eventos.jsonl línea 795 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote795 | 0.067686700 | 1497 | 1 | completa | Total; eventos.jsonl línea 796 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote796 | 0.066356000 | 1497 | 1 | completa | Total; eventos.jsonl línea 797 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote797 | 0.066009200 | 1497 | 1 | completa | Total; eventos.jsonl línea 798 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote798 | 0.066690800 | 1497 | 1 | completa | Total; eventos.jsonl línea 799 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote799 | 0.065132900 | 1497 | 1 | completa | Total; eventos.jsonl línea 800 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote800 | 0.079576700 | 1497 | 1 | completa | Total; eventos.jsonl línea 801 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote801 | 0.081823900 | 1497 | 1 | completa | Total; eventos.jsonl línea 802 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote802 | 0.082148800 | 1497 | 1 | completa | Total; eventos.jsonl línea 803 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote803 | 0.077541300 | 1497 | 1 | completa | Total; eventos.jsonl línea 804 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote804 | 0.080063900 | 1497 | 1 | completa | Total; eventos.jsonl línea 805 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote805 | 0.073748400 | 1497 | 1 | completa | Total; eventos.jsonl línea 806 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote806 | 0.076110500 | 1497 | 1 | completa | Total; eventos.jsonl línea 807 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote807 | 0.073660800 | 1497 | 1 | completa | Total; eventos.jsonl línea 808 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote808 | 0.078685000 | 1497 | 1 | completa | Total; eventos.jsonl línea 809 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote809 | 0.074218500 | 1497 | 1 | completa | Total; eventos.jsonl línea 810 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote810 | 0.075485300 | 1497 | 1 | completa | Total; eventos.jsonl línea 811 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote811 | 0.073273000 | 1497 | 1 | completa | Total; eventos.jsonl línea 812 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote812 | 0.074150400 | 1497 | 1 | completa | Total; eventos.jsonl línea 813 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote813 | 0.077814800 | 1497 | 1 | completa | Total; eventos.jsonl línea 814 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote814 | 0.074832400 | 1497 | 1 | completa | Total; eventos.jsonl línea 815 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote815 | 0.077140600 | 1497 | 1 | completa | Total; eventos.jsonl línea 816 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote816 | 0.074782700 | 1497 | 1 | completa | Total; eventos.jsonl línea 817 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote817 | 0.071939400 | 1497 | 1 | completa | Total; eventos.jsonl línea 818 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote818 | 0.064887400 | 1497 | 1 | completa | Total; eventos.jsonl línea 819 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote819 | 0.062249200 | 1497 | 1 | completa | Total; eventos.jsonl línea 820 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote820 | 0.059307300 | 1497 | 1 | completa | Total; eventos.jsonl línea 821 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote821 | 0.061609100 | 1497 | 1 | completa | Total; eventos.jsonl línea 822 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote822 | 0.063893000 | 1497 | 1 | completa | Total; eventos.jsonl línea 823 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote823 | 0.060692900 | 1497 | 1 | completa | Total; eventos.jsonl línea 824 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote824 | 0.065501600 | 1497 | 1 | completa | Total; eventos.jsonl línea 825 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote825 | 0.062014300 | 1497 | 1 | completa | Total; eventos.jsonl línea 826 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote826 | 0.059115300 | 1497 | 1 | completa | Total; eventos.jsonl línea 827 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote827 | 0.061103900 | 1497 | 1 | completa | Total; eventos.jsonl línea 828 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote828 | 0.059826100 | 1497 | 1 | completa | Total; eventos.jsonl línea 829 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote829 | 0.057781200 | 1497 | 1 | completa | Total; eventos.jsonl línea 830 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote830 | 0.058181000 | 1497 | 1 | completa | Total; eventos.jsonl línea 831 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote831 | 0.067107300 | 1497 | 1 | completa | Total; eventos.jsonl línea 832 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote832 | 0.064795100 | 1497 | 1 | completa | Total; eventos.jsonl línea 833 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote833 | 0.065277200 | 1497 | 1 | completa | Total; eventos.jsonl línea 834 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote834 | 0.064071000 | 1497 | 1 | completa | Total; eventos.jsonl línea 835 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote835 | 0.064158700 | 1497 | 1 | completa | Total; eventos.jsonl línea 836 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote836 | 0.065800200 | 1497 | 1 | completa | Total; eventos.jsonl línea 837 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote837 | 0.064637600 | 1497 | 1 | completa | Total; eventos.jsonl línea 838 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote838 | 0.066638200 | 1497 | 1 | completa | Total; eventos.jsonl línea 839 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote839 | 0.062494700 | 1497 | 1 | completa | Total; eventos.jsonl línea 840 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote840 | 0.063280700 | 1497 | 1 | completa | Total; eventos.jsonl línea 841 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote841 | 0.061519900 | 1497 | 1 | completa | Total; eventos.jsonl línea 842 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote842 | 0.065141400 | 1497 | 1 | completa | Total; eventos.jsonl línea 843 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote843 | 0.069104300 | 1497 | 1 | completa | Total; eventos.jsonl línea 844 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote844 | 0.066978700 | 1497 | 1 | completa | Total; eventos.jsonl línea 845 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote845 | 0.064746300 | 1497 | 1 | completa | Total; eventos.jsonl línea 846 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote846 | 0.065876100 | 1497 | 1 | completa | Total; eventos.jsonl línea 847 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote847 | 0.066052400 | 1497 | 1 | completa | Total; eventos.jsonl línea 848 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote848 | 0.068743300 | 1497 | 1 | completa | Total; eventos.jsonl línea 849 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote849 | 0.068424100 | 1497 | 1 | completa | Total; eventos.jsonl línea 850 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote850 | 0.068584900 | 1497 | 1 | completa | Total; eventos.jsonl línea 851 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote851 | 0.063315100 | 1497 | 1 | completa | Total; eventos.jsonl línea 852 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote852 | 0.066227900 | 1497 | 1 | completa | Total; eventos.jsonl línea 853 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote853 | 0.065646600 | 1497 | 1 | completa | Total; eventos.jsonl línea 854 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote854 | 0.070944200 | 1497 | 1 | completa | Total; eventos.jsonl línea 855 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote855 | 0.079936100 | 1497 | 1 | completa | Total; eventos.jsonl línea 856 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote856 | 0.079411200 | 1497 | 1 | completa | Total; eventos.jsonl línea 857 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote857 | 0.075101800 | 1497 | 1 | completa | Total; eventos.jsonl línea 858 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote858 | 0.075673900 | 1497 | 1 | completa | Total; eventos.jsonl línea 859 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote859 | 0.075264700 | 1497 | 1 | completa | Total; eventos.jsonl línea 860 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote860 | 0.076053100 | 1497 | 1 | completa | Total; eventos.jsonl línea 861 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote861 | 0.078492400 | 1497 | 1 | completa | Total; eventos.jsonl línea 862 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote862 | 0.079315200 | 1497 | 1 | completa | Total; eventos.jsonl línea 863 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote863 | 0.073902900 | 1497 | 1 | completa | Total; eventos.jsonl línea 864 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote864 | 0.069679400 | 1497 | 1 | completa | Total; eventos.jsonl línea 865 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote865 | 0.070725300 | 1497 | 1 | completa | Total; eventos.jsonl línea 866 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote866 | 0.072908200 | 1497 | 1 | completa | Total; eventos.jsonl línea 867 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote867 | 0.070849800 | 1497 | 1 | completa | Total; eventos.jsonl línea 868 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote868 | 0.074515800 | 1497 | 1 | completa | Total; eventos.jsonl línea 869 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote869 | 0.076231300 | 1497 | 1 | completa | Total; eventos.jsonl línea 870 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote870 | 0.072951400 | 1497 | 1 | completa | Total; eventos.jsonl línea 871 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote871 | 0.073486700 | 1497 | 1 | completa | Total; eventos.jsonl línea 872 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote872 | 0.070776200 | 1497 | 1 | completa | Total; eventos.jsonl línea 873 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote873 | 0.076052600 | 1497 | 1 | completa | Total; eventos.jsonl línea 874 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote874 | 0.078747300 | 1497 | 1 | completa | Total; eventos.jsonl línea 875 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote875 | 0.079824100 | 1497 | 1 | completa | Total; eventos.jsonl línea 876 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote876 | 0.078268600 | 1497 | 1 | completa | Total; eventos.jsonl línea 877 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote877 | 0.077700900 | 1497 | 1 | completa | Total; eventos.jsonl línea 878 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote878 | 0.077119700 | 1497 | 1 | completa | Total; eventos.jsonl línea 879 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote879 | 0.083754500 | 1497 | 1 | completa | Total; eventos.jsonl línea 880 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote880 | 0.082514800 | 1497 | 1 | completa | Total; eventos.jsonl línea 881 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote881 | 0.074538500 | 1497 | 1 | completa | Total; eventos.jsonl línea 882 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote882 | 0.065198500 | 1497 | 1 | completa | Total; eventos.jsonl línea 883 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote883 | 0.067946200 | 1497 | 1 | completa | Total; eventos.jsonl línea 884 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote884 | 0.068461000 | 1497 | 1 | completa | Total; eventos.jsonl línea 885 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote885 | 0.073978900 | 1497 | 1 | completa | Total; eventos.jsonl línea 886 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote886 | 0.072380600 | 1497 | 1 | completa | Total; eventos.jsonl línea 887 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote887 | 0.072217300 | 1497 | 1 | completa | Total; eventos.jsonl línea 888 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote888 | 0.074660600 | 1497 | 1 | completa | Total; eventos.jsonl línea 889 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote889 | 0.075303300 | 1497 | 1 | completa | Total; eventos.jsonl línea 890 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote890 | 0.076152000 | 1497 | 1 | completa | Total; eventos.jsonl línea 891 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote891 | 0.076087200 | 1497 | 1 | completa | Total; eventos.jsonl línea 892 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote892 | 0.073474600 | 1497 | 1 | completa | Total; eventos.jsonl línea 893 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote893 | 0.075229700 | 1497 | 1 | completa | Total; eventos.jsonl línea 894 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote894 | 0.073324600 | 1497 | 1 | completa | Total; eventos.jsonl línea 895 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote895 | 0.068727600 | 1497 | 1 | completa | Total; eventos.jsonl línea 896 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote896 | 0.073655500 | 1497 | 1 | completa | Total; eventos.jsonl línea 897 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote897 | 0.068537600 | 1497 | 1 | completa | Total; eventos.jsonl línea 898 |
+| Explicación SHAP | 64caminos/32referencias · completo | 65.300455200 | 1497 | 1 | completa | Total; eventos.jsonl línea 899 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.006432100 | 1 | 1 | completa | Total; eventos.jsonl línea 900 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.025861200 | 1000 | 1 | completa | Total; eventos.jsonl línea 901 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.004579600 | 1000 | 1 | completa | Total; eventos.jsonl línea 902 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000282800 | 1000 | 1 | completa | Total; eventos.jsonl línea 903 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000092300 | 1 | 1 | completa | Total; eventos.jsonl línea 904 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.007642000 | 1 | 1 | completa | Total; eventos.jsonl línea 905 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.025321900 | 1000 | 1 | completa | Total; eventos.jsonl línea 906 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.001668800 | 1000 | 1 | completa | Total; eventos.jsonl línea 907 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000218400 | 1000 | 1 | completa | Total; eventos.jsonl línea 908 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000112200 | 1 | 1 | completa | Total; eventos.jsonl línea 909 |
+| Total del experimento | Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME | 65.509174100 | No aplica | 1 | completa | Total; eventos.jsonl línea 910 |
+
+### Ejecución `20261020_150151_b5f4284e`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T15:01:51.667322-05:00 a 2026-10-20T15:03:12.717800-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150151_b5f4284e/metadata.json](tiempos/20261020_150151_b5f4284e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150151_b5f4284e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.032127900 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.021575400 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.022721100 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m11 / validación serialización test | 0.028687600 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m7 / validación serialización test | 0.029050800 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m14 / validación serialización test | 0.013378500 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m3 / validación serialización test | 0.014602500 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m15 / validación serialización test | 0.087987500 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m16 / validación serialización test | 0.074733500 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Total del experimento | Originales · verificación y activación | 81.054216200 | No aplica | 1 | completa | Total; eventos.jsonl línea 10 |
+
+### Ejecución `20261020_150329_f6399f27`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:03:29.545785-05:00 a 2026-10-20T15:03:29.835524-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150329_f6399f27/metadata.json](tiempos/20261020_150329_f6399f27/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150329_f6399f27/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016265800 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016948400 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.154775000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000352200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.290499800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_150342_04484b91`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.424949-05:00 a 2026-10-20T15:03:42.440414-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_04484b91/metadata.json](tiempos/20261020_150342_04484b91/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_04484b91/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.017946100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.023275400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150342_4ebd616b`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.477999-05:00 a 2026-10-20T15:03:42.498637-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_4ebd616b/metadata.json](tiempos/20261020_150342_4ebd616b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_4ebd616b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.007240500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.021362400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150342_cbe25214`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.519781-05:00 a 2026-10-20T15:03:42.533002-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_cbe25214/metadata.json](tiempos/20261020_150342_cbe25214/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_cbe25214/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006240500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.013474100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150342_3a5b04ac`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.770652-05:00 a 2026-10-20T15:03:42.807333-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_3a5b04ac/metadata.json](tiempos/20261020_150342_3a5b04ac/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_3a5b04ac/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.032402700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.040745500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150342_eb1dc662`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.856317-05:00 a 2026-10-20T15:03:42.874002-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_eb1dc662/metadata.json](tiempos/20261020_150342_eb1dc662/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_eb1dc662/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010962900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.025871400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150342_fa343766`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:42.901777-05:00 a 2026-10-20T15:03:42.909489-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150342_fa343766/metadata.json](tiempos/20261020_150342_fa343766/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150342_fa343766/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004588200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.011818600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150348_79926be2`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:48.129230-05:00 a 2026-10-20T15:03:48.145326-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150348_79926be2/metadata.json](tiempos/20261020_150348_79926be2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150348_79926be2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005797600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010728900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150348_2962ba16`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:48.162254-05:00 a 2026-10-20T15:03:48.179278-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150348_2962ba16/metadata.json](tiempos/20261020_150348_2962ba16/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150348_2962ba16/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.007507700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.012528100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150348_7fc49b6e`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:48.187185-05:00 a 2026-10-20T15:03:48.204039-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150348_7fc49b6e/metadata.json](tiempos/20261020_150348_7fc49b6e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150348_7fc49b6e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005250600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.014488100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150348_12a14e04`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:48.210879-05:00 a 2026-10-20T15:03:48.220854-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150348_12a14e04/metadata.json](tiempos/20261020_150348_12a14e04/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150348_12a14e04/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004996800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010003500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150348_6bc28baf`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:03:48.227994-05:00 a 2026-10-20T15:03:48.244664-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150348_6bc28baf/metadata.json](tiempos/20261020_150348_6bc28baf/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150348_6bc28baf/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006146500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010994800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_150402_00dbbdfd`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:04:02.860686-05:00 a 2026-10-20T15:04:03.159298-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150402_00dbbdfd/metadata.json](tiempos/20261020_150402_00dbbdfd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150402_00dbbdfd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014905700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017284200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.169960700 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000412400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.298910700 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_150908_3a07b335`
+
+- **Modelo/motivo:** Originales · multibúsqueda de menor coste.
+- **Fecha/zona:** 2026-10-20T15:09:08.458818-05:00 a 2026-10-20T15:30:11.604661-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_150908_3a07b335/metadata.json](tiempos/20261020_150908_3a07b335/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_150908_3a07b335/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | m3 / external_1 / Bayesiana TPE | 356.563066900 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Entrenamiento/refit | m3 / externo1 | 4.325300200 | 1047 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m3 / OOF externo1 | 0.006213700 | 262 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | m3 / external_2 / Bayesiana TPE | 102.147379100 | 1047 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Entrenamiento/refit | m3 / externo2 | 1.678712400 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m3 / OOF externo2 | 0.011385500 | 262 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Búsqueda | m3 / external_3 / Bayesiana TPE | 200.829710200 | 1047 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Entrenamiento/refit | m3 / externo3 | 3.194735500 | 1047 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m3 / OOF externo3 | 0.008825500 | 262 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | m3 / external_4 / Bayesiana TPE | 167.402262100 | 1047 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Entrenamiento/refit | m3 / externo4 | 3.392770200 | 1047 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | m3 / OOF externo4 | 0.007317600 | 262 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Búsqueda | m3 / external_5 / Bayesiana TPE | 130.405097600 | 1048 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Entrenamiento/refit | m3 / externo5 | 0.894247300 | 1048 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | m3 / OOF externo5 | 0.005743700 | 261 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | m3 / final / Bayesiana TPE | 284.370891100 | 1309 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Entrenamiento/refit | m3 / final | 6.924405600 | 1309 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | m3 / test202530 | 0.010337900 | 188 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Total del experimento | Originales · multibúsqueda de menor coste | 1263.146272600 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |
+
+### Ejecución `20261020_153050_13da6742`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T15:30:50.370436-05:00 a 2026-10-20T15:30:57.960335-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153050_13da6742/metadata.json](tiempos/20261020_153050_13da6742/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153050_13da6742/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.470211400 | 25 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm25 Originales | 3.790980800 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 7.581738000 | No aplica | 1 | completa | Total; eventos.jsonl línea 3 |
+
+### Ejecución `20261020_153058_2729d20d`
+
+- **Modelo/motivo:** Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME.
+- **Fecha/zona:** 2026-10-20T15:30:58.240620-05:00 a 2026-10-20T15:32:17.856970-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153058_2729d20d/metadata.json](tiempos/20261020_153058_2729d20d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153058_2729d20d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote0 | 0.096321700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote1 | 0.011023400 | 32 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote2 | 0.098722300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote3 | 0.098067000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote4 | 0.099625900 | 1497 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote5 | 0.114920700 | 1497 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote6 | 0.106849100 | 1497 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote7 | 0.089469800 | 1497 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote8 | 0.084290900 | 1497 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote9 | 0.080679600 | 1497 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote10 | 0.082603100 | 1497 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote11 | 0.077667100 | 1497 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote12 | 0.101112100 | 1497 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote13 | 0.113824900 | 1497 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote14 | 0.114201200 | 1497 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote15 | 0.114130100 | 1497 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote16 | 0.118753300 | 1497 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote17 | 0.108689500 | 1497 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote18 | 0.116617100 | 1497 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote19 | 0.107322300 | 1497 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote20 | 0.111040100 | 1497 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote21 | 0.110188200 | 1497 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote22 | 0.111073300 | 1497 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote23 | 0.117193500 | 1497 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote24 | 0.111554100 | 1497 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote25 | 0.115284700 | 1497 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote26 | 0.113904200 | 1497 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote27 | 0.115665600 | 1497 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote28 | 0.118211000 | 1497 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote29 | 0.114922500 | 1497 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote30 | 0.108614200 | 1497 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote31 | 0.111791700 | 1497 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote32 | 0.116381200 | 1497 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote33 | 0.115514000 | 1497 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote34 | 0.110579900 | 1497 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote35 | 0.110108700 | 1497 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote36 | 0.111959800 | 1497 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote37 | 0.117637300 | 1497 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote38 | 0.114221200 | 1497 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote39 | 0.112170400 | 1497 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote40 | 0.112882500 | 1497 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote41 | 0.116861900 | 1497 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote42 | 0.111898900 | 1497 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote43 | 0.111800700 | 1497 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote44 | 0.114974200 | 1497 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote45 | 0.115098900 | 1497 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote46 | 0.114165200 | 1497 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote47 | 0.113658800 | 1497 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote48 | 0.112706000 | 1497 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote49 | 0.115042400 | 1497 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote50 | 0.112454900 | 1497 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote51 | 0.111992500 | 1497 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote52 | 0.114654700 | 1497 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote53 | 0.115540100 | 1497 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote54 | 0.114664600 | 1497 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote55 | 0.114584300 | 1497 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote56 | 0.122929000 | 1497 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote57 | 0.128308800 | 1497 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote58 | 0.109659200 | 1497 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote59 | 0.115163600 | 1497 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote60 | 0.117361900 | 1497 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote61 | 0.115793300 | 1497 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote62 | 0.117637700 | 1497 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote63 | 0.116691600 | 1497 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote64 | 0.118172300 | 1497 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote65 | 0.111939600 | 1497 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote66 | 0.116190200 | 1497 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote67 | 0.110203500 | 1497 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote68 | 0.115512100 | 1497 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote69 | 0.115895800 | 1497 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote70 | 0.116379200 | 1497 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote71 | 0.116367800 | 1497 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote72 | 0.114407100 | 1497 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote73 | 0.105418300 | 1497 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote74 | 0.095629200 | 1497 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote75 | 0.097091900 | 1497 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote76 | 0.101460400 | 1497 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote77 | 0.099493600 | 1497 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote78 | 0.096856600 | 1497 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote79 | 0.098480900 | 1497 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote80 | 0.102624700 | 1497 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote81 | 0.100749200 | 1497 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote82 | 0.099230100 | 1497 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote83 | 0.095569700 | 1497 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote84 | 0.099472600 | 1497 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote85 | 0.102313000 | 1497 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote86 | 0.111637600 | 1497 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote87 | 0.112723100 | 1497 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote88 | 0.147152600 | 1497 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote89 | 0.133393700 | 1497 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote90 | 0.143527900 | 1497 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote91 | 0.125709900 | 1497 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote92 | 0.097310600 | 1497 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote93 | 0.121901500 | 1497 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote94 | 0.127696700 | 1497 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote95 | 0.120070500 | 1497 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote96 | 0.147511400 | 1497 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote97 | 0.117001700 | 1497 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote98 | 0.110691500 | 1497 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote99 | 0.128816400 | 1497 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote100 | 0.150254900 | 1497 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote101 | 0.119363500 | 1497 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote102 | 0.112195900 | 1497 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote103 | 0.120632000 | 1497 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote104 | 0.129170400 | 1497 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote105 | 0.141138400 | 1497 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote106 | 0.116837300 | 1497 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote107 | 0.121711200 | 1497 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote108 | 0.117780100 | 1497 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote109 | 0.106637600 | 1497 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote110 | 0.132959100 | 1497 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote111 | 0.137721500 | 1497 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote112 | 0.133659700 | 1497 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote113 | 0.135131700 | 1497 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote114 | 0.116893700 | 1497 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote115 | 0.114533800 | 1497 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote116 | 0.131196400 | 1497 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote117 | 0.132536200 | 1497 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote118 | 0.135034500 | 1497 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote119 | 0.116261300 | 1497 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote120 | 0.130955900 | 1497 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote121 | 0.133967300 | 1497 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote122 | 0.121431900 | 1497 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote123 | 0.113293000 | 1497 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote124 | 0.134210300 | 1497 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote125 | 0.113099000 | 1497 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote126 | 0.126934700 | 1497 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote127 | 0.121560600 | 1497 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote128 | 0.101612100 | 1497 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote129 | 0.109897200 | 1497 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote130 | 0.118757900 | 1497 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote131 | 0.123638300 | 1497 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote132 | 0.134399600 | 1497 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote133 | 0.115525500 | 1497 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote134 | 0.113787600 | 1497 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote135 | 0.125974600 | 1497 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote136 | 0.103252100 | 1497 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote137 | 0.122199400 | 1497 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote138 | 0.122137600 | 1497 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote139 | 0.124442500 | 1497 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote140 | 0.120093400 | 1497 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote141 | 0.121403800 | 1497 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote142 | 0.137644900 | 1497 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote143 | 0.140288200 | 1497 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote144 | 0.120918800 | 1497 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote145 | 0.116861600 | 1497 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote146 | 0.138391900 | 1497 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote147 | 0.152780000 | 1497 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote148 | 0.122254000 | 1497 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote149 | 0.106290400 | 1497 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote150 | 0.111794700 | 1497 | 1 | completa | Total; eventos.jsonl línea 151 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote151 | 0.117865800 | 1497 | 1 | completa | Total; eventos.jsonl línea 152 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote152 | 0.117709300 | 1497 | 1 | completa | Total; eventos.jsonl línea 153 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote153 | 0.130602900 | 1497 | 1 | completa | Total; eventos.jsonl línea 154 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote154 | 0.120575800 | 1497 | 1 | completa | Total; eventos.jsonl línea 155 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote155 | 0.125725200 | 1497 | 1 | completa | Total; eventos.jsonl línea 156 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote156 | 0.140514700 | 1497 | 1 | completa | Total; eventos.jsonl línea 157 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote157 | 0.116225400 | 1497 | 1 | completa | Total; eventos.jsonl línea 158 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote158 | 0.119129500 | 1497 | 1 | completa | Total; eventos.jsonl línea 159 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote159 | 0.133890600 | 1497 | 1 | completa | Total; eventos.jsonl línea 160 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote160 | 0.130067500 | 1497 | 1 | completa | Total; eventos.jsonl línea 161 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote161 | 0.131122100 | 1497 | 1 | completa | Total; eventos.jsonl línea 162 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote162 | 0.126080400 | 1497 | 1 | completa | Total; eventos.jsonl línea 163 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote163 | 0.144077400 | 1497 | 1 | completa | Total; eventos.jsonl línea 164 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote164 | 0.119301100 | 1497 | 1 | completa | Total; eventos.jsonl línea 165 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote165 | 0.123696600 | 1497 | 1 | completa | Total; eventos.jsonl línea 166 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote166 | 0.114200800 | 1497 | 1 | completa | Total; eventos.jsonl línea 167 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote167 | 0.137379200 | 1497 | 1 | completa | Total; eventos.jsonl línea 168 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote168 | 0.136692000 | 1497 | 1 | completa | Total; eventos.jsonl línea 169 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote169 | 0.126367800 | 1497 | 1 | completa | Total; eventos.jsonl línea 170 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote170 | 0.130648000 | 1497 | 1 | completa | Total; eventos.jsonl línea 171 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote171 | 0.125996400 | 1497 | 1 | completa | Total; eventos.jsonl línea 172 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote172 | 0.126406500 | 1497 | 1 | completa | Total; eventos.jsonl línea 173 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote173 | 0.136945800 | 1497 | 1 | completa | Total; eventos.jsonl línea 174 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote174 | 0.098850900 | 1497 | 1 | completa | Total; eventos.jsonl línea 175 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote175 | 0.100221800 | 1497 | 1 | completa | Total; eventos.jsonl línea 176 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote176 | 0.135802900 | 1497 | 1 | completa | Total; eventos.jsonl línea 177 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote177 | 0.126080200 | 1497 | 1 | completa | Total; eventos.jsonl línea 178 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote178 | 0.119971700 | 1497 | 1 | completa | Total; eventos.jsonl línea 179 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote179 | 0.124028200 | 1497 | 1 | completa | Total; eventos.jsonl línea 180 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote180 | 0.119362500 | 1497 | 1 | completa | Total; eventos.jsonl línea 181 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote181 | 0.130215500 | 1497 | 1 | completa | Total; eventos.jsonl línea 182 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote182 | 0.120940600 | 1497 | 1 | completa | Total; eventos.jsonl línea 183 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote183 | 0.121319500 | 1497 | 1 | completa | Total; eventos.jsonl línea 184 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote184 | 0.122644500 | 1497 | 1 | completa | Total; eventos.jsonl línea 185 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote185 | 0.139725200 | 1497 | 1 | completa | Total; eventos.jsonl línea 186 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote186 | 0.115908100 | 1497 | 1 | completa | Total; eventos.jsonl línea 187 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote187 | 0.132004000 | 1497 | 1 | completa | Total; eventos.jsonl línea 188 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote188 | 0.105804900 | 1497 | 1 | completa | Total; eventos.jsonl línea 189 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote189 | 0.111364600 | 1497 | 1 | completa | Total; eventos.jsonl línea 190 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote190 | 0.106830800 | 1497 | 1 | completa | Total; eventos.jsonl línea 191 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote191 | 0.103321300 | 1497 | 1 | completa | Total; eventos.jsonl línea 192 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote192 | 0.099280100 | 1497 | 1 | completa | Total; eventos.jsonl línea 193 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote193 | 0.095394300 | 1497 | 1 | completa | Total; eventos.jsonl línea 194 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote194 | 0.097368000 | 1497 | 1 | completa | Total; eventos.jsonl línea 195 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote195 | 0.098059900 | 1497 | 1 | completa | Total; eventos.jsonl línea 196 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote196 | 0.094400000 | 1497 | 1 | completa | Total; eventos.jsonl línea 197 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote197 | 0.098824300 | 1497 | 1 | completa | Total; eventos.jsonl línea 198 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote198 | 0.097906000 | 1497 | 1 | completa | Total; eventos.jsonl línea 199 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote199 | 0.099276500 | 1497 | 1 | completa | Total; eventos.jsonl línea 200 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote200 | 0.099184700 | 1497 | 1 | completa | Total; eventos.jsonl línea 201 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote201 | 0.099436300 | 1497 | 1 | completa | Total; eventos.jsonl línea 202 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote202 | 0.096386700 | 1497 | 1 | completa | Total; eventos.jsonl línea 203 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote203 | 0.097584200 | 1497 | 1 | completa | Total; eventos.jsonl línea 204 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote204 | 0.096997200 | 1497 | 1 | completa | Total; eventos.jsonl línea 205 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote205 | 0.094791400 | 1497 | 1 | completa | Total; eventos.jsonl línea 206 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote206 | 0.096809400 | 1497 | 1 | completa | Total; eventos.jsonl línea 207 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote207 | 0.094029200 | 1497 | 1 | completa | Total; eventos.jsonl línea 208 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote208 | 0.099069000 | 1497 | 1 | completa | Total; eventos.jsonl línea 209 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote209 | 0.099409300 | 1497 | 1 | completa | Total; eventos.jsonl línea 210 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote210 | 0.098706500 | 1497 | 1 | completa | Total; eventos.jsonl línea 211 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote211 | 0.102227700 | 1497 | 1 | completa | Total; eventos.jsonl línea 212 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote212 | 0.095586100 | 1497 | 1 | completa | Total; eventos.jsonl línea 213 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote213 | 0.097604600 | 1497 | 1 | completa | Total; eventos.jsonl línea 214 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote214 | 0.097178300 | 1497 | 1 | completa | Total; eventos.jsonl línea 215 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote215 | 0.098033700 | 1497 | 1 | completa | Total; eventos.jsonl línea 216 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote216 | 0.095862200 | 1497 | 1 | completa | Total; eventos.jsonl línea 217 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote217 | 0.096881400 | 1497 | 1 | completa | Total; eventos.jsonl línea 218 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote218 | 0.098342600 | 1497 | 1 | completa | Total; eventos.jsonl línea 219 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote219 | 0.101583300 | 1497 | 1 | completa | Total; eventos.jsonl línea 220 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote220 | 0.098373200 | 1497 | 1 | completa | Total; eventos.jsonl línea 221 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote221 | 0.094997400 | 1497 | 1 | completa | Total; eventos.jsonl línea 222 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote222 | 0.097439400 | 1497 | 1 | completa | Total; eventos.jsonl línea 223 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote223 | 0.098869300 | 1497 | 1 | completa | Total; eventos.jsonl línea 224 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote224 | 0.096336300 | 1497 | 1 | completa | Total; eventos.jsonl línea 225 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote225 | 0.098876100 | 1497 | 1 | completa | Total; eventos.jsonl línea 226 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote226 | 0.099708500 | 1497 | 1 | completa | Total; eventos.jsonl línea 227 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote227 | 0.093991700 | 1497 | 1 | completa | Total; eventos.jsonl línea 228 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote228 | 0.096228400 | 1497 | 1 | completa | Total; eventos.jsonl línea 229 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote229 | 0.097000600 | 1497 | 1 | completa | Total; eventos.jsonl línea 230 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote230 | 0.100856500 | 1497 | 1 | completa | Total; eventos.jsonl línea 231 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote231 | 0.102577200 | 1497 | 1 | completa | Total; eventos.jsonl línea 232 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote232 | 0.102224900 | 1497 | 1 | completa | Total; eventos.jsonl línea 233 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote233 | 0.099653000 | 1497 | 1 | completa | Total; eventos.jsonl línea 234 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote234 | 0.095043800 | 1497 | 1 | completa | Total; eventos.jsonl línea 235 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote235 | 0.100179700 | 1497 | 1 | completa | Total; eventos.jsonl línea 236 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote236 | 0.098477800 | 1497 | 1 | completa | Total; eventos.jsonl línea 237 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote237 | 0.095731100 | 1497 | 1 | completa | Total; eventos.jsonl línea 238 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote238 | 0.099775900 | 1497 | 1 | completa | Total; eventos.jsonl línea 239 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote239 | 0.102159900 | 1497 | 1 | completa | Total; eventos.jsonl línea 240 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote240 | 0.098471400 | 1497 | 1 | completa | Total; eventos.jsonl línea 241 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote241 | 0.096832000 | 1497 | 1 | completa | Total; eventos.jsonl línea 242 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote242 | 0.099284100 | 1497 | 1 | completa | Total; eventos.jsonl línea 243 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote243 | 0.096392800 | 1497 | 1 | completa | Total; eventos.jsonl línea 244 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote244 | 0.101132500 | 1497 | 1 | completa | Total; eventos.jsonl línea 245 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote245 | 0.098217500 | 1497 | 1 | completa | Total; eventos.jsonl línea 246 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote246 | 0.099922200 | 1497 | 1 | completa | Total; eventos.jsonl línea 247 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote247 | 0.098780900 | 1497 | 1 | completa | Total; eventos.jsonl línea 248 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote248 | 0.097506900 | 1497 | 1 | completa | Total; eventos.jsonl línea 249 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote249 | 0.096373700 | 1497 | 1 | completa | Total; eventos.jsonl línea 250 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote250 | 0.098303100 | 1497 | 1 | completa | Total; eventos.jsonl línea 251 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote251 | 0.097655900 | 1497 | 1 | completa | Total; eventos.jsonl línea 252 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote252 | 0.098490100 | 1497 | 1 | completa | Total; eventos.jsonl línea 253 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote253 | 0.097797800 | 1497 | 1 | completa | Total; eventos.jsonl línea 254 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote254 | 0.093939300 | 1497 | 1 | completa | Total; eventos.jsonl línea 255 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote255 | 0.098229900 | 1497 | 1 | completa | Total; eventos.jsonl línea 256 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote256 | 0.098499100 | 1497 | 1 | completa | Total; eventos.jsonl línea 257 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote257 | 0.096708400 | 1497 | 1 | completa | Total; eventos.jsonl línea 258 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote258 | 0.096932700 | 1497 | 1 | completa | Total; eventos.jsonl línea 259 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote259 | 0.101319000 | 1497 | 1 | completa | Total; eventos.jsonl línea 260 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote260 | 0.099912100 | 1497 | 1 | completa | Total; eventos.jsonl línea 261 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote261 | 0.097419400 | 1497 | 1 | completa | Total; eventos.jsonl línea 262 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote262 | 0.094701000 | 1497 | 1 | completa | Total; eventos.jsonl línea 263 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote263 | 0.096684500 | 1497 | 1 | completa | Total; eventos.jsonl línea 264 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote264 | 0.096870200 | 1497 | 1 | completa | Total; eventos.jsonl línea 265 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote265 | 0.108157800 | 1497 | 1 | completa | Total; eventos.jsonl línea 266 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote266 | 0.094917100 | 1497 | 1 | completa | Total; eventos.jsonl línea 267 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote267 | 0.097908300 | 1497 | 1 | completa | Total; eventos.jsonl línea 268 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote268 | 0.100379400 | 1497 | 1 | completa | Total; eventos.jsonl línea 269 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote269 | 0.097094400 | 1497 | 1 | completa | Total; eventos.jsonl línea 270 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote270 | 0.097012600 | 1497 | 1 | completa | Total; eventos.jsonl línea 271 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote271 | 0.097339900 | 1497 | 1 | completa | Total; eventos.jsonl línea 272 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote272 | 0.098199200 | 1497 | 1 | completa | Total; eventos.jsonl línea 273 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote273 | 0.098793800 | 1497 | 1 | completa | Total; eventos.jsonl línea 274 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote274 | 0.098599500 | 1497 | 1 | completa | Total; eventos.jsonl línea 275 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote275 | 0.095582500 | 1497 | 1 | completa | Total; eventos.jsonl línea 276 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote276 | 0.093940900 | 1497 | 1 | completa | Total; eventos.jsonl línea 277 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote277 | 0.094677700 | 1497 | 1 | completa | Total; eventos.jsonl línea 278 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote278 | 0.095877600 | 1497 | 1 | completa | Total; eventos.jsonl línea 279 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote279 | 0.094613700 | 1497 | 1 | completa | Total; eventos.jsonl línea 280 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote280 | 0.099290200 | 1497 | 1 | completa | Total; eventos.jsonl línea 281 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote281 | 0.099109300 | 1497 | 1 | completa | Total; eventos.jsonl línea 282 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote282 | 0.101264200 | 1497 | 1 | completa | Total; eventos.jsonl línea 283 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote283 | 0.096313500 | 1497 | 1 | completa | Total; eventos.jsonl línea 284 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote284 | 0.097945200 | 1497 | 1 | completa | Total; eventos.jsonl línea 285 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote285 | 0.094613700 | 1497 | 1 | completa | Total; eventos.jsonl línea 286 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote286 | 0.096766500 | 1497 | 1 | completa | Total; eventos.jsonl línea 287 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote287 | 0.093925200 | 1497 | 1 | completa | Total; eventos.jsonl línea 288 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote288 | 0.099127600 | 1497 | 1 | completa | Total; eventos.jsonl línea 289 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote289 | 0.098588600 | 1497 | 1 | completa | Total; eventos.jsonl línea 290 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote290 | 0.098600400 | 1497 | 1 | completa | Total; eventos.jsonl línea 291 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote291 | 0.097707200 | 1497 | 1 | completa | Total; eventos.jsonl línea 292 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote292 | 0.096047500 | 1497 | 1 | completa | Total; eventos.jsonl línea 293 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote293 | 0.093729000 | 1497 | 1 | completa | Total; eventos.jsonl línea 294 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote294 | 0.094392300 | 1497 | 1 | completa | Total; eventos.jsonl línea 295 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote295 | 0.093237500 | 1497 | 1 | completa | Total; eventos.jsonl línea 296 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote296 | 0.091928200 | 1497 | 1 | completa | Total; eventos.jsonl línea 297 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote297 | 0.096956600 | 1497 | 1 | completa | Total; eventos.jsonl línea 298 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote298 | 0.098522500 | 1497 | 1 | completa | Total; eventos.jsonl línea 299 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote299 | 0.097094900 | 1497 | 1 | completa | Total; eventos.jsonl línea 300 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote300 | 0.098178400 | 1497 | 1 | completa | Total; eventos.jsonl línea 301 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote301 | 0.096457900 | 1497 | 1 | completa | Total; eventos.jsonl línea 302 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote302 | 0.098598900 | 1497 | 1 | completa | Total; eventos.jsonl línea 303 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote303 | 0.096491500 | 1497 | 1 | completa | Total; eventos.jsonl línea 304 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote304 | 0.096439600 | 1497 | 1 | completa | Total; eventos.jsonl línea 305 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote305 | 0.091928000 | 1497 | 1 | completa | Total; eventos.jsonl línea 306 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote306 | 0.096467300 | 1497 | 1 | completa | Total; eventos.jsonl línea 307 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote307 | 0.103369700 | 1497 | 1 | completa | Total; eventos.jsonl línea 308 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote308 | 0.096034600 | 1497 | 1 | completa | Total; eventos.jsonl línea 309 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote309 | 0.096414400 | 1497 | 1 | completa | Total; eventos.jsonl línea 310 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote310 | 0.097917200 | 1497 | 1 | completa | Total; eventos.jsonl línea 311 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote311 | 0.098208100 | 1497 | 1 | completa | Total; eventos.jsonl línea 312 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote312 | 0.097623100 | 1497 | 1 | completa | Total; eventos.jsonl línea 313 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote313 | 0.097263200 | 1497 | 1 | completa | Total; eventos.jsonl línea 314 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote314 | 0.104045000 | 1497 | 1 | completa | Total; eventos.jsonl línea 315 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote315 | 0.112680500 | 1497 | 1 | completa | Total; eventos.jsonl línea 316 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote316 | 0.110222400 | 1497 | 1 | completa | Total; eventos.jsonl línea 317 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote317 | 0.111279300 | 1497 | 1 | completa | Total; eventos.jsonl línea 318 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote318 | 0.116806400 | 1497 | 1 | completa | Total; eventos.jsonl línea 319 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote319 | 0.115861300 | 1497 | 1 | completa | Total; eventos.jsonl línea 320 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote320 | 0.113881600 | 1497 | 1 | completa | Total; eventos.jsonl línea 321 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote321 | 0.117977500 | 1497 | 1 | completa | Total; eventos.jsonl línea 322 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote322 | 0.145530400 | 1497 | 1 | completa | Total; eventos.jsonl línea 323 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote323 | 0.112602400 | 1497 | 1 | completa | Total; eventos.jsonl línea 324 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote324 | 0.111498400 | 1497 | 1 | completa | Total; eventos.jsonl línea 325 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote325 | 0.121091300 | 1497 | 1 | completa | Total; eventos.jsonl línea 326 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote326 | 0.113166000 | 1497 | 1 | completa | Total; eventos.jsonl línea 327 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote327 | 0.112721900 | 1497 | 1 | completa | Total; eventos.jsonl línea 328 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote328 | 0.118893100 | 1497 | 1 | completa | Total; eventos.jsonl línea 329 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote329 | 0.119410800 | 1497 | 1 | completa | Total; eventos.jsonl línea 330 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote330 | 0.112287800 | 1497 | 1 | completa | Total; eventos.jsonl línea 331 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote331 | 0.113838500 | 1497 | 1 | completa | Total; eventos.jsonl línea 332 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote332 | 0.111446000 | 1497 | 1 | completa | Total; eventos.jsonl línea 333 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote333 | 0.110341600 | 1497 | 1 | completa | Total; eventos.jsonl línea 334 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote334 | 0.107010000 | 1497 | 1 | completa | Total; eventos.jsonl línea 335 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote335 | 0.110966700 | 1497 | 1 | completa | Total; eventos.jsonl línea 336 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote336 | 0.114164900 | 1497 | 1 | completa | Total; eventos.jsonl línea 337 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote337 | 0.113188900 | 1497 | 1 | completa | Total; eventos.jsonl línea 338 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote338 | 0.111319500 | 1497 | 1 | completa | Total; eventos.jsonl línea 339 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote339 | 0.113423400 | 1497 | 1 | completa | Total; eventos.jsonl línea 340 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote340 | 0.116151400 | 1497 | 1 | completa | Total; eventos.jsonl línea 341 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote341 | 0.108347800 | 1497 | 1 | completa | Total; eventos.jsonl línea 342 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote342 | 0.114575400 | 1497 | 1 | completa | Total; eventos.jsonl línea 343 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote343 | 0.114546300 | 1497 | 1 | completa | Total; eventos.jsonl línea 344 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote344 | 0.111615900 | 1497 | 1 | completa | Total; eventos.jsonl línea 345 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote345 | 0.112259300 | 1497 | 1 | completa | Total; eventos.jsonl línea 346 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote346 | 0.114016300 | 1497 | 1 | completa | Total; eventos.jsonl línea 347 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote347 | 0.107619200 | 1497 | 1 | completa | Total; eventos.jsonl línea 348 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote348 | 0.114569800 | 1497 | 1 | completa | Total; eventos.jsonl línea 349 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote349 | 0.114672200 | 1497 | 1 | completa | Total; eventos.jsonl línea 350 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote350 | 0.111791400 | 1497 | 1 | completa | Total; eventos.jsonl línea 351 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote351 | 0.110849300 | 1497 | 1 | completa | Total; eventos.jsonl línea 352 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote352 | 0.112499900 | 1497 | 1 | completa | Total; eventos.jsonl línea 353 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote353 | 0.109458400 | 1497 | 1 | completa | Total; eventos.jsonl línea 354 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote354 | 0.108448000 | 1497 | 1 | completa | Total; eventos.jsonl línea 355 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote355 | 0.096352300 | 1497 | 1 | completa | Total; eventos.jsonl línea 356 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote356 | 0.096903500 | 1497 | 1 | completa | Total; eventos.jsonl línea 357 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote357 | 0.099914000 | 1497 | 1 | completa | Total; eventos.jsonl línea 358 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote358 | 0.098368200 | 1497 | 1 | completa | Total; eventos.jsonl línea 359 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote359 | 0.094830700 | 1497 | 1 | completa | Total; eventos.jsonl línea 360 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote360 | 0.095779400 | 1497 | 1 | completa | Total; eventos.jsonl línea 361 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote361 | 0.100882500 | 1497 | 1 | completa | Total; eventos.jsonl línea 362 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote362 | 0.097163600 | 1497 | 1 | completa | Total; eventos.jsonl línea 363 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote363 | 0.096931800 | 1497 | 1 | completa | Total; eventos.jsonl línea 364 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote364 | 0.097015200 | 1497 | 1 | completa | Total; eventos.jsonl línea 365 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote365 | 0.096345400 | 1497 | 1 | completa | Total; eventos.jsonl línea 366 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote366 | 0.096828400 | 1497 | 1 | completa | Total; eventos.jsonl línea 367 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote367 | 0.093451600 | 1497 | 1 | completa | Total; eventos.jsonl línea 368 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote368 | 0.100183300 | 1497 | 1 | completa | Total; eventos.jsonl línea 369 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote369 | 0.096789200 | 1497 | 1 | completa | Total; eventos.jsonl línea 370 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote370 | 0.099581800 | 1497 | 1 | completa | Total; eventos.jsonl línea 371 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote371 | 0.097421200 | 1497 | 1 | completa | Total; eventos.jsonl línea 372 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote372 | 0.098261300 | 1497 | 1 | completa | Total; eventos.jsonl línea 373 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote373 | 0.099118000 | 1497 | 1 | completa | Total; eventos.jsonl línea 374 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote374 | 0.098194000 | 1497 | 1 | completa | Total; eventos.jsonl línea 375 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote375 | 0.099641100 | 1497 | 1 | completa | Total; eventos.jsonl línea 376 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote376 | 0.099079700 | 1497 | 1 | completa | Total; eventos.jsonl línea 377 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote377 | 0.096162800 | 1497 | 1 | completa | Total; eventos.jsonl línea 378 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote378 | 0.095300800 | 1497 | 1 | completa | Total; eventos.jsonl línea 379 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote379 | 0.095825300 | 1497 | 1 | completa | Total; eventos.jsonl línea 380 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote380 | 0.099575400 | 1497 | 1 | completa | Total; eventos.jsonl línea 381 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote381 | 0.097414400 | 1497 | 1 | completa | Total; eventos.jsonl línea 382 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote382 | 0.094365100 | 1497 | 1 | completa | Total; eventos.jsonl línea 383 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote383 | 0.095722300 | 1497 | 1 | completa | Total; eventos.jsonl línea 384 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote384 | 0.097631600 | 1497 | 1 | completa | Total; eventos.jsonl línea 385 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote385 | 0.096137100 | 1497 | 1 | completa | Total; eventos.jsonl línea 386 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote386 | 0.103096300 | 1497 | 1 | completa | Total; eventos.jsonl línea 387 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote387 | 0.096630000 | 1497 | 1 | completa | Total; eventos.jsonl línea 388 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote388 | 0.099218100 | 1497 | 1 | completa | Total; eventos.jsonl línea 389 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote389 | 0.099720800 | 1497 | 1 | completa | Total; eventos.jsonl línea 390 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote390 | 0.099232200 | 1497 | 1 | completa | Total; eventos.jsonl línea 391 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote391 | 0.097644800 | 1497 | 1 | completa | Total; eventos.jsonl línea 392 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote392 | 0.099142400 | 1497 | 1 | completa | Total; eventos.jsonl línea 393 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote393 | 0.098095300 | 1497 | 1 | completa | Total; eventos.jsonl línea 394 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote394 | 0.092706800 | 1497 | 1 | completa | Total; eventos.jsonl línea 395 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote395 | 0.094723100 | 1497 | 1 | completa | Total; eventos.jsonl línea 396 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote396 | 0.098845700 | 1497 | 1 | completa | Total; eventos.jsonl línea 397 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote397 | 0.092175900 | 1497 | 1 | completa | Total; eventos.jsonl línea 398 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote398 | 0.103324400 | 1497 | 1 | completa | Total; eventos.jsonl línea 399 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote399 | 0.100058100 | 1497 | 1 | completa | Total; eventos.jsonl línea 400 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote400 | 0.096220500 | 1497 | 1 | completa | Total; eventos.jsonl línea 401 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote401 | 0.122888900 | 1497 | 1 | completa | Total; eventos.jsonl línea 402 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote402 | 0.100608300 | 1497 | 1 | completa | Total; eventos.jsonl línea 403 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote403 | 0.095825400 | 1497 | 1 | completa | Total; eventos.jsonl línea 404 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote404 | 0.095916100 | 1497 | 1 | completa | Total; eventos.jsonl línea 405 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote405 | 0.106695600 | 1497 | 1 | completa | Total; eventos.jsonl línea 406 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote406 | 0.104821700 | 1497 | 1 | completa | Total; eventos.jsonl línea 407 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote407 | 0.097384900 | 1497 | 1 | completa | Total; eventos.jsonl línea 408 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote408 | 0.100338300 | 1497 | 1 | completa | Total; eventos.jsonl línea 409 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote409 | 0.102867500 | 1497 | 1 | completa | Total; eventos.jsonl línea 410 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote410 | 0.095169200 | 1497 | 1 | completa | Total; eventos.jsonl línea 411 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote411 | 0.102807700 | 1497 | 1 | completa | Total; eventos.jsonl línea 412 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote412 | 0.098652100 | 1497 | 1 | completa | Total; eventos.jsonl línea 413 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote413 | 0.097301200 | 1497 | 1 | completa | Total; eventos.jsonl línea 414 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote414 | 0.099184400 | 1497 | 1 | completa | Total; eventos.jsonl línea 415 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote415 | 0.102452500 | 1497 | 1 | completa | Total; eventos.jsonl línea 416 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote416 | 0.099976900 | 1497 | 1 | completa | Total; eventos.jsonl línea 417 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote417 | 0.100840000 | 1497 | 1 | completa | Total; eventos.jsonl línea 418 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote418 | 0.100327800 | 1497 | 1 | completa | Total; eventos.jsonl línea 419 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote419 | 0.102112900 | 1497 | 1 | completa | Total; eventos.jsonl línea 420 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote420 | 0.098797600 | 1497 | 1 | completa | Total; eventos.jsonl línea 421 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote421 | 0.100985000 | 1497 | 1 | completa | Total; eventos.jsonl línea 422 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote422 | 0.106905000 | 1497 | 1 | completa | Total; eventos.jsonl línea 423 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote423 | 0.116839600 | 1497 | 1 | completa | Total; eventos.jsonl línea 424 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote424 | 0.117248700 | 1497 | 1 | completa | Total; eventos.jsonl línea 425 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote425 | 0.119345200 | 1497 | 1 | completa | Total; eventos.jsonl línea 426 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote426 | 0.115731800 | 1497 | 1 | completa | Total; eventos.jsonl línea 427 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote427 | 0.121571600 | 1497 | 1 | completa | Total; eventos.jsonl línea 428 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote428 | 0.125572900 | 1497 | 1 | completa | Total; eventos.jsonl línea 429 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote429 | 0.122576000 | 1497 | 1 | completa | Total; eventos.jsonl línea 430 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote430 | 0.119636300 | 1497 | 1 | completa | Total; eventos.jsonl línea 431 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote431 | 0.122353700 | 1497 | 1 | completa | Total; eventos.jsonl línea 432 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote432 | 0.117187700 | 1497 | 1 | completa | Total; eventos.jsonl línea 433 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote433 | 0.110122500 | 1497 | 1 | completa | Total; eventos.jsonl línea 434 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote434 | 0.112489800 | 1497 | 1 | completa | Total; eventos.jsonl línea 435 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote435 | 0.115629900 | 1497 | 1 | completa | Total; eventos.jsonl línea 436 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote436 | 0.113196800 | 1497 | 1 | completa | Total; eventos.jsonl línea 437 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote437 | 0.113595600 | 1497 | 1 | completa | Total; eventos.jsonl línea 438 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote438 | 0.104661100 | 1497 | 1 | completa | Total; eventos.jsonl línea 439 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote439 | 0.112486200 | 1497 | 1 | completa | Total; eventos.jsonl línea 440 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote440 | 0.115648700 | 1497 | 1 | completa | Total; eventos.jsonl línea 441 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote441 | 0.115275000 | 1497 | 1 | completa | Total; eventos.jsonl línea 442 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote442 | 0.111008700 | 1497 | 1 | completa | Total; eventos.jsonl línea 443 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote443 | 0.109901500 | 1497 | 1 | completa | Total; eventos.jsonl línea 444 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote444 | 0.106203800 | 1497 | 1 | completa | Total; eventos.jsonl línea 445 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote445 | 0.102074200 | 1497 | 1 | completa | Total; eventos.jsonl línea 446 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote446 | 0.108047900 | 1497 | 1 | completa | Total; eventos.jsonl línea 447 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote447 | 0.105415400 | 1497 | 1 | completa | Total; eventos.jsonl línea 448 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote448 | 0.106885200 | 1497 | 1 | completa | Total; eventos.jsonl línea 449 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote449 | 0.108616900 | 1497 | 1 | completa | Total; eventos.jsonl línea 450 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote450 | 0.109294000 | 1497 | 1 | completa | Total; eventos.jsonl línea 451 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote451 | 0.110086800 | 1497 | 1 | completa | Total; eventos.jsonl línea 452 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote452 | 0.110657200 | 1497 | 1 | completa | Total; eventos.jsonl línea 453 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote453 | 0.103738900 | 1497 | 1 | completa | Total; eventos.jsonl línea 454 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote454 | 0.119907000 | 1497 | 1 | completa | Total; eventos.jsonl línea 455 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote455 | 0.107451900 | 1497 | 1 | completa | Total; eventos.jsonl línea 456 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote456 | 0.099772500 | 1497 | 1 | completa | Total; eventos.jsonl línea 457 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote457 | 0.065254500 | 1497 | 1 | completa | Total; eventos.jsonl línea 458 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote458 | 0.064549600 | 1497 | 1 | completa | Total; eventos.jsonl línea 459 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote459 | 0.067802200 | 1497 | 1 | completa | Total; eventos.jsonl línea 460 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote460 | 0.070565300 | 1497 | 1 | completa | Total; eventos.jsonl línea 461 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote461 | 0.069767600 | 1497 | 1 | completa | Total; eventos.jsonl línea 462 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote462 | 0.074183500 | 1497 | 1 | completa | Total; eventos.jsonl línea 463 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote463 | 0.072085800 | 1497 | 1 | completa | Total; eventos.jsonl línea 464 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote464 | 0.067374800 | 1497 | 1 | completa | Total; eventos.jsonl línea 465 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote465 | 0.065232900 | 1497 | 1 | completa | Total; eventos.jsonl línea 466 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote466 | 0.064822100 | 1497 | 1 | completa | Total; eventos.jsonl línea 467 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote467 | 0.065763400 | 1497 | 1 | completa | Total; eventos.jsonl línea 468 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote468 | 0.063801500 | 1497 | 1 | completa | Total; eventos.jsonl línea 469 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote469 | 0.065520100 | 1497 | 1 | completa | Total; eventos.jsonl línea 470 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote470 | 0.064855900 | 1497 | 1 | completa | Total; eventos.jsonl línea 471 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote471 | 0.068914900 | 1497 | 1 | completa | Total; eventos.jsonl línea 472 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote472 | 0.072650800 | 1497 | 1 | completa | Total; eventos.jsonl línea 473 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote473 | 0.074711300 | 1497 | 1 | completa | Total; eventos.jsonl línea 474 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote474 | 0.073959100 | 1497 | 1 | completa | Total; eventos.jsonl línea 475 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote475 | 0.075743300 | 1497 | 1 | completa | Total; eventos.jsonl línea 476 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote476 | 0.079870700 | 1497 | 1 | completa | Total; eventos.jsonl línea 477 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote477 | 0.075800000 | 1497 | 1 | completa | Total; eventos.jsonl línea 478 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote478 | 0.076623300 | 1497 | 1 | completa | Total; eventos.jsonl línea 479 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote479 | 0.078206100 | 1497 | 1 | completa | Total; eventos.jsonl línea 480 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote480 | 0.076588400 | 1497 | 1 | completa | Total; eventos.jsonl línea 481 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote481 | 0.075533200 | 1497 | 1 | completa | Total; eventos.jsonl línea 482 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote482 | 0.078377200 | 1497 | 1 | completa | Total; eventos.jsonl línea 483 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote483 | 0.076324000 | 1497 | 1 | completa | Total; eventos.jsonl línea 484 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote484 | 0.076999900 | 1497 | 1 | completa | Total; eventos.jsonl línea 485 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote485 | 0.076558500 | 1497 | 1 | completa | Total; eventos.jsonl línea 486 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote486 | 0.072985700 | 1497 | 1 | completa | Total; eventos.jsonl línea 487 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote487 | 0.070725600 | 1497 | 1 | completa | Total; eventos.jsonl línea 488 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote488 | 0.064467900 | 1497 | 1 | completa | Total; eventos.jsonl línea 489 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote489 | 0.064336900 | 1497 | 1 | completa | Total; eventos.jsonl línea 490 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote490 | 0.066227600 | 1497 | 1 | completa | Total; eventos.jsonl línea 491 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote491 | 0.067738300 | 1497 | 1 | completa | Total; eventos.jsonl línea 492 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote492 | 0.064065900 | 1497 | 1 | completa | Total; eventos.jsonl línea 493 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote493 | 0.066668700 | 1497 | 1 | completa | Total; eventos.jsonl línea 494 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote494 | 0.063959700 | 1497 | 1 | completa | Total; eventos.jsonl línea 495 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote495 | 0.065790700 | 1497 | 1 | completa | Total; eventos.jsonl línea 496 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote496 | 0.065650200 | 1497 | 1 | completa | Total; eventos.jsonl línea 497 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote497 | 0.070233000 | 1497 | 1 | completa | Total; eventos.jsonl línea 498 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote498 | 0.065597500 | 1497 | 1 | completa | Total; eventos.jsonl línea 499 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote499 | 0.066901500 | 1497 | 1 | completa | Total; eventos.jsonl línea 500 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote500 | 0.066244400 | 1497 | 1 | completa | Total; eventos.jsonl línea 501 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote501 | 0.066538600 | 1497 | 1 | completa | Total; eventos.jsonl línea 502 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote502 | 0.066872900 | 1497 | 1 | completa | Total; eventos.jsonl línea 503 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote503 | 0.066178000 | 1497 | 1 | completa | Total; eventos.jsonl línea 504 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote504 | 0.068563300 | 1497 | 1 | completa | Total; eventos.jsonl línea 505 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote505 | 0.065728400 | 1497 | 1 | completa | Total; eventos.jsonl línea 506 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote506 | 0.063326700 | 1497 | 1 | completa | Total; eventos.jsonl línea 507 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote507 | 0.065803000 | 1497 | 1 | completa | Total; eventos.jsonl línea 508 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote508 | 0.064596100 | 1497 | 1 | completa | Total; eventos.jsonl línea 509 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote509 | 0.068134000 | 1497 | 1 | completa | Total; eventos.jsonl línea 510 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote510 | 0.066013700 | 1497 | 1 | completa | Total; eventos.jsonl línea 511 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote511 | 0.065225700 | 1497 | 1 | completa | Total; eventos.jsonl línea 512 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote512 | 0.065341300 | 1497 | 1 | completa | Total; eventos.jsonl línea 513 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote513 | 0.064937300 | 1497 | 1 | completa | Total; eventos.jsonl línea 514 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote514 | 0.063790400 | 1497 | 1 | completa | Total; eventos.jsonl línea 515 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote515 | 0.065054100 | 1497 | 1 | completa | Total; eventos.jsonl línea 516 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote516 | 0.065317400 | 1497 | 1 | completa | Total; eventos.jsonl línea 517 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote517 | 0.068142300 | 1497 | 1 | completa | Total; eventos.jsonl línea 518 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote518 | 0.064975700 | 1497 | 1 | completa | Total; eventos.jsonl línea 519 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote519 | 0.063386600 | 1497 | 1 | completa | Total; eventos.jsonl línea 520 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote520 | 0.072445100 | 1497 | 1 | completa | Total; eventos.jsonl línea 521 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote521 | 0.079995900 | 1497 | 1 | completa | Total; eventos.jsonl línea 522 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote522 | 0.068182400 | 1497 | 1 | completa | Total; eventos.jsonl línea 523 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote523 | 0.067312200 | 1497 | 1 | completa | Total; eventos.jsonl línea 524 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote524 | 0.068240400 | 1497 | 1 | completa | Total; eventos.jsonl línea 525 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote525 | 0.066603800 | 1497 | 1 | completa | Total; eventos.jsonl línea 526 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote526 | 0.064450800 | 1497 | 1 | completa | Total; eventos.jsonl línea 527 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote527 | 0.066252000 | 1497 | 1 | completa | Total; eventos.jsonl línea 528 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote528 | 0.063256800 | 1497 | 1 | completa | Total; eventos.jsonl línea 529 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote529 | 0.062386600 | 1497 | 1 | completa | Total; eventos.jsonl línea 530 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote530 | 0.059325400 | 1497 | 1 | completa | Total; eventos.jsonl línea 531 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote531 | 0.062143100 | 1497 | 1 | completa | Total; eventos.jsonl línea 532 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote532 | 0.058839000 | 1497 | 1 | completa | Total; eventos.jsonl línea 533 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote533 | 0.059241200 | 1497 | 1 | completa | Total; eventos.jsonl línea 534 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote534 | 0.060899300 | 1497 | 1 | completa | Total; eventos.jsonl línea 535 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote535 | 0.070211600 | 1497 | 1 | completa | Total; eventos.jsonl línea 536 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote536 | 0.066129800 | 1497 | 1 | completa | Total; eventos.jsonl línea 537 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote537 | 0.072479800 | 1497 | 1 | completa | Total; eventos.jsonl línea 538 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote538 | 0.064097600 | 1497 | 1 | completa | Total; eventos.jsonl línea 539 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote539 | 0.067843900 | 1497 | 1 | completa | Total; eventos.jsonl línea 540 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote540 | 0.070200600 | 1497 | 1 | completa | Total; eventos.jsonl línea 541 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote541 | 0.069035700 | 1497 | 1 | completa | Total; eventos.jsonl línea 542 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote542 | 0.071851500 | 1497 | 1 | completa | Total; eventos.jsonl línea 543 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote543 | 0.061111400 | 1497 | 1 | completa | Total; eventos.jsonl línea 544 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote544 | 0.061597500 | 1497 | 1 | completa | Total; eventos.jsonl línea 545 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote545 | 0.060109000 | 1497 | 1 | completa | Total; eventos.jsonl línea 546 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote546 | 0.060240000 | 1497 | 1 | completa | Total; eventos.jsonl línea 547 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote547 | 0.065419300 | 1497 | 1 | completa | Total; eventos.jsonl línea 548 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote548 | 0.068385100 | 1497 | 1 | completa | Total; eventos.jsonl línea 549 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote549 | 0.063391200 | 1497 | 1 | completa | Total; eventos.jsonl línea 550 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote550 | 0.065015800 | 1497 | 1 | completa | Total; eventos.jsonl línea 551 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote551 | 0.061232600 | 1497 | 1 | completa | Total; eventos.jsonl línea 552 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote552 | 0.061375100 | 1497 | 1 | completa | Total; eventos.jsonl línea 553 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote553 | 0.064775700 | 1497 | 1 | completa | Total; eventos.jsonl línea 554 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote554 | 0.068099800 | 1497 | 1 | completa | Total; eventos.jsonl línea 555 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote555 | 0.066185400 | 1497 | 1 | completa | Total; eventos.jsonl línea 556 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote556 | 0.063727700 | 1497 | 1 | completa | Total; eventos.jsonl línea 557 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote557 | 0.065568200 | 1497 | 1 | completa | Total; eventos.jsonl línea 558 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote558 | 0.061889100 | 1497 | 1 | completa | Total; eventos.jsonl línea 559 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote559 | 0.067264100 | 1497 | 1 | completa | Total; eventos.jsonl línea 560 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote560 | 0.064620400 | 1497 | 1 | completa | Total; eventos.jsonl línea 561 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote561 | 0.062333600 | 1497 | 1 | completa | Total; eventos.jsonl línea 562 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote562 | 0.062312900 | 1497 | 1 | completa | Total; eventos.jsonl línea 563 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote563 | 0.063208200 | 1497 | 1 | completa | Total; eventos.jsonl línea 564 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote564 | 0.062979800 | 1497 | 1 | completa | Total; eventos.jsonl línea 565 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote565 | 0.064985200 | 1497 | 1 | completa | Total; eventos.jsonl línea 566 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote566 | 0.064412300 | 1497 | 1 | completa | Total; eventos.jsonl línea 567 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote567 | 0.065191000 | 1497 | 1 | completa | Total; eventos.jsonl línea 568 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote568 | 0.064973900 | 1497 | 1 | completa | Total; eventos.jsonl línea 569 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote569 | 0.065913100 | 1497 | 1 | completa | Total; eventos.jsonl línea 570 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote570 | 0.064540100 | 1497 | 1 | completa | Total; eventos.jsonl línea 571 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote571 | 0.067376900 | 1497 | 1 | completa | Total; eventos.jsonl línea 572 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote572 | 0.063605900 | 1497 | 1 | completa | Total; eventos.jsonl línea 573 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote573 | 0.063196500 | 1497 | 1 | completa | Total; eventos.jsonl línea 574 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote574 | 0.065624300 | 1497 | 1 | completa | Total; eventos.jsonl línea 575 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote575 | 0.062507600 | 1497 | 1 | completa | Total; eventos.jsonl línea 576 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote576 | 0.062624300 | 1497 | 1 | completa | Total; eventos.jsonl línea 577 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote577 | 0.062069900 | 1497 | 1 | completa | Total; eventos.jsonl línea 578 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote578 | 0.066561600 | 1497 | 1 | completa | Total; eventos.jsonl línea 579 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote579 | 0.061061900 | 1497 | 1 | completa | Total; eventos.jsonl línea 580 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote580 | 0.062860000 | 1497 | 1 | completa | Total; eventos.jsonl línea 581 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote581 | 0.063602700 | 1497 | 1 | completa | Total; eventos.jsonl línea 582 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote582 | 0.062305100 | 1497 | 1 | completa | Total; eventos.jsonl línea 583 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote583 | 0.064518200 | 1497 | 1 | completa | Total; eventos.jsonl línea 584 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote584 | 0.058273600 | 1497 | 1 | completa | Total; eventos.jsonl línea 585 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote585 | 0.060008200 | 1497 | 1 | completa | Total; eventos.jsonl línea 586 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote586 | 0.062451100 | 1497 | 1 | completa | Total; eventos.jsonl línea 587 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote587 | 0.059224600 | 1497 | 1 | completa | Total; eventos.jsonl línea 588 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote588 | 0.063683700 | 1497 | 1 | completa | Total; eventos.jsonl línea 589 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote589 | 0.066355200 | 1497 | 1 | completa | Total; eventos.jsonl línea 590 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote590 | 0.064086900 | 1497 | 1 | completa | Total; eventos.jsonl línea 591 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote591 | 0.060351900 | 1497 | 1 | completa | Total; eventos.jsonl línea 592 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote592 | 0.063228900 | 1497 | 1 | completa | Total; eventos.jsonl línea 593 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote593 | 0.060300300 | 1497 | 1 | completa | Total; eventos.jsonl línea 594 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote594 | 0.062333200 | 1497 | 1 | completa | Total; eventos.jsonl línea 595 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote595 | 0.064926800 | 1497 | 1 | completa | Total; eventos.jsonl línea 596 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote596 | 0.062015800 | 1497 | 1 | completa | Total; eventos.jsonl línea 597 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote597 | 0.063797700 | 1497 | 1 | completa | Total; eventos.jsonl línea 598 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote598 | 0.061149100 | 1497 | 1 | completa | Total; eventos.jsonl línea 599 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote599 | 0.063983800 | 1497 | 1 | completa | Total; eventos.jsonl línea 600 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote600 | 0.065307600 | 1497 | 1 | completa | Total; eventos.jsonl línea 601 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote601 | 0.067129400 | 1497 | 1 | completa | Total; eventos.jsonl línea 602 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote602 | 0.069252800 | 1497 | 1 | completa | Total; eventos.jsonl línea 603 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote603 | 0.064809500 | 1497 | 1 | completa | Total; eventos.jsonl línea 604 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote604 | 0.066757800 | 1497 | 1 | completa | Total; eventos.jsonl línea 605 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote605 | 0.067099200 | 1497 | 1 | completa | Total; eventos.jsonl línea 606 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote606 | 0.066357500 | 1497 | 1 | completa | Total; eventos.jsonl línea 607 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote607 | 0.059845000 | 1497 | 1 | completa | Total; eventos.jsonl línea 608 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote608 | 0.062194600 | 1497 | 1 | completa | Total; eventos.jsonl línea 609 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote609 | 0.060795400 | 1497 | 1 | completa | Total; eventos.jsonl línea 610 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote610 | 0.063345400 | 1497 | 1 | completa | Total; eventos.jsonl línea 611 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote611 | 0.061688500 | 1497 | 1 | completa | Total; eventos.jsonl línea 612 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote612 | 0.065553200 | 1497 | 1 | completa | Total; eventos.jsonl línea 613 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote613 | 0.064236100 | 1497 | 1 | completa | Total; eventos.jsonl línea 614 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote614 | 0.063951700 | 1497 | 1 | completa | Total; eventos.jsonl línea 615 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote615 | 0.063941200 | 1497 | 1 | completa | Total; eventos.jsonl línea 616 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote616 | 0.064592700 | 1497 | 1 | completa | Total; eventos.jsonl línea 617 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote617 | 0.066172900 | 1497 | 1 | completa | Total; eventos.jsonl línea 618 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote618 | 0.061981400 | 1497 | 1 | completa | Total; eventos.jsonl línea 619 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote619 | 0.062478500 | 1497 | 1 | completa | Total; eventos.jsonl línea 620 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote620 | 0.063173800 | 1497 | 1 | completa | Total; eventos.jsonl línea 621 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote621 | 0.065984300 | 1497 | 1 | completa | Total; eventos.jsonl línea 622 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote622 | 0.059056200 | 1497 | 1 | completa | Total; eventos.jsonl línea 623 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote623 | 0.056666100 | 1497 | 1 | completa | Total; eventos.jsonl línea 624 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote624 | 0.056482400 | 1497 | 1 | completa | Total; eventos.jsonl línea 625 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote625 | 0.057645900 | 1497 | 1 | completa | Total; eventos.jsonl línea 626 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote626 | 0.057505300 | 1497 | 1 | completa | Total; eventos.jsonl línea 627 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote627 | 0.061234300 | 1497 | 1 | completa | Total; eventos.jsonl línea 628 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote628 | 0.064442900 | 1497 | 1 | completa | Total; eventos.jsonl línea 629 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote629 | 0.062481300 | 1497 | 1 | completa | Total; eventos.jsonl línea 630 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote630 | 0.061248000 | 1497 | 1 | completa | Total; eventos.jsonl línea 631 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote631 | 0.060216100 | 1497 | 1 | completa | Total; eventos.jsonl línea 632 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote632 | 0.060704400 | 1497 | 1 | completa | Total; eventos.jsonl línea 633 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote633 | 0.060829500 | 1497 | 1 | completa | Total; eventos.jsonl línea 634 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote634 | 0.061411300 | 1497 | 1 | completa | Total; eventos.jsonl línea 635 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote635 | 0.071429200 | 1497 | 1 | completa | Total; eventos.jsonl línea 636 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote636 | 0.061449900 | 1497 | 1 | completa | Total; eventos.jsonl línea 637 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote637 | 0.061135200 | 1497 | 1 | completa | Total; eventos.jsonl línea 638 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote638 | 0.060614500 | 1497 | 1 | completa | Total; eventos.jsonl línea 639 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote639 | 0.061939400 | 1497 | 1 | completa | Total; eventos.jsonl línea 640 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote640 | 0.061693300 | 1497 | 1 | completa | Total; eventos.jsonl línea 641 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote641 | 0.065333800 | 1497 | 1 | completa | Total; eventos.jsonl línea 642 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote642 | 0.063723800 | 1497 | 1 | completa | Total; eventos.jsonl línea 643 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote643 | 0.062682600 | 1497 | 1 | completa | Total; eventos.jsonl línea 644 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote644 | 0.065637100 | 1497 | 1 | completa | Total; eventos.jsonl línea 645 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote645 | 0.065996500 | 1497 | 1 | completa | Total; eventos.jsonl línea 646 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote646 | 0.061909500 | 1497 | 1 | completa | Total; eventos.jsonl línea 647 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote647 | 0.065381500 | 1497 | 1 | completa | Total; eventos.jsonl línea 648 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote648 | 0.062639000 | 1497 | 1 | completa | Total; eventos.jsonl línea 649 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote649 | 0.066910200 | 1497 | 1 | completa | Total; eventos.jsonl línea 650 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote650 | 0.065541100 | 1497 | 1 | completa | Total; eventos.jsonl línea 651 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote651 | 0.063215500 | 1497 | 1 | completa | Total; eventos.jsonl línea 652 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote652 | 0.065090800 | 1497 | 1 | completa | Total; eventos.jsonl línea 653 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote653 | 0.064573200 | 1497 | 1 | completa | Total; eventos.jsonl línea 654 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote654 | 0.063466600 | 1497 | 1 | completa | Total; eventos.jsonl línea 655 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote655 | 0.061414200 | 1497 | 1 | completa | Total; eventos.jsonl línea 656 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote656 | 0.063768000 | 1497 | 1 | completa | Total; eventos.jsonl línea 657 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote657 | 0.061366600 | 1497 | 1 | completa | Total; eventos.jsonl línea 658 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote658 | 0.066577200 | 1497 | 1 | completa | Total; eventos.jsonl línea 659 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote659 | 0.064093500 | 1497 | 1 | completa | Total; eventos.jsonl línea 660 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote660 | 0.065891000 | 1497 | 1 | completa | Total; eventos.jsonl línea 661 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote661 | 0.063206600 | 1497 | 1 | completa | Total; eventos.jsonl línea 662 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote662 | 0.063258500 | 1497 | 1 | completa | Total; eventos.jsonl línea 663 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote663 | 0.067790300 | 1497 | 1 | completa | Total; eventos.jsonl línea 664 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote664 | 0.060927800 | 1497 | 1 | completa | Total; eventos.jsonl línea 665 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote665 | 0.060225600 | 1497 | 1 | completa | Total; eventos.jsonl línea 666 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote666 | 0.063716700 | 1497 | 1 | completa | Total; eventos.jsonl línea 667 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote667 | 0.061451300 | 1497 | 1 | completa | Total; eventos.jsonl línea 668 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote668 | 0.065719200 | 1497 | 1 | completa | Total; eventos.jsonl línea 669 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote669 | 0.066066400 | 1497 | 1 | completa | Total; eventos.jsonl línea 670 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote670 | 0.064057000 | 1497 | 1 | completa | Total; eventos.jsonl línea 671 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote671 | 0.064667700 | 1497 | 1 | completa | Total; eventos.jsonl línea 672 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote672 | 0.062298100 | 1497 | 1 | completa | Total; eventos.jsonl línea 673 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote673 | 0.060975200 | 1497 | 1 | completa | Total; eventos.jsonl línea 674 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote674 | 0.060025500 | 1497 | 1 | completa | Total; eventos.jsonl línea 675 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote675 | 0.065896800 | 1497 | 1 | completa | Total; eventos.jsonl línea 676 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote676 | 0.071123800 | 1497 | 1 | completa | Total; eventos.jsonl línea 677 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote677 | 0.063585400 | 1497 | 1 | completa | Total; eventos.jsonl línea 678 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote678 | 0.061486300 | 1497 | 1 | completa | Total; eventos.jsonl línea 679 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote679 | 0.063818700 | 1497 | 1 | completa | Total; eventos.jsonl línea 680 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote680 | 0.062782800 | 1497 | 1 | completa | Total; eventos.jsonl línea 681 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote681 | 0.187095000 | 1497 | 1 | completa | Total; eventos.jsonl línea 682 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote682 | 0.069978800 | 1497 | 1 | completa | Total; eventos.jsonl línea 683 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote683 | 0.069017900 | 1497 | 1 | completa | Total; eventos.jsonl línea 684 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote684 | 0.064418500 | 1497 | 1 | completa | Total; eventos.jsonl línea 685 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote685 | 0.066601000 | 1497 | 1 | completa | Total; eventos.jsonl línea 686 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote686 | 0.065770000 | 1497 | 1 | completa | Total; eventos.jsonl línea 687 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote687 | 0.064177300 | 1497 | 1 | completa | Total; eventos.jsonl línea 688 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote688 | 0.064070900 | 1497 | 1 | completa | Total; eventos.jsonl línea 689 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote689 | 0.064904000 | 1497 | 1 | completa | Total; eventos.jsonl línea 690 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote690 | 0.064582400 | 1497 | 1 | completa | Total; eventos.jsonl línea 691 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote691 | 0.069782100 | 1497 | 1 | completa | Total; eventos.jsonl línea 692 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote692 | 0.067154900 | 1497 | 1 | completa | Total; eventos.jsonl línea 693 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote693 | 0.067643500 | 1497 | 1 | completa | Total; eventos.jsonl línea 694 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote694 | 0.068588400 | 1497 | 1 | completa | Total; eventos.jsonl línea 695 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote695 | 0.070159000 | 1497 | 1 | completa | Total; eventos.jsonl línea 696 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote696 | 0.068419100 | 1497 | 1 | completa | Total; eventos.jsonl línea 697 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote697 | 0.067332600 | 1497 | 1 | completa | Total; eventos.jsonl línea 698 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote698 | 0.062691400 | 1497 | 1 | completa | Total; eventos.jsonl línea 699 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote699 | 0.060583800 | 1497 | 1 | completa | Total; eventos.jsonl línea 700 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote700 | 0.063298300 | 1497 | 1 | completa | Total; eventos.jsonl línea 701 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote701 | 0.061521300 | 1497 | 1 | completa | Total; eventos.jsonl línea 702 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote702 | 0.060788300 | 1497 | 1 | completa | Total; eventos.jsonl línea 703 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote703 | 0.061937000 | 1497 | 1 | completa | Total; eventos.jsonl línea 704 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote704 | 0.066374900 | 1497 | 1 | completa | Total; eventos.jsonl línea 705 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote705 | 0.063210400 | 1497 | 1 | completa | Total; eventos.jsonl línea 706 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote706 | 0.063715100 | 1497 | 1 | completa | Total; eventos.jsonl línea 707 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote707 | 0.065996200 | 1497 | 1 | completa | Total; eventos.jsonl línea 708 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote708 | 0.065588500 | 1497 | 1 | completa | Total; eventos.jsonl línea 709 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote709 | 0.069073500 | 1497 | 1 | completa | Total; eventos.jsonl línea 710 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote710 | 0.064952400 | 1497 | 1 | completa | Total; eventos.jsonl línea 711 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote711 | 0.065404300 | 1497 | 1 | completa | Total; eventos.jsonl línea 712 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote712 | 0.061124700 | 1497 | 1 | completa | Total; eventos.jsonl línea 713 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote713 | 0.065086800 | 1497 | 1 | completa | Total; eventos.jsonl línea 714 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote714 | 0.059582300 | 1497 | 1 | completa | Total; eventos.jsonl línea 715 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote715 | 0.061708200 | 1497 | 1 | completa | Total; eventos.jsonl línea 716 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote716 | 0.058003000 | 1497 | 1 | completa | Total; eventos.jsonl línea 717 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote717 | 0.058550300 | 1497 | 1 | completa | Total; eventos.jsonl línea 718 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote718 | 0.061040500 | 1497 | 1 | completa | Total; eventos.jsonl línea 719 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote719 | 0.067127400 | 1497 | 1 | completa | Total; eventos.jsonl línea 720 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote720 | 0.066473300 | 1497 | 1 | completa | Total; eventos.jsonl línea 721 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote721 | 0.061572600 | 1497 | 1 | completa | Total; eventos.jsonl línea 722 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote722 | 0.062445000 | 1497 | 1 | completa | Total; eventos.jsonl línea 723 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote723 | 0.060820000 | 1497 | 1 | completa | Total; eventos.jsonl línea 724 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote724 | 0.061613000 | 1497 | 1 | completa | Total; eventos.jsonl línea 725 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote725 | 0.063063300 | 1497 | 1 | completa | Total; eventos.jsonl línea 726 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote726 | 0.069607200 | 1497 | 1 | completa | Total; eventos.jsonl línea 727 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote727 | 0.063722200 | 1497 | 1 | completa | Total; eventos.jsonl línea 728 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote728 | 0.064441400 | 1497 | 1 | completa | Total; eventos.jsonl línea 729 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote729 | 0.061077800 | 1497 | 1 | completa | Total; eventos.jsonl línea 730 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote730 | 0.067210600 | 1497 | 1 | completa | Total; eventos.jsonl línea 731 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote731 | 0.063660600 | 1497 | 1 | completa | Total; eventos.jsonl línea 732 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote732 | 0.065612000 | 1497 | 1 | completa | Total; eventos.jsonl línea 733 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote733 | 0.065634800 | 1497 | 1 | completa | Total; eventos.jsonl línea 734 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote734 | 0.064229400 | 1497 | 1 | completa | Total; eventos.jsonl línea 735 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote735 | 0.065819000 | 1497 | 1 | completa | Total; eventos.jsonl línea 736 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote736 | 0.063538200 | 1497 | 1 | completa | Total; eventos.jsonl línea 737 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote737 | 0.068092200 | 1497 | 1 | completa | Total; eventos.jsonl línea 738 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote738 | 0.062298000 | 1497 | 1 | completa | Total; eventos.jsonl línea 739 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote739 | 0.063816600 | 1497 | 1 | completa | Total; eventos.jsonl línea 740 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote740 | 0.064740800 | 1497 | 1 | completa | Total; eventos.jsonl línea 741 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote741 | 0.064638200 | 1497 | 1 | completa | Total; eventos.jsonl línea 742 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote742 | 0.067490600 | 1497 | 1 | completa | Total; eventos.jsonl línea 743 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote743 | 0.062928700 | 1497 | 1 | completa | Total; eventos.jsonl línea 744 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote744 | 0.062146600 | 1497 | 1 | completa | Total; eventos.jsonl línea 745 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote745 | 0.065991800 | 1497 | 1 | completa | Total; eventos.jsonl línea 746 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote746 | 0.062294100 | 1497 | 1 | completa | Total; eventos.jsonl línea 747 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote747 | 0.067386400 | 1497 | 1 | completa | Total; eventos.jsonl línea 748 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote748 | 0.066389800 | 1497 | 1 | completa | Total; eventos.jsonl línea 749 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote749 | 0.067934800 | 1497 | 1 | completa | Total; eventos.jsonl línea 750 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote750 | 0.068449300 | 1497 | 1 | completa | Total; eventos.jsonl línea 751 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote751 | 0.066493400 | 1497 | 1 | completa | Total; eventos.jsonl línea 752 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote752 | 0.064117500 | 1497 | 1 | completa | Total; eventos.jsonl línea 753 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote753 | 0.064755200 | 1497 | 1 | completa | Total; eventos.jsonl línea 754 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote754 | 0.067899300 | 1497 | 1 | completa | Total; eventos.jsonl línea 755 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote755 | 0.068521300 | 1497 | 1 | completa | Total; eventos.jsonl línea 756 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote756 | 0.069185500 | 1497 | 1 | completa | Total; eventos.jsonl línea 757 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote757 | 0.065970400 | 1497 | 1 | completa | Total; eventos.jsonl línea 758 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote758 | 0.069588800 | 1497 | 1 | completa | Total; eventos.jsonl línea 759 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote759 | 0.063095500 | 1497 | 1 | completa | Total; eventos.jsonl línea 760 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote760 | 0.064423300 | 1497 | 1 | completa | Total; eventos.jsonl línea 761 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote761 | 0.064237400 | 1497 | 1 | completa | Total; eventos.jsonl línea 762 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote762 | 0.065876500 | 1497 | 1 | completa | Total; eventos.jsonl línea 763 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote763 | 0.067348900 | 1497 | 1 | completa | Total; eventos.jsonl línea 764 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote764 | 0.064392000 | 1497 | 1 | completa | Total; eventos.jsonl línea 765 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote765 | 0.069349400 | 1497 | 1 | completa | Total; eventos.jsonl línea 766 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote766 | 0.065122100 | 1497 | 1 | completa | Total; eventos.jsonl línea 767 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote767 | 0.062477800 | 1497 | 1 | completa | Total; eventos.jsonl línea 768 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote768 | 0.063416200 | 1497 | 1 | completa | Total; eventos.jsonl línea 769 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote769 | 0.061406400 | 1497 | 1 | completa | Total; eventos.jsonl línea 770 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote770 | 0.066171600 | 1497 | 1 | completa | Total; eventos.jsonl línea 771 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote771 | 0.062813600 | 1497 | 1 | completa | Total; eventos.jsonl línea 772 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote772 | 0.062417400 | 1497 | 1 | completa | Total; eventos.jsonl línea 773 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote773 | 0.067264700 | 1497 | 1 | completa | Total; eventos.jsonl línea 774 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote774 | 0.065375700 | 1497 | 1 | completa | Total; eventos.jsonl línea 775 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote775 | 0.064067600 | 1497 | 1 | completa | Total; eventos.jsonl línea 776 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote776 | 0.066610300 | 1497 | 1 | completa | Total; eventos.jsonl línea 777 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote777 | 0.063992000 | 1497 | 1 | completa | Total; eventos.jsonl línea 778 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote778 | 0.063941400 | 1497 | 1 | completa | Total; eventos.jsonl línea 779 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote779 | 0.063875200 | 1497 | 1 | completa | Total; eventos.jsonl línea 780 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote780 | 0.064873200 | 1497 | 1 | completa | Total; eventos.jsonl línea 781 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote781 | 0.062576300 | 1497 | 1 | completa | Total; eventos.jsonl línea 782 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote782 | 0.065045500 | 1497 | 1 | completa | Total; eventos.jsonl línea 783 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote783 | 0.063136700 | 1497 | 1 | completa | Total; eventos.jsonl línea 784 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote784 | 0.062731800 | 1497 | 1 | completa | Total; eventos.jsonl línea 785 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote785 | 0.063614400 | 1497 | 1 | completa | Total; eventos.jsonl línea 786 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote786 | 0.064757600 | 1497 | 1 | completa | Total; eventos.jsonl línea 787 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote787 | 0.065954600 | 1497 | 1 | completa | Total; eventos.jsonl línea 788 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote788 | 0.063165000 | 1497 | 1 | completa | Total; eventos.jsonl línea 789 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote789 | 0.072270500 | 1497 | 1 | completa | Total; eventos.jsonl línea 790 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote790 | 0.065636100 | 1497 | 1 | completa | Total; eventos.jsonl línea 791 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote791 | 0.067423300 | 1497 | 1 | completa | Total; eventos.jsonl línea 792 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote792 | 0.067069500 | 1497 | 1 | completa | Total; eventos.jsonl línea 793 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote793 | 0.065347000 | 1497 | 1 | completa | Total; eventos.jsonl línea 794 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote794 | 0.068393100 | 1497 | 1 | completa | Total; eventos.jsonl línea 795 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote795 | 0.069150900 | 1497 | 1 | completa | Total; eventos.jsonl línea 796 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote796 | 0.068260900 | 1497 | 1 | completa | Total; eventos.jsonl línea 797 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote797 | 0.067978800 | 1497 | 1 | completa | Total; eventos.jsonl línea 798 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote798 | 0.070626300 | 1497 | 1 | completa | Total; eventos.jsonl línea 799 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote799 | 0.070654500 | 1497 | 1 | completa | Total; eventos.jsonl línea 800 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote800 | 0.071203300 | 1497 | 1 | completa | Total; eventos.jsonl línea 801 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote801 | 0.067170200 | 1497 | 1 | completa | Total; eventos.jsonl línea 802 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote802 | 0.069052900 | 1497 | 1 | completa | Total; eventos.jsonl línea 803 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote803 | 0.073512100 | 1497 | 1 | completa | Total; eventos.jsonl línea 804 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote804 | 0.082661800 | 1497 | 1 | completa | Total; eventos.jsonl línea 805 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote805 | 0.086100600 | 1497 | 1 | completa | Total; eventos.jsonl línea 806 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote806 | 0.081037100 | 1497 | 1 | completa | Total; eventos.jsonl línea 807 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote807 | 0.073530000 | 1497 | 1 | completa | Total; eventos.jsonl línea 808 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote808 | 0.076249100 | 1497 | 1 | completa | Total; eventos.jsonl línea 809 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote809 | 0.081607500 | 1497 | 1 | completa | Total; eventos.jsonl línea 810 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote810 | 0.079901600 | 1497 | 1 | completa | Total; eventos.jsonl línea 811 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote811 | 0.072494500 | 1497 | 1 | completa | Total; eventos.jsonl línea 812 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote812 | 0.070563600 | 1497 | 1 | completa | Total; eventos.jsonl línea 813 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote813 | 0.066845500 | 1497 | 1 | completa | Total; eventos.jsonl línea 814 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote814 | 0.064554500 | 1497 | 1 | completa | Total; eventos.jsonl línea 815 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote815 | 0.071714600 | 1497 | 1 | completa | Total; eventos.jsonl línea 816 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote816 | 0.070071900 | 1497 | 1 | completa | Total; eventos.jsonl línea 817 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote817 | 0.069933900 | 1497 | 1 | completa | Total; eventos.jsonl línea 818 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote818 | 0.082565600 | 1497 | 1 | completa | Total; eventos.jsonl línea 819 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote819 | 0.080813500 | 1497 | 1 | completa | Total; eventos.jsonl línea 820 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote820 | 0.080173900 | 1497 | 1 | completa | Total; eventos.jsonl línea 821 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote821 | 0.082772000 | 1497 | 1 | completa | Total; eventos.jsonl línea 822 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote822 | 0.085272100 | 1497 | 1 | completa | Total; eventos.jsonl línea 823 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote823 | 0.089131000 | 1497 | 1 | completa | Total; eventos.jsonl línea 824 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote824 | 0.082763200 | 1497 | 1 | completa | Total; eventos.jsonl línea 825 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote825 | 0.078920800 | 1497 | 1 | completa | Total; eventos.jsonl línea 826 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote826 | 0.069162300 | 1497 | 1 | completa | Total; eventos.jsonl línea 827 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote827 | 0.070281300 | 1497 | 1 | completa | Total; eventos.jsonl línea 828 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote828 | 0.072344800 | 1497 | 1 | completa | Total; eventos.jsonl línea 829 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote829 | 0.068420200 | 1497 | 1 | completa | Total; eventos.jsonl línea 830 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote830 | 0.068471100 | 1497 | 1 | completa | Total; eventos.jsonl línea 831 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote831 | 0.067901100 | 1497 | 1 | completa | Total; eventos.jsonl línea 832 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote832 | 0.068610000 | 1497 | 1 | completa | Total; eventos.jsonl línea 833 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote833 | 0.065104800 | 1497 | 1 | completa | Total; eventos.jsonl línea 834 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote834 | 0.066516100 | 1497 | 1 | completa | Total; eventos.jsonl línea 835 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote835 | 0.069087500 | 1497 | 1 | completa | Total; eventos.jsonl línea 836 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote836 | 0.068771200 | 1497 | 1 | completa | Total; eventos.jsonl línea 837 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote837 | 0.064168000 | 1497 | 1 | completa | Total; eventos.jsonl línea 838 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote838 | 0.066757200 | 1497 | 1 | completa | Total; eventos.jsonl línea 839 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote839 | 0.066520400 | 1497 | 1 | completa | Total; eventos.jsonl línea 840 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote840 | 0.066526100 | 1497 | 1 | completa | Total; eventos.jsonl línea 841 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote841 | 0.062196400 | 1497 | 1 | completa | Total; eventos.jsonl línea 842 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote842 | 0.061942800 | 1497 | 1 | completa | Total; eventos.jsonl línea 843 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote843 | 0.062516200 | 1497 | 1 | completa | Total; eventos.jsonl línea 844 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote844 | 0.059852400 | 1497 | 1 | completa | Total; eventos.jsonl línea 845 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote845 | 0.057463700 | 1497 | 1 | completa | Total; eventos.jsonl línea 846 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote846 | 0.058090600 | 1497 | 1 | completa | Total; eventos.jsonl línea 847 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote847 | 0.060586600 | 1497 | 1 | completa | Total; eventos.jsonl línea 848 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote848 | 0.063396800 | 1497 | 1 | completa | Total; eventos.jsonl línea 849 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote849 | 0.061295900 | 1497 | 1 | completa | Total; eventos.jsonl línea 850 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote850 | 0.058590600 | 1497 | 1 | completa | Total; eventos.jsonl línea 851 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote851 | 0.065359600 | 1497 | 1 | completa | Total; eventos.jsonl línea 852 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote852 | 0.067998600 | 1497 | 1 | completa | Total; eventos.jsonl línea 853 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote853 | 0.062841000 | 1497 | 1 | completa | Total; eventos.jsonl línea 854 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote854 | 0.064335300 | 1497 | 1 | completa | Total; eventos.jsonl línea 855 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote855 | 0.062434000 | 1497 | 1 | completa | Total; eventos.jsonl línea 856 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote856 | 0.063504100 | 1497 | 1 | completa | Total; eventos.jsonl línea 857 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote857 | 0.064377300 | 1497 | 1 | completa | Total; eventos.jsonl línea 858 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote858 | 0.064911600 | 1497 | 1 | completa | Total; eventos.jsonl línea 859 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote859 | 0.067427600 | 1497 | 1 | completa | Total; eventos.jsonl línea 860 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote860 | 0.068024000 | 1497 | 1 | completa | Total; eventos.jsonl línea 861 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote861 | 0.064198400 | 1497 | 1 | completa | Total; eventos.jsonl línea 862 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote862 | 0.064532700 | 1497 | 1 | completa | Total; eventos.jsonl línea 863 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote863 | 0.062255900 | 1497 | 1 | completa | Total; eventos.jsonl línea 864 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote864 | 0.064966400 | 1497 | 1 | completa | Total; eventos.jsonl línea 865 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote865 | 0.061275800 | 1497 | 1 | completa | Total; eventos.jsonl línea 866 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote866 | 0.061995700 | 1497 | 1 | completa | Total; eventos.jsonl línea 867 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote867 | 0.060379700 | 1497 | 1 | completa | Total; eventos.jsonl línea 868 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote868 | 0.060686700 | 1497 | 1 | completa | Total; eventos.jsonl línea 869 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote869 | 0.062211700 | 1497 | 1 | completa | Total; eventos.jsonl línea 870 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote870 | 0.062939700 | 1497 | 1 | completa | Total; eventos.jsonl línea 871 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote871 | 0.064287500 | 1497 | 1 | completa | Total; eventos.jsonl línea 872 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote872 | 0.063050700 | 1497 | 1 | completa | Total; eventos.jsonl línea 873 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote873 | 0.065834200 | 1497 | 1 | completa | Total; eventos.jsonl línea 874 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote874 | 0.064856400 | 1497 | 1 | completa | Total; eventos.jsonl línea 875 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote875 | 0.065075000 | 1497 | 1 | completa | Total; eventos.jsonl línea 876 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote876 | 0.066086000 | 1497 | 1 | completa | Total; eventos.jsonl línea 877 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote877 | 0.067317200 | 1497 | 1 | completa | Total; eventos.jsonl línea 878 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote878 | 0.065161700 | 1497 | 1 | completa | Total; eventos.jsonl línea 879 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote879 | 0.072509500 | 1497 | 1 | completa | Total; eventos.jsonl línea 880 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote880 | 0.071618800 | 1497 | 1 | completa | Total; eventos.jsonl línea 881 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote881 | 0.067116000 | 1497 | 1 | completa | Total; eventos.jsonl línea 882 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote882 | 0.068793000 | 1497 | 1 | completa | Total; eventos.jsonl línea 883 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote883 | 0.069519900 | 1497 | 1 | completa | Total; eventos.jsonl línea 884 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote884 | 0.070279100 | 1497 | 1 | completa | Total; eventos.jsonl línea 885 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote885 | 0.072679200 | 1497 | 1 | completa | Total; eventos.jsonl línea 886 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote886 | 0.069194300 | 1497 | 1 | completa | Total; eventos.jsonl línea 887 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote887 | 0.071317300 | 1497 | 1 | completa | Total; eventos.jsonl línea 888 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote888 | 0.066992900 | 1497 | 1 | completa | Total; eventos.jsonl línea 889 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote889 | 0.066070000 | 1497 | 1 | completa | Total; eventos.jsonl línea 890 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote890 | 0.067985000 | 1497 | 1 | completa | Total; eventos.jsonl línea 891 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote891 | 0.066470700 | 1497 | 1 | completa | Total; eventos.jsonl línea 892 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote892 | 0.070083300 | 1497 | 1 | completa | Total; eventos.jsonl línea 893 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote893 | 0.070591900 | 1497 | 1 | completa | Total; eventos.jsonl línea 894 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote894 | 0.070854700 | 1497 | 1 | completa | Total; eventos.jsonl línea 895 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote895 | 0.069530300 | 1497 | 1 | completa | Total; eventos.jsonl línea 896 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote896 | 0.071273200 | 1497 | 1 | completa | Total; eventos.jsonl línea 897 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote897 | 0.070027400 | 1497 | 1 | completa | Total; eventos.jsonl línea 898 |
+| Explicación SHAP | 64caminos/32referencias · completo | 79.438143200 | 1497 | 1 | completa | Total; eventos.jsonl línea 899 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005396000 | 1 | 1 | completa | Total; eventos.jsonl línea 900 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.027175200 | 1000 | 1 | completa | Total; eventos.jsonl línea 901 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.002299800 | 1000 | 1 | completa | Total; eventos.jsonl línea 902 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000237300 | 1000 | 1 | completa | Total; eventos.jsonl línea 903 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000104700 | 1 | 1 | completa | Total; eventos.jsonl línea 904 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005350200 | 1 | 1 | completa | Total; eventos.jsonl línea 905 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.022214000 | 1000 | 1 | completa | Total; eventos.jsonl línea 906 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.001041800 | 1000 | 1 | completa | Total; eventos.jsonl línea 907 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000158000 | 1000 | 1 | completa | Total; eventos.jsonl línea 908 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000099800 | 1 | 1 | completa | Total; eventos.jsonl línea 909 |
+| Total del experimento | Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME | 79.622133200 | No aplica | 1 | completa | Total; eventos.jsonl línea 910 |
+
+### Ejecución `20261020_153043_e9cfed99`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T15:30:43.740427-05:00 a 2026-10-20T15:32:18.422535-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153043_e9cfed99/metadata.json](tiempos/20261020_153043_e9cfed99/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153043_e9cfed99/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.016613300 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.031892000 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.019323400 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m11 / validación serialización test | 0.024161200 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m7 / validación serialización test | 0.023629400 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m14 / validación serialización test | 0.011601500 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m15 / validación serialización test | 0.079300300 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m16 / validación serialización test | 0.062295300 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m3 / validación serialización test | 0.010432300 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Total del experimento | Originales · verificación y activación | 94.684929500 | No aplica | 1 | completa | Total; eventos.jsonl línea 10 |
+
+### Ejecución `20261020_153229_a30a59d2`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:32:29.712344-05:00 a 2026-10-20T15:32:29.988212-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153229_a30a59d2/metadata.json](tiempos/20261020_153229_a30a59d2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153229_a30a59d2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015622200 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016816300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.151207600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000664200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.274957600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_153243_66c65e1b`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.027695-05:00 a 2026-10-20T15:32:43.041429-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_66c65e1b/metadata.json](tiempos/20261020_153243_66c65e1b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_66c65e1b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012797800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.017630200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153243_7c58ad32`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.072170-05:00 a 2026-10-20T15:32:43.092452-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_7c58ad32/metadata.json](tiempos/20261020_153243_7c58ad32/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_7c58ad32/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005930900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.021812800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153243_dd58d8c7`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.109808-05:00 a 2026-10-20T15:32:43.135835-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_dd58d8c7/metadata.json](tiempos/20261020_153243_dd58d8c7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_dd58d8c7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006994300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.022257100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153243_3d5057f1`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.363356-05:00 a 2026-10-20T15:32:43.392435-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_3d5057f1/metadata.json](tiempos/20261020_153243_3d5057f1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_3d5057f1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.032581800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.039537000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153243_bd59fecd`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.452927-05:00 a 2026-10-20T15:32:43.468826-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_bd59fecd/metadata.json](tiempos/20261020_153243_bd59fecd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_bd59fecd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.011466300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.016953200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153243_195a07b8`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:43.493137-05:00 a 2026-10-20T15:32:43.502153-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153243_195a07b8/metadata.json](tiempos/20261020_153243_195a07b8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153243_195a07b8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004444000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010218800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153248_4db317fc`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:48.814389-05:00 a 2026-10-20T15:32:48.832039-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153248_4db317fc/metadata.json](tiempos/20261020_153248_4db317fc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153248_4db317fc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008194200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.015196000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153248_e49c9018`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:48.847395-05:00 a 2026-10-20T15:32:48.869831-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153248_e49c9018/metadata.json](tiempos/20261020_153248_e49c9018/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153248_e49c9018/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008868400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.015489200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153248_ea0a4060`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:48.888369-05:00 a 2026-10-20T15:32:48.902877-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153248_ea0a4060/metadata.json](tiempos/20261020_153248_ea0a4060/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153248_ea0a4060/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006669000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.014096900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153248_4e72730c`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:48.916821-05:00 a 2026-10-20T15:32:48.933898-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153248_4e72730c/metadata.json](tiempos/20261020_153248_4e72730c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153248_4e72730c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.007367300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.016697700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153248_064326dd`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:32:48.945711-05:00 a 2026-10-20T15:32:48.962721-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153248_064326dd/metadata.json](tiempos/20261020_153248_064326dd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153248_064326dd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006021200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.015877100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153258_a64ba70f`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:32:58.645613-05:00 a 2026-10-20T15:32:58.922923-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153258_a64ba70f/metadata.json](tiempos/20261020_153258_a64ba70f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153258_a64ba70f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.017007000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017593300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.156669600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000509000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.278501000 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_153346_a7ba9d59`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T15:33:46.220411-05:00 a 2026-10-20T15:33:50.509900-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153346_a7ba9d59/metadata.json](tiempos/20261020_153346_a7ba9d59/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153346_a7ba9d59/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.262008900 | 25 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm25 Originales | 2.251410800 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 4.279178500 | No aplica | 1 | completa | Total; eventos.jsonl línea 3 |
+
+### Ejecución `20261020_153350_2458ebe3`
+
+- **Modelo/motivo:** Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME.
+- **Fecha/zona:** 2026-10-20T15:33:50.689986-05:00 a 2026-10-20T15:34:50.922235-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153350_2458ebe3/metadata.json](tiempos/20261020_153350_2458ebe3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153350_2458ebe3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote0 | 0.057762700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote1 | 0.005984000 | 32 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote2 | 0.055413300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote3 | 0.058289700 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote4 | 0.050446200 | 1497 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote5 | 0.050231500 | 1497 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote6 | 0.053551600 | 1497 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote7 | 0.050839600 | 1497 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote8 | 0.056602200 | 1497 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote9 | 0.056089000 | 1497 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote10 | 0.058035000 | 1497 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote11 | 0.055831700 | 1497 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote12 | 0.055958800 | 1497 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote13 | 0.060101400 | 1497 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote14 | 0.053939900 | 1497 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote15 | 0.057081100 | 1497 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote16 | 0.056741800 | 1497 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote17 | 0.062603000 | 1497 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote18 | 0.079850500 | 1497 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote19 | 0.058472000 | 1497 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote20 | 0.056665900 | 1497 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote21 | 0.054156600 | 1497 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote22 | 0.060422100 | 1497 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote23 | 0.053830900 | 1497 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote24 | 0.054628000 | 1497 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote25 | 0.054549400 | 1497 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote26 | 0.061679500 | 1497 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote27 | 0.057568700 | 1497 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote28 | 0.054379300 | 1497 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote29 | 0.058913600 | 1497 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote30 | 0.052001200 | 1497 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote31 | 0.059870900 | 1497 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote32 | 0.058035100 | 1497 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote33 | 0.059837500 | 1497 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote34 | 0.055807600 | 1497 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote35 | 0.053284500 | 1497 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote36 | 0.051331000 | 1497 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote37 | 0.057282100 | 1497 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote38 | 0.058548900 | 1497 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote39 | 0.058461300 | 1497 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote40 | 0.059725200 | 1497 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote41 | 0.055131200 | 1497 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote42 | 0.059435000 | 1497 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote43 | 0.059911200 | 1497 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote44 | 0.054837800 | 1497 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote45 | 0.059173100 | 1497 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote46 | 0.055420100 | 1497 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote47 | 0.059815100 | 1497 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote48 | 0.055920300 | 1497 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote49 | 0.058894500 | 1497 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote50 | 0.051974800 | 1497 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote51 | 0.060575600 | 1497 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote52 | 0.057625100 | 1497 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote53 | 0.057135100 | 1497 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote54 | 0.059129100 | 1497 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote55 | 0.061409700 | 1497 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote56 | 0.054120100 | 1497 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote57 | 0.052917900 | 1497 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote58 | 0.060267900 | 1497 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote59 | 0.061411700 | 1497 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote60 | 0.057937400 | 1497 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote61 | 0.052653100 | 1497 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote62 | 0.058479000 | 1497 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote63 | 0.053518100 | 1497 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote64 | 0.053856900 | 1497 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote65 | 0.052903500 | 1497 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote66 | 0.051596500 | 1497 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote67 | 0.055424200 | 1497 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote68 | 0.051591900 | 1497 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote69 | 0.054546300 | 1497 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote70 | 0.055796000 | 1497 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote71 | 0.058161500 | 1497 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote72 | 0.053512200 | 1497 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote73 | 0.058963200 | 1497 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote74 | 0.053851400 | 1497 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote75 | 0.055931500 | 1497 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote76 | 0.053331600 | 1497 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote77 | 0.053257200 | 1497 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote78 | 0.060621900 | 1497 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote79 | 0.055831300 | 1497 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote80 | 0.058942700 | 1497 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote81 | 0.052743300 | 1497 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote82 | 0.056536800 | 1497 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote83 | 0.053680000 | 1497 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote84 | 0.055241600 | 1497 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote85 | 0.055190200 | 1497 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote86 | 0.058035000 | 1497 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote87 | 0.051768900 | 1497 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote88 | 0.053539100 | 1497 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote89 | 0.057130700 | 1497 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote90 | 0.053548600 | 1497 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote91 | 0.056411400 | 1497 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote92 | 0.054028000 | 1497 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote93 | 0.055122000 | 1497 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote94 | 0.057488200 | 1497 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote95 | 0.056260900 | 1497 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote96 | 0.059051700 | 1497 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote97 | 0.054791000 | 1497 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote98 | 0.053403800 | 1497 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote99 | 0.067531300 | 1497 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote100 | 0.058019200 | 1497 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote101 | 0.053917700 | 1497 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote102 | 0.054071900 | 1497 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote103 | 0.056869000 | 1497 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote104 | 0.061406100 | 1497 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote105 | 0.061791100 | 1497 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote106 | 0.057184500 | 1497 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote107 | 0.054445700 | 1497 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote108 | 0.055015500 | 1497 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote109 | 0.051021400 | 1497 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote110 | 0.053585000 | 1497 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote111 | 0.056961800 | 1497 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote112 | 0.055487800 | 1497 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote113 | 0.053600800 | 1497 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote114 | 0.054415800 | 1497 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote115 | 0.057015400 | 1497 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote116 | 0.055951200 | 1497 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote117 | 0.051999200 | 1497 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote118 | 0.054180600 | 1497 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote119 | 0.056777600 | 1497 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote120 | 0.057446500 | 1497 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote121 | 0.055294600 | 1497 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote122 | 0.054660600 | 1497 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote123 | 0.055878900 | 1497 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote124 | 0.052197100 | 1497 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote125 | 0.054646400 | 1497 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote126 | 0.059645000 | 1497 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote127 | 0.060742900 | 1497 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote128 | 0.056646300 | 1497 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote129 | 0.053432400 | 1497 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote130 | 0.069000700 | 1497 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote131 | 0.057829500 | 1497 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote132 | 0.059437700 | 1497 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote133 | 0.054271400 | 1497 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote134 | 0.051609300 | 1497 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote135 | 0.061464400 | 1497 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote136 | 0.055475000 | 1497 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote137 | 0.057044500 | 1497 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote138 | 0.059361700 | 1497 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote139 | 0.060549800 | 1497 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote140 | 0.055532200 | 1497 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote141 | 0.057481600 | 1497 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote142 | 0.053384900 | 1497 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote143 | 0.050822800 | 1497 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote144 | 0.059153200 | 1497 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote145 | 0.058235200 | 1497 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote146 | 0.053526000 | 1497 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote147 | 0.054390300 | 1497 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote148 | 0.053337600 | 1497 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote149 | 0.053003500 | 1497 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote150 | 0.066586000 | 1497 | 1 | completa | Total; eventos.jsonl línea 151 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote151 | 0.052274300 | 1497 | 1 | completa | Total; eventos.jsonl línea 152 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote152 | 0.054041300 | 1497 | 1 | completa | Total; eventos.jsonl línea 153 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote153 | 0.051814900 | 1497 | 1 | completa | Total; eventos.jsonl línea 154 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote154 | 0.051391300 | 1497 | 1 | completa | Total; eventos.jsonl línea 155 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote155 | 0.054002800 | 1497 | 1 | completa | Total; eventos.jsonl línea 156 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote156 | 0.051718100 | 1497 | 1 | completa | Total; eventos.jsonl línea 157 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote157 | 0.052595000 | 1497 | 1 | completa | Total; eventos.jsonl línea 158 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote158 | 0.055189800 | 1497 | 1 | completa | Total; eventos.jsonl línea 159 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote159 | 0.051275500 | 1497 | 1 | completa | Total; eventos.jsonl línea 160 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote160 | 0.056202800 | 1497 | 1 | completa | Total; eventos.jsonl línea 161 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote161 | 0.051891400 | 1497 | 1 | completa | Total; eventos.jsonl línea 162 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote162 | 0.057950500 | 1497 | 1 | completa | Total; eventos.jsonl línea 163 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote163 | 0.051247400 | 1497 | 1 | completa | Total; eventos.jsonl línea 164 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote164 | 0.064905100 | 1497 | 1 | completa | Total; eventos.jsonl línea 165 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote165 | 0.059537300 | 1497 | 1 | completa | Total; eventos.jsonl línea 166 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote166 | 0.057819900 | 1497 | 1 | completa | Total; eventos.jsonl línea 167 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote167 | 0.053688900 | 1497 | 1 | completa | Total; eventos.jsonl línea 168 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote168 | 0.060559100 | 1497 | 1 | completa | Total; eventos.jsonl línea 169 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote169 | 0.058335600 | 1497 | 1 | completa | Total; eventos.jsonl línea 170 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote170 | 0.059971400 | 1497 | 1 | completa | Total; eventos.jsonl línea 171 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote171 | 0.056903800 | 1497 | 1 | completa | Total; eventos.jsonl línea 172 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote172 | 0.057257200 | 1497 | 1 | completa | Total; eventos.jsonl línea 173 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote173 | 0.052426600 | 1497 | 1 | completa | Total; eventos.jsonl línea 174 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote174 | 0.053589900 | 1497 | 1 | completa | Total; eventos.jsonl línea 175 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote175 | 0.055260200 | 1497 | 1 | completa | Total; eventos.jsonl línea 176 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote176 | 0.056991400 | 1497 | 1 | completa | Total; eventos.jsonl línea 177 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote177 | 0.052673600 | 1497 | 1 | completa | Total; eventos.jsonl línea 178 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote178 | 0.062548400 | 1497 | 1 | completa | Total; eventos.jsonl línea 179 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote179 | 0.060263500 | 1497 | 1 | completa | Total; eventos.jsonl línea 180 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote180 | 0.056293600 | 1497 | 1 | completa | Total; eventos.jsonl línea 181 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote181 | 0.058055500 | 1497 | 1 | completa | Total; eventos.jsonl línea 182 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote182 | 0.060697500 | 1497 | 1 | completa | Total; eventos.jsonl línea 183 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote183 | 0.055723900 | 1497 | 1 | completa | Total; eventos.jsonl línea 184 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote184 | 0.060600300 | 1497 | 1 | completa | Total; eventos.jsonl línea 185 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote185 | 0.054506700 | 1497 | 1 | completa | Total; eventos.jsonl línea 186 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote186 | 0.055241900 | 1497 | 1 | completa | Total; eventos.jsonl línea 187 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote187 | 0.055329800 | 1497 | 1 | completa | Total; eventos.jsonl línea 188 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote188 | 0.068055000 | 1497 | 1 | completa | Total; eventos.jsonl línea 189 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote189 | 0.059610800 | 1497 | 1 | completa | Total; eventos.jsonl línea 190 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote190 | 0.060966600 | 1497 | 1 | completa | Total; eventos.jsonl línea 191 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote191 | 0.065880600 | 1497 | 1 | completa | Total; eventos.jsonl línea 192 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote192 | 0.067647100 | 1497 | 1 | completa | Total; eventos.jsonl línea 193 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote193 | 0.069567300 | 1497 | 1 | completa | Total; eventos.jsonl línea 194 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote194 | 0.079565800 | 1497 | 1 | completa | Total; eventos.jsonl línea 195 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote195 | 0.079358600 | 1497 | 1 | completa | Total; eventos.jsonl línea 196 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote196 | 0.067992800 | 1497 | 1 | completa | Total; eventos.jsonl línea 197 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote197 | 0.069192000 | 1497 | 1 | completa | Total; eventos.jsonl línea 198 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote198 | 0.065985600 | 1497 | 1 | completa | Total; eventos.jsonl línea 199 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote199 | 0.073490200 | 1497 | 1 | completa | Total; eventos.jsonl línea 200 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote200 | 0.063427300 | 1497 | 1 | completa | Total; eventos.jsonl línea 201 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote201 | 0.058554700 | 1497 | 1 | completa | Total; eventos.jsonl línea 202 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote202 | 0.060232800 | 1497 | 1 | completa | Total; eventos.jsonl línea 203 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote203 | 0.065457400 | 1497 | 1 | completa | Total; eventos.jsonl línea 204 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote204 | 0.062715400 | 1497 | 1 | completa | Total; eventos.jsonl línea 205 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote205 | 0.064694800 | 1497 | 1 | completa | Total; eventos.jsonl línea 206 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote206 | 0.054928800 | 1497 | 1 | completa | Total; eventos.jsonl línea 207 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote207 | 0.063438500 | 1497 | 1 | completa | Total; eventos.jsonl línea 208 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote208 | 0.056127700 | 1497 | 1 | completa | Total; eventos.jsonl línea 209 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote209 | 0.058737100 | 1497 | 1 | completa | Total; eventos.jsonl línea 210 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote210 | 0.055139100 | 1497 | 1 | completa | Total; eventos.jsonl línea 211 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote211 | 0.057786500 | 1497 | 1 | completa | Total; eventos.jsonl línea 212 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote212 | 0.051420600 | 1497 | 1 | completa | Total; eventos.jsonl línea 213 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote213 | 0.058892100 | 1497 | 1 | completa | Total; eventos.jsonl línea 214 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote214 | 0.065549500 | 1497 | 1 | completa | Total; eventos.jsonl línea 215 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote215 | 0.056064700 | 1497 | 1 | completa | Total; eventos.jsonl línea 216 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote216 | 0.061831400 | 1497 | 1 | completa | Total; eventos.jsonl línea 217 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote217 | 0.055098400 | 1497 | 1 | completa | Total; eventos.jsonl línea 218 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote218 | 0.051002900 | 1497 | 1 | completa | Total; eventos.jsonl línea 219 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote219 | 0.057496900 | 1497 | 1 | completa | Total; eventos.jsonl línea 220 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote220 | 0.060899700 | 1497 | 1 | completa | Total; eventos.jsonl línea 221 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote221 | 0.058553400 | 1497 | 1 | completa | Total; eventos.jsonl línea 222 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote222 | 0.051280500 | 1497 | 1 | completa | Total; eventos.jsonl línea 223 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote223 | 0.051389400 | 1497 | 1 | completa | Total; eventos.jsonl línea 224 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote224 | 0.060979100 | 1497 | 1 | completa | Total; eventos.jsonl línea 225 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote225 | 0.054675200 | 1497 | 1 | completa | Total; eventos.jsonl línea 226 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote226 | 0.052080100 | 1497 | 1 | completa | Total; eventos.jsonl línea 227 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote227 | 0.052176700 | 1497 | 1 | completa | Total; eventos.jsonl línea 228 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote228 | 0.057108800 | 1497 | 1 | completa | Total; eventos.jsonl línea 229 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote229 | 0.053014900 | 1497 | 1 | completa | Total; eventos.jsonl línea 230 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote230 | 0.060075600 | 1497 | 1 | completa | Total; eventos.jsonl línea 231 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote231 | 0.063900500 | 1497 | 1 | completa | Total; eventos.jsonl línea 232 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote232 | 0.062701100 | 1497 | 1 | completa | Total; eventos.jsonl línea 233 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote233 | 0.062646200 | 1497 | 1 | completa | Total; eventos.jsonl línea 234 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote234 | 0.061678400 | 1497 | 1 | completa | Total; eventos.jsonl línea 235 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote235 | 0.060575500 | 1497 | 1 | completa | Total; eventos.jsonl línea 236 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote236 | 0.056013600 | 1497 | 1 | completa | Total; eventos.jsonl línea 237 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote237 | 0.059736200 | 1497 | 1 | completa | Total; eventos.jsonl línea 238 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote238 | 0.054823400 | 1497 | 1 | completa | Total; eventos.jsonl línea 239 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote239 | 0.054648700 | 1497 | 1 | completa | Total; eventos.jsonl línea 240 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote240 | 0.059583800 | 1497 | 1 | completa | Total; eventos.jsonl línea 241 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote241 | 0.052497600 | 1497 | 1 | completa | Total; eventos.jsonl línea 242 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote242 | 0.051217900 | 1497 | 1 | completa | Total; eventos.jsonl línea 243 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote243 | 0.056146600 | 1497 | 1 | completa | Total; eventos.jsonl línea 244 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote244 | 0.055051700 | 1497 | 1 | completa | Total; eventos.jsonl línea 245 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote245 | 0.056135500 | 1497 | 1 | completa | Total; eventos.jsonl línea 246 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote246 | 0.052290000 | 1497 | 1 | completa | Total; eventos.jsonl línea 247 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote247 | 0.054247600 | 1497 | 1 | completa | Total; eventos.jsonl línea 248 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote248 | 0.057826700 | 1497 | 1 | completa | Total; eventos.jsonl línea 249 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote249 | 0.056218500 | 1497 | 1 | completa | Total; eventos.jsonl línea 250 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote250 | 0.057796900 | 1497 | 1 | completa | Total; eventos.jsonl línea 251 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote251 | 0.056044000 | 1497 | 1 | completa | Total; eventos.jsonl línea 252 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote252 | 0.060710300 | 1497 | 1 | completa | Total; eventos.jsonl línea 253 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote253 | 0.062846200 | 1497 | 1 | completa | Total; eventos.jsonl línea 254 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote254 | 0.061579000 | 1497 | 1 | completa | Total; eventos.jsonl línea 255 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote255 | 0.053850000 | 1497 | 1 | completa | Total; eventos.jsonl línea 256 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote256 | 0.050354000 | 1497 | 1 | completa | Total; eventos.jsonl línea 257 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote257 | 0.059322400 | 1497 | 1 | completa | Total; eventos.jsonl línea 258 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote258 | 0.054682700 | 1497 | 1 | completa | Total; eventos.jsonl línea 259 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote259 | 0.054527500 | 1497 | 1 | completa | Total; eventos.jsonl línea 260 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote260 | 0.054735400 | 1497 | 1 | completa | Total; eventos.jsonl línea 261 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote261 | 0.056800900 | 1497 | 1 | completa | Total; eventos.jsonl línea 262 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote262 | 0.053466800 | 1497 | 1 | completa | Total; eventos.jsonl línea 263 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote263 | 0.063009000 | 1497 | 1 | completa | Total; eventos.jsonl línea 264 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote264 | 0.058290000 | 1497 | 1 | completa | Total; eventos.jsonl línea 265 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote265 | 0.053889400 | 1497 | 1 | completa | Total; eventos.jsonl línea 266 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote266 | 0.053628500 | 1497 | 1 | completa | Total; eventos.jsonl línea 267 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote267 | 0.052263400 | 1497 | 1 | completa | Total; eventos.jsonl línea 268 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote268 | 0.055515500 | 1497 | 1 | completa | Total; eventos.jsonl línea 269 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote269 | 0.056244200 | 1497 | 1 | completa | Total; eventos.jsonl línea 270 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote270 | 0.059383200 | 1497 | 1 | completa | Total; eventos.jsonl línea 271 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote271 | 0.051057700 | 1497 | 1 | completa | Total; eventos.jsonl línea 272 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote272 | 0.054940100 | 1497 | 1 | completa | Total; eventos.jsonl línea 273 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote273 | 0.051680500 | 1497 | 1 | completa | Total; eventos.jsonl línea 274 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote274 | 0.052597000 | 1497 | 1 | completa | Total; eventos.jsonl línea 275 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote275 | 0.059554400 | 1497 | 1 | completa | Total; eventos.jsonl línea 276 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote276 | 0.062005000 | 1497 | 1 | completa | Total; eventos.jsonl línea 277 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote277 | 0.055303100 | 1497 | 1 | completa | Total; eventos.jsonl línea 278 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote278 | 0.057340300 | 1497 | 1 | completa | Total; eventos.jsonl línea 279 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote279 | 0.053954900 | 1497 | 1 | completa | Total; eventos.jsonl línea 280 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote280 | 0.054416700 | 1497 | 1 | completa | Total; eventos.jsonl línea 281 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote281 | 0.059242100 | 1497 | 1 | completa | Total; eventos.jsonl línea 282 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote282 | 0.058116400 | 1497 | 1 | completa | Total; eventos.jsonl línea 283 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote283 | 0.061166200 | 1497 | 1 | completa | Total; eventos.jsonl línea 284 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote284 | 0.063177400 | 1497 | 1 | completa | Total; eventos.jsonl línea 285 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote285 | 0.064335700 | 1497 | 1 | completa | Total; eventos.jsonl línea 286 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote286 | 0.059302400 | 1497 | 1 | completa | Total; eventos.jsonl línea 287 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote287 | 0.057297500 | 1497 | 1 | completa | Total; eventos.jsonl línea 288 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote288 | 0.061973300 | 1497 | 1 | completa | Total; eventos.jsonl línea 289 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote289 | 0.061673000 | 1497 | 1 | completa | Total; eventos.jsonl línea 290 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote290 | 0.062216900 | 1497 | 1 | completa | Total; eventos.jsonl línea 291 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote291 | 0.055239300 | 1497 | 1 | completa | Total; eventos.jsonl línea 292 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote292 | 0.057529300 | 1497 | 1 | completa | Total; eventos.jsonl línea 293 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote293 | 0.056618600 | 1497 | 1 | completa | Total; eventos.jsonl línea 294 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote294 | 0.058125100 | 1497 | 1 | completa | Total; eventos.jsonl línea 295 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote295 | 0.059925700 | 1497 | 1 | completa | Total; eventos.jsonl línea 296 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote296 | 0.057052600 | 1497 | 1 | completa | Total; eventos.jsonl línea 297 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote297 | 0.058678400 | 1497 | 1 | completa | Total; eventos.jsonl línea 298 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote298 | 0.050891300 | 1497 | 1 | completa | Total; eventos.jsonl línea 299 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote299 | 0.056213600 | 1497 | 1 | completa | Total; eventos.jsonl línea 300 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote300 | 0.055820500 | 1497 | 1 | completa | Total; eventos.jsonl línea 301 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote301 | 0.052625100 | 1497 | 1 | completa | Total; eventos.jsonl línea 302 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote302 | 0.056740100 | 1497 | 1 | completa | Total; eventos.jsonl línea 303 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote303 | 0.056977500 | 1497 | 1 | completa | Total; eventos.jsonl línea 304 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote304 | 0.059083000 | 1497 | 1 | completa | Total; eventos.jsonl línea 305 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote305 | 0.054767300 | 1497 | 1 | completa | Total; eventos.jsonl línea 306 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote306 | 0.057867400 | 1497 | 1 | completa | Total; eventos.jsonl línea 307 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote307 | 0.052027400 | 1497 | 1 | completa | Total; eventos.jsonl línea 308 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote308 | 0.054950700 | 1497 | 1 | completa | Total; eventos.jsonl línea 309 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote309 | 0.050477900 | 1497 | 1 | completa | Total; eventos.jsonl línea 310 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote310 | 0.056067900 | 1497 | 1 | completa | Total; eventos.jsonl línea 311 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote311 | 0.054571700 | 1497 | 1 | completa | Total; eventos.jsonl línea 312 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote312 | 0.053920400 | 1497 | 1 | completa | Total; eventos.jsonl línea 313 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote313 | 0.051045500 | 1497 | 1 | completa | Total; eventos.jsonl línea 314 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote314 | 0.056294700 | 1497 | 1 | completa | Total; eventos.jsonl línea 315 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote315 | 0.054645000 | 1497 | 1 | completa | Total; eventos.jsonl línea 316 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote316 | 0.053416400 | 1497 | 1 | completa | Total; eventos.jsonl línea 317 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote317 | 0.055199500 | 1497 | 1 | completa | Total; eventos.jsonl línea 318 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote318 | 0.057299400 | 1497 | 1 | completa | Total; eventos.jsonl línea 319 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote319 | 0.058623600 | 1497 | 1 | completa | Total; eventos.jsonl línea 320 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote320 | 0.053031800 | 1497 | 1 | completa | Total; eventos.jsonl línea 321 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote321 | 0.055030600 | 1497 | 1 | completa | Total; eventos.jsonl línea 322 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote322 | 0.056136600 | 1497 | 1 | completa | Total; eventos.jsonl línea 323 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote323 | 0.054893100 | 1497 | 1 | completa | Total; eventos.jsonl línea 324 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote324 | 0.051207000 | 1497 | 1 | completa | Total; eventos.jsonl línea 325 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote325 | 0.058563500 | 1497 | 1 | completa | Total; eventos.jsonl línea 326 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote326 | 0.050645500 | 1497 | 1 | completa | Total; eventos.jsonl línea 327 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote327 | 0.051017100 | 1497 | 1 | completa | Total; eventos.jsonl línea 328 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote328 | 0.048522000 | 1497 | 1 | completa | Total; eventos.jsonl línea 329 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote329 | 0.055035900 | 1497 | 1 | completa | Total; eventos.jsonl línea 330 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote330 | 0.048159200 | 1497 | 1 | completa | Total; eventos.jsonl línea 331 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote331 | 0.053425900 | 1497 | 1 | completa | Total; eventos.jsonl línea 332 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote332 | 0.048522900 | 1497 | 1 | completa | Total; eventos.jsonl línea 333 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote333 | 0.051514800 | 1497 | 1 | completa | Total; eventos.jsonl línea 334 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote334 | 0.050143100 | 1497 | 1 | completa | Total; eventos.jsonl línea 335 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote335 | 0.051716400 | 1497 | 1 | completa | Total; eventos.jsonl línea 336 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote336 | 0.052545200 | 1497 | 1 | completa | Total; eventos.jsonl línea 337 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote337 | 0.053673100 | 1497 | 1 | completa | Total; eventos.jsonl línea 338 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote338 | 0.054913300 | 1497 | 1 | completa | Total; eventos.jsonl línea 339 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote339 | 0.052559500 | 1497 | 1 | completa | Total; eventos.jsonl línea 340 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote340 | 0.050673200 | 1497 | 1 | completa | Total; eventos.jsonl línea 341 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote341 | 0.052304400 | 1497 | 1 | completa | Total; eventos.jsonl línea 342 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote342 | 0.054037200 | 1497 | 1 | completa | Total; eventos.jsonl línea 343 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote343 | 0.054817100 | 1497 | 1 | completa | Total; eventos.jsonl línea 344 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote344 | 0.056086000 | 1497 | 1 | completa | Total; eventos.jsonl línea 345 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote345 | 0.060987400 | 1497 | 1 | completa | Total; eventos.jsonl línea 346 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote346 | 0.056590200 | 1497 | 1 | completa | Total; eventos.jsonl línea 347 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote347 | 0.060763200 | 1497 | 1 | completa | Total; eventos.jsonl línea 348 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote348 | 0.057531700 | 1497 | 1 | completa | Total; eventos.jsonl línea 349 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote349 | 0.062610300 | 1497 | 1 | completa | Total; eventos.jsonl línea 350 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote350 | 0.055670400 | 1497 | 1 | completa | Total; eventos.jsonl línea 351 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote351 | 0.060731500 | 1497 | 1 | completa | Total; eventos.jsonl línea 352 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote352 | 0.061811800 | 1497 | 1 | completa | Total; eventos.jsonl línea 353 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote353 | 0.052372800 | 1497 | 1 | completa | Total; eventos.jsonl línea 354 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote354 | 0.055132200 | 1497 | 1 | completa | Total; eventos.jsonl línea 355 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote355 | 0.056841100 | 1497 | 1 | completa | Total; eventos.jsonl línea 356 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote356 | 0.058028000 | 1497 | 1 | completa | Total; eventos.jsonl línea 357 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote357 | 0.055252500 | 1497 | 1 | completa | Total; eventos.jsonl línea 358 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote358 | 0.059583200 | 1497 | 1 | completa | Total; eventos.jsonl línea 359 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote359 | 0.062637300 | 1497 | 1 | completa | Total; eventos.jsonl línea 360 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote360 | 0.055039000 | 1497 | 1 | completa | Total; eventos.jsonl línea 361 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote361 | 0.056884000 | 1497 | 1 | completa | Total; eventos.jsonl línea 362 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote362 | 0.054499800 | 1497 | 1 | completa | Total; eventos.jsonl línea 363 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote363 | 0.053330900 | 1497 | 1 | completa | Total; eventos.jsonl línea 364 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote364 | 0.052226400 | 1497 | 1 | completa | Total; eventos.jsonl línea 365 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote365 | 0.054994700 | 1497 | 1 | completa | Total; eventos.jsonl línea 366 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote366 | 0.053871300 | 1497 | 1 | completa | Total; eventos.jsonl línea 367 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote367 | 0.057340600 | 1497 | 1 | completa | Total; eventos.jsonl línea 368 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote368 | 0.052440300 | 1497 | 1 | completa | Total; eventos.jsonl línea 369 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote369 | 0.052240500 | 1497 | 1 | completa | Total; eventos.jsonl línea 370 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote370 | 0.053680500 | 1497 | 1 | completa | Total; eventos.jsonl línea 371 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote371 | 0.053892400 | 1497 | 1 | completa | Total; eventos.jsonl línea 372 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote372 | 0.058208900 | 1497 | 1 | completa | Total; eventos.jsonl línea 373 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote373 | 0.058566200 | 1497 | 1 | completa | Total; eventos.jsonl línea 374 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote374 | 0.058855500 | 1497 | 1 | completa | Total; eventos.jsonl línea 375 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote375 | 0.054391800 | 1497 | 1 | completa | Total; eventos.jsonl línea 376 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote376 | 0.056313300 | 1497 | 1 | completa | Total; eventos.jsonl línea 377 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote377 | 0.075511600 | 1497 | 1 | completa | Total; eventos.jsonl línea 378 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote378 | 0.066588200 | 1497 | 1 | completa | Total; eventos.jsonl línea 379 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote379 | 0.055483600 | 1497 | 1 | completa | Total; eventos.jsonl línea 380 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote380 | 0.056907800 | 1497 | 1 | completa | Total; eventos.jsonl línea 381 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote381 | 0.053300200 | 1497 | 1 | completa | Total; eventos.jsonl línea 382 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote382 | 0.059209300 | 1497 | 1 | completa | Total; eventos.jsonl línea 383 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote383 | 0.051185600 | 1497 | 1 | completa | Total; eventos.jsonl línea 384 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote384 | 0.056639900 | 1497 | 1 | completa | Total; eventos.jsonl línea 385 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote385 | 0.050401300 | 1497 | 1 | completa | Total; eventos.jsonl línea 386 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote386 | 0.050002000 | 1497 | 1 | completa | Total; eventos.jsonl línea 387 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote387 | 0.058880300 | 1497 | 1 | completa | Total; eventos.jsonl línea 388 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote388 | 0.056986500 | 1497 | 1 | completa | Total; eventos.jsonl línea 389 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote389 | 0.058296600 | 1497 | 1 | completa | Total; eventos.jsonl línea 390 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote390 | 0.058420800 | 1497 | 1 | completa | Total; eventos.jsonl línea 391 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote391 | 0.052955000 | 1497 | 1 | completa | Total; eventos.jsonl línea 392 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote392 | 0.052995900 | 1497 | 1 | completa | Total; eventos.jsonl línea 393 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote393 | 0.054059200 | 1497 | 1 | completa | Total; eventos.jsonl línea 394 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote394 | 0.056619500 | 1497 | 1 | completa | Total; eventos.jsonl línea 395 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote395 | 0.050801400 | 1497 | 1 | completa | Total; eventos.jsonl línea 396 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote396 | 0.054431700 | 1497 | 1 | completa | Total; eventos.jsonl línea 397 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote397 | 0.061624500 | 1497 | 1 | completa | Total; eventos.jsonl línea 398 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote398 | 0.051744300 | 1497 | 1 | completa | Total; eventos.jsonl línea 399 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote399 | 0.057289300 | 1497 | 1 | completa | Total; eventos.jsonl línea 400 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote400 | 0.056617300 | 1497 | 1 | completa | Total; eventos.jsonl línea 401 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote401 | 0.055050300 | 1497 | 1 | completa | Total; eventos.jsonl línea 402 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote402 | 0.052798400 | 1497 | 1 | completa | Total; eventos.jsonl línea 403 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote403 | 0.055086000 | 1497 | 1 | completa | Total; eventos.jsonl línea 404 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote404 | 0.050603800 | 1497 | 1 | completa | Total; eventos.jsonl línea 405 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote405 | 0.058459500 | 1497 | 1 | completa | Total; eventos.jsonl línea 406 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote406 | 0.052409500 | 1497 | 1 | completa | Total; eventos.jsonl línea 407 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote407 | 0.052773300 | 1497 | 1 | completa | Total; eventos.jsonl línea 408 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote408 | 0.050372400 | 1497 | 1 | completa | Total; eventos.jsonl línea 409 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote409 | 0.053191100 | 1497 | 1 | completa | Total; eventos.jsonl línea 410 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote410 | 0.054930700 | 1497 | 1 | completa | Total; eventos.jsonl línea 411 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote411 | 0.052929700 | 1497 | 1 | completa | Total; eventos.jsonl línea 412 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote412 | 0.055008700 | 1497 | 1 | completa | Total; eventos.jsonl línea 413 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote413 | 0.055776000 | 1497 | 1 | completa | Total; eventos.jsonl línea 414 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote414 | 0.059584800 | 1497 | 1 | completa | Total; eventos.jsonl línea 415 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote415 | 0.058652300 | 1497 | 1 | completa | Total; eventos.jsonl línea 416 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote416 | 0.053139100 | 1497 | 1 | completa | Total; eventos.jsonl línea 417 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote417 | 0.060753800 | 1497 | 1 | completa | Total; eventos.jsonl línea 418 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote418 | 0.063309300 | 1497 | 1 | completa | Total; eventos.jsonl línea 419 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote419 | 0.061683800 | 1497 | 1 | completa | Total; eventos.jsonl línea 420 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote420 | 0.057396400 | 1497 | 1 | completa | Total; eventos.jsonl línea 421 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote421 | 0.054824800 | 1497 | 1 | completa | Total; eventos.jsonl línea 422 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote422 | 0.052467000 | 1497 | 1 | completa | Total; eventos.jsonl línea 423 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote423 | 0.055171900 | 1497 | 1 | completa | Total; eventos.jsonl línea 424 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote424 | 0.057620700 | 1497 | 1 | completa | Total; eventos.jsonl línea 425 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote425 | 0.053588300 | 1497 | 1 | completa | Total; eventos.jsonl línea 426 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote426 | 0.058466000 | 1497 | 1 | completa | Total; eventos.jsonl línea 427 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote427 | 0.051394600 | 1497 | 1 | completa | Total; eventos.jsonl línea 428 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote428 | 0.056135400 | 1497 | 1 | completa | Total; eventos.jsonl línea 429 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote429 | 0.056166900 | 1497 | 1 | completa | Total; eventos.jsonl línea 430 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote430 | 0.051681200 | 1497 | 1 | completa | Total; eventos.jsonl línea 431 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote431 | 0.055084700 | 1497 | 1 | completa | Total; eventos.jsonl línea 432 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote432 | 0.053111000 | 1497 | 1 | completa | Total; eventos.jsonl línea 433 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote433 | 0.049892200 | 1497 | 1 | completa | Total; eventos.jsonl línea 434 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote434 | 0.050841600 | 1497 | 1 | completa | Total; eventos.jsonl línea 435 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote435 | 0.057090300 | 1497 | 1 | completa | Total; eventos.jsonl línea 436 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote436 | 0.051749300 | 1497 | 1 | completa | Total; eventos.jsonl línea 437 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote437 | 0.050338600 | 1497 | 1 | completa | Total; eventos.jsonl línea 438 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote438 | 0.050149000 | 1497 | 1 | completa | Total; eventos.jsonl línea 439 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote439 | 0.048773700 | 1497 | 1 | completa | Total; eventos.jsonl línea 440 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote440 | 0.051349400 | 1497 | 1 | completa | Total; eventos.jsonl línea 441 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote441 | 0.059795700 | 1497 | 1 | completa | Total; eventos.jsonl línea 442 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote442 | 0.054129800 | 1497 | 1 | completa | Total; eventos.jsonl línea 443 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote443 | 0.050905000 | 1497 | 1 | completa | Total; eventos.jsonl línea 444 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote444 | 0.059593200 | 1497 | 1 | completa | Total; eventos.jsonl línea 445 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote445 | 0.055204300 | 1497 | 1 | completa | Total; eventos.jsonl línea 446 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote446 | 0.051355700 | 1497 | 1 | completa | Total; eventos.jsonl línea 447 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote447 | 0.056498200 | 1497 | 1 | completa | Total; eventos.jsonl línea 448 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote448 | 0.051910000 | 1497 | 1 | completa | Total; eventos.jsonl línea 449 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote449 | 0.052944200 | 1497 | 1 | completa | Total; eventos.jsonl línea 450 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote450 | 0.054613600 | 1497 | 1 | completa | Total; eventos.jsonl línea 451 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote451 | 0.051651000 | 1497 | 1 | completa | Total; eventos.jsonl línea 452 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote452 | 0.050034700 | 1497 | 1 | completa | Total; eventos.jsonl línea 453 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote453 | 0.057600500 | 1497 | 1 | completa | Total; eventos.jsonl línea 454 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote454 | 0.051103200 | 1497 | 1 | completa | Total; eventos.jsonl línea 455 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote455 | 0.054499400 | 1497 | 1 | completa | Total; eventos.jsonl línea 456 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote456 | 0.053804400 | 1497 | 1 | completa | Total; eventos.jsonl línea 457 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote457 | 0.051540500 | 1497 | 1 | completa | Total; eventos.jsonl línea 458 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote458 | 0.052381000 | 1497 | 1 | completa | Total; eventos.jsonl línea 459 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote459 | 0.057059700 | 1497 | 1 | completa | Total; eventos.jsonl línea 460 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote460 | 0.059000200 | 1497 | 1 | completa | Total; eventos.jsonl línea 461 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote461 | 0.059592600 | 1497 | 1 | completa | Total; eventos.jsonl línea 462 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote462 | 0.058355800 | 1497 | 1 | completa | Total; eventos.jsonl línea 463 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote463 | 0.063718900 | 1497 | 1 | completa | Total; eventos.jsonl línea 464 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote464 | 0.064825900 | 1497 | 1 | completa | Total; eventos.jsonl línea 465 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote465 | 0.054165700 | 1497 | 1 | completa | Total; eventos.jsonl línea 466 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote466 | 0.053218100 | 1497 | 1 | completa | Total; eventos.jsonl línea 467 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote467 | 0.056657800 | 1497 | 1 | completa | Total; eventos.jsonl línea 468 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote468 | 0.056578900 | 1497 | 1 | completa | Total; eventos.jsonl línea 469 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote469 | 0.052289500 | 1497 | 1 | completa | Total; eventos.jsonl línea 470 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote470 | 0.053574800 | 1497 | 1 | completa | Total; eventos.jsonl línea 471 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote471 | 0.050676700 | 1497 | 1 | completa | Total; eventos.jsonl línea 472 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote472 | 0.055466700 | 1497 | 1 | completa | Total; eventos.jsonl línea 473 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote473 | 0.049674000 | 1497 | 1 | completa | Total; eventos.jsonl línea 474 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote474 | 0.049470000 | 1497 | 1 | completa | Total; eventos.jsonl línea 475 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote475 | 0.057700800 | 1497 | 1 | completa | Total; eventos.jsonl línea 476 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote476 | 0.049223400 | 1497 | 1 | completa | Total; eventos.jsonl línea 477 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote477 | 0.051786000 | 1497 | 1 | completa | Total; eventos.jsonl línea 478 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote478 | 0.068308600 | 1497 | 1 | completa | Total; eventos.jsonl línea 479 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote479 | 0.055634100 | 1497 | 1 | completa | Total; eventos.jsonl línea 480 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote480 | 0.050301100 | 1497 | 1 | completa | Total; eventos.jsonl línea 481 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote481 | 0.049887500 | 1497 | 1 | completa | Total; eventos.jsonl línea 482 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote482 | 0.073848200 | 1497 | 1 | completa | Total; eventos.jsonl línea 483 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote483 | 0.056891300 | 1497 | 1 | completa | Total; eventos.jsonl línea 484 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote484 | 0.063506700 | 1497 | 1 | completa | Total; eventos.jsonl línea 485 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote485 | 0.061530100 | 1497 | 1 | completa | Total; eventos.jsonl línea 486 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote486 | 0.139797300 | 1497 | 1 | completa | Total; eventos.jsonl línea 487 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote487 | 0.207010800 | 1497 | 1 | completa | Total; eventos.jsonl línea 488 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote488 | 0.173496500 | 1497 | 1 | completa | Total; eventos.jsonl línea 489 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote489 | 0.113486000 | 1497 | 1 | completa | Total; eventos.jsonl línea 490 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote490 | 0.101082700 | 1497 | 1 | completa | Total; eventos.jsonl línea 491 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote491 | 0.127845300 | 1497 | 1 | completa | Total; eventos.jsonl línea 492 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote492 | 0.084823100 | 1497 | 1 | completa | Total; eventos.jsonl línea 493 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote493 | 0.109252400 | 1497 | 1 | completa | Total; eventos.jsonl línea 494 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote494 | 0.086227700 | 1497 | 1 | completa | Total; eventos.jsonl línea 495 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote495 | 0.073487900 | 1497 | 1 | completa | Total; eventos.jsonl línea 496 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote496 | 0.075622000 | 1497 | 1 | completa | Total; eventos.jsonl línea 497 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote497 | 0.067140300 | 1497 | 1 | completa | Total; eventos.jsonl línea 498 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote498 | 0.061479700 | 1497 | 1 | completa | Total; eventos.jsonl línea 499 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote499 | 0.072672100 | 1497 | 1 | completa | Total; eventos.jsonl línea 500 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote500 | 0.071436900 | 1497 | 1 | completa | Total; eventos.jsonl línea 501 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote501 | 0.125083400 | 1497 | 1 | completa | Total; eventos.jsonl línea 502 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote502 | 0.129331000 | 1497 | 1 | completa | Total; eventos.jsonl línea 503 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote503 | 0.099494100 | 1497 | 1 | completa | Total; eventos.jsonl línea 504 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote504 | 0.094475200 | 1497 | 1 | completa | Total; eventos.jsonl línea 505 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote505 | 0.099817200 | 1497 | 1 | completa | Total; eventos.jsonl línea 506 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote506 | 0.114395500 | 1497 | 1 | completa | Total; eventos.jsonl línea 507 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote507 | 0.118821800 | 1497 | 1 | completa | Total; eventos.jsonl línea 508 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote508 | 0.093416200 | 1497 | 1 | completa | Total; eventos.jsonl línea 509 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote509 | 0.093699500 | 1497 | 1 | completa | Total; eventos.jsonl línea 510 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote510 | 0.111267600 | 1497 | 1 | completa | Total; eventos.jsonl línea 511 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote511 | 0.114601500 | 1497 | 1 | completa | Total; eventos.jsonl línea 512 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote512 | 0.111426300 | 1497 | 1 | completa | Total; eventos.jsonl línea 513 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote513 | 0.111160900 | 1497 | 1 | completa | Total; eventos.jsonl línea 514 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote514 | 0.098196900 | 1497 | 1 | completa | Total; eventos.jsonl línea 515 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote515 | 0.093477900 | 1497 | 1 | completa | Total; eventos.jsonl línea 516 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote516 | 0.114508200 | 1497 | 1 | completa | Total; eventos.jsonl línea 517 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote517 | 0.111092700 | 1497 | 1 | completa | Total; eventos.jsonl línea 518 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote518 | 0.098575200 | 1497 | 1 | completa | Total; eventos.jsonl línea 519 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote519 | 0.090319600 | 1497 | 1 | completa | Total; eventos.jsonl línea 520 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote520 | 0.100920600 | 1497 | 1 | completa | Total; eventos.jsonl línea 521 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote521 | 0.108759400 | 1497 | 1 | completa | Total; eventos.jsonl línea 522 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote522 | 0.108957900 | 1497 | 1 | completa | Total; eventos.jsonl línea 523 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote523 | 0.102660800 | 1497 | 1 | completa | Total; eventos.jsonl línea 524 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote524 | 0.099140200 | 1497 | 1 | completa | Total; eventos.jsonl línea 525 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote525 | 0.091048500 | 1497 | 1 | completa | Total; eventos.jsonl línea 526 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote526 | 0.088904600 | 1497 | 1 | completa | Total; eventos.jsonl línea 527 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote527 | 0.085514100 | 1497 | 1 | completa | Total; eventos.jsonl línea 528 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote528 | 0.114927100 | 1497 | 1 | completa | Total; eventos.jsonl línea 529 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote529 | 0.117706500 | 1497 | 1 | completa | Total; eventos.jsonl línea 530 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote530 | 0.117970700 | 1497 | 1 | completa | Total; eventos.jsonl línea 531 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote531 | 0.112582400 | 1497 | 1 | completa | Total; eventos.jsonl línea 532 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote532 | 0.100525700 | 1497 | 1 | completa | Total; eventos.jsonl línea 533 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote533 | 0.098444200 | 1497 | 1 | completa | Total; eventos.jsonl línea 534 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote534 | 0.094544200 | 1497 | 1 | completa | Total; eventos.jsonl línea 535 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote535 | 0.100827900 | 1497 | 1 | completa | Total; eventos.jsonl línea 536 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote536 | 0.093495800 | 1497 | 1 | completa | Total; eventos.jsonl línea 537 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote537 | 0.100956200 | 1497 | 1 | completa | Total; eventos.jsonl línea 538 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote538 | 0.103417200 | 1497 | 1 | completa | Total; eventos.jsonl línea 539 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote539 | 0.095019100 | 1497 | 1 | completa | Total; eventos.jsonl línea 540 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote540 | 0.104753000 | 1497 | 1 | completa | Total; eventos.jsonl línea 541 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote541 | 0.115409600 | 1497 | 1 | completa | Total; eventos.jsonl línea 542 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote542 | 0.104962300 | 1497 | 1 | completa | Total; eventos.jsonl línea 543 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote543 | 0.098806300 | 1497 | 1 | completa | Total; eventos.jsonl línea 544 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote544 | 0.090241800 | 1497 | 1 | completa | Total; eventos.jsonl línea 545 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote545 | 0.093497000 | 1497 | 1 | completa | Total; eventos.jsonl línea 546 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote546 | 0.087559000 | 1497 | 1 | completa | Total; eventos.jsonl línea 547 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote547 | 0.092451100 | 1497 | 1 | completa | Total; eventos.jsonl línea 548 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote548 | 0.113502700 | 1497 | 1 | completa | Total; eventos.jsonl línea 549 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote549 | 0.088731700 | 1497 | 1 | completa | Total; eventos.jsonl línea 550 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote550 | 0.084793300 | 1497 | 1 | completa | Total; eventos.jsonl línea 551 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote551 | 0.091359700 | 1497 | 1 | completa | Total; eventos.jsonl línea 552 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote552 | 0.115596100 | 1497 | 1 | completa | Total; eventos.jsonl línea 553 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote553 | 0.102037100 | 1497 | 1 | completa | Total; eventos.jsonl línea 554 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote554 | 0.084127900 | 1497 | 1 | completa | Total; eventos.jsonl línea 555 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote555 | 0.087726700 | 1497 | 1 | completa | Total; eventos.jsonl línea 556 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote556 | 0.084123700 | 1497 | 1 | completa | Total; eventos.jsonl línea 557 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote557 | 0.084066300 | 1497 | 1 | completa | Total; eventos.jsonl línea 558 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote558 | 0.091851100 | 1497 | 1 | completa | Total; eventos.jsonl línea 559 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote559 | 0.086184500 | 1497 | 1 | completa | Total; eventos.jsonl línea 560 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote560 | 0.089155000 | 1497 | 1 | completa | Total; eventos.jsonl línea 561 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote561 | 0.085543800 | 1497 | 1 | completa | Total; eventos.jsonl línea 562 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote562 | 0.092033700 | 1497 | 1 | completa | Total; eventos.jsonl línea 563 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote563 | 0.106399200 | 1497 | 1 | completa | Total; eventos.jsonl línea 564 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote564 | 0.098610500 | 1497 | 1 | completa | Total; eventos.jsonl línea 565 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote565 | 0.102513700 | 1497 | 1 | completa | Total; eventos.jsonl línea 566 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote566 | 0.114146300 | 1497 | 1 | completa | Total; eventos.jsonl línea 567 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote567 | 0.112728000 | 1497 | 1 | completa | Total; eventos.jsonl línea 568 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote568 | 0.106163800 | 1497 | 1 | completa | Total; eventos.jsonl línea 569 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote569 | 0.103742100 | 1497 | 1 | completa | Total; eventos.jsonl línea 570 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote570 | 0.100924500 | 1497 | 1 | completa | Total; eventos.jsonl línea 571 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote571 | 0.110795800 | 1497 | 1 | completa | Total; eventos.jsonl línea 572 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote572 | 0.118746200 | 1497 | 1 | completa | Total; eventos.jsonl línea 573 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote573 | 0.105150500 | 1497 | 1 | completa | Total; eventos.jsonl línea 574 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote574 | 0.101700900 | 1497 | 1 | completa | Total; eventos.jsonl línea 575 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote575 | 0.101775200 | 1497 | 1 | completa | Total; eventos.jsonl línea 576 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote576 | 0.095508600 | 1497 | 1 | completa | Total; eventos.jsonl línea 577 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote577 | 0.106514300 | 1497 | 1 | completa | Total; eventos.jsonl línea 578 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote578 | 0.099148000 | 1497 | 1 | completa | Total; eventos.jsonl línea 579 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote579 | 0.110653600 | 1497 | 1 | completa | Total; eventos.jsonl línea 580 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote580 | 0.098086000 | 1497 | 1 | completa | Total; eventos.jsonl línea 581 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote581 | 0.102495300 | 1497 | 1 | completa | Total; eventos.jsonl línea 582 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote582 | 0.092125200 | 1497 | 1 | completa | Total; eventos.jsonl línea 583 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote583 | 0.090931500 | 1497 | 1 | completa | Total; eventos.jsonl línea 584 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote584 | 0.081655500 | 1497 | 1 | completa | Total; eventos.jsonl línea 585 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote585 | 0.083169600 | 1497 | 1 | completa | Total; eventos.jsonl línea 586 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote586 | 0.122580200 | 1497 | 1 | completa | Total; eventos.jsonl línea 587 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote587 | 0.102931900 | 1497 | 1 | completa | Total; eventos.jsonl línea 588 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote588 | 0.084755900 | 1497 | 1 | completa | Total; eventos.jsonl línea 589 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote589 | 0.084375900 | 1497 | 1 | completa | Total; eventos.jsonl línea 590 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote590 | 0.090459100 | 1497 | 1 | completa | Total; eventos.jsonl línea 591 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote591 | 0.102795400 | 1497 | 1 | completa | Total; eventos.jsonl línea 592 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote592 | 0.097410500 | 1497 | 1 | completa | Total; eventos.jsonl línea 593 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote593 | 0.101096200 | 1497 | 1 | completa | Total; eventos.jsonl línea 594 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote594 | 0.105001200 | 1497 | 1 | completa | Total; eventos.jsonl línea 595 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote595 | 0.085195400 | 1497 | 1 | completa | Total; eventos.jsonl línea 596 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote596 | 0.085191300 | 1497 | 1 | completa | Total; eventos.jsonl línea 597 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote597 | 0.079965200 | 1497 | 1 | completa | Total; eventos.jsonl línea 598 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote598 | 0.081687000 | 1497 | 1 | completa | Total; eventos.jsonl línea 599 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote599 | 0.081700800 | 1497 | 1 | completa | Total; eventos.jsonl línea 600 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote600 | 0.078697600 | 1497 | 1 | completa | Total; eventos.jsonl línea 601 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote601 | 0.092688800 | 1497 | 1 | completa | Total; eventos.jsonl línea 602 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote602 | 0.101657900 | 1497 | 1 | completa | Total; eventos.jsonl línea 603 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote603 | 0.102982200 | 1497 | 1 | completa | Total; eventos.jsonl línea 604 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote604 | 0.106147000 | 1497 | 1 | completa | Total; eventos.jsonl línea 605 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote605 | 0.107921200 | 1497 | 1 | completa | Total; eventos.jsonl línea 606 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote606 | 0.090590400 | 1497 | 1 | completa | Total; eventos.jsonl línea 607 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote607 | 0.084221500 | 1497 | 1 | completa | Total; eventos.jsonl línea 608 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote608 | 0.079758700 | 1497 | 1 | completa | Total; eventos.jsonl línea 609 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote609 | 0.081418800 | 1497 | 1 | completa | Total; eventos.jsonl línea 610 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote610 | 0.081499600 | 1497 | 1 | completa | Total; eventos.jsonl línea 611 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote611 | 0.078914300 | 1497 | 1 | completa | Total; eventos.jsonl línea 612 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote612 | 0.084395200 | 1497 | 1 | completa | Total; eventos.jsonl línea 613 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote613 | 0.094041900 | 1497 | 1 | completa | Total; eventos.jsonl línea 614 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote614 | 0.089770600 | 1497 | 1 | completa | Total; eventos.jsonl línea 615 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote615 | 0.084274600 | 1497 | 1 | completa | Total; eventos.jsonl línea 616 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote616 | 0.083117300 | 1497 | 1 | completa | Total; eventos.jsonl línea 617 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote617 | 0.081146400 | 1497 | 1 | completa | Total; eventos.jsonl línea 618 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote618 | 0.092560100 | 1497 | 1 | completa | Total; eventos.jsonl línea 619 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote619 | 0.104620700 | 1497 | 1 | completa | Total; eventos.jsonl línea 620 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote620 | 0.100583500 | 1497 | 1 | completa | Total; eventos.jsonl línea 621 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote621 | 0.099624000 | 1497 | 1 | completa | Total; eventos.jsonl línea 622 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote622 | 0.119696100 | 1497 | 1 | completa | Total; eventos.jsonl línea 623 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote623 | 0.114705400 | 1497 | 1 | completa | Total; eventos.jsonl línea 624 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote624 | 0.113353100 | 1497 | 1 | completa | Total; eventos.jsonl línea 625 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote625 | 0.093550300 | 1497 | 1 | completa | Total; eventos.jsonl línea 626 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote626 | 0.101015000 | 1497 | 1 | completa | Total; eventos.jsonl línea 627 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote627 | 0.105156300 | 1497 | 1 | completa | Total; eventos.jsonl línea 628 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote628 | 0.096563900 | 1497 | 1 | completa | Total; eventos.jsonl línea 629 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote629 | 0.094006400 | 1497 | 1 | completa | Total; eventos.jsonl línea 630 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote630 | 0.089892800 | 1497 | 1 | completa | Total; eventos.jsonl línea 631 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote631 | 0.089498000 | 1497 | 1 | completa | Total; eventos.jsonl línea 632 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote632 | 0.087734100 | 1497 | 1 | completa | Total; eventos.jsonl línea 633 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote633 | 0.081021600 | 1497 | 1 | completa | Total; eventos.jsonl línea 634 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote634 | 0.093314300 | 1497 | 1 | completa | Total; eventos.jsonl línea 635 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote635 | 0.091689000 | 1497 | 1 | completa | Total; eventos.jsonl línea 636 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote636 | 0.089963300 | 1497 | 1 | completa | Total; eventos.jsonl línea 637 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote637 | 0.081500500 | 1497 | 1 | completa | Total; eventos.jsonl línea 638 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote638 | 0.081156400 | 1497 | 1 | completa | Total; eventos.jsonl línea 639 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote639 | 0.089500700 | 1497 | 1 | completa | Total; eventos.jsonl línea 640 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote640 | 0.091109800 | 1497 | 1 | completa | Total; eventos.jsonl línea 641 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote641 | 0.078882200 | 1497 | 1 | completa | Total; eventos.jsonl línea 642 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote642 | 0.080486800 | 1497 | 1 | completa | Total; eventos.jsonl línea 643 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote643 | 0.082920700 | 1497 | 1 | completa | Total; eventos.jsonl línea 644 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote644 | 0.086138400 | 1497 | 1 | completa | Total; eventos.jsonl línea 645 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote645 | 0.085845200 | 1497 | 1 | completa | Total; eventos.jsonl línea 646 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote646 | 0.084279500 | 1497 | 1 | completa | Total; eventos.jsonl línea 647 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote647 | 0.086249800 | 1497 | 1 | completa | Total; eventos.jsonl línea 648 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote648 | 0.095264700 | 1497 | 1 | completa | Total; eventos.jsonl línea 649 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote649 | 0.094896300 | 1497 | 1 | completa | Total; eventos.jsonl línea 650 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote650 | 0.083917300 | 1497 | 1 | completa | Total; eventos.jsonl línea 651 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote651 | 0.083279100 | 1497 | 1 | completa | Total; eventos.jsonl línea 652 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote652 | 0.085607500 | 1497 | 1 | completa | Total; eventos.jsonl línea 653 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote653 | 0.088111900 | 1497 | 1 | completa | Total; eventos.jsonl línea 654 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote654 | 0.087409100 | 1497 | 1 | completa | Total; eventos.jsonl línea 655 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote655 | 0.090438700 | 1497 | 1 | completa | Total; eventos.jsonl línea 656 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote656 | 0.087107000 | 1497 | 1 | completa | Total; eventos.jsonl línea 657 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote657 | 0.093061900 | 1497 | 1 | completa | Total; eventos.jsonl línea 658 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote658 | 0.091022600 | 1497 | 1 | completa | Total; eventos.jsonl línea 659 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote659 | 0.086289900 | 1497 | 1 | completa | Total; eventos.jsonl línea 660 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote660 | 0.084827200 | 1497 | 1 | completa | Total; eventos.jsonl línea 661 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote661 | 0.084107700 | 1497 | 1 | completa | Total; eventos.jsonl línea 662 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote662 | 0.087389700 | 1497 | 1 | completa | Total; eventos.jsonl línea 663 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote663 | 0.099515800 | 1497 | 1 | completa | Total; eventos.jsonl línea 664 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote664 | 0.099878000 | 1497 | 1 | completa | Total; eventos.jsonl línea 665 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote665 | 0.087825600 | 1497 | 1 | completa | Total; eventos.jsonl línea 666 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote666 | 0.084207700 | 1497 | 1 | completa | Total; eventos.jsonl línea 667 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote667 | 0.088215900 | 1497 | 1 | completa | Total; eventos.jsonl línea 668 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote668 | 0.090660100 | 1497 | 1 | completa | Total; eventos.jsonl línea 669 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote669 | 0.088718100 | 1497 | 1 | completa | Total; eventos.jsonl línea 670 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote670 | 0.091689500 | 1497 | 1 | completa | Total; eventos.jsonl línea 671 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote671 | 0.085671000 | 1497 | 1 | completa | Total; eventos.jsonl línea 672 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote672 | 0.085496500 | 1497 | 1 | completa | Total; eventos.jsonl línea 673 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote673 | 0.083011700 | 1497 | 1 | completa | Total; eventos.jsonl línea 674 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote674 | 0.090265200 | 1497 | 1 | completa | Total; eventos.jsonl línea 675 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote675 | 0.083691100 | 1497 | 1 | completa | Total; eventos.jsonl línea 676 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote676 | 0.096514600 | 1497 | 1 | completa | Total; eventos.jsonl línea 677 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote677 | 0.101765900 | 1497 | 1 | completa | Total; eventos.jsonl línea 678 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote678 | 0.099690100 | 1497 | 1 | completa | Total; eventos.jsonl línea 679 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote679 | 0.098965500 | 1497 | 1 | completa | Total; eventos.jsonl línea 680 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote680 | 0.092389600 | 1497 | 1 | completa | Total; eventos.jsonl línea 681 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote681 | 0.238774300 | 1497 | 1 | completa | Total; eventos.jsonl línea 682 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote682 | 0.088378900 | 1497 | 1 | completa | Total; eventos.jsonl línea 683 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote683 | 0.086967900 | 1497 | 1 | completa | Total; eventos.jsonl línea 684 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote684 | 0.084713700 | 1497 | 1 | completa | Total; eventos.jsonl línea 685 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote685 | 0.083983000 | 1497 | 1 | completa | Total; eventos.jsonl línea 686 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote686 | 0.085599000 | 1497 | 1 | completa | Total; eventos.jsonl línea 687 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote687 | 0.088070600 | 1497 | 1 | completa | Total; eventos.jsonl línea 688 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote688 | 0.084434300 | 1497 | 1 | completa | Total; eventos.jsonl línea 689 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote689 | 0.082623600 | 1497 | 1 | completa | Total; eventos.jsonl línea 690 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote690 | 0.087426600 | 1497 | 1 | completa | Total; eventos.jsonl línea 691 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote691 | 0.088551800 | 1497 | 1 | completa | Total; eventos.jsonl línea 692 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote692 | 0.086968800 | 1497 | 1 | completa | Total; eventos.jsonl línea 693 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote693 | 0.085000300 | 1497 | 1 | completa | Total; eventos.jsonl línea 694 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote694 | 0.089350400 | 1497 | 1 | completa | Total; eventos.jsonl línea 695 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote695 | 0.089123000 | 1497 | 1 | completa | Total; eventos.jsonl línea 696 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote696 | 0.089161600 | 1497 | 1 | completa | Total; eventos.jsonl línea 697 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote697 | 0.099395900 | 1497 | 1 | completa | Total; eventos.jsonl línea 698 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote698 | 0.101052900 | 1497 | 1 | completa | Total; eventos.jsonl línea 699 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote699 | 0.112208800 | 1497 | 1 | completa | Total; eventos.jsonl línea 700 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote700 | 0.110224200 | 1497 | 1 | completa | Total; eventos.jsonl línea 701 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote701 | 0.087504200 | 1497 | 1 | completa | Total; eventos.jsonl línea 702 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote702 | 0.093873200 | 1497 | 1 | completa | Total; eventos.jsonl línea 703 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote703 | 0.112853500 | 1497 | 1 | completa | Total; eventos.jsonl línea 704 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote704 | 0.097226000 | 1497 | 1 | completa | Total; eventos.jsonl línea 705 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote705 | 0.100961100 | 1497 | 1 | completa | Total; eventos.jsonl línea 706 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote706 | 0.097038200 | 1497 | 1 | completa | Total; eventos.jsonl línea 707 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote707 | 0.089992800 | 1497 | 1 | completa | Total; eventos.jsonl línea 708 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote708 | 0.085171400 | 1497 | 1 | completa | Total; eventos.jsonl línea 709 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote709 | 0.084795700 | 1497 | 1 | completa | Total; eventos.jsonl línea 710 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote710 | 0.080349400 | 1497 | 1 | completa | Total; eventos.jsonl línea 711 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote711 | 0.081864400 | 1497 | 1 | completa | Total; eventos.jsonl línea 712 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote712 | 0.094104300 | 1497 | 1 | completa | Total; eventos.jsonl línea 713 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote713 | 0.108513300 | 1497 | 1 | completa | Total; eventos.jsonl línea 714 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote714 | 0.093825100 | 1497 | 1 | completa | Total; eventos.jsonl línea 715 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote715 | 0.104812700 | 1497 | 1 | completa | Total; eventos.jsonl línea 716 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote716 | 0.085708900 | 1497 | 1 | completa | Total; eventos.jsonl línea 717 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote717 | 0.087127600 | 1497 | 1 | completa | Total; eventos.jsonl línea 718 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote718 | 0.096654500 | 1497 | 1 | completa | Total; eventos.jsonl línea 719 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote719 | 0.101199200 | 1497 | 1 | completa | Total; eventos.jsonl línea 720 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote720 | 0.101874800 | 1497 | 1 | completa | Total; eventos.jsonl línea 721 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote721 | 0.084863800 | 1497 | 1 | completa | Total; eventos.jsonl línea 722 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote722 | 0.087074900 | 1497 | 1 | completa | Total; eventos.jsonl línea 723 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote723 | 0.096449300 | 1497 | 1 | completa | Total; eventos.jsonl línea 724 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote724 | 0.089353600 | 1497 | 1 | completa | Total; eventos.jsonl línea 725 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote725 | 0.086203800 | 1497 | 1 | completa | Total; eventos.jsonl línea 726 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote726 | 0.086481300 | 1497 | 1 | completa | Total; eventos.jsonl línea 727 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote727 | 0.083460300 | 1497 | 1 | completa | Total; eventos.jsonl línea 728 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote728 | 0.059069500 | 1497 | 1 | completa | Total; eventos.jsonl línea 729 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote729 | 0.054162700 | 1497 | 1 | completa | Total; eventos.jsonl línea 730 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote730 | 0.056330200 | 1497 | 1 | completa | Total; eventos.jsonl línea 731 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote731 | 0.057448700 | 1497 | 1 | completa | Total; eventos.jsonl línea 732 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote732 | 0.055960700 | 1497 | 1 | completa | Total; eventos.jsonl línea 733 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote733 | 0.051450100 | 1497 | 1 | completa | Total; eventos.jsonl línea 734 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote734 | 0.049380600 | 1497 | 1 | completa | Total; eventos.jsonl línea 735 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote735 | 0.049318100 | 1497 | 1 | completa | Total; eventos.jsonl línea 736 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote736 | 0.060166300 | 1497 | 1 | completa | Total; eventos.jsonl línea 737 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote737 | 0.057007900 | 1497 | 1 | completa | Total; eventos.jsonl línea 738 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote738 | 0.055756100 | 1497 | 1 | completa | Total; eventos.jsonl línea 739 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote739 | 0.053432700 | 1497 | 1 | completa | Total; eventos.jsonl línea 740 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote740 | 0.051378700 | 1497 | 1 | completa | Total; eventos.jsonl línea 741 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote741 | 0.052484400 | 1497 | 1 | completa | Total; eventos.jsonl línea 742 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote742 | 0.050172300 | 1497 | 1 | completa | Total; eventos.jsonl línea 743 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote743 | 0.046360600 | 1497 | 1 | completa | Total; eventos.jsonl línea 744 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote744 | 0.047815800 | 1497 | 1 | completa | Total; eventos.jsonl línea 745 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote745 | 0.051766500 | 1497 | 1 | completa | Total; eventos.jsonl línea 746 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote746 | 0.048668300 | 1497 | 1 | completa | Total; eventos.jsonl línea 747 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote747 | 0.050426300 | 1497 | 1 | completa | Total; eventos.jsonl línea 748 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote748 | 0.048759600 | 1497 | 1 | completa | Total; eventos.jsonl línea 749 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote749 | 0.048876500 | 1497 | 1 | completa | Total; eventos.jsonl línea 750 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote750 | 0.050537400 | 1497 | 1 | completa | Total; eventos.jsonl línea 751 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote751 | 0.052081400 | 1497 | 1 | completa | Total; eventos.jsonl línea 752 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote752 | 0.054229400 | 1497 | 1 | completa | Total; eventos.jsonl línea 753 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote753 | 0.049309100 | 1497 | 1 | completa | Total; eventos.jsonl línea 754 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote754 | 0.048618400 | 1497 | 1 | completa | Total; eventos.jsonl línea 755 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote755 | 0.052916600 | 1497 | 1 | completa | Total; eventos.jsonl línea 756 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote756 | 0.051394300 | 1497 | 1 | completa | Total; eventos.jsonl línea 757 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote757 | 0.050419800 | 1497 | 1 | completa | Total; eventos.jsonl línea 758 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote758 | 0.048349100 | 1497 | 1 | completa | Total; eventos.jsonl línea 759 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote759 | 0.049085900 | 1497 | 1 | completa | Total; eventos.jsonl línea 760 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote760 | 0.052395800 | 1497 | 1 | completa | Total; eventos.jsonl línea 761 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote761 | 0.057184500 | 1497 | 1 | completa | Total; eventos.jsonl línea 762 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote762 | 0.051423100 | 1497 | 1 | completa | Total; eventos.jsonl línea 763 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote763 | 0.053460700 | 1497 | 1 | completa | Total; eventos.jsonl línea 764 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote764 | 0.053187500 | 1497 | 1 | completa | Total; eventos.jsonl línea 765 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote765 | 0.050845300 | 1497 | 1 | completa | Total; eventos.jsonl línea 766 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote766 | 0.052800400 | 1497 | 1 | completa | Total; eventos.jsonl línea 767 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote767 | 0.051353100 | 1497 | 1 | completa | Total; eventos.jsonl línea 768 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote768 | 0.049071400 | 1497 | 1 | completa | Total; eventos.jsonl línea 769 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote769 | 0.054532500 | 1497 | 1 | completa | Total; eventos.jsonl línea 770 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote770 | 0.056930900 | 1497 | 1 | completa | Total; eventos.jsonl línea 771 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote771 | 0.050870200 | 1497 | 1 | completa | Total; eventos.jsonl línea 772 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote772 | 0.048242700 | 1497 | 1 | completa | Total; eventos.jsonl línea 773 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote773 | 0.055240900 | 1497 | 1 | completa | Total; eventos.jsonl línea 774 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote774 | 0.056965400 | 1497 | 1 | completa | Total; eventos.jsonl línea 775 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote775 | 0.052819500 | 1497 | 1 | completa | Total; eventos.jsonl línea 776 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote776 | 0.049854000 | 1497 | 1 | completa | Total; eventos.jsonl línea 777 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote777 | 0.052269200 | 1497 | 1 | completa | Total; eventos.jsonl línea 778 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote778 | 0.056081000 | 1497 | 1 | completa | Total; eventos.jsonl línea 779 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote779 | 0.051488100 | 1497 | 1 | completa | Total; eventos.jsonl línea 780 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote780 | 0.054596900 | 1497 | 1 | completa | Total; eventos.jsonl línea 781 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote781 | 0.048739000 | 1497 | 1 | completa | Total; eventos.jsonl línea 782 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote782 | 0.055450500 | 1497 | 1 | completa | Total; eventos.jsonl línea 783 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote783 | 0.052095400 | 1497 | 1 | completa | Total; eventos.jsonl línea 784 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote784 | 0.053784800 | 1497 | 1 | completa | Total; eventos.jsonl línea 785 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote785 | 0.049162100 | 1497 | 1 | completa | Total; eventos.jsonl línea 786 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote786 | 0.048297700 | 1497 | 1 | completa | Total; eventos.jsonl línea 787 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote787 | 0.052933000 | 1497 | 1 | completa | Total; eventos.jsonl línea 788 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote788 | 0.054005200 | 1497 | 1 | completa | Total; eventos.jsonl línea 789 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote789 | 0.051316600 | 1497 | 1 | completa | Total; eventos.jsonl línea 790 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote790 | 0.048465700 | 1497 | 1 | completa | Total; eventos.jsonl línea 791 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote791 | 0.053835200 | 1497 | 1 | completa | Total; eventos.jsonl línea 792 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote792 | 0.051619600 | 1497 | 1 | completa | Total; eventos.jsonl línea 793 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote793 | 0.052987000 | 1497 | 1 | completa | Total; eventos.jsonl línea 794 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote794 | 0.056583500 | 1497 | 1 | completa | Total; eventos.jsonl línea 795 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote795 | 0.050556800 | 1497 | 1 | completa | Total; eventos.jsonl línea 796 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote796 | 0.057000100 | 1497 | 1 | completa | Total; eventos.jsonl línea 797 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote797 | 0.052048300 | 1497 | 1 | completa | Total; eventos.jsonl línea 798 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote798 | 0.056743800 | 1497 | 1 | completa | Total; eventos.jsonl línea 799 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote799 | 0.052409300 | 1497 | 1 | completa | Total; eventos.jsonl línea 800 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote800 | 0.049585500 | 1497 | 1 | completa | Total; eventos.jsonl línea 801 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote801 | 0.054553100 | 1497 | 1 | completa | Total; eventos.jsonl línea 802 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote802 | 0.045915300 | 1497 | 1 | completa | Total; eventos.jsonl línea 803 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote803 | 0.046437300 | 1497 | 1 | completa | Total; eventos.jsonl línea 804 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote804 | 0.053072000 | 1497 | 1 | completa | Total; eventos.jsonl línea 805 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote805 | 0.047827200 | 1497 | 1 | completa | Total; eventos.jsonl línea 806 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote806 | 0.050681000 | 1497 | 1 | completa | Total; eventos.jsonl línea 807 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote807 | 0.048539100 | 1497 | 1 | completa | Total; eventos.jsonl línea 808 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote808 | 0.053345400 | 1497 | 1 | completa | Total; eventos.jsonl línea 809 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote809 | 0.051829300 | 1497 | 1 | completa | Total; eventos.jsonl línea 810 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote810 | 0.050152200 | 1497 | 1 | completa | Total; eventos.jsonl línea 811 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote811 | 0.051850700 | 1497 | 1 | completa | Total; eventos.jsonl línea 812 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote812 | 0.047989500 | 1497 | 1 | completa | Total; eventos.jsonl línea 813 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote813 | 0.050447900 | 1497 | 1 | completa | Total; eventos.jsonl línea 814 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote814 | 0.050716100 | 1497 | 1 | completa | Total; eventos.jsonl línea 815 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote815 | 0.053112300 | 1497 | 1 | completa | Total; eventos.jsonl línea 816 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote816 | 0.053201000 | 1497 | 1 | completa | Total; eventos.jsonl línea 817 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote817 | 0.054729600 | 1497 | 1 | completa | Total; eventos.jsonl línea 818 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote818 | 0.050676300 | 1497 | 1 | completa | Total; eventos.jsonl línea 819 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote819 | 0.052732300 | 1497 | 1 | completa | Total; eventos.jsonl línea 820 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote820 | 0.050243600 | 1497 | 1 | completa | Total; eventos.jsonl línea 821 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote821 | 0.047232900 | 1497 | 1 | completa | Total; eventos.jsonl línea 822 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote822 | 0.051598900 | 1497 | 1 | completa | Total; eventos.jsonl línea 823 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote823 | 0.051186200 | 1497 | 1 | completa | Total; eventos.jsonl línea 824 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote824 | 0.057813500 | 1497 | 1 | completa | Total; eventos.jsonl línea 825 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote825 | 0.053765700 | 1497 | 1 | completa | Total; eventos.jsonl línea 826 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote826 | 0.061170200 | 1497 | 1 | completa | Total; eventos.jsonl línea 827 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote827 | 0.056560500 | 1497 | 1 | completa | Total; eventos.jsonl línea 828 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote828 | 0.052602400 | 1497 | 1 | completa | Total; eventos.jsonl línea 829 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote829 | 0.058098800 | 1497 | 1 | completa | Total; eventos.jsonl línea 830 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote830 | 0.052578900 | 1497 | 1 | completa | Total; eventos.jsonl línea 831 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote831 | 0.049509300 | 1497 | 1 | completa | Total; eventos.jsonl línea 832 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote832 | 0.052499100 | 1497 | 1 | completa | Total; eventos.jsonl línea 833 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote833 | 0.055800300 | 1497 | 1 | completa | Total; eventos.jsonl línea 834 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote834 | 0.055732400 | 1497 | 1 | completa | Total; eventos.jsonl línea 835 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote835 | 0.054379600 | 1497 | 1 | completa | Total; eventos.jsonl línea 836 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote836 | 0.048278900 | 1497 | 1 | completa | Total; eventos.jsonl línea 837 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote837 | 0.051652300 | 1497 | 1 | completa | Total; eventos.jsonl línea 838 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote838 | 0.049467300 | 1497 | 1 | completa | Total; eventos.jsonl línea 839 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote839 | 0.056426200 | 1497 | 1 | completa | Total; eventos.jsonl línea 840 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote840 | 0.050674800 | 1497 | 1 | completa | Total; eventos.jsonl línea 841 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote841 | 0.048527500 | 1497 | 1 | completa | Total; eventos.jsonl línea 842 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote842 | 0.055016000 | 1497 | 1 | completa | Total; eventos.jsonl línea 843 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote843 | 0.049485500 | 1497 | 1 | completa | Total; eventos.jsonl línea 844 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote844 | 0.051551200 | 1497 | 1 | completa | Total; eventos.jsonl línea 845 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote845 | 0.051245300 | 1497 | 1 | completa | Total; eventos.jsonl línea 846 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote846 | 0.054960100 | 1497 | 1 | completa | Total; eventos.jsonl línea 847 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote847 | 0.055553800 | 1497 | 1 | completa | Total; eventos.jsonl línea 848 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote848 | 0.052240300 | 1497 | 1 | completa | Total; eventos.jsonl línea 849 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote849 | 0.053561500 | 1497 | 1 | completa | Total; eventos.jsonl línea 850 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote850 | 0.053736400 | 1497 | 1 | completa | Total; eventos.jsonl línea 851 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote851 | 0.048329800 | 1497 | 1 | completa | Total; eventos.jsonl línea 852 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote852 | 0.048017800 | 1497 | 1 | completa | Total; eventos.jsonl línea 853 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote853 | 0.050833500 | 1497 | 1 | completa | Total; eventos.jsonl línea 854 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote854 | 0.053419700 | 1497 | 1 | completa | Total; eventos.jsonl línea 855 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote855 | 0.052059000 | 1497 | 1 | completa | Total; eventos.jsonl línea 856 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote856 | 0.052373800 | 1497 | 1 | completa | Total; eventos.jsonl línea 857 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote857 | 0.047707100 | 1497 | 1 | completa | Total; eventos.jsonl línea 858 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote858 | 0.054760800 | 1497 | 1 | completa | Total; eventos.jsonl línea 859 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote859 | 0.054185400 | 1497 | 1 | completa | Total; eventos.jsonl línea 860 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote860 | 0.057128400 | 1497 | 1 | completa | Total; eventos.jsonl línea 861 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote861 | 0.053581800 | 1497 | 1 | completa | Total; eventos.jsonl línea 862 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote862 | 0.056952800 | 1497 | 1 | completa | Total; eventos.jsonl línea 863 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote863 | 0.051508300 | 1497 | 1 | completa | Total; eventos.jsonl línea 864 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote864 | 0.054513300 | 1497 | 1 | completa | Total; eventos.jsonl línea 865 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote865 | 0.058513700 | 1497 | 1 | completa | Total; eventos.jsonl línea 866 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote866 | 0.059506400 | 1497 | 1 | completa | Total; eventos.jsonl línea 867 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote867 | 0.055529200 | 1497 | 1 | completa | Total; eventos.jsonl línea 868 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote868 | 0.051834600 | 1497 | 1 | completa | Total; eventos.jsonl línea 869 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote869 | 0.048944500 | 1497 | 1 | completa | Total; eventos.jsonl línea 870 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote870 | 0.057976700 | 1497 | 1 | completa | Total; eventos.jsonl línea 871 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote871 | 0.046815900 | 1497 | 1 | completa | Total; eventos.jsonl línea 872 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote872 | 0.050713600 | 1497 | 1 | completa | Total; eventos.jsonl línea 873 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote873 | 0.052333600 | 1497 | 1 | completa | Total; eventos.jsonl línea 874 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote874 | 0.049510000 | 1497 | 1 | completa | Total; eventos.jsonl línea 875 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote875 | 0.055970500 | 1497 | 1 | completa | Total; eventos.jsonl línea 876 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote876 | 0.051197000 | 1497 | 1 | completa | Total; eventos.jsonl línea 877 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote877 | 0.047683700 | 1497 | 1 | completa | Total; eventos.jsonl línea 878 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote878 | 0.049653500 | 1497 | 1 | completa | Total; eventos.jsonl línea 879 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote879 | 0.051532100 | 1497 | 1 | completa | Total; eventos.jsonl línea 880 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote880 | 0.054995200 | 1497 | 1 | completa | Total; eventos.jsonl línea 881 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote881 | 0.054152600 | 1497 | 1 | completa | Total; eventos.jsonl línea 882 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote882 | 0.055332900 | 1497 | 1 | completa | Total; eventos.jsonl línea 883 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote883 | 0.056324200 | 1497 | 1 | completa | Total; eventos.jsonl línea 884 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote884 | 0.051936400 | 1497 | 1 | completa | Total; eventos.jsonl línea 885 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote885 | 0.048747000 | 1497 | 1 | completa | Total; eventos.jsonl línea 886 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote886 | 0.052247800 | 1497 | 1 | completa | Total; eventos.jsonl línea 887 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote887 | 0.051399000 | 1497 | 1 | completa | Total; eventos.jsonl línea 888 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote888 | 0.048839700 | 1497 | 1 | completa | Total; eventos.jsonl línea 889 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote889 | 0.051591800 | 1497 | 1 | completa | Total; eventos.jsonl línea 890 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote890 | 0.053647100 | 1497 | 1 | completa | Total; eventos.jsonl línea 891 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote891 | 0.051154000 | 1497 | 1 | completa | Total; eventos.jsonl línea 892 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote892 | 0.049202800 | 1497 | 1 | completa | Total; eventos.jsonl línea 893 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote893 | 0.050878700 | 1497 | 1 | completa | Total; eventos.jsonl línea 894 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote894 | 0.053448400 | 1497 | 1 | completa | Total; eventos.jsonl línea 895 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote895 | 0.053738100 | 1497 | 1 | completa | Total; eventos.jsonl línea 896 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote896 | 0.057876900 | 1497 | 1 | completa | Total; eventos.jsonl línea 897 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote897 | 0.053114900 | 1497 | 1 | completa | Total; eventos.jsonl línea 898 |
+| Explicación SHAP | 64caminos/32referencias · completo | 60.083173100 | 1497 | 1 | completa | Total; eventos.jsonl línea 899 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005442000 | 1 | 1 | completa | Total; eventos.jsonl línea 900 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.020211600 | 1000 | 1 | completa | Total; eventos.jsonl línea 901 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000901700 | 1000 | 1 | completa | Total; eventos.jsonl línea 902 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000109700 | 1000 | 1 | completa | Total; eventos.jsonl línea 903 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000070400 | 1 | 1 | completa | Total; eventos.jsonl línea 904 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005713200 | 1 | 1 | completa | Total; eventos.jsonl línea 905 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.018391800 | 1000 | 1 | completa | Total; eventos.jsonl línea 906 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.001041000 | 1000 | 1 | completa | Total; eventos.jsonl línea 907 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000123800 | 1000 | 1 | completa | Total; eventos.jsonl línea 908 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000069100 | 1 | 1 | completa | Total; eventos.jsonl línea 909 |
+| Total del experimento | Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME | 60.230947200 | No aplica | 1 | completa | Total; eventos.jsonl línea 910 |
+
+### Ejecución `20261020_153342_3fafebfa`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T15:33:42.491235-05:00 a 2026-10-20T15:34:51.308517-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153342_3fafebfa/metadata.json](tiempos/20261020_153342_3fafebfa/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153342_3fafebfa/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.012964600 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.015254500 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.009515500 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m11 / validación serialización test | 0.015316900 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m7 / validación serialización test | 0.015627000 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m14 / validación serialización test | 0.006203800 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m15 / validación serialización test | 0.049778500 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m16 / validación serialización test | 0.029601000 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m3 / validación serialización test | 0.005702700 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Total del experimento | Originales · verificación y activación | 68.811851900 | No aplica | 1 | completa | Total; eventos.jsonl línea 10 |
+
+### Ejecución `20261020_153501_44752438`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:35:01.220950-05:00 a 2026-10-20T15:35:01.461927-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153501_44752438/metadata.json](tiempos/20261020_153501_44752438/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153501_44752438/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012933100 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015935900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.136779700 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000274800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.247563200 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_153512_852513ba`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.086589-05:00 a 2026-10-20T15:35:12.103854-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_852513ba/metadata.json](tiempos/20261020_153512_852513ba/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_852513ba/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.011266900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.015391300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153512_ee099022`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.122319-05:00 a 2026-10-20T15:35:12.136541-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_ee099022/metadata.json](tiempos/20261020_153512_ee099022/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_ee099022/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004344900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.009094300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153512_f1c273fe`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.150260-05:00 a 2026-10-20T15:35:12.156422-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_f1c273fe/metadata.json](tiempos/20261020_153512_f1c273fe/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_f1c273fe/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006004600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.011624100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153512_42228072`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.355017-05:00 a 2026-10-20T15:35:12.386772-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_42228072/metadata.json](tiempos/20261020_153512_42228072/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_42228072/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.026317100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.033111200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153512_6e9b1666`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.431318-05:00 a 2026-10-20T15:35:12.446511-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_6e9b1666/metadata.json](tiempos/20261020_153512_6e9b1666/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_6e9b1666/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009735600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.014006600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153512_fbda2692`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:12.455042-05:00 a 2026-10-20T15:35:12.470769-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153512_fbda2692/metadata.json](tiempos/20261020_153512_fbda2692/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153512_fbda2692/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004703600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010309200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153516_f840f406`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:16.850863-05:00 a 2026-10-20T15:35:16.857985-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153516_f840f406/metadata.json](tiempos/20261020_153516_f840f406/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153516_f840f406/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005287700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011207000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153516_b7d9f200`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:16.874686-05:00 a 2026-10-20T15:35:16.891434-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153516_b7d9f200/metadata.json](tiempos/20261020_153516_b7d9f200/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153516_b7d9f200/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.007417900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.012500400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153516_53dd0f40`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:16.891434-05:00 a 2026-10-20T15:35:16.908051-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153516_53dd0f40/metadata.json](tiempos/20261020_153516_53dd0f40/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153516_53dd0f40/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004666300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009051700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153516_44f85067`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:16.908051-05:00 a 2026-10-20T15:35:16.925716-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153516_44f85067/metadata.json](tiempos/20261020_153516_44f85067/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153516_44f85067/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004905000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009177200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153516_95f64a30`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:35:16.935820-05:00 a 2026-10-20T15:35:16.945317-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153516_95f64a30/metadata.json](tiempos/20261020_153516_95f64a30/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153516_95f64a30/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004673900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011185800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_153525_1b51443a`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:35:25.023183-05:00 a 2026-10-20T15:35:25.247572-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_153525_1b51443a/metadata.json](tiempos/20261020_153525_1b51443a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_153525_1b51443a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012769100 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014743100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.131106200 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000331800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.233225400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154138_2d52e689`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T15:41:38.205813-05:00 a 2026-10-20T15:41:41.245136-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154138_2d52e689/metadata.json](tiempos/20261020_154138_2d52e689/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154138_2d52e689/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.087813000 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.812407800 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 3.042891200 | No aplica | 1 | completa | Total; eventos.jsonl línea 3 |
+
+### Ejecución `20261020_154141_97d735da`
+
+- **Modelo/motivo:** Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME.
+- **Fecha/zona:** 2026-10-20T15:41:41.432631-05:00 a 2026-10-20T15:42:32.350200-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154141_97d735da/metadata.json](tiempos/20261020_154141_97d735da/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154141_97d735da/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote0 | 0.059803400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote1 | 0.006130600 | 32 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote2 | 0.063537300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote3 | 0.059191500 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote4 | 0.057453900 | 1497 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote5 | 0.059821400 | 1497 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote6 | 0.057950900 | 1497 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote7 | 0.056346400 | 1497 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote8 | 0.058639000 | 1497 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote9 | 0.059048400 | 1497 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote10 | 0.064655100 | 1497 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote11 | 0.051679200 | 1497 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote12 | 0.054308900 | 1497 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote13 | 0.063327800 | 1497 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote14 | 0.057963700 | 1497 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote15 | 0.059667200 | 1497 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote16 | 0.062183500 | 1497 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote17 | 0.049457500 | 1497 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote18 | 0.055608000 | 1497 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote19 | 0.057879300 | 1497 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote20 | 0.056873800 | 1497 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote21 | 0.058098100 | 1497 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote22 | 0.059617300 | 1497 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote23 | 0.059140700 | 1497 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote24 | 0.059034100 | 1497 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote25 | 0.059431900 | 1497 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote26 | 0.058914600 | 1497 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote27 | 0.056448900 | 1497 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote28 | 0.060579800 | 1497 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote29 | 0.055456300 | 1497 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote30 | 0.061302900 | 1497 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote31 | 0.060697200 | 1497 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote32 | 0.061074600 | 1497 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote33 | 0.059640400 | 1497 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote34 | 0.059311700 | 1497 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote35 | 0.060417400 | 1497 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote36 | 0.065265200 | 1497 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote37 | 0.064496900 | 1497 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote38 | 0.062538500 | 1497 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote39 | 0.060716400 | 1497 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote40 | 0.061068900 | 1497 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote41 | 0.052971600 | 1497 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote42 | 0.058954600 | 1497 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote43 | 0.053921500 | 1497 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote44 | 0.054534800 | 1497 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote45 | 0.063369300 | 1497 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote46 | 0.059736900 | 1497 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote47 | 0.060189200 | 1497 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote48 | 0.053246200 | 1497 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote49 | 0.054370900 | 1497 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote50 | 0.054378500 | 1497 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote51 | 0.061610500 | 1497 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote52 | 0.061262300 | 1497 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote53 | 0.065039300 | 1497 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote54 | 0.067152000 | 1497 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote55 | 0.062558700 | 1497 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote56 | 0.058663500 | 1497 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote57 | 0.060042500 | 1497 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote58 | 0.059467900 | 1497 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote59 | 0.059146500 | 1497 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote60 | 0.059530900 | 1497 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote61 | 0.059742600 | 1497 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote62 | 0.062935500 | 1497 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote63 | 0.062410000 | 1497 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote64 | 0.061455500 | 1497 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote65 | 0.059731700 | 1497 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote66 | 0.060805500 | 1497 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote67 | 0.061944600 | 1497 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote68 | 0.062348600 | 1497 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote69 | 0.061383900 | 1497 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote70 | 0.061236100 | 1497 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote71 | 0.063729300 | 1497 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote72 | 0.062215300 | 1497 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote73 | 0.061306900 | 1497 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote74 | 0.059560400 | 1497 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote75 | 0.054889700 | 1497 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote76 | 0.057339200 | 1497 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote77 | 0.056653000 | 1497 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote78 | 0.056577000 | 1497 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote79 | 0.058106300 | 1497 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote80 | 0.051418100 | 1497 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote81 | 0.054997400 | 1497 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote82 | 0.058956600 | 1497 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote83 | 0.055400200 | 1497 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote84 | 0.053661500 | 1497 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote85 | 0.049891600 | 1497 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote86 | 0.054614500 | 1497 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote87 | 0.054036500 | 1497 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote88 | 0.063577400 | 1497 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote89 | 0.051003700 | 1497 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote90 | 0.052118900 | 1497 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote91 | 0.053643900 | 1497 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote92 | 0.051655600 | 1497 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote93 | 0.053160900 | 1497 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote94 | 0.058344700 | 1497 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote95 | 0.068873400 | 1497 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote96 | 0.061117200 | 1497 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote97 | 0.055785100 | 1497 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote98 | 0.051053500 | 1497 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote99 | 0.062125100 | 1497 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote100 | 0.086594200 | 1497 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote101 | 0.055652500 | 1497 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote102 | 0.056831800 | 1497 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote103 | 0.053456500 | 1497 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote104 | 0.055384900 | 1497 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote105 | 0.051130000 | 1497 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote106 | 0.056832600 | 1497 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote107 | 0.056452400 | 1497 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote108 | 0.062935300 | 1497 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote109 | 0.060777400 | 1497 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote110 | 0.059922900 | 1497 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote111 | 0.061216200 | 1497 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote112 | 0.061461600 | 1497 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote113 | 0.061959400 | 1497 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote114 | 0.067671100 | 1497 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote115 | 0.061183400 | 1497 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote116 | 0.061163900 | 1497 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote117 | 0.061638600 | 1497 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote118 | 0.058337700 | 1497 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote119 | 0.060736000 | 1497 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote120 | 0.062763800 | 1497 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote121 | 0.065150300 | 1497 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote122 | 0.057934900 | 1497 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote123 | 0.056264400 | 1497 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote124 | 0.056194500 | 1497 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote125 | 0.054050700 | 1497 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote126 | 0.051042300 | 1497 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote127 | 0.054476500 | 1497 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote128 | 0.056078300 | 1497 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote129 | 0.065763300 | 1497 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote130 | 0.068105500 | 1497 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote131 | 0.065097300 | 1497 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote132 | 0.064001600 | 1497 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote133 | 0.062822700 | 1497 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote134 | 0.062200300 | 1497 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote135 | 0.061211000 | 1497 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote136 | 0.060559200 | 1497 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote137 | 0.060990300 | 1497 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote138 | 0.061091700 | 1497 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote139 | 0.071065200 | 1497 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote140 | 0.063583600 | 1497 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote141 | 0.065999800 | 1497 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote142 | 0.068667200 | 1497 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote143 | 0.061684500 | 1497 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote144 | 0.062274100 | 1497 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote145 | 0.059942600 | 1497 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote146 | 0.063733900 | 1497 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote147 | 0.065377000 | 1497 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote148 | 0.052821900 | 1497 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote149 | 0.061345100 | 1497 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote150 | 0.057531700 | 1497 | 1 | completa | Total; eventos.jsonl línea 151 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote151 | 0.052465600 | 1497 | 1 | completa | Total; eventos.jsonl línea 152 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote152 | 0.062214500 | 1497 | 1 | completa | Total; eventos.jsonl línea 153 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote153 | 0.060916600 | 1497 | 1 | completa | Total; eventos.jsonl línea 154 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote154 | 0.054352200 | 1497 | 1 | completa | Total; eventos.jsonl línea 155 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote155 | 0.056327700 | 1497 | 1 | completa | Total; eventos.jsonl línea 156 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote156 | 0.055589400 | 1497 | 1 | completa | Total; eventos.jsonl línea 157 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote157 | 0.056565900 | 1497 | 1 | completa | Total; eventos.jsonl línea 158 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote158 | 0.064939400 | 1497 | 1 | completa | Total; eventos.jsonl línea 159 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote159 | 0.061724400 | 1497 | 1 | completa | Total; eventos.jsonl línea 160 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote160 | 0.061329300 | 1497 | 1 | completa | Total; eventos.jsonl línea 161 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote161 | 0.061371500 | 1497 | 1 | completa | Total; eventos.jsonl línea 162 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote162 | 0.060967500 | 1497 | 1 | completa | Total; eventos.jsonl línea 163 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote163 | 0.059648000 | 1497 | 1 | completa | Total; eventos.jsonl línea 164 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote164 | 0.062812300 | 1497 | 1 | completa | Total; eventos.jsonl línea 165 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote165 | 0.063111400 | 1497 | 1 | completa | Total; eventos.jsonl línea 166 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote166 | 0.058473900 | 1497 | 1 | completa | Total; eventos.jsonl línea 167 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote167 | 0.067197400 | 1497 | 1 | completa | Total; eventos.jsonl línea 168 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote168 | 0.061610700 | 1497 | 1 | completa | Total; eventos.jsonl línea 169 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote169 | 0.059113400 | 1497 | 1 | completa | Total; eventos.jsonl línea 170 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote170 | 0.057069400 | 1497 | 1 | completa | Total; eventos.jsonl línea 171 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote171 | 0.055427100 | 1497 | 1 | completa | Total; eventos.jsonl línea 172 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote172 | 0.057993400 | 1497 | 1 | completa | Total; eventos.jsonl línea 173 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote173 | 0.058565800 | 1497 | 1 | completa | Total; eventos.jsonl línea 174 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote174 | 0.058243000 | 1497 | 1 | completa | Total; eventos.jsonl línea 175 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote175 | 0.061585600 | 1497 | 1 | completa | Total; eventos.jsonl línea 176 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote176 | 0.060697800 | 1497 | 1 | completa | Total; eventos.jsonl línea 177 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote177 | 0.062169700 | 1497 | 1 | completa | Total; eventos.jsonl línea 178 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote178 | 0.064754700 | 1497 | 1 | completa | Total; eventos.jsonl línea 179 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote179 | 0.059453300 | 1497 | 1 | completa | Total; eventos.jsonl línea 180 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote180 | 0.058940400 | 1497 | 1 | completa | Total; eventos.jsonl línea 181 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote181 | 0.054682900 | 1497 | 1 | completa | Total; eventos.jsonl línea 182 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote182 | 0.061919000 | 1497 | 1 | completa | Total; eventos.jsonl línea 183 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote183 | 0.064799700 | 1497 | 1 | completa | Total; eventos.jsonl línea 184 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote184 | 0.060321600 | 1497 | 1 | completa | Total; eventos.jsonl línea 185 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote185 | 0.059823200 | 1497 | 1 | completa | Total; eventos.jsonl línea 186 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote186 | 0.063340400 | 1497 | 1 | completa | Total; eventos.jsonl línea 187 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote187 | 0.059934200 | 1497 | 1 | completa | Total; eventos.jsonl línea 188 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote188 | 0.061465100 | 1497 | 1 | completa | Total; eventos.jsonl línea 189 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote189 | 0.058686400 | 1497 | 1 | completa | Total; eventos.jsonl línea 190 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote190 | 0.053576500 | 1497 | 1 | completa | Total; eventos.jsonl línea 191 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote191 | 0.057116200 | 1497 | 1 | completa | Total; eventos.jsonl línea 192 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote192 | 0.056103100 | 1497 | 1 | completa | Total; eventos.jsonl línea 193 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote193 | 0.056498900 | 1497 | 1 | completa | Total; eventos.jsonl línea 194 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote194 | 0.059446900 | 1497 | 1 | completa | Total; eventos.jsonl línea 195 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote195 | 0.054754200 | 1497 | 1 | completa | Total; eventos.jsonl línea 196 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote196 | 0.056174300 | 1497 | 1 | completa | Total; eventos.jsonl línea 197 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote197 | 0.058098300 | 1497 | 1 | completa | Total; eventos.jsonl línea 198 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote198 | 0.051941400 | 1497 | 1 | completa | Total; eventos.jsonl línea 199 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote199 | 0.055026900 | 1497 | 1 | completa | Total; eventos.jsonl línea 200 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote200 | 0.053727500 | 1497 | 1 | completa | Total; eventos.jsonl línea 201 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote201 | 0.054359300 | 1497 | 1 | completa | Total; eventos.jsonl línea 202 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote202 | 0.062924800 | 1497 | 1 | completa | Total; eventos.jsonl línea 203 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote203 | 0.053403100 | 1497 | 1 | completa | Total; eventos.jsonl línea 204 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote204 | 0.056943800 | 1497 | 1 | completa | Total; eventos.jsonl línea 205 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote205 | 0.055394900 | 1497 | 1 | completa | Total; eventos.jsonl línea 206 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote206 | 0.057998400 | 1497 | 1 | completa | Total; eventos.jsonl línea 207 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote207 | 0.056047300 | 1497 | 1 | completa | Total; eventos.jsonl línea 208 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote208 | 0.054471300 | 1497 | 1 | completa | Total; eventos.jsonl línea 209 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote209 | 0.059397200 | 1497 | 1 | completa | Total; eventos.jsonl línea 210 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote210 | 0.056444600 | 1497 | 1 | completa | Total; eventos.jsonl línea 211 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote211 | 0.064507400 | 1497 | 1 | completa | Total; eventos.jsonl línea 212 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote212 | 0.054214600 | 1497 | 1 | completa | Total; eventos.jsonl línea 213 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote213 | 0.052189000 | 1497 | 1 | completa | Total; eventos.jsonl línea 214 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote214 | 0.053035700 | 1497 | 1 | completa | Total; eventos.jsonl línea 215 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote215 | 0.054115300 | 1497 | 1 | completa | Total; eventos.jsonl línea 216 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote216 | 0.051982400 | 1497 | 1 | completa | Total; eventos.jsonl línea 217 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote217 | 0.052674500 | 1497 | 1 | completa | Total; eventos.jsonl línea 218 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote218 | 0.054296500 | 1497 | 1 | completa | Total; eventos.jsonl línea 219 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote219 | 0.051112700 | 1497 | 1 | completa | Total; eventos.jsonl línea 220 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote220 | 0.053290000 | 1497 | 1 | completa | Total; eventos.jsonl línea 221 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote221 | 0.053876300 | 1497 | 1 | completa | Total; eventos.jsonl línea 222 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote222 | 0.053394300 | 1497 | 1 | completa | Total; eventos.jsonl línea 223 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote223 | 0.050059400 | 1497 | 1 | completa | Total; eventos.jsonl línea 224 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote224 | 0.049815300 | 1497 | 1 | completa | Total; eventos.jsonl línea 225 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote225 | 0.053641600 | 1497 | 1 | completa | Total; eventos.jsonl línea 226 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote226 | 0.052737000 | 1497 | 1 | completa | Total; eventos.jsonl línea 227 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote227 | 0.057808300 | 1497 | 1 | completa | Total; eventos.jsonl línea 228 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote228 | 0.052923400 | 1497 | 1 | completa | Total; eventos.jsonl línea 229 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote229 | 0.053895700 | 1497 | 1 | completa | Total; eventos.jsonl línea 230 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote230 | 0.052684200 | 1497 | 1 | completa | Total; eventos.jsonl línea 231 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote231 | 0.051472400 | 1497 | 1 | completa | Total; eventos.jsonl línea 232 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote232 | 0.055163200 | 1497 | 1 | completa | Total; eventos.jsonl línea 233 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote233 | 0.050962100 | 1497 | 1 | completa | Total; eventos.jsonl línea 234 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote234 | 0.050790100 | 1497 | 1 | completa | Total; eventos.jsonl línea 235 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote235 | 0.046386200 | 1497 | 1 | completa | Total; eventos.jsonl línea 236 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote236 | 0.053712100 | 1497 | 1 | completa | Total; eventos.jsonl línea 237 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote237 | 0.049599300 | 1497 | 1 | completa | Total; eventos.jsonl línea 238 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote238 | 0.050611000 | 1497 | 1 | completa | Total; eventos.jsonl línea 239 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote239 | 0.051577700 | 1497 | 1 | completa | Total; eventos.jsonl línea 240 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote240 | 0.053951200 | 1497 | 1 | completa | Total; eventos.jsonl línea 241 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote241 | 0.052238500 | 1497 | 1 | completa | Total; eventos.jsonl línea 242 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote242 | 0.049353400 | 1497 | 1 | completa | Total; eventos.jsonl línea 243 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote243 | 0.049586700 | 1497 | 1 | completa | Total; eventos.jsonl línea 244 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote244 | 0.046708600 | 1497 | 1 | completa | Total; eventos.jsonl línea 245 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote245 | 0.046300400 | 1497 | 1 | completa | Total; eventos.jsonl línea 246 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote246 | 0.047193800 | 1497 | 1 | completa | Total; eventos.jsonl línea 247 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote247 | 0.046521700 | 1497 | 1 | completa | Total; eventos.jsonl línea 248 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote248 | 0.049782600 | 1497 | 1 | completa | Total; eventos.jsonl línea 249 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote249 | 0.052577200 | 1497 | 1 | completa | Total; eventos.jsonl línea 250 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote250 | 0.054352400 | 1497 | 1 | completa | Total; eventos.jsonl línea 251 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote251 | 0.051522600 | 1497 | 1 | completa | Total; eventos.jsonl línea 252 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote252 | 0.050444600 | 1497 | 1 | completa | Total; eventos.jsonl línea 253 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote253 | 0.052375100 | 1497 | 1 | completa | Total; eventos.jsonl línea 254 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote254 | 0.055454200 | 1497 | 1 | completa | Total; eventos.jsonl línea 255 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote255 | 0.051768600 | 1497 | 1 | completa | Total; eventos.jsonl línea 256 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote256 | 0.053288000 | 1497 | 1 | completa | Total; eventos.jsonl línea 257 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote257 | 0.057633100 | 1497 | 1 | completa | Total; eventos.jsonl línea 258 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote258 | 0.050956100 | 1497 | 1 | completa | Total; eventos.jsonl línea 259 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote259 | 0.052952300 | 1497 | 1 | completa | Total; eventos.jsonl línea 260 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote260 | 0.056019500 | 1497 | 1 | completa | Total; eventos.jsonl línea 261 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote261 | 0.054626400 | 1497 | 1 | completa | Total; eventos.jsonl línea 262 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote262 | 0.059297400 | 1497 | 1 | completa | Total; eventos.jsonl línea 263 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote263 | 0.050957700 | 1497 | 1 | completa | Total; eventos.jsonl línea 264 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote264 | 0.050361000 | 1497 | 1 | completa | Total; eventos.jsonl línea 265 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote265 | 0.052245900 | 1497 | 1 | completa | Total; eventos.jsonl línea 266 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote266 | 0.063033000 | 1497 | 1 | completa | Total; eventos.jsonl línea 267 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote267 | 0.069518700 | 1497 | 1 | completa | Total; eventos.jsonl línea 268 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote268 | 0.061799200 | 1497 | 1 | completa | Total; eventos.jsonl línea 269 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote269 | 0.059624700 | 1497 | 1 | completa | Total; eventos.jsonl línea 270 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote270 | 0.061773800 | 1497 | 1 | completa | Total; eventos.jsonl línea 271 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote271 | 0.062787300 | 1497 | 1 | completa | Total; eventos.jsonl línea 272 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote272 | 0.060852000 | 1497 | 1 | completa | Total; eventos.jsonl línea 273 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote273 | 0.061694400 | 1497 | 1 | completa | Total; eventos.jsonl línea 274 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote274 | 0.063572500 | 1497 | 1 | completa | Total; eventos.jsonl línea 275 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote275 | 0.060164200 | 1497 | 1 | completa | Total; eventos.jsonl línea 276 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote276 | 0.060305500 | 1497 | 1 | completa | Total; eventos.jsonl línea 277 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote277 | 0.061960700 | 1497 | 1 | completa | Total; eventos.jsonl línea 278 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote278 | 0.060865200 | 1497 | 1 | completa | Total; eventos.jsonl línea 279 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote279 | 0.062457100 | 1497 | 1 | completa | Total; eventos.jsonl línea 280 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote280 | 0.060243200 | 1497 | 1 | completa | Total; eventos.jsonl línea 281 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote281 | 0.058342600 | 1497 | 1 | completa | Total; eventos.jsonl línea 282 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote282 | 0.062740000 | 1497 | 1 | completa | Total; eventos.jsonl línea 283 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote283 | 0.061272000 | 1497 | 1 | completa | Total; eventos.jsonl línea 284 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote284 | 0.061700400 | 1497 | 1 | completa | Total; eventos.jsonl línea 285 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote285 | 0.058921200 | 1497 | 1 | completa | Total; eventos.jsonl línea 286 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote286 | 0.054016700 | 1497 | 1 | completa | Total; eventos.jsonl línea 287 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote287 | 0.059251000 | 1497 | 1 | completa | Total; eventos.jsonl línea 288 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote288 | 0.062384100 | 1497 | 1 | completa | Total; eventos.jsonl línea 289 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote289 | 0.061718800 | 1497 | 1 | completa | Total; eventos.jsonl línea 290 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote290 | 0.060118100 | 1497 | 1 | completa | Total; eventos.jsonl línea 291 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote291 | 0.062658800 | 1497 | 1 | completa | Total; eventos.jsonl línea 292 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote292 | 0.061799700 | 1497 | 1 | completa | Total; eventos.jsonl línea 293 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote293 | 0.060179000 | 1497 | 1 | completa | Total; eventos.jsonl línea 294 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote294 | 0.061281300 | 1497 | 1 | completa | Total; eventos.jsonl línea 295 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote295 | 0.060923200 | 1497 | 1 | completa | Total; eventos.jsonl línea 296 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote296 | 0.065321400 | 1497 | 1 | completa | Total; eventos.jsonl línea 297 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote297 | 0.065362200 | 1497 | 1 | completa | Total; eventos.jsonl línea 298 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote298 | 0.061170500 | 1497 | 1 | completa | Total; eventos.jsonl línea 299 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote299 | 0.060937300 | 1497 | 1 | completa | Total; eventos.jsonl línea 300 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote300 | 0.058888400 | 1497 | 1 | completa | Total; eventos.jsonl línea 301 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote301 | 0.060963500 | 1497 | 1 | completa | Total; eventos.jsonl línea 302 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote302 | 0.065692200 | 1497 | 1 | completa | Total; eventos.jsonl línea 303 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote303 | 0.062317900 | 1497 | 1 | completa | Total; eventos.jsonl línea 304 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote304 | 0.059933400 | 1497 | 1 | completa | Total; eventos.jsonl línea 305 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote305 | 0.061256000 | 1497 | 1 | completa | Total; eventos.jsonl línea 306 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote306 | 0.060029500 | 1497 | 1 | completa | Total; eventos.jsonl línea 307 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote307 | 0.061899800 | 1497 | 1 | completa | Total; eventos.jsonl línea 308 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote308 | 0.059352800 | 1497 | 1 | completa | Total; eventos.jsonl línea 309 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote309 | 0.055829000 | 1497 | 1 | completa | Total; eventos.jsonl línea 310 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote310 | 0.056837000 | 1497 | 1 | completa | Total; eventos.jsonl línea 311 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote311 | 0.062141300 | 1497 | 1 | completa | Total; eventos.jsonl línea 312 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote312 | 0.052467800 | 1497 | 1 | completa | Total; eventos.jsonl línea 313 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote313 | 0.051779200 | 1497 | 1 | completa | Total; eventos.jsonl línea 314 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote314 | 0.051724600 | 1497 | 1 | completa | Total; eventos.jsonl línea 315 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote315 | 0.052731200 | 1497 | 1 | completa | Total; eventos.jsonl línea 316 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote316 | 0.056268800 | 1497 | 1 | completa | Total; eventos.jsonl línea 317 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote317 | 0.053921000 | 1497 | 1 | completa | Total; eventos.jsonl línea 318 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote318 | 0.052105300 | 1497 | 1 | completa | Total; eventos.jsonl línea 319 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote319 | 0.050348300 | 1497 | 1 | completa | Total; eventos.jsonl línea 320 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote320 | 0.053414600 | 1497 | 1 | completa | Total; eventos.jsonl línea 321 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote321 | 0.053022000 | 1497 | 1 | completa | Total; eventos.jsonl línea 322 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote322 | 0.052697900 | 1497 | 1 | completa | Total; eventos.jsonl línea 323 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote323 | 0.051135100 | 1497 | 1 | completa | Total; eventos.jsonl línea 324 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote324 | 0.059659900 | 1497 | 1 | completa | Total; eventos.jsonl línea 325 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote325 | 0.063043800 | 1497 | 1 | completa | Total; eventos.jsonl línea 326 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote326 | 0.059399900 | 1497 | 1 | completa | Total; eventos.jsonl línea 327 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote327 | 0.059447800 | 1497 | 1 | completa | Total; eventos.jsonl línea 328 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote328 | 0.061732900 | 1497 | 1 | completa | Total; eventos.jsonl línea 329 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote329 | 0.058392300 | 1497 | 1 | completa | Total; eventos.jsonl línea 330 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote330 | 0.058047300 | 1497 | 1 | completa | Total; eventos.jsonl línea 331 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote331 | 0.060039500 | 1497 | 1 | completa | Total; eventos.jsonl línea 332 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote332 | 0.060552000 | 1497 | 1 | completa | Total; eventos.jsonl línea 333 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote333 | 0.058380400 | 1497 | 1 | completa | Total; eventos.jsonl línea 334 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote334 | 0.057936500 | 1497 | 1 | completa | Total; eventos.jsonl línea 335 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote335 | 0.056841200 | 1497 | 1 | completa | Total; eventos.jsonl línea 336 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote336 | 0.054914100 | 1497 | 1 | completa | Total; eventos.jsonl línea 337 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote337 | 0.055792300 | 1497 | 1 | completa | Total; eventos.jsonl línea 338 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote338 | 0.051047400 | 1497 | 1 | completa | Total; eventos.jsonl línea 339 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote339 | 0.048836800 | 1497 | 1 | completa | Total; eventos.jsonl línea 340 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote340 | 0.048018800 | 1497 | 1 | completa | Total; eventos.jsonl línea 341 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote341 | 0.051657300 | 1497 | 1 | completa | Total; eventos.jsonl línea 342 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote342 | 0.050412200 | 1497 | 1 | completa | Total; eventos.jsonl línea 343 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote343 | 0.052109300 | 1497 | 1 | completa | Total; eventos.jsonl línea 344 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote344 | 0.053229400 | 1497 | 1 | completa | Total; eventos.jsonl línea 345 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote345 | 0.055597700 | 1497 | 1 | completa | Total; eventos.jsonl línea 346 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote346 | 0.052808200 | 1497 | 1 | completa | Total; eventos.jsonl línea 347 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote347 | 0.047702700 | 1497 | 1 | completa | Total; eventos.jsonl línea 348 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote348 | 0.047994300 | 1497 | 1 | completa | Total; eventos.jsonl línea 349 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote349 | 0.048054300 | 1497 | 1 | completa | Total; eventos.jsonl línea 350 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote350 | 0.051471500 | 1497 | 1 | completa | Total; eventos.jsonl línea 351 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote351 | 0.046622600 | 1497 | 1 | completa | Total; eventos.jsonl línea 352 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote352 | 0.048076300 | 1497 | 1 | completa | Total; eventos.jsonl línea 353 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote353 | 0.056325200 | 1497 | 1 | completa | Total; eventos.jsonl línea 354 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote354 | 0.063281100 | 1497 | 1 | completa | Total; eventos.jsonl línea 355 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote355 | 0.059025600 | 1497 | 1 | completa | Total; eventos.jsonl línea 356 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote356 | 0.059423900 | 1497 | 1 | completa | Total; eventos.jsonl línea 357 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote357 | 0.062151700 | 1497 | 1 | completa | Total; eventos.jsonl línea 358 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote358 | 0.061085400 | 1497 | 1 | completa | Total; eventos.jsonl línea 359 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote359 | 0.060171100 | 1497 | 1 | completa | Total; eventos.jsonl línea 360 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote360 | 0.060519000 | 1497 | 1 | completa | Total; eventos.jsonl línea 361 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote361 | 0.060160000 | 1497 | 1 | completa | Total; eventos.jsonl línea 362 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote362 | 0.057808000 | 1497 | 1 | completa | Total; eventos.jsonl línea 363 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote363 | 0.051926100 | 1497 | 1 | completa | Total; eventos.jsonl línea 364 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote364 | 0.049517700 | 1497 | 1 | completa | Total; eventos.jsonl línea 365 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote365 | 0.054945700 | 1497 | 1 | completa | Total; eventos.jsonl línea 366 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote366 | 0.052828400 | 1497 | 1 | completa | Total; eventos.jsonl línea 367 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote367 | 0.051795100 | 1497 | 1 | completa | Total; eventos.jsonl línea 368 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote368 | 0.051470000 | 1497 | 1 | completa | Total; eventos.jsonl línea 369 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote369 | 0.055362100 | 1497 | 1 | completa | Total; eventos.jsonl línea 370 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote370 | 0.053447000 | 1497 | 1 | completa | Total; eventos.jsonl línea 371 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote371 | 0.051969300 | 1497 | 1 | completa | Total; eventos.jsonl línea 372 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote372 | 0.050903100 | 1497 | 1 | completa | Total; eventos.jsonl línea 373 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote373 | 0.052374100 | 1497 | 1 | completa | Total; eventos.jsonl línea 374 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote374 | 0.050618900 | 1497 | 1 | completa | Total; eventos.jsonl línea 375 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote375 | 0.054505300 | 1497 | 1 | completa | Total; eventos.jsonl línea 376 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote376 | 0.050252500 | 1497 | 1 | completa | Total; eventos.jsonl línea 377 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote377 | 0.052962500 | 1497 | 1 | completa | Total; eventos.jsonl línea 378 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote378 | 0.052728000 | 1497 | 1 | completa | Total; eventos.jsonl línea 379 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote379 | 0.053437300 | 1497 | 1 | completa | Total; eventos.jsonl línea 380 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote380 | 0.050998800 | 1497 | 1 | completa | Total; eventos.jsonl línea 381 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote381 | 0.055744700 | 1497 | 1 | completa | Total; eventos.jsonl línea 382 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote382 | 0.053242900 | 1497 | 1 | completa | Total; eventos.jsonl línea 383 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote383 | 0.053978400 | 1497 | 1 | completa | Total; eventos.jsonl línea 384 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote384 | 0.052167900 | 1497 | 1 | completa | Total; eventos.jsonl línea 385 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote385 | 0.050346100 | 1497 | 1 | completa | Total; eventos.jsonl línea 386 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote386 | 0.050181200 | 1497 | 1 | completa | Total; eventos.jsonl línea 387 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote387 | 0.049690300 | 1497 | 1 | completa | Total; eventos.jsonl línea 388 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote388 | 0.049134400 | 1497 | 1 | completa | Total; eventos.jsonl línea 389 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote389 | 0.052459000 | 1497 | 1 | completa | Total; eventos.jsonl línea 390 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote390 | 0.054120700 | 1497 | 1 | completa | Total; eventos.jsonl línea 391 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote391 | 0.051222600 | 1497 | 1 | completa | Total; eventos.jsonl línea 392 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote392 | 0.051397000 | 1497 | 1 | completa | Total; eventos.jsonl línea 393 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote393 | 0.050248200 | 1497 | 1 | completa | Total; eventos.jsonl línea 394 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote394 | 0.054275200 | 1497 | 1 | completa | Total; eventos.jsonl línea 395 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote395 | 0.048459900 | 1497 | 1 | completa | Total; eventos.jsonl línea 396 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote396 | 0.050030600 | 1497 | 1 | completa | Total; eventos.jsonl línea 397 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote397 | 0.046994100 | 1497 | 1 | completa | Total; eventos.jsonl línea 398 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote398 | 0.047868100 | 1497 | 1 | completa | Total; eventos.jsonl línea 399 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote399 | 0.050095600 | 1497 | 1 | completa | Total; eventos.jsonl línea 400 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote400 | 0.050709900 | 1497 | 1 | completa | Total; eventos.jsonl línea 401 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote401 | 0.056975900 | 1497 | 1 | completa | Total; eventos.jsonl línea 402 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote402 | 0.058290100 | 1497 | 1 | completa | Total; eventos.jsonl línea 403 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote403 | 0.057435200 | 1497 | 1 | completa | Total; eventos.jsonl línea 404 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote404 | 0.053200900 | 1497 | 1 | completa | Total; eventos.jsonl línea 405 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote405 | 0.055468800 | 1497 | 1 | completa | Total; eventos.jsonl línea 406 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote406 | 0.055730600 | 1497 | 1 | completa | Total; eventos.jsonl línea 407 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote407 | 0.056352700 | 1497 | 1 | completa | Total; eventos.jsonl línea 408 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote408 | 0.058433200 | 1497 | 1 | completa | Total; eventos.jsonl línea 409 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote409 | 0.059637600 | 1497 | 1 | completa | Total; eventos.jsonl línea 410 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote410 | 0.062447000 | 1497 | 1 | completa | Total; eventos.jsonl línea 411 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote411 | 0.059019700 | 1497 | 1 | completa | Total; eventos.jsonl línea 412 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote412 | 0.057555900 | 1497 | 1 | completa | Total; eventos.jsonl línea 413 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote413 | 0.051751300 | 1497 | 1 | completa | Total; eventos.jsonl línea 414 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote414 | 0.053305800 | 1497 | 1 | completa | Total; eventos.jsonl línea 415 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote415 | 0.056454300 | 1497 | 1 | completa | Total; eventos.jsonl línea 416 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote416 | 0.056178900 | 1497 | 1 | completa | Total; eventos.jsonl línea 417 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote417 | 0.061251100 | 1497 | 1 | completa | Total; eventos.jsonl línea 418 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote418 | 0.064990000 | 1497 | 1 | completa | Total; eventos.jsonl línea 419 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote419 | 0.059956000 | 1497 | 1 | completa | Total; eventos.jsonl línea 420 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote420 | 0.060113100 | 1497 | 1 | completa | Total; eventos.jsonl línea 421 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote421 | 0.059086300 | 1497 | 1 | completa | Total; eventos.jsonl línea 422 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote422 | 0.059831200 | 1497 | 1 | completa | Total; eventos.jsonl línea 423 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote423 | 0.061045900 | 1497 | 1 | completa | Total; eventos.jsonl línea 424 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote424 | 0.063031800 | 1497 | 1 | completa | Total; eventos.jsonl línea 425 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote425 | 0.061545000 | 1497 | 1 | completa | Total; eventos.jsonl línea 426 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote426 | 0.059799600 | 1497 | 1 | completa | Total; eventos.jsonl línea 427 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote427 | 0.064000500 | 1497 | 1 | completa | Total; eventos.jsonl línea 428 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote428 | 0.062343300 | 1497 | 1 | completa | Total; eventos.jsonl línea 429 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote429 | 0.059518500 | 1497 | 1 | completa | Total; eventos.jsonl línea 430 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote430 | 0.063783900 | 1497 | 1 | completa | Total; eventos.jsonl línea 431 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote431 | 0.059472300 | 1497 | 1 | completa | Total; eventos.jsonl línea 432 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote432 | 0.063180800 | 1497 | 1 | completa | Total; eventos.jsonl línea 433 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote433 | 0.061016400 | 1497 | 1 | completa | Total; eventos.jsonl línea 434 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote434 | 0.057504400 | 1497 | 1 | completa | Total; eventos.jsonl línea 435 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote435 | 0.060690000 | 1497 | 1 | completa | Total; eventos.jsonl línea 436 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote436 | 0.061791900 | 1497 | 1 | completa | Total; eventos.jsonl línea 437 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote437 | 0.057384600 | 1497 | 1 | completa | Total; eventos.jsonl línea 438 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote438 | 0.051701000 | 1497 | 1 | completa | Total; eventos.jsonl línea 439 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote439 | 0.053249000 | 1497 | 1 | completa | Total; eventos.jsonl línea 440 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote440 | 0.053352500 | 1497 | 1 | completa | Total; eventos.jsonl línea 441 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote441 | 0.052791200 | 1497 | 1 | completa | Total; eventos.jsonl línea 442 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote442 | 0.053283200 | 1497 | 1 | completa | Total; eventos.jsonl línea 443 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote443 | 0.050617900 | 1497 | 1 | completa | Total; eventos.jsonl línea 444 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote444 | 0.051224800 | 1497 | 1 | completa | Total; eventos.jsonl línea 445 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote445 | 0.048906400 | 1497 | 1 | completa | Total; eventos.jsonl línea 446 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote446 | 0.048697600 | 1497 | 1 | completa | Total; eventos.jsonl línea 447 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote447 | 0.055241300 | 1497 | 1 | completa | Total; eventos.jsonl línea 448 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote448 | 0.050828300 | 1497 | 1 | completa | Total; eventos.jsonl línea 449 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote449 | 0.048893500 | 1497 | 1 | completa | Total; eventos.jsonl línea 450 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote450 | 0.050644600 | 1497 | 1 | completa | Total; eventos.jsonl línea 451 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote451 | 0.048102400 | 1497 | 1 | completa | Total; eventos.jsonl línea 452 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote452 | 0.053223900 | 1497 | 1 | completa | Total; eventos.jsonl línea 453 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote453 | 0.053999800 | 1497 | 1 | completa | Total; eventos.jsonl línea 454 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote454 | 0.048597200 | 1497 | 1 | completa | Total; eventos.jsonl línea 455 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote455 | 0.050879100 | 1497 | 1 | completa | Total; eventos.jsonl línea 456 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote456 | 0.051980500 | 1497 | 1 | completa | Total; eventos.jsonl línea 457 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote457 | 0.048561400 | 1497 | 1 | completa | Total; eventos.jsonl línea 458 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote458 | 0.046101000 | 1497 | 1 | completa | Total; eventos.jsonl línea 459 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote459 | 0.050517900 | 1497 | 1 | completa | Total; eventos.jsonl línea 460 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote460 | 0.049330800 | 1497 | 1 | completa | Total; eventos.jsonl línea 461 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote461 | 0.050687000 | 1497 | 1 | completa | Total; eventos.jsonl línea 462 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote462 | 0.052200300 | 1497 | 1 | completa | Total; eventos.jsonl línea 463 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote463 | 0.056615500 | 1497 | 1 | completa | Total; eventos.jsonl línea 464 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote464 | 0.050534700 | 1497 | 1 | completa | Total; eventos.jsonl línea 465 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote465 | 0.051629300 | 1497 | 1 | completa | Total; eventos.jsonl línea 466 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote466 | 0.049822600 | 1497 | 1 | completa | Total; eventos.jsonl línea 467 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote467 | 0.050078100 | 1497 | 1 | completa | Total; eventos.jsonl línea 468 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote468 | 0.048758800 | 1497 | 1 | completa | Total; eventos.jsonl línea 469 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote469 | 0.050687500 | 1497 | 1 | completa | Total; eventos.jsonl línea 470 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote470 | 0.053542200 | 1497 | 1 | completa | Total; eventos.jsonl línea 471 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote471 | 0.050443600 | 1497 | 1 | completa | Total; eventos.jsonl línea 472 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote472 | 0.052032900 | 1497 | 1 | completa | Total; eventos.jsonl línea 473 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote473 | 0.049626400 | 1497 | 1 | completa | Total; eventos.jsonl línea 474 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote474 | 0.052457700 | 1497 | 1 | completa | Total; eventos.jsonl línea 475 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote475 | 0.050562500 | 1497 | 1 | completa | Total; eventos.jsonl línea 476 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote476 | 0.051052900 | 1497 | 1 | completa | Total; eventos.jsonl línea 477 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote477 | 0.051143400 | 1497 | 1 | completa | Total; eventos.jsonl línea 478 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote478 | 0.049652300 | 1497 | 1 | completa | Total; eventos.jsonl línea 479 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote479 | 0.055565100 | 1497 | 1 | completa | Total; eventos.jsonl línea 480 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote480 | 0.051880500 | 1497 | 1 | completa | Total; eventos.jsonl línea 481 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote481 | 0.051212700 | 1497 | 1 | completa | Total; eventos.jsonl línea 482 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote482 | 0.058039600 | 1497 | 1 | completa | Total; eventos.jsonl línea 483 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote483 | 0.052149700 | 1497 | 1 | completa | Total; eventos.jsonl línea 484 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote484 | 0.056295000 | 1497 | 1 | completa | Total; eventos.jsonl línea 485 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote485 | 0.051166800 | 1497 | 1 | completa | Total; eventos.jsonl línea 486 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote486 | 0.051613100 | 1497 | 1 | completa | Total; eventos.jsonl línea 487 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote487 | 0.049722800 | 1497 | 1 | completa | Total; eventos.jsonl línea 488 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote488 | 0.049745100 | 1497 | 1 | completa | Total; eventos.jsonl línea 489 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote489 | 0.051687800 | 1497 | 1 | completa | Total; eventos.jsonl línea 490 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote490 | 0.051147100 | 1497 | 1 | completa | Total; eventos.jsonl línea 491 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote491 | 0.050790800 | 1497 | 1 | completa | Total; eventos.jsonl línea 492 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote492 | 0.051086100 | 1497 | 1 | completa | Total; eventos.jsonl línea 493 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote493 | 0.048994700 | 1497 | 1 | completa | Total; eventos.jsonl línea 494 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote494 | 0.053400800 | 1497 | 1 | completa | Total; eventos.jsonl línea 495 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote495 | 0.050851200 | 1497 | 1 | completa | Total; eventos.jsonl línea 496 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote496 | 0.049695600 | 1497 | 1 | completa | Total; eventos.jsonl línea 497 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote497 | 0.050021700 | 1497 | 1 | completa | Total; eventos.jsonl línea 498 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote498 | 0.049001800 | 1497 | 1 | completa | Total; eventos.jsonl línea 499 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote499 | 0.052033300 | 1497 | 1 | completa | Total; eventos.jsonl línea 500 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote500 | 0.056127600 | 1497 | 1 | completa | Total; eventos.jsonl línea 501 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote501 | 0.051215700 | 1497 | 1 | completa | Total; eventos.jsonl línea 502 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote502 | 0.048397700 | 1497 | 1 | completa | Total; eventos.jsonl línea 503 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote503 | 0.053622400 | 1497 | 1 | completa | Total; eventos.jsonl línea 504 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote504 | 0.049290300 | 1497 | 1 | completa | Total; eventos.jsonl línea 505 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote505 | 0.050699300 | 1497 | 1 | completa | Total; eventos.jsonl línea 506 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote506 | 0.046846000 | 1497 | 1 | completa | Total; eventos.jsonl línea 507 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote507 | 0.047971700 | 1497 | 1 | completa | Total; eventos.jsonl línea 508 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote508 | 0.046745000 | 1497 | 1 | completa | Total; eventos.jsonl línea 509 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote509 | 0.046424500 | 1497 | 1 | completa | Total; eventos.jsonl línea 510 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote510 | 0.048702800 | 1497 | 1 | completa | Total; eventos.jsonl línea 511 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote511 | 0.051433500 | 1497 | 1 | completa | Total; eventos.jsonl línea 512 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote512 | 0.050368600 | 1497 | 1 | completa | Total; eventos.jsonl línea 513 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote513 | 0.046393400 | 1497 | 1 | completa | Total; eventos.jsonl línea 514 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote514 | 0.046213100 | 1497 | 1 | completa | Total; eventos.jsonl línea 515 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote515 | 0.049367000 | 1497 | 1 | completa | Total; eventos.jsonl línea 516 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote516 | 0.046334500 | 1497 | 1 | completa | Total; eventos.jsonl línea 517 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote517 | 0.052308400 | 1497 | 1 | completa | Total; eventos.jsonl línea 518 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote518 | 0.046476500 | 1497 | 1 | completa | Total; eventos.jsonl línea 519 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote519 | 0.046747900 | 1497 | 1 | completa | Total; eventos.jsonl línea 520 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote520 | 0.056567300 | 1497 | 1 | completa | Total; eventos.jsonl línea 521 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote521 | 0.051696200 | 1497 | 1 | completa | Total; eventos.jsonl línea 522 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote522 | 0.054301100 | 1497 | 1 | completa | Total; eventos.jsonl línea 523 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote523 | 0.051233600 | 1497 | 1 | completa | Total; eventos.jsonl línea 524 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote524 | 0.050802700 | 1497 | 1 | completa | Total; eventos.jsonl línea 525 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote525 | 0.056536900 | 1497 | 1 | completa | Total; eventos.jsonl línea 526 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote526 | 0.054978400 | 1497 | 1 | completa | Total; eventos.jsonl línea 527 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote527 | 0.051960500 | 1497 | 1 | completa | Total; eventos.jsonl línea 528 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote528 | 0.052655800 | 1497 | 1 | completa | Total; eventos.jsonl línea 529 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote529 | 0.052599900 | 1497 | 1 | completa | Total; eventos.jsonl línea 530 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote530 | 0.053496500 | 1497 | 1 | completa | Total; eventos.jsonl línea 531 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote531 | 0.052290900 | 1497 | 1 | completa | Total; eventos.jsonl línea 532 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote532 | 0.053401800 | 1497 | 1 | completa | Total; eventos.jsonl línea 533 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote533 | 0.051898500 | 1497 | 1 | completa | Total; eventos.jsonl línea 534 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote534 | 0.055652900 | 1497 | 1 | completa | Total; eventos.jsonl línea 535 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote535 | 0.052583100 | 1497 | 1 | completa | Total; eventos.jsonl línea 536 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote536 | 0.054296200 | 1497 | 1 | completa | Total; eventos.jsonl línea 537 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote537 | 0.053835400 | 1497 | 1 | completa | Total; eventos.jsonl línea 538 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote538 | 0.054101800 | 1497 | 1 | completa | Total; eventos.jsonl línea 539 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote539 | 0.057696200 | 1497 | 1 | completa | Total; eventos.jsonl línea 540 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote540 | 0.050163100 | 1497 | 1 | completa | Total; eventos.jsonl línea 541 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote541 | 0.051114400 | 1497 | 1 | completa | Total; eventos.jsonl línea 542 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote542 | 0.049977900 | 1497 | 1 | completa | Total; eventos.jsonl línea 543 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote543 | 0.052843900 | 1497 | 1 | completa | Total; eventos.jsonl línea 544 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote544 | 0.052323400 | 1497 | 1 | completa | Total; eventos.jsonl línea 545 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote545 | 0.054398400 | 1497 | 1 | completa | Total; eventos.jsonl línea 546 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote546 | 0.056674800 | 1497 | 1 | completa | Total; eventos.jsonl línea 547 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote547 | 0.049144500 | 1497 | 1 | completa | Total; eventos.jsonl línea 548 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote548 | 0.052850200 | 1497 | 1 | completa | Total; eventos.jsonl línea 549 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote549 | 0.052476600 | 1497 | 1 | completa | Total; eventos.jsonl línea 550 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote550 | 0.049199300 | 1497 | 1 | completa | Total; eventos.jsonl línea 551 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote551 | 0.053423700 | 1497 | 1 | completa | Total; eventos.jsonl línea 552 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote552 | 0.050233300 | 1497 | 1 | completa | Total; eventos.jsonl línea 553 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote553 | 0.053683700 | 1497 | 1 | completa | Total; eventos.jsonl línea 554 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote554 | 0.049111500 | 1497 | 1 | completa | Total; eventos.jsonl línea 555 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote555 | 0.049313200 | 1497 | 1 | completa | Total; eventos.jsonl línea 556 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote556 | 0.049955700 | 1497 | 1 | completa | Total; eventos.jsonl línea 557 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote557 | 0.049690400 | 1497 | 1 | completa | Total; eventos.jsonl línea 558 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote558 | 0.052001300 | 1497 | 1 | completa | Total; eventos.jsonl línea 559 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote559 | 0.054075500 | 1497 | 1 | completa | Total; eventos.jsonl línea 560 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote560 | 0.048403100 | 1497 | 1 | completa | Total; eventos.jsonl línea 561 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote561 | 0.052195900 | 1497 | 1 | completa | Total; eventos.jsonl línea 562 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote562 | 0.053290100 | 1497 | 1 | completa | Total; eventos.jsonl línea 563 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote563 | 0.051836200 | 1497 | 1 | completa | Total; eventos.jsonl línea 564 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote564 | 0.051478200 | 1497 | 1 | completa | Total; eventos.jsonl línea 565 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote565 | 0.048861500 | 1497 | 1 | completa | Total; eventos.jsonl línea 566 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote566 | 0.055228700 | 1497 | 1 | completa | Total; eventos.jsonl línea 567 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote567 | 0.054405100 | 1497 | 1 | completa | Total; eventos.jsonl línea 568 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote568 | 0.059615100 | 1497 | 1 | completa | Total; eventos.jsonl línea 569 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote569 | 0.056618100 | 1497 | 1 | completa | Total; eventos.jsonl línea 570 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote570 | 0.054473100 | 1497 | 1 | completa | Total; eventos.jsonl línea 571 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote571 | 0.047419900 | 1497 | 1 | completa | Total; eventos.jsonl línea 572 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote572 | 0.046721800 | 1497 | 1 | completa | Total; eventos.jsonl línea 573 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote573 | 0.048831900 | 1497 | 1 | completa | Total; eventos.jsonl línea 574 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote574 | 0.049058200 | 1497 | 1 | completa | Total; eventos.jsonl línea 575 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote575 | 0.058954900 | 1497 | 1 | completa | Total; eventos.jsonl línea 576 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote576 | 0.054717300 | 1497 | 1 | completa | Total; eventos.jsonl línea 577 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote577 | 0.061690000 | 1497 | 1 | completa | Total; eventos.jsonl línea 578 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote578 | 0.063441800 | 1497 | 1 | completa | Total; eventos.jsonl línea 579 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote579 | 0.059493300 | 1497 | 1 | completa | Total; eventos.jsonl línea 580 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote580 | 0.056057700 | 1497 | 1 | completa | Total; eventos.jsonl línea 581 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote581 | 0.052844100 | 1497 | 1 | completa | Total; eventos.jsonl línea 582 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote582 | 0.057880500 | 1497 | 1 | completa | Total; eventos.jsonl línea 583 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote583 | 0.056862200 | 1497 | 1 | completa | Total; eventos.jsonl línea 584 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote584 | 0.056092300 | 1497 | 1 | completa | Total; eventos.jsonl línea 585 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote585 | 0.051673000 | 1497 | 1 | completa | Total; eventos.jsonl línea 586 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote586 | 0.051844400 | 1497 | 1 | completa | Total; eventos.jsonl línea 587 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote587 | 0.053022200 | 1497 | 1 | completa | Total; eventos.jsonl línea 588 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote588 | 0.052211700 | 1497 | 1 | completa | Total; eventos.jsonl línea 589 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote589 | 0.052252100 | 1497 | 1 | completa | Total; eventos.jsonl línea 590 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote590 | 0.053007600 | 1497 | 1 | completa | Total; eventos.jsonl línea 591 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote591 | 0.053215300 | 1497 | 1 | completa | Total; eventos.jsonl línea 592 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote592 | 0.049664400 | 1497 | 1 | completa | Total; eventos.jsonl línea 593 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote593 | 0.052494100 | 1497 | 1 | completa | Total; eventos.jsonl línea 594 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote594 | 0.052795000 | 1497 | 1 | completa | Total; eventos.jsonl línea 595 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote595 | 0.050568700 | 1497 | 1 | completa | Total; eventos.jsonl línea 596 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote596 | 0.052750000 | 1497 | 1 | completa | Total; eventos.jsonl línea 597 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote597 | 0.058064700 | 1497 | 1 | completa | Total; eventos.jsonl línea 598 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote598 | 0.052756400 | 1497 | 1 | completa | Total; eventos.jsonl línea 599 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote599 | 0.053958400 | 1497 | 1 | completa | Total; eventos.jsonl línea 600 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote600 | 0.052801300 | 1497 | 1 | completa | Total; eventos.jsonl línea 601 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote601 | 0.059454400 | 1497 | 1 | completa | Total; eventos.jsonl línea 602 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote602 | 0.054295000 | 1497 | 1 | completa | Total; eventos.jsonl línea 603 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote603 | 0.055893500 | 1497 | 1 | completa | Total; eventos.jsonl línea 604 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote604 | 0.055323700 | 1497 | 1 | completa | Total; eventos.jsonl línea 605 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote605 | 0.056323100 | 1497 | 1 | completa | Total; eventos.jsonl línea 606 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote606 | 0.053135200 | 1497 | 1 | completa | Total; eventos.jsonl línea 607 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote607 | 0.057698200 | 1497 | 1 | completa | Total; eventos.jsonl línea 608 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote608 | 0.056443900 | 1497 | 1 | completa | Total; eventos.jsonl línea 609 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote609 | 0.058481700 | 1497 | 1 | completa | Total; eventos.jsonl línea 610 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote610 | 0.051522100 | 1497 | 1 | completa | Total; eventos.jsonl línea 611 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote611 | 0.053182900 | 1497 | 1 | completa | Total; eventos.jsonl línea 612 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote612 | 0.055678500 | 1497 | 1 | completa | Total; eventos.jsonl línea 613 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote613 | 0.054715600 | 1497 | 1 | completa | Total; eventos.jsonl línea 614 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote614 | 0.054615300 | 1497 | 1 | completa | Total; eventos.jsonl línea 615 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote615 | 0.050812400 | 1497 | 1 | completa | Total; eventos.jsonl línea 616 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote616 | 0.054304200 | 1497 | 1 | completa | Total; eventos.jsonl línea 617 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote617 | 0.060588700 | 1497 | 1 | completa | Total; eventos.jsonl línea 618 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote618 | 0.051540000 | 1497 | 1 | completa | Total; eventos.jsonl línea 619 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote619 | 0.047898800 | 1497 | 1 | completa | Total; eventos.jsonl línea 620 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote620 | 0.050575300 | 1497 | 1 | completa | Total; eventos.jsonl línea 621 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote621 | 0.047460800 | 1497 | 1 | completa | Total; eventos.jsonl línea 622 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote622 | 0.054378200 | 1497 | 1 | completa | Total; eventos.jsonl línea 623 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote623 | 0.051021900 | 1497 | 1 | completa | Total; eventos.jsonl línea 624 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote624 | 0.056331700 | 1497 | 1 | completa | Total; eventos.jsonl línea 625 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote625 | 0.049695400 | 1497 | 1 | completa | Total; eventos.jsonl línea 626 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote626 | 0.048024000 | 1497 | 1 | completa | Total; eventos.jsonl línea 627 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote627 | 0.050527500 | 1497 | 1 | completa | Total; eventos.jsonl línea 628 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote628 | 0.046548000 | 1497 | 1 | completa | Total; eventos.jsonl línea 629 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote629 | 0.048711900 | 1497 | 1 | completa | Total; eventos.jsonl línea 630 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote630 | 0.047603600 | 1497 | 1 | completa | Total; eventos.jsonl línea 631 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote631 | 0.047396000 | 1497 | 1 | completa | Total; eventos.jsonl línea 632 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote632 | 0.052804800 | 1497 | 1 | completa | Total; eventos.jsonl línea 633 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote633 | 0.051943100 | 1497 | 1 | completa | Total; eventos.jsonl línea 634 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote634 | 0.055699200 | 1497 | 1 | completa | Total; eventos.jsonl línea 635 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote635 | 0.049199300 | 1497 | 1 | completa | Total; eventos.jsonl línea 636 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote636 | 0.049743600 | 1497 | 1 | completa | Total; eventos.jsonl línea 637 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote637 | 0.050346900 | 1497 | 1 | completa | Total; eventos.jsonl línea 638 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote638 | 0.052175600 | 1497 | 1 | completa | Total; eventos.jsonl línea 639 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote639 | 0.050176400 | 1497 | 1 | completa | Total; eventos.jsonl línea 640 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote640 | 0.050432000 | 1497 | 1 | completa | Total; eventos.jsonl línea 641 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote641 | 0.051977800 | 1497 | 1 | completa | Total; eventos.jsonl línea 642 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote642 | 0.050915900 | 1497 | 1 | completa | Total; eventos.jsonl línea 643 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote643 | 0.052480500 | 1497 | 1 | completa | Total; eventos.jsonl línea 644 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote644 | 0.050655100 | 1497 | 1 | completa | Total; eventos.jsonl línea 645 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote645 | 0.052891200 | 1497 | 1 | completa | Total; eventos.jsonl línea 646 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote646 | 0.053760100 | 1497 | 1 | completa | Total; eventos.jsonl línea 647 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote647 | 0.054421000 | 1497 | 1 | completa | Total; eventos.jsonl línea 648 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote648 | 0.053564900 | 1497 | 1 | completa | Total; eventos.jsonl línea 649 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote649 | 0.053187000 | 1497 | 1 | completa | Total; eventos.jsonl línea 650 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote650 | 0.051580300 | 1497 | 1 | completa | Total; eventos.jsonl línea 651 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote651 | 0.052754000 | 1497 | 1 | completa | Total; eventos.jsonl línea 652 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote652 | 0.052926200 | 1497 | 1 | completa | Total; eventos.jsonl línea 653 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote653 | 0.054151500 | 1497 | 1 | completa | Total; eventos.jsonl línea 654 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote654 | 0.052785900 | 1497 | 1 | completa | Total; eventos.jsonl línea 655 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote655 | 0.049164700 | 1497 | 1 | completa | Total; eventos.jsonl línea 656 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote656 | 0.050858200 | 1497 | 1 | completa | Total; eventos.jsonl línea 657 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote657 | 0.049161100 | 1497 | 1 | completa | Total; eventos.jsonl línea 658 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote658 | 0.049496100 | 1497 | 1 | completa | Total; eventos.jsonl línea 659 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote659 | 0.054458700 | 1497 | 1 | completa | Total; eventos.jsonl línea 660 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote660 | 0.175025000 | 1497 | 1 | completa | Total; eventos.jsonl línea 661 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote661 | 0.057722600 | 1497 | 1 | completa | Total; eventos.jsonl línea 662 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote662 | 0.054183300 | 1497 | 1 | completa | Total; eventos.jsonl línea 663 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote663 | 0.054184900 | 1497 | 1 | completa | Total; eventos.jsonl línea 664 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote664 | 0.056147600 | 1497 | 1 | completa | Total; eventos.jsonl línea 665 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote665 | 0.056711800 | 1497 | 1 | completa | Total; eventos.jsonl línea 666 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote666 | 0.055635100 | 1497 | 1 | completa | Total; eventos.jsonl línea 667 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote667 | 0.061581900 | 1497 | 1 | completa | Total; eventos.jsonl línea 668 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote668 | 0.057878500 | 1497 | 1 | completa | Total; eventos.jsonl línea 669 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote669 | 0.054028000 | 1497 | 1 | completa | Total; eventos.jsonl línea 670 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote670 | 0.052750800 | 1497 | 1 | completa | Total; eventos.jsonl línea 671 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote671 | 0.058496400 | 1497 | 1 | completa | Total; eventos.jsonl línea 672 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote672 | 0.060777600 | 1497 | 1 | completa | Total; eventos.jsonl línea 673 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote673 | 0.055258600 | 1497 | 1 | completa | Total; eventos.jsonl línea 674 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote674 | 0.048518100 | 1497 | 1 | completa | Total; eventos.jsonl línea 675 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote675 | 0.051582200 | 1497 | 1 | completa | Total; eventos.jsonl línea 676 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote676 | 0.060213400 | 1497 | 1 | completa | Total; eventos.jsonl línea 677 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote677 | 0.059231600 | 1497 | 1 | completa | Total; eventos.jsonl línea 678 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote678 | 0.057206000 | 1497 | 1 | completa | Total; eventos.jsonl línea 679 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote679 | 0.055789900 | 1497 | 1 | completa | Total; eventos.jsonl línea 680 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote680 | 0.052397400 | 1497 | 1 | completa | Total; eventos.jsonl línea 681 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote681 | 0.055858300 | 1497 | 1 | completa | Total; eventos.jsonl línea 682 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote682 | 0.049257700 | 1497 | 1 | completa | Total; eventos.jsonl línea 683 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote683 | 0.050406000 | 1497 | 1 | completa | Total; eventos.jsonl línea 684 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote684 | 0.049703800 | 1497 | 1 | completa | Total; eventos.jsonl línea 685 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote685 | 0.056630200 | 1497 | 1 | completa | Total; eventos.jsonl línea 686 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote686 | 0.056706600 | 1497 | 1 | completa | Total; eventos.jsonl línea 687 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote687 | 0.059195300 | 1497 | 1 | completa | Total; eventos.jsonl línea 688 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote688 | 0.055698500 | 1497 | 1 | completa | Total; eventos.jsonl línea 689 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote689 | 0.060691400 | 1497 | 1 | completa | Total; eventos.jsonl línea 690 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote690 | 0.057496800 | 1497 | 1 | completa | Total; eventos.jsonl línea 691 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote691 | 0.055047800 | 1497 | 1 | completa | Total; eventos.jsonl línea 692 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote692 | 0.051241000 | 1497 | 1 | completa | Total; eventos.jsonl línea 693 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote693 | 0.053941300 | 1497 | 1 | completa | Total; eventos.jsonl línea 694 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote694 | 0.053514600 | 1497 | 1 | completa | Total; eventos.jsonl línea 695 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote695 | 0.058098200 | 1497 | 1 | completa | Total; eventos.jsonl línea 696 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote696 | 0.050823400 | 1497 | 1 | completa | Total; eventos.jsonl línea 697 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote697 | 0.051709300 | 1497 | 1 | completa | Total; eventos.jsonl línea 698 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote698 | 0.052424600 | 1497 | 1 | completa | Total; eventos.jsonl línea 699 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote699 | 0.055361100 | 1497 | 1 | completa | Total; eventos.jsonl línea 700 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote700 | 0.061902200 | 1497 | 1 | completa | Total; eventos.jsonl línea 701 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote701 | 0.061335100 | 1497 | 1 | completa | Total; eventos.jsonl línea 702 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote702 | 0.055384500 | 1497 | 1 | completa | Total; eventos.jsonl línea 703 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote703 | 0.058297000 | 1497 | 1 | completa | Total; eventos.jsonl línea 704 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote704 | 0.051202200 | 1497 | 1 | completa | Total; eventos.jsonl línea 705 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote705 | 0.057657200 | 1497 | 1 | completa | Total; eventos.jsonl línea 706 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote706 | 0.054748400 | 1497 | 1 | completa | Total; eventos.jsonl línea 707 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote707 | 0.060757400 | 1497 | 1 | completa | Total; eventos.jsonl línea 708 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote708 | 0.057206300 | 1497 | 1 | completa | Total; eventos.jsonl línea 709 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote709 | 0.053103800 | 1497 | 1 | completa | Total; eventos.jsonl línea 710 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote710 | 0.057021900 | 1497 | 1 | completa | Total; eventos.jsonl línea 711 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote711 | 0.060504600 | 1497 | 1 | completa | Total; eventos.jsonl línea 712 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote712 | 0.057891000 | 1497 | 1 | completa | Total; eventos.jsonl línea 713 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote713 | 0.058389000 | 1497 | 1 | completa | Total; eventos.jsonl línea 714 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote714 | 0.057008900 | 1497 | 1 | completa | Total; eventos.jsonl línea 715 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote715 | 0.060186000 | 1497 | 1 | completa | Total; eventos.jsonl línea 716 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote716 | 0.058190000 | 1497 | 1 | completa | Total; eventos.jsonl línea 717 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote717 | 0.058498700 | 1497 | 1 | completa | Total; eventos.jsonl línea 718 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote718 | 0.053959800 | 1497 | 1 | completa | Total; eventos.jsonl línea 719 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote719 | 0.057774000 | 1497 | 1 | completa | Total; eventos.jsonl línea 720 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote720 | 0.054223700 | 1497 | 1 | completa | Total; eventos.jsonl línea 721 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote721 | 0.055758900 | 1497 | 1 | completa | Total; eventos.jsonl línea 722 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote722 | 0.057607900 | 1497 | 1 | completa | Total; eventos.jsonl línea 723 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote723 | 0.052168500 | 1497 | 1 | completa | Total; eventos.jsonl línea 724 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote724 | 0.060420800 | 1497 | 1 | completa | Total; eventos.jsonl línea 725 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote725 | 0.053800100 | 1497 | 1 | completa | Total; eventos.jsonl línea 726 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote726 | 0.053758700 | 1497 | 1 | completa | Total; eventos.jsonl línea 727 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote727 | 0.049791000 | 1497 | 1 | completa | Total; eventos.jsonl línea 728 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote728 | 0.049947900 | 1497 | 1 | completa | Total; eventos.jsonl línea 729 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote729 | 0.050115700 | 1497 | 1 | completa | Total; eventos.jsonl línea 730 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote730 | 0.055891000 | 1497 | 1 | completa | Total; eventos.jsonl línea 731 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote731 | 0.055635400 | 1497 | 1 | completa | Total; eventos.jsonl línea 732 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote732 | 0.053635900 | 1497 | 1 | completa | Total; eventos.jsonl línea 733 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote733 | 0.054810900 | 1497 | 1 | completa | Total; eventos.jsonl línea 734 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote734 | 0.050525000 | 1497 | 1 | completa | Total; eventos.jsonl línea 735 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote735 | 0.049396800 | 1497 | 1 | completa | Total; eventos.jsonl línea 736 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote736 | 0.053254900 | 1497 | 1 | completa | Total; eventos.jsonl línea 737 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote737 | 0.049160100 | 1497 | 1 | completa | Total; eventos.jsonl línea 738 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote738 | 0.048779200 | 1497 | 1 | completa | Total; eventos.jsonl línea 739 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote739 | 0.055425500 | 1497 | 1 | completa | Total; eventos.jsonl línea 740 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote740 | 0.053536300 | 1497 | 1 | completa | Total; eventos.jsonl línea 741 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote741 | 0.056634500 | 1497 | 1 | completa | Total; eventos.jsonl línea 742 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote742 | 0.056381600 | 1497 | 1 | completa | Total; eventos.jsonl línea 743 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote743 | 0.058679700 | 1497 | 1 | completa | Total; eventos.jsonl línea 744 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote744 | 0.052629200 | 1497 | 1 | completa | Total; eventos.jsonl línea 745 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote745 | 0.057668600 | 1497 | 1 | completa | Total; eventos.jsonl línea 746 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote746 | 0.060462500 | 1497 | 1 | completa | Total; eventos.jsonl línea 747 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote747 | 0.065159800 | 1497 | 1 | completa | Total; eventos.jsonl línea 748 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote748 | 0.060034900 | 1497 | 1 | completa | Total; eventos.jsonl línea 749 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote749 | 0.058898000 | 1497 | 1 | completa | Total; eventos.jsonl línea 750 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote750 | 0.059882600 | 1497 | 1 | completa | Total; eventos.jsonl línea 751 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote751 | 0.060235200 | 1497 | 1 | completa | Total; eventos.jsonl línea 752 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote752 | 0.058415200 | 1497 | 1 | completa | Total; eventos.jsonl línea 753 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote753 | 0.061536200 | 1497 | 1 | completa | Total; eventos.jsonl línea 754 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote754 | 0.058316900 | 1497 | 1 | completa | Total; eventos.jsonl línea 755 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote755 | 0.060121500 | 1497 | 1 | completa | Total; eventos.jsonl línea 756 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote756 | 0.060717600 | 1497 | 1 | completa | Total; eventos.jsonl línea 757 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote757 | 0.058265700 | 1497 | 1 | completa | Total; eventos.jsonl línea 758 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote758 | 0.060452500 | 1497 | 1 | completa | Total; eventos.jsonl línea 759 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote759 | 0.065349300 | 1497 | 1 | completa | Total; eventos.jsonl línea 760 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote760 | 0.061391800 | 1497 | 1 | completa | Total; eventos.jsonl línea 761 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote761 | 0.058313800 | 1497 | 1 | completa | Total; eventos.jsonl línea 762 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote762 | 0.058932400 | 1497 | 1 | completa | Total; eventos.jsonl línea 763 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote763 | 0.055220600 | 1497 | 1 | completa | Total; eventos.jsonl línea 764 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote764 | 0.061320900 | 1497 | 1 | completa | Total; eventos.jsonl línea 765 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote765 | 0.065935000 | 1497 | 1 | completa | Total; eventos.jsonl línea 766 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote766 | 0.058956200 | 1497 | 1 | completa | Total; eventos.jsonl línea 767 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote767 | 0.058769700 | 1497 | 1 | completa | Total; eventos.jsonl línea 768 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote768 | 0.058707500 | 1497 | 1 | completa | Total; eventos.jsonl línea 769 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote769 | 0.058762100 | 1497 | 1 | completa | Total; eventos.jsonl línea 770 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote770 | 0.057938800 | 1497 | 1 | completa | Total; eventos.jsonl línea 771 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote771 | 0.060603700 | 1497 | 1 | completa | Total; eventos.jsonl línea 772 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote772 | 0.060062200 | 1497 | 1 | completa | Total; eventos.jsonl línea 773 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote773 | 0.059577300 | 1497 | 1 | completa | Total; eventos.jsonl línea 774 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote774 | 0.057863800 | 1497 | 1 | completa | Total; eventos.jsonl línea 775 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote775 | 0.055669500 | 1497 | 1 | completa | Total; eventos.jsonl línea 776 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote776 | 0.053499800 | 1497 | 1 | completa | Total; eventos.jsonl línea 777 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote777 | 0.058693900 | 1497 | 1 | completa | Total; eventos.jsonl línea 778 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote778 | 0.058322600 | 1497 | 1 | completa | Total; eventos.jsonl línea 779 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote779 | 0.059481400 | 1497 | 1 | completa | Total; eventos.jsonl línea 780 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote780 | 0.060588500 | 1497 | 1 | completa | Total; eventos.jsonl línea 781 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote781 | 0.058239800 | 1497 | 1 | completa | Total; eventos.jsonl línea 782 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote782 | 0.063971900 | 1497 | 1 | completa | Total; eventos.jsonl línea 783 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote783 | 0.060179700 | 1497 | 1 | completa | Total; eventos.jsonl línea 784 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote784 | 0.058164700 | 1497 | 1 | completa | Total; eventos.jsonl línea 785 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote785 | 0.056706700 | 1497 | 1 | completa | Total; eventos.jsonl línea 786 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote786 | 0.053471200 | 1497 | 1 | completa | Total; eventos.jsonl línea 787 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote787 | 0.052158900 | 1497 | 1 | completa | Total; eventos.jsonl línea 788 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote788 | 0.053290300 | 1497 | 1 | completa | Total; eventos.jsonl línea 789 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote789 | 0.052549300 | 1497 | 1 | completa | Total; eventos.jsonl línea 790 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote790 | 0.058386400 | 1497 | 1 | completa | Total; eventos.jsonl línea 791 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote791 | 0.056925400 | 1497 | 1 | completa | Total; eventos.jsonl línea 792 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote792 | 0.059529800 | 1497 | 1 | completa | Total; eventos.jsonl línea 793 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote793 | 0.060096300 | 1497 | 1 | completa | Total; eventos.jsonl línea 794 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote794 | 0.057221000 | 1497 | 1 | completa | Total; eventos.jsonl línea 795 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote795 | 0.063212800 | 1497 | 1 | completa | Total; eventos.jsonl línea 796 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote796 | 0.056865800 | 1497 | 1 | completa | Total; eventos.jsonl línea 797 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote797 | 0.059345200 | 1497 | 1 | completa | Total; eventos.jsonl línea 798 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote798 | 0.058766300 | 1497 | 1 | completa | Total; eventos.jsonl línea 799 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote799 | 0.058852100 | 1497 | 1 | completa | Total; eventos.jsonl línea 800 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote800 | 0.058902900 | 1497 | 1 | completa | Total; eventos.jsonl línea 801 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote801 | 0.056628500 | 1497 | 1 | completa | Total; eventos.jsonl línea 802 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote802 | 0.055845100 | 1497 | 1 | completa | Total; eventos.jsonl línea 803 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote803 | 0.055468800 | 1497 | 1 | completa | Total; eventos.jsonl línea 804 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote804 | 0.057514500 | 1497 | 1 | completa | Total; eventos.jsonl línea 805 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote805 | 0.060606100 | 1497 | 1 | completa | Total; eventos.jsonl línea 806 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote806 | 0.064403600 | 1497 | 1 | completa | Total; eventos.jsonl línea 807 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote807 | 0.058446400 | 1497 | 1 | completa | Total; eventos.jsonl línea 808 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote808 | 0.058782800 | 1497 | 1 | completa | Total; eventos.jsonl línea 809 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote809 | 0.056667700 | 1497 | 1 | completa | Total; eventos.jsonl línea 810 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote810 | 0.058789000 | 1497 | 1 | completa | Total; eventos.jsonl línea 811 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote811 | 0.060351000 | 1497 | 1 | completa | Total; eventos.jsonl línea 812 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote812 | 0.060301100 | 1497 | 1 | completa | Total; eventos.jsonl línea 813 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote813 | 0.057394400 | 1497 | 1 | completa | Total; eventos.jsonl línea 814 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote814 | 0.059961300 | 1497 | 1 | completa | Total; eventos.jsonl línea 815 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote815 | 0.057756500 | 1497 | 1 | completa | Total; eventos.jsonl línea 816 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote816 | 0.055768700 | 1497 | 1 | completa | Total; eventos.jsonl línea 817 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote817 | 0.055828200 | 1497 | 1 | completa | Total; eventos.jsonl línea 818 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote818 | 0.060384300 | 1497 | 1 | completa | Total; eventos.jsonl línea 819 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote819 | 0.056256500 | 1497 | 1 | completa | Total; eventos.jsonl línea 820 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote820 | 0.053538100 | 1497 | 1 | completa | Total; eventos.jsonl línea 821 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote821 | 0.053072200 | 1497 | 1 | completa | Total; eventos.jsonl línea 822 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote822 | 0.058928400 | 1497 | 1 | completa | Total; eventos.jsonl línea 823 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote823 | 0.054536100 | 1497 | 1 | completa | Total; eventos.jsonl línea 824 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote824 | 0.054956800 | 1497 | 1 | completa | Total; eventos.jsonl línea 825 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote825 | 0.056378800 | 1497 | 1 | completa | Total; eventos.jsonl línea 826 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote826 | 0.052248500 | 1497 | 1 | completa | Total; eventos.jsonl línea 827 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote827 | 0.055464600 | 1497 | 1 | completa | Total; eventos.jsonl línea 828 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote828 | 0.059592600 | 1497 | 1 | completa | Total; eventos.jsonl línea 829 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote829 | 0.054414000 | 1497 | 1 | completa | Total; eventos.jsonl línea 830 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote830 | 0.059948100 | 1497 | 1 | completa | Total; eventos.jsonl línea 831 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote831 | 0.055492200 | 1497 | 1 | completa | Total; eventos.jsonl línea 832 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote832 | 0.059135600 | 1497 | 1 | completa | Total; eventos.jsonl línea 833 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote833 | 0.056478900 | 1497 | 1 | completa | Total; eventos.jsonl línea 834 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote834 | 0.054237400 | 1497 | 1 | completa | Total; eventos.jsonl línea 835 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote835 | 0.056528900 | 1497 | 1 | completa | Total; eventos.jsonl línea 836 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote836 | 0.057412100 | 1497 | 1 | completa | Total; eventos.jsonl línea 837 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote837 | 0.054644700 | 1497 | 1 | completa | Total; eventos.jsonl línea 838 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote838 | 0.053018600 | 1497 | 1 | completa | Total; eventos.jsonl línea 839 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote839 | 0.056948200 | 1497 | 1 | completa | Total; eventos.jsonl línea 840 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote840 | 0.054732300 | 1497 | 1 | completa | Total; eventos.jsonl línea 841 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote841 | 0.057245000 | 1497 | 1 | completa | Total; eventos.jsonl línea 842 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote842 | 0.054338500 | 1497 | 1 | completa | Total; eventos.jsonl línea 843 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote843 | 0.054495500 | 1497 | 1 | completa | Total; eventos.jsonl línea 844 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote844 | 0.053017000 | 1497 | 1 | completa | Total; eventos.jsonl línea 845 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote845 | 0.055231200 | 1497 | 1 | completa | Total; eventos.jsonl línea 846 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote846 | 0.062738200 | 1497 | 1 | completa | Total; eventos.jsonl línea 847 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote847 | 0.057610200 | 1497 | 1 | completa | Total; eventos.jsonl línea 848 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote848 | 0.059969500 | 1497 | 1 | completa | Total; eventos.jsonl línea 849 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote849 | 0.059452500 | 1497 | 1 | completa | Total; eventos.jsonl línea 850 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote850 | 0.061406700 | 1497 | 1 | completa | Total; eventos.jsonl línea 851 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote851 | 0.057764700 | 1497 | 1 | completa | Total; eventos.jsonl línea 852 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote852 | 0.061555000 | 1497 | 1 | completa | Total; eventos.jsonl línea 853 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote853 | 0.060140500 | 1497 | 1 | completa | Total; eventos.jsonl línea 854 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote854 | 0.058810400 | 1497 | 1 | completa | Total; eventos.jsonl línea 855 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote855 | 0.059491000 | 1497 | 1 | completa | Total; eventos.jsonl línea 856 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote856 | 0.061069300 | 1497 | 1 | completa | Total; eventos.jsonl línea 857 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote857 | 0.058874400 | 1497 | 1 | completa | Total; eventos.jsonl línea 858 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote858 | 0.061001300 | 1497 | 1 | completa | Total; eventos.jsonl línea 859 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote859 | 0.058808900 | 1497 | 1 | completa | Total; eventos.jsonl línea 860 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote860 | 0.058776700 | 1497 | 1 | completa | Total; eventos.jsonl línea 861 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote861 | 0.057478200 | 1497 | 1 | completa | Total; eventos.jsonl línea 862 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote862 | 0.058947400 | 1497 | 1 | completa | Total; eventos.jsonl línea 863 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote863 | 0.058740100 | 1497 | 1 | completa | Total; eventos.jsonl línea 864 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote864 | 0.062706700 | 1497 | 1 | completa | Total; eventos.jsonl línea 865 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote865 | 0.060420200 | 1497 | 1 | completa | Total; eventos.jsonl línea 866 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote866 | 0.062017900 | 1497 | 1 | completa | Total; eventos.jsonl línea 867 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote867 | 0.054975900 | 1497 | 1 | completa | Total; eventos.jsonl línea 868 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote868 | 0.062897900 | 1497 | 1 | completa | Total; eventos.jsonl línea 869 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote869 | 0.058751300 | 1497 | 1 | completa | Total; eventos.jsonl línea 870 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote870 | 0.060433400 | 1497 | 1 | completa | Total; eventos.jsonl línea 871 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote871 | 0.059322100 | 1497 | 1 | completa | Total; eventos.jsonl línea 872 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote872 | 0.064505600 | 1497 | 1 | completa | Total; eventos.jsonl línea 873 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote873 | 0.059619200 | 1497 | 1 | completa | Total; eventos.jsonl línea 874 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote874 | 0.061513500 | 1497 | 1 | completa | Total; eventos.jsonl línea 875 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote875 | 0.060167500 | 1497 | 1 | completa | Total; eventos.jsonl línea 876 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote876 | 0.059686200 | 1497 | 1 | completa | Total; eventos.jsonl línea 877 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote877 | 0.053737700 | 1497 | 1 | completa | Total; eventos.jsonl línea 878 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote878 | 0.058093000 | 1497 | 1 | completa | Total; eventos.jsonl línea 879 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote879 | 0.056183700 | 1497 | 1 | completa | Total; eventos.jsonl línea 880 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote880 | 0.050580600 | 1497 | 1 | completa | Total; eventos.jsonl línea 881 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote881 | 0.049872600 | 1497 | 1 | completa | Total; eventos.jsonl línea 882 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote882 | 0.048946600 | 1497 | 1 | completa | Total; eventos.jsonl línea 883 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote883 | 0.047604100 | 1497 | 1 | completa | Total; eventos.jsonl línea 884 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote884 | 0.048619500 | 1497 | 1 | completa | Total; eventos.jsonl línea 885 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote885 | 0.054972500 | 1497 | 1 | completa | Total; eventos.jsonl línea 886 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote886 | 0.050584800 | 1497 | 1 | completa | Total; eventos.jsonl línea 887 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote887 | 0.055451400 | 1497 | 1 | completa | Total; eventos.jsonl línea 888 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote888 | 0.046186500 | 1497 | 1 | completa | Total; eventos.jsonl línea 889 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote889 | 0.046763000 | 1497 | 1 | completa | Total; eventos.jsonl línea 890 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote890 | 0.045866900 | 1497 | 1 | completa | Total; eventos.jsonl línea 891 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote891 | 0.046972000 | 1497 | 1 | completa | Total; eventos.jsonl línea 892 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote892 | 0.050190900 | 1497 | 1 | completa | Total; eventos.jsonl línea 893 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote893 | 0.047769000 | 1497 | 1 | completa | Total; eventos.jsonl línea 894 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote894 | 0.054818600 | 1497 | 1 | completa | Total; eventos.jsonl línea 895 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote895 | 0.058449500 | 1497 | 1 | completa | Total; eventos.jsonl línea 896 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote896 | 0.053267800 | 1497 | 1 | completa | Total; eventos.jsonl línea 897 |
+| Inferencia | Kernel Ridge RBF / máscaras SHAP lote897 | 0.053866700 | 1497 | 1 | completa | Total; eventos.jsonl línea 898 |
+| Explicación SHAP | 64caminos/32referencias · completo | 50.767067800 | 1497 | 1 | completa | Total; eventos.jsonl línea 899 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005459200 | 1 | 1 | completa | Total; eventos.jsonl línea 900 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.020886400 | 1000 | 1 | completa | Total; eventos.jsonl línea 901 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000929100 | 1000 | 1 | completa | Total; eventos.jsonl línea 902 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000109100 | 1000 | 1 | completa | Total; eventos.jsonl línea 903 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000072800 | 1 | 1 | completa | Total; eventos.jsonl línea 904 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.005666000 | 1 | 1 | completa | Total; eventos.jsonl línea 905 |
+| Inferencia | Kernel Ridge RBF / LIME / Pipeline | 0.019229700 | 1000 | 1 | completa | Total; eventos.jsonl línea 906 |
+| Entrenamiento/refit · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000781600 | 1000 | 1 | completa | Total; eventos.jsonl línea 907 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000103800 | 1000 | 1 | completa | Total; eventos.jsonl línea 908 |
+| Inferencia · sustituto LIME | Kernel Ridge RBF / LIME / Ridge | 0.000070400 | 1 | 1 | completa | Total; eventos.jsonl línea 909 |
+| Total del experimento | Kernel Ridge RBF · SHAP aproximado por permutaciones y LIME | 50.912879200 | No aplica | 1 | completa | Total; eventos.jsonl línea 910 |
+
+### Ejecución `20261020_154134_a014fa85`
+
+- **Modelo/motivo:** Originales · verificación y activación.
+- **Fecha/zona:** 2026-10-20T15:41:34.340482-05:00 a 2026-10-20T15:42:32.732245-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154134_a014fa85/metadata.json](tiempos/20261020_154134_a014fa85/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154134_a014fa85/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | m0 / validación serialización test | 0.013772000 | 188 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | m5 / validación serialización test | 0.016193200 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m19 / validación serialización test | 0.010319200 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m11 / validación serialización test | 0.018046900 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m7 / validación serialización test | 0.015717800 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m14 / validación serialización test | 0.007620500 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m15 / validación serialización test | 0.056750300 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m16 / validación serialización test | 0.028361600 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m3 / validación serialización test | 0.006848800 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Total del experimento | Originales · verificación y activación | 58.386765600 | No aplica | 1 | completa | Total; eventos.jsonl línea 10 |
+
+### Ejecución `20261020_154240_13835e67`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:42:40.977825-05:00 a 2026-10-20T15:42:41.226509-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154240_13835e67/metadata.json](tiempos/20261020_154240_13835e67/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154240_13835e67/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013762000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016178900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.133568400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000321300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.250537500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154247_493405f2`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:47.712134-05:00 a 2026-10-20T15:42:47.727876-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154247_493405f2/metadata.json](tiempos/20261020_154247_493405f2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154247_493405f2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009758100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.013681200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154247_3f320179`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:47.744364-05:00 a 2026-10-20T15:42:47.747699-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154247_3f320179/metadata.json](tiempos/20261020_154247_3f320179/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154247_3f320179/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004845200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.010319500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154247_43007745`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:47.772350-05:00 a 2026-10-20T15:42:47.782389-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154247_43007745/metadata.json](tiempos/20261020_154247_43007745/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154247_43007745/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005120900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.010065400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154247_1d4edb6a`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:47.978810-05:00 a 2026-10-20T15:42:48.011832-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154247_1d4edb6a/metadata.json](tiempos/20261020_154247_1d4edb6a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154247_1d4edb6a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.026717900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.032826400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154248_9b89f765`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:48.046758-05:00 a 2026-10-20T15:42:48.062469-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154248_9b89f765/metadata.json](tiempos/20261020_154248_9b89f765/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154248_9b89f765/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009383500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.015758300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154248_4a3dee8e`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:48.087883-05:00 a 2026-10-20T15:42:48.095878-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154248_4a3dee8e/metadata.json](tiempos/20261020_154248_4a3dee8e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154248_4a3dee8e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005082900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010858800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154252_b085716a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:52.290131-05:00 a 2026-10-20T15:42:52.298819-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154252_b085716a/metadata.json](tiempos/20261020_154252_b085716a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154252_b085716a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005434200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009631800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154252_c8a33e5e`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:52.315603-05:00 a 2026-10-20T15:42:52.317795-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154252_c8a33e5e/metadata.json](tiempos/20261020_154252_c8a33e5e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154252_c8a33e5e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005026200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010469300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154252_b0e1cd34`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:52.332222-05:00 a 2026-10-20T15:42:52.332222-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154252_b0e1cd34/metadata.json](tiempos/20261020_154252_b0e1cd34/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154252_b0e1cd34/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005328100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010950900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154252_fa8455cb`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:52.349054-05:00 a 2026-10-20T15:42:52.364449-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154252_fa8455cb/metadata.json](tiempos/20261020_154252_fa8455cb/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154252_fa8455cb/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004951600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009929900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154252_f8848224`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:42:52.366863-05:00 a 2026-10-20T15:42:52.382220-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154252_f8848224/metadata.json](tiempos/20261020_154252_f8848224/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154252_f8848224/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004261000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008783500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154302_d044ef31`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:43:02.917613-05:00 a 2026-10-20T15:43:03.140124-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154302_d044ef31/metadata.json](tiempos/20261020_154302_d044ef31/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154302_d044ef31/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012568000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014581800 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.128439300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000211400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229011700 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154309_f23fa7c2`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:09.625224-05:00 a 2026-10-20T15:43:09.639603-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154309_f23fa7c2/metadata.json](tiempos/20261020_154309_f23fa7c2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154309_f23fa7c2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010474300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014676200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154309_fc812b79`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:09.656855-05:00 a 2026-10-20T15:43:09.662423-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154309_fc812b79/metadata.json](tiempos/20261020_154309_fc812b79/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154309_fc812b79/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004778800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.009639500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154309_631b7bc5`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:09.679962-05:00 a 2026-10-20T15:43:09.688780-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154309_631b7bc5/metadata.json](tiempos/20261020_154309_631b7bc5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154309_631b7bc5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005503600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.010947300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154309_8c340950`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:09.977656-05:00 a 2026-10-20T15:43:09.995643-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154309_8c340950/metadata.json](tiempos/20261020_154309_8c340950/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154309_8c340950/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023221100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.029422900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154310_6b85a60a`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:10.045735-05:00 a 2026-10-20T15:43:10.062275-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154310_6b85a60a/metadata.json](tiempos/20261020_154310_6b85a60a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154310_6b85a60a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008507800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.013878500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154310_bacb1f13`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:10.078966-05:00 a 2026-10-20T15:43:10.085855-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154310_bacb1f13/metadata.json](tiempos/20261020_154310_bacb1f13/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154310_bacb1f13/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004542000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.009896800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154314_a0f42281`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:14.349062-05:00 a 2026-10-20T15:43:14.359517-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154314_a0f42281/metadata.json](tiempos/20261020_154314_a0f42281/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154314_a0f42281/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005094400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011411400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154314_510e1099`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:14.365068-05:00 a 2026-10-20T15:43:14.382083-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154314_510e1099/metadata.json](tiempos/20261020_154314_510e1099/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154314_510e1099/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005236800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009678800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154314_a23af5f4`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:14.382083-05:00 a 2026-10-20T15:43:14.409556-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154314_a23af5f4/metadata.json](tiempos/20261020_154314_a23af5f4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154314_a23af5f4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005513900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.012326900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154314_51bb54d7`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:14.415386-05:00 a 2026-10-20T15:43:14.427360-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154314_51bb54d7/metadata.json](tiempos/20261020_154314_51bb54d7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154314_51bb54d7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004850200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010077600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154314_4541264e`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:14.432151-05:00 a 2026-10-20T15:43:14.441079-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154314_4541264e/metadata.json](tiempos/20261020_154314_4541264e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154314_4541264e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004031200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009259700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154322_a3e17e22`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:43:22.365085-05:00 a 2026-10-20T15:43:22.588143-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154322_a3e17e22/metadata.json](tiempos/20261020_154322_a3e17e22/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154322_a3e17e22/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013121600 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014871500 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.126485000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000326600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229626500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154329_06b98c27`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.276729-05:00 a 2026-10-20T15:43:29.293362-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_06b98c27/metadata.json](tiempos/20261020_154329_06b98c27/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_06b98c27/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010055300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014627800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154329_a20f136a`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.311385-05:00 a 2026-10-20T15:43:29.327960-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_a20f136a/metadata.json](tiempos/20261020_154329_a20f136a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_a20f136a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005248900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013323700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154329_06038243`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.342313-05:00 a 2026-10-20T15:43:29.353680-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_06038243/metadata.json](tiempos/20261020_154329_06038243/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_06038243/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004814900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.011073200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154329_c15af7d5`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.630282-05:00 a 2026-10-20T15:43:29.676484-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_c15af7d5/metadata.json](tiempos/20261020_154329_c15af7d5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_c15af7d5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.028543000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.035391700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154329_5ffeec3b`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.710164-05:00 a 2026-10-20T15:43:29.731018-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_5ffeec3b/metadata.json](tiempos/20261020_154329_5ffeec3b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_5ffeec3b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010189400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.014281400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154329_1451159d`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:29.747320-05:00 a 2026-10-20T15:43:29.760701-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154329_1451159d/metadata.json](tiempos/20261020_154329_1451159d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154329_1451159d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004814300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010281700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154334_d55163d2`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:34.154031-05:00 a 2026-10-20T15:43:34.168814-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154334_d55163d2/metadata.json](tiempos/20261020_154334_d55163d2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154334_d55163d2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006545900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.014059100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154334_e0560a98`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:34.185549-05:00 a 2026-10-20T15:43:34.197245-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154334_e0560a98/metadata.json](tiempos/20261020_154334_e0560a98/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154334_e0560a98/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006548400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.012591200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154334_05df7de5`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:34.207147-05:00 a 2026-10-20T15:43:34.213896-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154334_05df7de5/metadata.json](tiempos/20261020_154334_05df7de5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154334_05df7de5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005119300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011743500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154334_419617a8`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:34.230599-05:00 a 2026-10-20T15:43:34.241812-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154334_419617a8/metadata.json](tiempos/20261020_154334_419617a8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154334_419617a8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005238900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010531400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154334_4d65359c`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:43:34.246983-05:00 a 2026-10-20T15:43:34.263609-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154334_4d65359c/metadata.json](tiempos/20261020_154334_4d65359c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154334_4d65359c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005435100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011958100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154355_b3140b45`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:43:55.798372-05:00 a 2026-10-20T15:43:56.013289-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154355_b3140b45/metadata.json](tiempos/20261020_154355_b3140b45/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154355_b3140b45/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013760000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014061700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.126874200 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000342300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.227297800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154416_dde46708`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:44:16.738715-05:00 a 2026-10-20T15:44:16.968237-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154416_dde46708/metadata.json](tiempos/20261020_154416_dde46708/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154416_dde46708/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013786800 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.013872600 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.126767500 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000215000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229176400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154427_68e4d986`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:44:27.210966-05:00 a 2026-10-20T15:44:27.440857-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154427_68e4d986/metadata.json](tiempos/20261020_154427_68e4d986/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154427_68e4d986/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012374700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014900500 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.126239400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000213600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229501600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154439_99bc1ae1`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.248567-05:00 a 2026-10-20T15:44:39.262545-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_99bc1ae1/metadata.json](tiempos/20261020_154439_99bc1ae1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_99bc1ae1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010885900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.015140000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154439_7ad7f761`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.291661-05:00 a 2026-10-20T15:44:39.301400-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_7ad7f761/metadata.json](tiempos/20261020_154439_7ad7f761/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_7ad7f761/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005168600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.009948200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154439_3dddec83`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.312576-05:00 a 2026-10-20T15:44:39.322050-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_3dddec83/metadata.json](tiempos/20261020_154439_3dddec83/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_3dddec83/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004119900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.008816100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154439_0363503b`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.517566-05:00 a 2026-10-20T15:44:39.546014-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_0363503b/metadata.json](tiempos/20261020_154439_0363503b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_0363503b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023210600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.029118800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154439_694b5268`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.579440-05:00 a 2026-10-20T15:44:39.596058-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_694b5268/metadata.json](tiempos/20261020_154439_694b5268/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_694b5268/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010401200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.016426500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154439_332ca7a8`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:39.612803-05:00 a 2026-10-20T15:44:39.629501-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154439_332ca7a8/metadata.json](tiempos/20261020_154439_332ca7a8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154439_332ca7a8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003521200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008304000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154443_f5d27d3d`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:43.866377-05:00 a 2026-10-20T15:44:43.882703-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154443_f5d27d3d/metadata.json](tiempos/20261020_154443_f5d27d3d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154443_f5d27d3d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004421900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009873300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154443_44932bd4`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:43.899323-05:00 a 2026-10-20T15:44:43.899323-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154443_44932bd4/metadata.json](tiempos/20261020_154443_44932bd4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154443_44932bd4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005963800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011687800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154443_3058bb33`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:43.915632-05:00 a 2026-10-20T15:44:43.915632-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154443_3058bb33/metadata.json](tiempos/20261020_154443_3058bb33/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154443_3058bb33/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004021500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008600400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154443_d6417e26`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:43.932740-05:00 a 2026-10-20T15:44:43.942150-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154443_d6417e26/metadata.json](tiempos/20261020_154443_d6417e26/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154443_d6417e26/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004828200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009691100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154443_3dd80e8a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:44:43.952702-05:00 a 2026-10-20T15:44:43.966259-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154443_3dd80e8a/metadata.json](tiempos/20261020_154443_3dd80e8a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154443_3dd80e8a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005529500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011042000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154456_7aa06ca7`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:44:56.830493-05:00 a 2026-10-20T15:44:57.059658-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154456_7aa06ca7/metadata.json](tiempos/20261020_154456_7aa06ca7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154456_7aa06ca7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016154400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015961100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.131182600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000229800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.238747900 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154738_7a457748`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:47:38.816088-05:00 a 2026-10-20T15:47:39.048024-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154738_7a457748/metadata.json](tiempos/20261020_154738_7a457748/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154738_7a457748/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012399400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015515100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.130953800 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000216400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.236506200 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154747_b69c08ea`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.396794-05:00 a 2026-10-20T15:47:47.412007-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_b69c08ea/metadata.json](tiempos/20261020_154747_b69c08ea/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_b69c08ea/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010549300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014599700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154747_7af8a9d0`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.427777-05:00 a 2026-10-20T15:47:47.438928-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_7af8a9d0/metadata.json](tiempos/20261020_154747_7af8a9d0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_7af8a9d0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004879500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.009430500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154747_90821641`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.458909-05:00 a 2026-10-20T15:47:47.472705-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_90821641/metadata.json](tiempos/20261020_154747_90821641/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_90821641/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005296000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.013240400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154747_63f105d3`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.655556-05:00 a 2026-10-20T15:47:47.693168-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_63f105d3/metadata.json](tiempos/20261020_154747_63f105d3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_63f105d3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.025215900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.032100000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154747_77953682`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.728312-05:00 a 2026-10-20T15:47:47.740834-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_77953682/metadata.json](tiempos/20261020_154747_77953682/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_77953682/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008797700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.012919600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154747_b36441f6`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:47.744344-05:00 a 2026-10-20T15:47:47.760357-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154747_b36441f6/metadata.json](tiempos/20261020_154747_b36441f6/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154747_b36441f6/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004046700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008308300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154752_f40b9a60`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:52.212047-05:00 a 2026-10-20T15:47:52.226316-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154752_f40b9a60/metadata.json](tiempos/20261020_154752_f40b9a60/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154752_f40b9a60/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005275900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009692800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154752_4629d977`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:52.241997-05:00 a 2026-10-20T15:47:52.243862-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154752_4629d977/metadata.json](tiempos/20261020_154752_4629d977/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154752_4629d977/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004417700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010023800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154752_5ff660f5`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:52.261242-05:00 a 2026-10-20T15:47:52.261242-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154752_5ff660f5/metadata.json](tiempos/20261020_154752_5ff660f5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154752_5ff660f5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004997300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010486200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154752_43c1f0ea`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:52.280576-05:00 a 2026-10-20T15:47:52.280576-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154752_43c1f0ea/metadata.json](tiempos/20261020_154752_43c1f0ea/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154752_43c1f0ea/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004447700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008588900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154752_ab87c733`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:47:52.292483-05:00 a 2026-10-20T15:47:52.302808-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154752_ab87c733/metadata.json](tiempos/20261020_154752_ab87c733/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154752_ab87c733/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004168800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008385700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154804_948c56b4`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:48:04.619477-05:00 a 2026-10-20T15:48:04.855474-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154804_948c56b4/metadata.json](tiempos/20261020_154804_948c56b4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154804_948c56b4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012024800 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014084900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.130556000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000344000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.237277100 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154853_fd26f75c`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:48:53.935132-05:00 a 2026-10-20T15:48:54.171616-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154853_fd26f75c/metadata.json](tiempos/20261020_154853_fd26f75c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154853_fd26f75c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013412000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015913500 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.127961600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000270300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.235552500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_154902_4d63c2b0`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:02.710444-05:00 a 2026-10-20T15:49:02.727076-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154902_4d63c2b0/metadata.json](tiempos/20261020_154902_4d63c2b0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154902_4d63c2b0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010110300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.015518000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154902_e68a5cba`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:02.744993-05:00 a 2026-10-20T15:49:02.757128-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154902_e68a5cba/metadata.json](tiempos/20261020_154902_e68a5cba/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154902_e68a5cba/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005379200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.011493200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154902_f94c2adf`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:02.772800-05:00 a 2026-10-20T15:49:02.787212-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154902_f94c2adf/metadata.json](tiempos/20261020_154902_f94c2adf/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154902_f94c2adf/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006073900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.012500700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154902_2580335c`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:02.985633-05:00 a 2026-10-20T15:49:03.017045-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154902_2580335c/metadata.json](tiempos/20261020_154902_2580335c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154902_2580335c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.025117400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.032995600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154903_b897760e`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:03.045343-05:00 a 2026-10-20T15:49:03.060748-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154903_b897760e/metadata.json](tiempos/20261020_154903_b897760e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154903_b897760e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008431900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.014778500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154903_882968fc`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:03.086419-05:00 a 2026-10-20T15:49:03.094029-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154903_882968fc/metadata.json](tiempos/20261020_154903_882968fc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154903_882968fc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004106900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008582400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154907_3a55477d`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:07.547419-05:00 a 2026-10-20T15:49:07.557249-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154907_3a55477d/metadata.json](tiempos/20261020_154907_3a55477d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154907_3a55477d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004454900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008610000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154907_ceca9880`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:07.564159-05:00 a 2026-10-20T15:49:07.583686-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154907_ceca9880/metadata.json](tiempos/20261020_154907_ceca9880/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154907_ceca9880/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005532000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.013083100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154907_b7dcb2bd`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:07.593069-05:00 a 2026-10-20T15:49:07.597707-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154907_b7dcb2bd/metadata.json](tiempos/20261020_154907_b7dcb2bd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154907_b7dcb2bd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004611600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009972700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154907_65afbe90`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:07.597707-05:00 a 2026-10-20T15:49:07.623218-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154907_65afbe90/metadata.json](tiempos/20261020_154907_65afbe90/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154907_65afbe90/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005018800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010663800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_154907_6a41118b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T15:49:07.630894-05:00 a 2026-10-20T15:49:07.641731-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_154907_6a41118b/metadata.json](tiempos/20261020_154907_6a41118b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_154907_6a41118b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005885000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010822600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_155326_c5274c57`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:53:26.624709-05:00 a 2026-10-20T15:53:26.850840-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_155326_c5274c57/metadata.json](tiempos/20261020_155326_c5274c57/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_155326_c5274c57/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012640300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014580800 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.127119200 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000316600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.227960600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_155506_8d93d1b6`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:55:06.629250-05:00 a 2026-10-20T15:55:06.855443-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_155506_8d93d1b6/metadata.json](tiempos/20261020_155506_8d93d1b6/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_155506_8d93d1b6/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014185300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.013738800 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.125081200 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000220100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.225610700 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_155753_0fb1ab05`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T15:57:53.353990-05:00 a 2026-10-20T15:57:53.562848-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_155753_0fb1ab05/metadata.json](tiempos/20261020_155753_0fb1ab05/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_155753_0fb1ab05/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016623000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.044919900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.143686300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000233900 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.220614400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_155751_3c904297`
+
+- **Modelo/motivo:** Verificación/preparación · Dash/validate_package.py.
+- **Fecha/zona:** 2026-10-20T15:57:51.592697-05:00 a 2026-10-20T15:57:59.613506-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_155751_3c904297/metadata.json](tiempos/20261020_155751_3c904297/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_155751_3c904297/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | XGBRegressor | 0.018697000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | TransformedTargetRegressor | 0.023239500 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | TruncatedNewtonKernelRidgeRegressor | 0.011442200 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | DecisionTreeRegressor | 0.004812100 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | LinearSVR | 0.004458500 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | KNeighborsRegressor | 0.022429000 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Ridge | 0.000127300 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Ridge | 0.007630000 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Lasso | 0.006025900 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | RandomForestRegressor | 0.027385000 | 188 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | XGBRegressor | 0.009362800 | 188 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | DecisionTreeRegressor | 0.003249100 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | XGBRegressor | 0.008486500 | 1 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | XGBRegressor | 0.012219200 | 1000 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Entrenamiento/refit | Ridge | 0.005722000 | 1000 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Ridge | 0.000357300 | 1000 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Ridge | 0.000094100 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | XGBRegressor | 0.009036700 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Total del experimento | Verificación/preparación · Dash/validate_package.py | 8.030653300 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |

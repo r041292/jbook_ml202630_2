@@ -5,8 +5,8 @@ Los notebooks se pueden consultar con sus resultados ya ejecutados.
 
 ## Resultados completos
 
-- [Panorama vigente de los 26 modelos: ranking, resultados y conclusiones](resultados/e3/resumen_completo/resumen.md).
-- [CSV general de los 26 modelos: RMSE, R², descripciones y comparaciones](resultados/e3/resumen_completo/modelos.csv).
+- [Resumen comparativo original de 26 modelos](resultados/e3/resumen_completo/resumen.md); TR-KRR se reporta como candidato suplementario en [su método y resultados](experimentos_tn_krr_e3.md).
+- [CSV de los 26 modelos del panorama original](resultados/e3/resumen_completo/modelos.csv). El CSV CV externo incorpora además TR-KRR.
 - [Contrastes publicados consolidados: referencia, IC95%, p y familia de ajuste](resultados/e3/resumen_completo/contrastes_actuales.csv).
 - [Validación R² de los 26 modelos](resultados/e3/validacion_r2/resumen.md), con [CSV de resultados e intervalos disponibles](resultados/e3/validacion_r2/modelos_r2.csv).
 - [R² de validación cruzada, OOF y test: 26 modelos](resultados/e3/validacion_r2/validacion_cruzada_r2.csv).
@@ -25,10 +25,11 @@ evalúa el periodo posterior y aporta evidencia complementaria; los cambios de
 ranking no se deben ocultar.
 
 La [comparación estadística CV](resultados/e3/cv_externa/README.md) incluye
-[p corregida, IC y Holm24 vs SVM](resultados/e3/cv_externa/contrastes_vs_svm.csv).
+[p corregida, IC y Holm25 vs SVM](resultados/e3/cv_externa/contrastes_vs_svm.csv).
 **Kernel Ridge RBF es el candidato elegido**, con el menor RMSE medio de CV
-entre los 26 modelos activos: **0.801325**. TabPFN original obtiene0.807118,
-TabICLv2 0.807163, SVR RBF0.807765 y SVM lineal0.826140.
+entre los 27 candidatos con métricas: **0.801325**. TR-KRR obtiene RMSE CV
+0.809646 (p=0.168940/Holm25=1.000000, no significativo); TabPFN original
+obtiene0.807118, TabICLv2 0.807163, SVR RBF0.807765 y SVM lineal0.826140.
 
 GPR sola fue retirada como candidato por solicitud del usuario, bajo el criterio
 de trazabilidad del estimador guardado durante el experimento original. Sus
@@ -43,13 +44,14 @@ Exploración OOF/test y simulador del tablero usan ese mismo artefacto.
 RMSE OOF reunido0.802245 difiere del RMSE medio entre folds0.801325.
 
 La t pareada corregida aproximadamente por solapamiento (Nadeau–Bengio) usa
-los cinco folds,4 grados de libertad y Holm sobre **24 contrastes CV vs SVM**.
-SVM referencia y TabPFN fine-tuned sin OOF no entran en la familia. Se recalculó
-el ajuste al retirar la ablación; la familia anteriorHolm25 queda como historial.
-**Ninguna mejora frente al SVM sobrevive Holm24**. Kernel Ridge:
-p=0.164753/Holm=1.000000. Dummy es significativamente peor
-(p=0.001215/Holm=0.029159). Los contrastes de test publicados conservan sus
-familias originales e históricas; no se confunden con la nueva familia CV.
+los cinco folds,4 grados de libertad y Holm sobre **25 contrastes CV vs SVM**.
+SVM referencia y TabPFN fine-tuned sin OOF no entran en la familia.
+**Ninguna mejora frente al SVM sobrevive Holm25**. Kernel Ridge:
+p=0.164753/Holm=1.000000; TR-KRR p=0.168940/Holm=1.000000. Dummy es
+significativamente peor (p=0.001215/Holm=0.029159). En test se calcularon
+contrastes suplementarios para TR-KRR: p=0.12010/Holm2=0.24020 vs SVM y
+p=0.90418/Holm2=0.90418 vs XGBoost. Holm2 se limita a esas dos referencias y
+no reemplaza las familias históricas Holm55/Holm7.
 
 Solo hay una partición1×5 sin repeticiones: inferencia aproximada, exploratoria
 y de baja potencia, sin asumir folds independientes ni garantizar calibración
@@ -60,7 +62,10 @@ El reporte específico documenta fórmula, IC marginales y fuentes metodológica
 
 ### Contraste temporal complementario
 
-Se evaluaron 26 modelos y variantes. Los mejores resultados por RMSE test son:
+El ranking de test con familias globales publicadas conserva los 26 modelos
+originales. El candidato suplementario TR-KRR obtiene RMSE test 0.907802
+(puesto 10 al añadirlo descriptivamente; sin ajuste global Holm55). Los mejores
+resultados del ranking original por RMSE test son:
 
 | Puesto | Modelo | RMSE test | R² test |
 |---:|---|---:|---:|
@@ -94,7 +99,8 @@ El ranking incluye los 22 métodos históricos más esas tres variantes y LinXGB
 
 Las familias Holm55 (histórica), Holm12 (variantes XGBoost) y Holm7 (LinXGBoost)
 se conservan con sus referencias originales. No se calculó un ajuste global
-único para los 26. Las celdas vacías no son p=0: indican resultados no disponibles
+único para los 26 resultados históricos; los dos pares suplementarios de TR-KRR
+usan Holm2 por separado. Las celdas vacías no son p=0: indican resultados no disponibles
 o pruebas ajenas a esa familia. RMSE y R² comparten SSE y no son evidencias
 independientes. El test se consultó en varias rondas: las conclusiones son
 exploratorias y necesitan confirmación temporal independiente.
@@ -118,7 +124,8 @@ una nueva OOF independiente porque ya vieron todo train.
 Los modelos se seleccionaron por RMSE. La validación R² compara esos mismos
 modelos; no reoptimiza las grillas por R². El código de los autores y las
 adaptaciones están identificados en los notebooks y reportes: XBART usa GFR
-de stochtree; KRR usa solución exacta, no el optimizador Truncated Newton.
+de stochtree; Kernel Ridge incluye el candidato RBF exacto existente y un
+nuevo TR-KRR con gradiente conjugado truncado según Maalouf y Homouz.
 
 ## Notebooks
 
@@ -130,6 +137,9 @@ de stochtree; KRR usa solución exacta, no el optimizador Truncated Newton.
 - [XBART](precalculo_xbart_scopus_e3.ipynb), [CatBoost](precalculo_catboost_scopus_e3.ipynb),
   [Kernel Ridge](precalculo_kernel_ridge_scopus_e3.ipynb), [coPILOT](precalculo_copilot_scopus_e3.ipynb)
   y [comparación Scopus](precalculo_scopus_e3.ipynb).
+- [TR-KRR con gradiente conjugado truncado](precalculo_tn_krr_e3.ipynb),
+  implementado y evaluado como candidato independiente; RMSE CV 0.809646 y test
+  temporal 0.907802. Ver [método y resultados](experimentos_tn_krr_e3.md).
 
 ## Reproducción local
 
@@ -221,6 +231,6 @@ sus fuentes, sin repetir los entrenamientos ni aquella batería de pruebas.
 `publicacion_e3.json` registra los hashes de los archivos publicados.
 
 El dashboard incluye Split y CV, Modelos lineales, Clásicos y Originales:
-26 modelos, significancia CV frente al SVM con Holm24, contraste temporal,
+27 modelos, significancia CV frente al SVM con Holm25, contraste temporal,
 correlación de errores y exploración/simulador de Kernel Ridge RBF guardado.
 No se reescriben los informes ni notebooks de la primera entrega.

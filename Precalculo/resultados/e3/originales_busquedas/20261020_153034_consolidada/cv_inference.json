@@ -1,0 +1,114 @@
+{
+  "reference": "SVM lineal",
+  "primary_metric": "media aritmética RMSE de 5 folds externos",
+  "method": "t pareada corregida Nadeau–Bengio; adaptación exploratoria a 1×5 GroupKFold",
+  "formula": "SE=sqrt((1/5+mean(n_val_estudiantes/n_fit_estudiantes))*var(delta_RMSE,ddof=1)); t=mean(delta)/SE; df=4; p=2*sf(abs(t))",
+  "fold_audit": [
+    {
+      "fold": 1,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.2
+      }
+    },
+    {
+      "fold": 2,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__C": 0.3,
+        "modelo__epsilon": 0.5
+      }
+    },
+    {
+      "fold": 3,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.3
+      }
+    },
+    {
+      "fold": 4,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "fit_students": 1034,
+      "validation_students": 259,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.2
+      }
+    },
+    {
+      "fold": 5,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "fit_students": 1035,
+      "validation_students": 258,
+      "shared_students": 0,
+      "best_params": {
+        "modelo__C": 0.1,
+        "modelo__epsilon": 0.2
+      }
+    }
+  ],
+  "correction_ratio": 0.25000028032405464,
+  "family_size": 25,
+  "family": "Holm25 CV vs SVM",
+  "training_performed": false,
+  "test_used": false,
+  "excluded_candidates": {
+    "GPR sola (ablación)": "Retirada por solicitud del usuario por trazabilidad del artefacto original; se conserva el antecedente archivado."
+  },
+  "family_redefined_after_review": true,
+  "limitations": [
+    "Una sola partición de cinco folds, sin repeticiones: aproximación de baja potencia.",
+    "La corrección aproxima la dependencia por solapamiento; no garantiza inferencia exacta para GroupKFold.",
+    "Comparación exploratoria: búsqueda histórica de familias y grillas sobre el mismo train; familia no anidada.",
+    "IC marginales sin corrección múltiple; Holm se aplica solo a los 25 p de RMSE vs SVM.",
+    "No es un contraste entre todos los pares ni demuestra equivalencia cuando p>=0.05."
+  ],
+  "sources_sha256": {
+    "resultados/e3/clasicos/fold_metrics.csv": "11b781ee2a7aa2a73852b03784671cea442ca03d70a840327fe97461c917f9be",
+    "resultados/e3/scopus/xbart/fold_metrics.csv": "298ae2327824938a4f00f17ec442cf96713b2b239f798853e10d1e1c51d7270b",
+    "resultados/e3/scopus/catboost/fold_metrics.csv": "6e4b6766fa854d6d1dbd3123b8985e12d57743928ebab307b2f426e0fc2b2770",
+    "resultados/e3/scopus/copilot/fold_metrics.csv": "24df714b6f74fe68897afbae1eef66b093bc97019f521a87165ec6f77e66ac32",
+    "resultados/e3/scopus/kernel_ridge/fold_metrics.csv": "1cdcb6d123c0579356103e75e393e10da5d78a2c81a97edcd0ac30074ca1a2e4",
+    "resultados/e3/logicdt/fold_metrics.csv": "24aa86f4d0006049f02eda30ec0f9b9b680a416861c3c35b3a3995b9cb0bc2f7",
+    "resultados/e3/tabpfn_25/fold_metrics.csv": "769b346d942bf352880032eb74c99c955e85882e48f94a9de2df25cbc5ae9a90",
+    "resultados/e3/rim/fold_metrics.csv": "e36061a8c80734a1b3699998f4875a8b41116b32500886e10bf5973c2e0bcd86",
+    "resultados/e3/tabicl_v2/fold_metrics.csv": "2da126f769976d5241deb9a372aad1ad230c00db996df40a9d04cdf25f9ea0c9",
+    "resultados/e3/hrt_boost/fold_metrics.csv": "d4bd4077239bd294408ae3fc28f460d62b8f227b8017f3c81d833b7b6c83f255",
+    "resultados/e3/tcr_xgboost/fold_metrics.csv": "49c1fe362e5ff8c13e9b374751db225faa1b09fa73f1bb0988e036f071831f2f",
+    "resultados/e3/tabfm/fold_metrics.csv": "d87855c37a3b1710bb4b3a9068709e78b65207adf789d2ea249092b1f73549d3",
+    "resultados/e3/gpr_xgb/fold_metrics.csv": "c93d05ea2d1b9874159e959ff016db72981988e3bc2b701070203ed2a4ae505f",
+    "resultados/e3/svr_rbf_raffle/svr_rbf/fold_metrics.csv": "5214e8910c046fac9d21cdbb5fc1fc47fed15ac2a7fdc94a3bfd86ae133ea0fe",
+    "resultados/e3/svr_rbf_raffle/raffle/fold_metrics.csv": "85cd01eb99ac97c5597b4d0dee5f777e47faeb7ca4b5a01202c500131e41741e",
+    "resultados/e3/xgboost_variantes/gbtree/fold_metrics.csv": "c27bd3e3619b08e49dba01ccb16c1aab8934b3c539fb3945eef6fbb3a3681a31",
+    "resultados/e3/xgboost_variantes/dart/fold_metrics.csv": "ca5d3d3e245ce4ff215f50bf8eb640b39c7cdf34d77dedcee734523e892ed6d3",
+    "resultados/e3/xgboost_variantes/denseweight/fold_metrics.csv": "d9e40a685442394e091fca7ca467618dfbeec9c63c53ccbbc19b7deb1b936244",
+    "resultados/e3/linxgboost/fold_metrics.csv": "da6294494152b31b97c450ef211740f171ff4c93c460e5b9c913e3cc368dc817",
+    "resultados/e3/tn_krr/fold_metrics.csv": "56ede359c9cf38f12d321f447ad959410f41fa091ffbe3f64f56a33864cf8d20",
+    "resultados/e3/modelos_lineales.json": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
+    "resultados/e3/resumen_completo/modelos.csv": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9"
+  },
+  "generator_sha256": "fe3d14e4ca23b6b396cc8d5393a7097d7a98f94b6d673a708b9477b87224c2a9",
+  "references": [
+    "https://doi.org/10.1023/A:1024068626366",
+    "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html",
+    "https://www.jmlr.org/papers/v5/grandvalet04a.html"
+  ]
+}

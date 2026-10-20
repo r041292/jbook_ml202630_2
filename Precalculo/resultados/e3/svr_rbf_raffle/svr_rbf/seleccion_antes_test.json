@@ -1,0 +1,18 @@
+{
+  "best_params": {
+    "modelo__C": 2.3305614317972307,
+    "modelo__epsilon": 0.06812144081446851,
+    "modelo__gamma": 0.01
+  },
+  "inner_rmse": 0.8050778630490927,
+  "configuration": {
+    "kernel": "rbf",
+    "search": "RandomizedSearchCV neg_RMSE",
+    "n_iter": 64,
+    "C": "loguniform(1e-3,1e3)",
+    "epsilon": "loguniform(1e-2,1.5)",
+    "gamma": "scale, auto, logspace(-5,1,25)"
+  },
+  "test_used": false,
+  "fold_source": "resultados/e3/train.csv.gz, folds externos canónicos de E3"
+}

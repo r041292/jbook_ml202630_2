@@ -13,7 +13,8 @@ Halving. Se repite el procedimiento en todo train para el ajuste final.
 Los cinco folds externos evalúan ese proceso completo, incluida la elección
 del método; sus métricas no seleccionan parámetros finales.
 
-**Grid Search y Random Search.** Se conserva el grid exhaustivo original.
+**Grid Search y Random Search.** Se conserva el grid exhaustivo original; en LinXGBoost y
+DenseWeight-XGBoost el Grid es una versión gruesa documentada en su ficha (64 y 96 candidatos).
 Random evalúa 16 sorteos: uniforme en categorías/enteros e intervalos lineales,
 loguniforme en C, alpha y learning_rate. Los otros métodos exploran estos mismos
 intervalos, además del grid discreto que se mantiene visible. Por tanto,
@@ -81,7 +82,9 @@ def optimization_section(spec,ui):
     import hashlib
     from lazy_content import lazy_factory
     key=hashlib.sha256(json.dumps(spec,sort_keys=True,default=str).encode()).hexdigest()
-    return lazy_factory('Resultados de las cinco búsquedas · métodos, diversidad y tiempos',
+    title=('Resultados de las cinco búsquedas · métodos, diversidad y tiempos' if len(spec['optimization']['methods'])==5
+           else 'Resultados de la búsqueda · '+', '.join(m['method'] for m in spec['optimization']['methods'])+' (método único), dominio y tiempos')
+    return lazy_factory(title,
                         lambda:_optimization_content(spec,ui),key)
 
 
@@ -107,22 +110,32 @@ def _optimization_content(spec, ui):
     refits = pd.DataFrame([{'Ajuste': row['batch'], 'Filas': row['rows'],
                            'Entrenamiento/refit (s)': row['seconds'], 'Estado': row['status']}
                           for row in timings if row['stage'] == 'Entrenamiento/refit'])
-    evolution = pd.DataFrame(optimization['evolution']).rename(columns={
-        'generation': 'Generación', 'best_RMSE': 'Mejor RMSE', 'mean_RMSE': 'RMSE medio',
-        'unique_fraction': 'Fracción única', 'gene_entropy': 'Entropía genética'})
-    first, last = evolution.iloc[0], evolution.iloc[-1]
-    stalled = len(evolution) > 1 and abs(last['Mejor RMSE']-evolution.iloc[-2]['Mejor RMSE']) <= 1e-12
-    reduced = last['Fracción única'] < first['Fracción única'] or last['Entropía genética'] < first['Entropía genética']
-    reading = (f'Fracción única: **{first["Fracción única"]:.3f} → {last["Fracción única"]:.3f}**; '
-               f'entropía media: **{first["Entropía genética"]:.3f} → {last["Entropía genética"]:.3f}**. ')
-    reading += ('Se reduce la diversidad y la mejor fitness se estanca en la última generación: '
-                'son señales de posible convergencia prematura, sin demostrarla.' if stalled and reduced else
-                'La trayectoria no reúne pérdida de diversidad y estancamiento final simultáneamente; '
-                'tres generaciones no bastan para descartar convergencia prematura ni demostrar convergencia.')
+    evolution = pd.DataFrame(optimization['evolution'])
+    single = len(optimization['methods']) < 5
+    if not evolution.empty:
+        evolution = evolution.rename(columns={
+            'generation': 'Generación', 'best_RMSE': 'Mejor RMSE', 'mean_RMSE': 'RMSE medio',
+            'unique_fraction': 'Fracción única', 'gene_entropy': 'Entropía genética'})
+        first, last = evolution.iloc[0], evolution.iloc[-1]
+        stalled = len(evolution) > 1 and abs(last['Mejor RMSE']-evolution.iloc[-2]['Mejor RMSE']) <= 1e-12
+        reduced = last['Fracción única'] < first['Fracción única'] or last['Entropía genética'] < first['Entropía genética']
+        reading = (f'Fracción única: **{first["Fracción única"]:.3f} → {last["Fracción única"]:.3f}**; '
+                   f'entropía media: **{first["Entropía genética"]:.3f} → {last["Entropía genética"]:.3f}**. ')
+        reading += ('Se reduce la diversidad y la mejor fitness se estanca en la última generación: '
+                    'son señales de posible convergencia prematura, sin demostrarla.' if stalled and reduced else
+                    'La trayectoria no reúne pérdida de diversidad y estancamiento final simultáneamente; '
+                    'tres generaciones no bastan para descartar convergencia prematura ni demostrar convergencia.')
+    budget = optimization.get('budget', {})
+    single_note = (md(f'**Búsqueda restringida a {", ".join(m["method"] for m in optimization["methods"])}** por decisión del usuario '
+                      '(20-oct-2026), para avanzar con menor coste. Grid, Random, DEAP y Successive Halving no se ejecutaron en esta '
+                      f'versión; se usaron {budget.get("bayes_trials")} ensayos ({budget.get("startup_trials")} aleatorios iniciales) '
+                      'con el dominio ampliado que muestra la tabla. La comparación entre métodos corresponde a la primera búsqueda fiel '
+                      '(cinco estrategias, dominio más estrecho), cuyos ensayos se conservan como evidencia.') if single else None)
     return html.Div([
         md(f'**Elección conjunta final: {optimization["selected_method"]}**, '
-           f'RMSE interno **{spec["selection_rmse"]:.6f}**. Se compara contra todos los métodos, '
-           'incluido Grid Search. Este RMSE es de selección; la evaluación OOF está fuera de la búsqueda.'),
+           f'RMSE interno **{spec["selection_rmse"]:.6f}**. ' + ('Se compara contra todos los métodos, incluido Grid Search. ' if not single else '')
+           + 'Este RMSE es de selección; la evaluación OOF está fuera de la búsqueda.'),
+        single_note,
         html.Details([html.Summary('Protocolo, surrogate, adquisición y operadores'), md(METHODOLOGY)], className='details'),
         table(space), table(methods),
         md('La columna de folds externos suma cinco búsquedas secuenciales completas de ese método; '
@@ -130,17 +143,18 @@ def _optimization_content(spec, ui):
         html.Details([html.Summary('Mejores parámetros por estrategia · búsqueda final'),
             *[md(f'**{row["method"]}:** `{json.dumps(row["best_params"], ensure_ascii=False)}`') for row in optimization['methods']]
         ], className='details'),
-        card('Diversidad genética · búsqueda final',
+        *([] if evolution.empty else [card('Diversidad genética · búsqueda final',
              'Fracción de configuraciones distintas y entropía media de genes (0–1). '
              'Para continuos se usan 10 intervalos; categorías y enteros conservan sus valores. '
              'Una caída sostenida con estancamiento sugiere convergencia prematura.',
              px.line(evolution.melt(id_vars='Generación', value_vars=['Fracción única', 'Entropía genética'],
                                    var_name='Indicador', value_name='Diversidad'),
                      x='Generación', y='Diversidad', color='Indicador', markers=True, range_y=[0, 1.05])),
-        table(evolution), md(reading),
-        html.Details([html.Summary('Diversidad DEAP y método elegido en cada fold externo'),
+        table(evolution), md(reading)]),
+        html.Details([html.Summary('Método elegido en cada fold externo' if evolution.empty else 'Diversidad DEAP y método elegido en cada fold externo'),
             *[html.Div([md(f'**Fold externo {i}: {outer["selected_method"]}**, RMSE interno {outer["selection_rmse"]:.6f}.'),
-                        table(pd.DataFrame(outer['evolution']))]) for i, outer in enumerate(optimization['external_selections'], 1)]
+                        *([] if not outer['evolution'] else [table(pd.DataFrame(outer['evolution']))])])
+              for i, outer in enumerate(optimization['external_selections'], 1)]
         ], className='details'),
         html.H4('Tiempos de entrenamiento/refit · segundos de pared'), table(refits),
         md(f'Ejecución **{spec.get("timing_run_id", spec.get("run_id", "ver manifiesto"))}**. '

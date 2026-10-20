@@ -29,13 +29,6 @@ def display_table(table):
 
 
 def build():
-    current_ranking=OUTPUT/'svr_rbf_raffle/ranking_rmse_test.csv'
-    current_table=FOLDER/'modelos.csv'
-    if current_ranking.is_file() and current_table.is_file():
-        snapshot=pd.read_csv(current_table)
-        if len(snapshot)==22 and snapshot.Modelo.is_unique and 'p_Holm_global_55' in snapshot:
-            print('Se conserva el panorama consolidado de 22 modelos; no se reemplaza con la tabla histórica de 18.')
-            return snapshot
     source=OUTPUT/'scopus/listado_completo_18_modelos.csv'
     contrasts_path=OUTPUT/'scopus/contrastes_pareados.csv'
     table=pd.read_csv(source).sort_values('RMSE_test').reset_index(drop=True)

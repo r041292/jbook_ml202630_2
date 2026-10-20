@@ -1,7 +1,9 @@
 # Originales: actualización de búsquedas, comparación e interpretabilidad
 
-Ejecución local activa: `20261019_083039_147f9845`. Se preservan las ejecuciones
-anteriores en `historico/` y el código exacto de la ejecución en `evidencia/`.
+Ejecución activa: `20261020_153034_consolidada` (consolidación sin nuevos entrenamientos de las
+ejecuciones `20261019_083039_147f9845`, `20261019_144732_b7acf148`, `20261020_100140_8f327baf`,
+`20261020_103916_fb6c8c6d` y `20261020_150908_3a07b335`; ver la sección final). Se preservan las
+ejecuciones anteriores en `historico/` y el código exacto de la ejecución en `evidencia/`.
 CSV brutos y notebooks anteriores permanecen intactos.
 
 Se completaron cinco estrategias (Grid, Random, TPE, DEAP y Successive Halving)
@@ -114,3 +116,34 @@ Registros completos y fallos: `TIEMPOS_EJECUCION.md` y `tiempos/`.
 La activación comprueba predicciones/folds y hashes,copia solo artefactos sinIDs
 al dashboard y actualiza su manifiesto. La ejecución parcial/nueva no modifica
 el tablero hasta activación. Cambios actuales locales,sin push ni despliegue.
+
+## Híbridos e implementaciones propias · protocolo nuevo (19–20 oct 2026)
+
+El proyecto se concentra en clásicos e implementaciones propias. Se aplicó el protocolo anidado
+(5×5 GroupKFold por estudiante; selección por RMSE interno sin test) a TCR-XGBoost, logicDT, RIM,
+LinXGBoost, DenseWeight-XGBoost y GPR–XGBoost con `evaluar_originales_busquedas_e3.py --models ...`.
+La consolidación (`consolidar_originales_e3.py`) une los resultados sin reentrenar y se activa con
+`Dash/activate_originals.py`.
+
+Ajustes de fidelidad frente a los artículos (referencias revisadas: Maalouf y Homouz 2014; Zühlke y
+Kudenko 2025; Lau et al. 2024; de Vito 2017; Qin et al. 2021; Steininger et al. 2021; GPR–XGBoost):
+- **logicDT** (`logicdt_fiel.py`): predictores binarios one-hot, covariables numéricas en hojas lineales,
+  división por razón de verosimilitud (α = 0.5), vecindad de la Fig. 3 y recocido simulado adaptativo
+  (presupuesto acotado a 10.000 iteraciones). La versión histórica se conserva en `logicdt_propio.py`.
+- **TCR-XGBoost**: retrofit sobre el XGBoost ya ajustado del mismo entrenamiento externo; se buscan solo
+  `fraction` y `weight`.
+- **LinXGBoost** (`linxgboost_fiel.py`): cortes exactos y profundidad alta limitada por `min_samples_leaf`.
+  Por decisión del usuario, la búsqueda ampliada usa solo Optuna/TPE (40 ensayos, dominio más amplio).
+- **RIM**: IDF del artículo en BM25 (`idf='paper'`; el histórico usa Lucene).
+- **GPR–XGBoost** (`gpr_xgb_hpo_e3.py`): kernel fijo y 5 reinicios; se buscan solo hiperparámetros de
+  XGBoost; la etapa GPR se calcula una vez por conjunto de ajuste y se reutiliza.
+- TR-KRR y DenseWeight ya eran fieles a sus artículos. DenseWeight usa un Grid grueso de 96 candidatos.
+
+Resultados de CV externa (media de 5 folds): GPR–XGBoost 0.8028, DenseWeight 0.8143, TCR 0.8157,
+logicDT 0.8451, LinXGBoost 0.8457, RIM 0.8646. Kernel Ridge RBF sigue de líder (0.8010).
+
+**Alcance del tablero.** Los 11 modelos de librería importada o preentrenados (TabICLv2, TabPFN original
+y fine-tuned, CatBoost, TabFM, XGBoost ampliado, RaFFLE, DART, HRT-Boost, XBART y coPILOT) se conservan
+como referencia, ocultos por defecto (botón al inicio de la pestaña), y quedan fuera de todas las pruebas
+estadísticas: Friedman/MCS sobre 15 modelos y Etapa 3 frente al SVM con familia de 14 (Holm14).
+

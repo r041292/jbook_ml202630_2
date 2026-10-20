@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.025215900008333847, "rows": 1, "status": "completa", "recorded": "2026-10-20T15:47:47.684934-05:00", "started": "2026-10-20T15:47:47.665427-05:00"}
+{"stage": "Total del experimento", "batch": "RandomForestRegressor · inferencia de aplicación", "seconds": 0.032100000011269, "rows": null, "status": "completa", "recorded": "2026-10-20T15:47:47.684934-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

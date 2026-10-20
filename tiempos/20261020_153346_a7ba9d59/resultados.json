@@ -1,0 +1,3925 @@
+{
+  "omnibus": {
+    "statistic": 73.79104477611939,
+    "pvalue": 5.746017430700944e-07,
+    "df": 24,
+    "n_folds": 5,
+    "n_models": 25
+  },
+  "ranking": [
+    {
+      "Modelo": "Kernel Ridge RBF",
+      "Rango fold 1": 4.0,
+      "Rango fold 2": 6.0,
+      "Rango fold 3": 2.0,
+      "Rango fold 4": 6.0,
+      "Rango fold 5": 2.0,
+      "Rango promedio": 4.0
+    },
+    {
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "Rango fold 1": 3.0,
+      "Rango fold 2": 4.0,
+      "Rango fold 3": 1.0,
+      "Rango fold 4": 10.0,
+      "Rango fold 5": 6.0,
+      "Rango promedio": 4.8
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Rango fold 1": 6.0,
+      "Rango fold 2": 13.0,
+      "Rango fold 3": 4.0,
+      "Rango fold 4": 3.0,
+      "Rango fold 5": 4.0,
+      "Rango promedio": 6.0
+    },
+    {
+      "Modelo": "SVR RBF",
+      "Rango fold 1": 8.0,
+      "Rango fold 2": 11.0,
+      "Rango fold 3": 3.0,
+      "Rango fold 4": 11.0,
+      "Rango fold 5": 1.0,
+      "Rango promedio": 6.8
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Rango fold 1": 5.0,
+      "Rango fold 2": 12.0,
+      "Rango fold 3": 6.0,
+      "Rango fold 4": 9.0,
+      "Rango fold 5": 3.0,
+      "Rango promedio": 7.0
+    },
+    {
+      "Modelo": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Rango fold 1": 1.0,
+      "Rango fold 2": 21.0,
+      "Rango fold 3": 5.0,
+      "Rango fold 4": 5.0,
+      "Rango fold 5": 5.0,
+      "Rango promedio": 7.4
+    },
+    {
+      "Modelo": "TabPFN 2.5 original",
+      "Rango fold 1": 2.0,
+      "Rango fold 2": 9.0,
+      "Rango fold 3": 7.0,
+      "Rango fold 4": 8.0,
+      "Rango fold 5": 13.0,
+      "Rango promedio": 7.8
+    },
+    {
+      "Modelo": "XGBoost ampliado (gbtree)",
+      "Rango fold 1": 7.0,
+      "Rango fold 2": 7.0,
+      "Rango fold 3": 11.0,
+      "Rango fold 4": 16.0,
+      "Rango fold 5": 12.0,
+      "Rango promedio": 10.6
+    },
+    {
+      "Modelo": "DART-XGBoost",
+      "Rango fold 1": 12.0,
+      "Rango fold 2": 3.0,
+      "Rango fold 3": 14.0,
+      "Rango fold 4": 14.0,
+      "Rango fold 5": 11.0,
+      "Rango promedio": 10.8
+    },
+    {
+      "Modelo": "DenseWeight-XGBoost",
+      "Rango fold 1": 9.0,
+      "Rango fold 2": 5.0,
+      "Rango fold 3": 8.0,
+      "Rango fold 4": 17.0,
+      "Rango fold 5": 16.0,
+      "Rango promedio": 11.0
+    },
+    {
+      "Modelo": "TCR-XGBoost",
+      "Rango fold 1": 14.0,
+      "Rango fold 2": 2.0,
+      "Rango fold 3": 10.0,
+      "Rango fold 4": 12.5,
+      "Rango fold 5": 18.5,
+      "Rango promedio": 11.4
+    },
+    {
+      "Modelo": "HRT-Boost",
+      "Rango fold 1": 11.0,
+      "Rango fold 2": 16.0,
+      "Rango fold 3": 16.0,
+      "Rango fold 4": 7.0,
+      "Rango fold 5": 7.0,
+      "Rango promedio": 11.4
+    },
+    {
+      "Modelo": "XGBoost",
+      "Rango fold 1": 13.0,
+      "Rango fold 2": 1.0,
+      "Rango fold 3": 13.0,
+      "Rango fold 4": 12.5,
+      "Rango fold 5": 18.5,
+      "Rango promedio": 11.6
+    },
+    {
+      "Modelo": "CatBoost",
+      "Rango fold 1": 10.0,
+      "Rango fold 2": 8.0,
+      "Rango fold 3": 15.0,
+      "Rango fold 4": 15.0,
+      "Rango fold 5": 14.0,
+      "Rango promedio": 12.4
+    },
+    {
+      "Modelo": "SVM lineal",
+      "Rango fold 1": 19.0,
+      "Rango fold 2": 19.0,
+      "Rango fold 3": 12.0,
+      "Rango fold 4": 4.0,
+      "Rango fold 5": 10.0,
+      "Rango promedio": 12.8
+    },
+    {
+      "Modelo": "RaFFLE",
+      "Rango fold 1": 15.0,
+      "Rango fold 2": 14.0,
+      "Rango fold 3": 9.0,
+      "Rango fold 4": 23.0,
+      "Rango fold 5": 8.0,
+      "Rango promedio": 13.8
+    },
+    {
+      "Modelo": "Ridge",
+      "Rango fold 1": 18.0,
+      "Rango fold 2": 22.0,
+      "Rango fold 3": 18.0,
+      "Rango fold 4": 1.0,
+      "Rango fold 5": 15.0,
+      "Rango promedio": 14.8
+    },
+    {
+      "Modelo": "Lasso",
+      "Rango fold 1": 16.0,
+      "Rango fold 2": 23.0,
+      "Rango fold 3": 20.0,
+      "Rango fold 4": 2.0,
+      "Rango fold 5": 17.0,
+      "Rango promedio": 15.6
+    },
+    {
+      "Modelo": "Random Forest",
+      "Rango fold 1": 21.0,
+      "Rango fold 2": 10.0,
+      "Rango fold 3": 17.0,
+      "Rango fold 4": 20.0,
+      "Rango fold 5": 20.0,
+      "Rango promedio": 17.6
+    },
+    {
+      "Modelo": "logicDT propio (adaptado)",
+      "Rango fold 1": 20.0,
+      "Rango fold 2": 25.0,
+      "Rango fold 3": 21.0,
+      "Rango fold 4": 21.0,
+      "Rango fold 5": 9.0,
+      "Rango promedio": 19.2
+    },
+    {
+      "Modelo": "LinXGBoost (hojas completas E3)",
+      "Rango fold 1": 17.0,
+      "Rango fold 2": 24.0,
+      "Rango fold 3": 19.0,
+      "Rango fold 4": 19.0,
+      "Rango fold 5": 22.0,
+      "Rango promedio": 20.2
+    },
+    {
+      "Modelo": "KNN",
+      "Rango fold 1": 22.0,
+      "Rango fold 2": 15.0,
+      "Rango fold 3": 24.0,
+      "Rango fold 4": 22.0,
+      "Rango fold 5": 24.0,
+      "Rango promedio": 21.4
+    },
+    {
+      "Modelo": "coPILOT",
+      "Rango fold 1": 23.0,
+      "Rango fold 2": 17.0,
+      "Rango fold 3": 22.0,
+      "Rango fold 4": 25.0,
+      "Rango fold 5": 21.0,
+      "Rango promedio": 21.6
+    },
+    {
+      "Modelo": "RIM (port E3)",
+      "Rango fold 1": 24.0,
+      "Rango fold 2": 18.0,
+      "Rango fold 3": 23.0,
+      "Rango fold 4": 24.0,
+      "Rango fold 5": 23.0,
+      "Rango promedio": 22.4
+    },
+    {
+      "Modelo": "XBART (GFR)",
+      "Rango fold 1": 25.0,
+      "Rango fold 2": 20.0,
+      "Rango fold 3": 25.0,
+      "Rango fold 4": 18.0,
+      "Rango fold 5": 25.0,
+      "Rango promedio": 22.6
+    }
+  ],
+  "mcs": [
+    {
+      "Modelo": "Kernel Ridge RBF",
+      "Rango promedio de pérdida": 4.0,
+      "MSE medio CV": 0.6429469875869577,
+      "p-valor MCS exploratorio": 1.0,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 25
+    },
+    {
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "Rango promedio de pérdida": 4.8,
+      "MSE medio CV": 0.6459334269054475,
+      "p-valor MCS exploratorio": 0.472,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 24
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Rango promedio de pérdida": 6.0,
+      "MSE medio CV": 0.6505562505276969,
+      "p-valor MCS exploratorio": 0.472,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 22
+    },
+    {
+      "Modelo": "SVR RBF",
+      "Rango promedio de pérdida": 6.8,
+      "MSE medio CV": 0.6533893222498162,
+      "p-valor MCS exploratorio": 0.3936,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 21
+    },
+    {
+      "Modelo": "TabICLv2",
+      "Rango promedio de pérdida": 7.0,
+      "MSE medio CV": 0.6532165184789116,
+      "p-valor MCS exploratorio": 0.05568,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 18
+    },
+    {
+      "Modelo": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Rango promedio de pérdida": 7.4,
+      "MSE medio CV": 0.6639945707955693,
+      "p-valor MCS exploratorio": 0.472,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 23
+    },
+    {
+      "Modelo": "TabPFN 2.5 original",
+      "Rango promedio de pérdida": 7.8,
+      "MSE medio CV": 0.6533839519359365,
+      "p-valor MCS exploratorio": 0.2,
+      "En MCS exploratorio (α = 0.10)": "Sí",
+      "Paso de eliminación": 20
+    },
+    {
+      "Modelo": "XGBoost ampliado (gbtree)",
+      "Rango promedio de pérdida": 10.6,
+      "MSE medio CV": 0.6606111991053403,
+      "p-valor MCS exploratorio": 0.00096,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 11
+    },
+    {
+      "Modelo": "DART-XGBoost",
+      "Rango promedio de pérdida": 10.8,
+      "MSE medio CV": 0.6624396433461112,
+      "p-valor MCS exploratorio": 0.00128,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 13
+    },
+    {
+      "Modelo": "DenseWeight-XGBoost",
+      "Rango promedio de pérdida": 11.0,
+      "MSE medio CV": 0.6643535925721576,
+      "p-valor MCS exploratorio": 0.00128,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 12
+    },
+    {
+      "Modelo": "TCR-XGBoost",
+      "Rango promedio de pérdida": 11.4,
+      "MSE medio CV": 0.6663416953511334,
+      "p-valor MCS exploratorio": 0.00128,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 14
+    },
+    {
+      "Modelo": "HRT-Boost",
+      "Rango promedio de pérdida": 11.4,
+      "MSE medio CV": 0.6697653476485601,
+      "p-valor MCS exploratorio": 0.00064,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 10
+    },
+    {
+      "Modelo": "XGBoost",
+      "Rango promedio de pérdida": 11.6,
+      "MSE medio CV": 0.6661181512645535,
+      "p-valor MCS exploratorio": 0.00128,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 15
+    },
+    {
+      "Modelo": "CatBoost",
+      "Rango promedio de pérdida": 12.4,
+      "MSE medio CV": 0.6676466752739527,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 2
+    },
+    {
+      "Modelo": "SVM lineal",
+      "Rango promedio de pérdida": 12.8,
+      "MSE medio CV": 0.6809825966358082,
+      "p-valor MCS exploratorio": 0.05568,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 19
+    },
+    {
+      "Modelo": "RaFFLE",
+      "Rango promedio de pérdida": 13.8,
+      "MSE medio CV": 0.6785339020051457,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 7
+    },
+    {
+      "Modelo": "Ridge",
+      "Rango promedio de pérdida": 14.8,
+      "MSE medio CV": 0.6832283655328028,
+      "p-valor MCS exploratorio": 0.0432,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 17
+    },
+    {
+      "Modelo": "Lasso",
+      "Rango promedio de pérdida": 15.6,
+      "MSE medio CV": 0.6894716343681152,
+      "p-valor MCS exploratorio": 0.0256,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 16
+    },
+    {
+      "Modelo": "Random Forest",
+      "Rango promedio de pérdida": 17.6,
+      "MSE medio CV": 0.6891203954119393,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 8
+    },
+    {
+      "Modelo": "logicDT propio (adaptado)",
+      "Rango promedio de pérdida": 19.2,
+      "MSE medio CV": 0.717101082551092,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 9
+    },
+    {
+      "Modelo": "LinXGBoost (hojas completas E3)",
+      "Rango promedio de pérdida": 20.2,
+      "MSE medio CV": 0.7177391265939993,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 3
+    },
+    {
+      "Modelo": "KNN",
+      "Rango promedio de pérdida": 21.4,
+      "MSE medio CV": 0.7323789715368064,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 4
+    },
+    {
+      "Modelo": "coPILOT",
+      "Rango promedio de pérdida": 21.6,
+      "MSE medio CV": 0.73873319517258,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 5
+    },
+    {
+      "Modelo": "RIM (port E3)",
+      "Rango promedio de pérdida": 22.4,
+      "MSE medio CV": 0.7480937051365807,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 1
+    },
+    {
+      "Modelo": "XBART (GFR)",
+      "Rango promedio de pérdida": 22.6,
+      "MSE medio CV": 0.77907272915221,
+      "p-valor MCS exploratorio": 0.0,
+      "En MCS exploratorio (α = 0.10)": "No",
+      "Paso de eliminación": 6
+    }
+  ],
+  "pairs": [
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "GPR–XGBoost (OOF agrupado)",
+      "Δ MSE (A − B)": -0.002986439318489831,
+      "IC 95% inferior · folds": -0.009126562818258433,
+      "IC 95% superior · folds": 0.003153684181278771,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "Truncated Newton KRR RBF",
+      "Δ MSE (A − B)": -0.007609262940739314,
+      "IC 95% inferior · folds": -0.020434561516843065,
+      "IC 95% superior · folds": 0.004103207778129803,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.010436964348978872,
+      "IC 95% inferior · folds": -0.0188990074949412,
+      "IC 95% superior · folds": 0.0012014279721463516,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.010442334662858465,
+      "IC 95% inferior · folds": -0.02371693015777676,
+      "IC 95% superior · folds": 0.003916461817513306,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.02104758320861173,
+      "IC 95% inferior · folds": -0.06407759605338186,
+      "IC 95% superior · folds": 0.0055580023417090675,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "Truncated Newton KRR RBF",
+      "Δ MSE (A − B)": -0.004622823622249484,
+      "IC 95% inferior · folds": -0.01966436470749051,
+      "IC 95% superior · folds": 0.012412172209103267,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.007450525030489041,
+      "IC 95% inferior · folds": -0.01615944155961089,
+      "IC 95% superior · folds": 0.001621809624388204,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.007455895344368635,
+      "IC 95% inferior · folds": -0.020884068306513414,
+      "IC 95% superior · folds": 0.009889644370642391,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.0180611438901219,
+      "IC 95% inferior · folds": -0.06325529324599007,
+      "IC 95% superior · folds": 0.010747111256388298,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.0028277014082395578,
+      "IC 95% inferior · folds": -0.016838895132671873,
+      "IC 95% superior · folds": 0.011183492316192756,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.0028330717221191513,
+      "IC 95% inferior · folds": -0.021097031590557046,
+      "IC 95% superior · folds": 0.012216411534490535,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.013438320267872417,
+      "IC 95% inferior · folds": -0.04612013211986103,
+      "IC 95% superior · folds": 0.009552834886433482,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -5.3703138795935246e-06,
+      "IC 95% inferior · folds": -0.01855106436386391,
+      "IC 95% superior · folds": 0.02198530564405714,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.010610618859632858,
+      "IC 95% inferior · folds": -0.04954029937598239,
+      "IC 95% superior · folds": 0.01280597389484701,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.010605248545753265,
+      "IC 95% inferior · folds": -0.04700716961181604,
+      "IC 95% superior · folds": 0.021478587647955183,
+      "p-valor crudo DM-HLN": "No aplicable",
+      "p-valor ajustado Holm": "No aplicable"
+    }
+  ],
+  "effects": [
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "GPR–XGBoost (OOF agrupado)",
+      "Δ MSE (A − B)": -0.002986439318489831,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.37075101911775826
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "Truncated Newton KRR RBF",
+      "Δ MSE (A − B)": -0.007609262940739314,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5197773431209742
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.010436964348978872,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.8000823206742923
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TabICLv2",
+      "Δ MSE (A − B)": -0.010269530891953949,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -1.043757347688407
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.010442334662858465,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5916392254553251
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.01766421151838273,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.4102422535424455
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.02104758320861173,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.4412546195272479
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.01949265575915351,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.5270833319409753
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.021406604985200105,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.25242106392165
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.023171163677595884,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.3990786610120147
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.02339470776417585,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.4640051331265385
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.024699687686995153,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -4.017629029982009
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.02681836006160252,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.0919304526100253
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.035586914418188106,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.6541319232372769
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.038035609048850505,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.8891400740534395
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.0402813779458451,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.905442895932242
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.0465246467811576,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.9565689458384936
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.04617340782498151,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.136090680953835
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.0741540949641343,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.2588179939896282
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.07479213900704167,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.7252141557525227
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.08943198394984879,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -3.2590076591481094
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.09578620758562237,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -2.551962816765818
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.10514671754962299,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -4.048821868959157
+    },
+    {
+      "Modelo A": "Kernel Ridge RBF",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.13612574156525237,
+      "Delta de Cliff": -0.92,
+      "d de Cohen emparejado (d_z)": -2.463391043918066
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "Truncated Newton KRR RBF",
+      "Δ MSE (A − B)": -0.004622823622249484,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.22702995139090756
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.007450525030489041,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.654551242555062
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TabICLv2",
+      "Δ MSE (A − B)": -0.0072830915734641176,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5278338133640853
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.007455895344368635,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.3617771162400286
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.014677772199892903,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.7082033774176764
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.0180611438901219,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.3579395258639225
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.01650621644066368,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.292018504824891
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.018420165666710276,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.5969910288227365
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.020184724359106055,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.2707567047976291
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.020408268445686016,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.3307371249838362
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.02171324836850532,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -3.0639218248262257
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.02383192074311269,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.781347500956396
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.03260047509969828,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.5543451957583385
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.03504916973036067,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7254493771879781
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.037294938627355265,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7445766231120546
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.04353820746266777,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.806723014774909
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.04318696850649169,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.9690934212599178
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.07116765564564446,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.1370724110953552
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.07180569968855184,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -1.6156775868356497
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.08644554463135896,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.9439241115853028
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.09279976826713254,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -2.5196559125818188
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.10216027823113316,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -3.6672548387446433
+    },
+    {
+      "Modelo A": "GPR–XGBoost (OOF agrupado)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.13313930224676254,
+      "Delta de Cliff": -0.92,
+      "d de Cohen emparejado (d_z)": -2.282773970773022
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TabPFN 2.5 original",
+      "Δ MSE (A − B)": -0.0028277014082395578,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.15910030463949787
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TabICLv2",
+      "Δ MSE (A − B)": -0.0026602679512146344,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.22308294379369314
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.0028330717221191513,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.1264370129159555
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.010054948577643419,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3808872851135318
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.013438320267872417,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.3734204149688233
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.011883392818414195,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.441310265356551
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.013797342044460792,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.4411324612361484
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.01556190073685657,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.531501447233354
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.015785444823436533,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.5513407111803077
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.01709042474625584,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.8302457372717806
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.019209097120863206,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -1.7106686131674649
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.027977651477448795,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.9073935734163735
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.03042634610811119,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -1.0282822433341725
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.032672115005105785,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -1.083600273942756
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.03891538384041828,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -1.1414436370636378
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.0385641448842422,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.1480802585573533
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.06654483202339498,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.3502143797166073
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.06718287606630235,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -2.0243986620377417
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.08182272100910948,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.428463628688133
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.08817694464488306,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.9004109210186368
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.09753745460888368,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -2.711563207176262
+    },
+    {
+      "Modelo A": "Truncated Newton KRR RBF",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.12851647862451304,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -2.372842930667624
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "TabICLv2",
+      "Δ MSE (A − B)": 0.00016743345702492364,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": 0.01327399511926887
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -5.3703138795935246e-06,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.00021035604678833764
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.007227247169403861,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.4657545655658452
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.010610618859632858,
+      "Delta de Cliff": 0.12,
+      "d de Cohen emparejado (d_z)": -0.24303946579879102
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.009055691410174638,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.421398693578729
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.010969640636221235,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5286004428024939
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.012734199328617014,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5074106372064623
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.012957743415196976,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5248067473341989
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.014262723338016281,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.9672263628882573
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.016381395712623648,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.6109154315847514
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.025149950069209236,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.8574242471634508
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.02759864469987163,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5951699048495942
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.029844413596866227,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.647000014196702
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.036087682432178726,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7406914838891023
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.03573644347600265,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.0911866185414454
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.06371713061515542,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.0743864540193555
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.0643551746580628,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.6412059422162
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.07899501960086992,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.602180906233118
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.0853492432366435,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.8246230167544963
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.09470975320064412,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -2.5022372895122427
+    },
+    {
+      "Modelo A": "TabPFN 2.5 original",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.1256887772162735,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -2.1029571282156185
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "SVR RBF",
+      "Δ MSE (A − B)": -0.00017280377090451716,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.011834552695364368
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.0073946806264287845,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.41287465922655386
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.010778052316657783,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.27574873139578593
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.009223124867199561,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.4312090555580036
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.011137074093246158,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.47031691971734485
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.012901632785641937,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.492483038902016
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.0131251768722219,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5124786765782892
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.014430156795041204,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -1.0876978229874184
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.01654882916964857,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.8817509901345935
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.02531738352623416,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.1411880655249154
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.027766078156896558,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.7168229522423747
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.03001184705389115,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.7505871670646584
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.036255115889203646,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.8398514321563395
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.035903876933027566,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.245168669613967
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.06388456407218035,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.2733756617246814
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.06452260811508773,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.7968679078259961
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.07916245305789485,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.2515289740504723
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.08551667669366843,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -2.1421595025491826
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.09487718665766905,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -3.0562413135878006
+    },
+    {
+      "Modelo A": "TabICLv2",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.1258562106732984,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -2.0240954535044673
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "XGBoost ampliado (gbtree)",
+      "Δ MSE (A − B)": -0.007221876855524267,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.32023934035922014
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.010605248545753265,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.23526938246320778
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.009050321096295045,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3799416869192122
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.010964270322341641,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.4213629327718604
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.01272882901473742,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.4434374190228568
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.012952373101317383,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.461365186013506
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.014257353024136688,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7851298409918327
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.016376025398744054,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.6304923582230658
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.025144579755329643,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -2.1957180247578374
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.027593274385992038,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.6638737294868103
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.029839043282986633,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.6552259809271347
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.03608231211829913,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7288437979372135
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.03573107316212305,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.5071746819425544
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.06371176030127583,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.310910089662623
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.0643498043441832,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.5578657080605265
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.07898964928699033,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.800900000428221
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.08534387292276391,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -3.0921778375445435
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.09470438288676453,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -4.312568186398919
+    },
+    {
+      "Modelo A": "SVR RBF",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.1256834069023939,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -1.8134736627421912
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Δ MSE (A − B)": -0.0033833716902289977,
+      "Delta de Cliff": 0.2,
+      "d de Cohen emparejado (d_z)": -0.06047691230155236
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": -0.0018284442407707768,
+      "Delta de Cliff": 0.12,
+      "d de Cohen emparejado (d_z)": -0.1890273923615985
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.003742393466817373,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5069775568288853
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.005506952159213152,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.3544021711921006
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.005730496245793115,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.3721492592702167
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.00703547616861242,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.996507276788968
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.009154148543219786,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.25551886665918233
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.017922702899805375,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.846462130359687
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.020371397530467773,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.37097070308502356
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.022617166427462365,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.40060225522882476
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.028860435262774865,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.48024244311195113
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.02850919630659878,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.3483859515572687
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.056489883445751565,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.8438252270179557
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.057127927488658935,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.1166735363672382
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.07176777243146606,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.4900535677472773
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07812199606723964,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.1261828226868222
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08748250603124026,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -3.245250362211997
+    },
+    {
+      "Modelo A": "XGBoost ampliado (gbtree)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11846153004686963,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -1.9186519825439436
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "DART-XGBoost",
+      "Δ MSE (A − B)": 0.001554927449458221,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": 0.02581431084564105
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.0003590217765883752,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.005859826019647835
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.0021235804689841544,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.03329429683291398
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.002347124555564117,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.037205294851985954
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.003652104478383422,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.06996942709813944
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.005770776852990789,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.20457117681480666
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.014539331209576378,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.26645107070912927
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.016988025840238775,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5419595026705909
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.019233794737233367,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.6770042170610359
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.025477063572545866,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -1.025844685175896
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.025125824616369787,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.38297105015211896
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.05310651175552257,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -2.051563529658268
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05374455579842994,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -3.603479782053759
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06838440074123706,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.015809750900771
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07473862437701065,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.0786969088324772
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08409913434101127,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.280673093763081
+    },
+    {
+      "Modelo A": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11507815835664063,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.382040186837752
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "DenseWeight-XGBoost",
+      "Δ MSE (A − B)": -0.0019139492260465962,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.183868184502729
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.0036785079184423752,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.473789488126388
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.0039020520050223385,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.5017418369389408
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.005207031927841643,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.621186146065749
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.00732570430244901,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.20000302362476743
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.016094258659034598,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7226335895902162
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.018542953289696996,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.3432083227982124
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.02078872218669159,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3699940404688849
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.027031991022004088,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.4453819362970535
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.026680752065828005,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.8299311371903912
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.05466143920498079,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.780451770972785
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05529948324788816,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -0.9943365607650103
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06993932819069529,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.8838753333391174
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07629355182646887,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.1904781307904355
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08565406179046949,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -4.022976431976685
+    },
+    {
+      "Modelo A": "DART-XGBoost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11663308580609885,
+      "Delta de Cliff": -0.92,
+      "d de Cohen emparejado (d_z)": -2.1068883731710217
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "XGBoost",
+      "Δ MSE (A − B)": -0.001764558692395779,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.13277644743175504
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.0019881027789757423,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.15034607060839478
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.003293082701795047,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.274320408253807
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.005411755076402414,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.1312777881715576
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.014180309432988003,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.6585666640991443
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.0166290040636504,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.28235007228749764
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.018874772960644992,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.30882478891399445
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.02511804179595749,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3852632405000418
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.02476680283978141,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.3396668784865275
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.05274748997893419,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.733938428713592
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05338553402184156,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -0.9692805456667877
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06802537896464869,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.235097317706915
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07437960260042227,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.174335512407882
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08374011256442289,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -3.2498543376721454
+    },
+    {
+      "Modelo A": "DenseWeight-XGBoost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11471913658005226,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -1.8563108896452587
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "TCR-XGBoost",
+      "Δ MSE (A − B)": -0.00022354408657996317,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.2447916404629242
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.0015285240093992681,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.10761402155311188
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.0036471963840066348,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.09202308143710175
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.012415750740592224,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.47184223768313904
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.01486444537125462,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.27026329840876306
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.017110214268249213,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.29762903867052254
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.023353483103561713,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.3735435995875777
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.02300224414738563,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.6235797966271648
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.05098293128653841,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.68647310606529
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05162097532944578,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -0.8894653868694493
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06626082027225291,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.9437291365013483
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07261504390802649,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.0127562209850876
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08197555387202711,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -3.626288691973974
+    },
+    {
+      "Modelo A": "XGBoost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11295457788765648,
+      "Delta de Cliff": -0.92,
+      "d de Cohen emparejado (d_z)": -2.2543847254034457
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "CatBoost",
+      "Δ MSE (A − B)": -0.0013049799228193049,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.09456948461240174
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.0034236522974266715,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.0878136442036713
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.012192206654012262,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.47325076276731837
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.014640901284674657,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.26987303481935804
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.01688667018166925,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.2972705399775118
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.023129939016981748,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.373928628949351
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.02277870006080567,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.6408830189773544
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.05075938719995845,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.6902882598193735
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05139743124286582,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -0.8977032211071374
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06603727618567294,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -2.879403221312076
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07239149982144652,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.0312154311869404
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08175200978544714,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -3.6662410246685204
+    },
+    {
+      "Modelo A": "TCR-XGBoost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11273103380107652,
+      "Delta de Cliff": -0.92,
+      "d de Cohen emparejado (d_z)": -2.2476720404559023
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "HRT-Boost",
+      "Δ MSE (A − B)": -0.0021186723746073667,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.07064027191931209
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.010887226731192957,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5635692936804627
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.013335921361855352,
+      "Delta de Cliff": 0.12,
+      "d de Cohen emparejado (d_z)": -0.274710682667313
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.015581690258849945,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3091367160821798
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.021824959094162443,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.40102233435614315
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.021473720137986364,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.1375701476764855
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.049454407277139144,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7905257459913648
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.05009245132004651,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.0481402012502716
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06473229626285364,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -2.3428896510631643
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.07108651989862722,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -2.014365707915859
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.08044702986262783,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -3.3766946103617568
+    },
+    {
+      "Modelo A": "CatBoost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.11142605387825721,
+      "Delta de Cliff": -0.84,
+      "d de Cohen emparejado (d_z)": -1.914799797732364
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "RaFFLE",
+      "Δ MSE (A − B)": -0.008768554356585589,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.24037381745894598
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.011217248987247986,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.513213883937597
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.01346301788424258,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.6201425808409039
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.01970628671955508,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.7903427241660264
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.019355047763378996,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.4622893659520141
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.047335734902531776,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.1861564220301768
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.04797377894543915,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.656505355852456
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.06261362388824628,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.4568678893544555
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.06896784752401985,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.3413282304595684
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.07832835748802047,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.8558173556395503
+    },
+    {
+      "Modelo A": "HRT-Boost",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.10930738150364985,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.811482967552443
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "SVM lineal",
+      "Δ MSE (A − B)": -0.002448694630662396,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.04796088820326696
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.004694463527656989,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.08436869013315634
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.010937732362969488,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.1824278092166609
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.010586493406793407,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.5812550499677137
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.03856718054594619,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.6684468832955371
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.03920522458885356,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.8037994501069395
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.05384506953166068,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.177651671470786
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.06019929316743426,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -3.2369309961895594
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.06955980313143488,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -4.069856079182437
+    },
+    {
+      "Modelo A": "RaFFLE",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.10053882714706426,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -1.3941530264649742
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "Ridge",
+      "Δ MSE (A − B)": -0.002245768896994593,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.23734083677926984
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.008489037732307091,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.5386961185946002
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.008137798776131012,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.14712365959079554
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.03611848591528379,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.9640605262615976
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.03675652995819116,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.160612972653858
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.051396374900998285,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.8770847285673447
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.05775059853677187,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -0.9428254536424935
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.06711110850077248,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.2339928510671982
+    },
+    {
+      "Modelo A": "SVM lineal",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.09809013251640186,
+      "Delta de Cliff": -0.76,
+      "d de Cohen emparejado (d_z)": -1.548319211922847
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "Lasso",
+      "Δ MSE (A − B)": -0.006243268835312499,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.8467705900395178
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": -0.005892029879136418,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.09868262285825738
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.0338727170182892,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.8661269414360147
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.03451076106119657,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -1.0938244634854764
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.04915060600400369,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.8498081022742773
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.05550482963977728,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.8195513705019807
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.0648653396037779,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -1.0892704924153471
+    },
+    {
+      "Modelo A": "Ridge",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.09584436361940726,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.5263521687991715
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "Random Forest",
+      "Δ MSE (A − B)": 0.00035123895617608094,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": 0.005389349850368238
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.0276294481829767,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7437672682716003
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.028267492225884074,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.9180439576452781
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.0429073371686912,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.6932551883704202
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.049261560804464775,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.6754814969006326
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.058622070768465394,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -0.9009766783689928
+    },
+    {
+      "Modelo A": "Lasso",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.08960109478409477,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.3188772757815679
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "logicDT propio (adaptado)",
+      "Δ MSE (A − B)": -0.027980687139152784,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.39317144606845156
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.028618731182060153,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.4795249576150646
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.043258576124867276,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -1.2272676643926415
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.049612799760640855,
+      "Delta de Cliff": -0.52,
+      "d de Cohen emparejado (d_z)": -2.1642382937236206
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.05897330972464147,
+      "Delta de Cliff": -0.68,
+      "d de Cohen emparejado (d_z)": -6.365827788092
+    },
+    {
+      "Modelo A": "Random Forest",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.08995233374027085,
+      "Delta de Cliff": -0.6,
+      "d de Cohen emparejado (d_z)": -1.5199812128119665
+    },
+    {
+      "Modelo A": "logicDT propio (adaptado)",
+      "Modelo B": "LinXGBoost (hojas completas E3)",
+      "Δ MSE (A − B)": -0.0006380440429073708,
+      "Delta de Cliff": 0.04,
+      "d de Cohen emparejado (d_z)": -0.019510417865604982
+    },
+    {
+      "Modelo A": "logicDT propio (adaptado)",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.015277888985714494,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.18601009979666105
+    },
+    {
+      "Modelo A": "logicDT propio (adaptado)",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.021632112621488075,
+      "Delta de Cliff": -0.28,
+      "d de Cohen emparejado (d_z)": -0.3183961415216321
+    },
+    {
+      "Modelo A": "logicDT propio (adaptado)",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.030992622585488693,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.4567457978425583
+    },
+    {
+      "Modelo A": "logicDT propio (adaptado)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.06197164660111807,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.6323220899841412
+    },
+    {
+      "Modelo A": "LinXGBoost (hojas completas E3)",
+      "Modelo B": "KNN",
+      "Δ MSE (A − B)": -0.014639844942807123,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.22662506169199756
+    },
+    {
+      "Modelo A": "LinXGBoost (hojas completas E3)",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.020994068578580705,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.33704337887217084
+    },
+    {
+      "Modelo A": "LinXGBoost (hojas completas E3)",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.030354578542581324,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.5001286207854441
+    },
+    {
+      "Modelo A": "LinXGBoost (hojas completas E3)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.0613336025582107,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.7703770527267257
+    },
+    {
+      "Modelo A": "KNN",
+      "Modelo B": "coPILOT",
+      "Δ MSE (A − B)": -0.006354223635773581,
+      "Delta de Cliff": -0.04,
+      "d de Cohen emparejado (d_z)": -0.110043086032547
+    },
+    {
+      "Modelo A": "KNN",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.0157147335997742,
+      "Delta de Cliff": -0.2,
+      "d de Cohen emparejado (d_z)": -0.3752978184433003
+    },
+    {
+      "Modelo A": "KNN",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.04669375761540358,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -1.2245619501069183
+    },
+    {
+      "Modelo A": "coPILOT",
+      "Modelo B": "RIM (port E3)",
+      "Δ MSE (A − B)": -0.009360509964000618,
+      "Delta de Cliff": -0.12,
+      "d de Cohen emparejado (d_z)": -0.511552385199342
+    },
+    {
+      "Modelo A": "coPILOT",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.04033953397962999,
+      "Delta de Cliff": -0.44,
+      "d de Cohen emparejado (d_z)": -0.5089577390180753
+    },
+    {
+      "Modelo A": "RIM (port E3)",
+      "Modelo B": "XBART (GFR)",
+      "Δ MSE (A − B)": -0.030979024015629374,
+      "Delta de Cliff": -0.36,
+      "d de Cohen emparejado (d_z)": -0.4807871631453412
+    }
+  ],
+  "finalists": [
+    "Kernel Ridge RBF",
+    "GPR–XGBoost (OOF agrupado)",
+    "Truncated Newton KRR RBF",
+    "SVR RBF",
+    "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+    "TabPFN 2.5 original"
+  ],
+  "students": {
+    "n_students": 188,
+    "n_models": 26,
+    "family_size": 25,
+    "reps": 49999,
+    "seed": 20261018,
+    "rows": [
+      {
+        "model": "KNN",
+        "reference": "SVM lineal",
+        "delta_mse": -0.011126923259002662,
+        "delta_rmse": -0.006002282335262565,
+        "t_observed": -0.3042669404436975,
+        "p_raw": 0.76264,
+        "null_exceedances": 38131,
+        "mc_se_raw": 0.0019027551123411417,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.022190947340455167,
+        "bca_mse": {
+          "low": -0.08403929963227928,
+          "high": 0.0591752369937386,
+          "state": "Calculado",
+          "bias_z0": -0.002531747896922693,
+          "acceleration": -0.005179682453721004,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.04501505731740036,
+          "high": 0.03232378333280172,
+          "state": "Calculado",
+          "bias_z0": -0.002632015367489191,
+          "acceleration": -0.004906065908017973,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "Ridge",
+        "reference": "SVM lineal",
+        "delta_mse": -0.023735431647519654,
+        "delta_rmse": -0.012851267915486853,
+        "t_observed": -1.2819923040969816,
+        "p_raw": 0.2712,
+        "null_exceedances": 13559,
+        "mc_se_raw": 0.001988237979167795,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.09349889826873624,
+        "bca_mse": {
+          "low": -0.08537066320219967,
+          "high": 0.0008626254258591017,
+          "state": "Calculado",
+          "bias_z0": -0.10167029591124108,
+          "acceleration": -0.10059337193971592,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.0451729104286112,
+          "high": 0.00048673201203654854,
+          "state": "Calculado",
+          "bias_z0": -0.09960438405088225,
+          "acceleration": -0.10132129152333637,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "Lasso",
+        "reference": "SVM lineal",
+        "delta_mse": -0.018794757593119642,
+        "delta_rmse": -0.010161399519898917,
+        "t_observed": -1.5191253885476395,
+        "p_raw": 0.16564,
+        "null_exceedances": 8281,
+        "mc_se_raw": 0.0016625652138974308,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1107936059423686,
+        "bca_mse": {
+          "low": -0.05329557553118902,
+          "high": -0.0005314382706100984,
+          "state": "Calculado",
+          "bias_z0": -0.07152634298357222,
+          "acceleration": -0.06956231565806066,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.028126331759466737,
+          "high": -0.00027078920331194395,
+          "state": "Calculado",
+          "bias_z0": -0.06996830796294946,
+          "acceleration": -0.06928591721417238,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "Random Forest",
+        "reference": "SVM lineal",
+        "delta_mse": 0.01821482762550846,
+        "delta_rmse": 0.009743012140578378,
+        "t_observed": 0.535678814215838,
+        "p_raw": 0.594,
+        "null_exceedances": 29699,
+        "mc_se_raw": 0.0021962186747975145,
+        "zero_se_resamples": 0,
+        "cohen_dz": 0.03906839284059773,
+        "bca_mse": {
+          "low": -0.0489985990920751,
+          "high": 0.08475976821778966,
+          "state": "Calculado",
+          "bias_z0": -0.0033840223098066465,
+          "acceleration": -0.0004600575802878651,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.026184223118958384,
+          "high": 0.04562362875868873,
+          "state": "Calculado",
+          "bias_z0": -0.005389384667047052,
+          "acceleration": -0.001178049003626527,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "XGBoost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.0298367551361242,
+        "delta_rmse": -0.016183960238459805,
+        "t_observed": -0.964299020167163,
+        "p_raw": 0.34392,
+        "null_exceedances": 17195,
+        "mc_se_raw": 0.0021243518845564615,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.07032873418905564,
+        "bca_mse": {
+          "low": -0.09102225655263933,
+          "high": 0.03101193869615516,
+          "state": "Calculado",
+          "bias_z0": 0.0016293416862461876,
+          "acceleration": -0.0023572608071878265,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.04913859642229635,
+          "high": 0.017089421477730998,
+          "state": "Calculado",
+          "bias_z0": 0.004988310719797844,
+          "acceleration": -0.0004616953683370051,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "SVR RBF",
+        "reference": "SVM lineal",
+        "delta_mse": -0.04566694659225794,
+        "delta_rmse": -0.024888025770406053,
+        "t_observed": -2.2241001509321947,
+        "p_raw": 0.05126,
+        "null_exceedances": 2562,
+        "mc_se_raw": 0.0009862391704622297,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1622091748030953,
+        "bca_mse": {
+          "low": -0.09962046307962855,
+          "high": -0.014057188548236892,
+          "state": "Calculado",
+          "bias_z0": -0.06027195401238899,
+          "acceleration": -0.05869407120268464,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.05367939252417748,
+          "high": -0.007409777836649092,
+          "state": "Calculado",
+          "bias_z0": -0.053241926085865844,
+          "acceleration": -0.05389336965360225,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "TabICLv2",
+        "reference": "SVM lineal",
+        "delta_mse": -0.05862803636032828,
+        "delta_rmse": -0.03207737213922568,
+        "t_observed": -2.3773226861229184,
+        "p_raw": 0.01984,
+        "null_exceedances": 991,
+        "mc_se_raw": 0.0006236467483322062,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.17338407669953568,
+        "bca_mse": {
+          "low": -0.11217053316587362,
+          "high": -0.0140566988248148,
+          "state": "Calculado",
+          "bias_z0": -0.022637239265943715,
+          "acceleration": -0.01985676163602116,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.060750066235441984,
+          "high": -0.007253058003136894,
+          "state": "Calculado",
+          "bias_z0": -0.012909752386822244,
+          "acceleration": -0.016337415208101193,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 0.496,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "TabPFN 2.5 original",
+        "reference": "SVM lineal",
+        "delta_mse": -0.05779722651039789,
+        "delta_rmse": -0.0316148068705876,
+        "t_observed": -1.98046316417129,
+        "p_raw": 0.05244,
+        "null_exceedances": 2621,
+        "mc_se_raw": 0.0009969056145975347,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.14444012130186928,
+        "bca_mse": {
+          "low": -0.11912217845254855,
+          "high": -0.0030235041797223015,
+          "state": "Calculado",
+          "bias_z0": -0.014413899938128527,
+          "acceleration": -0.0123523179417409,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.0642152187794156,
+          "high": -0.0013379040582498763,
+          "state": "Calculado",
+          "bias_z0": -0.007896119037180713,
+          "acceleration": -0.0091643495364962,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "LinXGBoost (hojas completas E3)",
+        "reference": "SVM lineal",
+        "delta_mse": -0.02707761115166335,
+        "delta_rmse": -0.014675345100054082,
+        "t_observed": -1.4855911133663504,
+        "p_raw": 0.16084,
+        "null_exceedances": 8041,
+        "mc_se_raw": 0.0016430045274671479,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1083478675602652,
+        "bca_mse": {
+          "low": -0.07351929713514523,
+          "high": 0.0012459587465372896,
+          "state": "Calculado",
+          "bias_z0": -0.049928703692556135,
+          "acceleration": -0.05573433352704332,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.03921415958927276,
+          "high": 0.0007814259400992357,
+          "state": "Calculado",
+          "bias_z0": -0.0457628489853829,
+          "acceleration": -0.05421032125964782,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "TabPFN 2.5 fine-tuned",
+        "reference": "SVM lineal",
+        "delta_mse": -0.05223128287434293,
+        "delta_rmse": -0.02852201031700108,
+        "t_observed": -1.9251406519667955,
+        "p_raw": 0.0595,
+        "null_exceedances": 2974,
+        "mc_se_raw": 0.0010579307086703207,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.14040531241569393,
+        "bca_mse": {
+          "low": -0.11000566061307573,
+          "high": -0.002321324535339138,
+          "state": "Calculado",
+          "bias_z0": -0.017372155124850554,
+          "acceleration": -0.016612900440667804,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.058936467826273986,
+          "high": -0.0009958170807793235,
+          "state": "Calculado",
+          "bias_z0": -0.012558788952622468,
+          "acceleration": -0.013875802923046056,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "Kernel Ridge RBF",
+        "reference": "SVM lineal",
+        "delta_mse": -0.03819589682218943,
+        "delta_rmse": -0.020769763021893595,
+        "t_observed": -1.6814945857371368,
+        "p_raw": 0.1046,
+        "null_exceedances": 5229,
+        "mc_se_raw": 0.0013686541799465947,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1226355967261516,
+        "bca_mse": {
+          "low": -0.09150866866846655,
+          "high": 4.5998832090576416e-05,
+          "state": "Calculado",
+          "bias_z0": -0.03482480086968818,
+          "acceleration": -0.037042291542429204,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.049137275487465,
+          "high": 0.00012965628470014483,
+          "state": "Calculado",
+          "bias_z0": -0.032918631837586226,
+          "acceleration": -0.03545362809154337,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "CatBoost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.04446244665066337,
+        "delta_rmse": -0.02422280371963803,
+        "t_observed": -1.3808175039312285,
+        "p_raw": 0.17506,
+        "null_exceedances": 8752,
+        "mc_se_raw": 0.001699511016367324,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1007064667355363,
+        "bca_mse": {
+          "low": -0.10546093137254622,
+          "high": 0.021854941818938635,
+          "state": "Calculado",
+          "bias_z0": 0.007996389339182418,
+          "acceleration": 0.010283256313310014,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.05673574326143567,
+          "high": 0.012374167470154225,
+          "state": "Calculado",
+          "bias_z0": 0.013561545873364602,
+          "acceleration": 0.012984604629496294,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "TCR-XGBoost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.03856373454605066,
+        "delta_rmse": -0.020972089275360428,
+        "t_observed": -1.264170994226153,
+        "p_raw": 0.21288,
+        "null_exceedances": 10643,
+        "mc_se_raw": 0.0018306581161382275,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.09219914566234137,
+        "bca_mse": {
+          "low": -0.09913690094057341,
+          "high": 0.02134092134826361,
+          "state": "Calculado",
+          "bias_z0": -0.0003760017700896025,
+          "acceleration": -0.0037163793673827615,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.05337832137541471,
+          "high": 0.011909522589310304,
+          "state": "Calculado",
+          "bias_z0": 0.0009274711440026123,
+          "acceleration": -0.0013672716463020932,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+        "reference": "SVM lineal",
+        "delta_mse": -0.038918003460303996,
+        "delta_rmse": -0.021166994697279007,
+        "t_observed": -1.408647861566436,
+        "p_raw": 0.16498,
+        "null_exceedances": 8248,
+        "mc_se_raw": 0.0016599057496562732,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.10273620417545777,
+        "bca_mse": {
+          "low": -0.09428415771340067,
+          "high": 0.015203756255773526,
+          "state": "Calculado",
+          "bias_z0": -0.003434156169300236,
+          "acceleration": -0.0031385727839094444,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.0512654962382679,
+          "high": 0.008422909910594297,
+          "state": "Calculado",
+          "bias_z0": -0.0024816141712472152,
+          "acceleration": -0.0001621955262990165,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "XGBoost ampliado (gbtree)",
+        "reference": "SVM lineal",
+        "delta_mse": -0.03804221572111065,
+        "delta_rmse": -0.020685245273127872,
+        "t_observed": -1.2282065950210443,
+        "p_raw": 0.22706,
+        "null_exceedances": 11352,
+        "mc_se_raw": 0.001873538185067659,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.08957617227020133,
+        "bca_mse": {
+          "low": -0.10031416056560645,
+          "high": 0.02213863688481472,
+          "state": "Calculado",
+          "bias_z0": -0.0022810793296584387,
+          "acceleration": -0.005330300608961741,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.053875848892024965,
+          "high": 0.01239107656511647,
+          "state": "Calculado",
+          "bias_z0": 0.0013285399471615852,
+          "acceleration": -0.0031895258649163477,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "RaFFLE",
+        "reference": "SVM lineal",
+        "delta_mse": -0.031266951551383426,
+        "delta_rmse": -0.016966928720478114,
+        "t_observed": -1.0819787106290386,
+        "p_raw": 0.28596,
+        "null_exceedances": 14297,
+        "mc_se_raw": 0.002020846170391227,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.07891140771340382,
+        "bca_mse": {
+          "low": -0.08921034933226427,
+          "high": 0.024754051770942323,
+          "state": "Calculado",
+          "bias_z0": -0.002732282864516836,
+          "acceleration": -0.004579351964282321,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.04824720991544931,
+          "high": 0.01357877810519019,
+          "state": "Calculado",
+          "bias_z0": -0.0011781391243986764,
+          "acceleration": -0.0023476395355923334,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "DenseWeight-XGBoost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.03903605979648254,
+        "delta_rmse": -0.021231954136908926,
+        "t_observed": -1.2370743301932776,
+        "p_raw": 0.22454,
+        "null_exceedances": 11226,
+        "mc_se_raw": 0.0018661472123357155,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.09022291832795303,
+        "bca_mse": {
+          "low": -0.10205677888976566,
+          "high": 0.0220050945214676,
+          "state": "Calculado",
+          "bias_z0": -0.00042613534229095585,
+          "acceleration": -0.005353385255803198,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.05527869520213157,
+          "high": 0.012229371095949253,
+          "state": "Calculado",
+          "bias_z0": 0.0023312130311407605,
+          "acceleration": -0.0028403113192988815,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "DART-XGBoost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.014308264324232262,
+        "delta_rmse": -0.007725599659970328,
+        "t_observed": -0.4468436972512612,
+        "p_raw": 0.65594,
+        "null_exceedances": 32796,
+        "mc_se_raw": 0.0021245575075511743,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.03258942605022149,
+        "bca_mse": {
+          "low": -0.07737921281139916,
+          "high": 0.048906068253300544,
+          "state": "Calculado",
+          "bias_z0": -0.004687505789477216,
+          "acceleration": 0.0006636773163138496,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.0415427685380311,
+          "high": 0.026612472660115193,
+          "state": "Calculado",
+          "bias_z0": -0.003333888458818609,
+          "acceleration": 0.0014415006085516727,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "HRT-Boost",
+        "reference": "SVM lineal",
+        "delta_mse": -0.011440848533009073,
+        "delta_rmse": -0.00617219118929635,
+        "t_observed": -0.4364280750203855,
+        "p_raw": 0.66988,
+        "null_exceedances": 33493,
+        "mc_se_raw": 0.0021030701771656128,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.03182978872614551,
+        "bca_mse": {
+          "low": -0.06979615726760119,
+          "high": 0.03466616722436539,
+          "state": "Calculado",
+          "bias_z0": -0.02755188110964214,
+          "acceleration": -0.025798507718253615,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.037241029578867525,
+          "high": 0.01893889692331333,
+          "state": "Calculado",
+          "bias_z0": -0.025846731933685467,
+          "acceleration": -0.025527431496626007,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "logicDT propio (adaptado)",
+        "reference": "SVM lineal",
+        "delta_mse": 0.07397266981549713,
+        "delta_rmse": 0.03895875656036685,
+        "t_observed": 1.8534879012010888,
+        "p_raw": 0.06712,
+        "null_exceedances": 3355,
+        "mc_se_raw": 0.0011190724545189956,
+        "zero_se_resamples": 0,
+        "cohen_dz": 0.13517949847507363,
+        "bca_mse": {
+          "low": -0.005438026052742158,
+          "high": 0.1516864490510619,
+          "state": "Calculado",
+          "bias_z0": -0.008196930185384303,
+          "acceleration": -0.0020789854396197575,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.0035226892230455307,
+          "high": 0.07931026778663934,
+          "state": "Calculado",
+          "bias_z0": -0.015466822425363175,
+          "acceleration": -0.005713926722907591,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "GPR–XGBoost (OOF agrupado)",
+        "reference": "SVM lineal",
+        "delta_mse": -0.04950802362082077,
+        "delta_rmse": -0.027012651996451198,
+        "t_observed": -1.9495181424507635,
+        "p_raw": 0.05516,
+        "null_exceedances": 2757,
+        "mc_se_raw": 0.0010209644143488582,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.1421832236367859,
+        "bca_mse": {
+          "low": -0.1043360323735872,
+          "high": -0.003977160222336894,
+          "state": "Calculado",
+          "bias_z0": -0.01892655188165522,
+          "acceleration": -0.02117447107748543,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.05626293042607548,
+          "high": -0.001961273729522443,
+          "state": "Calculado",
+          "bias_z0": -0.015165985730338505,
+          "acceleration": -0.01887513010570111,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "RIM (port E3)",
+        "reference": "SVM lineal",
+        "delta_mse": 0.11202075244966828,
+        "delta_rmse": 0.05839938650437404,
+        "t_observed": 2.1331553846133673,
+        "p_raw": 0.03464,
+        "null_exceedances": 1731,
+        "mc_se_raw": 0.0008178109710047217,
+        "zero_se_resamples": 0,
+        "cohen_dz": 0.1555763460201584,
+        "bca_mse": {
+          "low": 0.012390500494182978,
+          "high": 0.21809674056354478,
+          "state": "Calculado",
+          "bias_z0": 0.007244363964210679,
+          "acceleration": 0.004792023253937929,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": 0.005766618845832491,
+          "high": 0.11275462629990014,
+          "state": "Calculado",
+          "bias_z0": -0.0002256010586515857,
+          "acceleration": 0.001748229997901829,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 0.8313599999999999,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "XBART (GFR)",
+        "reference": "SVM lineal",
+        "delta_mse": 0.07138498238198085,
+        "delta_rmse": 0.03762239343284568,
+        "t_observed": 1.4651662098427303,
+        "p_raw": 0.1463,
+        "null_exceedances": 7314,
+        "mc_se_raw": 0.0015804987059542918,
+        "zero_se_resamples": 0,
+        "cohen_dz": 0.10685822837085612,
+        "bca_mse": {
+          "low": -0.025573603862178638,
+          "high": 0.16636555850974866,
+          "state": "Calculado",
+          "bias_z0": -0.013060165771458911,
+          "acceleration": 0.000956759429223373,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.014321005305226916,
+          "high": 0.08695074676053387,
+          "state": "Calculado",
+          "bias_z0": -0.021283306392044326,
+          "acceleration": -0.0036350000442930156,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "coPILOT",
+        "reference": "SVM lineal",
+        "delta_mse": 0.07737088689039498,
+        "delta_rmse": 0.04071090797946264,
+        "t_observed": 1.7294213313968114,
+        "p_raw": 0.08498,
+        "null_exceedances": 4248,
+        "mc_se_raw": 0.001247076218994621,
+        "zero_se_resamples": 0,
+        "cohen_dz": 0.1261310139002367,
+        "bca_mse": {
+          "low": -0.011299908426662363,
+          "high": 0.16392770271260143,
+          "state": "Calculado",
+          "bias_z0": -0.00589072832780398,
+          "acceleration": -4.4275433438818364e-05,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.006400905454824938,
+          "high": 0.08604229840424743,
+          "state": "Calculado",
+          "bias_z0": -0.012308101734956032,
+          "acceleration": -0.0024298797815059886,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      },
+      {
+        "model": "Truncated Newton KRR RBF",
+        "reference": "SVM lineal",
+        "delta_mse": -0.03735174604139713,
+        "delta_rmse": -0.020305614660990345,
+        "t_observed": -1.7047631794821188,
+        "p_raw": 0.097,
+        "null_exceedances": 4849,
+        "mc_se_raw": 0.0013235766079455855,
+        "zero_se_resamples": 0,
+        "cohen_dz": -0.12433263334054147,
+        "bca_mse": {
+          "low": -0.0864861047897271,
+          "high": 0.00040779570400213005,
+          "state": "Calculado",
+          "bias_z0": -0.028605101188118227,
+          "acceleration": -0.029958607854761607,
+          "tail_warning": false
+        },
+        "bca_rmse": {
+          "low": -0.04651631868884359,
+          "high": 0.00034916169024903107,
+          "state": "Calculado",
+          "bias_z0": -0.025194783260543703,
+          "acceleration": -0.028295263475725845,
+          "tail_warning": false
+        },
+        "test_state": "Calculado",
+        "p_holm": 1.0,
+        "conclusion": "Diferencia no detectada"
+      }
+    ],
+    "n_records": 188,
+    "students_with_repeated_records": 0
+  },
+  "marginal_rmse": [
+    {
+      "Modelo": "SVM lineal",
+      "RMSE": 0.9298921667391697,
+      "low": 0.8504113636004943,
+      "high": 1.0329760962464987,
+      "state": "Calculado",
+      "bias_z0": 0.04460859911035544,
+      "acceleration": 0.037393950532450315,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "KNN",
+      "RMSE": 0.9238898844039073,
+      "low": 0.8463135842216751,
+      "high": 1.018507847549511,
+      "state": "Calculado",
+      "bias_z0": 0.03597859578904063,
+      "acceleration": 0.031945883149641446,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "Ridge",
+      "RMSE": 0.9170408988236828,
+      "low": 0.8403380449980291,
+      "high": 1.0171415779074575,
+      "state": "Calculado",
+      "bias_z0": 0.04069461984382373,
+      "acceleration": 0.03826481008524492,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "Lasso",
+      "RMSE": 0.9197307672192705,
+      "low": 0.842180379499396,
+      "high": 1.0208188960166846,
+      "state": "Calculado",
+      "bias_z0": 0.04099567227602407,
+      "acceleration": 0.038316395460577045,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "Random Forest",
+      "RMSE": 0.9396351788797481,
+      "low": 0.8609330225757684,
+      "high": 1.037692094964131,
+      "state": "Calculado",
+      "bias_z0": 0.033470405003471974,
+      "acceleration": 0.03454875087187726,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "XGBoost",
+      "RMSE": 0.9137082065007096,
+      "low": 0.835306372335591,
+      "high": 1.0183152313772317,
+      "state": "Calculado",
+      "bias_z0": 0.04084514559718635,
+      "acceleration": 0.042672533028635905,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "SVR RBF",
+      "RMSE": 0.9050041409687637,
+      "low": 0.8255911213471887,
+      "high": 1.0100615006168472,
+      "state": "Calculado",
+      "bias_z0": 0.04270170704635951,
+      "acceleration": 0.04164330453992123,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "TabICLv2",
+      "RMSE": 0.8978147945999441,
+      "low": 0.8174953438359771,
+      "high": 1.0024009746261449,
+      "state": "Calculado",
+      "bias_z0": 0.03768429385759669,
+      "acceleration": 0.04074468454069607,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "TabPFN 2.5 original",
+      "RMSE": 0.8982773598685819,
+      "low": 0.8181089586149358,
+      "high": 0.9986064803188188,
+      "state": "Calculado",
+      "bias_z0": 0.03326975904568015,
+      "acceleration": 0.03568790447952611,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "LinXGBoost (hojas completas E3)",
+      "RMSE": 0.9152168216391153,
+      "low": 0.8362748298736762,
+      "high": 1.0174167941549188,
+      "state": "Calculado",
+      "bias_z0": 0.04054409501251454,
+      "acceleration": 0.038317598535104455,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "TabPFN 2.5 fine-tuned",
+      "RMSE": 0.9013701564221687,
+      "low": 0.8220819339054322,
+      "high": 0.9997634987277495,
+      "state": "Calculado",
+      "bias_z0": 0.03156432166532365,
+      "acceleration": 0.03492021624936465,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "Kernel Ridge RBF",
+      "RMSE": 0.9091224037172764,
+      "low": 0.8311797761139145,
+      "high": 1.0107657419001599,
+      "state": "Calculado",
+      "bias_z0": 0.03888838174508651,
+      "acceleration": 0.039254622412216104,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "CatBoost",
+      "RMSE": 0.9056693630195318,
+      "low": 0.8262618750906551,
+      "high": 1.0066314643247078,
+      "state": "Calculado",
+      "bias_z0": 0.03648026060337881,
+      "acceleration": 0.037975317381456195,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "TCR-XGBoost",
+      "RMSE": 0.9089200774638093,
+      "low": 0.8319990892137699,
+      "high": 1.0109803706701619,
+      "state": "Calculado",
+      "bias_z0": 0.0423002761027978,
+      "acceleration": 0.041079555423193186,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+      "RMSE": 0.9087251720418906,
+      "low": 0.8260544616792397,
+      "high": 1.0118652939060941,
+      "state": "Calculado",
+      "bias_z0": 0.035276280232147725,
+      "acceleration": 0.03510647768076621,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "XGBoost ampliado (gbtree)",
+      "RMSE": 0.9092069214660418,
+      "low": 0.8314429149240052,
+      "high": 1.0113530690716472,
+      "state": "Calculado",
+      "bias_z0": 0.039992178464427076,
+      "acceleration": 0.04147402363817135,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "RaFFLE",
+      "RMSE": 0.9129252380186915,
+      "low": 0.8332974787982542,
+      "high": 1.0202808599362845,
+      "state": "Calculado",
+      "bias_z0": 0.04561229122904686,
+      "acceleration": 0.044534479901684326,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "DenseWeight-XGBoost",
+      "RMSE": 0.9086602126022605,
+      "low": 0.8297536477139678,
+      "high": 1.0135128336612842,
+      "state": "Calculado",
+      "bias_z0": 0.04129672842381307,
+      "acceleration": 0.04222029450726408,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "DART-XGBoost",
+      "RMSE": 0.9221665670791994,
+      "low": 0.8437999264936146,
+      "high": 1.0246565698098182,
+      "state": "Calculado",
+      "bias_z0": 0.04305296476462376,
+      "acceleration": 0.03942447033445153,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "HRT-Boost",
+      "RMSE": 0.9237199755498735,
+      "low": 0.8465325805862767,
+      "high": 1.0231991329329846,
+      "state": "Calculado",
+      "bias_z0": 0.03582809811612256,
+      "acceleration": 0.038322664430044596,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "logicDT propio (adaptado)",
+      "RMSE": 0.9688509232995368,
+      "low": 0.8887192098998213,
+      "high": 1.063801700538918,
+      "state": "Calculado",
+      "bias_z0": 0.028454639261437865,
+      "acceleration": 0.028872824237547372,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "RMSE": 0.9028795147427187,
+      "low": 0.8238068305387762,
+      "high": 1.0056204690915802,
+      "state": "Calculado",
+      "bias_z0": 0.038637525510290906,
+      "acceleration": 0.03962847024073489,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "RIM (port E3)",
+      "RMSE": 0.9882915532435437,
+      "low": 0.9071908592029937,
+      "high": 1.0847114404769014,
+      "state": "Calculado",
+      "bias_z0": 0.029959288079141666,
+      "acceleration": 0.028202684062871644,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "XBART (GFR)",
+      "RMSE": 0.9675145601720155,
+      "low": 0.8866987710782691,
+      "high": 1.0626068299302105,
+      "state": "Calculado",
+      "bias_z0": 0.02669929681802377,
+      "acceleration": 0.027184743516229435,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "coPILOT",
+      "RMSE": 0.9706030747186323,
+      "low": 0.8908632893498662,
+      "high": 1.0668069235026834,
+      "state": "Calculado",
+      "bias_z0": 0.028605101188118088,
+      "acceleration": 0.031545370642175684,
+      "tail_warning": false
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "RMSE": 0.9095865520781794,
+      "low": 0.830775619122532,
+      "high": 1.0107088502211885,
+      "state": "Calculado",
+      "bias_z0": 0.03753378674896235,
+      "acceleration": 0.038018542411815126,
+      "tail_warning": false
+    }
+  ],
+  "excluded_cv": [
+    "Dummy media",
+    "TabPFN 2.5 fine-tuned"
+  ],
+  "analysis_run": "20261020_153346_a7ba9d59",
+  "input_sha256": {
+    "catalog.json": "5939607d23822dbd0b7f3305a3bc110f816a88d70e49569ccaea0b8be4d0d451",
+    "folds.csv": "2e41be4ac412b7f8f58813cfe8a157418a6f5c5583d72ccbe8be4e2f61edd3d8",
+    "train.csv.gz": "685c8b9916f50da406592488ac3da4250a1c0cc47e334d6244243a54d1976666",
+    "test.csv.gz": "349aa296dca0c382fbe02a614ecf85e6d4337bc125dc5edf5b4bc9855ffea0fb"
+  },
+  "active": {
+    "run_id": "20261020_153034_consolidada",
+    "best_key": "m5",
+    "best_name": "Kernel Ridge RBF",
+    "best_mean_cv": 0.8009641043620999,
+    "executed": [
+      "m0",
+      "m5",
+      "m19",
+      "m11",
+      "m7",
+      "m14",
+      "m15",
+      "m16",
+      "m3"
+    ],
+    "consolidated_from": {
+      "20261019_083039_147f9845": [
+        "m0",
+        "m5",
+        "m19"
+      ],
+      "20261019_144732_b7acf148": [
+        "m11"
+      ],
+      "20261020_100140_8f327baf": [
+        "m7",
+        "m14"
+      ],
+      "20261020_103916_fb6c8c6d": [
+        "m15",
+        "m16"
+      ],
+      "20261020_150908_3a07b335": [
+        "m3"
+      ]
+    },
+    "note": "Ejecución consolidada: búsquedas anidadas (Grid/Random/TPE/DEAP/SH) por modelo; test no selecciona.",
+    "files": {
+      "best.joblib": "b126fcf4510f3682a04cf2e711924882dd5a11f9683fc3da68deab064f25facb",
+      "catalog.json": "5939607d23822dbd0b7f3305a3bc110f816a88d70e49569ccaea0b8be4d0d451",
+      "completo_m0.json": "e35aac52ada2242455a0f19d252d939a49707d1b67453e8bf550e2ef1c52cf66",
+      "completo_m11.json": "eb3c2f3d75ca5727b514ea4b403eb462b8ac7dc2d2501dcf38f5bf216c687441",
+      "completo_m14.json": "7cefd73d0500aac3e53714108f596dad133932e9c60b38b871d4beeb8939ca97",
+      "completo_m15.json": "428b4301ce2afdadc572df9c00fcf308c2f09d7a3274faecd76771ba0046bdaa",
+      "completo_m16.json": "bf3b24081f15d5a7acc038540c5977f48a14ec471842ec7518476388cb133b20",
+      "completo_m19.json": "547d1b8881120cec69bacc7039c9bd87fbf5773483266cd2dbd98aa2e17bd455",
+      "completo_m3.json": "71e241dd5070332518c386116b53bd2eb6a89c8bd3156bf5981281480a6ec3bd",
+      "completo_m5.json": "48183c8bd7b92439568fbe6290b997c5aa1f5f23ab4524596b7f7d482fcf783f",
+      "completo_m7.json": "cf5c437ae49f7148f74e235db8a6c2ad63d825ab67165f01c1e56deef287bfc4",
+      "contrasts.csv": "922148e8548f35f46e7a990499a886157e4fec33d881bdb6d7ab565a88e8ea2f",
+      "cv_inference.csv": "7f008fcd8d8dc43344e273a1e48d6b7804689dc4fe17dc432ca6a925e35122a9",
+      "cv_inference.json": "9a1caddfd7ae5a97497ece24b448e7d13c2ab8c797fa884048c4c0bcedb7ae7a",
+      "folds.csv": "2e41be4ac412b7f8f58813cfe8a157418a6f5c5583d72ccbe8be4e2f61edd3d8",
+      "historical_inventory.csv": "7797619b83a1df296181b49b38967d78a1015ffe0558f325023d9fabe6f28a8c",
+      "inventory.csv": "22125296e71f288311c69191d5f6f2736305a90048de2d35159121a9f1c00bbe",
+      "m0.joblib": "cb30979a3340cb2ea48b6400ecb1ebf6b154690482a1990f11024c6ddbaf7695",
+      "m11.joblib": "7cd08c73f3b822af4ef2c3568062f445d535277bacb7f335b12a1f71249e791b",
+      "m14.joblib": "eae29043ea33ce8689475e10c63ec6ab87b7d5616b899001cd5f671e72464f6d",
+      "m15.joblib": "dea4c3f8ab8a96c4a890f4225e01eb30cb0c0e09e1c97d58d783be5c5f094641",
+      "m16.joblib": "cb1618380734e52cbbd3417bba2dc74b688192d586df4d516aa80b97e2dbd274",
+      "m19.joblib": "7db928598dafb3f91f75528f7683ea2493fc1190556941082f79c337bee00312",
+      "m3.joblib": "fad1cb3b91fb1b75b2c2b3521b2887469fc5ad9b4f841d661d576a06dde18e7c",
+      "m5.joblib": "b126fcf4510f3682a04cf2e711924882dd5a11f9683fc3da68deab064f25facb",
+      "m7.joblib": "0b9e13947deaab3986634f027e7f01728ec5d636ac0cda2813e4e18a328ccc19",
+      "pendientes.json": "ad864c284d121bca870749975d61101c0a01e1d300808c5fe6a63bcc698bffa6",
+      "protocolo.json": "8514a40da43f777d53f5a672f394e56292d18aec38f8700f91f78d0ad4097e1b",
+      "seleccion_antes_test.json": "2675b74cf2289669b38f33f1f7fc9f924e6e6445e35175ebc60928c6bda6efab",
+      "selection_m0_external_1.json": "a9487d6e9bd5e4e6550ff19505da72df55eb5685b3aa266cbb177c2e2a8159c4",
+      "selection_m0_external_2.json": "8fe163e56ce296a688d6a350f5ff2db8b72ee4879e25f8084f53f9df3681c81e",
+      "selection_m0_external_3.json": "d521389b33134f2d6039c7a7801a8305f59e4a189f3ed16c3ca77c57125f2d38",
+      "selection_m0_external_4.json": "7f753f8c5f2263b9bc91f28972dfb9caf521149cad6810a8cf1e9e86a4a03241",
+      "selection_m0_external_5.json": "f82fc52bd83efaa31415b01daee73d6542f8efdfb5c14d8be8fa45825ebd22c5",
+      "selection_m0_final.json": "b88f18ca37d47ec47bb726c9d76560b01f79f7d7adfb9953684aeb2b8b125612",
+      "selection_m11_external_1.json": "2127ae14d959895c391ea64d58e10e3e166efdebb45390ba042c3c7a3870ea8b",
+      "selection_m11_external_2.json": "658c2c33c4214a1be73a0532bb63ab610b2d303b28a55a47d06d1c26f0945ee8",
+      "selection_m11_external_3.json": "46e29abf7d6742fa1cdb10ec3b03a1c24d5f4fa1ea940ce762e0739334448b31",
+      "selection_m11_external_4.json": "6632d226abdb297154e3e38e050c01e2374f53b15ab89805d3aafe169ec10cea",
+      "selection_m11_external_5.json": "574fdb946283d39926c6b4fc30d9dc14afb191bc3291af04bdccde40a17acf2b",
+      "selection_m11_final.json": "99d5e447d3aed0e7375beb1652ebe12010290d0672421760388f15aa59167d46",
+      "selection_m14_external_1.json": "3e30f3ba7192d720b48ea9e2c07a162af0eff34eb29c1197ebab383823da9952",
+      "selection_m14_external_2.json": "f07d5ffa681d3e063a4e324d4d2934304f970b0954e3c2cdd7967be8084ebc61",
+      "selection_m14_external_3.json": "b5b955dd3f97f26e0eac11fd5b22c77aa2790daa912068b506fa8e068e5b397e",
+      "selection_m14_external_4.json": "240b6a51272b15d402ef25b1be142df080ba73d6b7e927f88e21c27289030e94",
+      "selection_m14_external_5.json": "94691f8d6d5ac919d3a029158197753f1e59de2a7d5b111d59363718a5444a58",
+      "selection_m14_final.json": "5b5f4cac144b91a932be4fc12235bab7fa30f8897c2bab0ae43b91c99df3d904",
+      "selection_m15_external_1.json": "3a50ed7ff96e6e7dda4037dc316acd81afbe914e0c78b2967bd49718495e1890",
+      "selection_m15_external_2.json": "147171dd3d945c8b59c345c324f410c01dcc104ca59d3ce71b4ffb7575df0cbe",
+      "selection_m15_external_3.json": "0b3a1b2d098244dba23d5136e6fc595be47955d3c059f79514e8eee6290a61ef",
+      "selection_m15_external_4.json": "ddc70fcef56c92e4e5d083a22f84f060be99866df52b31e86a520f31cd779719",
+      "selection_m15_external_5.json": "0e5505632789b2d32325c9b0b1c9002160c59f8b702fe9a928455d3d559edbfe",
+      "selection_m15_final.json": "19407aba4e016172002cce2ac32763dcd54588aa965b91fa7d25eade83658ea9",
+      "selection_m16_external_1.json": "4ad3e32288e95ac95a203e6e69117e467abeb00188098727ff1c6f1603d46473",
+      "selection_m16_external_2.json": "034287fa47f578e8f674a3e6ca20c634e73784a64dfce0352474aca2eb2a25de",
+      "selection_m16_external_3.json": "d1465b773ea85d7819778dd47188e2762ff85c720ab20867d2647a6a48ac672b",
+      "selection_m16_external_4.json": "33298c717cff4b4c8d9bd26db244619eb9584eae564cae836d438ca8cc6c22f7",
+      "selection_m16_external_5.json": "8b67b23293849071944f9dd496b9225aaebfd8e2a59f238eabac8e61c6ec588a",
+      "selection_m16_final.json": "60a534f679857fb19d8bc7d0a23522b768d7d42d99ffcb3e558d5eb8404708e0",
+      "selection_m19_external_1.json": "d17a488dd05d5c4151a4fd01a4ce43137939a3a441c2327a2ca692e3841ec514",
+      "selection_m19_external_2.json": "b96cc79356086f768a4cc03d4f962929f62643c5e1a643ef823ccd9902a147ac",
+      "selection_m19_external_3.json": "76b1d705bf2b1c83cebfb84924e24281bc4b9197a648354f9b6c8a362cf4d222",
+      "selection_m19_external_4.json": "d86b08e9750a4a83b2e269b56e3e8c8c2a549e745440ffc25ae4e617680224db",
+      "selection_m19_external_5.json": "e9e062f82f0460c38bdc2999a048679860981e06a4c315227744caab2f46bb37",
+      "selection_m19_final.json": "5ef8217db64aa749c81f5d594cf88da891ce5dd5683ce9ec6923022f5aa9a699",
+      "selection_m3_external_1.json": "5d297e4614f6686583ee52d3a8023c424dcc39a25b91e5f9c36376f7965cdede",
+      "selection_m3_external_2.json": "ae81d1d3014a65f857a65de6d777b863f08cf2d7d966bdbd257dec6803b392a3",
+      "selection_m3_external_3.json": "f05aa0af51488b22e1da8ce6406b4bfa28644a1ee8d0ef01bac9aa015a398e22",
+      "selection_m3_external_4.json": "8fb5a9c1f212f5ed2d5bf411ddda616391196545038574f5b993876b35fa6936",
+      "selection_m3_external_5.json": "fe2d4e6d146f768daef669f3af8608788cc383dd97e6abb5ed228b9c4c7e105b",
+      "selection_m3_final.json": "2b939623ff04a4926c6a3bc9b488df5d483b3a947ea7d67accbf47c9ccb48288",
+      "selection_m5_external_1.json": "ae8571018f1023d12d88bb9307fa2d20189c711d8a27d055125609b8ac704927",
+      "selection_m5_external_2.json": "263ed3abf722c3fb271dcebb3bec9a7f8fb3db8e2127f5fb0b718d4ce2b8efd3",
+      "selection_m5_external_3.json": "25af813b7dff435d61bf4030760972b94fbb80df39881e9de1f2634579017194",
+      "selection_m5_external_4.json": "fe4d33dd9d53d60ffcfd9611215345a192b78c98e7a54782619cb70c4a43c83c",
+      "selection_m5_external_5.json": "9d8f8e325cf9e4d1d04e9ee17c495e2f85141075e78694661f4ab29323cd807d",
+      "selection_m5_final.json": "4bdd24c652b7384f5f1b47cb127c3832d2f4f48611c2e6e694edfc069b87236c",
+      "selection_m7_external_1.json": "655c905da5f645ccc7ebeb44870dd129aefdd3c06dd9d543c7e83c315218bd67",
+      "selection_m7_external_2.json": "c872078e7f9a1aae4d7d66f69d313f24d3b95544decffb6bef9c0116e2c0e7b2",
+      "selection_m7_external_3.json": "173152ddd0c68c95bd80b3d4347da938254f3c32be0b7c46d228cd64820325b5",
+      "selection_m7_external_4.json": "e0650fcb2902ffab645cc8c3903222280999d29ec52a75f8f84f889e6a53854c",
+      "selection_m7_external_5.json": "f9b68240fc589f52bfc60c67680faf1ac8673665873a94d31776dd3458342b20",
+      "selection_m7_final.json": "d7926d370888d2a007d95cb239a83c9729885a589360d6dc784c38d8a734032c",
+      "test.csv.gz": "349aa296dca0c382fbe02a614ecf85e6d4337bc125dc5edf5b4bc9855ffea0fb",
+      "tn_krr.joblib": "7db928598dafb3f91f75528f7683ea2493fc1190556941082f79c337bee00312",
+      "train.csv.gz": "685c8b9916f50da406592488ac3da4250a1c0cc47e334d6244243a54d1976666",
+      "trials_m0_external_1.jsonl": "23ac82aaa3c6c3cad76590aca7b46e4b4103255df17814b881b223184587f41d",
+      "trials_m0_external_2.jsonl": "d8d60dce50dccef2f535a9e06512befada3560dea3597797e0fe6ef0c3a24461",
+      "trials_m0_external_3.jsonl": "42ec377e5912a98bd45e550df0626d5e85ee20fc6719a26c5a18cf08996201ee",
+      "trials_m0_external_4.jsonl": "efcfb2d72eb51f1aa7ff2cd16f6b8a358af77a6dc69bfce05bcd31aad8fecb50",
+      "trials_m0_external_5.jsonl": "aa91a84eea027bd22a1db8b8202aa9215c385633e676318d2343c04a81276159",
+      "trials_m0_final.jsonl": "434d38515102a9dfc0e2c0cc0c9ce19d1306b56af36a52a2210be47e1cc960a6",
+      "trials_m11_external_1.jsonl": "81311df8b72b74f98705fe678e874874777380d1511963d4a20e481629fe89df",
+      "trials_m11_external_2.jsonl": "c6ba8cd882e4bd1432cc492044d530332778a385c57765bee7cb1b38970451db",
+      "trials_m11_external_3.jsonl": "af457a86c496210abf62892da7393fdac9cc6ebc8b0740a066372bd2d51eb2b8",
+      "trials_m11_external_4.jsonl": "1f9964fc9e10cb469129f28c331dc1bbfe7434564c2d12fd2291331150320d75",
+      "trials_m11_external_5.jsonl": "2ff1cf609e46ab963bf9cba8c78df4060cd07b739502b57bda2f364acfff3aff",
+      "trials_m11_final.jsonl": "43d0456f98c55b98562daee1407f662bb30c2a3edb4a72df4a4de3c60e96f3a4",
+      "trials_m14_external_1.jsonl": "c59b6799d0e278dc6eeefdfa16ad5ec216002e7bbfb4f3ea84e4d539bfc8f007",
+      "trials_m14_external_2.jsonl": "dd111b25e1805c6b11787a86a8c23edc15ff75f940803a5972c5a86d12fd71cf",
+      "trials_m14_external_3.jsonl": "dbe1d59045e0a90f3b1c1d924511d87db5a70d9aefc47a435b999332110584f8",
+      "trials_m14_external_4.jsonl": "f974a40687994198a632a4fb9d2f3a397435418754e6b84cfafd18eab90b5a77",
+      "trials_m14_external_5.jsonl": "8481a8da994718bbd85c91ce1b0b92c29ae1c3e3a116881aef6bed910b7cc490",
+      "trials_m14_final.jsonl": "78c23006666cb00deb61ad2270d5272b58091980626cc95479dfdbed762edb6a",
+      "trials_m15_external_1.jsonl": "378d4726627191c0ceaa6dd807aa89a6df4bbdf65fc11ef23ed76343e35440a0",
+      "trials_m15_external_2.jsonl": "1cf2211dc6828068e1f7622da73326524522f48f4c8ad451188a4483d5b22873",
+      "trials_m15_external_3.jsonl": "7b6e71c8e4fd5cfaddc9abf98ac2d2ab77b24162931a9667c2b278a434fe962b",
+      "trials_m15_external_4.jsonl": "d28f3f87636bbe5ea99e4781e388f8340495014ffa78bb374525cdea10042cf5",
+      "trials_m15_external_5.jsonl": "5364e2fb07e3d355e7b5e86c8fa6c42a7d5f8a1814f55c5994587020e76de038",
+      "trials_m15_final.jsonl": "dbc5882893e6a289cf4b0669095896d336eeb5d183906a260b21420d919a18a9",
+      "trials_m16_external_1.jsonl": "9d053a13452e9079d2bb490055c083c4cd777685c4c1b463843c5b6e026061db",
+      "trials_m16_external_2.jsonl": "c1ff22cc816c1f31b02a70a85e61f83d59433ad9059de3f1937359aa5991ade2",
+      "trials_m16_external_3.jsonl": "b460cd448cae4cb3f3b47e1792bb5b3ebbae2f33831a81e6961172fe9ceef3af",
+      "trials_m16_external_4.jsonl": "3755fe14acf34eb22734c554e9952857833c98ede2cbb5a3508974e7ca7a4c8b",
+      "trials_m16_external_5.jsonl": "cf87f23103e5a490ac3cf92dc4ab5430192b17d2fe392559a4ec36999f5f2497",
+      "trials_m16_final.jsonl": "53c9db06add3e1b31b752c796032407fc0ca9f5b983f4e4b9ecc818874e20e58",
+      "trials_m19_external_1.jsonl": "19cd047b5caaa8b95849dacba3dd451d5a5aabf4e03097f25f3ede5e236f948b",
+      "trials_m19_external_2.jsonl": "29bf5277ba78e66b1ddc640306755065d0069625c94b604744ee9500bd131111",
+      "trials_m19_external_3.jsonl": "49cd1f2d1dae9175c931f6bbbe3cca029a4b6ace61824945464f4aaa8ca9cf03",
+      "trials_m19_external_4.jsonl": "6692aa6a19eecb6a438aa256715406d0ff99bd3cedd6eec1e749b2af842575ef",
+      "trials_m19_external_5.jsonl": "27b148ef369ecb88146cc6bde60be9aeb29da4d9aa55f636d6198f8aa2542db9",
+      "trials_m19_final.jsonl": "385bc6af44857ac87f710ff43c2d8ebb254bd8f9f6f91488634ee2feae49e466",
+      "trials_m3_external_1.jsonl": "f5abe95cc1392878f907d1a5915e0ec288e0e8eb5f0a6858857846b7bebc7e89",
+      "trials_m3_external_2.jsonl": "cff286ef31ab0d027ff2fc520a56d3cfdfd5ac63634edc419e3525cf9cfedf49",
+      "trials_m3_external_3.jsonl": "2be5ea0fca76a73d5ce84bc75590ab7700cdcdaa9bdfa602883aca7d897d6114",
+      "trials_m3_external_4.jsonl": "9eb95911d692cba1d7c72b41daa1147bb2d36fe820c001454dc58a9fce27b024",
+      "trials_m3_external_5.jsonl": "3f260d464dc377ce6810bec13d40c0456a9ed8891fc4e3f01db9f624356bd222",
+      "trials_m3_final.jsonl": "473f85ead72ed77ba11adb03ecfa5ce3576c11a75f3866d2fca22645d5e7aef5",
+      "trials_m5_external_1.jsonl": "54faeebdf450c97706ad17718645064bcce8d8659eb33bd0eb6639bf4dcf17f7",
+      "trials_m5_external_2.jsonl": "8853af11a73127e5866feac26e539d0d05e058727b7efd7a888cf32dc6f52d89",
+      "trials_m5_external_3.jsonl": "c63e24339b245a2c8e4b3f7c66d7feb78d37cda2d4c0ecc98056f6214f9edb68",
+      "trials_m5_external_4.jsonl": "51e41d47f43d6f1d1b8e6e0014d65f8a2cdd0922c8c3ff68fb0e908f546802d1",
+      "trials_m5_external_5.jsonl": "f60b1ca399a1be81c8f14aa3c5e64cd0ea1b505f5f5bcb78182983c95a3a72b8",
+      "trials_m5_final.jsonl": "712503b96ee11b2535067c1df8df9a1ef2370303f29df7a49156e4ee9396c2b6",
+      "trials_m7_external_1.jsonl": "dc08826804227599db5488f95454f3efb4b37a8081f3a621e028e69c70253e66",
+      "trials_m7_external_2.jsonl": "f9783a8ea7c5c540f72d71db600d59f844ad0673fd953faa53c7dfd82f28eefd",
+      "trials_m7_external_3.jsonl": "bdfd97ec1d9fe962e8e0c95b616c9745116930fcc590e1aa33d0355c892743df",
+      "trials_m7_external_4.jsonl": "acc127564638de3446ba59d4057eb7cc3ec98c32d2a5738ca0af0d705e36bd2a",
+      "trials_m7_external_5.jsonl": "6bd59d9beb54dc8f435d811e46dc1871875f4d615cc7310e107dbf751468aae3",
+      "trials_m7_final.jsonl": "65a4b4ef789fccd5f09f47871c18c3ecbe80d564c7102e0940dadf06f2f21593"
+    }
+  }
+}

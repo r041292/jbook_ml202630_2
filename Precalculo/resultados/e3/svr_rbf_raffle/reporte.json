@@ -773,9 +773,7 @@
       "family_size_global": 55,
       "model_serialization": {
         "saved": true,
-        "path": "modelos_preentrenados/svr_rbf_raffle/svr_rbf/modelo_final.joblib",
-        "published": false,
-        "note": "Ruta privada local; el archivo no se incluye en la rama."
+        "path": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\modelos_preentrenados\\svr_rbf_raffle\\svr_rbf\\modelo_final.joblib"
       }
     },
     "raffle": {

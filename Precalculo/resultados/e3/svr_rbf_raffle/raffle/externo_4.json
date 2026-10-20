@@ -1,0 +1,113 @@
+{
+  "metrics": {
+    "Modelo": "RaFFLE",
+    "Fold": 4,
+    "RMSE": 0.8414058131779897,
+    "MAE": 0.6570440492302138,
+    "MAPE (%)": 23.823445724345923,
+    "R²": 0.3808311572047577
+  },
+  "audit": {
+    "fold": 4,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "fit_students": 1034,
+    "validation_students": 259,
+    "shared_students": 0,
+    "best_params": {
+      "modelo__alpha": 0.5,
+      "modelo__max_depth": 6,
+      "modelo__n_features_node": 0.7
+    },
+    "inner_rmse": 0.8125196903167969,
+    "seconds": 208.8186721999664
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "experiment_inputs_sha256": {
+      "evaluator": "18cb919de9077702062c3ec559fdc2e0bf5edec5fa7d7e8b1ec7a6d4f7630cf4",
+      "requirements": "7e646d0c4c62332bbea87b8cf49d14d75313ab2cabdf1d9f47bad20138144ed8",
+      "canonical_train": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+      "canonical_test": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+      "linear_report": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
+      "linear_fold_metrics": "3d44dd24364a8fc4708f188db799406981146b2933a942118a58b7e2f9267eaa",
+      "summary_models": "c77dd46ce3f9b17dcc32f8e57a8d3ea96f75072bcadcff4959659cfb9ea8cf93",
+      "scopus_contrasts": "5dbc7e65666322f9efe58d3dfd3cbb23669c7cc1c931a50f326e2b10e5d7bfee",
+      "classic_report": "ed5e55111cb9db448574daa8fcafcaf7c8528bcbc609da8a75025103483aa653",
+      "classic_test_predictions": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd",
+      "tabicl_test": "624d908375f4394c0b83f65edad29dd2174b6a717df996fb46f439da8f771291",
+      "tabpfn_test": "0c68643687529f8a9b2c4ed2a333b28236b0ca6b276b3142887deaec99df75ec",
+      "tabfm_report": "11b0be3f0ccde6073bf2d1fc1dd49729d71aebe1b876c2931259ef2197a9eb21",
+      "tabfm_test": "7109ae49b1a0e7af6282739e75280294027df3a25e268a6c803deed4b16821bf",
+      "tcr_test": "1e34f000e5b6546d8495cb8e694e539ca8169b0a9db13b0bc93738b469fc7f09",
+      "kernel_ridge_test": "7e5043fd088b4b3030ba58644aaa37a678b51d4eb08aeaa34cc4876c3aa552e5",
+      "catboost_test": "910f2918a549050b1bf791e742315d5231fad841d8d85113d2849581a88497fc",
+      "gpr_report": "78fad46a2c3a83ae70dc0040d4d58ef5b494980dc1f216c89d154e3ebb954c3e",
+      "gpr_test": "fcde6da6e1c6dd7255353e6130e245ffc6e19dbb0a3dc9523cc118b9e41fe94a",
+      "gpr_contrasts": "b8f1f130df9bc10eb157f4be2d7956ac29bb658ff5f72463ea4765ddf522ec2a",
+      "tabpfn_finetuned_test": "e9e37442c33f2c26f05df1dd218f3360eed49a31c8cec35bd8c71bac103bef78"
+    },
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "statsmodels": "0.15.0",
+      "fast-model-trees": "0.0.5",
+      "joblib": "1.6.0"
+    },
+    "configuration": {
+      "outer_folds": 5,
+      "inner_group_folds": 5,
+      "seed": 42,
+      "test_period": 202530,
+      "svr_rbf": {
+        "kernel": "rbf",
+        "search": "RandomizedSearchCV neg_RMSE",
+        "n_iter": 64,
+        "C": "loguniform(1e-3,1e3)",
+        "epsilon": "loguniform(1e-2,1.5)",
+        "gamma": "scale, auto, logspace(-5,1,25)"
+      },
+      "raffle": {
+        "n_estimators": 100,
+        "max_model_depth": 100,
+        "min_sample_fit": 10,
+        "min_sample_alpha": 5,
+        "min_sample_leaf": 5,
+        "random_state": 42,
+        "n_features_tree": 1.0,
+        "alpha": [
+          0.01,
+          0.5,
+          1.0
+        ],
+        "n_features_node": [
+          0.7,
+          1.0
+        ],
+        "max_depth": [
+          6,
+          20
+        ],
+        "categorical_features": [
+          "Categoria_temas_inicial",
+          "Categoria_temas_final",
+          "programa_en_matricula",
+          "division_en_matricula",
+          "Mat_Curso_Asignatura_Relacionada",
+          "avance_cuartiles",
+          "cumplimiento_temas"
+        ]
+      },
+      "preprocessing": {
+        "svr_rbf": "pipeline E3 canónico: imputación, log1p/escalado numérico y one-hot",
+        "raffle": "mediana numérica; moda y ordinal categórico con índices explícitos; sin escalado"
+      },
+      "fold_source": "resultados/e3/train.csv.gz, folds externos canónicos de E3",
+      "test_used_for_selection": false
+    }
+  }
+}

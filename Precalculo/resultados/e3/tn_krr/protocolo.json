@@ -1,0 +1,174 @@
+{
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "tn_krr_e3.py": "8aaeb50e32fd853d60d5188e59c83f26f1a31d9f2506d3b6e33e2108fb87ab66",
+    "evaluar_tn_krr_e3.py": "7c3ec0148176ba96a0e3c4301ec6678db4e4f02cefb06ff1d105eeaa918b4140",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1"
+    },
+    "grid": [
+      {
+        "alpha": 0.01,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 1.0
+      }
+    ],
+    "solver": {
+      "method": "linear conjugate gradient on (K + alpha I) a = y",
+      "max_iter": 200,
+      "cg_tolerance": 0.5,
+      "max_no_improve": 25,
+      "initial_coefficients": "zeros",
+      "early_stop_metric": "L2 residual norm"
+    },
+    "references": [
+      "https://doi.org/10.3390/app12094252",
+      "https://doi.org/10.1016/j.knosys.2014.08.012"
+    ]
+  },
+  "test_used_for_selection": false,
+  "method": "5 folds externos y 5 internos GroupKFold por estudiante; RMSE interno; transformaciones ajustadas solo en fit."
+}

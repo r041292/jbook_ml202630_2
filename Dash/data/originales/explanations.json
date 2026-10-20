@@ -27220,9 +27220,9 @@
   "half_difference_mean_abs": 0.045460973306095415,
   "paths": 64,
   "background_rows": 32,
-  "analysis_run": "20261019_083736_71f6920a",
+  "analysis_run": "20261020_154141_97d735da",
   "model_sha256": "b126fcf4510f3682a04cf2e711924882dd5a11f9683fc3da68deab064f25facb",
-  "test_sha256": "99f62fb894e28166c3c77c7e02c909c7935c0439f13aa8316d654f10d549b0d1",
+  "test_sha256": "349aa296dca0c382fbe02a614ecf85e6d4337bc125dc5edf5b4bc9855ffea0fb",
   "method": "Permutation SHAP aproximado, pipeline completo",
   "max_additivity_residual": 8.881784197001252e-16
 }

@@ -1,0 +1,18 @@
+{
+  "configuration": {
+    "n_estimators": 32,
+    "normalization": [
+      "none",
+      "power"
+    ],
+    "max_num_rows": null,
+    "outlier_threshold": 1000000000000.0,
+    "enable_nnls": false,
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "seed": 42
+  },
+  "test_used": false,
+  "selection": "TabFM zero-shot; sin fine-tuning ni búsqueda de hiperparámetros",
+  "cv_outer_rmse_mean": 0.8128945373084889
+}

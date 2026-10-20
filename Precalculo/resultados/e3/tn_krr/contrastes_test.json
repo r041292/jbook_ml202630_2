@@ -1,0 +1,75 @@
+{
+  "model": "Truncated Newton KRR RBF",
+  "references": [
+    "SVM lineal",
+    "XGBoost"
+  ],
+  "family": "Holm2 TR-KRR vs SVM/XGBoost",
+  "family_size": 2,
+  "method": "Permutation test paired by student (99,999 resamples); bootstrap by student (10,000 resamples); seed 42.",
+  "note": "RMSE and R² share the SSE permutation p-value. Holm2 covers only the two predeclared references for this supplemental TR-KRR analysis; it is not the historical global Holm55 family.",
+  "test_used_for_selection": false,
+  "partition": 202530,
+  "rows": [
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "SVM lineal",
+      "metrica": "RMSE",
+      "IC_2.5%": -0.04532164593325848,
+      "IC_97.5%": 0.0046463903381269355,
+      "p_bilateral": 0.1201,
+      "diferencia_candidato_menos_referencia": -0.019903306305075308,
+      "familia_ajuste": "Holm2 TR-KRR vs SVM/XGBoost",
+      "p_ajustado": 0.2402,
+      "significativa_al_5%": false,
+      "fuente": "resultados/e3/tn_krr/contrastes_test.csv"
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "SVM lineal",
+      "metrica": "R²",
+      "IC_2.5%": -0.005811695984161754,
+      "IC_97.5%": 0.05592777454473021,
+      "p_bilateral": 0.1201,
+      "diferencia_candidato_menos_referencia": 0.024257441160494775,
+      "familia_ajuste": "Holm2 TR-KRR vs SVM/XGBoost",
+      "p_ajustado": 0.2402,
+      "significativa_al_5%": false,
+      "fuente": "resultados/e3/tn_krr/contrastes_test.csv"
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "XGBoost",
+      "metrica": "RMSE",
+      "IC_2.5%": -0.02246789724848528,
+      "IC_97.5%": 0.025009736432326454,
+      "p_bilateral": 0.90418,
+      "diferencia_candidato_menos_referencia": 0.0015286978482602631,
+      "familia_ajuste": "Holm2 TR-KRR vs SVM/XGBoost",
+      "p_ajustado": 0.90418,
+      "significativa_al_5%": false,
+      "fuente": "resultados/e3/tn_krr/contrastes_test.csv"
+    },
+    {
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "XGBoost",
+      "metrica": "R²",
+      "IC_2.5%": -0.03021263129747557,
+      "IC_97.5%": 0.027803982553823194,
+      "p_bilateral": 0.90418,
+      "diferencia_candidato_menos_referencia": -0.0018413680750325456,
+      "familia_ajuste": "Holm2 TR-KRR vs SVM/XGBoost",
+      "p_ajustado": 0.90418,
+      "significativa_al_5%": false,
+      "fuente": "resultados/e3/tn_krr/contrastes_test.csv"
+    }
+  ],
+  "sources_sha256": {
+    "significancia_tn_krr_e3.py": "677a579a8775af1a1669376530106365c8eaef03705712366c3f5981d4353444",
+    "evaluar_tabpfn25_finetuned_e3.py": "2de4135ee40288eea0eff2fcc71cf07f8875cdeb0b83497ea9cffa2ac73d06b2",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "resultados/e3/tn_krr/test_predictions.csv.gz": "83c137764b687d381937cf4428f668e84de3e85bd98d7e423627c826dcd4350a",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "resultados/e3/clasicos/test_predictions.csv.gz": "db50d8bb2ec2e915d58648640daac771c81062f7ba0ae23f78587b57bcee90fd"
+  }
+}

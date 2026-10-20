@@ -47,25 +47,42 @@ class FieldTokenizer:
 
 
 class BM25Index:
-    """BM25 de Lucene: TF=1 y longitud fija15 => suma de IDF de coincidencias."""
+    """BM25 con TF=1 y longitud fija (15 campos) => el factor de longitud vale 1 y el puntaje es la suma de IDF.
+
+    idf='lucene' (histórico): log(1 + (N-n+.5)/(n+.5)), siempre positivo; solo puntajes > 0 son candidatos.
+    idf='paper' (Qin et al. 2021, Ec. 7): log((N-n+.5)/(n+.5)), puede ser negativo para valores muy comunes;
+    candidatos = filas que satisfacen la consulta OR de la Ec. 4 (al menos una coincidencia).
+    """
+    idf = 'lucene'   # valor por defecto para objetos serializados antes de existir este parámetro
+
+    def __init__(self, idf='lucene'):
+        if idf not in ('lucene', 'paper'):
+            raise ValueError("idf debe ser 'lucene' o 'paper'.")
+        self.idf = idf
+
     def fit(self, tokens, groups):
         self.tokens_ = np.asarray(tokens)
         self.groups_ = np.asarray(groups)
         self.postings_ = {int(t): np.flatnonzero((tokens == t).any(axis=1)) for t in np.unique(tokens)}
         n = len(tokens)
-        self.idf_ = {t: float(np.log1p((n-len(rows)+.5)/(len(rows)+.5))) for t, rows in self.postings_.items()}
+        ratio = lambda rows: (n-len(rows)+.5)/(len(rows)+.5)
+        transform = np.log1p if self.idf == 'lucene' else np.log
+        self.idf_ = {t: float(transform(ratio(rows))) for t, rows in self.postings_.items()}
         return self
 
     def retrieve(self, queries, k, query_groups=None):
         positions = np.full((len(queries), k), -1, dtype=int)
         for j, query in enumerate(queries):
             scores = np.zeros(len(self.tokens_), dtype=float)
+            matched = np.zeros(len(self.tokens_), dtype=bool)
             for token in query:
                 if int(token) in self.postings_:
                     scores[self.postings_[int(token)]] += self.idf_[int(token)]
+                    matched[self.postings_[int(token)]] = True
             if query_groups is not None:
                 scores[self.groups_ == query_groups[j]] = 0
-            valid = np.flatnonzero(scores > 0)
+                matched[self.groups_ == query_groups[j]] = False
+            valid = np.flatnonzero(matched if self.idf == 'paper' else scores > 0)
             # Desempate determinista por orden de fila; no usar objetivo para recuperar.
             order = np.lexsort((valid, -scores[valid]))[:k]
             positions[j, :len(order)] = valid[order]
@@ -108,9 +125,11 @@ class RIMNetwork(nn.Module):
 
 class RIMRegressor(RegressorMixin, BaseEstimator):
     """fit recibe groups separados; nunca se introducen ID/periodo como predictor."""
+    idf = 'lucene'   # valor por defecto para objetos serializados antes de existir este parámetro
+
     def __init__(self, n_neighbors=10, embedding_dim=8, epochs=40, learning_rate=.001,
                  weight_decay=.001, n_bins=8, label_bins=10, batch_size=256,
-                 dropout=.1, random_state=42):
+                 dropout=.1, random_state=42, idf='lucene'):
         self.n_neighbors = n_neighbors
         self.embedding_dim = embedding_dim
         self.epochs = epochs
@@ -121,6 +140,7 @@ class RIMRegressor(RegressorMixin, BaseEstimator):
         self.batch_size = batch_size
         self.dropout = dropout
         self.random_state = random_state
+        self.idf = idf
 
     def _inputs(self, tokens, retrieved):
         valid = retrieved >= 0
@@ -146,7 +166,7 @@ class RIMRegressor(RegressorMixin, BaseEstimator):
         self.tokenizer_ = FieldTokenizer(self.n_bins).fit(X)
         self.pool_tokens_ = self.tokenizer_.transform(X)
         self.pool_groups_ = np.asarray(groups).copy()
-        self.index_ = BM25Index().fit(self.pool_tokens_, self.pool_groups_)
+        self.index_ = BM25Index(self.idf).fit(self.pool_tokens_, self.pool_groups_)
         y = np.asarray(y, dtype=float)
         if not np.isfinite(y).all():
             raise ValueError('Objetivo no finito.')

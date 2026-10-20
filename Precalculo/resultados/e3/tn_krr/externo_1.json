@@ -1,0 +1,26 @@
+{
+  "metrics": {
+    "Modelo": "Truncated Newton KRR RBF",
+    "Fold": 1,
+    "RMSE": 0.7421496541531297,
+    "MAE": 0.5879120757361674,
+    "MAPE (%)": 21.263576398650226,
+    "R²": 0.558745052614009
+  },
+  "audit": {
+    "fold": 1,
+    "best_params": {
+      "alpha": 0.1,
+      "gamma": 0.003
+    },
+    "inner_rmse": 0.8324406477777986,
+    "fit_rows": 1047,
+    "validation_rows": 262,
+    "shared_students": 0,
+    "cg_iterations": 19,
+    "cg_residual_norm": 0.2964409715016854,
+    "cg_converged": true,
+    "cg_stop_reason": "residual_tolerance",
+    "seconds": 8.206570299982559
+  }
+}

@@ -19,7 +19,7 @@ from threadpoolctl import threadpool_limits
 from entregable3 import BOOK, FEATURES, TARGET, GROUP, load_partitions, grouped_splits, metrics
 sys.path.insert(0,str(BOOK.parent/'Dash'))
 from model_timing import TimingRun, file_hash
-from busquedas_originales_e3 import LOW_COST, FOLDERS, configure, prepare_expensive, pipeline_for, OriginalSearch, artifact_for
+from busquedas_originales_e3 import LOW_COST, FOLDERS, configure, prepare_expensive, pipeline_for, OriginalSearch, artifact_for, SEARCH_METHODS, SEARCH_BUDGET, domain_description
 import busquedas_hiperparametros_e3 as engine
 
 
@@ -114,9 +114,14 @@ def evaluate(models=LOW_COST, allow_large_grid=False):
                 'optimization':{**final,'external_selections':selections,
                     'timings':[r for r in run.rows if r['batch'].startswith(key+' /')]},
                 'model_sha256':file_hash(output/f'{key}.joblib')}
-            catalog[key].update(**specifications[key],params=final['best_params'],grid=engine.GRIDS_ALL[key],
-                timing_run_id=run.run_id,status='Actualizado · cinco estrategias anidadas',
-                method='Grid/Random/TPE/DEAP/SH;5x5GroupKFold; selección por RMSE interno, sin test.')
+            only=SEARCH_METHODS.get(key)
+            catalog[key].update(**specifications[key],params=final['best_params'],
+                grid=domain_description(key) if only else engine.GRIDS_ALL[key],
+                timing_run_id=run.run_id,
+                status=('Actualizado · solo Optuna/TPE (dominio ampliado)' if only else 'Actualizado · cinco estrategias anidadas'),
+                method=(f"{', '.join(only)} únicamente (decisión del usuario, 20-oct-2026), dominio ampliado y "
+                        f"{SEARCH_BUDGET[key]['bayes_trials']} ensayos; 5x5GroupKFold; selección por RMSE interno, sin test."
+                        if only else 'Grid/Random/TPE/DEAP/SH;5x5GroupKFold; selección por RMSE interno, sin test.'))
             predictions['train'][key]=oof
             folds=folds.loc[~folds.Modelo.eq(catalog[key]['name'])]
             folds=pd.concat([folds,pd.DataFrame(records)],ignore_index=True)

@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from dash import Input, Output, dcc, html
+from dash import Input, Output, State, dcc, html
 
 from prepare_data import CACHE, metrics
 from classic_models import metric_bar
@@ -17,6 +17,7 @@ from original_analysis import table_statistics, section as original_statistics
 from classic_friedman import summary as friedman_summary
 from search_results import optimization_section
 from lazy_content import defer_details
+from model_groups import IMPORT_ONLY, validate as validate_groups
 
 ROOT = Path(__file__).resolve().parent
 BOOK = ROOT.parent / 'Precalculo'
@@ -30,6 +31,7 @@ CONTRASTS = pd.read_csv(DIRECTORY / 'contrasts.csv')
 PREDICTIONS = {part: pd.read_csv(DIRECTORY / f'{part}.csv.gz') for part in ['train', 'test']}
 ACTIVE = json.loads((DIRECTORY/'active.json').read_text(encoding='utf-8'))
 ANALYSIS = json.loads((DIRECTORY/'analysis.json').read_text(encoding='utf-8'))
+validate_groups(CATALOG)
 BEST = ACTIVE['best_key']
 BEST_NAME = CATALOG[BEST]['name']
 TN_KRR = 'm19'
@@ -68,7 +70,7 @@ def combined_frames(training, test):
     return frames
 
 
-def comparison_rows(frame, target, cv=False, global_view=True):
+def comparison_rows(frame, target, cv=False, global_view=True, show_imports=False):
     if frame.empty:
         return pd.DataFrame(columns=['Modelo', 'RMSE', 'MAE', 'MAPE (%)', 'R²'])
     reference = metrics(frame[target], frame.svm)
@@ -76,7 +78,7 @@ def comparison_rows(frame, target, cv=False, global_view=True):
         reference = FOLDS.loc[FOLDS.Modelo.eq('SVM lineal')].select_dtypes('number').mean()
     rows = []
     for key, spec in CATALOG.items():
-        if key == 'dummy':
+        if key == 'dummy' or (key in IMPORT_ONLY and not show_imports):
             continue
         if key not in frame:
             if cv:
@@ -90,6 +92,7 @@ def comparison_rows(frame, target, cv=False, global_view=True):
             sd = float(folds.RMSE.std(ddof=0))
         rows.append({'Modelo': spec['name'], 'Estado': 'Media de 5 folds' if cv and global_view else 'OOF reunido' if cv else 'Test temporal',
                      'Estado de búsqueda':spec.get('status','Histórico'),
+                     'En pruebas estadísticas': 'No · librería importada' if key in IMPORT_ONLY else 'Sí',
                      'n': len(frame), **score, 'SD RMSE folds': sd, 'Δ RMSE vs SVM': score['RMSE']-reference['RMSE']})
     return pd.DataFrame(rows).sort_values('RMSE', na_position='last')
 
@@ -98,9 +101,13 @@ def display_statistics(scores, *, cv=False, global_view=True):
     return table_statistics(scores,cv=cv,global_view=global_view,analysis=ANALYSIS)
 
 
-def error_correlation(frame, target):
+def visible_keys(show_imports):
+    return [k for k in CATALOG if show_imports or k not in IMPORT_ONLY]
+
+
+def error_correlation(frame, target, show_imports=False):
     """Pearson de residuos con signo sobre exactamente las mismas filas."""
-    keys = [k for k in CATALOG if k in frame and k != 'dummy']
+    keys = [k for k in visible_keys(show_imports) if k in frame and k != 'dummy']
     errors = pd.DataFrame({CATALOG[k]['name']: frame[target]-frame[k] for k in keys})
     return errors.corr(min_periods=3)
 
@@ -110,14 +117,14 @@ def create_originals(app, ui):
     title, stats, subset = (ui[k] for k in ['title', 'stats', 'subset'])
     training, test = combined_frames(ui['TRAIN'], ui['TEST'])
     target, course, program = (ui[k] for k in ['TARGET', 'COURSE', 'PROGRAM'])
-    docs = []
+    docs = {}
     for key, spec in CATALOG.items():
         params = spec.get('params') or {}
         grid = spec.get('grid') or {}
         parameters = pd.DataFrame([{'Parámetro': p.replace('modelo__', ''), 'Búsqueda evaluada': str(grid.get(p, 'Fijo / configuración del informe')),
                                     'Configuración final': str(params.get(p, params.get('modelo__'+p, 'Ver protocolo')))}
                                    for p in dict.fromkeys([*grid, *[p for p in params if p.replace('modelo__', '') not in grid]])])
-        docs.append(html.Details([
+        docs[key] = (html.Details([
             html.Summary(spec['name']), md(spec['description']),
             md(f'[Artículo de fundamento]({spec["paper"]})' if spec.get('paper') else 'Referencia de control: media del objetivo aprendida solo en fit; sin paper específico.'),
             md(spec.get('preparation', '')), md(spec.get('method', '')),
@@ -126,29 +133,55 @@ def create_originals(app, ui):
             optimization_section(spec,ui) if spec.get('optimization') else None,
             md(' '.join(spec.get('limitations', []))),
         ], className='details classic-pipeline'))
+    pending_plans = json.loads((DIRECTORY/'pendientes.json').read_text(encoding='utf-8'))
+    plan_keys = {p['key']: p for p in pending_plans}
+
+    def status_section(show_imports):
+        rows = [p for p in pending_plans if show_imports or p['key'] not in IMPORT_ONLY]
+        return html.Details([html.Summary('Estado de las búsquedas · coste, estado y preparación'),
+            table(pd.DataFrame([{'Modelo':p['name'],
+                'Grupo':'Librería importada / preentrenado (oculto por defecto)' if p['key'] in IMPORT_ONLY else 'Clásico / implementación propia',
+                'Estado':p['state'],
+                'Preparación':p.get('preparation_state','No requiere nueva ejecución'),
+                'Candidatos Grid':p.get('prepared',{}).get('grid_size'),
+                'Revisar presupuesto Grid': 'Ejecutado' if p.get('prepared',{}).get('executed') else
+                    'Sí · más de 1.000 candidatos' if p.get('prepared',{}).get('grid_size',0)>1000 else 'Según coste del modelo'}
+                for p in rows])),
+            md('Las ejecuciones se autorizaron por etapas: primero SVR RBF, Kernel Ridge y TR-KRR; luego los híbridos y modelos propios. '
+               'Los modelos que son solo una librería importada no se re-ejecutan; se conserva su evidencia histórica.')],className='details')
+
+    def docs_section(show_imports):
+        return html.Details([html.Summary('Fundamento, documentación, preparación y búsqueda por modelo'),
+            md('Cada ficha explica la implementación evaluada y enlaza su fundamento. Los ports, variantes y ablaciones se identifican explícitamente; '
+               'el paper describe el método y no demuestra una mejora en estos datos. Los rangos de grilla reflejan los candidatos realmente evaluados.'),
+            *[doc for key, doc in docs.items() if show_imports or key not in IMPORT_ONLY]], className='details')
+
+    n_hidden, n_visible = len(IMPORT_ONLY), len(CATALOG) - len(IMPORT_ONLY)
     layout = html.Div([
-        title('MODELOS ORIGINALES', 'Panorama completo de modelos',
-              f'{len(CATALOG)} modelos y variantes evaluados, incluidos los clásicos.'),
+        title('MODELOS ORIGINALES', 'Panorama de modelos clásicos e implementaciones propias',
+              f'{len(CATALOG)} modelos y variantes evaluados en total; por defecto se muestran {n_visible} (clásicos, kernels, híbridos e '
+              f'implementaciones propias) y se ocultan {n_hidden} de librería importada o preentrenados.'),
+        html.Div([dcc.Store(id='original-show-imports', data=False),
+                  html.Button('Mostrar modelos de librería importada', id='original-toggle-imports', n_clicks=0, type='button',
+                              className='toggle-button', title='Muestra u oculta los modelos de librería importada o preentrenados'),
+                  html.Span(id='original-visibility-note', className='visibility-note')], className='visibility-bar'),
         notice('Datos reales, test temporal 202530 y cinco folds externos por estudiante. Las búsquedas usan solo train; '
                'los modelos preentrenados con configuración fija no requieren grilla. El test reutilizado y las comparaciones entre familias son exploratorios.'),
-        notice('SVR RBF, Kernel Ridge y TR-KRR comparan Grid, Random, TPE, DEAP y Successive Halving. '
-               'SVM y clásicos reutilizan su ejecución multibúsqueda activa. Los modelos costosos conservan '
-               'resultados históricos identificados; los preentrenados fijos no reciben búsquedas ficticias. '
+        notice('Comparan Grid, Random, TPE, DEAP y Successive Halving con selección anidada: SVR RBF, Kernel Ridge, TR-KRR y, '
+               'desde el 20-oct-2026, los híbridos y modelos propios TCR-XGBoost, logicDT, RIM, LinXGBoost, DenseWeight-XGBoost '
+               'y GPR–XGBoost. SVM y clásicos reutilizan su ejecución multibúsqueda activa. Los modelos que son una librería '
+               'importada sin implementación propia conservan sus resultados históricos identificados y se retirarán en un paso '
+               'posterior; los preentrenados fijos no reciben búsquedas ficticias. Las implementaciones propias se ajustaron a sus artículos '
+               '(20-oct-2026): logicDT con covariables numéricas en hojas lineales, división por razón de verosimilitud y recocido adaptativo; '
+               'LinXGBoost con cortes exactos (búsqueda ampliada solo con Optuna/TPE por decisión del usuario, 40 ensayos); TCR como retrofit sobre el XGBoost ya ajustado (busca solo fraction y weight); '
+               'RIM con el IDF del artículo; GPR–XGBoost busca solo hiperparámetros de XGBoost con el kernel GPR fijo y 5 reinicios. '
+               'DenseWeight usa un Grid grueso de 96 candidatos y las demás estrategias exploran su dominio histórico. '
                'La familia con menor RMSE medio CV es exploratoria, no un ganador estadístico confirmado.'),
-        html.Details([html.Summary('Modelos pendientes · coste, estado y preparación'),
-            table(pd.DataFrame([{'Modelo':p['name'],'Estado':p['state'],
-                'Preparación':p.get('preparation_state','No requiere nueva ejecución'),
-                'Candidatos Grid pendientes':p.get('prepared',{}).get('grid_size'),
-                'Revisar presupuesto Grid': 'Sí · más de 1.000 candidatos' if p.get('prepared',{}).get('grid_size',0)>1000 else 'Según coste del modelo'}
-                for p in json.loads((DIRECTORY/'pendientes.json').read_text(encoding='utf-8'))])),
-            md('La selección de ejecuciones de menor coste fue autorizada antes de ejecutarlas. '
-               'El resto requiere revisión de presupuesto/dependencias; se conserva su evidencia histórica.')],className='details'),
-        html.Details([html.Summary('Fundamento, documentación, preparación y búsqueda por modelo'),
-            md('Cada ficha explica la implementación evaluada y enlaza su fundamento. Los ports, variantes y ablaciones se identifican explícitamente; '
-               'el paper describe el método y no demuestra una mejora en estos datos. Los rangos de grilla reflejan los candidatos realmente evaluados.'), *docs], className='details'),
+        html.Div(id='original-status', children=status_section(False)),
+        html.Div(id='original-docs', children=docs_section(False)),
         ui['filters']('original'),
         notice('Los filtros evalúan subgrupos de modelos globales, sin reentrenar. CV global muestra medias y SD entre folds (ddof=0); '
-               'CV filtrada usa OOF reunido. Las métricas ponderan registros. TabPFN fine-tuned carece de OOF independiente.'),
+               'CV filtrada usa OOF reunido. Las métricas ponderan registros. TabPFN fine-tuned (oculto por defecto) carece de OOF independiente.'),
         html.Div([html.Label('Evaluación de los gráficos'), dcc.RadioItems([
             {'label': 'CV externa', 'value': 'cv'}, {'label': 'Test temporal', 'value': 'test'}], 'cv',
             id='original-comparison-partition', inline=True, className='radio')], className='variable-select'),
@@ -176,14 +209,33 @@ def create_originals(app, ui):
     layout.children.append(html.Details([html.Summary('Interpretabilidad SHAP y LIME · abrir análisis del líder CV'),
         create_interpretation(app,ui,DIRECTORY)],className='details'))
 
+    @app.callback(Output('original-show-imports', 'data'), Output('original-toggle-imports', 'children'),
+                  Output('original-visibility-note', 'children'), Output('original-toggle-imports', 'className'),
+                  Input('original-toggle-imports', 'n_clicks'))
+    def toggle_imports(clicks):
+        show = bool((clicks or 0) % 2)
+        note = (f'Se muestran los {len(CATALOG)} modelos, incluidos los {n_hidden} de librería importada o preentrenados. '
+                if show else f'Se muestran {n_visible} modelos; {n_hidden} de librería importada o preentrenados están ocultos. ')
+        note += 'Las pruebas estadísticas de «Conclusiones y comparación estadística» nunca incluyen esos modelos.'
+        return (show, ('Ocultar modelos de librería importada' if show else 'Mostrar modelos de librería importada'), note,
+                'toggle-button toggle-on' if show else 'toggle-button')
+
+    @app.callback(Output('original-status', 'children'), Output('original-docs', 'children'),
+                  Input('original-show-imports', 'data'))
+    def refresh_sections(show):
+        return defer_details(status_section(bool(show)), 'original-status-'+str(bool(show))),                defer_details(docs_section(bool(show)), 'original-docs-'+str(bool(show)))
+
     @app.callback(Output('original-comparison', 'children'), Input('original-program', 'value'),
-                  Input('original-course', 'value'), Input('original-comparison-partition', 'value'))
-    def compare(selected_program, selected_course, evaluation):
+                  Input('original-course', 'value'), Input('original-comparison-partition', 'value'),
+                  Input('original-show-imports', 'data'))
+    def compare(selected_program, selected_course, evaluation, show_imports=False):
+        show_imports = bool(show_imports)
         tr, te = [subset(frame, selected_program, selected_course) for frame in [training, test]]
         if tr.empty and te.empty:
             return notice('No hay filas para estos filtros.')
         global_view = selected_program == selected_course == '__all__'
-        cv, temporal = comparison_rows(tr, target, True, global_view), comparison_rows(te, target, False, global_view)
+        cv, temporal = (comparison_rows(tr, target, True, global_view, show_imports),
+                        comparison_rows(te, target, False, global_view, show_imports))
         scores = display_statistics(cv if evaluation == 'cv' else temporal,
                                     cv=evaluation == 'cv', global_view=global_view)
         plot_order = scores.loc[scores.RMSE.notna(), 'Modelo'].tolist()
@@ -199,7 +251,9 @@ def create_originals(app, ui):
             html.Div(cards, className='comparison-metric-grid') if not scores.empty else notice('No hay filas en esta evaluación.'),
             html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
                 md('Δ RMSE negativo favorece al modelo. SD describe variación entre folds, no un IC. MAPE en porcentaje. '
-                   'R² no se define con una sola fila o nota constante.'),
+                   'R² no se define con una sola fila o nota constante.'
+                   + (' Los modelos de librería importada o preentrenados se muestran solo como referencia descriptiva (columna '
+                      '«En pruebas estadísticas»): no entran en Friedman, MCS ni en los contrastes.' if show_imports else '')),
                 dcc.Tabs(value='cv', className='sub-tabs', children=[
                     dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view)), className='tab', selected_className='tab-selected'),
@@ -208,7 +262,14 @@ def create_originals(app, ui):
                  (friedman_summary(ANALYSIS['omnibus'])+f' **{BEST_NAME}** tiene el menor RMSE medio CV '
                   f'(**{ACTIVE["best_mean_cv"]:.6f}**); no se elige por test. Las etapas2/3 separan CV y test.'
                   if global_view else 'Las métricas del subgrupo son descriptivas; selecciona Todos/Todos para inferencia global.')),
-            original_statistics(ANALYSIS,ui) if global_view else None]),'original-comparison')
+            original_statistics(ANALYSIS,ui) if global_view else None]),'original-comparison-'+str(show_imports))
+
+    @app.callback(Output('original-diagnostic-model', 'options'), Output('original-diagnostic-model', 'value'),
+                  Input('original-show-imports', 'data'), State('original-diagnostic-model', 'value'))
+    def diagnostic_options(show, current):
+        allowed = [key for key in DIAGNOSTIC_MODELS if show or key not in IMPORT_ONLY]
+        options = [{'label': CATALOG[key]['name'], 'value': key} for key in allowed]
+        return options, (current if current in allowed else BEST)
 
     @app.callback(Output('original-diagnostics', 'children'), Input('original-program', 'value'),
                   Input('original-course', 'value'), Input('original-diagnostic-partition', 'value'),
@@ -235,12 +296,13 @@ def create_originals(app, ui):
             card('Distribución del error absoluto', 'Mismas filas para ambos modelos.', px.box(errors, x='Modelo', y='Error absoluto', color='Modelo', points=False))])
 
     @app.callback(Output('original-correlation', 'children'), Input('original-program', 'value'),
-                  Input('original-course', 'value'), Input('original-correlation-partition', 'value'))
-    def correlation(selected_program, selected_course, partition):
+                  Input('original-course', 'value'), Input('original-correlation-partition', 'value'),
+                  Input('original-show-imports', 'data'))
+    def correlation(selected_program, selected_course, partition, show_imports=False):
         frame = subset(test if partition == 'test' else training, selected_program, selected_course)
         if len(frame) < 3:
             return notice('Se requieren al menos tres filas para describir la correlación de errores.')
-        corr = error_correlation(frame, target)
+        corr = error_correlation(frame, target, bool(show_imports))
         pairs = corr.to_numpy()[np.triu_indices(len(corr), 1)]
         pairs = pairs[np.isfinite(pairs)]
         if not len(pairs):

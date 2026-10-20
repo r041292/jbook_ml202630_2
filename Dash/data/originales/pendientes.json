@@ -338,7 +338,7 @@
   {
     "key": "m0",
     "name": "SVR RBF",
-    "state": "Completado · cinco estrategias de menor coste",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "C": "loguniform(0.001, 1000)",
       "epsilon": "loguniform(0.01, 1.5)",
@@ -390,7 +390,12 @@
       ]
     },
     "requires_group_fit": false,
-    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m0"
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m0",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 27,
+      "executed": true
+    }
   },
   {
     "key": "m1",
@@ -415,7 +420,7 @@
   {
     "key": "m3",
     "name": "LinXGBoost (hojas completas E3)",
-    "state": "Pendiente · alto coste · ejecución explícita",
+    "state": "Completado · solo Bayesiana TPE (dominio ampliado)",
     "historical_domain": {
       "modelo__n_estimators": [
         1,
@@ -453,99 +458,10 @@
     "space": null,
     "requires_group_fit": false,
     "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m3",
-    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "preparation_state": "Ejecutado: Bayesiana TPE únicamente, por decisión del usuario (20-oct-2026); Grid, Random, DEAP y Successive Halving no se ejecutaron en esta versión",
     "prepared": {
-      "grid": {
-        "modelo__n_estimators": [
-          1,
-          2,
-          3,
-          5
-        ],
-        "modelo__learning_rate": [
-          0.03,
-          0.06,
-          0.1,
-          0.16,
-          0.22
-        ],
-        "modelo__max_depth": [
-          2,
-          3,
-          4
-        ],
-        "modelo__min_samples_leaf": [
-          80,
-          120,
-          160,
-          220
-        ],
-        "modelo__reg_lambda": [
-          0.1,
-          3.1622776601683795,
-          100.0
-        ],
-        "modelo__gamma": [
-          0.0,
-          0.05,
-          0.2,
-          1.0
-        ]
-      },
-      "space": {
-        "modelo__n_estimators": [
-          "cat",
-          [
-            1,
-            2,
-            3,
-            5
-          ]
-        ],
-        "modelo__learning_rate": [
-          "cat",
-          [
-            0.03,
-            0.06,
-            0.1,
-            0.16,
-            0.22
-          ]
-        ],
-        "modelo__max_depth": [
-          "cat",
-          [
-            2,
-            3,
-            4
-          ]
-        ],
-        "modelo__min_samples_leaf": [
-          "cat",
-          [
-            80,
-            120,
-            160,
-            220
-          ]
-        ],
-        "modelo__reg_lambda": [
-          "log",
-          0.1,
-          100.0
-        ],
-        "modelo__gamma": [
-          "cat",
-          [
-            0.0,
-            0.05,
-            0.2,
-            1.0
-          ]
-        ]
-      },
-      "grid_size": 2880,
-      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+      "grid_size": null,
+      "executed": true
     }
   },
   {
@@ -561,7 +477,7 @@
   {
     "key": "m5",
     "name": "Kernel Ridge RBF",
-    "state": "Completado · cinco estrategias de menor coste",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "alpha": [
         "0.01",
@@ -611,7 +527,12 @@
       ]
     },
     "requires_group_fit": false,
-    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m5"
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m5",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 35,
+      "executed": true
+    }
   },
   {
     "key": "m6",
@@ -699,7 +620,7 @@
   {
     "key": "m7",
     "name": "TCR-XGBoost",
-    "state": "Pendiente · alto coste · ejecución explícita",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "fraction": [
         0,
@@ -718,53 +639,11 @@
     "space": null,
     "requires_group_fit": false,
     "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m7",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
     "prepared": {
-      "grid": [
-        {
-          "fraction": [
-            0.0
-          ],
-          "weight": [
-            1.0
-          ]
-        },
-        {
-          "fraction": [
-            0.05,
-            0.1,
-            0.2
-          ],
-          "weight": [
-            0.3,
-            0.6,
-            0.9
-          ]
-        }
-      ],
-      "space": {
-        "fraction": [
-          "cat",
-          [
-            0,
-            0.05,
-            0.1,
-            0.2
-          ]
-        ],
-        "weight": [
-          "cat",
-          [
-            0.3,
-            0.6,
-            0.9,
-            1
-          ]
-        ]
-      },
       "grid_size": 10,
-      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
-    },
-    "preparation_state": "Dominio/factory preparados; sin ejecutar"
+      "executed": true
+    }
   },
   {
     "key": "m8",
@@ -1047,7 +926,7 @@
   {
     "key": "m11",
     "name": "DenseWeight-XGBoost",
-    "state": "Pendiente · alto coste · ejecución explícita",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "modelo__n_estimators": [
         150,
@@ -1119,156 +998,10 @@
     "space": null,
     "requires_group_fit": false,
     "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m11",
-    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
     "prepared": {
-      "grid": {
-        "modelo__n_estimators": [
-          150,
-          250,
-          400,
-          600
-        ],
-        "modelo__max_depth": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "modelo__learning_rate": [
-          0.01,
-          0.03872983346207417,
-          0.15
-        ],
-        "modelo__min_child_weight": [
-          1,
-          3,
-          5,
-          8
-        ],
-        "modelo__subsample": [
-          0.6,
-          0.8,
-          1.0
-        ],
-        "modelo__colsample_bytree": [
-          0.6,
-          0.8,
-          1.0
-        ],
-        "modelo__gamma": [
-          0.0,
-          0.05,
-          0.1,
-          0.3
-        ],
-        "modelo__reg_lambda": [
-          0.1,
-          1.4142135623730951,
-          20.0
-        ],
-        "modelo__reg_alpha": [
-          0.0,
-          0.001,
-          0.01,
-          0.1,
-          1.0
-        ],
-        "modelo__weight_alpha": [
-          0.0,
-          0.25,
-          0.5,
-          0.75,
-          1.0,
-          1.25
-        ]
-      },
-      "space": {
-        "modelo__n_estimators": [
-          "cat",
-          [
-            150,
-            250,
-            400,
-            600
-          ]
-        ],
-        "modelo__max_depth": [
-          "cat",
-          [
-            1,
-            2,
-            3,
-            4
-          ]
-        ],
-        "modelo__learning_rate": [
-          "log",
-          0.01,
-          0.15
-        ],
-        "modelo__min_child_weight": [
-          "cat",
-          [
-            1,
-            3,
-            5,
-            8
-          ]
-        ],
-        "modelo__subsample": [
-          "cat",
-          [
-            0.6,
-            0.8,
-            1.0
-          ]
-        ],
-        "modelo__colsample_bytree": [
-          "cat",
-          [
-            0.6,
-            0.8,
-            1.0
-          ]
-        ],
-        "modelo__gamma": [
-          "cat",
-          [
-            0.0,
-            0.05,
-            0.1,
-            0.3
-          ]
-        ],
-        "modelo__reg_lambda": [
-          "log",
-          0.1,
-          20.0
-        ],
-        "modelo__reg_alpha": [
-          "cat",
-          [
-            0.0,
-            0.001,
-            0.01,
-            0.1,
-            1.0
-          ]
-        ],
-        "modelo__weight_alpha": [
-          "cat",
-          [
-            0.0,
-            0.25,
-            0.5,
-            0.75,
-            1.0,
-            1.25
-          ]
-        ]
-      },
-      "grid_size": 622080,
-      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+      "grid_size": 96,
+      "executed": true
     }
   },
   {
@@ -1623,7 +1356,7 @@
   {
     "key": "m14",
     "name": "logicDT propio (adaptado)",
-    "state": "Pendiente · alto coste · ejecución explícita",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "modelo__leaf_model": [
         "mean",
@@ -1646,74 +1379,31 @@
     "space": null,
     "requires_group_fit": false,
     "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m14",
-    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
     "prepared": {
-      "grid": {
-        "modelo__leaf_model": [
-          "mean",
-          "ridge"
-        ],
-        "modelo__max_depth": [
-          2,
-          3
-        ],
-        "modelo__max_terms": [
-          3,
-          5
-        ],
-        "modelo__ridge_alpha": [
-          1.0,
-          10.0
-        ]
-      },
-      "space": {
-        "modelo__leaf_model": [
-          "cat",
-          [
-            "mean",
-            "ridge"
-          ]
-        ],
-        "modelo__max_depth": [
-          "cat",
-          [
-            2,
-            3
-          ]
-        ],
-        "modelo__max_terms": [
-          "cat",
-          [
-            3,
-            5
-          ]
-        ],
-        "modelo__ridge_alpha": [
-          "cat",
-          [
-            1.0,
-            10.0
-          ]
-        ]
-      },
-      "grid_size": 16,
-      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+      "grid_size": 33,
+      "executed": true
     }
   },
   {
     "key": "m15",
     "name": "GPR–XGBoost (OOF agrupado)",
-    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {},
     "grid": null,
     "space": null,
     "requires_group_fit": false,
-    "command": null
+    "command": null,
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 54,
+      "executed": true
+    }
   },
   {
     "key": "m16",
     "name": "RIM (port E3)",
-    "state": "Pendiente · alto coste · ejecución explícita",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "epochs": [
         "30",
@@ -1732,47 +1422,10 @@
     "space": null,
     "requires_group_fit": true,
     "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m16",
-    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
     "prepared": {
-      "grid": {
-        "epochs": [
-          30,
-          60
-        ],
-        "n_neighbors": [
-          15,
-          5
-        ],
-        "weight_decay": [
-          0.001,
-          0.01
-        ]
-      },
-      "space": {
-        "epochs": [
-          "cat",
-          [
-            30,
-            60
-          ]
-        ],
-        "n_neighbors": [
-          "cat",
-          [
-            15,
-            5
-          ]
-        ],
-        "weight_decay": [
-          "cat",
-          [
-            0.001,
-            0.01
-          ]
-        ]
-      },
       "grid_size": 8,
-      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+      "executed": true
     }
   },
   {
@@ -1914,7 +1567,7 @@
   {
     "key": "m19",
     "name": "Truncated Newton KRR RBF",
-    "state": "Completado · cinco estrategias de menor coste",
+    "state": "Completado · cinco estrategias anidadas",
     "historical_domain": {
       "alpha": [
         "0.01",
@@ -1964,6 +1617,11 @@
       ]
     },
     "requires_group_fit": false,
-    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m19"
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m19",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 35,
+      "executed": true
+    }
   }
 ]

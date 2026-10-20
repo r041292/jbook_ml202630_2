@@ -1,0 +1,1627 @@
+[
+  {
+    "key": "svm",
+    "name": "SVM lineal",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__C": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        10.0
+      ],
+      "modelo__epsilon": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "grid": {
+      "modelo__C": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        10.0
+      ],
+      "modelo__epsilon": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        0.75,
+        1.0
+      ]
+    },
+    "space": {
+      "modelo__C": [
+        "log",
+        0.01,
+        10.0
+      ],
+      "modelo__epsilon": [
+        "real",
+        0.0,
+        1.0
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "dummy",
+    "name": "Dummy media",
+    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "knn",
+    "name": "KNN",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__n_neighbors": [
+        5,
+        11,
+        21,
+        31,
+        41,
+        61,
+        81,
+        101
+      ],
+      "modelo__weights": [
+        "uniform",
+        "distance"
+      ],
+      "modelo__p": [
+        1,
+        2
+      ]
+    },
+    "grid": {
+      "modelo__n_neighbors": [
+        5,
+        11,
+        21,
+        31,
+        41,
+        61,
+        81,
+        101
+      ],
+      "modelo__weights": [
+        "uniform",
+        "distance"
+      ],
+      "modelo__p": [
+        1,
+        2
+      ]
+    },
+    "space": {
+      "modelo__n_neighbors": [
+        "int",
+        5,
+        101
+      ],
+      "modelo__weights": [
+        "cat",
+        [
+          "uniform",
+          "distance"
+        ]
+      ],
+      "modelo__p": [
+        "cat",
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "ridge",
+    "name": "Ridge",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__alpha": [
+        0.01,
+        0.1,
+        1,
+        3,
+        10,
+        30,
+        100,
+        1000
+      ]
+    },
+    "grid": {
+      "modelo__alpha": [
+        0.01,
+        0.1,
+        1,
+        3,
+        10,
+        30,
+        100,
+        1000
+      ]
+    },
+    "space": {
+      "modelo__alpha": [
+        "log",
+        0.01,
+        1000.0
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "lasso",
+    "name": "Lasso",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__alpha": [
+        0.0001,
+        0.0003,
+        0.0005,
+        0.001,
+        0.002,
+        0.003,
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "grid": {
+      "modelo__alpha": [
+        0.0001,
+        0.0003,
+        0.0005,
+        0.001,
+        0.002,
+        0.003,
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "space": {
+      "modelo__alpha": [
+        "log",
+        0.0001,
+        0.1
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "forest",
+    "name": "Random Forest",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        4,
+        6,
+        null
+      ],
+      "modelo__min_samples_leaf": [
+        2,
+        5,
+        10
+      ]
+    },
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        4,
+        6,
+        null
+      ],
+      "modelo__min_samples_leaf": [
+        2,
+        5,
+        10
+      ]
+    },
+    "space": {
+      "modelo__n_estimators": [
+        "int",
+        150,
+        500
+      ],
+      "modelo__max_depth": [
+        "cat",
+        [
+          4,
+          6,
+          8,
+          12,
+          null
+        ]
+      ],
+      "modelo__min_samples_leaf": [
+        "int",
+        2,
+        20
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "xgboost",
+    "name": "XGBoost",
+    "state": "Reutilizar multibúsqueda clásica activa",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        4
+      ],
+      "modelo__learning_rate": [
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "grid": {
+      "modelo__n_estimators": [
+        150,
+        300,
+        500
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        4
+      ],
+      "modelo__learning_rate": [
+        0.01,
+        0.03,
+        0.1
+      ]
+    },
+    "space": {
+      "modelo__n_estimators": [
+        "int",
+        150,
+        500
+      ],
+      "modelo__max_depth": [
+        "int",
+        1,
+        6
+      ],
+      "modelo__learning_rate": [
+        "log",
+        0.01,
+        0.1
+      ]
+    },
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "m0",
+    "name": "SVR RBF",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "C": "loguniform(0.001, 1000)",
+      "epsilon": "loguniform(0.01, 1.5)",
+      "gamma": "scale, auto y 25 valores logspace(1e-5, 10)",
+      "búsqueda": "64 muestras aleatorias por fit interno"
+    },
+    "grid": {
+      "modelo__C": [
+        0.01,
+        1.0,
+        100.0
+      ],
+      "modelo__epsilon": [
+        0.01,
+        0.1,
+        1.0
+      ],
+      "modelo__gamma": [
+        "scale",
+        0.001,
+        0.03
+      ]
+    },
+    "space": {
+      "modelo__C": [
+        "log",
+        0.001,
+        1000.0
+      ],
+      "modelo__epsilon": [
+        "log",
+        0.01,
+        1.5
+      ],
+      "modelo__gamma": [
+        "cat",
+        [
+          "scale",
+          "auto",
+          1e-05,
+          0.001,
+          0.003,
+          0.01,
+          0.03,
+          0.1,
+          1.0,
+          10.0
+        ]
+      ]
+    },
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m0",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 27,
+      "executed": true
+    }
+  },
+  {
+    "key": "m1",
+    "name": "TabICLv2",
+    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "m2",
+    "name": "TabPFN 2.5 original",
+    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "m3",
+    "name": "LinXGBoost (hojas completas E3)",
+    "state": "Completado · solo Bayesiana TPE (dominio ampliado)",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "modelo__learning_rate": [
+        0.03,
+        0.06,
+        0.1,
+        0.16,
+        0.22
+      ],
+      "modelo__max_depth": [
+        2,
+        3,
+        4
+      ],
+      "modelo__min_samples_leaf": [
+        80,
+        120,
+        160,
+        220
+      ],
+      "modelo__reg_lambda": "loguniform(0.1, 100.0)",
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.2,
+        1.0
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m3",
+    "preparation_state": "Ejecutado: Bayesiana TPE únicamente, por decisión del usuario (20-oct-2026); Grid, Random, DEAP y Successive Halving no se ejecutaron en esta versión",
+    "prepared": {
+      "grid_size": null,
+      "executed": true
+    }
+  },
+  {
+    "key": "m4",
+    "name": "TabPFN 2.5 fine-tuned",
+    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "m5",
+    "name": "Kernel Ridge RBF",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "alpha": [
+        "0.01",
+        "0.1",
+        "1.0",
+        "10.0",
+        "100.0"
+      ],
+      "gamma": [
+        "0.001",
+        "0.003",
+        "0.01",
+        "0.03",
+        "0.1",
+        "0.3",
+        "1.0"
+      ]
+    },
+    "grid": {
+      "modelo__regressor__alpha": [
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "modelo__regressor__gamma": [
+        0.001,
+        0.003,
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0
+      ]
+    },
+    "space": {
+      "modelo__regressor__alpha": [
+        "log",
+        0.01,
+        100.0
+      ],
+      "modelo__regressor__gamma": [
+        "log",
+        0.001,
+        1.0
+      ]
+    },
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m5",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 35,
+      "executed": true
+    }
+  },
+  {
+    "key": "m6",
+    "name": "CatBoost",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "depth": [
+        "2",
+        "4",
+        "6"
+      ],
+      "iterations": [
+        "300",
+        "600"
+      ],
+      "l2_leaf_reg": [
+        "10.0",
+        "3.0"
+      ],
+      "learning_rate": [
+        "0.03",
+        "0.1"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m6",
+    "prepared": {
+      "grid": {
+        "modelo__depth": [
+          2,
+          4,
+          6
+        ],
+        "modelo__iterations": [
+          300,
+          600
+        ],
+        "modelo__l2_leaf_reg": [
+          10.0,
+          3.0
+        ],
+        "modelo__learning_rate": [
+          0.03,
+          0.1
+        ]
+      },
+      "space": {
+        "modelo__depth": [
+          "cat",
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "modelo__iterations": [
+          "cat",
+          [
+            300,
+            600
+          ]
+        ],
+        "modelo__l2_leaf_reg": [
+          "cat",
+          [
+            10.0,
+            3.0
+          ]
+        ],
+        "modelo__learning_rate": [
+          "cat",
+          [
+            0.03,
+            0.1
+          ]
+        ]
+      },
+      "grid_size": 24,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    },
+    "preparation_state": "Dominio/factory preparados; sin ejecutar"
+  },
+  {
+    "key": "m7",
+    "name": "TCR-XGBoost",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "fraction": [
+        0,
+        0.05,
+        0.1,
+        0.2
+      ],
+      "weight": [
+        0.3,
+        0.6,
+        0.9,
+        1
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m7",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 10,
+      "executed": true
+    }
+  },
+  {
+    "key": "m8",
+    "name": "TabFM 1.0.0 (PyTorch CPU, 32 vistas)",
+    "state": "Configuración fija / sin HPO local; conservar histórico",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null
+  },
+  {
+    "key": "m9",
+    "name": "XGBoost ampliado (gbtree)",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m9",
+    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "prepared": {
+      "grid": {
+        "modelo__n_estimators": [
+          150,
+          250,
+          400,
+          600
+        ],
+        "modelo__max_depth": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "modelo__learning_rate": [
+          0.01,
+          0.03872983346207417,
+          0.15
+        ],
+        "modelo__min_child_weight": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "modelo__subsample": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "modelo__colsample_bytree": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "modelo__gamma": [
+          0.0,
+          0.05,
+          0.1,
+          0.3
+        ],
+        "modelo__reg_lambda": [
+          0.1,
+          1.4142135623730951,
+          20.0
+        ],
+        "modelo__reg_alpha": [
+          0.0,
+          0.001,
+          0.01,
+          0.1,
+          1.0
+        ]
+      },
+      "space": {
+        "modelo__n_estimators": [
+          "cat",
+          [
+            150,
+            250,
+            400,
+            600
+          ]
+        ],
+        "modelo__max_depth": [
+          "cat",
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "modelo__learning_rate": [
+          "log",
+          0.01,
+          0.15
+        ],
+        "modelo__min_child_weight": [
+          "cat",
+          [
+            1,
+            3,
+            5,
+            8
+          ]
+        ],
+        "modelo__subsample": [
+          "cat",
+          [
+            0.6,
+            0.8,
+            1.0
+          ]
+        ],
+        "modelo__colsample_bytree": [
+          "cat",
+          [
+            0.6,
+            0.8,
+            1.0
+          ]
+        ],
+        "modelo__gamma": [
+          "cat",
+          [
+            0.0,
+            0.05,
+            0.1,
+            0.3
+          ]
+        ],
+        "modelo__reg_lambda": [
+          "log",
+          0.1,
+          20.0
+        ],
+        "modelo__reg_alpha": [
+          "cat",
+          [
+            0.0,
+            0.001,
+            0.01,
+            0.1,
+            1.0
+          ]
+        ]
+      },
+      "grid_size": 103680,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    }
+  },
+  {
+    "key": "m10",
+    "name": "RaFFLE",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "alpha": [
+        0.01,
+        0.5,
+        1.0
+      ],
+      "n_features_node": [
+        0.7,
+        1.0
+      ],
+      "max_depth": [
+        6,
+        20
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m10",
+    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "prepared": {
+      "grid": {
+        "modelo__alpha": [
+          0.01,
+          0.5,
+          1.0
+        ],
+        "modelo__n_features_node": [
+          0.7,
+          1.0
+        ],
+        "modelo__max_depth": [
+          6,
+          20
+        ]
+      },
+      "space": {
+        "modelo__alpha": [
+          "cat",
+          [
+            0.01,
+            0.5,
+            1.0
+          ]
+        ],
+        "modelo__n_features_node": [
+          "cat",
+          [
+            0.7,
+            1.0
+          ]
+        ],
+        "modelo__max_depth": [
+          "cat",
+          [
+            6,
+            20
+          ]
+        ]
+      },
+      "grid_size": 12,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    }
+  },
+  {
+    "key": "m11",
+    "name": "DenseWeight-XGBoost",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "modelo__weight_alpha": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m11",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 96,
+      "executed": true
+    }
+  },
+  {
+    "key": "m12",
+    "name": "DART-XGBoost",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "modelo__n_estimators": [
+        150,
+        250,
+        400,
+        600
+      ],
+      "modelo__max_depth": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "modelo__learning_rate": {
+        "distribution": "loguniform",
+        "args": [
+          0.01,
+          0.15
+        ],
+        "kwargs": {}
+      },
+      "modelo__min_child_weight": [
+        1,
+        3,
+        5,
+        8
+      ],
+      "modelo__subsample": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__colsample_bytree": [
+        0.6,
+        0.8,
+        1.0
+      ],
+      "modelo__gamma": [
+        0.0,
+        0.05,
+        0.1,
+        0.3
+      ],
+      "modelo__reg_lambda": {
+        "distribution": "loguniform",
+        "args": [
+          0.1,
+          20.0
+        ],
+        "kwargs": {}
+      },
+      "modelo__reg_alpha": [
+        0.0,
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "modelo__rate_drop": {
+        "distribution": "uniform",
+        "args": [
+          0.02,
+          0.38
+        ],
+        "kwargs": {}
+      },
+      "modelo__skip_drop": {
+        "distribution": "uniform",
+        "args": [
+          0.0,
+          0.3
+        ],
+        "kwargs": {}
+      },
+      "modelo__sample_type": [
+        "uniform",
+        "weighted"
+      ],
+      "modelo__normalize_type": [
+        "tree",
+        "forest"
+      ],
+      "modelo__one_drop": [
+        0,
+        1
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m12",
+    "preparation_state": "Dominio/factory preparados; sin ejecutar",
+    "prepared": {
+      "grid": {
+        "modelo__n_estimators": [
+          150,
+          250,
+          400,
+          600
+        ],
+        "modelo__max_depth": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "modelo__learning_rate": [
+          0.01,
+          0.03872983346207417,
+          0.15
+        ],
+        "modelo__min_child_weight": [
+          1,
+          3,
+          5,
+          8
+        ],
+        "modelo__subsample": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "modelo__colsample_bytree": [
+          0.6,
+          0.8,
+          1.0
+        ],
+        "modelo__gamma": [
+          0.0,
+          0.05,
+          0.1,
+          0.3
+        ],
+        "modelo__reg_lambda": [
+          0.1,
+          1.4142135623730951,
+          20.0
+        ],
+        "modelo__reg_alpha": [
+          0.0,
+          0.001,
+          0.01,
+          0.1,
+          1.0
+        ],
+        "modelo__rate_drop": [
+          0.02,
+          0.21000000000000002,
+          0.4
+        ],
+        "modelo__skip_drop": [
+          0.0,
+          0.15,
+          0.3
+        ],
+        "modelo__sample_type": [
+          "uniform",
+          "weighted"
+        ],
+        "modelo__normalize_type": [
+          "tree",
+          "forest"
+        ],
+        "modelo__one_drop": [
+          0,
+          1
+        ]
+      },
+      "space": {
+        "modelo__n_estimators": [
+          "cat",
+          [
+            150,
+            250,
+            400,
+            600
+          ]
+        ],
+        "modelo__max_depth": [
+          "cat",
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "modelo__learning_rate": [
+          "log",
+          0.01,
+          0.15
+        ],
+        "modelo__min_child_weight": [
+          "cat",
+          [
+            1,
+            3,
+            5,
+            8
+          ]
+        ],
+        "modelo__subsample": [
+          "cat",
+          [
+            0.6,
+            0.8,
+            1.0
+          ]
+        ],
+        "modelo__colsample_bytree": [
+          "cat",
+          [
+            0.6,
+            0.8,
+            1.0
+          ]
+        ],
+        "modelo__gamma": [
+          "cat",
+          [
+            0.0,
+            0.05,
+            0.1,
+            0.3
+          ]
+        ],
+        "modelo__reg_lambda": [
+          "log",
+          0.1,
+          20.0
+        ],
+        "modelo__reg_alpha": [
+          "cat",
+          [
+            0.0,
+            0.001,
+            0.01,
+            0.1,
+            1.0
+          ]
+        ],
+        "modelo__rate_drop": [
+          "real",
+          0.02,
+          0.4
+        ],
+        "modelo__skip_drop": [
+          "real",
+          0.0,
+          0.3
+        ],
+        "modelo__sample_type": [
+          "cat",
+          [
+            "uniform",
+            "weighted"
+          ]
+        ],
+        "modelo__normalize_type": [
+          "cat",
+          [
+            "tree",
+            "forest"
+          ]
+        ],
+        "modelo__one_drop": [
+          "cat",
+          [
+            0,
+            1
+          ]
+        ]
+      },
+      "grid_size": 7464960,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    }
+  },
+  {
+    "key": "m13",
+    "name": "HRT-Boost",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "max_depth": [
+        "1",
+        "2"
+      ],
+      "n_estimators": [
+        "10",
+        "30"
+      ],
+      "ridge_alpha": [
+        "1.0",
+        "10.0",
+        "100.0"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m13",
+    "prepared": {
+      "grid": {
+        "modelo__max_depth": [
+          1,
+          2
+        ],
+        "modelo__n_estimators": [
+          10,
+          30
+        ],
+        "modelo__ridge_alpha": [
+          1.0,
+          10.0,
+          100.0
+        ]
+      },
+      "space": {
+        "modelo__max_depth": [
+          "cat",
+          [
+            1,
+            2
+          ]
+        ],
+        "modelo__n_estimators": [
+          "cat",
+          [
+            10,
+            30
+          ]
+        ],
+        "modelo__ridge_alpha": [
+          "cat",
+          [
+            1.0,
+            10.0,
+            100.0
+          ]
+        ]
+      },
+      "grid_size": 12,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    },
+    "preparation_state": "Dominio/factory preparados; sin ejecutar"
+  },
+  {
+    "key": "m14",
+    "name": "logicDT propio (adaptado)",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "modelo__leaf_model": [
+        "mean",
+        "ridge"
+      ],
+      "modelo__max_depth": [
+        "2",
+        "3"
+      ],
+      "modelo__max_terms": [
+        "3",
+        "5"
+      ],
+      "modelo__ridge_alpha": [
+        "1.0",
+        "10.0"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m14",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 33,
+      "executed": true
+    }
+  },
+  {
+    "key": "m15",
+    "name": "GPR–XGBoost (OOF agrupado)",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {},
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": null,
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 54,
+      "executed": true
+    }
+  },
+  {
+    "key": "m16",
+    "name": "RIM (port E3)",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "epochs": [
+        "30",
+        "60"
+      ],
+      "n_neighbors": [
+        "15",
+        "5"
+      ],
+      "weight_decay": [
+        "0.001",
+        "0.01"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": true,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m16",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 8,
+      "executed": true
+    }
+  },
+  {
+    "key": "m17",
+    "name": "XBART (GFR)",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "depth": [
+        "2",
+        "4"
+      ],
+      "leaf": [
+        "10",
+        "30"
+      ],
+      "trees": [
+        "150",
+        "50"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m17",
+    "prepared": {
+      "grid": {
+        "modelo__depth": [
+          2,
+          4
+        ],
+        "modelo__leaf": [
+          10,
+          30
+        ],
+        "modelo__trees": [
+          150,
+          50
+        ]
+      },
+      "space": {
+        "modelo__depth": [
+          "cat",
+          [
+            2,
+            4
+          ]
+        ],
+        "modelo__leaf": [
+          "cat",
+          [
+            10,
+            30
+          ]
+        ],
+        "modelo__trees": [
+          "cat",
+          [
+            150,
+            50
+          ]
+        ]
+      },
+      "grid_size": 8,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    },
+    "preparation_state": "Dominio/factory preparados; sin ejecutar"
+  },
+  {
+    "key": "m18",
+    "name": "coPILOT",
+    "state": "Pendiente · alto coste · ejecución explícita",
+    "historical_domain": {
+      "alpha": [
+        "0.2",
+        "0.5",
+        "1.0"
+      ],
+      "depth": [
+        "2",
+        "4",
+        "6"
+      ],
+      "leaf": [
+        "10",
+        "30"
+      ]
+    },
+    "grid": null,
+    "space": null,
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m18",
+    "prepared": {
+      "grid": {
+        "modelo__alpha": [
+          0.2,
+          0.5,
+          1.0
+        ],
+        "modelo__depth": [
+          2,
+          4,
+          6
+        ],
+        "modelo__leaf": [
+          10,
+          30
+        ]
+      },
+      "space": {
+        "modelo__alpha": [
+          "cat",
+          [
+            0.2,
+            0.5,
+            1.0
+          ]
+        ],
+        "modelo__depth": [
+          "cat",
+          [
+            2,
+            4,
+            6
+          ]
+        ],
+        "modelo__leaf": [
+          "cat",
+          [
+            10,
+            30
+          ]
+        ]
+      },
+      "grid_size": 18,
+      "warning": "Revisar presupuesto antes de ejecutar; Grid puede ser muy grande."
+    },
+    "preparation_state": "Dominio/factory preparados; sin ejecutar"
+  },
+  {
+    "key": "m19",
+    "name": "Truncated Newton KRR RBF",
+    "state": "Completado · cinco estrategias anidadas",
+    "historical_domain": {
+      "alpha": [
+        "0.01",
+        "0.1",
+        "1.0",
+        "10.0",
+        "100.0"
+      ],
+      "gamma": [
+        "0.001",
+        "0.003",
+        "0.01",
+        "0.03",
+        "0.1",
+        "0.3",
+        "1.0"
+      ]
+    },
+    "grid": {
+      "modelo__alpha": [
+        0.01,
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "modelo__gamma": [
+        0.001,
+        0.003,
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0
+      ]
+    },
+    "space": {
+      "modelo__alpha": [
+        "log",
+        0.01,
+        100.0
+      ],
+      "modelo__gamma": [
+        "log",
+        0.001,
+        1.0
+      ]
+    },
+    "requires_group_fit": false,
+    "command": "python Precalculo/evaluar_originales_busquedas_e3.py --models m19",
+    "preparation_state": "Ejecutado: Grid, Random, TPE, DEAP y Successive Halving",
+    "prepared": {
+      "grid_size": 35,
+      "executed": true
+    }
+  }
+]

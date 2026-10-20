@@ -1,0 +1,338 @@
+{
+  "model": "Truncated Newton KRR RBF",
+  "key": "tn_krr",
+  "test": {
+    "RMSE": 0.907802353713192,
+    "MAE": 0.7262287010295185,
+    "MAPE (%)": 28.290836153683745,
+    "R²": 0.4528000061570303
+  },
+  "cv": [
+    {
+      "metric": "RMSE",
+      "mean_cv": 0.8096458103571067,
+      "sd_cv_ddof0": 0.03879396611805873,
+      "oof_grouped": 0.8105693990423258
+    },
+    {
+      "metric": "MAE",
+      "mean_cv": 0.6356151174927345,
+      "sd_cv_ddof0": 0.03255109696186658,
+      "oof_grouped": 0.6356131107529378
+    },
+    {
+      "metric": "MAPE (%)",
+      "mean_cv": 23.707609717480505,
+      "sd_cv_ddof0": 1.808176830758783,
+      "oof_grouped": 23.7070710472338
+    },
+    {
+      "metric": "R²",
+      "mean_cv": 0.4720204139681841,
+      "sd_cv_ddof0": 0.05190856261095213,
+      "oof_grouped": 0.4739757878495813
+    }
+  ],
+  "best_params": {
+    "alpha": 0.1,
+    "gamma": 0.01
+  },
+  "inner_rmse": 0.8036854518220189,
+  "fold_audit": [
+    {
+      "fold": 1,
+      "best_params": {
+        "alpha": 0.1,
+        "gamma": 0.003
+      },
+      "inner_rmse": 0.8324406477777986,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "cg_iterations": 19,
+      "cg_residual_norm": 0.2964409715016854,
+      "cg_converged": true,
+      "cg_stop_reason": "residual_tolerance",
+      "seconds": 8.206570299982559
+    },
+    {
+      "fold": 2,
+      "best_params": {
+        "alpha": 0.01,
+        "gamma": 0.003
+      },
+      "inner_rmse": 0.7958119671417768,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "cg_iterations": 41,
+      "cg_residual_norm": 0.49079014776601854,
+      "cg_converged": true,
+      "cg_stop_reason": "residual_tolerance",
+      "seconds": 7.940888100012671
+    },
+    {
+      "fold": 3,
+      "best_params": {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      "inner_rmse": 0.7996982996794448,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "cg_iterations": 27,
+      "cg_residual_norm": 0.32446949961118937,
+      "cg_converged": true,
+      "cg_stop_reason": "residual_tolerance",
+      "seconds": 8.177209199988283
+    },
+    {
+      "fold": 4,
+      "best_params": {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      "inner_rmse": 0.8141013364849151,
+      "fit_rows": 1047,
+      "validation_rows": 262,
+      "shared_students": 0,
+      "cg_iterations": 27,
+      "cg_residual_norm": 0.3121224799242405,
+      "cg_converged": true,
+      "cg_stop_reason": "residual_tolerance",
+      "seconds": 7.955016799969599
+    },
+    {
+      "fold": 5,
+      "best_params": {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      "inner_rmse": 0.8112886000418431,
+      "fit_rows": 1048,
+      "validation_rows": 261,
+      "shared_students": 0,
+      "cg_iterations": 27,
+      "cg_residual_norm": 0.3196190380153812,
+      "cg_converged": true,
+      "cg_stop_reason": "residual_tolerance",
+      "seconds": 7.659229800046887
+    }
+  ],
+  "partition": {
+    "source_rows": 1527,
+    "source_students": 1506,
+    "missing_target": 30,
+    "test_period": 202530,
+    "train_periods": [
+      202310,
+      202330,
+      202410,
+      202430,
+      202510
+    ],
+    "purged_overlap_rows": 0,
+    "purged_overlap_students": 0,
+    "train_raw": 1309,
+    "test_raw": 188,
+    "excluded_train": 0,
+    "excluded_test": 0,
+    "rules_train": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "rules_test": {
+      "dominio": 0,
+      "tiempo_cero": 0,
+      "aprendidos_cero": 0
+    },
+    "train_valid": 1309,
+    "test_valid": 188,
+    "train_students": 1293,
+    "test_students": 188,
+    "shared_students": 0,
+    "outliers_removed": 0
+  },
+  "provenance": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f",
+    "tn_krr_e3.py": "8aaeb50e32fd853d60d5188e59c83f26f1a31d9f2506d3b6e33e2108fb87ab66",
+    "evaluar_tn_krr_e3.py": "7c3ec0148176ba96a0e3c4301ec6678db4e4f02cefb06ff1d105eeaa918b4140",
+    "evaluacion_nuevos_e3.py": "144781500f818d73997cb480745bc0c300497906b235f1c26577762b08475f8d",
+    "resultados/e3/train.csv.gz": "5a49381464d66dc1c4fe169ad957251628a246c1eab299f4a3dd74e2e82718a2",
+    "resultados/e3/test.csv.gz": "cab2bc70174cce525bbe32c70e1bf3dc13e42ebcd02e62cae79699f9750643f2",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1"
+    },
+    "grid": [
+      {
+        "alpha": 0.01,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.01,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 0.1,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 1.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 10.0,
+        "gamma": 1.0
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.001
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.003
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.01
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.03
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.1
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 0.3
+      },
+      {
+        "alpha": 100.0,
+        "gamma": 1.0
+      }
+    ],
+    "solver": {
+      "method": "linear conjugate gradient on (K + alpha I) a = y",
+      "max_iter": 200,
+      "cg_tolerance": 0.5,
+      "max_no_improve": 25,
+      "initial_coefficients": "zeros",
+      "early_stop_metric": "L2 residual norm"
+    },
+    "references": [
+      "https://doi.org/10.3390/app12094252",
+      "https://doi.org/10.1016/j.knosys.2014.08.012"
+    ]
+  },
+  "solver": {
+    "method": "linear conjugate gradient on (K + alpha I) a = y",
+    "max_iter": 200,
+    "cg_tolerance": 0.5,
+    "max_no_improve": 25,
+    "initial_coefficients": "zeros",
+    "early_stop_metric": "L2 residual norm"
+  },
+  "reference": "https://doi.org/10.3390/app12094252; solver details: https://doi.org/10.1016/j.knosys.2014.08.012",
+  "private_model": "C:\\Users\\Rubiel\\Documents\\Machine Learning Maestria\\Precalculo\\modelos_preentrenados\\tn_krr\\modelo_final.joblib"
+}

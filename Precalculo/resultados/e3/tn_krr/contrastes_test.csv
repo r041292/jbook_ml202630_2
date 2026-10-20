@@ -1,0 +1,5 @@
+Modelo,Referencia,metrica,IC_2.5%,IC_97.5%,p_bilateral,diferencia_candidato_menos_referencia,familia_ajuste,p_ajustado,significativa_al_5%,fuente
+Truncated Newton KRR RBF,SVM lineal,RMSE,-0.04532164593325848,0.0046463903381269355,0.1201,-0.019903306305075308,Holm2 TR-KRR vs SVM/XGBoost,0.2402,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,SVM lineal,R²,-0.005811695984161754,0.05592777454473021,0.1201,0.024257441160494775,Holm2 TR-KRR vs SVM/XGBoost,0.2402,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,XGBoost,RMSE,-0.02246789724848528,0.025009736432326454,0.90418,0.0015286978482602631,Holm2 TR-KRR vs SVM/XGBoost,0.90418,False,resultados/e3/tn_krr/contrastes_test.csv
+Truncated Newton KRR RBF,XGBoost,R²,-0.03021263129747557,0.027803982553823194,0.90418,-0.0018413680750325456,Holm2 TR-KRR vs SVM/XGBoost,0.90418,False,resultados/e3/tn_krr/contrastes_test.csv

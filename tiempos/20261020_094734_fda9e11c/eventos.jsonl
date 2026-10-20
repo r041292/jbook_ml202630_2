@@ -1,0 +1,3 @@
+{"stage": "Análisis estadístico", "batch": "Friedman/MCS Originales", "seconds": 0.3657072999922093, "rows": 25, "status": "completa", "recorded": "2026-10-20T09:47:34.644481-05:00", "started": "2026-10-20T09:47:34.279948-05:00"}
+{"stage": "Análisis estadístico", "batch": "Bootstrap-t/BCa y Holm25 Originales", "seconds": 2.7271046999958344, "rows": 188, "status": "completa", "recorded": "2026-10-20T09:47:37.417996-05:00", "started": "2026-10-20T09:47:34.694315-05:00"}
+{"stage": "Total del experimento", "batch": "Originales · Friedman/MCS y contrastes por estudiante", "seconds": 5.215880800009472, "rows": null, "status": "completa", "recorded": "2026-10-20T09:47:39.483363-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

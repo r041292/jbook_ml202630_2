@@ -28,7 +28,14 @@ FOLDERS = {'m0':'svr_rbf_raffle/svr_rbf', 'm3':'linxgboost',
            'm9':'xgboost_variantes/gbtree','m10':'svr_rbf_raffle/raffle',
            'm11':'xgboost_variantes/denseweight','m12':'xgboost_variantes/dart',
            'm13':'hrt_boost','m14':'logicdt','m16':'rim','m17':'scopus/xbart',
-           'm18':'scopus/copilot','m19':'tn_krr'}
+           'm15':'gpr_xgb_hpo','m18':'scopus/copilot','m19':'tn_krr'}
+# Grid grueso (≤100 candidatos) para Grid Search; Random/TPE/DEAP/SH conservan el
+# dominio histórico completo. Los valores históricos elegidos caben dentro de cada rango.
+COARSE_GRIDS = {
+    # 2^5 * 3 = 96 candidatos; weight_alpha=0 equivale a XGBoost sin ponderar
+    'm11': {'modelo__n_estimators':[250,600], 'modelo__max_depth':[2,4], 'modelo__learning_rate':[.02,.08],
+            'modelo__min_child_weight':[1,5], 'modelo__reg_lambda':[1.,10.], 'modelo__weight_alpha':[0.,.5,1.]},
+}
 
 
 def artifact_for(key):
@@ -53,8 +60,8 @@ def pipeline_for(key):
         from tn_krr_e3 import make_model
         return make_model()
     if key=='m3':
-        from evaluar_linxgboost_e3 import _pipeline
-        return _pipeline()
+        from linxgboost_fiel import make_model
+        return make_model()
     if key in ('m6','m17','m18'):
         from modelos_scopus_e3 import make_model
         return make_model({'m6':'catboost','m17':'xbart','m18':'copilot'}[key])
@@ -70,13 +77,16 @@ def pipeline_for(key):
     if key=='m13':
         from hrt_modelo_e3 import make_model
         return make_model()
+    if key=='m15':
+        from gpr_xgb_hpo_e3 import make_model
+        return make_model()
     if key=='m16':
         from rim_regresion_e3 import RIMRegressor
         from evaluar_rim_e3 import FIXED
-        return RIMRegressor(**FIXED)
+        return RIMRegressor(**FIXED, idf='paper')
     if key=='m14':
-        from evaluacion_nuevos_e3 import logic_pipeline
-        return logic_pipeline()
+        from logicdt_fiel import make_model
+        return make_model()
     return clone(joblib.load(artifact_for(key)))
 
 
@@ -117,7 +127,7 @@ def prepare_expensive(key, catalog):
     model = pipeline_for(key)
     parameters = model.get_params(deep=True)
     grid, space = {}, {}
-    for original, domain in catalog[key]['grid'].items():
+    for original, domain in ({} if key in ('m14','m3') else catalog[key]['grid']).items():
         name = original if original in parameters else 'modelo__'+original
         if key=='m12' and original in {'modelo__rate_drop','modelo__skip_drop','modelo__sample_type',
                                       'modelo__normalize_type','modelo__one_drop'}:
@@ -146,11 +156,23 @@ def prepare_expensive(key, catalog):
             space[name]=('cat',values)
         else:
             raise ValueError(f'Dominio pendiente de revisión: {key}/{original}')
+    if key in COARSE_GRIDS:
+        grid=COARSE_GRIDS[key]
+        missing=set(grid)-set(space)
+        if missing: raise ValueError(f'Grid grueso de {key} fuera del espacio histórico: {missing}')
+    if key=='m15':
+        from gpr_xgb_hpo_e3 import GRID as grid, SPACE as space
+    if key=='m14':
+        from logicdt_fiel import GRID as grid, SPACE as space
+    if key=='m3':
+        from linxgboost_fiel import GRID as grid, SPACE as space
     engine.GRIDS_ALL[key],engine.SPACES[key]=grid,space
     if key=='m7':
+        # Protocolo del artículo (retrofit): se buscan solo fraction/weight sobre el XGBoost ya ajustado.
         from tcr_xgboost_e3 import GRID
         grid=GRID
-        engine.GRIDS_ALL[key]=grid
+        space={'fraction':('cat',[0.,.05,.1,.2]),'weight':('cat',[.3,.6,.9,1.])}
+        engine.GRIDS_ALL[key],engine.SPACES[key]=grid,space
     return {'grid':grid,'space':space,'grid_size':len(ParameterGrid(grid)),
             'warning':'Revisar presupuesto antes de ejecutar; Grid puede ser muy grande.'}
 
@@ -186,10 +208,54 @@ def manual_fold(key, parameters, frame, fit, val, fidelity, fold):
     return info
 
 
+_TCR_BASE={}
+
+
+def tcr_base_params(label):
+    """XGBoost base de TCR: el ajustado en el mismo entrenamiento externo (o en todo train para 'final')."""
+    if not _TCR_BASE:
+        classic=json.loads((BOOK.parent/'Dash/data/clasicos/comparacion.json').read_text(encoding='utf-8'))['models']['xgboost']
+        for audit in classic['fold_audit']:
+            _TCR_BASE[f"external_{audit['fold']}"]=audit['best_params']
+        _TCR_BASE['final']=classic['best_params']
+    return _TCR_BASE[label]
+
+
+# Modelos con búsqueda restringida por decisión del usuario (20-oct-2026): solo Optuna/TPE, con dominio
+# ampliado y más ensayos. El resto conserva las cinco estrategias.
+SEARCH_METHODS={'m3':['Bayesiana TPE']}
+SEARCH_BUDGET={'m3':{'bayes_trials':40,'startup_trials':10}}
+
+
+def domain_description(key):
+    """Dominio efectivo de la búsqueda como texto (para fichas cuando no hay un Grid ejecutado)."""
+    names={'int':'entero','log':'logarítmico','real':'continuo','cat':'categórico'}
+    return {name:(f'{names[spec[0]]} {list(spec[1])}' if spec[0]=='cat' else f'{names[spec[0]]} [{spec[1]}, {spec[2]}]')
+            for name,spec in engine.SPACES[key].items()}
+
+
 class OriginalSearch(engine.Search):
+    def __init__(self,key,frame,outer,timing,directory,budget=None):
+        super().__init__(key,frame,outer,timing,directory,{**SEARCH_BUDGET.get(key,{}),**(budget or {})})
+
+    def run(self):
+        methods=SEARCH_METHODS.get(self.key,engine.METHODS)
+        for method in methods: self.run_method(method)
+        optimum=min(s['RMSE'] for s in self.summaries)
+        selected=next(s for s in self.summaries if s['RMSE']<=optimum+1e-12)
+        result={'methods':self.summaries,'selected_method':selected['method'],'best_params':selected['best_params'],
+                'selection_rmse':selected['RMSE'],'space':engine.SPACES[self.key],'budget':self.budget,
+                'evolution':self.evolution,'outer':self.outer,'trials_file':self.trial_file.name,
+                'methods_executed':methods}
+        (self.directory/f'selection_{self.key}_{self.outer}.json').write_text(
+            json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')
+        return result
+
     def evaluate(self,params,fidelity=1.):
-        if self.key=='m7' and (params['fraction']==0 or params['weight']==1):
-            params={**params,'fraction':0.,'weight':1.}
+        if self.key=='m7':
+            params={**params,'base_params':tcr_base_params(self.outer)}
+            if params['fraction']==0 or params['weight']==1:
+                params={**params,'fraction':0.,'weight':1.}
         token=(engine.fingerprint(params),fidelity)
         if token in self.cache: return self.cache[token]
         clock=time.perf_counter()

@@ -42,7 +42,9 @@ def activate(directory):
             model=joblib.load(directory/f'{key}.joblib')
             with threadpool_limits(limits=1),run.measure('Inferencia',f'{key} / validación serialización test',len(test)):
                 actual=model.predict(test[list(model.feature_names_in_)])
-            np.testing.assert_allclose(actual,predictions['test'][key],atol=1e-10,rtol=0)
+            # XGBoost acumula hojas en float32: tras deserializar difiere 1 ulp (≈2.4e-7 en notas ≈3-4).
+            xgboost_based=key in ('m7','m11')
+            np.testing.assert_allclose(actual,predictions['test'][key],atol=1e-6 if xgboost_based else 1e-10,rtol=0)
         inventory=pd.read_csv(directory/'inventory.csv')
         for key,spec in catalog.items():
             score=metrics(test.nota_primer_parcial,predictions['test'][key])
@@ -67,8 +69,19 @@ def activate(directory):
         for plan in plans:
             key=plan['key']
             if key in active['executed']:
-                plan['state']='Completado · cinco estrategias de menor coste'
-            if key in FOLDERS and key not in LOW_COST:
+                methods=[m['method'] for m in catalog[key].get('optimization',{}).get('methods',[])]
+                if len(methods)<5 and methods:
+                    plan['state']='Completado · solo '+', '.join(methods)+' (dominio ampliado)'
+                    plan['preparation_state']=('Ejecutado: '+', '.join(methods)+' únicamente, por decisión del usuario (20-oct-2026); '
+                                               'Grid, Random, DEAP y Successive Halving no se ejecutaron en esta versión')
+                else:
+                    plan['state']='Completado · cinco estrategias anidadas'
+                    plan['preparation_state']='Ejecutado: Grid, Random, TPE, DEAP y Successive Halving'
+                # Los candidatos del Grid son los realmente evaluados por esa estrategia (no un plan antiguo ni la unión de dominios).
+                plan.pop('prepared',None)
+                grid_rows=[m for m in catalog[key].get('optimization',{}).get('methods',[]) if m['method']=='Grid Search']
+                plan['prepared']={'grid_size':grid_rows[0]['evaluated_configurations'] if grid_rows else None,'executed':True}
+            elif key in FOLDERS and key not in LOW_COST:
                 try:
                     plan['prepared']=prepare_expensive(key,catalog)
                     plan['preparation_state']='Dominio/factory preparados; sin ejecutar'

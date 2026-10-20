@@ -8,7 +8,7 @@ Los rankings distintos responden a muestras y objetivos de generalización difer
 Se reutilizan los cinco folds externos canónicos, sin entrenar ni usar métricas o predicciones de test en el cálculo. Se empareja el RMSE de cada modelo con SVM en el mismo fold.
 Adaptación aproximada del test t corregido de Nadeau–Bengio: `SE²=(1/5+q)*s²`, `t=media(delta)/SE`, 4 grados de libertad, p bilateral.
 `s²` usa ddof=1; `q` es la media de estudiantes_validación/estudiantes_fit (0.250000280). El RMSE sigue ponderando registros dentro de cada fold.
-Holm corrige conjuntamente los **24 contrastes RMSE vs SVM** del inventario activo. SVM y TabPFN fine-tuned no entran en la familia. GPR sola fue retirada por trazabilidad del artefacto original; el híbrido GPR–XGBoost sigue siendo un experimento distinto.
+Holm corrige conjuntamente los **25 contrastes RMSE vs SVM**, incluido TR-KRR. SVM y TabPFN fine-tuned no entran en la familia. GPR sola fue retirada por trazabilidad del artefacto original; el híbrido GPR–XGBoost sigue siendo un experimento distinto.
 Se conserva la misma familia en el tablero clásico; no se recalcula Holm sobre sus cinco modelos.
 
 Hay una sola partición 1×5, no CV repetida: la corrección es una aproximación exploratoria, con poca potencia. Los folds no son observaciones independientes.
@@ -17,12 +17,13 @@ La familia y las grillas se han explorado sobre el mismo train; esto no evalúa 
 
 ## Resultados
 
-| Modelo | RMSE medio CV | Δ vs SVM | p bilateral corregida | p Holm24 | Conclusión |
+| Modelo | RMSE medio CV | Δ vs SVM | p bilateral corregida | p Holm25 | Conclusión |
 |---|---:|---:|---:|---:|---|
 | Kernel Ridge RBF | 0.801325 | -0.024815 | 0.164753 | 1.000000 | No significativa |
 | TabPFN 2.5 original | 0.807118 | -0.019022 | 0.336587 | 1.000000 | No significativa |
 | TabICLv2 | 0.807163 | -0.018978 | 0.233413 | 1.000000 | No significativa |
 | SVR RBF | 0.807765 | -0.018375 | 0.309248 | 1.000000 | No significativa |
+| Truncated Newton KRR RBF | 0.809646 | -0.016494 | 0.168940 | 1.000000 | No significativa |
 | DenseWeight-XGBoost | 0.809715 | -0.016425 | 0.449661 | 1.000000 | No significativa |
 | XGBoost ampliado (gbtree) | 0.811859 | -0.014281 | 0.512022 | 1.000000 | No significativa |
 | TabFM 1.0.0 (PyTorch CPU, 32 vistas) | 0.812895 | -0.013246 | 0.371026 | 1.000000 | No significativa |
@@ -43,13 +44,13 @@ La familia y las grillas se han explorado sobre el mismo train; esto no evalúa 
 | coPILOT | 0.859075 | 0.032935 | 0.198399 | 1.000000 | No significativa |
 | RIM (port E3) | 0.865105 | 0.038965 | 0.169252 | 1.000000 | No significativa |
 | XBART (GFR) | 0.882018 | 0.055878 | 0.098449 | 1.000000 | No significativa |
-| Dummy media | 1.118000 | 0.291860 | 0.001215 | 0.029159 | Deterioro significativo |
+| Dummy media | 1.118000 | 0.291860 | 0.001215 | 0.030374 | Deterioro significativo |
 | TabPFN 2.5 fine-tuned | — | — | — | — | Sin OOF independiente |
 
 ## Conclusión
 
-Kernel Ridge RBF lidera numéricamente CV: RMSE medio 0.801325; p bilateral 0.164753, Holm24 1.000000 frente al SVM.
-0 mejoras frente al SVM sobreviven Holm24. Ausencia de significancia no prueba igualdad.
+Kernel Ridge RBF lidera numéricamente CV: RMSE medio 0.801325; p bilateral 0.164753, Holm25 1.000000 frente al SVM.
+0 mejoras frente al SVM sobreviven Holm25. Ausencia de significancia no prueba igualdad.
 El mínimo de CV es un candidato para validación futura, no un ganador confirmado. SVR RBF conserva el mínimo descriptivo del test, sin reemplazar el criterio CV.
 
 ## Referencias

@@ -40,11 +40,27 @@ def positive_weights(values, fraction, weight):
     return output
 
 
+# Búsqueda conjunta (protocolo nuevo): TCR más tres hiperparámetros del XGBoost base.
+# Grid grueso: (1 + 9) combinaciones TCR x 8 de XGBoost = 80 candidatos.
+_XGB_GRID = {'n_estimators': [200, 450], 'max_depth': [2, 4], 'learning_rate': [.015, .06]}
+JOINT_GRID = [{'fraction': [0.], 'weight': [1.], **_XGB_GRID},
+              {'fraction': [.05, .10, .20], 'weight': [.3, .6, .9], **_XGB_GRID}]
+JOINT_SPACE = {'fraction': ('cat', [0., .05, .10, .20]), 'weight': ('cat', [.3, .6, .9, 1.]),
+               'n_estimators': ('int', 150, 500), 'max_depth': ('int', 1, 6),
+               'learning_rate': ('log', .01, .1)}
+
+
 class TCRXGBRegressor(RegressorMixin, BaseEstimator):
-    def __init__(self, fraction=.1, weight=.6, base_params=None):
+    """n_estimators/max_depth/learning_rate (si no son None) sustituyen a base_params del XGBoost."""
+
+    def __init__(self, fraction=.1, weight=.6, base_params=None,
+                 n_estimators=None, max_depth=None, learning_rate=None):
         self.fraction = fraction
         self.weight = weight
         self.base_params = base_params
+        self.n_estimators = n_estimators
+        self.max_depth = max_depth
+        self.learning_rate = learning_rate
 
     def fit(self, X, y):
         self.distance_preprocessor_ = clone(make_pipeline().named_steps['preprocesamiento'])
@@ -52,7 +68,10 @@ class TCRXGBRegressor(RegressorMixin, BaseEstimator):
         self.distance_scaler_ = MinMaxScaler().fit(Z)
         self.robustness_ = robustness(self.distance_scaler_.transform(Z), y)
         self.sample_weights_ = positive_weights(self.robustness_, self.fraction, self.weight)
-        self.pipeline_ = classic_pipeline('xgboost').set_params(**(self.base_params or {}))
+        overrides = {'modelo__'+name: value for name, value in (
+            ('n_estimators', self.n_estimators), ('max_depth', self.max_depth),
+            ('learning_rate', self.learning_rate)) if value is not None}
+        self.pipeline_ = classic_pipeline('xgboost').set_params(**{**(self.base_params or {}), **overrides})
         self.pipeline_.fit(X[FEATURES], y, modelo__sample_weight=self.sample_weights_)
         self.n_features_in_ = len(FEATURES)
         return self

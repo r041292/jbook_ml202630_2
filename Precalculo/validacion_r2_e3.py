@@ -102,13 +102,6 @@ def markdown(table):
 
 
 def build():
-    current_report=OUTPUT/'svr_rbf_raffle/reporte.json'
-    current_table=FOLDER/'modelos_r2.csv'
-    if current_report.is_file() and current_table.is_file():
-        snapshot=pd.read_csv(current_table)
-        if len(snapshot)==22 and snapshot.Modelo.is_unique and 'p_Holm_global_55' in snapshot:
-            print('Se conserva la validación R² consolidada de 22 modelos, con Holm global55.')
-            return snapshot
     train,test,fold_pairs,audit=partitions()
     base_report()
     sources=set()
