@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.018392199999652803, "rows": 1, "status": "completa", "recorded": "2026-10-20T17:06:22.987817-05:00", "started": "2026-10-20T17:06:22.962979-05:00"}
+{"stage": "Total del experimento", "batch": "XGBRegressor · inferencia de aplicación", "seconds": 0.02676100001554005, "rows": null, "status": "completa", "recorded": "2026-10-20T17:06:22.987817-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

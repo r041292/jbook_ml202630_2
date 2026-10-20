@@ -11,6 +11,7 @@ from classic_posthoc import analyze
 from student_comparison import compare, student_losses
 from model_timing import TimingRun, file_hash
 from model_groups import IMPORT_ONLY, validate as validate_groups
+from student_dm import select_top, analyze as dm_analyze, render as render_dm
 
 
 def prepare(directory, cache, book):
@@ -38,7 +39,7 @@ def prepare(directory, cache, book):
         with run.measure('Análisis estadístico','Friedman/MCS Originales',len(names)):
             omnibus=friedman_comparison(folds,names)
             posthoc=analyze(folds,names,omnibus)
-        _,private,_=load_partitions()
+        train_private,private,_=load_partitions()
         test=pd.read_csv(cache/'test.csv.gz')
         pd.testing.assert_frame_equal(private[FEATURES+[TARGET]],test[FEATURES+[TARGET]],
                                       check_dtype=False,check_exact=False,rtol=1e-12)
@@ -58,7 +59,16 @@ def prepare(directory, cache, book):
         marginal=[{'Modelo':catalog[key]['name'],'RMSE':float(np.sqrt(losses[:,j].mean())),
                    **bca_interval(np.sqrt(losses[:,j].mean()),boot[:,j],jack[:,j])}
                   for j,key in enumerate(keys)]
-        serialized={'omnibus':{k:v for k,v in omnibus.items() if k!='ranking'},
+        # Etapa 3: contraste tipo Diebold–Mariano por estudiante sobre OOF (CV) y, como complemento, test.
+        train_cache=pd.read_csv(cache/'train.csv.gz')
+        np.testing.assert_allclose(train_private[TARGET].to_numpy(float),train_cache[TARGET].to_numpy(float),atol=1e-9)
+        top=select_top(posthoc['mcs'],5)
+        name_key={s['name']:k for k,s in catalog.items()}
+        corrected=pd.read_csv(directory/'cv_inference.csv').set_index('Modelo')
+        with run.measure('Análisis estadístico','Diebold–Mariano por estudiante top 5 MCS (CV, test y pares)',len(train_private)):
+            dm=dm_analyze(top,pred['train'],pred['test'],train_private[GROUP].to_numpy(),private[GROUP].to_numpy(),
+                          train_private[TARGET].to_numpy(float),private[TARGET].to_numpy(float),name_key,'svm',corrected)
+        serialized={'dm':dm,'omnibus':{k:v for k,v in omnibus.items() if k!='ranking'},
             'ranking':omnibus['ranking'].to_dict('records'),
             'mcs':posthoc['mcs'].to_dict('records'),'pairs':posthoc['pairs'].to_dict('records'),
             'effects':posthoc['effects'].to_dict('records'),'finalists':posthoc['finalists'],
@@ -84,21 +94,9 @@ def table_statistics(scores, *, cv=False, global_view=True, analysis=None):
 
 def section(data,ui):
     md,table=ui['md'],ui['table']
-    omnibus=data['omnibus']; student=data['students']; alpha=.05
-    family=student['family_size']
+    omnibus=data['omnibus']; dm=data['dm']; alpha=.05
     global_table=pd.DataFrame([{'χ² Friedman':omnibus['statistic'],'g.l.':omnibus['df'],
         'p asintótico':omnibus['pvalue'],'Conclusión':'Se rechaza H₀ · exploratorio' if omnibus['pvalue']<alpha else 'No se rechaza H₀'}])
-    rows=pd.DataFrame([{'Modelo vs SVM':r['model'],'Δ MSE':r['delta_mse'],'Δ RMSE':r['delta_rmse'],
-        'IC BCa95 inferior':r['bca_rmse']['low'],'IC BCa95 superior':r['bca_rmse']['high'],
-        'p crudo':'No estimable' if r['p_raw'] is None else f'{r["p_raw"]:.6f}',
-        f'p Holm{family}':'No estimable' if r['p_holm'] is None else f'{r["p_holm"]:.6f}',
-        'Conclusión':r['conclusion']} for r in student['rows']]).sort_values('Δ MSE',kind='stable')
-    significant=[r for r in student['rows'] if r['p_holm'] is not None and r['p_holm']<alpha]
-    conclusion=(f'Ninguna diferencia alcanza p Holm{family} < 0.05; esto no demuestra equivalencia.' if not significant else
-                '; '.join(r['model']+': '+r['conclusion'].lower() for r in significant)+'.')
-    from student_comparison import METHOD
-    method=METHOD.replace('Seis comparaciones',f'{family} comparaciones').replace('seis clásicos','candidatos originales').replace(
-        'Los seis p crudos',f'Los {family} p crudos').replace('por 6,5,…,1',f'por {family},{family-1},…,1').replace('seis comparaciones',f'{family} comparaciones')
     return html.Article([
         html.H3('Conclusiones y comparación estadística · Originales'),
         md('**Alcance de las pruebas:** clásicos, kernels (SVR RBF, Kernel Ridge, TR-KRR), híbridos e implementaciones propias. '
@@ -121,19 +119,10 @@ def section(data,ui):
         table(pd.DataFrame(data['mcs'])) if data['mcs'] else md('MCS no ejecutado: no se rechaza Friedman.'),
         html.Details([html.Summary('Finalistas e IC descriptivos por fold'),
             md('ΔMSE=A−B; IC percentiles por folds, no estacionarios ni simultáneos. '
-               'GW/CW, DM-HLN e IC estacionario siguen no aplicables: no hay diseño de pronóstico, '
-               'horizonte ni anidamiento justificados. No se convierten filas/folds en tiempo.'),
+               'Las versiones de series de tiempo (GW/CW, DM-HLN, IC estacionario) no aplican: no hay diseño de pronóstico, '
+               'horizonte ni anidamiento. La Etapa 3 usa un contraste tipo DM agrupado por estudiante. No se convierten filas/folds en tiempo.'),
             table(pd.DataFrame(data['pairs']))],className='details'),
-        html.H4('Etapa 3 · Candidatos frente al SVM · test por estudiante'),
-        md(f'**{student["n_students"]} estudiantes, {student["family_size"]} comparaciones bilaterales**, '
-           'sin filtrar por MCS. Bootstrap-t bajo H₀,49.999 réplicas emparejadas, semilla20261018. '
-           f'Holm{family} a α0.05. Negativo favorece al candidato. Tabla por ΔMSE ascendente; '
-           'IC BCa95 individuales, no simultáneos. Test ya revisado: análisis exploratorio condicionado '
-           'a estos modelos fijos y este periodo, sin incertidumbre de entrenamiento; supone independencia entre estudiantes.'),
-        table(rows),md('**Conclusión:** '+conclusion),
-        md(f'La decisión usa p Holm{family}, no el IC individual. Bootstrap-t y BCa son aproximaciones distintas; '
-           'un IC puede excluir0 sin significancia familiar. No se eligen modelos ni parámetros con test.'),
-        html.Details([html.Summary('Protocolo y límites de bootstrap-t, Holm y BCa'),md(method)],className='details'),
+        *render_dm(dm,ui),
         html.H4('Tamaño del efecto · pérdidas MSE por fold'),
         md('Cliff marginal y Cohen d_z emparejado, negativos favorecen A; descriptores sobre cinco folds. '
            'No implican causalidad ni relevancia educativa; SD cero no estimable.'),

@@ -14618,3 +14618,2544 @@ La plantilla anterior no representa una ejecución real.
 | Inferencia | Ridge | 0.000094100 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
 | Inferencia | XGBRegressor | 0.009036700 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
 | Total del experimento | Verificación/preparación · Dash/validate_package.py | 8.030653300 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |
+
+### Ejecución `20261020_162027_c3bada99`
+
+- **Modelo/motivo:** SVM lineal vs SVR RBF · CV agrupada repetida 5x5.
+- **Fecha/zona:** 2026-10-20T16:20:27.602488-05:00 a 2026-10-20T16:26:32.841184-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_162027_c3bada99/metadata.json](tiempos/20261020_162027_c3bada99/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_162027_c3bada99/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Búsqueda | rep1_fold1_svm | 6.229869200 | 1049 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold1_svm | 0.132529020 | 1049 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | OOF rep1_fold1_svm | 0.012472100 | 260 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Búsqueda | rep1_fold1_svr_rbf | 11.774190000 | 1049 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold1_svr_rbf | 0.150513411 | 1049 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | OOF rep1_fold1_svr_rbf | 0.032498000 | 260 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Búsqueda | rep1_fold2_svm | 5.717779400 | 1048 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold2_svm | 0.117980003 | 1048 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | OOF rep1_fold2_svm | 0.010761000 | 261 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Búsqueda | rep1_fold2_svr_rbf | 9.920181200 | 1048 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold2_svr_rbf | 0.149185896 | 1048 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | OOF rep1_fold2_svr_rbf | 0.032364400 | 261 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Búsqueda | rep1_fold3_svm | 5.148447800 | 1044 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold3_svm | 0.093877077 | 1044 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | OOF rep1_fold3_svm | 0.010638900 | 265 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Búsqueda | rep1_fold3_svr_rbf | 9.079041200 | 1044 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold3_svr_rbf | 0.160222769 | 1044 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | OOF rep1_fold3_svr_rbf | 0.046604700 | 265 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Búsqueda | rep1_fold4_svm | 4.841435400 | 1047 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold4_svm | 0.108514309 | 1047 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Inferencia | OOF rep1_fold4_svm | 0.009798000 | 262 | 1 | completa | Total; eventos.jsonl línea 21 |
+| Búsqueda | rep1_fold4_svr_rbf | 9.077781900 | 1047 | 1 | completa | Total; eventos.jsonl línea 22 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold4_svr_rbf | 0.139688492 | 1047 | 1 | completa | Total; eventos.jsonl línea 23 |
+| Inferencia | OOF rep1_fold4_svr_rbf | 0.036419500 | 262 | 1 | completa | Total; eventos.jsonl línea 24 |
+| Búsqueda | rep1_fold5_svm | 5.076931300 | 1048 | 1 | completa | Total; eventos.jsonl línea 25 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold5_svm | 0.219327688 | 1048 | 1 | completa | Total; eventos.jsonl línea 26 |
+| Inferencia | OOF rep1_fold5_svm | 0.010761900 | 261 | 1 | completa | Total; eventos.jsonl línea 27 |
+| Búsqueda | rep1_fold5_svr_rbf | 8.535355300 | 1048 | 1 | completa | Total; eventos.jsonl línea 28 |
+| Entrenamiento/refit (incluido en búsqueda) | rep1_fold5_svr_rbf | 0.146237850 | 1048 | 1 | completa | Total; eventos.jsonl línea 29 |
+| Inferencia | OOF rep1_fold5_svr_rbf | 0.032953100 | 261 | 1 | completa | Total; eventos.jsonl línea 30 |
+| Búsqueda | rep2_fold1_svm | 4.972853200 | 1047 | 1 | completa | Total; eventos.jsonl línea 31 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold1_svm | 0.096483469 | 1047 | 1 | completa | Total; eventos.jsonl línea 32 |
+| Inferencia | OOF rep2_fold1_svm | 0.009216300 | 262 | 1 | completa | Total; eventos.jsonl línea 33 |
+| Búsqueda | rep2_fold1_svr_rbf | 8.778997300 | 1047 | 1 | completa | Total; eventos.jsonl línea 34 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold1_svr_rbf | 0.151715994 | 1047 | 1 | completa | Total; eventos.jsonl línea 35 |
+| Inferencia | OOF rep2_fold1_svr_rbf | 0.031283000 | 262 | 1 | completa | Total; eventos.jsonl línea 36 |
+| Búsqueda | rep2_fold2_svm | 4.961106800 | 1047 | 1 | completa | Total; eventos.jsonl línea 37 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold2_svm | 0.216656923 | 1047 | 1 | completa | Total; eventos.jsonl línea 38 |
+| Inferencia | OOF rep2_fold2_svm | 0.011176200 | 262 | 1 | completa | Total; eventos.jsonl línea 39 |
+| Búsqueda | rep2_fold2_svr_rbf | 8.564187500 | 1047 | 1 | completa | Total; eventos.jsonl línea 40 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold2_svr_rbf | 0.155120850 | 1047 | 1 | completa | Total; eventos.jsonl línea 41 |
+| Inferencia | OOF rep2_fold2_svr_rbf | 0.029908500 | 262 | 1 | completa | Total; eventos.jsonl línea 42 |
+| Búsqueda | rep2_fold3_svm | 4.729515000 | 1048 | 1 | completa | Total; eventos.jsonl línea 43 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold3_svm | 0.092270851 | 1048 | 1 | completa | Total; eventos.jsonl línea 44 |
+| Inferencia | OOF rep2_fold3_svm | 0.010254900 | 261 | 1 | completa | Total; eventos.jsonl línea 45 |
+| Búsqueda | rep2_fold3_svr_rbf | 8.671257500 | 1048 | 1 | completa | Total; eventos.jsonl línea 46 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold3_svr_rbf | 0.156986237 | 1048 | 1 | completa | Total; eventos.jsonl línea 47 |
+| Inferencia | OOF rep2_fold3_svr_rbf | 0.032582800 | 261 | 1 | completa | Total; eventos.jsonl línea 48 |
+| Búsqueda | rep2_fold4_svm | 4.799487500 | 1046 | 1 | completa | Total; eventos.jsonl línea 49 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold4_svm | 0.110389233 | 1046 | 1 | completa | Total; eventos.jsonl línea 50 |
+| Inferencia | OOF rep2_fold4_svm | 0.008931600 | 263 | 1 | completa | Total; eventos.jsonl línea 51 |
+| Búsqueda | rep2_fold4_svr_rbf | 8.955048300 | 1046 | 1 | completa | Total; eventos.jsonl línea 52 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold4_svr_rbf | 0.153457642 | 1046 | 1 | completa | Total; eventos.jsonl línea 53 |
+| Inferencia | OOF rep2_fold4_svr_rbf | 0.033919100 | 263 | 1 | completa | Total; eventos.jsonl línea 54 |
+| Búsqueda | rep2_fold5_svm | 5.007553100 | 1048 | 1 | completa | Total; eventos.jsonl línea 55 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold5_svm | 0.094820499 | 1048 | 1 | completa | Total; eventos.jsonl línea 56 |
+| Inferencia | OOF rep2_fold5_svm | 0.009580100 | 261 | 1 | completa | Total; eventos.jsonl línea 57 |
+| Búsqueda | rep2_fold5_svr_rbf | 8.702887800 | 1048 | 1 | completa | Total; eventos.jsonl línea 58 |
+| Entrenamiento/refit (incluido en búsqueda) | rep2_fold5_svr_rbf | 0.145692587 | 1048 | 1 | completa | Total; eventos.jsonl línea 59 |
+| Inferencia | OOF rep2_fold5_svr_rbf | 0.034383300 | 261 | 1 | completa | Total; eventos.jsonl línea 60 |
+| Búsqueda | rep3_fold1_svm | 5.011684700 | 1048 | 1 | completa | Total; eventos.jsonl línea 61 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold1_svm | 0.098011255 | 1048 | 1 | completa | Total; eventos.jsonl línea 62 |
+| Inferencia | OOF rep3_fold1_svm | 0.009271300 | 261 | 1 | completa | Total; eventos.jsonl línea 63 |
+| Búsqueda | rep3_fold1_svr_rbf | 9.031896000 | 1048 | 1 | completa | Total; eventos.jsonl línea 64 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold1_svr_rbf | 0.153496742 | 1048 | 1 | completa | Total; eventos.jsonl línea 65 |
+| Inferencia | OOF rep3_fold1_svr_rbf | 0.031293500 | 261 | 1 | completa | Total; eventos.jsonl línea 66 |
+| Búsqueda | rep3_fold2_svm | 5.013583400 | 1047 | 1 | completa | Total; eventos.jsonl línea 67 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold2_svm | 0.103151798 | 1047 | 1 | completa | Total; eventos.jsonl línea 68 |
+| Inferencia | OOF rep3_fold2_svm | 0.009431200 | 262 | 1 | completa | Total; eventos.jsonl línea 69 |
+| Búsqueda | rep3_fold2_svr_rbf | 8.878665100 | 1047 | 1 | completa | Total; eventos.jsonl línea 70 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold2_svr_rbf | 0.144729137 | 1047 | 1 | completa | Total; eventos.jsonl línea 71 |
+| Inferencia | OOF rep3_fold2_svr_rbf | 0.031985900 | 262 | 1 | completa | Total; eventos.jsonl línea 72 |
+| Búsqueda | rep3_fold3_svm | 4.730065300 | 1048 | 1 | completa | Total; eventos.jsonl línea 73 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold3_svm | 0.089273691 | 1048 | 1 | completa | Total; eventos.jsonl línea 74 |
+| Inferencia | OOF rep3_fold3_svm | 0.009936500 | 261 | 1 | completa | Total; eventos.jsonl línea 75 |
+| Búsqueda | rep3_fold3_svr_rbf | 8.725339700 | 1048 | 1 | completa | Total; eventos.jsonl línea 76 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold3_svr_rbf | 0.141598940 | 1048 | 1 | completa | Total; eventos.jsonl línea 77 |
+| Inferencia | OOF rep3_fold3_svr_rbf | 0.034455800 | 261 | 1 | completa | Total; eventos.jsonl línea 78 |
+| Búsqueda | rep3_fold4_svm | 4.827192000 | 1046 | 1 | completa | Total; eventos.jsonl línea 79 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold4_svm | 0.090906858 | 1046 | 1 | completa | Total; eventos.jsonl línea 80 |
+| Inferencia | OOF rep3_fold4_svm | 0.008540200 | 263 | 1 | completa | Total; eventos.jsonl línea 81 |
+| Búsqueda | rep3_fold4_svr_rbf | 8.446909700 | 1046 | 1 | completa | Total; eventos.jsonl línea 82 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold4_svr_rbf | 0.145712852 | 1046 | 1 | completa | Total; eventos.jsonl línea 83 |
+| Inferencia | OOF rep3_fold4_svr_rbf | 0.032361400 | 263 | 1 | completa | Total; eventos.jsonl línea 84 |
+| Búsqueda | rep3_fold5_svm | 4.861286300 | 1047 | 1 | completa | Total; eventos.jsonl línea 85 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold5_svm | 0.081889391 | 1047 | 1 | completa | Total; eventos.jsonl línea 86 |
+| Inferencia | OOF rep3_fold5_svm | 0.010422400 | 262 | 1 | completa | Total; eventos.jsonl línea 87 |
+| Búsqueda | rep3_fold5_svr_rbf | 9.424863700 | 1047 | 1 | completa | Total; eventos.jsonl línea 88 |
+| Entrenamiento/refit (incluido en búsqueda) | rep3_fold5_svr_rbf | 0.132376909 | 1047 | 1 | completa | Total; eventos.jsonl línea 89 |
+| Inferencia | OOF rep3_fold5_svr_rbf | 0.034490300 | 262 | 1 | completa | Total; eventos.jsonl línea 90 |
+| Búsqueda | rep4_fold1_svm | 4.941648400 | 1047 | 1 | completa | Total; eventos.jsonl línea 91 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold1_svm | 0.094501495 | 1047 | 1 | completa | Total; eventos.jsonl línea 92 |
+| Inferencia | OOF rep4_fold1_svm | 0.010276100 | 262 | 1 | completa | Total; eventos.jsonl línea 93 |
+| Búsqueda | rep4_fold1_svr_rbf | 12.744102100 | 1047 | 1 | completa | Total; eventos.jsonl línea 94 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold1_svr_rbf | 0.151607752 | 1047 | 1 | completa | Total; eventos.jsonl línea 95 |
+| Inferencia | OOF rep4_fold1_svr_rbf | 0.029897100 | 262 | 1 | completa | Total; eventos.jsonl línea 96 |
+| Búsqueda | rep4_fold2_svm | 6.133692100 | 1049 | 1 | completa | Total; eventos.jsonl línea 97 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold2_svm | 0.107526064 | 1049 | 1 | completa | Total; eventos.jsonl línea 98 |
+| Inferencia | OOF rep4_fold2_svm | 0.008328500 | 260 | 1 | completa | Total; eventos.jsonl línea 99 |
+| Búsqueda | rep4_fold2_svr_rbf | 11.598231500 | 1049 | 1 | completa | Total; eventos.jsonl línea 100 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold2_svr_rbf | 0.148983002 | 1049 | 1 | completa | Total; eventos.jsonl línea 101 |
+| Inferencia | OOF rep4_fold2_svr_rbf | 0.035146000 | 260 | 1 | completa | Total; eventos.jsonl línea 102 |
+| Búsqueda | rep4_fold3_svm | 6.586509100 | 1047 | 1 | completa | Total; eventos.jsonl línea 103 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold3_svm | 0.102734327 | 1047 | 1 | completa | Total; eventos.jsonl línea 104 |
+| Inferencia | OOF rep4_fold3_svm | 0.010565300 | 262 | 1 | completa | Total; eventos.jsonl línea 105 |
+| Búsqueda | rep4_fold3_svr_rbf | 10.484978700 | 1047 | 1 | completa | Total; eventos.jsonl línea 106 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold3_svr_rbf | 0.140652657 | 1047 | 1 | completa | Total; eventos.jsonl línea 107 |
+| Inferencia | OOF rep4_fold3_svr_rbf | 0.034987700 | 262 | 1 | completa | Total; eventos.jsonl línea 108 |
+| Búsqueda | rep4_fold4_svm | 5.256404400 | 1047 | 1 | completa | Total; eventos.jsonl línea 109 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold4_svm | 0.090012550 | 1047 | 1 | completa | Total; eventos.jsonl línea 110 |
+| Inferencia | OOF rep4_fold4_svm | 0.010495300 | 262 | 1 | completa | Total; eventos.jsonl línea 111 |
+| Búsqueda | rep4_fold4_svr_rbf | 8.897847900 | 1047 | 1 | completa | Total; eventos.jsonl línea 112 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold4_svr_rbf | 0.130235434 | 1047 | 1 | completa | Total; eventos.jsonl línea 113 |
+| Inferencia | OOF rep4_fold4_svr_rbf | 0.032720200 | 262 | 1 | completa | Total; eventos.jsonl línea 114 |
+| Búsqueda | rep4_fold5_svm | 4.824292400 | 1046 | 1 | completa | Total; eventos.jsonl línea 115 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold5_svm | 0.082900763 | 1046 | 1 | completa | Total; eventos.jsonl línea 116 |
+| Inferencia | OOF rep4_fold5_svm | 0.009286600 | 263 | 1 | completa | Total; eventos.jsonl línea 117 |
+| Búsqueda | rep4_fold5_svr_rbf | 9.218686400 | 1046 | 1 | completa | Total; eventos.jsonl línea 118 |
+| Entrenamiento/refit (incluido en búsqueda) | rep4_fold5_svr_rbf | 0.152070522 | 1046 | 1 | completa | Total; eventos.jsonl línea 119 |
+| Inferencia | OOF rep4_fold5_svr_rbf | 0.036949400 | 263 | 1 | completa | Total; eventos.jsonl línea 120 |
+| Búsqueda | rep5_fold1_svm | 5.382621400 | 1047 | 1 | completa | Total; eventos.jsonl línea 121 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold1_svm | 0.110478163 | 1047 | 1 | completa | Total; eventos.jsonl línea 122 |
+| Inferencia | OOF rep5_fold1_svm | 0.010304500 | 262 | 1 | completa | Total; eventos.jsonl línea 123 |
+| Búsqueda | rep5_fold1_svr_rbf | 9.424938800 | 1047 | 1 | completa | Total; eventos.jsonl línea 124 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold1_svr_rbf | 0.156909227 | 1047 | 1 | completa | Total; eventos.jsonl línea 125 |
+| Inferencia | OOF rep5_fold1_svr_rbf | 0.032614400 | 262 | 1 | completa | Total; eventos.jsonl línea 126 |
+| Búsqueda | rep5_fold2_svm | 4.880514300 | 1048 | 1 | completa | Total; eventos.jsonl línea 127 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold2_svm | 0.089318275 | 1048 | 1 | completa | Total; eventos.jsonl línea 128 |
+| Inferencia | OOF rep5_fold2_svm | 0.009951300 | 261 | 1 | completa | Total; eventos.jsonl línea 129 |
+| Búsqueda | rep5_fold2_svr_rbf | 8.639962400 | 1048 | 1 | completa | Total; eventos.jsonl línea 130 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold2_svr_rbf | 0.139116526 | 1048 | 1 | completa | Total; eventos.jsonl línea 131 |
+| Inferencia | OOF rep5_fold2_svr_rbf | 0.034858800 | 261 | 1 | completa | Total; eventos.jsonl línea 132 |
+| Búsqueda | rep5_fold3_svm | 5.058629400 | 1048 | 1 | completa | Total; eventos.jsonl línea 133 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold3_svm | 0.094505787 | 1048 | 1 | completa | Total; eventos.jsonl línea 134 |
+| Inferencia | OOF rep5_fold3_svm | 0.009329800 | 261 | 1 | completa | Total; eventos.jsonl línea 135 |
+| Búsqueda | rep5_fold3_svr_rbf | 8.719998600 | 1048 | 1 | completa | Total; eventos.jsonl línea 136 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold3_svr_rbf | 0.155417681 | 1048 | 1 | completa | Total; eventos.jsonl línea 137 |
+| Inferencia | OOF rep5_fold3_svr_rbf | 0.035234900 | 261 | 1 | completa | Total; eventos.jsonl línea 138 |
+| Búsqueda | rep5_fold4_svm | 5.110064100 | 1047 | 1 | completa | Total; eventos.jsonl línea 139 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold4_svm | 0.219405413 | 1047 | 1 | completa | Total; eventos.jsonl línea 140 |
+| Inferencia | OOF rep5_fold4_svm | 0.012502200 | 262 | 1 | completa | Total; eventos.jsonl línea 141 |
+| Búsqueda | rep5_fold4_svr_rbf | 8.471845100 | 1047 | 1 | completa | Total; eventos.jsonl línea 142 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold4_svr_rbf | 0.149332285 | 1047 | 1 | completa | Total; eventos.jsonl línea 143 |
+| Inferencia | OOF rep5_fold4_svr_rbf | 0.032044900 | 262 | 1 | completa | Total; eventos.jsonl línea 144 |
+| Búsqueda | rep5_fold5_svm | 4.886495400 | 1046 | 1 | completa | Total; eventos.jsonl línea 145 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold5_svm | 0.103836775 | 1046 | 1 | completa | Total; eventos.jsonl línea 146 |
+| Inferencia | OOF rep5_fold5_svm | 0.010560600 | 263 | 1 | completa | Total; eventos.jsonl línea 147 |
+| Búsqueda | rep5_fold5_svr_rbf | 8.771805400 | 1046 | 1 | completa | Total; eventos.jsonl línea 148 |
+| Entrenamiento/refit (incluido en búsqueda) | rep5_fold5_svr_rbf | 0.154642105 | 1046 | 1 | completa | Total; eventos.jsonl línea 149 |
+| Inferencia | OOF rep5_fold5_svr_rbf | 0.081915200 | 263 | 1 | completa | Total; eventos.jsonl línea 150 |
+| Total del experimento | SVM lineal vs SVR RBF · CV agrupada repetida 5x5 | 365.238337200 | No aplica | 1 | completa | Total; eventos.jsonl línea 151 |
+
+### Ejecución `20261020_162639_15b924ed`
+
+- **Modelo/motivo:** Stacking convexo de modelos propios · evaluación.
+- **Fecha/zona:** 2026-10-20T16:26:39.987202-05:00 a 2026-10-20T16:26:40.264282-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_162639_15b924ed/metadata.json](tiempos/20261020_162639_15b924ed/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_162639_15b924ed/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Entrenamiento/refit | pesos fold 1 | 0.009697700 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | OOF fold 1 | 0.000224700 | 262 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Entrenamiento/refit | pesos fold 2 | 0.003047400 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | OOF fold 2 | 0.000127500 | 262 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Entrenamiento/refit | pesos fold 3 | 0.002277700 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | OOF fold 3 | 0.000162400 | 262 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Entrenamiento/refit | pesos fold 4 | 0.002667200 | 1047 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | OOF fold 4 | 0.000112300 | 262 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Entrenamiento/refit | pesos fold 5 | 0.002532400 | 1048 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | OOF fold 5 | 0.000121800 | 261 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Entrenamiento/refit | pesos final | 0.002507000 | 1309 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | test temporal | 0.000021500 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Total del experimento | Stacking convexo de modelos propios · evaluación | 0.274247400 | No aplica | 1 | completa | Total; eventos.jsonl línea 13 |
+
+### Ejecución `20261020_162827_d63194fc`
+
+- **Modelo/motivo:** Stacking convexo (ampliado) · evaluación.
+- **Fecha/zona:** 2026-10-20T16:28:27.984265-05:00 a 2026-10-20T16:28:28.308807-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_162827_d63194fc/metadata.json](tiempos/20261020_162827_d63194fc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_162827_d63194fc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Entrenamiento/refit | pesos fold 1 | 0.007358700 | 1047 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | OOF fold 1 | 0.000231300 | 262 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Entrenamiento/refit | pesos fold 2 | 0.006248200 | 1047 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | OOF fold 2 | 0.000142800 | 262 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Entrenamiento/refit | pesos fold 3 | 0.006157800 | 1047 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | OOF fold 3 | 0.000124400 | 262 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Entrenamiento/refit | pesos fold 4 | 0.008227800 | 1047 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | OOF fold 4 | 0.000316900 | 262 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Entrenamiento/refit | pesos fold 5 | 0.005972400 | 1048 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | OOF fold 5 | 0.000229400 | 261 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Entrenamiento/refit | pesos final | 0.006198800 | 1309 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | test temporal | 0.000046800 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Total del experimento | Stacking convexo (ampliado) · evaluación | 0.324702900 | No aplica | 1 | completa | Total; eventos.jsonl línea 13 |
+
+### Ejecución `20261020_164038_2189f94e`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:40:38.006103-05:00 a 2026-10-20T16:40:38.234817-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164038_2189f94e/metadata.json](tiempos/20261020_164038_2189f94e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164038_2189f94e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013683200 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014406600 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.130226400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000379100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.233606800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164049_77b43062`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:49.798138-05:00 a 2026-10-20T16:40:49.816172-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164049_77b43062/metadata.json](tiempos/20261020_164049_77b43062/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164049_77b43062/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.014011300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.019158200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164049_3cbe57bc`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:49.836894-05:00 a 2026-10-20T16:40:49.847525-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164049_3cbe57bc/metadata.json](tiempos/20261020_164049_3cbe57bc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164049_3cbe57bc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005962700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.011162500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164049_54e8e77e`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:49.858639-05:00 a 2026-10-20T16:40:49.867677-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164049_54e8e77e/metadata.json](tiempos/20261020_164049_54e8e77e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164049_54e8e77e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004185300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.008992200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164050_56d4e395`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:50.308931-05:00 a 2026-10-20T16:40:50.342934-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164050_56d4e395/metadata.json](tiempos/20261020_164050_56d4e395/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164050_56d4e395/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.027102700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.033301500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164050_1729360c`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:50.375610-05:00 a 2026-10-20T16:40:50.392520-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164050_1729360c/metadata.json](tiempos/20261020_164050_1729360c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164050_1729360c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009156600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.013202300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164050_98f9f8b9`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:50.409173-05:00 a 2026-10-20T16:40:50.416264-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164050_98f9f8b9/metadata.json](tiempos/20261020_164050_98f9f8b9/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164050_98f9f8b9/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003194900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.007196300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164056_c22f458b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:56.246193-05:00 a 2026-10-20T16:40:56.264364-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164056_c22f458b/metadata.json](tiempos/20261020_164056_c22f458b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164056_c22f458b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009786900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.018210100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164056_24a1e36f`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:56.295467-05:00 a 2026-10-20T16:40:56.314698-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164056_24a1e36f/metadata.json](tiempos/20261020_164056_24a1e36f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164056_24a1e36f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008704000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.018143500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164056_35b0fe47`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:56.332098-05:00 a 2026-10-20T16:40:56.350088-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164056_35b0fe47/metadata.json](tiempos/20261020_164056_35b0fe47/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164056_35b0fe47/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009635000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.017453600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164056_786abb34`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:56.366348-05:00 a 2026-10-20T16:40:56.390268-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164056_786abb34/metadata.json](tiempos/20261020_164056_786abb34/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164056_786abb34/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012142700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.022815500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164056_410eb395`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:40:56.406912-05:00 a 2026-10-20T16:40:56.427898-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164056_410eb395/metadata.json](tiempos/20261020_164056_410eb395/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164056_410eb395/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010114100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.020148300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164127_32a6ca6c`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:41:27.403468-05:00 a 2026-10-20T16:41:27.637093-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164127_32a6ca6c/metadata.json](tiempos/20261020_164127_32a6ca6c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164127_32a6ca6c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013729500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014848900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.130845800 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000279100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.241294600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164139_5a7bc734`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.077803-05:00 a 2026-10-20T16:41:39.079357-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_5a7bc734/metadata.json](tiempos/20261020_164139_5a7bc734/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_5a7bc734/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010221400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014806000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164139_7c2ff1c9`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.109551-05:00 a 2026-10-20T16:41:39.123809-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_7c2ff1c9/metadata.json](tiempos/20261020_164139_7c2ff1c9/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_7c2ff1c9/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006084400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013629400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164139_1e7c6b30`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.131690-05:00 a 2026-10-20T16:41:39.147214-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_1e7c6b30/metadata.json](tiempos/20261020_164139_1e7c6b30/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_1e7c6b30/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004825600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.009478700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164139_cc89452f`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.331119-05:00 a 2026-10-20T16:41:39.365431-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_cc89452f/metadata.json](tiempos/20261020_164139_cc89452f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_cc89452f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.024450200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.031214700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164139_a42ea4b7`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.410854-05:00 a 2026-10-20T16:41:39.426153-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_a42ea4b7/metadata.json](tiempos/20261020_164139_a42ea4b7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_a42ea4b7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009667800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.015231800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164139_5d341219`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:39.435297-05:00 a 2026-10-20T16:41:39.453558-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164139_5d341219/metadata.json](tiempos/20261020_164139_5d341219/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164139_5d341219/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004137400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010400700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164143_9a8fc8a8`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:43.623349-05:00 a 2026-10-20T16:41:43.641313-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164143_9a8fc8a8/metadata.json](tiempos/20261020_164143_9a8fc8a8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164143_9a8fc8a8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006007000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.013474200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164143_09ff7cc3`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:43.649544-05:00 a 2026-10-20T16:41:43.673489-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164143_09ff7cc3/metadata.json](tiempos/20261020_164143_09ff7cc3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164143_09ff7cc3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005935200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011379300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164143_61a3ad7a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:43.682991-05:00 a 2026-10-20T16:41:43.688051-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164143_61a3ad7a/metadata.json](tiempos/20261020_164143_61a3ad7a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164143_61a3ad7a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004239500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008609500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164143_619c669b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:43.699130-05:00 a 2026-10-20T16:41:43.705860-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164143_619c669b/metadata.json](tiempos/20261020_164143_619c669b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164143_619c669b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006040200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010441300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164143_9ae336d1`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:41:43.715833-05:00 a 2026-10-20T16:41:43.724946-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164143_9ae336d1/metadata.json](tiempos/20261020_164143_9ae336d1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164143_9ae336d1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005549500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011199600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164157_45177257`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:41:57.329103-05:00 a 2026-10-20T16:41:57.559472-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164157_45177257/metadata.json](tiempos/20261020_164157_45177257/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164157_45177257/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014332700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014576100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.127673800 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000451700 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.230945800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164211_60e43303`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:42:11.777722-05:00 a 2026-10-20T16:42:12.003859-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164211_60e43303/metadata.json](tiempos/20261020_164211_60e43303/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164211_60e43303/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013721300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014393900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.128868000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000221700 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.232955300 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164224_9f052e3c`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.051950-05:00 a 2026-10-20T16:42:24.079604-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_9f052e3c/metadata.json](tiempos/20261020_164224_9f052e3c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_9f052e3c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012312100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.018230800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164224_be83642a`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.093701-05:00 a 2026-10-20T16:42:24.110581-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_be83642a/metadata.json](tiempos/20261020_164224_be83642a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_be83642a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006512600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013597000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164224_0d271010`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.125105-05:00 a 2026-10-20T16:42:24.135879-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_0d271010/metadata.json](tiempos/20261020_164224_0d271010/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_0d271010/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005266900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.011526600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164224_0098b9bc`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.338551-05:00 a 2026-10-20T16:42:24.371886-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_0098b9bc/metadata.json](tiempos/20261020_164224_0098b9bc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_0098b9bc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.024126700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.031835900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164224_8af3f817`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.401466-05:00 a 2026-10-20T16:42:24.425913-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_8af3f817/metadata.json](tiempos/20261020_164224_8af3f817/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_8af3f817/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010229500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.014838000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164224_7bf2459a`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:24.443565-05:00 a 2026-10-20T16:42:24.452719-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164224_7bf2459a/metadata.json](tiempos/20261020_164224_7bf2459a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164224_7bf2459a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003639500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008162600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164228_09cf4070`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:28.885294-05:00 a 2026-10-20T16:42:28.898829-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164228_09cf4070/metadata.json](tiempos/20261020_164228_09cf4070/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164228_09cf4070/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004867500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009371800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164228_90a43df4`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:28.916644-05:00 a 2026-10-20T16:42:28.926016-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164228_90a43df4/metadata.json](tiempos/20261020_164228_90a43df4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164228_90a43df4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006026800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011233700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164228_00ca6413`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:28.933455-05:00 a 2026-10-20T16:42:28.946280-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164228_00ca6413/metadata.json](tiempos/20261020_164228_00ca6413/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164228_00ca6413/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005112500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009434700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164228_7923acc4`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:28.956073-05:00 a 2026-10-20T16:42:28.966801-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164228_7923acc4/metadata.json](tiempos/20261020_164228_7923acc4/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164228_7923acc4/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005095100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010075600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164228_725c9964`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:42:28.974928-05:00 a 2026-10-20T16:42:28.985100-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164228_725c9964/metadata.json](tiempos/20261020_164228_725c9964/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164228_725c9964/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005713700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010958800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164637_075eff3e`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T16:46:37.369535-05:00 a 2026-10-20T16:46:42.421011-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164637_075eff3e/metadata.json](tiempos/20261020_164637_075eff3e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164637_075eff3e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.079946500 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.754406200 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test y pares) | 2.002867800 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 5.051636000 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_164702_283d8970`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:47:02.097545-05:00 a 2026-10-20T16:47:02.325197-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164702_283d8970/metadata.json](tiempos/20261020_164702_283d8970/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164702_283d8970/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.011751500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014101200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.123927500 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000226300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229344900 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164711_1685312d`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T16:47:11.359534-05:00 a 2026-10-20T16:47:16.098490-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164711_1685312d/metadata.json](tiempos/20261020_164711_1685312d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164711_1685312d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.074560200 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.708487000 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test y pares) | 1.826856000 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 4.739697700 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_164722_6cb2fa53`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:47:22.384904-05:00 a 2026-10-20T16:47:22.613310-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164722_6cb2fa53/metadata.json](tiempos/20261020_164722_6cb2fa53/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164722_6cb2fa53/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012569400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014180800 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.126805300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000358800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.233936800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164733_266520ef`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:47:33.860941-05:00 a 2026-10-20T16:47:34.086824-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164733_266520ef/metadata.json](tiempos/20261020_164733_266520ef/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164733_266520ef/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012097400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015505100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.129830900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000320100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.229143800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164738_bef17932`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:47:38.629645-05:00 a 2026-10-20T16:47:38.864990-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164738_bef17932/metadata.json](tiempos/20261020_164738_bef17932/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164738_bef17932/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012324000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014265500 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.128450000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000335000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.237403400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164749_79189fe1`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:49.965191-05:00 a 2026-10-20T16:47:49.968224-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164749_79189fe1/metadata.json](tiempos/20261020_164749_79189fe1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164749_79189fe1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010066000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014337200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164749_d948d633`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:49.994712-05:00 a 2026-10-20T16:47:50.012105-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164749_d948d633/metadata.json](tiempos/20261020_164749_d948d633/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164749_d948d633/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006070700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013329700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164750_85b812c3`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:50.027861-05:00 a 2026-10-20T16:47:50.039538-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164750_85b812c3/metadata.json](tiempos/20261020_164750_85b812c3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164750_85b812c3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005331600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.011163100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164750_ce717cc3`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:50.223438-05:00 a 2026-10-20T16:47:50.265411-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164750_ce717cc3/metadata.json](tiempos/20261020_164750_ce717cc3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164750_ce717cc3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023615300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.032040600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164750_060e16f7`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:50.303203-05:00 a 2026-10-20T16:47:50.309365-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164750_060e16f7/metadata.json](tiempos/20261020_164750_060e16f7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164750_060e16f7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008266400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.012659400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164750_11992afb`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:50.334540-05:00 a 2026-10-20T16:47:50.338414-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164750_11992afb/metadata.json](tiempos/20261020_164750_11992afb/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164750_11992afb/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003800000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008568500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164754_fa416c35`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:54.576081-05:00 a 2026-10-20T16:47:54.586505-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164754_fa416c35/metadata.json](tiempos/20261020_164754_fa416c35/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164754_fa416c35/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005678300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011774000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164754_bd3c31ed`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:54.594584-05:00 a 2026-10-20T16:47:54.612285-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164754_bd3c31ed/metadata.json](tiempos/20261020_164754_bd3c31ed/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164754_bd3c31ed/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004245700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009394400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164754_d76ac897`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:54.619858-05:00 a 2026-10-20T16:47:54.629625-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164754_d76ac897/metadata.json](tiempos/20261020_164754_d76ac897/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164754_d76ac897/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004228200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.008423500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164754_0444f3e1`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:54.635641-05:00 a 2026-10-20T16:47:54.645288-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164754_0444f3e1/metadata.json](tiempos/20261020_164754_0444f3e1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164754_0444f3e1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004725400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009090300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164754_ea625005`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:47:54.654351-05:00 a 2026-10-20T16:47:54.663472-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164754_ea625005/metadata.json](tiempos/20261020_164754_ea625005/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164754_ea625005/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005087300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009837500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164806_bf5aa4fb`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:48:06.484608-05:00 a 2026-10-20T16:48:06.705386-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164806_bf5aa4fb/metadata.json](tiempos/20261020_164806_bf5aa4fb/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164806_bf5aa4fb/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.011597700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.013968300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.125408800 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000331600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.223318700 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164815_056085a8`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:48:15.154373-05:00 a 2026-10-20T16:48:15.383236-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164815_056085a8/metadata.json](tiempos/20261020_164815_056085a8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164815_056085a8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012098500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014205200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.128913000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000236400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.230586500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_164826_faac452d`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:26.819401-05:00 a 2026-10-20T16:48:26.841017-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164826_faac452d/metadata.json](tiempos/20261020_164826_faac452d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164826_faac452d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010841500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.016895300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164826_497a1543`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:26.858131-05:00 a 2026-10-20T16:48:26.872354-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164826_497a1543/metadata.json](tiempos/20261020_164826_497a1543/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164826_497a1543/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006320700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013704900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164826_e90b61a1`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:26.892306-05:00 a 2026-10-20T16:48:26.894310-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164826_e90b61a1/metadata.json](tiempos/20261020_164826_e90b61a1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164826_e90b61a1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005458100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.010568600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164827_3debb935`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:27.100735-05:00 a 2026-10-20T16:48:27.119430-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164827_3debb935/metadata.json](tiempos/20261020_164827_3debb935/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164827_3debb935/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023246800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.029022500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164827_0a803954`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:27.164196-05:00 a 2026-10-20T16:48:27.180940-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164827_0a803954/metadata.json](tiempos/20261020_164827_0a803954/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164827_0a803954/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010641500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.015428100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164827_f955b29b`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:27.197030-05:00 a 2026-10-20T16:48:27.207778-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164827_f955b29b/metadata.json](tiempos/20261020_164827_f955b29b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164827_f955b29b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003548300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.008997700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164831_62996c70`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:31.665736-05:00 a 2026-10-20T16:48:31.675366-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164831_62996c70/metadata.json](tiempos/20261020_164831_62996c70/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164831_62996c70/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004908000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009363600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164831_b46067bd`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:31.693694-05:00 a 2026-10-20T16:48:31.693694-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164831_b46067bd/metadata.json](tiempos/20261020_164831_b46067bd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164831_b46067bd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005397400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010734200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164831_cad7585b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:31.707207-05:00 a 2026-10-20T16:48:31.723324-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164831_cad7585b/metadata.json](tiempos/20261020_164831_cad7585b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164831_cad7585b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004213200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009841100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164831_3c7e565a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:31.724838-05:00 a 2026-10-20T16:48:31.739268-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164831_3c7e565a/metadata.json](tiempos/20261020_164831_3c7e565a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164831_3c7e565a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005819300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010529100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164831_b3839c80`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:48:31.747572-05:00 a 2026-10-20T16:48:31.762293-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164831_b3839c80/metadata.json](tiempos/20261020_164831_b3839c80/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164831_b3839c80/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004975500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010670000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_164838_5b314160`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:48:38.409980-05:00 a 2026-10-20T16:48:38.641809-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_164838_5b314160/metadata.json](tiempos/20261020_164838_5b314160/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_164838_5b314160/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013830700 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014709200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.129498100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000320200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.231298000 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165158_3f8284cf`
+
+- **Modelo/motivo:** Comparación por estudiante · seis clásicos frente a SVM · test.
+- **Fecha/zona:** 2026-10-20T16:51:58.582263-05:00 a 2026-10-20T16:52:01.131081-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165158_3f8284cf/metadata.json](tiempos/20261020_165158_3f8284cf/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165158_3f8284cf/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Preparación estadística | Validación de partición y agregación privada | 0.022872100 | No aplica | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t, BCa y Holm6 | 0.898383000 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test) | 1.240071600 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Comparación por estudiante · seis clásicos frente a SVM · test | 2.546967600 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_165216_0c601305`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T16:52:16.407727-05:00 a 2026-10-20T16:52:20.468599-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165216_0c601305/metadata.json](tiempos/20261020_165216_0c601305/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165216_0c601305/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.069381600 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.571094000 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test y pares) | 1.229548800 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 4.054332000 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_165226_d74ddad7`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:52:26.549121-05:00 a 2026-10-20T16:52:26.797750-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165226_d74ddad7/metadata.json](tiempos/20261020_165226_d74ddad7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165226_d74ddad7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012938400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016012000 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.140550300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000320800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.247602500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165238_dd8cf08b`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.474325-05:00 a 2026-10-20T16:52:38.490920-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_dd8cf08b/metadata.json](tiempos/20261020_165238_dd8cf08b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_dd8cf08b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.011314200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.018503800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165238_31012934`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.513973-05:00 a 2026-10-20T16:52:38.524262-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_31012934/metadata.json](tiempos/20261020_165238_31012934/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_31012934/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004846500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.011327800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165238_99ce3851`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.540617-05:00 a 2026-10-20T16:52:38.548903-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_99ce3851/metadata.json](tiempos/20261020_165238_99ce3851/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_99ce3851/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006749700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.012535600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165238_f7b5b6d1`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.768171-05:00 a 2026-10-20T16:52:38.803270-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_f7b5b6d1/metadata.json](tiempos/20261020_165238_f7b5b6d1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_f7b5b6d1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023892000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.031497000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165238_998cf8ed`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.843001-05:00 a 2026-10-20T16:52:38.860465-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_998cf8ed/metadata.json](tiempos/20261020_165238_998cf8ed/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_998cf8ed/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010426100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.016489300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165238_aea39c09`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:38.877133-05:00 a 2026-10-20T16:52:38.883863-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165238_aea39c09/metadata.json](tiempos/20261020_165238_aea39c09/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165238_aea39c09/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004204600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.009736300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165243_0f009569`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:43.345140-05:00 a 2026-10-20T16:52:43.353283-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165243_0f009569/metadata.json](tiempos/20261020_165243_0f009569/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165243_0f009569/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006233600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011091800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165243_5a56d0ce`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:43.365080-05:00 a 2026-10-20T16:52:43.483434-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165243_5a56d0ce/metadata.json](tiempos/20261020_165243_5a56d0ce/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165243_5a56d0ce/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.112064500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.118108000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165243_62f96f4b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:43.494764-05:00 a 2026-10-20T16:52:43.502736-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165243_62f96f4b/metadata.json](tiempos/20261020_165243_62f96f4b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165243_62f96f4b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004129500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009716200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165243_ae5f5c51`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:43.515430-05:00 a 2026-10-20T16:52:43.515430-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165243_ae5f5c51/metadata.json](tiempos/20261020_165243_ae5f5c51/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165243_ae5f5c51/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004640400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009309900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165243_6ede4557`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:52:43.529012-05:00 a 2026-10-20T16:52:43.544744-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165243_6ede4557/metadata.json](tiempos/20261020_165243_6ede4557/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165243_6ede4557/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005001600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010026100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165254_dadd00a5`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:52:54.648542-05:00 a 2026-10-20T16:52:54.890207-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165254_dadd00a5/metadata.json](tiempos/20261020_165254_dadd00a5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165254_dadd00a5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012758000 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014899700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.129465100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000297100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.241897400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165306_00733704`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:06.870815-05:00 a 2026-10-20T16:53:06.885595-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165306_00733704/metadata.json](tiempos/20261020_165306_00733704/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165306_00733704/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010321900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.014586900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165306_13d7f35c`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:06.905315-05:00 a 2026-10-20T16:53:06.921559-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165306_13d7f35c/metadata.json](tiempos/20261020_165306_13d7f35c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165306_13d7f35c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.007726700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.015353400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165306_e1b1a416`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:06.933015-05:00 a 2026-10-20T16:53:06.950305-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165306_e1b1a416/metadata.json](tiempos/20261020_165306_e1b1a416/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165306_e1b1a416/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006557900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.014293900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165307_d0c057f0`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:07.178809-05:00 a 2026-10-20T16:53:07.213234-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165307_d0c057f0/metadata.json](tiempos/20261020_165307_d0c057f0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165307_d0c057f0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.026196000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.033364500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165307_2b42f8d8`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:07.252932-05:00 a 2026-10-20T16:53:07.270886-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165307_2b42f8d8/metadata.json](tiempos/20261020_165307_2b42f8d8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165307_2b42f8d8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012193900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.017788200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165307_798b236f`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:07.281080-05:00 a 2026-10-20T16:53:07.301933-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165307_798b236f/metadata.json](tiempos/20261020_165307_798b236f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165307_798b236f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.003450700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.009241700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165311_b9e8e6b9`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:11.928880-05:00 a 2026-10-20T16:53:11.937107-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165311_b9e8e6b9/metadata.json](tiempos/20261020_165311_b9e8e6b9/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165311_b9e8e6b9/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005519800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011365500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165311_29b8571b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:11.949391-05:00 a 2026-10-20T16:53:11.966113-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165311_29b8571b/metadata.json](tiempos/20261020_165311_29b8571b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165311_29b8571b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006144100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011086500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165311_c3f16d24`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:11.971014-05:00 a 2026-10-20T16:53:11.982891-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165311_c3f16d24/metadata.json](tiempos/20261020_165311_c3f16d24/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165311_c3f16d24/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004511600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010094400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165311_b9d0ab7c`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:11.990278-05:00 a 2026-10-20T16:53:12.003378-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165311_b9d0ab7c/metadata.json](tiempos/20261020_165311_b9d0ab7c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165311_b9d0ab7c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005194100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009774400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165312_7f477f3e`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:12.003378-05:00 a 2026-10-20T16:53:12.016546-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165312_7f477f3e/metadata.json](tiempos/20261020_165312_7f477f3e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165312_7f477f3e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004240600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009738000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165324_c776bca2`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:53:24.787829-05:00 a 2026-10-20T16:53:25.025510-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165324_c776bca2/metadata.json](tiempos/20261020_165324_c776bca2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165324_c776bca2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012677400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015306300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.129101000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000367300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.237895800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165337_092e5bac`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.040778-05:00 a 2026-10-20T16:53:37.057447-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_092e5bac/metadata.json](tiempos/20261020_165337_092e5bac/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_092e5bac/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.011265300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.016273100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165337_0f81ce83`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.075950-05:00 a 2026-10-20T16:53:37.090844-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_0f81ce83/metadata.json](tiempos/20261020_165337_0f81ce83/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_0f81ce83/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005527700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013876300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165337_0b1b685b`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.109076-05:00 a 2026-10-20T16:53:37.122937-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_0b1b685b/metadata.json](tiempos/20261020_165337_0b1b685b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_0b1b685b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005085800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.012947300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165337_786e8bc1`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.319624-05:00 a 2026-10-20T16:53:37.341521-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_786e8bc1/metadata.json](tiempos/20261020_165337_786e8bc1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_786e8bc1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.023171800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.029055700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165337_82a3fed7`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.391029-05:00 a 2026-10-20T16:53:37.408106-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_82a3fed7/metadata.json](tiempos/20261020_165337_82a3fed7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_82a3fed7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010240400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.015334000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165337_9e117616`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:37.428900-05:00 a 2026-10-20T16:53:37.440233-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165337_9e117616/metadata.json](tiempos/20261020_165337_9e117616/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165337_9e117616/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004095600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010146700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165341_9436363e`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:41.875531-05:00 a 2026-10-20T16:53:41.889282-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165341_9436363e/metadata.json](tiempos/20261020_165341_9436363e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165341_9436363e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006262900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.014062800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165341_8c2625e5`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:41.906501-05:00 a 2026-10-20T16:53:42.025385-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165341_8c2625e5/metadata.json](tiempos/20261020_165341_8c2625e5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165341_8c2625e5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.114939700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.120067100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165342_b3700c56`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:42.030567-05:00 a 2026-10-20T16:53:42.041262-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165342_b3700c56/metadata.json](tiempos/20261020_165342_b3700c56/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165342_b3700c56/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004952900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010315600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165342_a7885234`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:42.048184-05:00 a 2026-10-20T16:53:42.059142-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165342_a7885234/metadata.json](tiempos/20261020_165342_a7885234/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165342_a7885234/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004615000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009854600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165342_b70a8531`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T16:53:42.071736-05:00 a 2026-10-20T16:53:42.078180-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165342_b70a8531/metadata.json](tiempos/20261020_165342_b70a8531/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165342_b70a8531/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004370800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009658800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_165350_dbd15b7a`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:53:50.108510-05:00 a 2026-10-20T16:53:50.351355-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165350_dbd15b7a/metadata.json](tiempos/20261020_165350_dbd15b7a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165350_dbd15b7a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.013740600 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.014186900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.131559000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000322400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.242827800 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165805_25035065`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:58:05.209910-05:00 a 2026-10-20T16:58:05.493174-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165805_25035065/metadata.json](tiempos/20261020_165805_25035065/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165805_25035065/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016269500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017536000 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.167162000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000250600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.282075200 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165901_94ec0ae1`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:59:01.206659-05:00 a 2026-10-20T16:59:01.495937-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165901_94ec0ae1/metadata.json](tiempos/20261020_165901_94ec0ae1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165901_94ec0ae1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015681400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.019657100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.150674500 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000388800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.290495300 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_165917_9a268d9c`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T16:59:17.891840-05:00 a 2026-10-20T16:59:18.179164-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_165917_9a268d9c/metadata.json](tiempos/20261020_165917_9a268d9c/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_165917_9a268d9c/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016170400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.018373400 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.167093600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000544600 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.282134900 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_170607_4987e308`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:06:07.510635-05:00 a 2026-10-20T17:06:07.966400-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170607_4987e308/metadata.json](tiempos/20261020_170607_4987e308/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170607_4987e308/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.025423900 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.032065100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.260256600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000609200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.457616000 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_170622_7dedbc85`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:22.329219-05:00 a 2026-10-20T17:06:22.356546-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170622_7dedbc85/metadata.json](tiempos/20261020_170622_7dedbc85/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170622_7dedbc85/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.019810100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.026985200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170622_37e31dde`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:22.389443-05:00 a 2026-10-20T17:06:22.407769-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170622_37e31dde/metadata.json](tiempos/20261020_170622_37e31dde/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170622_37e31dde/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.009875700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.019509600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170622_46c7962d`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:22.437519-05:00 a 2026-10-20T17:06:22.458776-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170622_46c7962d/metadata.json](tiempos/20261020_170622_46c7962d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170622_46c7962d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008619200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.017138700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170622_60bb7009`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:22.827125-05:00 a 2026-10-20T17:06:22.886158-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170622_60bb7009/metadata.json](tiempos/20261020_170622_60bb7009/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170622_60bb7009/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.048407200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.059450400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170622_aec586b7`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:22.961963-05:00 a 2026-10-20T17:06:22.987817-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170622_aec586b7/metadata.json](tiempos/20261020_170622_aec586b7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170622_aec586b7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.018392200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.026761000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170623_2ea80657`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:23.020244-05:00 a 2026-10-20T17:06:23.028472-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170623_2ea80657/metadata.json](tiempos/20261020_170623_2ea80657/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170623_2ea80657/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006541500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.014131600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170630_f27845f3`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:30.860491-05:00 a 2026-10-20T17:06:30.876755-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170630_f27845f3/metadata.json](tiempos/20261020_170630_f27845f3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170630_f27845f3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008659900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.016856500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170630_3e61d9a9`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:30.901666-05:00 a 2026-10-20T17:06:30.920884-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170630_3e61d9a9/metadata.json](tiempos/20261020_170630_3e61d9a9/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170630_3e61d9a9/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008141900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.016361400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170630_be5f621a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:30.936314-05:00 a 2026-10-20T17:06:30.951700-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170630_be5f621a/metadata.json](tiempos/20261020_170630_be5f621a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170630_be5f621a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008560900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.015636000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170630_f06599e1`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:30.959541-05:00 a 2026-10-20T17:06:30.981644-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170630_f06599e1/metadata.json](tiempos/20261020_170630_f06599e1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170630_f06599e1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008070700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.016537000 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170630_7d3f9cc3`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:06:30.997618-05:00 a 2026-10-20T17:06:31.009138-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170630_7d3f9cc3/metadata.json](tiempos/20261020_170630_7d3f9cc3/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170630_7d3f9cc3/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.008530600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.015936500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_170651_6f7d3e8a`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:06:51.462245-05:00 a 2026-10-20T17:06:51.913053-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170651_6f7d3e8a/metadata.json](tiempos/20261020_170651_6f7d3e8a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170651_6f7d3e8a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.027282500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.029696300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.257426100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000382100 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.449747500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_170718_0fc549b1`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:07:18.661768-05:00 a 2026-10-20T17:07:19.122881-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170718_0fc549b1/metadata.json](tiempos/20261020_170718_0fc549b1/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170718_0fc549b1/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.028254300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.037412700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.264166700 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000490300 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.460236400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_170738_e6e9cf51`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:07:38.233663-05:00 a 2026-10-20T17:07:38.536340-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_170738_e6e9cf51/metadata.json](tiempos/20261020_170738_e6e9cf51/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_170738_e6e9cf51/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015184600 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017258300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.176908600 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000373200 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.301499500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_171021_44a0b1c2`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T17:10:21.052185-05:00 a 2026-10-20T17:10:25.225305-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171021_44a0b1c2/metadata.json](tiempos/20261020_171021_44a0b1c2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171021_44a0b1c2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.098760000 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.661739100 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test y pares) | 1.083161500 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 4.177844900 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_171032_60e9b62a`
+
+- **Modelo/motivo:** Comparación por estudiante · seis clásicos frente a SVM · test.
+- **Fecha/zona:** 2026-10-20T17:10:32.181617-05:00 a 2026-10-20T17:10:34.738319-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171032_60e9b62a/metadata.json](tiempos/20261020_171032_60e9b62a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171032_60e9b62a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Preparación estadística | Validación de partición y agregación privada | 0.027933500 | No aplica | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t, BCa y Holm6 | 0.948384600 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test) | 1.123292700 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Comparación por estudiante · seis clásicos frente a SVM · test | 2.559246700 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_171046_2ceaac07`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:10:46.791187-05:00 a 2026-10-20T17:10:47.070685-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171046_2ceaac07/metadata.json](tiempos/20261020_171046_2ceaac07/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171046_2ceaac07/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.017353500 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016961500 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.156337100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000644000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.281697900 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_171056_3568fb37`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.017668-05:00 a 2026-10-20T17:10:56.035667-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_3568fb37/metadata.json](tiempos/20261020_171056_3568fb37/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_3568fb37/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012596400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.017679200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171056_4b025b2f`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.057504-05:00 a 2026-10-20T17:10:56.064049-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_4b025b2f/metadata.json](tiempos/20261020_171056_4b025b2f/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_4b025b2f/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006771100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.012554900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171056_dd25ba16`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.092118-05:00 a 2026-10-20T17:10:56.104836-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_dd25ba16/metadata.json](tiempos/20261020_171056_dd25ba16/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_dd25ba16/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006788000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.013713800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171056_372ad38b`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.323930-05:00 a 2026-10-20T17:10:56.361047-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_372ad38b/metadata.json](tiempos/20261020_171056_372ad38b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_372ad38b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.028839300 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.036144700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171056_9febc21e`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.397667-05:00 a 2026-10-20T17:10:56.415649-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_9febc21e/metadata.json](tiempos/20261020_171056_9febc21e/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_9febc21e/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.011146900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.015987400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171056_a155e51b`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:10:56.438267-05:00 a 2026-10-20T17:10:56.449992-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171056_a155e51b/metadata.json](tiempos/20261020_171056_a155e51b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171056_a155e51b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004086700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.011026500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171101_dd0485db`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:11:01.513418-05:00 a 2026-10-20T17:11:01.529340-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171101_dd0485db/metadata.json](tiempos/20261020_171101_dd0485db/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171101_dd0485db/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006852200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.013196700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171101_32d68f2a`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:11:01.545251-05:00 a 2026-10-20T17:11:01.559375-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171101_32d68f2a/metadata.json](tiempos/20261020_171101_32d68f2a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171101_32d68f2a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006026700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011002200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171101_61f1264d`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:11:01.566732-05:00 a 2026-10-20T17:11:01.576844-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171101_61f1264d/metadata.json](tiempos/20261020_171101_61f1264d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171101_61f1264d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006325100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011897400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171101_e04b438b`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:11:01.586461-05:00 a 2026-10-20T17:11:01.596138-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171101_e04b438b/metadata.json](tiempos/20261020_171101_e04b438b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171101_e04b438b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005198800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010709200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171101_2bd409ce`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:11:01.608782-05:00 a 2026-10-20T17:11:01.621410-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171101_2bd409ce/metadata.json](tiempos/20261020_171101_2bd409ce/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171101_2bd409ce/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006083700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011185700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_171117_2f62ee7d`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:11:17.330933-05:00 a 2026-10-20T17:11:17.614994-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171117_2f62ee7d/metadata.json](tiempos/20261020_171117_2f62ee7d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171117_2f62ee7d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015274100 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016960300 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.153039900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000587000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.282933200 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_171940_e9bc1a41`
+
+- **Modelo/motivo:** Originales · Friedman/MCS y contrastes por estudiante.
+- **Fecha/zona:** 2026-10-20T17:19:40.110086-05:00 a 2026-10-20T17:19:44.842250-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171940_e9bc1a41/metadata.json](tiempos/20261020_171940_e9bc1a41/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171940_e9bc1a41/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Análisis estadístico | Friedman/MCS Originales | 0.108398400 | 15 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t/BCa y Holm Originales | 1.866408200 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test y pares) | 1.324367200 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Originales · Friedman/MCS y contrastes por estudiante | 4.732183400 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_171951_71602af0`
+
+- **Modelo/motivo:** Comparación por estudiante · seis clásicos frente a SVM · test.
+- **Fecha/zona:** 2026-10-20T17:19:51.903469-05:00 a 2026-10-20T17:19:54.947317-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_171951_71602af0/metadata.json](tiempos/20261020_171951_71602af0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_171951_71602af0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Preparación estadística | Validación de partición y agregación privada | 0.038943600 | No aplica | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t, BCa y Holm6 | 1.157587800 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test) | 1.369955500 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Comparación por estudiante · seis clásicos frente a SVM · test | 3.043471500 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_172000_7e3ff774`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:20:00.003569-05:00 a 2026-10-20T17:20:00.290429-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172000_7e3ff774/metadata.json](tiempos/20261020_172000_7e3ff774/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172000_7e3ff774/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014285800 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.016997200 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.153254100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000673700 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.285325500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_172009_f0097771`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.331013-05:00 a 2026-10-20T17:20:09.352400-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_f0097771/metadata.json](tiempos/20261020_172009_f0097771/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_f0097771/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012937500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.018736100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172009_3c4341df`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.376202-05:00 a 2026-10-20T17:20:09.381930-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_3c4341df/metadata.json](tiempos/20261020_172009_3c4341df/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_3c4341df/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005901500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013301700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172009_f0336df7`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.407788-05:00 a 2026-10-20T17:20:09.420076-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_f0336df7/metadata.json](tiempos/20261020_172009_f0336df7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_f0336df7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005924900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.011844600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172009_e87bb0b7`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.639122-05:00 a 2026-10-20T17:20:09.679899-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_e87bb0b7/metadata.json](tiempos/20261020_172009_e87bb0b7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_e87bb0b7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.029722200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.036835500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172009_de3e9ebd`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.727169-05:00 a 2026-10-20T17:20:09.747613-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_de3e9ebd/metadata.json](tiempos/20261020_172009_de3e9ebd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_de3e9ebd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010075200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.016118500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172009_92669f58`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:09.766279-05:00 a 2026-10-20T17:20:09.775789-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172009_92669f58/metadata.json](tiempos/20261020_172009_92669f58/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172009_92669f58/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004287700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.010267900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172014_ae1fa9a8`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:14.952998-05:00 a 2026-10-20T17:20:14.963410-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172014_ae1fa9a8/metadata.json](tiempos/20261020_172014_ae1fa9a8/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172014_ae1fa9a8/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006070200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011071100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172014_f424042d`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:14.986963-05:00 a 2026-10-20T17:20:14.996993-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172014_f424042d/metadata.json](tiempos/20261020_172014_f424042d/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172014_f424042d/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005282600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010112800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172015_19707a89`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:15.001006-05:00 a 2026-10-20T17:20:15.014392-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172015_19707a89/metadata.json](tiempos/20261020_172015_19707a89/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172015_19707a89/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004902200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.009940900 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172015_c4f33210`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:15.022263-05:00 a 2026-10-20T17:20:15.036365-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172015_c4f33210/metadata.json](tiempos/20261020_172015_c4f33210/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172015_c4f33210/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006231200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011181200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172015_e63fc4f6`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:20:15.036365-05:00 a 2026-10-20T17:20:15.058358-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172015_e63fc4f6/metadata.json](tiempos/20261020_172015_e63fc4f6/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172015_e63fc4f6/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005084000 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010488500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172027_26dc59b5`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:20:27.992196-05:00 a 2026-10-20T17:20:28.281178-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172027_26dc59b5/metadata.json](tiempos/20261020_172027_26dc59b5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172027_26dc59b5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.016320200 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017527100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.155457400 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000565500 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.289079500 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_172042_3b1a3b8a`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:20:42.786662-05:00 a 2026-10-20T17:20:43.075035-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172042_3b1a3b8a/metadata.json](tiempos/20261020_172042_3b1a3b8a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172042_3b1a3b8a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015396400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017713000 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.153760900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000466000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.281721400 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_172423_4591d453`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:24:23.564211-05:00 a 2026-10-20T17:24:23.988664-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172423_4591d453/metadata.json](tiempos/20261020_172423_4591d453/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172423_4591d453/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.024901300 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.029366700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.256607100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000432000 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.425575900 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_172521_0c8554ca`
+
+- **Modelo/motivo:** Comparación por estudiante · seis clásicos frente a SVM · test.
+- **Fecha/zona:** 2026-10-20T17:25:21.018871-05:00 a 2026-10-20T17:25:24.005667-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172521_0c8554ca/metadata.json](tiempos/20261020_172521_0c8554ca/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172521_0c8554ca/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Preparación estadística | Validación de partición y agregación privada | 0.030869000 | No aplica | 1 | completa | Total; eventos.jsonl línea 1 |
+| Análisis estadístico | Bootstrap-t, BCa y Holm6 | 1.048926400 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Análisis estadístico | Diebold–Mariano por estudiante top 5 MCS (CV, test) | 1.420146900 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Total del experimento | Comparación por estudiante · seis clásicos frente a SVM · test | 2.980258300 | No aplica | 1 | completa | Total; eventos.jsonl línea 4 |
+
+### Ejecución `20261020_172531_68045adc`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:25:31.622378-05:00 a 2026-10-20T17:25:31.906368-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172531_68045adc/metadata.json](tiempos/20261020_172531_68045adc/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172531_68045adc/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.015198400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017004700 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.151901000 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000627800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.284830600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261020_172540_0f2d0426`
+
+- **Modelo/motivo:** KNeighborsRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:40.981707-05:00 a 2026-10-20T17:25:40.997620-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172540_0f2d0426/metadata.json](tiempos/20261020_172540_0f2d0426/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172540_0f2d0426/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.012544400 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | KNeighborsRegressor · inferencia de aplicación | 0.017705100 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172541_faf14f68`
+
+- **Modelo/motivo:** Ridge · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:41.014488-05:00 a 2026-10-20T17:25:41.035033-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172541_faf14f68/metadata.json](tiempos/20261020_172541_faf14f68/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172541_faf14f68/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006579700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Ridge · inferencia de aplicación | 0.013432300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172541_a58f2794`
+
+- **Modelo/motivo:** Lasso · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:41.057259-05:00 a 2026-10-20T17:25:41.072526-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172541_a58f2794/metadata.json](tiempos/20261020_172541_a58f2794/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172541_a58f2794/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006369900 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | Lasso · inferencia de aplicación | 0.013899600 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172541_68af6eb7`
+
+- **Modelo/motivo:** RandomForestRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:41.303295-05:00 a 2026-10-20T17:25:41.333450-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172541_68af6eb7/metadata.json](tiempos/20261020_172541_68af6eb7/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172541_68af6eb7/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.028364700 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | RandomForestRegressor · inferencia de aplicación | 0.035289400 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172541_d2065c07`
+
+- **Modelo/motivo:** XGBRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:41.374321-05:00 a 2026-10-20T17:25:41.405608-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172541_d2065c07/metadata.json](tiempos/20261020_172541_d2065c07/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172541_d2065c07/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.010883200 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | XGBRegressor · inferencia de aplicación | 0.024930200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172541_f84544d0`
+
+- **Modelo/motivo:** DecisionTreeRegressor · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:41.430103-05:00 a 2026-10-20T17:25:41.441919-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172541_f84544d0/metadata.json](tiempos/20261020_172541_f84544d0/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172541_f84544d0/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.004092800 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | DecisionTreeRegressor · inferencia de aplicación | 0.012205500 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172546_c73f26ee`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:46.578321-05:00 a 2026-10-20T17:25:46.585702-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172546_c73f26ee/metadata.json](tiempos/20261020_172546_c73f26ee/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172546_c73f26ee/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.006008500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011150700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172546_c83bc003`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:46.609555-05:00 a 2026-10-20T17:25:46.622704-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172546_c83bc003/metadata.json](tiempos/20261020_172546_c83bc003/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172546_c83bc003/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005767600 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011639200 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172546_616f5dfd`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:46.634006-05:00 a 2026-10-20T17:25:46.634006-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172546_616f5dfd/metadata.json](tiempos/20261020_172546_616f5dfd/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172546_616f5dfd/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005281100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.011236300 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172546_92b1c896`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:46.649432-05:00 a 2026-10-20T17:25:46.665233-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172546_92b1c896/metadata.json](tiempos/20261020_172546_92b1c896/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172546_92b1c896/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005161500 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010220700 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172546_c35434ef`
+
+- **Modelo/motivo:** LinearSVR · inferencia de aplicación.
+- **Fecha/zona:** 2026-10-20T17:25:46.672043-05:00 a 2026-10-20T17:25:46.681237-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172546_c35434ef/metadata.json](tiempos/20261020_172546_c35434ef/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172546_c35434ef/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | aplicación | 0.005011100 | 1 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Total del experimento | LinearSVR · inferencia de aplicación | 0.010200800 | No aplica | 1 | completa | Total; eventos.jsonl línea 2 |
+
+### Ejecución `20261020_172559_3544b4d5`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-20T17:25:59.486882-05:00 a 2026-10-20T17:25:59.770944-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261020_172559_3544b4d5/metadata.json](tiempos/20261020_172559_3544b4d5/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261020_172559_3544b4d5/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.014918200 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.017380100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.152859900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000649800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.284746700 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |

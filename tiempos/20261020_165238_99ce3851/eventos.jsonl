@@ -1,0 +1,2 @@
+{"stage": "Inferencia", "batch": "aplicación", "seconds": 0.006749699998181313, "rows": 1, "status": "completa", "recorded": "2026-10-20T16:52:38.548903-05:00", "started": "2026-10-20T16:52:38.544893-05:00"}
+{"stage": "Total del experimento", "batch": "Lasso · inferencia de aplicación", "seconds": 0.012535599991679192, "rows": null, "status": "completa", "recorded": "2026-10-20T16:52:38.548903-05:00", "scope": "Medida directa; incluye E/S y validaciones; no sumar con las etapas"}

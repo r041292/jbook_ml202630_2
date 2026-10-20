@@ -105,10 +105,14 @@
     "resultados/e3/modelos_lineales.json": "764f3a3f4d103e442de405c3ae33ce34582317dfb39bf38531d32038de781cf4",
     "resultados/e3/resumen_completo/modelos.csv": "160ed8f74c049696fb89c604188759abf5b81e040db269210c99093a7c4dd6d9"
   },
-  "generator_sha256": "fe3d14e4ca23b6b396cc8d5393a7097d7a98f94b6d673a708b9477b87224c2a9",
+  "generator_sha256": "70720c29c0e0d457226ceb35c0c2a17d40e738f4724dc9809651d55e1d2f76bd",
   "references": [
     "https://doi.org/10.1023/A:1024068626366",
     "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html",
     "https://www.jmlr.org/papers/v5/grandvalet04a.html"
-  ]
+  ],
+  "regenerado": "2026-10-20T16:39:34.107728-05:00",
+  "regenerado_motivo": "Inferencia anterior (19-oct) usaba folds históricos; se recalcula con folds.csv de la ejecución activa, incluida la referencia SVM activa.",
+  "folds_activos_sha256": "2e41be4ac412b7f8f58813cfe8a157418a6f5c5583d72ccbe8be4e2f61edd3d8",
+  "archivo_anterior": "cv_inference_historico_20261019.csv"
 }

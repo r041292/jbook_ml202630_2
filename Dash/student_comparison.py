@@ -17,7 +17,8 @@ from model_timing import TimingRun, file_hash
 ARTIFACT = 'clasicos/comparacion_svm_bootstrap.json'
 REPS = 49999
 SEED = 20261018
-INPUTS = ('test.csv.gz', 'clasicos/test_predictions.csv.gz', 'clasicos/comparacion.json')
+INPUTS = ('test.csv.gz', 'train.csv.gz', 'clasicos/test_predictions.csv.gz', 'clasicos/train_predictions.csv.gz',
+          'clasicos/fold_metrics.csv', 'clasicos/comparacion.json')
 
 
 def student_losses(truth, predictions, groups):
@@ -156,7 +157,7 @@ def prepare(cache, book, active):
             expected_raw = report['source_sha256']['Data/Datos_Brutos.csv']
             if file_hash(book/'Data/Datos_Brutos.csv') != expected_raw:
                 raise ValueError('La fuente privada no corresponde a las predicciones guardadas.')
-            _, private_test, _ = load_partitions()
+            private_train, private_test, _ = load_partitions()
             test = pd.read_csv(cache/'test.csv.gz')
             pred = pd.read_csv(cache/'clasicos/test_predictions.csv.gz')
             pd.testing.assert_frame_equal(private_test[FEATURES+[TARGET, PERIOD]],
@@ -171,6 +172,28 @@ def prepare(cache, book, active):
             losses, sizes = student_losses(test[TARGET], pred[keys], private_test[GROUP])
         with run.measure('Análisis estadístico', 'Bootstrap-t, BCa y Holm6', len(losses)):
             result, draws = compare(losses, names)
+        # Etapa 3 vigente: Diebold–Mariano por estudiante, 5 primeros del MCS, comparaciones independientes.
+        from classic_friedman import friedman_comparison
+        from classic_posthoc import analyze as posthoc_analyze
+        from student_dm import select_top, analyze as dm_analyze, corrected_from_folds
+        folds = pd.read_csv(cache/'clasicos/fold_metrics.csv')
+        omnibus = friedman_comparison(folds, names)
+        mcs = posthoc_analyze(folds, names, omnibus)['mcs']
+        train_cache = pd.read_csv(cache/'train.csv.gz')
+        train_pred = pd.read_csv(cache/'clasicos/train_predictions.csv.gz')
+        np.testing.assert_allclose(private_train[TARGET].to_numpy(float), train_cache[TARGET].to_numpy(float), atol=1e-9)
+        np.testing.assert_array_equal(train_pred['fold'], train_cache['fold'])
+        by_fold = pd.DataFrame({'g': private_train[GROUP].to_numpy(), 'f': train_cache['fold'].to_numpy()})
+        total_students = by_fold.g.nunique()
+        ratio = float(np.mean([by_fold.loc[by_fold.f == f, 'g'].nunique() /
+                               (total_students - by_fold.loc[by_fold.f == f, 'g'].nunique())
+                               for f in sorted(by_fold.f.unique())]))
+        with run.measure('Análisis estadístico', 'Diebold–Mariano por estudiante top 5 MCS (CV, test)', len(private_train)):
+            dm = dm_analyze(select_top(mcs, 5), train_pred, pred, private_train[GROUP].to_numpy(),
+                            private_test[GROUP].to_numpy(), private_train[TARGET].to_numpy(float),
+                            private_test[TARGET].to_numpy(float), dict(zip(names, keys)), 'svm',
+                            corrected_from_folds(folds[folds.Modelo.isin(names)], 'SVM lineal', ratio))
+        result['dm'] = dm
         result.update(active_run=report.get('run_id'), analysis_run=run.run_id,
                       input_sha256=hashes, script_sha256=file_hash(__file__), n_records=len(test),
                       students_with_repeated_records=int((sizes > 1).sum()),
@@ -256,47 +279,9 @@ No se reelige familia, método o hiperparámetros con estos resultados.
 
 
 def section(result, ui):
-    md, table = ui['md'], ui['table']
-    rows = []
-    for r in result['rows']:
-        rows.append({'Modelo vs SVM': r['model'], 'Δ MSE': r['delta_mse'],
-                     'Δ RMSE (puntos)': r['delta_rmse'],
-                     'IC BCa95 ΔRMSE inferior': r['bca_rmse']['low'],
-                     'IC BCa95 ΔRMSE superior': r['bca_rmse']['high'],
-                     'p crudo': f'{r["p_raw"]:.6f}' if r['p_raw'] is not None else 'No estimable',
-                     'p Holm (6)': f'{r["p_holm"]:.6f}' if r['p_holm'] is not None else 'No estimable',
-                     'Conclusión exploratoria': r['conclusion']})
-    significant = [r for r in result['rows'] if r['p_holm'] is not None and r['p_holm'] < .05]
-    conclusion = ('Ninguna de las seis diferencias frente al SVM alcanza p Holm < 0.05. '
-                  'No se demuestra equivalencia entre modelos.' if not significant else
-                  'Diferencias con p Holm < 0.05: '+ '; '.join(r['model']+' · '+r['conclusion'].lower() for r in significant)+'.')
-    technical = pd.DataFrame([{'Modelo': r['model'], 'd_z MSE por estudiante': r['cohen_dz'],
-        'IC BCa95 ΔMSE inferior': r['bca_mse']['low'], 'IC BCa95 ΔMSE superior': r['bca_mse']['high'],
-        'Estado BCa ΔRMSE': r['bca_rmse']['state'], 'Estado BCa ΔMSE': r['bca_mse']['state'],
-        'Alerta de cola BCa': r['bca_rmse']['tail_warning'] or r['bca_mse']['tail_warning'],
-        'Error Monte Carlo p crudo': r['mc_se_raw'], 'Réplicas con SE cero': r['zero_se_resamples']}
-        for r in result['rows']])
-    return html.Div([
-        html.H4('Etapa 3 · Seis comparaciones frente al SVM · test por estudiante'),
-        md('**Análisis exploratorio posterior a revisión de test.** '
-           f'{result["n_records"]} registros, **{result["n_students"]} estudiantes** del periodo 202530; '
-           f'{result["students_with_repeated_records"]} estudiantes con varios registros. '
-           'Cada estudiante pesa igual. Se comparan los seis clásicos, sin filtrar por el MCS de CV.'),
-        md('**Negativo favorece al clásico; positivo favorece al SVM.** Contraste bilateral bootstrap-t '
-           'centrado bajo H₀ sobre ΔMSE, con 49.999 réplicas emparejadas; familia de seis p ajustada con Holm '
-           '(α = 0.05). Los IC BCa95 de ΔRMSE son individuales, no simultáneos. '
-           'No son pruebas DM-HLN ni una confirmación independiente de Friedman.'),
-        md('Tabla ordenada por **Δ MSE de menor a mayor**.'),
-        table(pd.DataFrame(rows).sort_values('Δ MSE', kind='stable')), md('**Conclusión:** '+conclusion),
-        md('**Cómo conciliar los resultados:** un IC BCa individual puede excluir cero y el p Holm '
-           'no ser significativo. BCa y bootstrap-t son aproximaciones diferentes; además, el IC95 '
-           'no ajusta las seis comparaciones. La decisión de la tabla utiliza exclusivamente p Holm < 0.05.'),
-        md('La inferencia supone independencia entre estudiantes, condicionada a los modelos finales y al periodo. '
-           'No incluye incertidumbre de reentrenamiento ni garantiza independencia entre clases/cohortes. '
-           'Estos resultados no modifican la selección de modelos ni permiten generalizar superioridad a otros periodos.'),
-        html.Details([html.Summary('Método, supuestos, intervalos y tamaños de efecto por estudiante'),
-                      table(technical), md(METHOD)], className='details'),
-    ], className='student-svm-comparison')
+    """Etapa 3 vigente de Clásicos: contraste tipo Diebold–Mariano por estudiante."""
+    from student_dm import render
+    return html.Div(render(result['dm'], ui, scope='Clásicos', mcs_label='Etapa 2'), className='student-svm-comparison')
 
 
 if __name__ == '__main__':

@@ -77,11 +77,11 @@ def validate():
     from dash import html
     student_layout = student_section(student, {'md': lambda value: html.Div(value),
         'table': lambda frame: tables.append(frame) or html.Div()})
-    assert tables[0]['Δ MSE'].is_monotonic_increasing
+    assert len(tables[0]) == 5 and 'p Holm' not in ' '.join(tables[0].columns)
     assert 'Etapa 3' in str(student_layout)
     comparison = app.app.callback_map['classic-comparison.children']['callback'].__wrapped__('__all__', '__all__', 'cv')
     text = str(comparison)
-    assert text.index('Seis comparaciones frente al SVM') < text.index('Tamaño del efecto · pérdidas MSE por fold')
+    assert text.index('Etapa 3 · Diebold–Mariano por estudiante') < text.index('Tamaño del efecto · pérdidas MSE por fold')
     shap = app.app.callback_map['classic-shap-result.children']['callback'].__wrapped__('__all__', '__all__', 'all')
     assert 'Caso 0124' in str(shap) and 'Caso 0118' in str(shap)
     if app.MODEL_REPORT.get('optimization'):

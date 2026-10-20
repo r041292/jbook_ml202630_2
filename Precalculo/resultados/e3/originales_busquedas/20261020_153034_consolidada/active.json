@@ -187,9 +187,9 @@
     "inventory.csv": "a69792df9ae12397ca004b0227f0439b493041a8dc651fdd8588f67836be9d50",
     "best.joblib": "b126fcf4510f3682a04cf2e711924882dd5a11f9683fc3da68deab064f25facb",
     "tn_krr.joblib": "7db928598dafb3f91f75528f7683ea2493fc1190556941082f79c337bee00312",
-    "cv_inference.csv": "7f008fcd8d8dc43344e273a1e48d6b7804689dc4fe17dc432ca6a925e35122a9",
-    "cv_inference.json": "9a1caddfd7ae5a97497ece24b448e7d13c2ab8c797fa884048c4c0bcedb7ae7a",
-    "analysis.json": "f41a6a05bd950df4d1166e649a7cc43ea62d12aa604b5db758c4ebbd135d55f3",
+    "cv_inference.csv": "5cca4658aad88e9495abe45eff91e7902e59de378f0724969cc0062c0dbaeedc",
+    "cv_inference.json": "8d9bf6dd01f4a74eca24a1c229e3599a25fd6b19e8a57db84a7ffe0a7c6666d1",
+    "analysis.json": "da999bcf22617905ca52f5b6d3c403a2ed601839718f4698710e2f625ced6109",
     "explanations.json": "c0c954b7504750c170ecfea075b6499c21b56c63a213a3addfe233ac43fc0322",
     "pendientes.json": "ebca4768e024d6ca9e300ffabfdaebd6a3e2d621875df1e2cc02c8fcbacb7aff",
     "historical_inventory.csv": "7797619b83a1df296181b49b38967d78a1015ffe0558f325023d9fabe6f28a8c"
