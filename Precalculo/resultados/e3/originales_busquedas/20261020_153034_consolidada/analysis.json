@@ -233,7 +233,105 @@
         "Posición MCS": 5
       }
     ],
-    "reference": "SVM lineal"
+    "reference": "SVM lineal",
+    "finalist_pairs": [
+      {
+        "a": "Kernel Ridge RBF",
+        "b": "GPR–XGBoost (OOF agrupado)",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.002979840843031132,
+        "se_cluster": 0.003023556322844379,
+        "z": -0.9855417015112449,
+        "p_raw": 0.32435805815664887,
+        "z_hln": -0.9851605211831165,
+        "p_hln": 0.324729678282385,
+        "delta_rmse": -0.0018559906327371145,
+        "ic_low": -0.005502077956376733,
+        "ic_high": 0.0018166022482664066,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "Kernel Ridge RBF",
+        "b": "Truncated Newton KRR RBF",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.007610532353056366,
+        "se_cluster": 0.0054448596747159956,
+        "z": -1.3977462795592308,
+        "p_raw": 0.1621892714209796,
+        "z_hln": -1.3972056698776054,
+        "p_hln": 0.1625916313650462,
+        "delta_rmse": -0.0047317365358954255,
+        "ic_low": -0.011849477141984782,
+        "ic_high": 0.0011784176264300827,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "Kernel Ridge RBF",
+        "b": "SVR RBF",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.010461714679803176,
+        "se_cluster": 0.005668383483727802,
+        "z": -1.8456257784667471,
+        "p_raw": 0.06494656083402389,
+        "z_hln": -1.8449119413569026,
+        "p_hln": 0.06527909937761171,
+        "delta_rmse": -0.006497285110370399,
+        "ic_low": -0.013365842520968391,
+        "ic_high": 0.0003793054819423383,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "GPR–XGBoost (OOF agrupado)",
+        "b": "Truncated Newton KRR RBF",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.004630691510025232,
+        "se_cluster": 0.00713717284066963,
+        "z": -0.648813138395394,
+        "p_raw": 0.5164591642125329,
+        "z_hln": -0.6485621953814066,
+        "p_hln": 0.5167366505017217,
+        "delta_rmse": -0.002875745903158311,
+        "ic_low": -0.012075475604045765,
+        "ic_high": 0.0051485424278349436,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "GPR–XGBoost (OOF agrupado)",
+        "b": "SVR RBF",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.007481873836772044,
+        "se_cluster": 0.006687259950017062,
+        "z": -1.1188250333760323,
+        "p_raw": 0.2632147898369259,
+        "z_hln": -1.1183923027339027,
+        "p_hln": 0.2636073789574123,
+        "delta_rmse": -0.004641294477633284,
+        "ic_low": -0.012716077069613812,
+        "ic_high": 0.003436217740048102,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "Truncated Newton KRR RBF",
+        "b": "SVR RBF",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.00285118232674681,
+        "se_cluster": 0.005913458455142933,
+        "z": -0.482151409090756,
+        "p_raw": 0.6296983920019794,
+        "z_hln": -0.4819649262336197,
+        "p_hln": 0.6299124929462104,
+        "delta_rmse": -0.0017655485744749733,
+        "ic_low": -0.009001535632435175,
+        "ic_high": 0.005264819557756012,
+        "conclusion": "Diferencia no significativa"
+      }
+    ]
   },
   "omnibus": {
     "statistic": 43.471050750536094,
@@ -507,54 +605,42 @@
       "Modelo B": "GPR–XGBoost (OOF agrupado)",
       "Δ MSE (A − B)": -0.002986439318489831,
       "IC 95% inferior · folds": -0.009126562818258433,
-      "IC 95% superior · folds": 0.003153684181278771,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.003153684181278771
     },
     {
       "Modelo A": "Kernel Ridge RBF",
       "Modelo B": "Truncated Newton KRR RBF",
       "Δ MSE (A − B)": -0.007609262940739314,
       "IC 95% inferior · folds": -0.020434561516843065,
-      "IC 95% superior · folds": 0.004103207778129803,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.004103207778129803
     },
     {
       "Modelo A": "Kernel Ridge RBF",
       "Modelo B": "SVR RBF",
       "Δ MSE (A − B)": -0.010442334662858465,
       "IC 95% inferior · folds": -0.02371693015777676,
-      "IC 95% superior · folds": 0.003916461817513306,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.003916461817513306
     },
     {
       "Modelo A": "GPR–XGBoost (OOF agrupado)",
       "Modelo B": "Truncated Newton KRR RBF",
       "Δ MSE (A − B)": -0.004622823622249484,
       "IC 95% inferior · folds": -0.01966436470749051,
-      "IC 95% superior · folds": 0.012412172209103267,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.012412172209103267
     },
     {
       "Modelo A": "GPR–XGBoost (OOF agrupado)",
       "Modelo B": "SVR RBF",
       "Δ MSE (A − B)": -0.007455895344368635,
       "IC 95% inferior · folds": -0.020884068306513414,
-      "IC 95% superior · folds": 0.009889644370642391,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.009889644370642391
     },
     {
       "Modelo A": "Truncated Newton KRR RBF",
       "Modelo B": "SVR RBF",
       "Δ MSE (A − B)": -0.0028330717221191513,
       "IC 95% inferior · folds": -0.021097031590557046,
-      "IC 95% superior · folds": 0.012216411534490535,
-      "p-valor crudo DM-HLN": "No aplicable",
-      "p-valor ajustado Holm": "No aplicable"
+      "IC 95% superior · folds": 0.012216411534490535
     }
   ],
   "effects": [
@@ -1913,7 +1999,7 @@
     "XBART (GFR)",
     "coPILOT"
   ],
-  "analysis_run": "20261020_171940_e9bc1a41",
+  "analysis_run": "20261020_174028_5ff56a2e",
   "input_sha256": {
     "catalog.json": "5939607d23822dbd0b7f3305a3bc110f816a88d70e49569ccaea0b8be4d0d451",
     "folds.csv": "2e41be4ac412b7f8f58813cfe8a157418a6f5c5583d72ccbe8be4e2f61edd3d8",

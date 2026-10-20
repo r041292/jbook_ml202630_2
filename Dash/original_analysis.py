@@ -12,6 +12,7 @@ from student_comparison import compare, student_losses
 from model_timing import TimingRun, file_hash
 from model_groups import IMPORT_ONLY, validate as validate_groups
 from student_dm import select_top, analyze as dm_analyze, render as render_dm
+from student_dm import ADAPTATION_NOTE, finalist_pairs, pairs_table, pairs_reading
 
 
 def prepare(directory, cache, book):
@@ -68,6 +69,8 @@ def prepare(directory, cache, book):
         with run.measure('Análisis estadístico','Diebold–Mariano por estudiante top 5 MCS (CV, test y pares)',len(train_private)):
             dm=dm_analyze(top,pred['train'],pred['test'],train_private[GROUP].to_numpy(),private[GROUP].to_numpy(),
                           train_private[TARGET].to_numpy(float),private[TARGET].to_numpy(float),name_key,'svm',corrected)
+        dm['finalist_pairs']=finalist_pairs(posthoc['pairs'],pred['train'],train_private[GROUP].to_numpy(),
+                                            train_private[TARGET].to_numpy(float),name_key)
         serialized={'dm':dm,'omnibus':{k:v for k,v in omnibus.items() if k!='ranking'},
             'ranking':omnibus['ranking'].to_dict('records'),
             'mcs':posthoc['mcs'].to_dict('records'),'pairs':posthoc['pairs'].to_dict('records'),
@@ -117,11 +120,14 @@ def section(data,ui):
            '**Adaptación exploratoria sin cobertura90% garantizada** por dependencia entre folds. '
            'Un p MCS no es probabilidad de ser el mejor; conservar varios modelos no demuestra equivalencia.'),
         table(pd.DataFrame(data['mcs'])) if data['mcs'] else md('MCS no ejecutado: no se rechaza Friedman.'),
-        html.Details([html.Summary('Finalistas e IC descriptivos por fold'),
-            md('ΔMSE=A−B; IC percentiles por folds, no estacionarios ni simultáneos. '
-               'Las versiones de series de tiempo (GW/CW, DM-HLN, IC estacionario) no aplican: no hay diseño de pronóstico, '
-               'horizonte ni anidamiento. La Etapa 3 usa un contraste tipo DM agrupado por estudiante. No se convierten filas/folds en tiempo.'),
-            table(pd.DataFrame(data['pairs']))],className='details'),
+        html.Details([html.Summary('Finalistas · IC por fold y DM-HLN adaptado por estudiante'),
+            md(ADAPTATION_NOTE),
+            md('ΔMSE=A−B; negativo favorece A. Las columnas «folds» son intervalos percentiles descriptivos, no estacionarios ni simultáneos. '
+               'Las columnas «por estudiante» y los p son el DM-HLN adaptado; cada par es una pregunta independiente, sin Holm ni '
+               'corrección por la selección del MCS. GW/CW y el IC estacionario no aplican: no hay diseño de pronóstico, horizonte ni anidamiento. '
+               'No se convierten filas/folds en tiempo.'),
+            table(pairs_table(pd.DataFrame(data['pairs']),dm.get('finalist_pairs',[])) if dm.get('finalist_pairs') else pd.DataFrame(data['pairs'])),
+            md(pairs_reading(dm.get('finalist_pairs',[])))],className='details'),
         *render_dm(dm,ui),
         html.H4('Tamaño del efecto · pérdidas MSE por fold'),
         md('Cliff marginal y Cohen d_z emparejado, negativos favorecen A; descriptores sobre cinco folds. '

@@ -175,10 +175,11 @@ def prepare(cache, book, active):
         # Etapa 3 vigente: Diebold–Mariano por estudiante, 5 primeros del MCS, comparaciones independientes.
         from classic_friedman import friedman_comparison
         from classic_posthoc import analyze as posthoc_analyze
-        from student_dm import select_top, analyze as dm_analyze, corrected_from_folds
+        from student_dm import select_top, analyze as dm_analyze, corrected_from_folds, finalist_pairs
         folds = pd.read_csv(cache/'clasicos/fold_metrics.csv')
         omnibus = friedman_comparison(folds, names)
-        mcs = posthoc_analyze(folds, names, omnibus)['mcs']
+        posthoc = posthoc_analyze(folds, names, omnibus)
+        mcs = posthoc['mcs']
         train_cache = pd.read_csv(cache/'train.csv.gz')
         train_pred = pd.read_csv(cache/'clasicos/train_predictions.csv.gz')
         np.testing.assert_allclose(private_train[TARGET].to_numpy(float), train_cache[TARGET].to_numpy(float), atol=1e-9)
@@ -193,6 +194,8 @@ def prepare(cache, book, active):
                             private_test[GROUP].to_numpy(), private_train[TARGET].to_numpy(float),
                             private_test[TARGET].to_numpy(float), dict(zip(names, keys)), 'svm',
                             corrected_from_folds(folds[folds.Modelo.isin(names)], 'SVM lineal', ratio))
+        dm['finalist_pairs'] = finalist_pairs(posthoc['pairs'], train_pred, private_train[GROUP].to_numpy(),
+                                              private_train[TARGET].to_numpy(float), dict(zip(names, keys)))
         result['dm'] = dm
         result.update(active_run=report.get('run_id'), analysis_run=run.run_id,
                       input_sha256=hashes, script_sha256=file_hash(__file__), n_records=len(test),

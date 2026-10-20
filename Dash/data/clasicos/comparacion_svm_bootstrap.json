@@ -426,10 +426,60 @@
         "Posición MCS": 5
       }
     ],
-    "reference": "SVM lineal"
+    "reference": "SVM lineal",
+    "finalist_pairs": [
+      {
+        "a": "XGBoost",
+        "b": "SVM lineal",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.014885910209346107,
+        "se_cluster": 0.01612774312048102,
+        "z": -0.9230002051832114,
+        "p_raw": 0.35600709830242394,
+        "z_hln": -0.9226432141796498,
+        "p_hln": 0.35636543017727723,
+        "delta_rmse": -0.009069189980266845,
+        "ic_low": -0.028993662996965753,
+        "ic_high": 0.009457633274636479,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "XGBoost",
+        "b": "Ridge",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.017127680851402084,
+        "se_cluster": 0.018488647396532498,
+        "z": -0.9263890691438217,
+        "p_raw": 0.3542438226553113,
+        "z_hln": -0.9260307674212165,
+        "p_hln": 0.3546029285172983,
+        "delta_rmse": -0.010426360042793625,
+        "ic_low": -0.03397777268739002,
+        "ic_high": 0.009792144991491301,
+        "conclusion": "Diferencia no significativa"
+      },
+      {
+        "a": "SVM lineal",
+        "b": "Ridge",
+        "n_students": 1293,
+        "n_records": 1309,
+        "delta_mse": -0.002241770642055977,
+        "se_cluster": 0.007001870826352872,
+        "z": -0.3201673806404207,
+        "p_raw": 0.7488414492075668,
+        "z_hln": -0.32004354873455476,
+        "p_hln": 0.7489870656795106,
+        "delta_rmse": -0.0013571700625267802,
+        "ic_low": -0.009579452528435107,
+        "ic_high": 0.006412682118640694,
+        "conclusion": "Diferencia no significativa"
+      }
+    ]
   },
   "active_run": "20261018_102325_af643f83",
-  "analysis_run": "20261020_172521_0c8554ca",
+  "analysis_run": "20261020_174019_a2ab1f6f",
   "input_sha256": {
     "test.csv.gz": "9d88f0fe5bbd523c66e0d17a134f3b7e79136497ec2c4435c86e14aa3497ce97",
     "train.csv.gz": "f92b6509e31acd3dcd410146e49e74dbcee7d2994ebf6e8be3e539b24284c8e1",
@@ -438,7 +488,7 @@
     "clasicos/fold_metrics.csv": "b2784f2b33fa0c6672f0d316221d552728b387c825a0e5387e39ab036289206b",
     "clasicos/comparacion.json": "0c1980f7ed7331547f64bbcd31536cee19a24f8bcab7e253a276b065affe10d6"
   },
-  "script_sha256": "6af8286b94759773637ec4d2a18001d50fd2ff744092b795ad7f2db96595433c",
+  "script_sha256": "034ba9a134c8e81dbc743785bba0273bdd243bea6450cef61fa246c7fc27b41d",
   "n_records": 188,
   "students_with_repeated_records": 0,
   "max_records_per_student": 1,

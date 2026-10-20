@@ -208,3 +208,62 @@ def corrected_from_folds(folds, reference, ratio):
         rows[name] = {'p_bilateral': float(2 * stats.t.sf(abs(d.mean() / se), len(d) - 1)) if se > 0 else np.nan,
                       'SE_corregido': float(se)}
     return pd.DataFrame.from_dict(rows, orient='index').rename_axis('Modelo')
+
+
+ADAPTATION_NOTE = (
+    '**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano, con la corrección de Harvey, '
+    'Leybourne y Newbold (HLN), se diseñó para series de tiempo: compara los errores de dos pronósticos hechos en fechas sucesivas, con un '
+    'horizonte h, y corrige la dependencia entre fechas vecinas (varianza HAC). Aquí no hay secuencia de pronósticos ni horizonte: el '
+    'índice de fold y el orden de las filas no son tiempo, y cinco folds darían solo cinco observaciones con entrenamientos solapados. '
+    'Lo que sí existe es otra dependencia: un mismo estudiante aparece en varios periodos y sus errores se parecen. Se conserva entonces la idea '
+    'central (probar que la pérdida media de A y B es la misma) y se **adapta** así: '
+    '(1) la observación es el **estudiante**, no la fecha; '
+    '(2) el error estándar es **robusto por estudiante** (cluster) en lugar de HAC; '
+    '(3) la corrección HLN se aplica con **h = 1**: el estadístico se multiplica por √((G−1)/G) y se compara con una t de Student de G−1 grados de libertad, '
+    'sin horizonte de varios pasos porque no hay pronósticos solapados; '
+    '(4) las pérdidas son las **predicciones fuera de muestra de la validación cruzada** (cada nota la predice un modelo que no vio al estudiante); '
+    '(5) el IC95 se obtiene **remuestreando estudiantes** y no con bootstrap estacionario. '
+    'Cada par se contrasta de forma independiente y **sin ajuste de Holm**. Es una adaptación exploratoria: no incluye la variabilidad de reentrenar '
+    'con otros estudiantes y los finalistas se eligieron con esta misma validación.')
+
+
+def finalist_pairs(fold_pairs, oof, groups, y, name_key):
+    """DM-HLN adaptado para cada par (A, B) de finalistas; diferencia = pérdida A − pérdida B."""
+    def loss(name):
+        return (np.asarray(oof[name_key[name]], float) - np.asarray(y, float)) ** 2
+    rows = []
+    for a, b in zip(fold_pairs['Modelo A'], fold_pairs['Modelo B']):
+        row = {'a': a, 'b': b, **clustered_test(loss(b), loss(a), groups)}
+        row['conclusion'] = conclusion(row)
+        rows.append(row)
+    return rows
+
+
+def pairs_table(fold_pairs, dm_pairs):
+    """Une los IC descriptivos por folds con el DM-HLN adaptado por estudiante."""
+    fmt = lambda v: 'No estimable' if v is None else f'{v:.6f}'
+    rows = []
+    for _, f in fold_pairs.iterrows():
+        d = next((r for r in dm_pairs if r['a'] == f['Modelo A'] and r['b'] == f['Modelo B']), None)
+        rows.append({'Modelo A': f['Modelo A'], 'Modelo B': f['Modelo B'], 'Δ MSE (A − B)': f['Δ MSE (A − B)'],
+                     'IC 95% inferior · folds': f['IC 95% inferior · folds'],
+                     'IC 95% superior · folds': f['IC 95% superior · folds'],
+                     'Δ RMSE (A − B) · por estudiante': None if d is None else d['delta_rmse'],
+                     'IC 95% inferior · estudiantes': None if d is None else d['ic_low'],
+                     'IC 95% superior · estudiantes': None if d is None else d['ic_high'],
+                     'p-valor crudo DM adaptado': 'No estimable' if d is None else fmt(d['p_raw']),
+                     'p-valor con corrección HLN': 'No estimable' if d is None else fmt(d['p_hln']),
+                     'Conclusión (p crudo < 0.05)': 'No estimable' if d is None else d['conclusion']})
+    return pd.DataFrame(rows)
+
+
+def pairs_reading(dm_pairs, alpha=.05):
+    significant = [r for r in dm_pairs if r['p_raw'] is not None and r['p_raw'] < alpha]
+    if not dm_pairs:
+        return ''
+    if not significant:
+        return (f'**Lectura:** ninguno de los {len(dm_pairs)} pares de finalistas difiere significativamente (p crudo < 0.05). '
+                'Esto no demuestra que sean equivalentes: indica que los datos no permiten distinguirlos.')
+    return ('**Lectura:** difieren significativamente (p crudo < 0.05) ' +
+            '; '.join(f"{r['a']} frente a {r['b']} (Δ RMSE {r['delta_rmse']:+.4f})" for r in significant) +
+            f'. Los otros {len(dm_pairs) - len(significant)} pares no se distinguen.')

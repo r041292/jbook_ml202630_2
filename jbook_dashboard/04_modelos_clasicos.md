@@ -12,7 +12,7 @@ El capítulo se organiza en cinco bloques:
 1. **Introducción:** qué modelos se implementaron, qué idea los sostiene y qué comparten con el SVM.
 2. **Optimización de hiperparámetros:** las cinco estrategias de búsqueda, la justificación de los rangos, los resultados, el presupuesto computacional, los tiempos y la convergencia.
 3. **Evaluación de modelos:** RMSE y MAE en entrenamiento, validación y prueba, diagnósticos de White y BDS, análisis de residuos, interpretabilidad SHAP y comparación con LIME, y robustez frente a folds y semillas.
-4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi y Model Confidence Set), contraste por estudiante de los cinco primeros del MCS frente al SVM y tamaños de efecto.
+4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi, Model Confidence Set y DM-HLN adaptado entre finalistas), contraste por estudiante de los cinco primeros del MCS frente al SVM y tamaños de efecto.
 5. **Resultados finales y conclusiones.**
 
 Todas las cifras provienen de la ejecución activa `20261018_102325_af643f83` (`Precalculo/resultados/e3/busquedas/`), la misma que alimenta el dashboard. Las tablas y figuras nuevas se regeneran con `jbook_dashboard/analisis_clasicos/generar_clasicos.py` y la sensibilidad a semillas con `experimentos_semillas.py`; ninguno de los dos reentrena los modelos canónicos ni consulta el test para elegir parámetros.
@@ -841,15 +841,29 @@ El dashboard usa el **Model Confidence Set** de Hansen, Lunde y Nason: en lugar 
 
 El conjunto exploratorio conserva **XGBoost, SVM lineal y Ridge**. Que Random Forest salga antes que Lasso pese a un MSE medio similar se debe a que sus diferencias frente a los demás son más consistentes entre folds (menor error estándar). Este conjunto **no tiene cobertura del 90 % demostrada**: el remuestreo de cinco folds dependientes no corrige esa dependencia, y un p MCS no es la probabilidad de que un modelo sea el mejor.
 
-Entre los tres finalistas, las diferencias de MSE con intervalos percentiles de los mismos remuestreos incluyen el cero:
+#### Comparaciones dirigidas entre finalistas (DM-HLN adaptado · dashboard)
 
-| Modelo A | Modelo B | Δ MSE (A − B) | IC 95 % inferior · folds | IC 95 % superior · folds |
-| --- | --- | ---: | ---: | ---: |
-| XGBoost | SVM lineal | −0,0149 | −0,0631 | 0,0215 |
-| XGBoost | Ridge | −0,0171 | −0,0680 | 0,0219 |
-| SVM lineal | Ridge | −0,0022 | −0,0095 | 0,0050 |
+Entre los tres finalistas se comparan los tres pares con dos lecturas de la misma diferencia. Las columnas **«folds»** son intervalos percentiles de los mismos remuestreos de folds: descriptivos, no estacionarios y sin valor inferencial por sí solos. Las columnas **«por estudiante»** y los p provienen de un contraste del tipo **Diebold–Mariano con corrección HLN, adaptado** a este diseño, que es el mismo que usa la etapa siguiente frente al SVM:
 
-Las pruebas de Giacomini–White, Clark–West y el bootstrap estacionario, así como la versión de series de tiempo de Diebold–Mariano con corrección HLN aplicada a los folds, **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo. La etapa siguiente sí usa un contraste de tipo Diebold–Mariano, pero agrupado por estudiante y no por periodo.
+| Modelo A | Modelo B | Δ MSE (A − B) | IC 95 % · folds | Δ RMSE (A − B) · por estudiante | IC 95 % · estudiantes | p crudo | p con HLN |
+| --- | --- | ---: | --- | ---: | --- | ---: | ---: |
+| XGBoost | SVM lineal | −0,0149 | [−0,0631; 0,0215] | −0,0091 | [−0,0290; 0,0095] | 0,3560 | 0,3564 |
+| XGBoost | Ridge | −0,0171 | [−0,0680; 0,0219] | −0,0104 | [−0,0340; 0,0098] | 0,3542 | 0,3546 |
+| SVM lineal | Ridge | −0,0022 | [−0,0095; 0,0050] | −0,0014 | [−0,0096; 0,0064] | 0,7488 | 0,7490 |
+
+**Ninguno de los tres pares difiere significativamente** (p crudo < 0,05): XGBoost tiene el menor error de los tres, pero ni frente al SVM ni frente a Ridge se distingue del azar, y SVM y Ridge son prácticamente indistinguibles. Esto no demuestra equivalencia; indica que los datos no permiten separarlos.
+
+**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano y su corrección de Harvey, Leybourne y Newbold (HLN) se diseñaron para series de tiempo: comparan los errores de dos pronósticos hechos en fechas sucesivas, con un horizonte *h*, y corrigen la dependencia entre fechas vecinas con una varianza HAC. Aquí no hay secuencia de pronósticos ni horizonte: el índice de fold y el orden de las filas no son tiempo, y con cinco folds la prueba tendría solo cinco observaciones con entrenamientos solapados. Lo que sí existe es otra dependencia, la de un mismo estudiante que aparece en varios periodos. Por eso se conserva la idea central, probar que la pérdida media de dos predictores es la misma, y se adapta así:
+
+1. la observación es el **estudiante**, no la fecha;
+2. el error estándar es **robusto por estudiante** (cluster) en lugar de HAC;
+3. la corrección HLN se aplica con **h = 1**: el estadístico se multiplica por $\sqrt{(G-1)/G}$ y se compara con una $t$ de Student con $G-1$ grados de libertad; no hay horizonte de varios pasos porque no existen pronósticos solapados;
+4. las pérdidas son las **predicciones fuera de muestra de la validación cruzada**, de modo que cada nota la predice un modelo que no vio a ese estudiante;
+5. el IC 95 % se obtiene **remuestreando estudiantes**, no con un bootstrap estacionario.
+
+Cada par se contrasta de forma independiente y **sin corrección de Holm**: son preguntas separadas y no se pretende afirmar nada sobre el conjunto. La adaptación es exploratoria: no incorpora la variabilidad de reentrenar con otros estudiantes y los finalistas se eligieron con esta misma validación. Las fórmulas completas están en la etapa siguiente.
+
+Las pruebas de Giacomini–White, Clark–West y el bootstrap estacionario **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo.
 
 ### Etapa 3 · Contraste tipo Diebold–Mariano por estudiante frente al SVM
 
