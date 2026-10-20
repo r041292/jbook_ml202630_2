@@ -12,7 +12,7 @@ El capítulo se organiza en cinco bloques:
 1. **Introducción:** qué modelos se implementaron, qué idea los sostiene y qué comparten con el SVM.
 2. **Optimización de hiperparámetros:** las cinco estrategias de búsqueda, la justificación de los rangos, los resultados, el presupuesto computacional, los tiempos y la convergencia.
 3. **Evaluación de modelos:** RMSE y MAE en entrenamiento, validación y prueba, diagnósticos de White y BDS, análisis de residuos, interpretabilidad SHAP y comparación con LIME, y robustez frente a folds y semillas.
-4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi y Model Confidence Set), comparaciones dirigidas frente al SVM en el test y tamaños de efecto.
+4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi y Model Confidence Set), contraste por estudiante de los cinco primeros del MCS frente al SVM y tamaños de efecto.
 5. **Resultados finales y conclusiones.**
 
 Todas las cifras provienen de la ejecución activa `20261018_102325_af643f83` (`Precalculo/resultados/e3/busquedas/`), la misma que alimenta el dashboard. Las tablas y figuras nuevas se regeneran con `jbook_dashboard/analisis_clasicos/generar_clasicos.py` y la sensibilidad a semillas con `experimentos_semillas.py`; ninguno de los dos reentrena los modelos canónicos ni consulta el test para elegir parámetros.
@@ -771,7 +771,7 @@ Solo la diferencia con **Decision Tree** supera con claridad la desviación entr
 
 ## Comparación estadística
 
-La comparación sigue el diseño del dashboard en tres etapas: una prueba global que decide si hay alguna diferencia, comparaciones post hoc que identifican cuáles, y contrastes dirigidos frente al SVM en el test, complementados siempre con tamaños de efecto. Las etapas 1 y 2 usan exclusivamente las métricas de los cinco folds externos; el test no participa en ellas ni en la elección de modelos.
+La comparación sigue el diseño del dashboard en tres etapas: una prueba global que decide si hay alguna diferencia, comparaciones post hoc que identifican cuáles, y un contraste por estudiante de los cinco primeros del MCS frente al SVM, complementados siempre con tamaños de efecto. Las etapas 1 y 2 usan exclusivamente las métricas de los cinco folds externos; la etapa 3 usa las predicciones fuera de muestra de esa misma validación y presenta el test solo como complemento descriptivo. El test no participa en la elección de modelos.
 
 ### Etapa 1 · Prueba global de Friedman
 
@@ -849,22 +849,67 @@ Entre los tres finalistas, las diferencias de MSE con intervalos percentiles de 
 | XGBoost | Ridge | −0,0171 | −0,0680 | 0,0219 |
 | SVM lineal | Ridge | −0,0022 | −0,0095 | 0,0050 |
 
-Las pruebas de Giacomini–White, Clark–West, Diebold–Mariano con corrección HLN y el bootstrap estacionario, que el dashboard evalúa como siguientes pasos, **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo.
+Las pruebas de Giacomini–White, Clark–West y el bootstrap estacionario, así como la versión de series de tiempo de Diebold–Mariano con corrección HLN aplicada a los folds, **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo. La etapa siguiente sí usa un contraste de tipo Diebold–Mariano, pero agrupado por estudiante y no por periodo.
 
-### Etapa 3 · Comparaciones dirigidas frente al SVM en el test
+### Etapa 3 · Contraste tipo Diebold–Mariano por estudiante frente al SVM
 
-Para responder si algún clásico mejora al SVM de referencia se comparan los seis frente al SVM en el test temporal, con el estudiante como unidad (188 estudiantes, uno por registro). Para cada estudiante *i*, dᵢ = MSEᵢ,modelo − MSEᵢ,SVM; un **bootstrap-t emparejado y centrado bajo H₀** (49.999 réplicas, semilla 20261018) da el p bilateral, y la familia de seis p se ajusta con **Holm–Bonferroni**. Los IC BCa 95 % de ΔRMSE son individuales, no simultáneos.
+Las etapas anteriores ordenan los modelos, pero no responden la pregunta práctica: **¿algún clásico se equivoca significativamente menos que el SVM lineal?** Esta etapa la contesta con un contraste del tipo **Diebold–Mariano**, que compara la pérdida promedio de dos predictores. Para cada estudiante se mide cuánto más (o menos) se equivoca el modelo candidato que el SVM, con el error cuadrático como pérdida, y se promedia esa diferencia entre estudiantes. La hipótesis nula es que **en promedio ambos modelos se equivocan lo mismo**; una diferencia negativa favorece al candidato. No es la versión de series de tiempo: aquí no hay secuencia de pronósticos, y la dependencia que se corrige es la de las filas de un mismo estudiante, que aparece en varios periodos y no puede tratarse como independiente. Por eso la unidad de análisis es el estudiante y las predicciones son las **fuera de muestra de la validación cruzada** (cada nota la predice un modelo que no vio a ese estudiante), con lo que participan los 1.293 estudiantes de entrenamiento (1.309 registros) y no solo los 188 del test.
 
-| Modelo vs SVM | Δ MSE | Δ RMSE (puntos) | IC BCa 95 % ΔRMSE | p crudo | p Holm (6) | d_z | Conclusión |
-| --- | ---: | ---: | --- | ---: | ---: | ---: | --- |
-| XGBoost | −0,0298 | −0,0162 | [−0,0491; 0,0171] | 0,3439 | 1,0000 | −0,070 | Diferencia no detectada |
-| Ridge | −0,0237 | −0,0129 | [−0,0452; 0,0005] | 0,2712 | 1,0000 | −0,094 | Diferencia no detectada |
-| Lasso | −0,0188 | −0,0102 | [−0,0281; −0,0003] | 0,1656 | 0,8282 | −0,111 | Diferencia no detectada |
-| KNN | −0,0111 | −0,0060 | [−0,0450; 0,0323] | 0,7626 | 1,0000 | −0,022 | Diferencia no detectada |
-| Random Forest | 0,0182 | 0,0097 | [−0,0262; 0,0456] | 0,5940 | 1,0000 | 0,039 | Diferencia no detectada |
-| Decision Tree | 0,1562 | 0,0805 | [0,0149; 0,1456] | 0,0167 | 0,1000 | 0,176 | Diferencia no detectada |
+Sea $D_i$ la suma, sobre los registros del estudiante $i$, de la diferencia de error cuadrático entre el modelo y el SVM, $n_i$ su número de registros y $G$ el número de estudiantes. La diferencia media y su error estándar agrupado por estudiante son
 
-**Ninguna de las seis diferencias frente al SVM es significativa tras Holm** (α = 0,05). Decision Tree es el único con p crudo < 0,05 (peor que el SVM), pero no sobrevive al ajuste por multiplicidad. Lasso muestra un caso instructivo: su IC BCa excluye el cero por muy poco, mientras su p Holm es 0,83; los dos procedimientos son aproximaciones distintas y el IC no está ajustado por las seis comparaciones, de modo que la decisión usa solo el p Holm. "Diferencia no detectada" no significa equivalencia, y la inferencia supone estudiantes independientes, sin capturar la incertidumbre del reentrenamiento ni el cambio de periodo.
+$$
+\bar d = \frac{\sum_i D_i}{\sum_i n_i},\qquad
+\widehat{SE} = \frac{1}{\sum_i n_i}\sqrt{\frac{G}{G-1}\sum_{i=1}^{G}\left(D_i - \bar d\, n_i\right)^2},\qquad
+z = \frac{\bar d}{\widehat{SE}} .
+$$
+
+Para muestras finitas se añade la **corrección de Harvey, Leybourne y Newbold (HLN)** en su versión para horizonte $h=1$: el estadístico se multiplica por $\sqrt{(G-1)/G}$ y se compara con una $t$ de Student con $G-1$ grados de libertad. No se usa la forma con $h>1$ porque las observaciones son estudiantes y no periodos consecutivos. Con $G = 1.293$ el efecto es mínimo y no cambia ningún veredicto; se reporta para que quede visible que la corrección se aplicó.
+
+```python
+def clustered_test(loss_ref, loss_new, groups):
+    d = pd.DataFrame({'d': loss_new - loss_ref, 'g': groups}).groupby('g')['d'].agg(['sum', 'size'])
+    G, total = len(d), d['size'].sum()
+    mean = d['sum'].sum() / total
+    se = np.sqrt(G / (G - 1) * ((d['sum'] - mean * d['size']) ** 2).sum()) / total
+    z = mean / se
+    z_hln = z * np.sqrt((G - 1) / G)                                # HLN, h = 1
+    return z, 2 * norm.sf(abs(z)), 2 * t.sf(abs(z_hln), G - 1)      # p normal y p con HLN
+```
+
+**Qué modelos se comparan.** Se toman los cinco primeros del MCS de la etapa anterior, en el orden en que el propio MCS los elimina y omitiendo al SVM, que es la referencia. El MCS conserva solo dos modelos distintos del SVM (XGBoost y Ridge); para llegar a cinco se completa con los siguientes en su orden de eliminación: Lasso, Random Forest y KNN. Decision Tree, el primero en ser eliminado, queda fuera de esta etapa. Los intervalos de confianza de ΔRMSE se obtienen remuestreando estudiantes completos (9.999 réplicas, semilla 20261020).
+
+**Comparaciones independientes, sin corrección de Holm.** Cada modelo se compara únicamente contra el SVM, como una pregunta propia («¿este modelo mejora al SVM?»); **no se comparan entre sí**. Como no se pretende afirmar nada sobre el conjunto completo, no se aplicó la corrección de Holm, que solo es necesaria cuando se declara una conclusión conjunta sobre toda la familia de pruebas. Cada resultado se juzga con su propio p crudo (α = 0,05). El costo es que, al realizar cinco pruebas separadas, la probabilidad de que alguna resulte significativa por azar supera el 5 %; esto se tiene presente al leer los resultados.
+
+| Posición MCS | Modelo vs SVM | Δ MSE | Δ RMSE (puntos) | IC 95 % ΔRMSE | p crudo | p con HLN | p t corregida (CV) | Conclusión |
+| ---: | --- | ---: | ---: | --- | ---: | ---: | ---: | --- |
+| 1 | XGBoost | −0,0149 | −0,0091 | [−0,0290; 0,0095] | 0,3560 | 0,3564 | 0,7142 | Diferencia no significativa |
+| 2 | Ridge | 0,0022 | 0,0014 | [−0,0064; 0,0096] | 0,7488 | 0,7490 | 0,7807 | Diferencia no significativa |
+| 3 | Lasso | 0,0085 | 0,0051 | [−0,0031; 0,0140] | 0,2561 | 0,2565 | 0,4982 | Diferencia no significativa |
+| 4 | Random Forest | 0,0081 | 0,0049 | [−0,0161; 0,0257] | 0,6441 | 0,6443 | 0,8105 | Diferencia no significativa |
+| 5 | KNN | 0,0514 | 0,0306 | [0,0077; 0,0525] | **0,0082** | **0,0083** | 0,2459 | **Deterioro significativo** |
+
+**Ninguno de los cinco modelos presentó un resultado significativamente mejor que el SVM lineal, y solo se identificó uno con un resultado inferior: KNN** (ΔRMSE = +0,0306). XGBoost, el de menor error medio, queda 0,009 puntos de RMSE por debajo del SVM, pero esa diferencia es compatible con el azar (p = 0,356); Ridge, Lasso y Random Forest tienen diferencias aún menores y de signo contrario. "Diferencia no significativa" no significa equivalencia: indica que los datos no permiten distinguir a esos modelos del SVM.
+
+**La prueba conservadora.** La última columna antes de la conclusión es una comprobación de cautela que hace la misma comparación con otra fuente de azar. En lugar de 1.293 estudiantes usa como observaciones los **cinco folds de validación** y agranda su error estándar, porque los entrenamientos de esos folds comparten la mayor parte de los datos (corrección de Nadeau–Bengio, con 4 grados de libertad). Responde a una pregunta distinta: *si el algoritmo se reentrenara con otros datos, ¿seguiría siendo mejor (o peor) que el SVM?* La prueba por estudiante trata los modelos como fijos y no incluye esa variabilidad de reentrenamiento, por lo que tiende a ser optimista; la conservadora tiende a ser exigente. La lectura conjunta es:
+
+- Para **KNN**, la prueba por estudiante indica que es peor que el SVM en esta muestra (p = 0,008), pero la conservadora no lo confirma (p = 0,246). El deterioro es **probable, pero no confirmado**.
+- Para los otros cuatro, ninguna de las dos pruebas detecta diferencia.
+
+**Por qué la prueba conservadora rara vez resulta significativa aquí.** (1) Solo tiene cinco observaciones, es decir 4 grados de libertad: el valor crítico de la $t$ es 2,78 y no ≈ 1,96. (2) Cada fold deja fuera unos 260 estudiantes y los entrenamientos comparten cerca del 80 % de los datos; la corrección lo reconoce y multiplica el error estándar por ≈ 1,5. (3) La dificultad cambia entre folds, de modo que la diferencia de RMSE de un mismo modelo varía bastante de un fold a otro. Con el error estándar típico de la tabla (≈ 0,022), un modelo tendría que mejorar al SVM en ≈ 0,060 puntos de RMSE para alcanzar p < 0,05, el doble de la mayor diferencia observada (0,031). Más repeticiones de la validación cruzada ayudarían poco, pues parte del error proviene del tamaño del conjunto (1.309 registros de 1.293 estudiantes) y no del número de particiones. Un p alto en esa prueba significa, entonces, «no hay potencia para confirmarlo», y no «el modelo no sirve».
+
+**Complemento en el test temporal (202530).** El mismo contraste sobre los 188 estudiantes del periodo reservado sirve para ver si el signo se mantiene fuera de la validación cruzada. Los modelos son fijos y el test ya había sido revisado, de modo que es descriptivo y con menor potencia:
+
+| Modelo vs SVM | Δ RMSE (puntos) | IC 95 % ΔRMSE | p crudo | p con HLN | Conclusión |
+| --- | ---: | --- | ---: | ---: | --- |
+| XGBoost | −0,0162 | [−0,0493; 0,0171] | 0,3349 | 0,3374 | Diferencia no significativa |
+| Ridge | −0,0129 | [−0,0345; 0,0037] | 0,1998 | 0,2026 | Diferencia no significativa |
+| Lasso | −0,0102 | [−0,0244; 0,0015] | 0,1287 | 0,1314 | Diferencia no significativa |
+| Random Forest | 0,0097 | [−0,0258; 0,0455] | 0,5922 | 0,5938 | Diferencia no significativa |
+| KNN | −0,0060 | [−0,0442; 0,0318] | 0,7609 | 0,7619 | Diferencia no significativa |
+
+En el test ningún modelo difiere significativamente del SVM. Además, **el deterioro de KNN observado en validación no se reproduce** (ΔRMSE = −0,006, p = 0,761), lo que refuerza que ese resultado debe leerse con cautela. XGBoost, Ridge y Lasso muestran diferencias negativas, favorables al candidato, pero con intervalos que incluyen el cero.
+
+**Alcance y límites.** (1) El p por estudiante no incorpora la variabilidad de reentrenar con otros estudiantes. (2) Los cinco modelos se eligieron por su desempeño en esta misma validación cruzada (MCS); ni esa selección ni la multiplicidad están corregidas, de modo que la inferencia es exploratoria. (3) Ningún modelo ni parámetro se elige con el test. Esta etapa sustituye al contraste por bootstrap-t con Holm sobre los 188 estudiantes del test que usaba la versión anterior del informe: al usar las predicciones de validación cruzada se dispone de 1.293 estudiantes en lugar de 188 y las comparaciones se plantean de forma independiente, tal como se formulan las preguntas.
 
 ### Tamaño del efecto
 
@@ -909,19 +954,19 @@ Con los umbrales convencionales de Cliff (|δ| < 0,147 despreciable; < 0,33 pequ
 
 ## Resultados finales y conclusiones
 
-| Modelo | Método de búsqueda final | RMSE CV (media ± SD) | MAE CV | RMSE test | MAE test | Rango Friedman | En MCS | vs SVM en test (p Holm) |
+| Modelo | Método de búsqueda final | RMSE CV (media ± SD) | MAE CV | RMSE test | MAE test | Rango Friedman | En MCS | vs SVM en CV (p crudo por estudiante) |
 | --- | --- | --- | ---: | ---: | ---: | ---: | --- | ---: |
-| XGBoost | TPE | **0,8156 ± 0,0344** | **0,6447** | **0,9137** | **0,7391** | **2,4** | Sí | 1,000 |
+| XGBoost | TPE | **0,8156 ± 0,0344** | **0,6447** | **0,9137** | **0,7391** | **2,4** | Sí | 0,356 |
 | SVM lineal | TPE | 0,8241 ± 0,0479 | 0,6503 | 0,9299 | 0,7581 | 2,6 | Sí | — |
-| Ridge | TPE | 0,8253 ± 0,0520 | 0,6514 | 0,9170 | 0,7544 | 3,0 | Sí | 1,000 |
-| Lasso | DEAP | 0,8288 ± 0,0561 | 0,6542 | 0,9197 | 0,7548 | 3,6 | No | 0,828 |
-| Random Forest | Grid | 0,8297 ± 0,0294 | 0,6619 | 0,9396 | 0,7658 | 4,0 | No | 1,000 |
-| KNN | DEAP | 0,8550 ± 0,0400 | 0,6809 | 0,9239 | 0,7517 | 5,4 | No | 1,000 |
-| Decision Tree | Random | 0,8948 ± 0,0325 | 0,7123 | 1,0104 | 0,8262 | 7,0 | No | 0,100 |
+| Ridge | TPE | 0,8253 ± 0,0520 | 0,6514 | 0,9170 | 0,7544 | 3,0 | Sí | 0,749 |
+| Lasso | DEAP | 0,8288 ± 0,0561 | 0,6542 | 0,9197 | 0,7548 | 3,6 | No | 0,256 |
+| Random Forest | Grid | 0,8297 ± 0,0294 | 0,6619 | 0,9396 | 0,7658 | 4,0 | No | 0,644 |
+| KNN | DEAP | 0,8550 ± 0,0400 | 0,6809 | 0,9239 | 0,7517 | 5,4 | No | **0,008** (peor) |
+| Decision Tree | Random | 0,8948 ± 0,0325 | 0,7123 | 1,0104 | 0,8262 | 7,0 | No | No evaluado |
 
 **Sobre la optimización de hiperparámetros.** Las cinco estrategias llegan a valores de RMSE interno separados por menos de 6 milésimas, muy por debajo del ruido entre folds. **TPE fue la estrategia más eficaz** (elegida en 15 de 42 búsquedas, incluidas las finales de XGBoost, SVM y Ridge) con un 35 % menos de tiempo que el Grid; DEAP fue la más barata pero mostró convergencia prematura en todos los modelos, y Successive Halving no aportó ventajas en una muestra de este tamaño. En este problema, la elección de la familia de modelos importa mucho más que la de la estrategia de búsqueda.
 
-**Sobre el desempeño.** XGBoost obtiene el menor error en validación externa y en el test, el mejor rango promedio de Friedman y una variabilidad entre folds y semillas baja. Sin embargo, su ventaja sobre el SVM lineal es de 0,0085 puntos de RMSE en CV y 0,016 en el test: **no es estadísticamente distinguible** (Nemenyi, MCS y bootstrap-t con Holm coinciden) y su tamaño de efecto por fold es despreciable (δ = −0,04). El grupo XGBoost–SVM–Ridge forma el conjunto de modelos con desempeño indistinguible; Decision Tree es claramente inferior, con efectos grandes frente a todos.
+**Sobre el desempeño.** XGBoost obtiene el menor error en validación externa y en el test, el mejor rango promedio de Friedman y una variabilidad entre folds y semillas baja. Sin embargo, su ventaja sobre el SVM lineal es de 0,0085 puntos de RMSE en CV y 0,016 en el test: **no es estadísticamente distinguible** (Nemenyi, MCS y el contraste por estudiante coinciden: p = 0,356) y su tamaño de efecto por fold es despreciable (δ = −0,04). El grupo XGBoost–SVM–Ridge forma el conjunto de modelos con desempeño indistinguible; Decision Tree es claramente inferior, con efectos grandes frente a todos. En el contraste por estudiante ningún clásico supera significativamente al SVM y solo KNN resulta peor (p = 0,008), un deterioro que la prueba conservadora no confirma (p = 0,246) y que no se reproduce en el test.
 
 **Sobre los residuos.** Todos los modelos comparten heterocedasticidad (White y Breusch–Pagan), dependencia por grupo en validación (BDS), asimetría negativa y regresión hacia la media. Son propiedades de la nota acotada y discreta y de la información disponible, no de una familia: más flexibilidad no corrige su forma. El caso de mayor error —un estudiante con perfil de nota alta que obtuvo 1,0— es el mismo para seis modelos.
 
