@@ -1,0 +1,90 @@
+{
+  "familia": "Holm3 (3 contrastes pedidos)",
+  "filas": [
+    {
+      "Version": "activa (búsqueda HPO, dashboard)",
+      "Modelo": "Kernel Ridge RBF",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": -0.04128681727128561,
+      "SE_cluster": 0.013833480343667576,
+      "z": -2.984557482686206,
+      "p_bilateral": 0.002839888363334401,
+      "delta_RMSE": -0.025344659663121383,
+      "IC95_boot_inf": -0.0438170573021026,
+      "IC95_boot_sup": -0.011127934564174118,
+      "p_Holm3": 0.005679776726668802
+    },
+    {
+      "Version": "activa (búsqueda HPO, dashboard)",
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": -0.03830697642825448,
+      "SE_cluster": 0.015223600952548447,
+      "z": -2.5162887905204747,
+      "p_bilateral": 0.011859796013444278,
+      "delta_RMSE": -0.023488669030384268,
+      "IC95_boot_inf": -0.04387628155268114,
+      "IC95_boot_sup": -0.007507395716757338,
+      "p_Holm3": 0.011859796013444278
+    },
+    {
+      "Version": "activa (búsqueda HPO, dashboard)",
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": -0.03367628491822925,
+      "SE_cluster": 0.00990203793943626,
+      "z": -3.400944848343663,
+      "p_bilateral": 0.0006715337473846257,
+      "delta_RMSE": -0.020612923127225957,
+      "IC95_boot_inf": -0.03275247333843882,
+      "IC95_boot_sup": -0.009827930210517057,
+      "p_Holm3": 0.0020146012421538772
+    },
+    {
+      "Version": "histórica (parámetros originales)",
+      "Modelo": "Kernel Ridge RBF",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": -0.040629546556661816,
+      "SE_cluster": 0.014711203294054518,
+      "z": -2.7618098767680075,
+      "p_bilateral": 0.005748194031341366,
+      "delta_RMSE": -0.02493491021426253,
+      "IC95_boot_inf": -0.04481972474809672,
+      "IC95_boot_sup": -0.009491121837902053,
+      "p_Holm3": 0.0172445820940241
+    },
+    {
+      "Version": "histórica (parámetros originales)",
+      "Modelo": "GPR–XGBoost (OOF agrupado)",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": 0.03005660606718973,
+      "SE_cluster": 0.02004007550423773,
+      "z": 1.4998249912199122,
+      "p_bilateral": 0.13365974192115182,
+      "delta_RMSE": 0.017972870284529652,
+      "IC95_boot_inf": -0.007565265352221145,
+      "IC95_boot_sup": 0.03971940013961649,
+      "p_Holm3": 0.13365974192115182
+    },
+    {
+      "Version": "histórica (parámetros originales)",
+      "Modelo": "Truncated Newton KRR RBF",
+      "Referencia": "SVM lineal",
+      "estudiantes": 1293,
+      "delta_MSE": -0.0272032799454055,
+      "SE_cluster": 0.011561165580532754,
+      "z": -2.3529876599303874,
+      "p_bilateral": 0.01862325211305868,
+      "delta_RMSE": -0.016610164661494675,
+      "IC95_boot_inf": -0.031057894264842248,
+      "IC95_boot_sup": -0.003926098671677514,
+      "p_Holm3": 0.03724650422611736
+    }
+  ],
+  "alcance": "OOF de un solo GroupKFold 5; sin test; sin reentrenar; exploratorio"
+}

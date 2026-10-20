@@ -1,0 +1,85 @@
+{
+  "protocolo": {
+    "contraste_preespecificado": "RMSE(SVR RBF) - RMSE(SVM lineal) por (repetición, fold externo)",
+    "motivo_de_la_eleccion": "Misma familia de pérdida epsilon-insensible; solo cambia el kernel. No se elige por tiempo ni por el test temporal.",
+    "estadistico": "t remuestreado corregido de Nadeau-Bengio/Bouckaert-Frank: SE^2=(1/J + n_val/n_fit)*s^2, J=25, s^2 muestral (ddof=1), df=J-1, bilateral",
+    "alfa": 0.05,
+    "multiplicidad": "Familia de un solo contraste; sin ajuste de Holm",
+    "alcance": "Exploratorio: el candidato se identificó con resultados previos de CV/test del mismo conjunto. La repetición reduce varianza de partición, no la dependencia entre folds.",
+    "repeticiones": 5,
+    "folds_externos": 5,
+    "folds_internos": 5,
+    "barajado_externo": "GroupKFold(shuffle=True, random_state=1000+r), r=1..5",
+    "busqueda": {
+      "SVM lineal": {
+        "grilla": {
+          "modelo__C": [
+            0.01,
+            0.03,
+            0.1,
+            0.3,
+            1.0,
+            10.0
+          ],
+          "modelo__epsilon": [
+            0.0,
+            0.05,
+            0.1,
+            0.2,
+            0.3,
+            0.5,
+            0.75,
+            1.0
+          ]
+        },
+        "candidatos": 48
+      },
+      "SVR RBF": {
+        "distribuciones": "SVR_PARAM_DISTRIBUTIONS (evaluar_svr_rbf_raffle_e3.py)",
+        "candidatos": 64
+      }
+    },
+    "test_temporal_usado": false
+  },
+  "primario": {
+    "contraste": "SVR RBF - SVM lineal (RMSE por repetición y fold)",
+    "J": 25,
+    "delta_RMSE_medio": -0.01979476452508176,
+    "SD_delta": 0.020138940240188752,
+    "SE_corregido": 0.010845156465093262,
+    "t": -1.825217053234237,
+    "df": 24,
+    "p_bilateral": 0.08043971538380607,
+    "IC95_inferior": -0.04217806735401861,
+    "IC95_superior": 0.002588538303855095,
+    "n_favor_SVR_RBF": 18,
+    "ratio_val_fit": 0.2500002803240546
+  },
+  "RMSE_medio": {
+    "SVM lineal": 0.8267760700480106,
+    "SVR RBF": 0.8069813055229289
+  },
+  "RMSE_SD": {
+    "SVM lineal": 0.037902169092898556,
+    "SVR RBF": 0.03749313001722306
+  },
+  "R2_medio": {
+    "SVM lineal": 0.44890116288123927,
+    "SVR RBF": 0.4743492744115922
+  },
+  "delta_medio_por_repeticion": [
+    -0.019940100704643048,
+    -0.025893225380305453,
+    -0.017050184439503614,
+    -0.015366761967762165,
+    -0.02072355013319451
+  ],
+  "p_t_ingenuo_no_valido": 5.162674945671904e-05,
+  "nota_p_ingenuo": "Solo referencia: ignora la dependencia entre remuestreos y es optimista.",
+  "run_id": "20261020_162027_c3bada99",
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+  }
+}

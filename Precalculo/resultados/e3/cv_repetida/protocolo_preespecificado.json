@@ -1,0 +1,49 @@
+{
+  "contraste_preespecificado": "RMSE(SVR RBF) - RMSE(SVM lineal) por (repetición, fold externo)",
+  "motivo_de_la_eleccion": "Misma familia de pérdida epsilon-insensible; solo cambia el kernel. No se elige por tiempo ni por el test temporal.",
+  "estadistico": "t remuestreado corregido de Nadeau-Bengio/Bouckaert-Frank: SE^2=(1/J + n_val/n_fit)*s^2, J=25, s^2 muestral (ddof=1), df=J-1, bilateral",
+  "alfa": 0.05,
+  "multiplicidad": "Familia de un solo contraste; sin ajuste de Holm",
+  "alcance": "Exploratorio: el candidato se identificó con resultados previos de CV/test del mismo conjunto. La repetición reduce varianza de partición, no la dependencia entre folds.",
+  "repeticiones": 5,
+  "folds_externos": 5,
+  "folds_internos": 5,
+  "barajado_externo": "GroupKFold(shuffle=True, random_state=1000+r), r=1..5",
+  "busqueda": {
+    "SVM lineal": {
+      "grilla": {
+        "modelo__C": [
+          0.01,
+          0.03,
+          0.1,
+          0.3,
+          1.0,
+          10.0
+        ],
+        "modelo__epsilon": [
+          0.0,
+          0.05,
+          0.1,
+          0.2,
+          0.3,
+          0.5,
+          0.75,
+          1.0
+        ]
+      },
+      "candidatos": 48
+    },
+    "SVR RBF": {
+      "distribuciones": "SVR_PARAM_DISTRIBUTIONS (evaluar_svr_rbf_raffle_e3.py)",
+      "candidatos": 64
+    }
+  },
+  "test_temporal_usado": false,
+  "fijado": "2026-10-20T16:20:27.556987-05:00",
+  "script_sha256": "2239ae76a20569a8bc95e4bf027a8f3ac7eb1b250e726cefb4f03205f7a4d64d",
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+  }
+}

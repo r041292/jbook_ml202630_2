@@ -1,0 +1,184 @@
+{
+  "bases": [
+    "TN-KRR",
+    "LinXGBoost",
+    "HRT-Boost",
+    "logicDT propio",
+    "RIM"
+  ],
+  "excluidos": [
+    "TabPFN 2.5 original",
+    "TabPFN 2.5 fine-tuned",
+    "TabICLv2",
+    "TabFM",
+    "Kernel Ridge RBF",
+    "SVR RBF",
+    "XGBoost y variantes",
+    "CatBoost",
+    "GPR sola"
+  ],
+  "pesos_finales": {
+    "TN-KRR": 0.5862648958892466,
+    "LinXGBoost": 4.0623577975170506e-17,
+    "HRT-Boost": 0.16842613348885746,
+    "logicDT propio": 0.137540535821316,
+    "RIM": 0.10776843480058002
+  },
+  "RMSE_CV_media": {
+    "HRT-Boost": 0.8172635629588297,
+    "LinXGBoost": 0.8442820281965352,
+    "Promedio uniforme": 0.8108558466098046,
+    "RIM": 0.8651052311828433,
+    "SVM lineal": 0.8261402043795696,
+    "Stacking convexo": 0.809905937740394,
+    "TN-KRR": 0.8096458103571067,
+    "logicDT propio": 0.8408090475764187
+  },
+  "RMSE_CV_SD": {
+    "HRT-Boost": 0.04296063673176788,
+    "LinXGBoost": 0.043080984843519236,
+    "Promedio uniforme": 0.041311209900644776,
+    "RIM": 0.026797220156840006,
+    "SVM lineal": 0.041328187648815136,
+    "Stacking convexo": 0.04212215399895946,
+    "TN-KRR": 0.03879396611805876,
+    "logicDT propio": 0.06238342410887447
+  },
+  "RMSE_OOF_reunido": {
+    "Stacking convexo": 0.8110015981137321,
+    "Promedio uniforme": 0.8119112227857428,
+    "TN-KRR": 0.8105693990423257,
+    "LinXGBoost": 0.8453851737471423,
+    "HRT-Boost": 0.8183938252763152,
+    "logicDT propio": 0.8431344608152229,
+    "RIM": 0.8655282632114152
+  },
+  "contrastes_cv": [
+    {
+      "contraste": "Stacking convexo - SVM lineal (primario)",
+      "delta_RMSE_medio": -0.01623426663917584,
+      "SE_corregido": 0.007215455835730099,
+      "t": -2.249929458203547,
+      "df": 4,
+      "p_bilateral": 0.0876520243925787,
+      "IC95_inferior": -0.03626758367605953,
+      "IC95_superior": 0.003799050397707844
+    },
+    {
+      "contraste": "Stacking convexo - Promedio uniforme",
+      "delta_RMSE_medio": -0.0009499088694106872,
+      "SE_corregido": 0.0015511382795396975,
+      "t": -0.6123947051919665,
+      "df": 4,
+      "p_bilateral": 0.5733789040761917,
+      "IC95_inferior": -0.005256559153123607,
+      "IC95_superior": 0.0033567414143022326,
+      "p_Holm2": 1.0
+    },
+    {
+      "contraste": "Stacking convexo - TN-KRR (mejor base)",
+      "delta_RMSE_medio": 0.00026012738328722306,
+      "SE_corregido": 0.004281138275810315,
+      "t": 0.060761266403614886,
+      "df": 4,
+      "p_bilateral": 0.9544640672669701,
+      "IC95_inferior": -0.011626218027261246,
+      "IC95_superior": 0.012146472793835694,
+      "p_Holm2": 1.0
+    }
+  ],
+  "test": {
+    "Stacking convexo": {
+      "RMSE": 0.9070004572553404,
+      "MAE": 0.7330393000370804,
+      "MAPE (%)": 28.550211207393833,
+      "R²": 0.45376630445227706
+    },
+    "Promedio uniforme": {
+      "RMSE": 0.9045258297906515,
+      "MAE": 0.7361845139600898,
+      "MAPE (%)": 28.64118928133491,
+      "R²": 0.4567428870890481
+    },
+    "TN-KRR": {
+      "RMSE": 0.9078023537131921,
+      "MAE": 0.7262287010295185,
+      "MAPE (%)": 28.290836153683745,
+      "R²": 0.4528000061570302
+    },
+    "LinXGBoost": {
+      "RMSE": 0.8990686842187042,
+      "MAE": 0.720464152681679,
+      "MAPE (%)": 28.234859198740146,
+      "R²": 0.46327822307051214
+    },
+    "HRT-Boost": {
+      "RMSE": 0.9237199755498735,
+      "MAE": 0.7548471943665886,
+      "MAPE (%)": 29.64009628840521,
+      "R²": 0.4334423007867796
+    },
+    "logicDT propio": {
+      "RMSE": 0.9264376909377103,
+      "MAE": 0.7609543588043467,
+      "MAPE (%)": 29.65883903617954,
+      "R²": 0.4301036100823221
+    },
+    "RIM": {
+      "RMSE": 0.9672130240627342,
+      "MAE": 0.7933472071038201,
+      "MAPE (%)": 29.543275732685775,
+      "R²": 0.3788338991335707
+    },
+    "SVM lineal": {
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    }
+  },
+  "correlacion_errores_OOF": {
+    "TN-KRR": {
+      "TN-KRR": 1.0,
+      "LinXGBoost": 0.9618,
+      "HRT-Boost": 0.9776,
+      "logicDT propio": 0.9415,
+      "RIM": 0.9184
+    },
+    "LinXGBoost": {
+      "TN-KRR": 0.9618,
+      "LinXGBoost": 1.0,
+      "HRT-Boost": 0.9552,
+      "logicDT propio": 0.9146,
+      "RIM": 0.9039
+    },
+    "HRT-Boost": {
+      "TN-KRR": 0.9776,
+      "LinXGBoost": 0.9552,
+      "HRT-Boost": 1.0,
+      "logicDT propio": 0.9482,
+      "RIM": 0.9086
+    },
+    "logicDT propio": {
+      "TN-KRR": 0.9415,
+      "LinXGBoost": 0.9146,
+      "HRT-Boost": 0.9482,
+      "logicDT propio": 1.0,
+      "RIM": 0.8545
+    },
+    "RIM": {
+      "TN-KRR": 0.9184,
+      "LinXGBoost": 0.9039,
+      "HRT-Boost": 0.9086,
+      "logicDT propio": 0.8545,
+      "RIM": 1.0
+    }
+  },
+  "nota": "Exploratorio: pesos de fold estimados con OOF cuyas bases vieron el fold evaluado; test reutilizado, no selecciona nada.",
+  "run_id": "20261020_162639_15b924ed",
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+  }
+}

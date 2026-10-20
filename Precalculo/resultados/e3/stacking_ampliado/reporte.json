@@ -1,0 +1,319 @@
+{
+  "bases": [
+    "TN-KRR",
+    "LinXGBoost",
+    "HRT-Boost",
+    "logicDT propio",
+    "RIM",
+    "Kernel Ridge RBF",
+    "SVR RBF",
+    "XGBoost",
+    "CatBoost",
+    "GPR sola"
+  ],
+  "excluidos": [
+    "TabPFN 2.5 original",
+    "TabPFN 2.5 fine-tuned",
+    "TabICLv2",
+    "TabFM"
+  ],
+  "pesos_finales": {
+    "TN-KRR": 0.0,
+    "LinXGBoost": 1.6525030114589157e-18,
+    "HRT-Boost": 7.807154262610936e-17,
+    "logicDT propio": 0.06034220356858541,
+    "RIM": 2.4642637295293736e-17,
+    "Kernel Ridge RBF": 0.2632145168265792,
+    "SVR RBF": 0.19170413868171635,
+    "XGBoost": 0.14024785773018686,
+    "CatBoost": 0.1248836032955857,
+    "GPR sola": 0.21960767989734623
+  },
+  "RMSE_CV_media": {
+    "CatBoost": 0.8162762748683485,
+    "GPR sola": 0.8012906599536237,
+    "HRT-Boost": 0.8172635629588297,
+    "Kernel Ridge RBF": 0.8013252180008876,
+    "LinXGBoost": 0.8442820281965352,
+    "Promedio uniforme": 0.8028580001528851,
+    "RIM": 0.8651052311828433,
+    "SVM lineal": 0.8261402043795696,
+    "SVR RBF": 0.8077648495388992,
+    "Stacking convexo": 0.8028006532249821,
+    "TN-KRR": 0.8096458103571067,
+    "XGBoost": 0.8142640034897164,
+    "logicDT propio": 0.8408090475764187
+  },
+  "RMSE_CV_SD": {
+    "CatBoost": 0.036602163337775356,
+    "GPR sola": 0.03644490645695856,
+    "HRT-Boost": 0.04296063673176788,
+    "Kernel Ridge RBF": 0.0385159135597986,
+    "LinXGBoost": 0.043080984843519236,
+    "Promedio uniforme": 0.03788717168812285,
+    "RIM": 0.026797220156840006,
+    "SVM lineal": 0.041328187648815136,
+    "SVR RBF": 0.037861951367092604,
+    "Stacking convexo": 0.038506823016769345,
+    "TN-KRR": 0.03879396611805876,
+    "XGBoost": 0.03045936198758967,
+    "logicDT propio": 0.06238342410887447
+  },
+  "RMSE_OOF_reunido": {
+    "Stacking convexo": 0.8037198049670664,
+    "Promedio uniforme": 0.8037505091815156,
+    "TN-KRR": 0.8105693990423257,
+    "LinXGBoost": 0.8453851737471423,
+    "HRT-Boost": 0.8183938252763152,
+    "logicDT propio": 0.8431344608152229,
+    "RIM": 0.8655282632114152,
+    "Kernel Ridge RBF": 0.8022446534895579,
+    "SVR RBF": 0.8086591199936642,
+    "XGBoost": 0.8148217145672108,
+    "CatBoost": 0.8170922644352684,
+    "GPR sola": 0.8021130901344329
+  },
+  "contrastes_cv": [
+    {
+      "contraste": "Stacking convexo - SVM lineal (primario)",
+      "delta_RMSE_medio": -0.023339551154587614,
+      "SE_corregido": 0.01407191084573171,
+      "t": -1.6585914599982676,
+      "df": 4,
+      "p_bilateral": 0.17253728797820767,
+      "IC95_inferior": -0.062409439142999165,
+      "IC95_superior": 0.015730336833823938
+    },
+    {
+      "contraste": "Stacking convexo - Promedio uniforme",
+      "delta_RMSE_medio": -5.7346927903090264e-05,
+      "SE_corregido": 0.00233893283939638,
+      "t": -0.024518415807907538,
+      "df": 4,
+      "p_bilateral": 0.9816134907982368,
+      "IC95_inferior": -0.006551265561231545,
+      "IC95_superior": 0.006436571705425365,
+      "p_Holm2": 0.9816134907982368
+    },
+    {
+      "contraste": "Stacking convexo - TN-KRR (mejor base)",
+      "delta_RMSE_medio": -0.006845157132124547,
+      "SE_corregido": 0.005168763391832055,
+      "t": -1.324331685010309,
+      "df": 4,
+      "p_bilateral": 0.25599456375342255,
+      "IC95_inferior": -0.0211959449513022,
+      "IC95_superior": 0.007505630687053108,
+      "p_Holm2": 0.5119891275068451
+    }
+  ],
+  "test": {
+    "Stacking convexo": {
+      "RMSE": 0.8974244296499768,
+      "MAE": 0.721449485238505,
+      "MAPE (%)": 28.299325949147452,
+      "R²": 0.46523958657072495
+    },
+    "Promedio uniforme": {
+      "RMSE": 0.8987456282037367,
+      "MAE": 0.7272226413081668,
+      "MAPE (%)": 28.42394796162479,
+      "R²": 0.46366386668089554
+    },
+    "TN-KRR": {
+      "RMSE": 0.9078023537131921,
+      "MAE": 0.7262287010295185,
+      "MAPE (%)": 28.290836153683745,
+      "R²": 0.4528000061570302
+    },
+    "LinXGBoost": {
+      "RMSE": 0.8990686842187042,
+      "MAE": 0.720464152681679,
+      "MAPE (%)": 28.234859198740146,
+      "R²": 0.46327822307051214
+    },
+    "HRT-Boost": {
+      "RMSE": 0.9237199755498735,
+      "MAE": 0.7548471943665886,
+      "MAPE (%)": 29.64009628840521,
+      "R²": 0.4334423007867796
+    },
+    "logicDT propio": {
+      "RMSE": 0.9264376909377103,
+      "MAE": 0.7609543588043467,
+      "MAPE (%)": 29.65883903617954,
+      "R²": 0.4301036100823221
+    },
+    "RIM": {
+      "RMSE": 0.9672130240627342,
+      "MAE": 0.7933472071038201,
+      "MAPE (%)": 29.543275732685775,
+      "R²": 0.3788338991335707
+    },
+    "Kernel Ridge RBF": {
+      "RMSE": 0.9048808096957917,
+      "MAE": 0.727607261486769,
+      "MAPE (%)": 28.32454022999043,
+      "R²": 0.4563164024205032
+    },
+    "SVR RBF": {
+      "RMSE": 0.8922248074445825,
+      "MAE": 0.7131542230322372,
+      "MAPE (%)": 28.285997207856923,
+      "R²": 0.47141837300499645
+    },
+    "XGBoost": {
+      "RMSE": 0.9062736558649318,
+      "MAE": 0.72891823446497,
+      "MAPE (%)": 28.404774804004397,
+      "R²": 0.45464137423206274
+    },
+    "CatBoost": {
+      "RMSE": 0.9056693630195318,
+      "MAE": 0.7318919716115212,
+      "MAPE (%)": 28.72288257558246,
+      "R²": 0.4553684094744912
+    },
+    "GPR sola": {
+      "RMSE": 0.9058383600401475,
+      "MAE": 0.7299752509403266,
+      "MAPE (%)": 28.420092765092374,
+      "R²": 0.4551651350626983
+    },
+    "SVM lineal": {
+      "RMSE": 0.9277056600182674,
+      "MAE": 0.755442807950947,
+      "MAPE (%)": 29.664555649494815,
+      "R²": 0.4285425649965354
+    }
+  },
+  "correlacion_errores_OOF": {
+    "TN-KRR": {
+      "TN-KRR": 1.0,
+      "LinXGBoost": 0.9618,
+      "HRT-Boost": 0.9776,
+      "logicDT propio": 0.9415,
+      "RIM": 0.9184,
+      "Kernel Ridge RBF": 0.9927,
+      "SVR RBF": 0.9833,
+      "XGBoost": 0.9648,
+      "CatBoost": 0.952,
+      "GPR sola": 0.9891
+    },
+    "LinXGBoost": {
+      "TN-KRR": 0.9618,
+      "LinXGBoost": 1.0,
+      "HRT-Boost": 0.9552,
+      "logicDT propio": 0.9146,
+      "RIM": 0.9039,
+      "Kernel Ridge RBF": 0.9587,
+      "SVR RBF": 0.9537,
+      "XGBoost": 0.9489,
+      "CatBoost": 0.9353,
+      "GPR sola": 0.9574
+    },
+    "HRT-Boost": {
+      "TN-KRR": 0.9776,
+      "LinXGBoost": 0.9552,
+      "HRT-Boost": 1.0,
+      "logicDT propio": 0.9482,
+      "RIM": 0.9086,
+      "Kernel Ridge RBF": 0.9782,
+      "SVR RBF": 0.9699,
+      "XGBoost": 0.9571,
+      "CatBoost": 0.9524,
+      "GPR sola": 0.9796
+    },
+    "logicDT propio": {
+      "TN-KRR": 0.9415,
+      "LinXGBoost": 0.9146,
+      "HRT-Boost": 0.9482,
+      "logicDT propio": 1.0,
+      "RIM": 0.8545,
+      "Kernel Ridge RBF": 0.9426,
+      "SVR RBF": 0.9365,
+      "XGBoost": 0.9095,
+      "CatBoost": 0.9202,
+      "GPR sola": 0.9409
+    },
+    "RIM": {
+      "TN-KRR": 0.9184,
+      "LinXGBoost": 0.9039,
+      "HRT-Boost": 0.9086,
+      "logicDT propio": 0.8545,
+      "RIM": 1.0,
+      "Kernel Ridge RBF": 0.9229,
+      "SVR RBF": 0.9118,
+      "XGBoost": 0.9375,
+      "CatBoost": 0.9262,
+      "GPR sola": 0.9234
+    },
+    "Kernel Ridge RBF": {
+      "TN-KRR": 0.9927,
+      "LinXGBoost": 0.9587,
+      "HRT-Boost": 0.9782,
+      "logicDT propio": 0.9426,
+      "RIM": 0.9229,
+      "Kernel Ridge RBF": 1.0,
+      "SVR RBF": 0.9864,
+      "XGBoost": 0.9717,
+      "CatBoost": 0.9661,
+      "GPR sola": 0.9975
+    },
+    "SVR RBF": {
+      "TN-KRR": 0.9833,
+      "LinXGBoost": 0.9537,
+      "HRT-Boost": 0.9699,
+      "logicDT propio": 0.9365,
+      "RIM": 0.9118,
+      "Kernel Ridge RBF": 0.9864,
+      "SVR RBF": 1.0,
+      "XGBoost": 0.9563,
+      "CatBoost": 0.9534,
+      "GPR sola": 0.9865
+    },
+    "XGBoost": {
+      "TN-KRR": 0.9648,
+      "LinXGBoost": 0.9489,
+      "HRT-Boost": 0.9571,
+      "logicDT propio": 0.9095,
+      "RIM": 0.9375,
+      "Kernel Ridge RBF": 0.9717,
+      "SVR RBF": 0.9563,
+      "XGBoost": 1.0,
+      "CatBoost": 0.9774,
+      "GPR sola": 0.9726
+    },
+    "CatBoost": {
+      "TN-KRR": 0.952,
+      "LinXGBoost": 0.9353,
+      "HRT-Boost": 0.9524,
+      "logicDT propio": 0.9202,
+      "RIM": 0.9262,
+      "Kernel Ridge RBF": 0.9661,
+      "SVR RBF": 0.9534,
+      "XGBoost": 0.9774,
+      "CatBoost": 1.0,
+      "GPR sola": 0.9678
+    },
+    "GPR sola": {
+      "TN-KRR": 0.9891,
+      "LinXGBoost": 0.9574,
+      "HRT-Boost": 0.9796,
+      "logicDT propio": 0.9409,
+      "RIM": 0.9234,
+      "Kernel Ridge RBF": 0.9975,
+      "SVR RBF": 0.9865,
+      "XGBoost": 0.9726,
+      "CatBoost": 0.9678,
+      "GPR sola": 1.0
+    }
+  },
+  "nota": "Exploratorio: pesos de fold estimados con OOF cuyas bases vieron el fold evaluado; test reutilizado, no selecciona nada.",
+  "run_id": "20261020_162827_d63194fc",
+  "source_sha256": {
+    "Data/Datos_Brutos.csv": "20a4a2f5b7de782cdfb636485b3b29d5fea170d1b870918346bb157ecc32bc6f",
+    "cabeceras.csv": "8c1ff1b8a25406b7e620763ae0e03759b4d7105c87e5744561d8492ad789863b",
+    "entregable3.py": "47dae9ec524a3c1f309fcbb68acb8a5c217bf82aad4efe48c10a95ec87c88a0f"
+  }
+}
