@@ -1,0 +1,55 @@
+Modelo,Búsqueda,Método elegido,RMSE interno
+SVR RBF,external_1,Genética DEAP,0.8284986817637913
+SVR RBF,external_2,Bayesiana TPE,0.7972771693771137
+SVR RBF,external_3,Bayesiana TPE,0.7949772389612182
+SVR RBF,external_4,Grid Search,0.8077048099395169
+SVR RBF,external_5,Grid Search,0.8116876718363499
+SVR RBF,final,Bayesiana TPE,0.8041314939436301
+Kernel Ridge RBF,external_1,Genética DEAP,0.8232752342838682
+Kernel Ridge RBF,external_2,Bayesiana TPE,0.794327026986675
+Kernel Ridge RBF,external_3,Bayesiana TPE,0.7902021986325513
+Kernel Ridge RBF,external_4,Grid Search,0.8028830569632458
+Kernel Ridge RBF,external_5,Bayesiana TPE,0.8035164810018751
+Kernel Ridge RBF,final,Bayesiana TPE,0.7981653215956808
+TR-KRR RBF,external_1,Genética DEAP,0.8294785175257825
+TR-KRR RBF,external_2,Bayesiana TPE,0.7950186822008165
+TR-KRR RBF,external_3,Bayesiana TPE,0.7967332345675915
+TR-KRR RBF,external_4,Bayesiana TPE,0.8138407431976586
+TR-KRR RBF,external_5,Bayesiana TPE,0.8100770818090247
+TR-KRR RBF,final,Bayesiana TPE,0.8011602153145327
+DenseWeight-XGB,external_1,Genética DEAP,0.830470993696945
+DenseWeight-XGB,external_2,Genética DEAP,0.7996912926783771
+DenseWeight-XGB,external_3,Bayesiana TPE,0.7899612961609801
+DenseWeight-XGB,external_4,Grid Search,0.8077757762329572
+DenseWeight-XGB,external_5,Grid Search,0.8019110202308459
+DenseWeight-XGB,final,Grid Search,0.8058781690286093
+TCR-XGBoost,external_1,Grid Search,0.8316759514631945
+TCR-XGBoost,external_2,Grid Search,0.7996562842814545
+TCR-XGBoost,external_3,Grid Search,0.7895667622693825
+TCR-XGBoost,external_4,Grid Search,0.8056390428036332
+TCR-XGBoost,external_5,Grid Search,0.8019778694410084
+TCR-XGBoost,final,Grid Search,0.8077528559782948
+LinXGBoost,external_1,Bayesiana TPE,0.8407866191969562
+LinXGBoost,external_2,Bayesiana TPE,0.8100307488759885
+LinXGBoost,external_3,Bayesiana TPE,0.8116472515211912
+LinXGBoost,external_4,Bayesiana TPE,0.8129245962583749
+LinXGBoost,external_5,Bayesiana TPE,0.8251776967885218
+LinXGBoost,final,Bayesiana TPE,0.8282916566633494
+logicDT adaptado,external_1,Grid Search,0.8722891401961986
+logicDT adaptado,external_2,Grid Search,0.8088008239045832
+logicDT adaptado,external_3,Grid Search,0.8313391847494929
+logicDT adaptado,external_4,Bayesiana TPE,0.8625171555931643
+logicDT adaptado,external_5,Grid Search,0.8595876426915903
+logicDT adaptado,final,Grid Search,0.8324357602078132
+GPR–XGBoost,external_1,Genética DEAP,0.8259500466764406
+GPR–XGBoost,external_2,Genética DEAP,0.8054228887762388
+GPR–XGBoost,external_3,Bayesiana TPE,0.7922659026039935
+GPR–XGBoost,external_4,Genética DEAP,0.8052647726409521
+GPR–XGBoost,external_5,Bayesiana TPE,0.8027358944471406
+GPR–XGBoost,final,Genética DEAP,0.8023328635643485
+RIM,external_1,Grid Search,0.9063446204292405
+RIM,external_2,Grid Search,0.8871508962650685
+RIM,external_3,Grid Search,0.8419181168238982
+RIM,external_4,Grid Search,0.8828593170163943
+RIM,external_5,Grid Search,0.8732779119612626
+RIM,final,Grid Search,0.8645710918327125

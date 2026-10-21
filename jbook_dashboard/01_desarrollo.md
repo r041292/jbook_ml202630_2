@@ -25,7 +25,8 @@ La evidencia principal es una reducción del RMSE de **25,97 %** frente a predec
 | [Introducción y EDA](02_introduccion_eda.md) | ¿Qué describen los datos reales y qué muestran las páginas de contexto y exploración? |
 | [Modelos lineales](03_modelos.md) | ¿Cómo se separan los datos, cómo se valida el modelo y qué resultados producen los modelos lineales? |
 | [Modelos clásicos](04_modelos_clasicos.md) | ¿Cómo se optimizan, evalúan, interpretan y comparan estadísticamente KNN, Ridge, Lasso, Random Forest, XGBoost y Decision Tree frente al SVM? |
-| [Metodología y detalles adicionales](05_metodologia.md) | ¿Cómo se calculan las métricas, qué diagnósticos complementarios existen y qué falta validar? |
+| [Modelos originales](05_modelos_originales.md) | ¿Qué es cada uno de los nueve modelos originales (SVR RBF, Kernel Ridge, TR-KRR, DenseWeight-XGBoost, TCR-XGBoost, LinXGBoost, logicDT, GPR–XGBoost y RIM), de qué artículo proviene y cómo se optimizan, evalúan, interpretan y comparan frente al SVM? |
+| [Metodología y detalles adicionales](06_metodologia.md) | ¿Cómo se calculan las métricas, qué diagnósticos complementarios existen y qué falta validar? |
 
 El recorrido completo sigue un mismo hilo: describir los datos, evaluar un modelo y explicar sus límites. La siguiente sección delimita el problema y la muestra que se usa en todo el informe.
 

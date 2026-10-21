@@ -13,7 +13,8 @@ project:
     - file: 02_introduccion_eda.md
     - file: 03_modelos.md
     - file: 04_modelos_clasicos.md
-    - file: 05_metodologia.md
+    - file: 05_modelos_originales.md
+    - file: 06_metodologia.md
 site:
   template: book-theme
   title: "Informe del dashboard de Precálculo"

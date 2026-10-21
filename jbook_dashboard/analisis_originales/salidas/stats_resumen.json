@@ -1,0 +1,20 @@
+{
+  "omnibus": {
+    "statistic": 43.471050750536094,
+    "pvalue": 7.200585241481422e-05,
+    "df": 14,
+    "n_folds": 5,
+    "n_models": 15
+  },
+  "nemenyi_q": 3.3912302837652555,
+  "nemenyi_cd": 9.591847720862368,
+  "analysis_run": "20261020_174028_5ff56a2e",
+  "dm_reps": 9999,
+  "dm_seed": 20261020,
+  "finalists": [
+    "GPR–XGBoost (OOF agrupado)",
+    "Kernel Ridge RBF",
+    "Truncated Newton KRR RBF",
+    "SVR RBF"
+  ]
+}

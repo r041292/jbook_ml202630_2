@@ -1,0 +1,16 @@
+Modelo,Rango fold 1,Rango fold 2,Rango fold 3,Rango fold 4,Rango fold 5,Rango promedio
+GPR–XGBoost (OOF agrupado),1.0,3.0,1.0,6.0,4.0,3.0
+Kernel Ridge RBF,2.0,5.0,2.0,5.0,2.0,3.2
+Truncated Newton KRR RBF,3.0,8.0,4.0,3.0,3.0,4.2
+SVR RBF,4.0,7.0,3.0,7.0,1.0,4.4
+DenseWeight-XGBoost,5.0,4.0,5.0,10.0,8.0,6.4
+XGBoost,6.0,1.0,8.0,8.5,10.5,6.8
+TCR-XGBoost,7.0,2.0,6.0,8.5,10.5,6.8
+SVM lineal,11.0,11.0,7.0,4.0,6.0,7.8
+Ridge,10.0,12.0,10.0,1.0,7.0,8.0
+Lasso,8.0,13.0,12.0,2.0,9.0,8.8
+Random Forest,13.0,6.0,9.0,12.0,12.0,10.4
+LinXGBoost (hojas completas E3),9.0,14.0,11.0,11.0,13.0,11.6
+logicDT propio (adaptado),12.0,15.0,13.0,13.0,5.0,11.6
+KNN,14.0,9.0,15.0,14.0,15.0,13.4
+RIM (port E3),15.0,10.0,14.0,15.0,14.0,13.6

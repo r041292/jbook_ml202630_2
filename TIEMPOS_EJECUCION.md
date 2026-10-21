@@ -17969,3 +17969,35 @@ La plantilla anterior no representa una ejecución real.
 | Explicación SHAP | TreeSHAP exacto · train + test | 0.316050900 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
 | Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000491400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
 | Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.544857100 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261021_084451_f6ee1b8b`
+
+- **Modelo/motivo:** Book · evaluación de Originales (inferencia in-sample en train).
+- **Fecha/zona:** 2026-10-21T08:44:51.241615-05:00 a 2026-10-21T08:44:53.696969-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261021_084451_f6ee1b8b/metadata.json](tiempos/20261021_084451_f6ee1b8b/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261021_084451_f6ee1b8b/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | svm / train completo in-sample | 0.071622000 | 1309 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | svm / test verificación | 0.009254800 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | m0 / train completo in-sample | 0.063824200 | 1309 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | m0 / test verificación | 0.015747500 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | m5 / train completo in-sample | 0.040855300 | 1309 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | m5 / test verificación | 0.012486300 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | m19 / train completo in-sample | 0.068957600 | 1309 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | m19 / test verificación | 0.018321200 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | m11 / train completo in-sample | 0.047465000 | 1309 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | m11 / test verificación | 0.015444800 | 188 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | m7 / train completo in-sample | 0.020505200 | 1309 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | m7 / test verificación | 0.013410800 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | m3 / train completo in-sample | 0.008945400 | 1309 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | m3 / test verificación | 0.005833900 | 188 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Inferencia | m14 / train completo in-sample | 0.009710200 | 1309 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | m14 / test verificación | 0.005480900 | 188 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | m15 / train completo in-sample | 0.348340100 | 1309 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | m15 / test verificación | 0.051893300 | 188 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Inferencia | m16 / train completo in-sample | 0.290465500 | 1309 | 1 | completa | Total; eventos.jsonl línea 19 |
+| Inferencia | m16 / test verificación | 0.033067400 | 188 | 1 | completa | Total; eventos.jsonl línea 20 |
+| Total del experimento | Book · evaluación de Originales (inferencia in-sample en train) | 2.460223800 | No aplica | 1 | completa | Total; eventos.jsonl línea 21 |
