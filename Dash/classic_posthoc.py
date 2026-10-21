@@ -193,7 +193,7 @@ elegir un ganador porque sus intervalos se solapen o dejen de solaparse.
 """
 
 
-def section(result, omnibus, report, ui, student_result=None):
+def section(result, omnibus, report, ui, student_result=None, friedman_detail=(), nemenyi_block=None):
     md, table = ui['md'], ui['table']
     reject = result['significant']
     global_table = pd.DataFrame([{'Estadístico de Friedman (χ²)': omnibus['statistic'],
@@ -238,10 +238,13 @@ def section(result, omnibus, report, ui, student_result=None):
            'La Etapa 3 contrasta por estudiante, sobre las predicciones fuera de muestra de la validación cruzada, '
            'los cinco primeros del MCS frente al SVM; es exploratoria.'),
         md(verdict),
-        html.H4('Etapa 1 · Prueba global de Friedman'), table(global_table),
+        html.H4('Etapa 1 · Prueba global de Friedman'), table(global_table), *friedman_detail, nemenyi_block,
         html.H4('Etapa 2 · Model Confidence Set (MCS)'),
         md('**Resultado exploratorio, no conjunto confirmatorio al 90 %.** Menor rango = menor pérdida; '
-           'p MCS ≥ 0.10 conserva el modelo dentro de esta adaptación.'),
+           'p MCS ≥ 0.10 conserva el modelo dentro de esta adaptación. La tabla se ordena por rango promedio; '
+           '**Paso de eliminación** indica el orden en que el MCS descarta modelos (1 = primero, el mayor = sobreviviente). '
+           'Ese orden usa el estadístico t estandarizado de las diferencias de MSE entre pares, no el MSE medio: '
+           'un modelo con peor promedio puede salir después si sus diferencias son más variables entre folds.'),
         table(result['mcs']) if reject else md('Post hoc no ejecutado: no se rechaza H₀ o Friedman no es estimable.'),
         html.H4('Comparaciones dirigidas entre finalistas · métodos explorados'),
         md('Tras el MCS se exploraron las formas habituales de comparar modelos de manera dirigida; la tabla indica cuáles aplican a este '

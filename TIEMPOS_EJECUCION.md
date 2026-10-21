@@ -18001,3 +18001,49 @@ La plantilla anterior no representa una ejecución real.
 | Inferencia | m16 / train completo in-sample | 0.290465500 | 1309 | 1 | completa | Total; eventos.jsonl línea 19 |
 | Inferencia | m16 / test verificación | 0.033067400 | 188 | 1 | completa | Total; eventos.jsonl línea 20 |
 | Total del experimento | Book · evaluación de Originales (inferencia in-sample en train) | 2.460223800 | No aplica | 1 | completa | Total; eventos.jsonl línea 21 |
+
+### Ejecución `20261021_174630_37faf7d2`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-21T17:46:30.706744-05:00 a 2026-10-21T17:46:30.973346-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261021_174630_37faf7d2/metadata.json](tiempos/20261021_174630_37faf7d2/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261021_174630_37faf7d2/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.021566900 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.061069100 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.155276300 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000478800 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.265507600 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
+
+### Ejecución `20261021_174628_36e41932`
+
+- **Modelo/motivo:** Verificación/preparación · Dash/validate_package.py.
+- **Fecha/zona:** 2026-10-21T17:46:28.103978-05:00 a 2026-10-21T17:46:39.758513-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261021_174628_36e41932/metadata.json](tiempos/20261021_174628_36e41932/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261021_174628_36e41932/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Inferencia | XGBRegressor | 0.020565400 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | TransformedTargetRegressor | 0.050111000 | 188 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Inferencia | TruncatedNewtonKernelRidgeRegressor | 0.012691300 | 188 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Inferencia | DecisionTreeRegressor | 0.004204000 | 188 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Inferencia | LinearSVR | 0.005345400 | 188 | 1 | completa | Total; eventos.jsonl línea 5 |
+| Inferencia | KNeighborsRegressor | 0.031068300 | 188 | 1 | completa | Total; eventos.jsonl línea 6 |
+| Inferencia | Ridge | 0.000160800 | 188 | 1 | completa | Total; eventos.jsonl línea 7 |
+| Inferencia | Ridge | 0.008840100 | 188 | 1 | completa | Total; eventos.jsonl línea 8 |
+| Inferencia | Lasso | 0.006799500 | 188 | 1 | completa | Total; eventos.jsonl línea 9 |
+| Inferencia | RandomForestRegressor | 0.032897700 | 188 | 1 | completa | Total; eventos.jsonl línea 10 |
+| Inferencia | XGBRegressor | 0.012545900 | 188 | 1 | completa | Total; eventos.jsonl línea 11 |
+| Inferencia | DecisionTreeRegressor | 0.004745100 | 188 | 1 | completa | Total; eventos.jsonl línea 12 |
+| Inferencia | XGBRegressor | 0.010512200 | 1 | 1 | completa | Total; eventos.jsonl línea 13 |
+| Inferencia | XGBRegressor | 0.015777400 | 1000 | 1 | completa | Total; eventos.jsonl línea 14 |
+| Entrenamiento/refit | Ridge | 0.005187700 | 1000 | 1 | completa | Total; eventos.jsonl línea 15 |
+| Inferencia | Ridge | 0.000140900 | 1000 | 1 | completa | Total; eventos.jsonl línea 16 |
+| Inferencia | Ridge | 0.000112300 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
+| Inferencia | XGBRegressor | 0.010392100 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
+| Total del experimento | Verificación/preparación · Dash/validate_package.py | 11.652435100 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |

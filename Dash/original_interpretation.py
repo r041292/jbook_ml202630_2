@@ -181,7 +181,7 @@ empírica de train. Los caminos muestreados aproximan esta suma; no enumeran tod
             chart=card(f'Waterfall SHAP · {label} · Caso {index+1:04d}',
                 f'Nota real **{truth:.3f}**, predicha **{pred:.3f}**, error absoluto **{abs(pred-truth):.3f}**. '
                 f'Base {data["base"]:.4f} + 15 aportes = {pred:.4f}. Se explica la predicción, no el error ni la causa de la nota.',
-                waterfall(result,position,ui['LABELS']))
+                waterfall(result,position,ui['LABELS'],data['name']))
             chart.className+=' shap-chart';parts.append(chart)
             top=rows.head(3)
             parts.append(md('**Mayores aportes:** '+', '.join(f'{r.Variable} ({r["SHAP (puntos)"]:+.3f})' for _,r in top.iterrows())+

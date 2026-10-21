@@ -236,7 +236,7 @@ def create_classics(app, ui):
                    'compara modelos dentro de un gráfico. La línea discontinua señala la referencia del SVM.')], className='card'),
             (notice('No hay filas de ' + label + ' para estos filtros. La tabla conserva las evaluaciones disponibles.')
              if selected.empty else html.Div(metric_cards, className='comparison-metric-grid')),
-            html.Article([html.H3('Estadísticos de los modelos y test de Friedman'),
+            html.Article([html.H3('Tabla consolidada de métricas'),
                 md('Cada fila resume un modelo, la evaluación y el número de registros (**n**). '
                    'El orden es de menor a mayor **RMSE**. RMSE y MAE se expresan en puntos de nota '
                    '(menor es mejor); MAPE en porcentaje (menor es mejor) y R² es adimensional '
@@ -252,18 +252,18 @@ def create_classics(app, ui):
                       'no se asignan rangos ni p-valores globales a sus filas. ')
                    + ' R² no está definido si la nota es constante o solo hay una fila. '
                    'Los subgrupos pequeños requieren cautela.'),
-                html.Details([html.Summary('Test de Friedman · explicación, hipótesis y limitaciones'),
-                              md(EXPLANATION)], className='details'),
-                md(summary(FRIEDMAN)) if global_view else md('Friedman no se aplica a los subgrupos filtrados.'),
-                html.Details([html.Summary('Rangos por fold y rango promedio · CV global'),
-                    table(FRIEDMAN['ranking'])], className='details') if global_view else None,
-                nemenyi_section(FRIEDMAN['ranking'], FRIEDMAN['n_folds'], {'md': md, 'table': table}) if global_view else None,
+                None if global_view else md('Friedman no se aplica a los subgrupos filtrados.'),
                 dcc.Tabs(value='cv', className='sub-tabs', children=[
                     dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view, result=FRIEDMAN)), className='tab', selected_className='tab-selected'),
                 ])], className='card classic-comparison-table'),
             card('Conclusión de la revisión', conclusion(temporal, cv, global_view, FRIEDMAN)),
-            statistical_section(POSTHOC, FRIEDMAN, REPORT, ui, STUDENT_COMPARISON) if global_view else
+            statistical_section(POSTHOC, FRIEDMAN, REPORT, ui, STUDENT_COMPARISON,
+                friedman_detail=[html.Details([html.Summary('Test de Friedman · explicación, hipótesis y limitaciones'),
+                                               md(EXPLANATION)], className='details'),
+                                 html.Details([html.Summary('Rangos por fold y rango promedio · CV global'),
+                                               table(FRIEDMAN['ranking'])], className='details')],
+                nemenyi_block=nemenyi_section(FRIEDMAN['ranking'], FRIEDMAN['n_folds'], {'md': md, 'table': table})) if global_view else
             notice('Comparación estadística disponible solo con Todos en ambos filtros. '
                    'Friedman no se aplica a los subgrupos filtrados; sus métricas son descriptivas.'),
         ]),'classic-comparison')

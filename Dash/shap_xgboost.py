@@ -133,10 +133,10 @@ def local_rows(result, position, labels):
     }).sort_values('SHAP (puntos)', key=abs, ascending=False, kind='stable')
 
 
-def waterfall(result, position, labels):
+def waterfall(result, position, labels, model_name='XGBoost'):
     rows = local_rows(result, position, labels)
     base, pred = result['base'][position], result['predictions'][position]
-    names = ['Base del modelo'] + rows['Variable'].tolist() + ['Predicción XGBoost']
+    names = ['Base del modelo'] + rows['Variable'].tolist() + [f'Predicción {model_name}']
     values = [base] + rows['SHAP (puntos)'].tolist() + [0.]
     text = [f'{base:.4f}'] + [f'{v:+.4f}' for v in rows['SHAP (puntos)']] + [f'{pred:.4f}']
     figure = go.Figure(go.Waterfall(orientation='h',

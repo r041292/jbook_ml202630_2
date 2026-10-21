@@ -70,9 +70,25 @@ def conclusion(test_scores, cv_scores, global_view, result):
         return ('Las métricas describen el subgrupo. Friedman solo se calcula para CV global; '
                 'selecciona Todos en ambos filtros para consultar sus rangos y contraste.')
     available = cv_scores.dropna(subset=['RMSE']).sort_values('RMSE')
-    text = summary(result)
+    text = ''
     if not available.empty:
         best = available.iloc[0]
-        text += f' **{best.Modelo}** tiene el menor RMSE medio CV (**{best.RMSE:.6f}**), un orden descriptivo distinto del rango promedio.'
-    return text + (' El test temporal no participa en Friedman ni en la elección de modelos. '
-                   'Sus comparaciones por estudiante se presentan aparte como ampliación exploratoria.')
+        text = (f'**1. Mejor valor de la tabla.** En la CV externa, **{best.Modelo}** tiene el menor RMSE medio '
+                f'(**{best.RMSE:.6f}**); es un orden descriptivo, que puede diferir del rango promedio. ')
+    temporal = test_scores.dropna(subset=['RMSE']).sort_values('RMSE')
+    if not temporal.empty:
+        text += (f'En el test temporal el menor RMSE es de **{temporal.iloc[0].Modelo}** '
+                 f'(**{temporal.iloc[0].RMSE:.6f}**); el test no participa en Friedman ni en la elección de modelos. ')
+    if np.isfinite(result['pvalue']):
+        decision = ('se rechaza H₀: hay diferencias globales de rangos entre los modelos'
+                    if result['pvalue'] < .05 else
+                    'no se rechaza H₀: no hay evidencia suficiente de diferencias globales, lo que no demuestra equivalencia')
+        text += (f'\n\n**2. Resultado del test aplicado a continuación.** Friedman sobre el RMSE por fold '
+                 f'(χ² = {result["statistic"]:.4f}, gl = {result["df"]}, p asintótico = {result["pvalue"]:.6g}; '
+                 f'{result["n_folds"]} folds × {result["n_models"]} modelos, α = 0.05): {decision}. '
+                 'Es exploratorio por los cinco folds y el solapamiento de entrenamientos.')
+    else:
+        text += '\n\n**2. Resultado del test aplicado a continuación.** Friedman no es estimable: todos los modelos empatan en todos los folds.'
+    return text + ('\n\n**3. Continuación.** El análisis sigue en la sección **Conclusiones y comparación estadística**: '
+                   'Friedman y Nemenyi, MCS, comparaciones dirigidas, Diebold–Mariano por estudiante y tamaños de efecto. '
+                   'No se identifica un ganador estadístico confirmado.')

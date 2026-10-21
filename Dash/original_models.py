@@ -14,7 +14,7 @@ from dash import Input, Output, State, dcc, html
 from prepare_data import CACHE, metrics
 from classic_models import metric_bar
 from original_analysis import table_statistics, section as original_statistics
-from classic_friedman import summary as friedman_summary
+from classic_friedman import conclusion as friedman_conclusion
 from search_results import optimization_section
 from lazy_content import defer_details
 from model_groups import IMPORT_ONLY, validate as validate_groups
@@ -249,7 +249,7 @@ def create_originals(app, ui):
             cards.append(card(metric, order_note + ' Línea discontinua: SVM lineal. ' + ('Mayor es mejor.' if metric == 'R²' else 'Menor es mejor.'), figure))
         return defer_details(html.Div([
             html.Div(cards, className='comparison-metric-grid') if not scores.empty else notice('No hay filas en esta evaluación.'),
-            html.Article([html.H3('Estadísticos de los modelos y contraste con el SVM'),
+            html.Article([html.H3('Tabla consolidada de métricas'),
                 md('Δ RMSE negativo favorece al modelo. SD describe variación entre folds, no un IC. MAPE en porcentaje. '
                    'R² no se define con una sola fila o nota constante.'
                    + (' Los modelos de librería importada o preentrenados se muestran solo como referencia descriptiva (columna '
@@ -259,9 +259,10 @@ def create_originals(app, ui):
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view)), className='tab', selected_className='tab-selected'),
                 ])], className='card classic-comparison-table'),
             card('Conclusión de la revisión',
-                 (friedman_summary(ANALYSIS['omnibus'])+f' **{BEST_NAME}** tiene el menor RMSE medio CV '
-                  f'(**{ACTIVE["best_mean_cv"]:.6f}**); no se elige por test. Las etapas2/3 separan CV y test.'
-                  if global_view else 'Las métricas del subgrupo son descriptivas; selecciona Todos/Todos para inferencia global.')),
+                 friedman_conclusion(*[frame.loc[~frame['En pruebas estadísticas'].astype(str).str.startswith('No')]
+                                       if 'En pruebas estadísticas' in frame else frame for frame in (temporal, cv)],
+                                      global_view, ANALYSIS['omnibus'])
+                 if global_view else 'Las métricas del subgrupo son descriptivas; selecciona Todos/Todos para inferencia global.'),
             original_statistics(ANALYSIS,ui) if global_view else None]),'original-comparison-'+str(show_imports))
 
     @app.callback(Output('original-diagnostic-model', 'options'), Output('original-diagnostic-model', 'value'),
