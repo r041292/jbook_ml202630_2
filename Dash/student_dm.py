@@ -3,8 +3,10 @@
 Pérdida = error cuadrático por fila. Se suma por estudiante y se prueba que la media de la
 diferencia de pérdidas (candidato − referencia) sea cero, con error estándar robusto por
 cluster (estudiante) y aproximación normal. IC95% por bootstrap de estudiantes.
-No es la versión de series de tiempo (HAC): la dependencia que se corrige es la de las filas
-de un mismo estudiante. Sin entrenamiento ni consulta al test para seleccionar.
+No es la versión de series de tiempo (HAC): la unidad es el estudiante (casi todos tienen un solo
+registro; unos pocos tienen dos en el mismo periodo y se agrupan), de modo que el error estándar
+robusto por estudiante equivale en la práctica al de una prueba pareada. Sin entrenamiento ni
+consulta al test para seleccionar.
 """
 import numpy as np
 import pandas as pd
@@ -107,6 +109,7 @@ def render(dm, ui, scope='Originales', mcs_label='Etapa 2'):
         'Conclusión': r['conclusion']} for r in dm['test']])
     significant = [r for r in cv_rows if r['p_raw'] is not None and r['p_raw'] < alpha]
     n_students = cv_rows[0]['n_students']
+    n_records = cv_rows[0]['n_records']
     better = [r for r in significant if r['delta_mse'] < 0]
     worse = [r for r in significant if r['delta_mse'] > 0]
     describe = lambda rows: ', '.join(f"{r['model']} (Δ RMSE {r['delta_rmse']:+.4f})" for r in rows)
@@ -137,14 +140,16 @@ def render(dm, ui, scope='Originales', mcs_label='Etapa 2'):
     changed = [r['model'] for part in ('cv', 'test') for r in dm[part]
                if r.get('p_hln') is not None and r['p_raw'] is not None and (r['p_raw'] < alpha) != (r['p_hln'] < alpha)]
     hln_note = (
-        '**Corrección HLN (muestra finita).** El p crudo usa la distribución normal, que tiende a ser algo optimista cuando hay pocas observaciones. '
-        'La columna «p crudo con corrección HLN» aplica la corrección de Harvey, Leybourne y Newbold (1997) en su versión para horizonte h = 1: '
-        'el estadístico se multiplica por √((G−1)/G) y se compara con una t de Student de G−1 grados de libertad, donde G es el número de estudiantes. '
-        'No se usa la forma con h > 1 porque aquí no hay una secuencia temporal de pronósticos: las observaciones son estudiantes y no periodos consecutivos. '
+        '**Columna con corrección HLN.** Es el p de muestra finita descrito en el punto (3) de la adaptación: la distribución normal '
+        'tiende a ser algo optimista con pocas observaciones. '
         + ('Con esta corrección **ningún veredicto cambia** (ni en CV ni en test): el efecto es menor porque G es grande, y por eso las conclusiones se siguen '
            'expresando con el p crudo. ' if not changed else
            f'Con esta corrección **cambia el veredicto de: {", ".join(sorted(set(changed)))}**; se recomienda leer la columna HLN. ') +
         'La columna de la prueba conservadora responde otra cuestión (reentrenamiento) y no se sustituye por esta.')
+    pair_rows = other_finalist_pairs(dm)
+    pairs_frame = pd.DataFrame([{'Modelo A': r['a'], 'Modelo B': r['b'], 'Δ RMSE (A − B)': r['delta_rmse'],
+        'IC 95% inferior': r['ic_low'], 'IC 95% superior': r['ic_high'], 'p crudo': fmt(r['p_raw']),
+        'p crudo con corrección HLN': fmt(r['p_hln']), 'Conclusión': r['conclusion']} for r in pair_rows])
     ses = [r['se_corrected_t'] for r in cv_rows if r.get('se_corrected_t')]
     if ses:
         t_crit = float(stats.t.ppf(.975, 4))
@@ -167,10 +172,22 @@ def render(dm, ui, scope='Originales', mcs_label='Etapa 2'):
            'que el SVM lineal, midiendo el error con el cuadrado de la diferencia entre nota real y nota predicha. '
            'Se promedia esa diferencia entre estudiantes. **H₀: en promedio ambos modelos se equivocan lo mismo.** '
            'Un **Δ MSE o Δ RMSE negativo favorece al candidato**; el p crudo indica qué tan raro sería ver una ventaja así '
-           'si de verdad fueran igual de buenos. Es la idea de Diebold–Mariano (comparar la pérdida promedio de dos '
-           'predictores), pero no la versión de series de tiempo: aquí el error estándar se agrupa por **estudiante**, '
-           'porque las filas de una misma persona (varios periodos) no son independientes. '
-           'Las predicciones son las **fuera de muestra de la CV** (cada nota predicha por un modelo que no vio a ese estudiante).'),
+           'si de verdad fueran igual de buenos. Es la idea del contraste de Diebold–Mariano (comparar la pérdida promedio de dos '
+           'predictores), en una versión adaptada a este diseño que se explica a continuación.'),
+        md('**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano, con la corrección de Harvey, '
+           'Leybourne y Newbold (HLN), se diseñó para series de tiempo: compara los errores de dos pronósticos hechos en fechas sucesivas, '
+           'con un horizonte h, y corrige la dependencia entre fechas vecinas (varianza HAC). Aquí no hay secuencia de pronósticos ni horizonte: '
+           'el índice de fold y el orden de las filas no son tiempo, y cinco folds darían solo cinco observaciones con entrenamientos solapados. '
+           f'Lo que sí hay son estudiantes ({n_students} estudiantes y {n_records} registros: casi todos tienen un único registro, unos pocos '
+           'tienen dos en el mismo periodo y ninguno se comparte entre entrenamiento y prueba). Se conserva la idea central (probar que la pérdida '
+           'media de dos modelos es la misma) y se **adapta** así: (1) la observación es el **estudiante**, no la fecha; '
+           '(2) el error estándar es **robusto por estudiante** en lugar de HAC (como casi cada estudiante tiene un solo registro, equivale en la '
+           'práctica a una prueba pareada sobre los errores cuadráticos y cubre los pocos casos de dos registros); '
+           '(3) la corrección HLN se aplica con **h = 1**: el estadístico se multiplica por √((G−1)/G) y se compara con una t de Student de G−1 '
+           'grados de libertad, donde G es el número de estudiantes; no se usa h > 1 porque no hay pronósticos solapados; '
+           '(4) las pérdidas son las **predicciones fuera de muestra de la validación cruzada** (cada nota la predice un modelo que no vio al estudiante); '
+           '(5) el IC95 se obtiene **remuestreando estudiantes** y no con bootstrap estacionario. '
+           'Es una adaptación exploratoria (ver los límites al final de la etapa).'),
         md(f'**Qué modelos se comparan.** El MCS ({mcs_label}) conserva {sum(r["in_mcs"] for r in cv_rows)} modelo(s) distinto(s) del SVM con α 0.10; '
            f'para llegar a {top_n} se completa con los siguientes en su orden de eliminación (el SVM lineal, que es la referencia, se omite). '
            f'Se usan **{n_students} estudiantes** y un bootstrap de estudiantes ({dm["reps"]} réplicas, semilla {dm["seed"]}) para el IC95%.'),
@@ -188,9 +205,13 @@ def render(dm, ui, scope='Originales', mcs_label='Etapa 2'):
            'como control de cautela y no como la prueba principal.'),
         *[md(text) for text in reading],
         md(power_note),
-        md('**Límites.** (1) El p por estudiante no incluye la variabilidad de reentrenar con otros estudiantes, así que tiende a ser optimista. '
+        md('**Límites.** (1) El p por estudiante no incluye la variabilidad de reentrenar con otros estudiantes ni posibles efectos compartidos de contexto (sección del curso, cohorte), así que tiende a ser optimista. '
            f'(2) Los {top_n} modelos se eligieron por su desempeño en esta misma CV (MCS), por lo que la selección tampoco está corregida: '
            'la inferencia es exploratoria. (3) No se elige ningún modelo ni parámetro con test.'),
+        html.Details([html.Summary('Complemento · pares entre finalistas que no incluyen al SVM (CV)'),
+            md('Los pares con el SVM ya están en la tabla principal; aquí se contrastan los demás con el mismo procedimiento. '
+               'Δ RMSE = A − B (negativo favorece a A); cada par es una pregunta independiente, sin Holm.'),
+            table(pairs_frame)], className='details') if pair_rows else None,
         html.Details([html.Summary('Complemento · mismo contraste en el test temporal (202530)'),
             md(f'{dm["test"][0]["n_students"]} estudiantes; modelos fijos y periodo ya revisado, sin incertidumbre de entrenamiento. '
                'Con menos estudiantes hay menos potencia; sirve para ver si el signo se mantiene fuera de la CV.'),
@@ -210,23 +231,6 @@ def corrected_from_folds(folds, reference, ratio):
     return pd.DataFrame.from_dict(rows, orient='index').rename_axis('Modelo')
 
 
-ADAPTATION_NOTE = (
-    '**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano, con la corrección de Harvey, '
-    'Leybourne y Newbold (HLN), se diseñó para series de tiempo: compara los errores de dos pronósticos hechos en fechas sucesivas, con un '
-    'horizonte h, y corrige la dependencia entre fechas vecinas (varianza HAC). Aquí no hay secuencia de pronósticos ni horizonte: el '
-    'índice de fold y el orden de las filas no son tiempo, y cinco folds darían solo cinco observaciones con entrenamientos solapados. '
-    'Lo que sí existe es otra dependencia: un mismo estudiante aparece en varios periodos y sus errores se parecen. Se conserva entonces la idea '
-    'central (probar que la pérdida media de A y B es la misma) y se **adapta** así: '
-    '(1) la observación es el **estudiante**, no la fecha; '
-    '(2) el error estándar es **robusto por estudiante** (cluster) en lugar de HAC; '
-    '(3) la corrección HLN se aplica con **h = 1**: el estadístico se multiplica por √((G−1)/G) y se compara con una t de Student de G−1 grados de libertad, '
-    'sin horizonte de varios pasos porque no hay pronósticos solapados; '
-    '(4) las pérdidas son las **predicciones fuera de muestra de la validación cruzada** (cada nota la predice un modelo que no vio al estudiante); '
-    '(5) el IC95 se obtiene **remuestreando estudiantes** y no con bootstrap estacionario. '
-    'Cada par se contrasta de forma independiente y **sin ajuste de Holm**. Es una adaptación exploratoria: no incluye la variabilidad de reentrenar '
-    'con otros estudiantes y los finalistas se eligieron con esta misma validación.')
-
-
 def finalist_pairs(fold_pairs, oof, groups, y, name_key):
     """DM-HLN adaptado para cada par (A, B) de finalistas; diferencia = pérdida A − pérdida B."""
     def loss(name):
@@ -239,31 +243,6 @@ def finalist_pairs(fold_pairs, oof, groups, y, name_key):
     return rows
 
 
-def pairs_table(fold_pairs, dm_pairs):
-    """Une los IC descriptivos por folds con el DM-HLN adaptado por estudiante."""
-    fmt = lambda v: 'No estimable' if v is None else f'{v:.6f}'
-    rows = []
-    for _, f in fold_pairs.iterrows():
-        d = next((r for r in dm_pairs if r['a'] == f['Modelo A'] and r['b'] == f['Modelo B']), None)
-        rows.append({'Modelo A': f['Modelo A'], 'Modelo B': f['Modelo B'], 'Δ MSE (A − B)': f['Δ MSE (A − B)'],
-                     'IC 95% inferior · folds': f['IC 95% inferior · folds'],
-                     'IC 95% superior · folds': f['IC 95% superior · folds'],
-                     'Δ RMSE (A − B) · por estudiante': None if d is None else d['delta_rmse'],
-                     'IC 95% inferior · estudiantes': None if d is None else d['ic_low'],
-                     'IC 95% superior · estudiantes': None if d is None else d['ic_high'],
-                     'p-valor crudo DM adaptado': 'No estimable' if d is None else fmt(d['p_raw']),
-                     'p-valor con corrección HLN': 'No estimable' if d is None else fmt(d['p_hln']),
-                     'Conclusión (p crudo < 0.05)': 'No estimable' if d is None else d['conclusion']})
-    return pd.DataFrame(rows)
-
-
-def pairs_reading(dm_pairs, alpha=.05):
-    significant = [r for r in dm_pairs if r['p_raw'] is not None and r['p_raw'] < alpha]
-    if not dm_pairs:
-        return ''
-    if not significant:
-        return (f'**Lectura:** ninguno de los {len(dm_pairs)} pares de finalistas difiere significativamente (p crudo < 0.05). '
-                'Esto no demuestra que sean equivalentes: indica que los datos no permiten distinguirlos.')
-    return ('**Lectura:** difieren significativamente (p crudo < 0.05) ' +
-            '; '.join(f"{r['a']} frente a {r['b']} (Δ RMSE {r['delta_rmse']:+.4f})" for r in significant) +
-            f'. Los otros {len(dm_pairs) - len(significant)} pares no se distinguen.')
+def other_finalist_pairs(dm, reference=REFERENCE):
+    """Pares de finalistas que no incluyen al SVM (los demás ya están en la tabla principal)."""
+    return [r for r in dm.get('finalist_pairs', []) if reference not in (r['a'], r['b'])]

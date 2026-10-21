@@ -12,7 +12,7 @@ El capítulo se organiza en cinco bloques:
 1. **Introducción:** qué modelos se implementaron, qué idea los sostiene y qué comparten con el SVM.
 2. **Optimización de hiperparámetros:** las cinco estrategias de búsqueda, la justificación de los rangos, los resultados, el presupuesto computacional, los tiempos y la convergencia.
 3. **Evaluación de modelos:** RMSE y MAE en entrenamiento, validación y prueba, diagnósticos de White y BDS, análisis de residuos, interpretabilidad SHAP y comparación con LIME, y robustez frente a folds y semillas.
-4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi, Model Confidence Set y DM-HLN adaptado entre finalistas), contraste por estudiante de los cinco primeros del MCS frente al SVM y tamaños de efecto.
+4. **Comparación estadística:** prueba ómnibus de Friedman, post hoc (Nemenyi y Model Confidence Set), un contraste tipo Diebold–Mariano por estudiante de los cinco primeros del MCS frente al SVM y tamaños de efecto.
 5. **Resultados finales y conclusiones.**
 
 Todas las cifras provienen de la ejecución activa `20261018_102325_af643f83` (`Precalculo/resultados/e3/busquedas/`), la misma que alimenta el dashboard. Las tablas y figuras nuevas se regeneran con `jbook_dashboard/analisis_clasicos/generar_clasicos.py` y la sensibilidad a semillas con `experimentos_semillas.py`; ninguno de los dos reentrena los modelos canónicos ni consulta el test para elegir parámetros.
@@ -841,33 +841,31 @@ El dashboard usa el **Model Confidence Set** de Hansen, Lunde y Nason: en lugar 
 
 El conjunto exploratorio conserva **XGBoost, SVM lineal y Ridge**. Que Random Forest salga antes que Lasso pese a un MSE medio similar se debe a que sus diferencias frente a los demás son más consistentes entre folds (menor error estándar). Este conjunto **no tiene cobertura del 90 % demostrada**: el remuestreo de cinco folds dependientes no corrige esa dependencia, y un p MCS no es la probabilidad de que un modelo sea el mejor.
 
-#### Comparaciones dirigidas entre finalistas (DM-HLN adaptado · dashboard)
+#### Comparaciones dirigidas entre finalistas · métodos explorados
 
-Entre los tres finalistas se comparan los tres pares con dos lecturas de la misma diferencia. Las columnas **«folds»** son intervalos percentiles de los mismos remuestreos de folds: descriptivos, no estacionarios y sin valor inferencial por sí solos. Las columnas **«por estudiante»** y los p provienen de un contraste del tipo **Diebold–Mariano con corrección HLN, adaptado** a este diseño, que es el mismo que usa la etapa siguiente frente al SVM:
+Tras el MCS se exploraron las formas habituales de comparar de manera dirigida a los finalistas. Entre los tres finalistas, las diferencias de MSE con intervalos percentiles de los remuestreos de folds incluyen el cero; estos intervalos son descriptivos, no estacionarios y no sirven por sí solos para decidir significancia:
 
-| Modelo A | Modelo B | Δ MSE (A − B) | IC 95 % · folds | Δ RMSE (A − B) · por estudiante | IC 95 % · estudiantes | p crudo | p con HLN |
-| --- | --- | ---: | --- | ---: | --- | ---: | ---: |
-| XGBoost | SVM lineal | −0,0149 | [−0,0631; 0,0215] | −0,0091 | [−0,0290; 0,0095] | 0,3560 | 0,3564 |
-| XGBoost | Ridge | −0,0171 | [−0,0680; 0,0219] | −0,0104 | [−0,0340; 0,0098] | 0,3542 | 0,3546 |
-| SVM lineal | Ridge | −0,0022 | [−0,0095; 0,0050] | −0,0014 | [−0,0096; 0,0064] | 0,7488 | 0,7490 |
+| Modelo A | Modelo B | Δ MSE (A − B) | IC 95 % inferior · folds | IC 95 % superior · folds |
+| --- | --- | ---: | ---: | ---: |
+| XGBoost | SVM lineal | −0,0149 | −0,0631 | 0,0215 |
+| XGBoost | Ridge | −0,0171 | −0,0680 | 0,0219 |
+| SVM lineal | Ridge | −0,0022 | −0,0095 | 0,0050 |
 
-**Ninguno de los tres pares difiere significativamente** (p crudo < 0,05): XGBoost tiene el menor error de los tres, pero ni frente al SVM ni frente a Ridge se distingue del azar, y SVM y Ridge son prácticamente indistinguibles. Esto no demuestra equivalencia; indica que los datos no permiten separarlos.
-
-**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano y su corrección de Harvey, Leybourne y Newbold (HLN) se diseñaron para series de tiempo: comparan los errores de dos pronósticos hechos en fechas sucesivas, con un horizonte *h*, y corrigen la dependencia entre fechas vecinas con una varianza HAC. Aquí no hay secuencia de pronósticos ni horizonte: el índice de fold y el orden de las filas no son tiempo, y con cinco folds la prueba tendría solo cinco observaciones con entrenamientos solapados. Lo que sí existe es otra dependencia, la de un mismo estudiante que aparece en varios periodos. Por eso se conserva la idea central, probar que la pérdida media de dos predictores es la misma, y se adapta así:
-
-1. la observación es el **estudiante**, no la fecha;
-2. el error estándar es **robusto por estudiante** (cluster) en lugar de HAC;
-3. la corrección HLN se aplica con **h = 1**: el estadístico se multiplica por $\sqrt{(G-1)/G}$ y se compara con una $t$ de Student con $G-1$ grados de libertad; no hay horizonte de varios pasos porque no existen pronósticos solapados;
-4. las pérdidas son las **predicciones fuera de muestra de la validación cruzada**, de modo que cada nota la predice un modelo que no vio a ese estudiante;
-5. el IC 95 % se obtiene **remuestreando estudiantes**, no con un bootstrap estacionario.
-
-Cada par se contrasta de forma independiente y **sin corrección de Holm**: son preguntas separadas y no se pretende afirmar nada sobre el conjunto. La adaptación es exploratoria: no incorpora la variabilidad de reentrenar con otros estudiantes y los finalistas se eligieron con esta misma validación. Las fórmulas completas están en la etapa siguiente.
-
-Las pruebas de Giacomini–White, Clark–West y el bootstrap estacionario **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo.
+Las pruebas de Giacomini–White, Clark–West y el bootstrap estacionario **no son aplicables** a este diseño: no hay una serie ordenada de pronósticos con horizonte definido, ni una pareja anidada restringida/ampliada, ni una secuencia estacionaria. Los folds no son tiempo. Tampoco aplica el contraste de Diebold–Mariano con corrección HLN en su versión de series de tiempo. Sí se calcula, en cambio, una **adaptación del DM-HLN por estudiante**, cuya justificación, adaptación y resultados se presentan en la etapa siguiente.
 
 ### Etapa 3 · Contraste tipo Diebold–Mariano por estudiante frente al SVM
 
-Las etapas anteriores ordenan los modelos, pero no responden la pregunta práctica: **¿algún clásico se equivoca significativamente menos que el SVM lineal?** Esta etapa la contesta con un contraste del tipo **Diebold–Mariano**, que compara la pérdida promedio de dos predictores. Para cada estudiante se mide cuánto más (o menos) se equivoca el modelo candidato que el SVM, con el error cuadrático como pérdida, y se promedia esa diferencia entre estudiantes. La hipótesis nula es que **en promedio ambos modelos se equivocan lo mismo**; una diferencia negativa favorece al candidato. No es la versión de series de tiempo: aquí no hay secuencia de pronósticos, y la dependencia que se corrige es la de las filas de un mismo estudiante, que aparece en varios periodos y no puede tratarse como independiente. Por eso la unidad de análisis es el estudiante y las predicciones son las **fuera de muestra de la validación cruzada** (cada nota la predice un modelo que no vio a ese estudiante), con lo que participan los 1.293 estudiantes de entrenamiento (1.309 registros) y no solo los 188 del test.
+Las etapas anteriores ordenan los modelos, pero no responden la pregunta práctica: **¿algún clásico se equivoca significativamente menos que el SVM lineal?** Esta etapa la contesta con un contraste del tipo **Diebold–Mariano**, que compara la pérdida promedio de dos predictores. Para cada estudiante se mide cuánto más (o menos) se equivoca el modelo candidato que el SVM, con el error cuadrático como pérdida, y se promedia esa diferencia entre estudiantes. La hipótesis nula es que **en promedio ambos modelos se equivocan lo mismo**; una diferencia negativa favorece al candidato.
+
+**Por qué se adapta el DM-HLN y qué adaptación se hizo.** El contraste de Diebold–Mariano y su corrección de Harvey, Leybourne y Newbold (HLN) se diseñaron para series de tiempo: comparan los errores de dos pronósticos hechos en fechas sucesivas, con un horizonte *h*, y corrigen la dependencia entre fechas vecinas con una varianza HAC. Aquí no hay secuencia de pronósticos ni horizonte: el índice de fold y el orden de las filas no son tiempo, y con cinco folds la prueba tendría solo cinco observaciones con entrenamientos solapados. Lo que sí hay son estudiantes: en entrenamiento, 1.309 registros de 1.293 estudiantes (16 tienen dos registros, siempre en el mismo periodo); en el test, 188 registros de 188 estudiantes, y ninguno se comparte entre entrenamiento y prueba. Se conserva la idea central, probar que la pérdida media de dos predictores es la misma, y se adapta así:
+
+1. la observación es el **estudiante**, no la fecha;
+2. el error estándar es **robusto por estudiante** en lugar de HAC; como casi cada estudiante tiene un solo registro, equivale en la práctica a una prueba pareada sobre los errores cuadráticos y cubre los pocos casos de dos registros;
+3. la corrección HLN se aplica con **h = 1** (se detalla más abajo): no hay pronósticos solapados que justifiquen un horizonte mayor;
+4. las pérdidas son las **predicciones fuera de muestra de la validación cruzada**, de modo que cada nota la predice un modelo que no vio a ese estudiante y participan los 1.293 estudiantes de entrenamiento y no solo los 188 del test;
+5. el IC 95 % se obtiene **remuestreando estudiantes**, no con un bootstrap estacionario.
+
+La adaptación es exploratoria; sus límites se resumen al final de la etapa.
 
 Sea $D_i$ la suma, sobre los registros del estudiante $i$, de la diferencia de error cuadrático entre el modelo y el SVM, $n_i$ su número de registros y $G$ el número de estudiantes. La diferencia media y su error estándar agrupado por estudiante son
 
@@ -904,6 +902,8 @@ def clustered_test(loss_ref, loss_new, groups):
 
 **Ninguno de los cinco modelos presentó un resultado significativamente mejor que el SVM lineal, y solo se identificó uno con un resultado inferior: KNN** (ΔRMSE = +0,0306). XGBoost, el de menor error medio, queda 0,009 puntos de RMSE por debajo del SVM, pero esa diferencia es compatible con el azar (p = 0,356); Ridge, Lasso y Random Forest tienen diferencias aún menores y de signo contrario. "Diferencia no significativa" no significa equivalencia: indica que los datos no permiten distinguir a esos modelos del SVM.
 
+**Entre finalistas.** El único par de finalistas que no incluye al SVM, XGBoost frente a Ridge, tampoco difiere (ΔRMSE = −0,0104; IC 95 % [−0,0340; 0,0098]; p = 0,3542; p con HLN = 0,3546); los otros dos pares con el SVM ya figuran en la tabla.
+
 **La prueba conservadora.** La última columna antes de la conclusión es una comprobación de cautela que hace la misma comparación con otra fuente de azar. En lugar de 1.293 estudiantes usa como observaciones los **cinco folds de validación** y agranda su error estándar, porque los entrenamientos de esos folds comparten la mayor parte de los datos (corrección de Nadeau–Bengio, con 4 grados de libertad). Responde a una pregunta distinta: *si el algoritmo se reentrenara con otros datos, ¿seguiría siendo mejor (o peor) que el SVM?* La prueba por estudiante trata los modelos como fijos y no incluye esa variabilidad de reentrenamiento, por lo que tiende a ser optimista; la conservadora tiende a ser exigente. La lectura conjunta es:
 
 - Para **KNN**, la prueba por estudiante indica que es peor que el SVM en esta muestra (p = 0,008), pero la conservadora no lo confirma (p = 0,246). El deterioro es **probable, pero no confirmado**.
@@ -923,7 +923,7 @@ def clustered_test(loss_ref, loss_new, groups):
 
 En el test ningún modelo difiere significativamente del SVM. Además, **el deterioro de KNN observado en validación no se reproduce** (ΔRMSE = −0,006, p = 0,761), lo que refuerza que ese resultado debe leerse con cautela. XGBoost, Ridge y Lasso muestran diferencias negativas, favorables al candidato, pero con intervalos que incluyen el cero.
 
-**Alcance y límites.** (1) El p por estudiante no incorpora la variabilidad de reentrenar con otros estudiantes. (2) Los cinco modelos se eligieron por su desempeño en esta misma validación cruzada (MCS); ni esa selección ni la multiplicidad están corregidas, de modo que la inferencia es exploratoria. (3) Ningún modelo ni parámetro se elige con el test. Esta etapa sustituye al contraste por bootstrap-t con Holm sobre los 188 estudiantes del test que usaba la versión anterior del informe: al usar las predicciones de validación cruzada se dispone de 1.293 estudiantes en lugar de 188 y las comparaciones se plantean de forma independiente, tal como se formulan las preguntas.
+**Alcance y límites.** (1) El p por estudiante no incorpora la variabilidad de reentrenar con otros estudiantes ni posibles efectos compartidos de contexto (sección del curso, cohorte). (2) Los cinco modelos se eligieron por su desempeño en esta misma validación cruzada (MCS); ni esa selección ni la multiplicidad están corregidas, de modo que la inferencia es exploratoria. (3) Ningún modelo ni parámetro se elige con el test. Esta etapa sustituye al contraste por bootstrap-t con Holm sobre los 188 estudiantes del test que usaba la versión anterior del informe: al usar las predicciones de validación cruzada se dispone de 1.293 estudiantes en lugar de 188 y las comparaciones se plantean de forma independiente, tal como se formulan las preguntas.
 
 ### Tamaño del efecto
 

@@ -13,7 +13,6 @@ from dash import html
 
 from classic_friedman import friedman_comparison
 from student_comparison import section as student_section
-from student_dm import ADAPTATION_NOTE, pairs_reading, pairs_table
 
 
 def fold_panel(folds, models):
@@ -153,17 +152,18 @@ filas no constituyen tiempo, y con cinco folds solapados la prueba tendría solo
 cinco observaciones. Se usa, por eso, una **adaptación por estudiante**: la observación
 es el estudiante (suma de las diferencias de error cuadrático de sus registros),
 las pérdidas son las predicciones fuera de muestra de la validación cruzada
-(1.293 estudiantes), el error estándar es robusto por cluster de estudiante en lugar
-de HAC, y la corrección HLN se aplica con h = 1 —no hay pronósticos solapados que
+(1.293 estudiantes), el error estándar es robusto por estudiante en lugar
+de HAC (casi cada estudiante tiene un solo registro, por lo que equivale en la práctica
+a una prueba pareada), y la corrección HLN se aplica con h = 1 —no hay pronósticos solapados que
 justifiquen un horizonte mayor—: z·√((G−1)/G) con una t de Student de G−1 grados
 de libertad. El IC95 sale de remuestrear estudiantes. El **bootstrap estacionario**
 sigue sin aplicar: requiere una secuencia estacionaria y una longitud de bloque
-justificada. Cada par de finalistas se contrasta de forma independiente y **sin
-ajuste de Holm**; la columna «por folds» conserva el IC percentil descriptivo de
-los 3.125 remuestreos. La adaptación no incluye la variabilidad de reentrenar y
-los finalistas se eligieron con la misma validación: es exploratoria. La Etapa 3
-usa el mismo contraste frente al SVM. El par se identifica por RMSE medio CV,
-nunca por test.
+justificada. Cada comparación se contrasta de forma independiente y **sin
+ajuste de Holm**; los resultados (los cinco primeros del MCS frente al SVM) están
+en la Etapa 3 y los IC por folds entre finalistas se conservan como descripción
+(3.125 remuestreos). La adaptación no incluye la variabilidad de reentrenar y
+los modelos se eligieron con la misma validación: es exploratoria. El orden se
+define por RMSE medio CV, nunca por test.
 
 **Tamaño del efecto.** La significancia no implica relevancia práctica.
 Delta de Cliff = P(L_A > L_B) − P(L_A < L_B), calculado con las 25 comparaciones
@@ -211,7 +211,7 @@ def section(result, omnibus, report, ui, student_result=None):
                 + '** y el segundo a **' + result['top_two'][1]
                 + '**. Las comparaciones por folds no confirman superioridad por pares; GW/CW y el IC estacionario '
                   'no son aplicables con los artefactos actuales, y el DM-HLN se usa en una versión adaptada por estudiante '
-                  '(ver «Comparaciones dirigidas entre finalistas»). '
+                  '(ver Etapa 3). '
                   'La elección final no usa test, tiempos ni estos contrastes exploratorios.')
     ci = pd.DataFrame(report['bootstrap'])
     names = result['effects']['Modelo A'].tolist() + result['effects']['Modelo B'].tolist()
@@ -223,13 +223,11 @@ def section(result, omnibus, report, ui, student_result=None):
          'Alcance': 'MSE de 5 folds; sin cobertura nominal garantizada'},
         {'Paso': 'Giacomini–White / Clark–West', 'Estado': 'No aplicable',
          'Alcance': 'Sin diseño de pronóstico/instrumentos ni anidamiento establecido'},
-        {'Paso': 'DM-HLN adaptado · pares de finalistas', 'Estado': 'Calculado · adaptación exploratoria',
-         'Alcance': 'Por estudiante sobre predicciones de CV; HLN con h = 1; cada par independiente, sin Holm'},
+        {'Paso': 'DM-HLN adaptado por estudiante', 'Estado': 'Calculado · adaptación exploratoria',
+         'Alcance': 'Ver Etapa 3: top 5 del MCS frente al SVM; predicciones de CV; HLN con h = 1; sin Holm'},
         {'Paso': 'IC bootstrap estacionario', 'Estado': 'No aplicable',
          'Alcance': 'Sin secuencia estacionaria ni longitud de bloque justificada'},
     ])
-    dm_pairs = ((student_result or {}).get('dm') or {}).get('finalist_pairs') or []
-    has_dm = bool(dm_pairs)
     effects = result['effects'].copy()
     effects['d de Cohen emparejado (d_z)'] = effects['d de Cohen emparejado (d_z)'].map(
         lambda value: round(value, 6) if np.isfinite(value) else 'No estimable')
@@ -245,16 +243,17 @@ def section(result, omnibus, report, ui, student_result=None):
         md('**Resultado exploratorio, no conjunto confirmatorio al 90 %.** Menor rango = menor pérdida; '
            'p MCS ≥ 0.10 conserva el modelo dentro de esta adaptación.'),
         table(result['mcs']) if reject else md('Post hoc no ejecutado: no se rechaza H₀ o Friedman no es estimable.'),
-        html.H4('Comparaciones dirigidas entre finalistas'), table(status),
-        md(ADAPTATION_NOTE if has_dm else 'Los contrastes DM-HLN no se calcularon para esta ejecución.'),
-        md('Δ MSE = pérdida A − pérdida B; negativo favorece A. Las columnas **«folds»** son intervalos percentiles descriptivos '
-           'de los 3.125 remuestreos de folds, **no estacionarios**; no justifican decisiones de significancia. '
-           'Las columnas **«por estudiante»** y los p corresponden al DM-HLN adaptado: el p crudo usa la normal y el p con '
-           'corrección HLN la versión de muestra finita (h = 1). Cada par es una pregunta independiente, sin ajuste de Holm ni '
-           'corrección por la selección del MCS.'),
-        (table(pairs_table(result['pairs'], dm_pairs)) if has_dm else table(result['pairs']))
-        if not result['pairs'].empty else md('No hay pares de finalistas para comparar.'),
-        md(pairs_reading(dm_pairs)) if has_dm and dm_pairs else None,
+        html.H4('Comparaciones dirigidas entre finalistas · métodos explorados'),
+        md('Tras el MCS se exploraron las formas habituales de comparar modelos de manera dirigida; la tabla indica cuáles aplican a este '
+           'diseño. Solo se calcula una adaptación del DM-HLN por estudiante: su justificación, la adaptación realizada y sus resultados están '
+           'en la **Etapa 3**, más abajo. Los intervalos por folds entre finalistas se conservan como descripción.'),
+        table(status),
+        html.Details([html.Summary('IC descriptivos por folds entre finalistas'),
+            md('Δ MSE = pérdida A − pérdida B; negativo favorece A. Intervalos percentiles de los 3.125 remuestreos de folds, '
+               '**no estacionarios**: describen la dispersión entre folds y no justifican decisiones de significancia ni llevan '
+               'ajuste por selección.'),
+            table(result['pairs']) if not result['pairs'].empty else md('No hay pares de finalistas para comparar.')],
+            className='details'),
         student_section(student_result, ui) if student_result is not None else None,
         html.H4('Tamaño del efecto · pérdidas MSE por fold'),
         md('Delta de Cliff describe dominancia marginal; Cohen d_z estandariza las diferencias emparejadas. '
