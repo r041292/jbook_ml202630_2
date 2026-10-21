@@ -35,13 +35,13 @@ Por eso las pruebas de las secciones estadísticas de este capítulo comparan **
 
 | Modelo | Familia | Idea central | Hiperparámetros buscados | Artículo |
 | --- | --- | --- | --- | --- |
-| **SVR RBF** | Kernel, pérdida ε-insensible | Regresión de vectores de soporte con kernel gaussiano: ignora errores menores que ε y modela relaciones no lineales. | `C`, `epsilon`, `gamma` | [Smola y Schölkopf (2004)](https://doi.org/10.1023/B:STCO.0000035301.49549.88) |
-| **Kernel Ridge RBF** | Kernel, pérdida cuadrática | Ridge en el espacio del kernel gaussiano; solución cerrada exacta. | `alpha`, `gamma` | [Abdulla et al. (2022)](https://doi.org/10.3390/app12094252) (variante exacta) |
-| **TR-KRR RBF** | Kernel, solver iterativo | El mismo Kernel Ridge, pero el sistema dual se resuelve con gradiente conjugado truncado (Newton truncado). | `alpha`, `gamma` | [Abdulla et al. (2022)](https://doi.org/10.3390/app12094252) |
-| **DenseWeight-XGBoost** | Boosting con pesos | XGBoost con peso por observación según la rareza de su nota. | `n_estimators`, `max_depth`, `learning_rate`, `min_child_weight`, `reg_lambda`, `weight_alpha` | [Steininger et al. (2021)](https://doi.org/10.1007/s10994-021-06023-5) |
-| **TCR-XGBoost** | Boosting con pesos | Reduce el peso de las observaciones con baja robustez local antes de ajustar XGBoost. | `fraction`, `weight` | [Zühlke y Kudenko (2025)](https://link.springer.com/article/10.1007/s10994-024-06704-x) |
+| **SVR RBF** | Kernel, pérdida ε-insensible | Regresión de vectores de soporte con kernel gaussiano: ignora errores menores que ε y modela relaciones no lineales. | `C`, `epsilon`, `gamma` | [Smola y Schölkopf (2004)](https://link.springer.com/article/10.1023%2FB%3ASTCO.0000035301.49549.88) |
+| **Kernel Ridge RBF** | Kernel, pérdida cuadrática | Ridge en el espacio del kernel gaussiano; solución cerrada exacta. | `alpha`, `gamma` | [Abdulla et al. (2022)](https://www.mdpi.com/2076-3417/12/9/4252) (variante exacta) |
+| **TR-KRR RBF** | Kernel, solver iterativo | El mismo Kernel Ridge, pero el sistema dual se resuelve con gradiente conjugado truncado (Newton truncado). | `alpha`, `gamma` | [Abdulla et al. (2022)](https://www.mdpi.com/2076-3417/12/9/4252) |
+| **DenseWeight-XGBoost** | Boosting con pesos | XGBoost con peso por observación según la rareza de su nota. | `n_estimators`, `max_depth`, `learning_rate`, `min_child_weight`, `reg_lambda`, `weight_alpha` | [Steininger et al. (2021)](https://link.springer.com/article/10.1007%2Fs10994-021-06023-5) |
+| **TCR-XGBoost** | Boosting con pesos | Reduce el peso de las observaciones con baja robustez local antes de ajustar XGBoost. | `fraction`, `weight` | [Zühlke y Kudenko (2025)](https://link.springer.com/article/10.1007%2Fs10994-024-06704-x) |
 | **LinXGBoost** | Boosting con hojas lineales | Árboles de boosting cuyas hojas ajustan regresiones Ridge locales en lugar de constantes. | `n_estimators`, `learning_rate`, `min_samples_leaf`, `reg_lambda`, `gamma` | [de Vito (2017)](https://arxiv.org/abs/1710.03634) |
-| **logicDT adaptado** | Árbol de conjunciones lógicas | Árbol sobre conjunciones booleanas de indicadores, con modelos lineales en las hojas; términos buscados por recocido simulado. | `max_conj`, `extra_vars`, `nodesize_frac` | [Lau, Schikowski y Schwender (2023)](https://doi.org/10.1007/s10994-023-06488-6) |
+| **logicDT adaptado** | Árbol de conjunciones lógicas | Árbol sobre conjunciones booleanas de indicadores, con modelos lineales en las hojas; términos buscados por recocido simulado. | `max_conj`, `extra_vars`, `nodesize_frac` | [Lau, Schikowski y Schwender (2023)](https://link.springer.com/article/10.1007%2Fs10994-023-06488-6) |
 | **GPR–XGBoost** | Híbrido de dos etapas | Un proceso gaussiano estima la nota y XGBoost corrige su residuo con meta-variables fuera de muestra. | `n_estimators`, `learning_rate`, `max_leaves`, `reg_lambda` | [De, Majumder et al. (2026, preprint)](https://arxiv.org/abs/2610.15862) |
 | **RIM** | Recuperación + red neuronal | Recupera estudiantes parecidos con BM25 y combina sus notas con una red. | `n_neighbors`, `epochs`, `weight_decay` | [Qin et al. (2021)](https://arxiv.org/abs/2108.05252) |
 
@@ -51,7 +51,7 @@ El SVM lineal y los seis clásicos se describen en [Modelos lineales](03_modelos
 
 Cada subsección explica qué hace el modelo, cómo se implementó en este proyecto, qué se busca de sus hiperparámetros y qué conviene tener presente al leer sus resultados. El enlace del título lleva al artículo de referencia. La preparación de las variables es la misma del SVM —mediana numérica, `log1p` en los tiempos, `StandardScaler`, moda y *one-hot* con categoría de referencia— salvo que se indique otra; todo se aprende dentro de cada `fit`.
 
-#### SVR RBF · [Smola y Schölkopf, «A tutorial on support vector regression», *Statistics and Computing*, 2004](https://doi.org/10.1023/B:STCO.0000035301.49549.88)
+#### SVR RBF · [Smola y Schölkopf, «A tutorial on support vector regression», *Statistics and Computing*, 2004](https://link.springer.com/article/10.1023%2FB%3ASTCO.0000035301.49549.88)
 
 La regresión de vectores de soporte (SVR) busca una función $f(x)$ lo más plana posible que se desvíe de las notas observadas como máximo $\varepsilon$; los errores menores que $\varepsilon$ no se penalizan y los mayores se penalizan linealmente con peso $C$. Es el mismo principio del SVM lineal de referencia, pero aquí el producto interno se sustituye por un **kernel gaussiano (RBF)**,
 
@@ -61,7 +61,7 @@ $$
 
 de modo que la función aprendida, $f(x)=\sum_i(\alpha_i-\alpha_i^*)\,k(x_i,x)+b$, puede ser **no lineal** en las variables. Solo los estudiantes con error mayor o igual que $\varepsilon$ (los vectores de soporte) tienen coeficientes distintos de cero. Los tres hiperparámetros tienen una lectura directa: `C` controla cuánto cuesta equivocarse, `epsilon` define el ancho de la banda sin penalización (en puntos de nota) y `gamma` el alcance del kernel (un `gamma` grande hace que solo los vecinos muy cercanos influyan en la predicción). Es el vínculo natural entre el SVM lineal y el resto de los métodos de kernel de este capítulo, y se implementa con `sklearn.svm.SVR`.
 
-#### Kernel Ridge RBF · [Abdulla, Maalouf, Barsoum y An, *Applied Sciences*, 2022](https://doi.org/10.3390/app12094252)
+#### Kernel Ridge RBF · [Abdulla, Maalouf, Barsoum y An, *Applied Sciences*, 2022](https://www.mdpi.com/2076-3417/12/9/4252)
 
 Kernel Ridge Regression (KRR) resuelve una regresión Ridge en el espacio de características que induce el kernel RBF: minimiza el error cuadrático más una penalización $\alpha\lVert f\rVert^2$ sobre la norma de la función. A diferencia del SVR, la pérdida es **cuadrática** (todo error cuenta, no hay banda $\varepsilon$) y la solución es **densa** y **exacta**,
 
@@ -80,7 +80,7 @@ model = TransformedTargetRegressor(regressor=KernelRidge(kernel='rbf', **params)
 
 Este cambio es relevante por tres razones. **Cambia el resultado:** el nivel medio deja de penalizarse y, ante un estudiante lejano de los de entrenamiento, el modelo revierte hacia la nota media (≈ 3,5) y no hacia 0; además puede modificar qué valores de `alpha` resultan óptimos, de modo que sus hiperparámetros y su RMSE no tendrían por qué coincidir con los de un `KernelRidge` sin envoltura (esa comparación directa no se ejecutó aquí). **Es lo que lo distingue de TR-KRR**, que resuelve el mismo sistema con gradiente conjugado y **no centra el objetivo**; la diferencia entre ambos no es solo el solver. Y **justifica incluirlo entre los modelos que no son solo importados**: el estimador es de librería, pero el pipeline que se evalúa (preparación de variables, centrado del objetivo y búsqueda anidada de `alpha` y `gamma`) es una construcción del proyecto. La centralización se aprende únicamente con las notas de cada entrenamiento (interno, externo o final), de modo que no filtra información de validación ni de test.
 
-#### TR-KRR RBF · [Abdulla et al., «Truncated Newton Kernel Ridge Regression…», *Applied Sciences*, 2022](https://doi.org/10.3390/app12094252)
+#### TR-KRR RBF · [Abdulla et al., «Truncated Newton Kernel Ridge Regression…», *Applied Sciences*, 2022](https://www.mdpi.com/2076-3417/12/9/4252)
 
 Es el mismo modelo del apartado anterior, pero el sistema $(K+\alpha I)c=y$ **no se invierte: se resuelve con el método de gradiente conjugado truncado**, la iteración interna del método de Newton truncado. Como la solución se detiene antes de converger por completo, el número de iteraciones actúa como una **regularización implícita** adicional a `alpha`. La implementación del proyecto (`tn_krr_e3.py`) reproduce los controles del artículo: como máximo 200 iteraciones, parada cuando la norma del residuo baja de 0,5 o tras 25 iteraciones sin mejora, y arranque con coeficientes cero (el objetivo **no** se centra, a diferencia de la variante exacta). El núcleo del solver es el bucle clásico de gradiente conjugado:
 
@@ -102,7 +102,7 @@ for iteration in range(1, max_iter + 1):
 
 Sus hiperparámetros son los mismos `alpha` y `gamma`. Como comparte el kernel con Kernel Ridge, la diferencia entre ambos mide únicamente el efecto de resolver el sistema de forma truncada.
 
-#### DenseWeight-XGBoost · [Steininger, Kobs, Davidson y Krause, «Density-based weighting for imbalanced regression», *Machine Learning*, 2021](https://doi.org/10.1007/s10994-021-06023-5)
+#### DenseWeight-XGBoost · [Steininger, Kobs, Davidson y Krause, «Density-based weighting for imbalanced regression», *Machine Learning*, 2021](https://link.springer.com/article/10.1007%2Fs10994-021-06023-5)
 
 En regresión desbalanceada, los valores raros del objetivo (aquí, las notas extremas) aparecen poco y el modelo tiende a ignorarlos. DenseWeight estima la **densidad** del objetivo con un estimador de núcleo (KDE) y asigna a cada observación un peso mayor cuanto más rara es su nota:
 
@@ -112,7 +112,7 @@ $$
 
 con $\hat\phi$ la densidad normalizada a $[0,1]$ y $\alpha$ (`weight_alpha`) la intensidad: con $\alpha=0$ todos los pesos son 1 y el modelo equivale a **XGBoost sin ponderar**. En este proyecto los pesos se calculan **solo con las notas del entrenamiento de cada ajuste** y se pasan como `sample_weight` a un XGBoost con categorías nativas (sin *one-hot*, `log1p` ni escalado). El artículo original propone DenseLoss para redes neuronales; esta combinación con XGBoost es una **adaptación** y así se declara. Además de `weight_alpha` se buscan `n_estimators`, `max_depth`, `learning_rate`, `min_child_weight` y `reg_lambda`. Un resultado importante, que se verá en la optimización, es que la configuración final elige `weight_alpha = 0`: en estos datos la ponderación no mejoró el criterio interno.
 
-#### TCR-XGBoost · [Zühlke y Kudenko, «TCR: topologically consistent reweighting for XGBoost in regression tasks», *Machine Learning*, 2025](https://link.springer.com/article/10.1007/s10994-024-06704-x)
+#### TCR-XGBoost · [Zühlke y Kudenko, «TCR: topologically consistent reweighting for XGBoost in regression tasks», *Machine Learning*, 2025](https://link.springer.com/article/10.1007%2Fs10994-024-06704-x)
 
 TCR mide, para cada estudiante, qué tan **robusta** es su nota respecto de sus vecinos en el espacio de variables: una observación cuyo objetivo cambia mucho aunque sus variables cambien poco es localmente inconsistente. La robustez usada en el proyecto es
 
@@ -134,7 +134,7 @@ def positive_weights(values, fraction, weight):
 
 LinXGBoost conserva el esquema de XGBoost —árboles ajustados con gradiente y hessiana de segundo orden, con regularización— pero **cada hoja contiene un modelo lineal local (Ridge) en lugar de un valor constante**, de modo que el árbol aproxima la función por tramos lineales en vez de por escalones. El proyecto lo implementa de forma independiente (no hay paquete oficial): cortes exactos en cada nodo, profundidad alta limitada por `min_samples_leaf`, y una escala adicional de todas las columnas para las hojas lineales. La búsqueda es especial: el 20 de octubre de 2026 se decidió usar **solo Optuna/TPE**, con 40 ensayos (10 iniciales aleatorios) sobre un dominio ampliado, porque una primera búsqueda con las cinco estrategias dejó los óptimos en el borde del dominio. Se buscan `n_estimators` (1 a 5), `learning_rate`, `min_samples_leaf` (30 a 450), `reg_lambda` y `gamma`.
 
-#### logicDT adaptado · [Lau, Schikowski y Schwender, «logicDT: a procedure for identifying response-associated interactions between binary predictors», *Machine Learning*, 2023](https://doi.org/10.1007/s10994-023-06488-6)
+#### logicDT adaptado · [Lau, Schikowski y Schwender, «logicDT: a procedure for identifying response-associated interactions between binary predictors», *Machine Learning*, 2023](https://link.springer.com/article/10.1007%2Fs10994-023-06488-6)
 
 logicDT construye un árbol de decisión cuyas divisiones no son sobre una variable sino sobre **conjunciones lógicas** de indicadores binarios (por ejemplo, «programa = Sistemas **y** asignatura = MAT1101 **y no** cumplimiento = sí»). Los términos se buscan con **recocido simulado adaptativo**, y cada hoja ajusta un **modelo lineal** con las covariables numéricas; las divisiones se evalúan por razón de verosimilitud (con $\alpha=0{,}5$). El proyecto lo implementa de forma fiel al artículo en `logicdt_fiel.py` (no es el paquete R): predictores binarios = variables *one-hot*, covariables numéricas en las hojas, vecindad de la Fig. 3 del artículo y presupuesto acotado a 10.000 iteraciones. La versión anterior, más simple, se conserva en `logicdt_propio.py` como evidencia histórica. Los hiperparámetros buscados son `max_conj` (máximo de variables por conjunción), `extra_vars` (variables adicionales permitidas) y `nodesize_frac` (tamaño mínimo de hoja como fracción de la muestra).
 

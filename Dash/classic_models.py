@@ -14,6 +14,7 @@ from prepare_data import BOOK, CACHE, ROOT, metrics
 from prediction import build_form, input_id, predict_record
 from prepare_originals import CLASSIC_PAPERS
 from classic_friedman import friedman_comparison, summary, display_statistics, conclusion, EXPLANATION
+from nemenyi import section as nemenyi_section
 from classic_posthoc import analyze, section as statistical_section
 from student_comparison import load as load_student_comparison
 from search_results import optimization_section
@@ -256,6 +257,7 @@ def create_classics(app, ui):
                 md(summary(FRIEDMAN)) if global_view else md('Friedman no se aplica a los subgrupos filtrados.'),
                 html.Details([html.Summary('Rangos por fold y rango promedio · CV global'),
                     table(FRIEDMAN['ranking'])], className='details') if global_view else None,
+                nemenyi_section(FRIEDMAN['ranking'], FRIEDMAN['n_folds'], {'md': md, 'table': table}) if global_view else None,
                 dcc.Tabs(value='cv', className='sub-tabs', children=[
                     dcc.Tab(label='Test temporal', value='test', children=table(display_statistics(temporal, global_view=global_view)), className='tab', selected_className='tab-selected'),
                     dcc.Tab(label='CV externa', value='cv', children=table(display_statistics(cv, cv=True, global_view=global_view, result=FRIEDMAN)), className='tab', selected_className='tab-selected'),

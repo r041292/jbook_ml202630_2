@@ -7,6 +7,7 @@ import pandas as pd
 from dash import html
 
 from classic_friedman import friedman_comparison, summary
+from nemenyi import section as nemenyi_section
 from classic_posthoc import analyze
 from student_comparison import compare, student_losses
 from model_timing import TimingRun, file_hash
@@ -115,6 +116,7 @@ def section(data,ui):
                'Se excluyen del ómnibus: '+', '.join(data['excluded_cv'])+'. Dummy es control; '
                'TabPFN fine-tuned no tiene OOF independiente. No se inventan folds faltantes.')],className='details'),
         html.Details([html.Summary('Rangos por fold y promedio'),table(pd.DataFrame(data['ranking']))],className='details'),
+        nemenyi_section(data['ranking'],omnibus['n_folds'],ui),
         html.H4('Etapa 2 · Model Confidence Set (MCS)'),
         md('MSE por fold, 3.125 remuestreos emparejados exhaustivos, T_R/eliminación e_R, α0.10. '
            '**Adaptación exploratoria sin cobertura90% garantizada** por dependencia entre folds. '

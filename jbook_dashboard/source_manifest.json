@@ -33,11 +33,11 @@
     "Dash/data/test.csv.gz": "9d88f0fe5bbd523c66e0d17a134f3b7e79136497ec2c4435c86e14aa3497ce97"
   },
   "chapters_sha256": {
-    "01_desarrollo.md": "e8737a6a8392d48b1fdcfe7f6537c3e487398c7a2d212d25dd77d4eb167de03e",
+    "01_desarrollo.md": "256d60814b1ce58739745d7351648dc68d75c9ba73f8dc957bfd3b27a0f9bc72",
     "02_introduccion_eda.md": "a838ca09608554dd8032e2b9453b6d06dfc606e97eedc42e97681a5676bc1f8a",
     "03_modelos.md": "f701af6c9223b3788a95b146b25c18101d211476142d9ee3bfac9777d85ef8f5",
     "04_modelos_clasicos.md": "695a6e1b09186a6d41b979c7d173009cd39a29d59b10f432cbbf7702c0fe9540",
-    "05_modelos_originales.md": "52c3ae5225849af7030ea2f92700cc36adc8d55b5ba4b9169b339a575b6acb5b",
+    "05_modelos_originales.md": "1e55060ff1492c5357bac1675659c6db2fef8a8b1fddcaa09b985a2345321691",
     "06_metodologia.md": "d3f13c83c57420181295e4e0e7c56d839e461d28a963db328edf26e95aac625d"
   },
   "screenshots_sha256": {
