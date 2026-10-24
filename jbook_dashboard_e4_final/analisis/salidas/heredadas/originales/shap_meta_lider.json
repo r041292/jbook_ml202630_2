@@ -1,0 +1,16 @@
+{
+  "method": "Permutation SHAP aproximado, pipeline completo",
+  "background_rows": 32,
+  "paths": 64,
+  "half_difference_mean_abs": 0.045460973306095415,
+  "max_additivity_residual": 8.881784197001252e-16,
+  "cases": [
+    71,
+    117
+  ],
+  "base": 3.5467266549926086,
+  "casos_posicion_test_1_based": {
+    "Menor error absoluto": 72,
+    "Mayor error absoluto": 118
+  }
+}

@@ -1,0 +1,106 @@
+Modelo A,Modelo B,Δ rango (A − B),|Δ| > CD
+GPR–XGBoost (OOF agrupado),Kernel Ridge RBF,-0.20000000000000018,False
+GPR–XGBoost (OOF agrupado),Truncated Newton KRR RBF,-1.2000000000000002,False
+GPR–XGBoost (OOF agrupado),SVR RBF,-1.4000000000000004,False
+GPR–XGBoost (OOF agrupado),DenseWeight-XGBoost,-3.4000000000000004,False
+GPR–XGBoost (OOF agrupado),XGBoost,-3.8,False
+GPR–XGBoost (OOF agrupado),TCR-XGBoost,-3.8,False
+GPR–XGBoost (OOF agrupado),SVM lineal,-4.8,False
+GPR–XGBoost (OOF agrupado),Ridge,-5.0,False
+GPR–XGBoost (OOF agrupado),Lasso,-5.800000000000001,False
+GPR–XGBoost (OOF agrupado),Random Forest,-7.4,False
+GPR–XGBoost (OOF agrupado),LinXGBoost (hojas completas E3),-8.6,False
+GPR–XGBoost (OOF agrupado),logicDT propio (adaptado),-8.6,False
+GPR–XGBoost (OOF agrupado),KNN,-10.4,True
+GPR–XGBoost (OOF agrupado),RIM (port E3),-10.6,True
+Kernel Ridge RBF,Truncated Newton KRR RBF,-1.0,False
+Kernel Ridge RBF,SVR RBF,-1.2000000000000002,False
+Kernel Ridge RBF,DenseWeight-XGBoost,-3.2,False
+Kernel Ridge RBF,XGBoost,-3.5999999999999996,False
+Kernel Ridge RBF,TCR-XGBoost,-3.5999999999999996,False
+Kernel Ridge RBF,SVM lineal,-4.6,False
+Kernel Ridge RBF,Ridge,-4.8,False
+Kernel Ridge RBF,Lasso,-5.6000000000000005,False
+Kernel Ridge RBF,Random Forest,-7.2,False
+Kernel Ridge RBF,LinXGBoost (hojas completas E3),-8.399999999999999,False
+Kernel Ridge RBF,logicDT propio (adaptado),-8.399999999999999,False
+Kernel Ridge RBF,KNN,-10.2,True
+Kernel Ridge RBF,RIM (port E3),-10.399999999999999,True
+Truncated Newton KRR RBF,SVR RBF,-0.20000000000000018,False
+Truncated Newton KRR RBF,DenseWeight-XGBoost,-2.2,False
+Truncated Newton KRR RBF,XGBoost,-2.5999999999999996,False
+Truncated Newton KRR RBF,TCR-XGBoost,-2.5999999999999996,False
+Truncated Newton KRR RBF,SVM lineal,-3.5999999999999996,False
+Truncated Newton KRR RBF,Ridge,-3.8,False
+Truncated Newton KRR RBF,Lasso,-4.6000000000000005,False
+Truncated Newton KRR RBF,Random Forest,-6.2,False
+Truncated Newton KRR RBF,LinXGBoost (hojas completas E3),-7.3999999999999995,False
+Truncated Newton KRR RBF,logicDT propio (adaptado),-7.3999999999999995,False
+Truncated Newton KRR RBF,KNN,-9.2,False
+Truncated Newton KRR RBF,RIM (port E3),-9.399999999999999,False
+SVR RBF,DenseWeight-XGBoost,-2.0,False
+SVR RBF,XGBoost,-2.3999999999999995,False
+SVR RBF,TCR-XGBoost,-2.3999999999999995,False
+SVR RBF,SVM lineal,-3.3999999999999995,False
+SVR RBF,Ridge,-3.5999999999999996,False
+SVR RBF,Lasso,-4.4,False
+SVR RBF,Random Forest,-6.0,False
+SVR RBF,LinXGBoost (hojas completas E3),-7.199999999999999,False
+SVR RBF,logicDT propio (adaptado),-7.199999999999999,False
+SVR RBF,KNN,-9.0,False
+SVR RBF,RIM (port E3),-9.2,False
+DenseWeight-XGBoost,XGBoost,-0.39999999999999947,False
+DenseWeight-XGBoost,TCR-XGBoost,-0.39999999999999947,False
+DenseWeight-XGBoost,SVM lineal,-1.3999999999999995,False
+DenseWeight-XGBoost,Ridge,-1.5999999999999996,False
+DenseWeight-XGBoost,Lasso,-2.4000000000000004,False
+DenseWeight-XGBoost,Random Forest,-4.0,False
+DenseWeight-XGBoost,LinXGBoost (hojas completas E3),-5.199999999999999,False
+DenseWeight-XGBoost,logicDT propio (adaptado),-5.199999999999999,False
+DenseWeight-XGBoost,KNN,-7.0,False
+DenseWeight-XGBoost,RIM (port E3),-7.199999999999999,False
+XGBoost,TCR-XGBoost,0.0,False
+XGBoost,SVM lineal,-1.0,False
+XGBoost,Ridge,-1.2000000000000002,False
+XGBoost,Lasso,-2.000000000000001,False
+XGBoost,Random Forest,-3.6000000000000005,False
+XGBoost,LinXGBoost (hojas completas E3),-4.8,False
+XGBoost,logicDT propio (adaptado),-4.8,False
+XGBoost,KNN,-6.6000000000000005,False
+XGBoost,RIM (port E3),-6.8,False
+TCR-XGBoost,SVM lineal,-1.0,False
+TCR-XGBoost,Ridge,-1.2000000000000002,False
+TCR-XGBoost,Lasso,-2.000000000000001,False
+TCR-XGBoost,Random Forest,-3.6000000000000005,False
+TCR-XGBoost,LinXGBoost (hojas completas E3),-4.8,False
+TCR-XGBoost,logicDT propio (adaptado),-4.8,False
+TCR-XGBoost,KNN,-6.6000000000000005,False
+TCR-XGBoost,RIM (port E3),-6.8,False
+SVM lineal,Ridge,-0.20000000000000018,False
+SVM lineal,Lasso,-1.0000000000000009,False
+SVM lineal,Random Forest,-2.6000000000000005,False
+SVM lineal,LinXGBoost (hojas completas E3),-3.8,False
+SVM lineal,logicDT propio (adaptado),-3.8,False
+SVM lineal,KNN,-5.6000000000000005,False
+SVM lineal,RIM (port E3),-5.8,False
+Ridge,Lasso,-0.8000000000000007,False
+Ridge,Random Forest,-2.4000000000000004,False
+Ridge,LinXGBoost (hojas completas E3),-3.5999999999999996,False
+Ridge,logicDT propio (adaptado),-3.5999999999999996,False
+Ridge,KNN,-5.4,False
+Ridge,RIM (port E3),-5.6,False
+Lasso,Random Forest,-1.5999999999999996,False
+Lasso,LinXGBoost (hojas completas E3),-2.799999999999999,False
+Lasso,logicDT propio (adaptado),-2.799999999999999,False
+Lasso,KNN,-4.6,False
+Lasso,RIM (port E3),-4.799999999999999,False
+Random Forest,LinXGBoost (hojas completas E3),-1.1999999999999993,False
+Random Forest,logicDT propio (adaptado),-1.1999999999999993,False
+Random Forest,KNN,-3.0,False
+Random Forest,RIM (port E3),-3.1999999999999993,False
+LinXGBoost (hojas completas E3),logicDT propio (adaptado),0.0,False
+LinXGBoost (hojas completas E3),KNN,-1.8000000000000007,False
+LinXGBoost (hojas completas E3),RIM (port E3),-2.0,False
+logicDT propio (adaptado),KNN,-1.8000000000000007,False
+logicDT propio (adaptado),RIM (port E3),-2.0,False
+KNN,RIM (port E3),-0.1999999999999993,False

@@ -1,0 +1,11 @@
+Modelo,Rango fold 1,Rango fold 2,Rango fold 3,Rango fold 4,Rango fold 5,Rango promedio
+KRR centrado,2.0,3.0,2.0,5.0,1.0,2.6
+GPR–XGBoost,1.0,2.0,1.0,6.0,3.0,2.6
+TN-KRR,3.0,5.0,3.0,3.0,2.0,3.2
+XGBoost,4.0,1.0,5.0,7.0,7.0,4.8
+SVM lineal,7.0,7.0,4.0,4.0,4.0,5.2
+Ridge,6.0,8.0,7.0,1.0,5.0,5.4
+Lasso,5.0,9.0,8.0,2.0,6.0,6.0
+Random Forest,8.0,4.0,6.0,8.0,8.0,6.8
+KNN,9.0,6.0,9.0,9.0,9.0,8.4
+Decision Tree,10.0,10.0,10.0,10.0,10.0,10.0

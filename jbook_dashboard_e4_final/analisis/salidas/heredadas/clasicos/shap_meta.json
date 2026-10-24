@@ -1,0 +1,78 @@
+{
+  "svm": {
+    "method": "Lineal exacto (intervencional)",
+    "efficiency_gap": 8.881784197001252e-16,
+    "mc_se_mean": 0.0
+  },
+  "knn": {
+    "method": "Permutaciones antitéticas M=16, fondo=50 (intervencional)",
+    "efficiency_gap": 1.7763568394002505e-15,
+    "mc_se_mean": 0.013138434603578194
+  },
+  "ridge": {
+    "method": "Lineal exacto (intervencional)",
+    "efficiency_gap": 8.881784197001252e-16,
+    "mc_se_mean": 0.0
+  },
+  "lasso": {
+    "method": "Lineal exacto (intervencional)",
+    "efficiency_gap": 8.881784197001252e-16,
+    "mc_se_mean": 0.0
+  },
+  "forest": {
+    "method": "Permutaciones antitéticas M=16, fondo=50 (intervencional)",
+    "efficiency_gap": 1.3322676295501878e-15,
+    "mc_se_mean": 0.0023387385884257204
+  },
+  "xgboost": {
+    "method": "TreeSHAP exacto (tree-path-dependent)",
+    "efficiency_gap": 5.731359124183655e-06,
+    "mc_se_mean": 0.0
+  },
+  "decision_tree": {
+    "method": "Permutaciones antitéticas M=16, fondo=50 (intervencional)",
+    "efficiency_gap": 8.881784197001252e-16,
+    "mc_se_mean": 0.009316121075186815
+  },
+  "controles": {
+    "ridge": {
+      "corr": 1.0,
+      "mae": 1.1344998118971086e-16,
+      "mc_se_mean": 1.2321818841289002e-16,
+      "top5_referencia": [
+        "Saber 11 · global",
+        "División académica",
+        "Tiempo de trabajo",
+        "Cat. temas finales",
+        "Asignatura"
+      ],
+      "top5_permutacion": [
+        "Saber 11 · global",
+        "División académica",
+        "Tiempo de trabajo",
+        "Cat. temas finales",
+        "Asignatura"
+      ]
+    },
+    "xgboost": {
+      "corr": 0.9951439526230232,
+      "mae": 0.007837309339424515,
+      "mc_se_mean": 2.5898188188319503e-08,
+      "top5_referencia": [
+        "Saber 11 · global",
+        "Dominio inicial",
+        "Programa",
+        "Avance por cuartiles",
+        "Cat. temas finales"
+      ],
+      "top5_permutacion": [
+        "Saber 11 · global",
+        "Programa",
+        "Dominio inicial",
+        "Avance por cuartiles",
+        "Cat. temas finales"
+      ]
+    }
+  },
+  "timing_run_id": "20261018_192945_d0b41ede"
+}

@@ -1,0 +1,22 @@
+Modelo A,Modelo B,Δ rango (A − B),|Δ| > CD
+XGBoost,SVM lineal,-0.20000000000000018,False
+XGBoost,Ridge,-0.6000000000000001,False
+XGBoost,Lasso,-1.2000000000000002,False
+XGBoost,Random Forest,-1.6,False
+XGBoost,KNN,-3.0000000000000004,False
+XGBoost,Decision Tree,-4.6,True
+SVM lineal,Ridge,-0.3999999999999999,False
+SVM lineal,Lasso,-1.0,False
+SVM lineal,Random Forest,-1.4,False
+SVM lineal,KNN,-2.8000000000000003,False
+SVM lineal,Decision Tree,-4.4,True
+Ridge,Lasso,-0.6000000000000001,False
+Ridge,Random Forest,-1.0,False
+Ridge,KNN,-2.4000000000000004,False
+Ridge,Decision Tree,-4.0,False
+Lasso,Random Forest,-0.3999999999999999,False
+Lasso,KNN,-1.8000000000000003,False
+Lasso,Decision Tree,-3.4,False
+Random Forest,KNN,-1.4000000000000004,False
+Random Forest,Decision Tree,-3.0,False
+KNN,Decision Tree,-1.5999999999999996,False

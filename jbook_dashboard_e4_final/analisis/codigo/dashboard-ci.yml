@@ -1,0 +1,44 @@
+name: Validar dashboard E3
+
+on:
+  push:
+    branches: [e3, main]
+    paths:
+      - 'Dash/**'
+      - 'Precalculo/resultados/e3/**'
+      - '.github/workflows/dashboard-ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'Dash/**'
+      - 'Precalculo/resultados/e3/**'
+      - '.github/workflows/dashboard-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      OMP_NUM_THREADS: '1'
+      OPENBLAS_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: Dash/requirements.txt
+      - run: python -m pip install -r Dash/requirements.txt
+      - run: python Dash/run_measured.py Dash/validate_package.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tiempos-dashboard-${{ github.run_id }}
+          path: |
+            TIEMPOS_EJECUCION.md
+            tiempos/

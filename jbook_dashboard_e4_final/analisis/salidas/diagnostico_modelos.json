@@ -1,0 +1,36 @@
+{
+ "KRR centrado (m5)": {
+  "alpha": 0.30017822743997974,
+  "gamma": 0.01041347715797403,
+  "media_de_centrado_y": 3.499358288770053,
+  "n_entrenamiento": 1309,
+  "columnas_transformadas": 67
+ },
+ "TN-KRR (m19)": {
+  "alpha": 0.06428417554494979,
+  "gamma": 0.005537626389309445,
+  "iteraciones_cg": 30,
+  "norma_residual_final": 0.4000405025574629,
+  "convergio": true,
+  "motivo_de_parada": "residual_tolerance",
+  "max_iter": 200,
+  "tolerancia": 0.5,
+  "max_sin_mejora": 25,
+  "n_entrenamiento": 1309,
+  "columnas_transformadas": 67
+ },
+ "GPR–XGBoost (m15)": {
+  "kernel_gpr_optimizado": "0.695**2 * Matern(length_scale=5.33, nu=2.5) + RBF(length_scale=0.01) + WhiteKernel(noise_level=1e-05)",
+  "xgboost": {
+   "n_estimators": 226,
+   "learning_rate": 0.0033304184734743794,
+   "max_leaves": 9,
+   "reg_lambda": 2.3117388101352403,
+   "subsample": 0.8,
+   "colsample_bytree": 0.8,
+   "reg_alpha": 1.0,
+   "random_state": 42
+  },
+  "entradas_xgboost": 69
+ }
+}

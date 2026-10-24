@@ -7,6 +7,7 @@ Proyecto académico de Machine Learning de la Universidad del Norte. Explora los
 ## Enlaces
 
 - [Dashboard publicado en Render](https://precalculo-dashboard.onrender.com/).
+- [Informe técnico final del Tercer Entregable](https://r041292.github.io/jbook_ml202630_2/e4_final/): estructura de la guía (correcciones, datos, benchmarks, literatura, modelos originales, validación estadística, dashboard, conclusiones y reproducibilidad).
 - [Jupyter Book del proyecto: informe del dashboard](https://r041292.github.io/jbook_ml202630_2/): desarrollo, EDA, modelos lineales, clásicos y originales, y metodología.
 - [Jupyter Book del entregable 1: datos, EDA y modelo base](https://r041292.github.io/jbook_ml202630_1/).
 

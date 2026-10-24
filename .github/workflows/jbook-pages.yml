@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'jbook_dashboard/**'
+      - 'jbook_dashboard_e4_final/**'
       - '.github/workflows/jbook-pages.yml'
   workflow_dispatch:
 
@@ -23,11 +24,6 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    defaults:
-      run:
-        working-directory: jbook_dashboard
-    env:
-      BASE_URL: /${{ github.event.repository.name }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -40,12 +36,26 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Instalar Jupyter Book
         run: python -m pip install jupyter-book==2.1.6
-      - name: Construir los tres capítulos
+      - name: Construir informe vigente
+        working-directory: jbook_dashboard
+        env:
+          BASE_URL: /${{ github.event.repository.name }}
         run: jupyter-book build --html --strict
+      - name: Construir informe final E4
+        working-directory: jbook_dashboard_e4_final
+        env:
+          BASE_URL: /${{ github.event.repository.name }}/e4_final
+        run: jupyter-book build --html --strict
+      - name: Combinar sitios
+        run: |
+          mkdir -p site
+          cp -r jbook_dashboard/_build/html/. site/
+          mkdir -p site/e4_final
+          cp -r jbook_dashboard_e4_final/_build/html/. site/e4_final/
       - name: Subir HTML
         uses: actions/upload-pages-artifact@v3
         with:
-          path: jbook_dashboard/_build/html
+          path: site
       - name: Desplegar en GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

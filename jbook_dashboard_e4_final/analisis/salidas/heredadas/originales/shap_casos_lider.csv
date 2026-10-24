@@ -1,0 +1,31 @@
+Caso,Posición test,Variable,Valor,SHAP
+Menor error absoluto,72,Saber 11 · global,226,-1.018305738654883
+Menor error absoluto,72,Dominio inicial,65,0.42072210375724456
+Menor error absoluto,72,Dominio final,71,0.17409949316860585
+Menor error absoluto,72,Cat. temas finales,4 Temas Parcial 2 Cálculo I,0.1189672236217892
+Menor error absoluto,72,División académica,Escuela de Negocios,0.10805474708051918
+Menor error absoluto,72,Asignatura,MAT1100,0.10065164799153567
+Menor error absoluto,72,Temas por hora,0.785254662,-0.09086596172384315
+Menor error absoluto,72,Cat. temas iniciales,4 Temas Parcial 2 Cálculo I,-0.06604326112725517
+Menor error absoluto,72,Saber 11 · matemáticas,48,0.06573637358077022
+Menor error absoluto,72,Tiempo de pretest,2.15,0.055127657831512814
+Menor error absoluto,72,Avance en ALEK,6,-0.053419795035215566
+Menor error absoluto,72,Tiempo de trabajo,7.633333333,0.050750114025732186
+Menor error absoluto,72,Programa,Negocios Internacionales,-0.027212199414853734
+Menor error absoluto,72,Cumplimiento de la meta,Cumplimiento meta,0.011773153749357827
+Menor error absoluto,72,Avance por cuartiles,0 Avance menor a 18 temas,0.002076963030134174
+Mayor error absoluto,118,Saber 11 · global,407,0.7154919001438552
+Mayor error absoluto,118,Asignatura,MAT1101,-0.1415768193949351
+Mayor error absoluto,118,División académica,División de Ingenierías,-0.1413093474587673
+Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.1161026330390272
+Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.09504491667980797
+Mayor error absoluto,118,Dominio inicial,4,-0.07978327458814632
+Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.06158920244652138
+Mayor error absoluto,118,Temas por hora,1.421289146,0.04709641606960801
+Mayor error absoluto,118,Dominio final,38,0.043854914792463215
+Mayor error absoluto,118,Avance en ALEK,34,0.037791534370039584
+Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.037432433890252345
+Mayor error absoluto,118,Tiempo de pretest,0.8,0.0348808906083093
+Mayor error absoluto,118,Saber 11 · matemáticas,67,-0.03162069890553489
+Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.022261688482533945
+Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.01649734716081611

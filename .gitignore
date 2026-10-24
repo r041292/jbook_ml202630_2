@@ -173,3 +173,10 @@
 !/Dash/model_math.py
 !/Dash/student_dm.py
 /Dash/.ui_cache/
+
+# Informe final E4 (jbook_dashboard_e4_final): fuentes, imágenes y análisis agregados; sin build ni contexto interno.
+!/jbook_dashboard_e4_final/
+/jbook_dashboard_e4_final/_build/
+/jbook_dashboard_e4_final/CONTEXT.md
+/jbook_dashboard_e4_final/**/__pycache__/
+/jbook_dashboard_e4_final/_interno/

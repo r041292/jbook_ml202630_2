@@ -1,0 +1,32 @@
+{
+ "n_registros": 1309,
+ "n_estudiantes": 1293,
+ "folds": 5,
+ "ratio_nval_nfit_estudiantes": 0.25000028032405464,
+ "replicas_bootstrap_y_permutacion": 9999,
+ "semilla": 42,
+ "familias": {
+  "por_prueba": 21,
+  "global_por_pares": 105
+ },
+ "friedman_u10": {
+  "statistic": 29.072727272727292,
+  "pvalue": 0.0006299876113497232,
+  "df": 9
+ },
+ "nemenyi_u10": {
+  "q": 3.1636835770533733,
+  "cd": 6.057992834068875
+ },
+ "friedman_u16": {
+  "statistic": 51.224249558563855,
+  "pvalue": 7.584098607195957e-06,
+  "df": 15
+ },
+ "nemenyi_u16": {
+  "q": 3.426041379370608,
+  "cd": 10.316121029759566
+ },
+ "mejor_benchmark": "XGBoost",
+ "wilcoxon_p_minimo_bilateral_n5": 0.0625
+}

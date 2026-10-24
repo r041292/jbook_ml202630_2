@@ -1,0 +1,8 @@
+Modelo,Rango promedio de pérdida,MSE medio CV,p-valor MCS exploratorio,En MCS exploratorio (α = 0.10),Paso de eliminación
+XGBoost,2.4,0.6661181512645535,1.0,Sí,7
+SVM lineal,2.6,0.6809825966358082,0.7664,Sí,6
+Ridge,3.0,0.6832283655328028,0.7664,Sí,5
+Lasso,3.6,0.6894716343681152,0.07648,No,4
+Random Forest,4.0,0.6891203954119393,0.00032,No,3
+KNN,5.4,0.7323789715368064,0.0,No,2
+Decision Tree,7.0,0.8015660317476611,0.0,No,1

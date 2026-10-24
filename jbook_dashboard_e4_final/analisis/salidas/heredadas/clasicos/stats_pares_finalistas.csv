@@ -1,0 +1,4 @@
+Modelo A,Modelo B,Δ MSE (A − B),IC 95% inferior · folds,IC 95% superior · folds,p-valor crudo DM-HLN,p-valor ajustado Holm
+XGBoost,SVM lineal,-0.01486444537125462,-0.06312940612758178,0.021549655234011755,No aplicable,No aplicable
+XGBoost,Ridge,-0.017110214268249213,-0.0680011747586841,0.021946682287284403,No aplicable,No aplicable
+SVM lineal,Ridge,-0.002245768896994593,-0.00946294601897577,0.004971408224986584,No aplicable,No aplicable

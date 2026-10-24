@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: precalculo-dashboard
+    runtime: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r Dash/requirements.txt
+    startCommand: gunicorn --chdir Dash app:server --bind 0.0.0.0:$PORT --workers 1 --threads 2 --timeout 120 --access-logfile - --error-logfile -
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.14
+      - key: OMP_NUM_THREADS
+        value: "1"
+      - key: OPENBLAS_NUM_THREADS
+        value: "1"
+      - key: MKL_NUM_THREADS
+        value: "1"

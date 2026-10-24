@@ -1,0 +1,41 @@
+version: 1
+project:
+  id: ca94bfa1-56ff-448a-9397-8160ec241e00
+  title: "Proyecto final de Machine Learning: predicción de la nota del primer parcial de Precálculo"
+  subtitle: "Informe técnico del Tercer Entregable"
+  authors:
+    - Rubiel Velasquez
+    - Valentina Figueroa
+  github: https://github.com/r041292/jbook_ml202630_2
+  description: Informe técnico final del proyecto de Precálculo, organizado según la estructura mínima del Tercer Entregable.
+  bibliography:
+    - references.bib
+  numbering:
+    equation: true
+    figure: true
+    table: true
+    code: true
+  toc:
+    - file: 00_introduccion.md
+    - file: 02_datos.md
+    - file: 03_benchmarks.md
+    - file: 04_literatura.md
+    - file: 05_modelo_original.md
+    - file: 06_validacion.md
+    - file: 07_dashboard.md
+    - file: 08_conclusiones.md
+    - file: 09_reproducibilidad.md
+site:
+  template: book-theme
+  title: "Informe final · Precálculo"
+  actions:
+    - title: "Abrir dashboard"
+      url: https://precalculo-dashboard.onrender.com/
+    - title: "Informe previo"
+      url: https://r041292.github.io/jbook_ml202630_2/
+  parts:
+    primary_sidebar_footer: sidebar-footer.md
+  options:
+    logo_text: "Precálculo · Informe final"
+    style: ./layout.css
+    favicon: ./favicon.svg

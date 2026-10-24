@@ -1,0 +1,211 @@
+Modelo,Caso,Posición test,Variable,Valor,SHAP
+SVM lineal,Menor error absoluto,88,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.450295977738582
+SVM lineal,Menor error absoluto,88,Saber 11 · global,376,0.32444406757136446
+SVM lineal,Menor error absoluto,88,Asignatura,MAT1100,0.3082891191208211
+SVM lineal,Menor error absoluto,88,Cumplimiento de la meta,Cumplimiento meta,-0.2974098465617421
+SVM lineal,Menor error absoluto,88,Saber 11 · matemáticas,84,-0.23980485312683827
+SVM lineal,Menor error absoluto,88,Programa,Economía,0.20618621927547987
+SVM lineal,Menor error absoluto,88,Avance por cuartiles,1 Avance entre [ 18 - 37 temas],0.19533393626055973
+SVM lineal,Menor error absoluto,88,Dominio final,49,0.1119939297292442
+SVM lineal,Menor error absoluto,88,Temas por hora,2.488819755,0.09005432567191435
+SVM lineal,Menor error absoluto,88,División académica,"Div Humanidades, Artes y Cs. S",0.08128070781360172
+SVM lineal,Menor error absoluto,88,Dominio inicial,16,0.06286828213169329
+SVM lineal,Menor error absoluto,88,Tiempo de trabajo,12.85,0.0444164088274235
+SVM lineal,Menor error absoluto,88,Avance en ALEK,33,0.041944453841572304
+SVM lineal,Menor error absoluto,88,Cat. temas iniciales,2 Ecuaciones y desigualdades,0.036454792777678276
+SVM lineal,Menor error absoluto,88,Tiempo de pretest,0.616666667,0.012188116576111074
+SVM lineal,Mayor error absoluto,118,Saber 11 · global,407,0.6486789513467447
+SVM lineal,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.450295977738582
+SVM lineal,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,-0.2974098465617421
+SVM lineal,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.14959939830477223
+SVM lineal,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.08441513473666187
+SVM lineal,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.08305565619198602
+SVM lineal,Mayor error absoluto,118,División académica,División de Ingenierías,-0.06642905649588654
+SVM lineal,Mayor error absoluto,118,Avance en ALEK,34,0.051883897879859586
+SVM lineal,Mayor error absoluto,118,Tiempo de pretest,0.8,0.051252394776491746
+SVM lineal,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.0502896759482562
+SVM lineal,Mayor error absoluto,118,Asignatura,MAT1101,-0.029478756854088968
+SVM lineal,Mayor error absoluto,118,Saber 11 · matemáticas,67,0.02734341051380725
+SVM lineal,Mayor error absoluto,118,Dominio final,38,0.02632402520756922
+SVM lineal,Mayor error absoluto,118,Dominio inicial,4,-0.011385594401802741
+SVM lineal,Mayor error absoluto,118,Temas por hora,1.421289146,0.006920258270012978
+KNN,Menor error absoluto,39,Saber 11 · global,234,-0.38443832004534145
+KNN,Menor error absoluto,39,Temas por hora,0.474106492,-0.26422811139403823
+KNN,Menor error absoluto,39,Cat. temas iniciales,0 No dominó temas,-0.1135116030066014
+KNN,Menor error absoluto,39,Avance por cuartiles,0 Avance menor a 19 temas,-0.08996717317067085
+KNN,Menor error absoluto,39,Tiempo de trabajo,27.41666667,-0.08918813995912248
+KNN,Menor error absoluto,39,Dominio final,13,-0.08413850124192776
+KNN,Menor error absoluto,39,Avance en ALEK,13,-0.08292090955066528
+KNN,Menor error absoluto,39,Programa,Ingeniería Industrial,0.07441554997178249
+KNN,Menor error absoluto,39,Saber 11 · matemáticas,63,-0.06845235520055329
+KNN,Menor error absoluto,39,División académica,División de Ingenierías,-0.06317746930681359
+KNN,Menor error absoluto,39,Asignatura,MAT1101,-0.052112659636771586
+KNN,Menor error absoluto,39,Tiempo de pretest,0.45,-0.046188153196403736
+KNN,Menor error absoluto,39,Dominio inicial,0,-0.0345703213353091
+KNN,Menor error absoluto,39,Cumplimiento de la meta,No alcanzo meta,-0.03426096534562892
+KNN,Menor error absoluto,39,Cat. temas finales,2 Ecuaciones y desigualdades,-0.03169315215677615
+KNN,Mayor error absoluto,118,Saber 11 · global,407,0.2666799995135065
+KNN,Mayor error absoluto,118,Tiempo de pretest,0.8,0.09702918458949503
+KNN,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.038531071049399734
+KNN,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.03611023930080837
+KNN,Mayor error absoluto,118,Temas por hora,1.421289146,0.03557868469617187
+KNN,Mayor error absoluto,118,División académica,División de Ingenierías,-0.03308373990559249
+KNN,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.027633802255194323
+KNN,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.026857425393406187
+KNN,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.02659485031545772
+KNN,Mayor error absoluto,118,Asignatura,MAT1101,-0.025566337008368883
+KNN,Mayor error absoluto,118,Dominio inicial,4,-0.02133204726002405
+KNN,Mayor error absoluto,118,Saber 11 · matemáticas,67,-0.02123239649261502
+KNN,Mayor error absoluto,118,Dominio final,38,0.02101988862710319
+KNN,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.005702281094333184
+KNN,Mayor error absoluto,118,Avance en ALEK,34,-0.0035209618776556317
+Ridge,Menor error absoluto,88,División académica,"Div Humanidades, Artes y Cs. S",0.3058395357557256
+Ridge,Menor error absoluto,88,Saber 11 · global,376,0.3028240509629621
+Ridge,Menor error absoluto,88,Asignatura,MAT1100,0.21139048802892468
+Ridge,Menor error absoluto,88,Saber 11 · matemáticas,84,-0.20524423484446605
+Ridge,Menor error absoluto,88,Avance por cuartiles,1 Avance entre [ 18 - 37 temas],0.1442782409715515
+Ridge,Menor error absoluto,88,Temas por hora,2.488819755,0.12471022152356763
+Ridge,Menor error absoluto,88,Programa,Economía,0.12365728893487561
+Ridge,Menor error absoluto,88,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.12080517458606291
+Ridge,Menor error absoluto,88,Dominio final,49,0.07142917696815333
+Ridge,Menor error absoluto,88,Cat. temas iniciales,2 Ecuaciones y desigualdades,0.0540973448056037
+Ridge,Menor error absoluto,88,Dominio inicial,16,0.05274122274872659
+Ridge,Menor error absoluto,88,Tiempo de trabajo,12.85,0.035923310191660424
+Ridge,Menor error absoluto,88,Avance en ALEK,33,0.023448737933814325
+Ridge,Menor error absoluto,88,Cumplimiento de la meta,Cumplimiento meta,0.015864544367053552
+Ridge,Menor error absoluto,88,Tiempo de pretest,0.616666667,0.013812786754599937
+Ridge,Mayor error absoluto,118,Saber 11 · global,407,0.6054528575345877
+Ridge,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.12099369876274241
+Ridge,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.12080517458606291
+Ridge,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.08935925959194492
+Ridge,Mayor error absoluto,118,División académica,División de Ingenierías,-0.0831733318086089
+Ridge,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.07033647563669748
+Ridge,Mayor error absoluto,118,Tiempo de pretest,0.8,0.05808431477409923
+Ridge,Mayor error absoluto,118,Avance en ALEK,34,0.02900531090391251
+Ridge,Mayor error absoluto,118,Asignatura,MAT1101,-0.02737195426898082
+Ridge,Mayor error absoluto,118,Saber 11 · matemáticas,67,0.023402684707036103
+Ridge,Mayor error absoluto,118,Dominio final,38,0.01678933366845329
+Ridge,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.015864544367053552
+Ridge,Mayor error absoluto,118,Temas por hora,1.421289146,0.009583403522422637
+Ridge,Mayor error absoluto,118,Dominio inicial,4,-0.009551560025359949
+Ridge,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.007865954094631221
+Lasso,Menor error absoluto,7,Saber 11 · global,222,-1.2210656821863608
+Lasso,Menor error absoluto,7,Saber 11 · matemáticas,41,0.39672161339257145
+Lasso,Menor error absoluto,7,Asignatura,MAT1100,0.35990925740287655
+Lasso,Menor error absoluto,7,Cat. temas iniciales,0 No dominó temas,-0.21157391684486787
+Lasso,Menor error absoluto,7,División académica,Escuela de Negocios,0.1831674924097457
+Lasso,Menor error absoluto,7,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.10828789504857406
+Lasso,Menor error absoluto,7,Avance por cuartiles,1 Avance entre [ 18 - 37 temas],0.09507222288569571
+Lasso,Menor error absoluto,7,Tiempo de trabajo,10.58333333,0.0840971980410585
+Lasso,Menor error absoluto,7,Programa,Administración de Empresas,-0.07941908057896573
+Lasso,Menor error absoluto,7,Temas por hora,1.890954932,0.06319970680809163
+Lasso,Menor error absoluto,7,Tiempo de pretest,0.45,-0.028496535800469295
+Lasso,Menor error absoluto,7,Dominio final,33,-0.022590159327774837
+Lasso,Menor error absoluto,7,Avance en ALEK,33,0.0028488916461942354
+Lasso,Menor error absoluto,7,Cumplimiento de la meta,Cumplimiento meta,0.0
+Lasso,Menor error absoluto,7,Dominio inicial,0,0.0
+Lasso,Mayor error absoluto,118,Saber 11 · global,407,0.6157951992941786
+Lasso,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.12160017280719809
+Lasso,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.10828789504857406
+Lasso,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.10289843583417625
+Lasso,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.0777247156672398
+Lasso,Mayor error absoluto,118,División académica,División de Ingenierías,-0.055218830094433236
+Lasso,Mayor error absoluto,118,Asignatura,MAT1101,-0.054328006665152556
+Lasso,Mayor error absoluto,118,Tiempo de pretest,0.8,0.053344455119442725
+Lasso,Mayor error absoluto,118,Dominio final,38,0.04713255464683884
+Lasso,Mayor error absoluto,118,Saber 11 · matemáticas,67,0.02488448476218725
+Lasso,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],0.021371992778485983
+Lasso,Mayor error absoluto,118,Temas por hora,1.421289146,0.009252190262345165
+Lasso,Mayor error absoluto,118,Avance en ALEK,34,0.003523984453349268
+Lasso,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.0
+Lasso,Mayor error absoluto,118,Dominio inicial,4,0.0
+Random Forest,Menor error absoluto,137,Saber 11 · global,361,0.23163747143597085
+Random Forest,Menor error absoluto,137,Dominio final,79,0.1821413096667093
+Random Forest,Menor error absoluto,137,Dominio inicial,9,0.15789313081123513
+Random Forest,Menor error absoluto,137,Cat. temas finales,4 Temas Parcial 2 Cálculo I,0.1488282352108237
+Random Forest,Menor error absoluto,137,Temas por hora,3.406377195,0.08265280397643823
+Random Forest,Menor error absoluto,137,Asignatura,MAT1101,-0.052300870940246436
+Random Forest,Menor error absoluto,137,Tiempo de pretest,0.533333333,0.03468299107639536
+Random Forest,Menor error absoluto,137,Avance en ALEK,70,0.03435568544964179
+Random Forest,Menor error absoluto,137,Cumplimiento de la meta,Cumplimiento meta,0.025745837218854373
+Random Forest,Menor error absoluto,137,Saber 11 · matemáticas,73,0.022356247183604572
+Random Forest,Menor error absoluto,137,División académica,División de Ingenierías,-0.017977747577531955
+Random Forest,Menor error absoluto,137,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.016309571913151938
+Random Forest,Menor error absoluto,137,Avance por cuartiles,3 Avance superior a 60 temas,-0.003260215391374971
+Random Forest,Menor error absoluto,137,Programa,Ingeniería Mecánica,-0.0017903164416628314
+Random Forest,Menor error absoluto,137,Tiempo de trabajo,18.5,-0.00030588854512519914
+Random Forest,Mayor error absoluto,118,Saber 11 · global,407,0.3710846618883966
+Random Forest,Mayor error absoluto,118,Dominio inicial,4,0.1483592501316671
+Random Forest,Mayor error absoluto,118,Asignatura,MAT1101,-0.05836810410141882
+Random Forest,Mayor error absoluto,118,Tiempo de pretest,0.8,0.04938301697905098
+Random Forest,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.04127816447173588
+Random Forest,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.0318141319745785
+Random Forest,Mayor error absoluto,118,División académica,División de Ingenierías,-0.025136701603163142
+Random Forest,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.018447700233934827
+Random Forest,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.015068578161863105
+Random Forest,Mayor error absoluto,118,Saber 11 · matemáticas,67,-0.01360859006742754
+Random Forest,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.008315617642707385
+Random Forest,Mayor error absoluto,118,Dominio final,38,0.0077262470647389
+Random Forest,Mayor error absoluto,118,Avance en ALEK,34,0.0045477687628229235
+Random Forest,Mayor error absoluto,118,Temas por hora,1.421289146,0.002874665293513684
+Random Forest,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.00032512610264581743
+XGBoost,Menor error absoluto,124,Dominio inicial,13,0.2516794800758362
+XGBoost,Menor error absoluto,124,Programa,Ingeniería Civil,-0.1432323455810547
+XGBoost,Menor error absoluto,124,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.09094490110874176
+XGBoost,Menor error absoluto,124,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.06034929305315018
+XGBoost,Menor error absoluto,124,Temas por hora,1.411085574,0.049089159816503525
+XGBoost,Menor error absoluto,124,Cat. temas iniciales,2 Ecuaciones y desigualdades,0.048502903431653976
+XGBoost,Menor error absoluto,124,Tiempo de pretest,0.783333333,0.030268928036093712
+XGBoost,Menor error absoluto,124,Dominio final,35,-0.009927441366016865
+XGBoost,Menor error absoluto,124,Saber 11 · matemáticas,67,-0.007210873067378998
+XGBoost,Menor error absoluto,124,Saber 11 · global,353,-0.00645795650780201
+XGBoost,Menor error absoluto,124,Tiempo de trabajo,15.58333333,0.006123042665421963
+XGBoost,Menor error absoluto,124,División académica,División de Ingenierías,-0.005851940251886845
+XGBoost,Menor error absoluto,124,Avance en ALEK,22,-0.003191188909113407
+XGBoost,Menor error absoluto,124,Cumplimiento de la meta,Cumplimiento meta,0.0
+XGBoost,Menor error absoluto,124,Asignatura,MAT1101,0.0
+XGBoost,Mayor error absoluto,118,Saber 11 · global,407,0.568544328212738
+XGBoost,Mayor error absoluto,118,Dominio inicial,4,0.19361507892608643
+XGBoost,Mayor error absoluto,118,Programa,Ingeniería Sistemas Y Computac,-0.14884956181049347
+XGBoost,Mayor error absoluto,118,Avance por cuartiles,1 Avance entre [ 19 - 40 temas],-0.07124067842960358
+XGBoost,Mayor error absoluto,118,Tiempo de trabajo,23.91666667,-0.056335512548685074
+XGBoost,Mayor error absoluto,118,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.04800998792052269
+XGBoost,Mayor error absoluto,118,Tiempo de pretest,0.8,0.038121990859508514
+XGBoost,Mayor error absoluto,118,Temas por hora,1.421289146,0.03515694662928581
+XGBoost,Mayor error absoluto,118,Cat. temas iniciales,1 Repaso de álgebra y geometría,0.02652813121676445
+XGBoost,Mayor error absoluto,118,Dominio final,38,0.01503299456089735
+XGBoost,Mayor error absoluto,118,Saber 11 · matemáticas,67,-0.008107446134090424
+XGBoost,Mayor error absoluto,118,División académica,División de Ingenierías,-0.0058923023752868176
+XGBoost,Mayor error absoluto,118,Avance en ALEK,34,0.002859280211851001
+XGBoost,Mayor error absoluto,118,Cumplimiento de la meta,Cumplimiento meta,0.0
+XGBoost,Mayor error absoluto,118,Asignatura,MAT1101,0.0
+Decision Tree,Menor error absoluto,39,Saber 11 · global,234,-0.6430541755503418
+Decision Tree,Menor error absoluto,39,Dominio inicial,0,-0.30791960484886105
+Decision Tree,Menor error absoluto,39,Temas por hora,0.474106492,-0.15552722437846675
+Decision Tree,Menor error absoluto,39,Saber 11 · matemáticas,63,-0.11186987143914162
+Decision Tree,Menor error absoluto,39,Asignatura,MAT1101,-0.08254364927249008
+Decision Tree,Menor error absoluto,39,Tiempo de trabajo,27.41666667,0.07779886299173777
+Decision Tree,Menor error absoluto,39,Avance en ALEK,13,-0.07303995946248759
+Decision Tree,Menor error absoluto,39,Avance por cuartiles,0 Avance menor a 19 temas,0.02265496669278988
+Decision Tree,Menor error absoluto,39,Dominio final,13,-0.016313464630866914
+Decision Tree,Menor error absoluto,39,Programa,Ingeniería Industrial,0.009644444444444455
+Decision Tree,Menor error absoluto,39,Tiempo de pretest,0.45,-0.005244371283104454
+Decision Tree,Menor error absoluto,39,División académica,División de Ingenierías,-0.003946309650997154
+Decision Tree,Menor error absoluto,39,Cat. temas iniciales,0 No dominó temas,0.0
+Decision Tree,Menor error absoluto,39,Cumplimiento de la meta,No alcanzo meta,0.0
+Decision Tree,Menor error absoluto,39,Cat. temas finales,2 Ecuaciones y desigualdades,0.0
+Decision Tree,Mayor error absoluto,158,Saber 11 · global,311,-0.29966514506877184
+Decision Tree,Mayor error absoluto,158,Dominio inicial,2,0.23140549351087114
+Decision Tree,Mayor error absoluto,158,Avance en ALEK,44,0.20395729833867363
+Decision Tree,Mayor error absoluto,158,Asignatura,MAT1101,-0.15339579358068264
+Decision Tree,Mayor error absoluto,158,Dominio final,46,0.061494717101803265
+Decision Tree,Mayor error absoluto,158,Temas por hora,1.448867066,0.05500843870624028
+Decision Tree,Mayor error absoluto,158,División académica,División de Ciencias Básicas,0.030907760861823314
+Decision Tree,Mayor error absoluto,158,Tiempo de trabajo,27.6,0.02028474082295398
+Decision Tree,Mayor error absoluto,158,Programa,Geología,0.010134444444444418
+Decision Tree,Mayor error absoluto,158,Avance por cuartiles,2 Avance entre [ 40 - 60 temas],0.007204278157187632
+Decision Tree,Mayor error absoluto,158,Tiempo de pretest,0.45,0.003672488341248309
+Decision Tree,Mayor error absoluto,158,Saber 11 · matemáticas,62,-0.0021688725490196237
+Decision Tree,Mayor error absoluto,158,Cat. temas iniciales,1 Repaso de álgebra y geometría,-0.0008794507575757005
+Decision Tree,Mayor error absoluto,158,Cat. temas finales,3 Temas Parcial 1 Cálculo I,0.0
+Decision Tree,Mayor error absoluto,158,Cumplimiento de la meta,Cumplimiento meta,0.0

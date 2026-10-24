@@ -1,0 +1,3 @@
+Prueba,H0,Estadístico,gl,p crudo,Comparaciones
+Friedman (universo de 10),Rangos promedio iguales en los 10 modelos,29.072727272727292,9,0.0006299876113497232,1
+Friedman (universo de 16),Rangos promedio iguales en los 16 modelos,51.224249558563855,15,7.584098607195957e-06,1
