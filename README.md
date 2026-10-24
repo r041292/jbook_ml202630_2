@@ -4,10 +4,14 @@ Proyecto académico de Machine Learning de la Universidad del Norte. Explora los
 
 **Autores:** Rubiel Velásquez y Valentina Figueroa.
 
+> **Informe final:** [https://r041292.github.io/jbook_ml202630_2/e4_final/](https://r041292.github.io/jbook_ml202630_2/e4_final/)
+>
+> Es el informe técnico final del proyecto, organizado en el formato que pide la guía del Tercer Entregable: introducción, datos (ETL y EDA), modelos benchmark y sus mejores combinaciones, revisión de literatura y novedad, modelos originales (KRR centrado, TN-KRR y GPR–XGBoost), validación estadística, dashboard y despliegue, conclusiones, y reproducibilidad con bibliografía. Su código y sus tablas están en [`jbook_dashboard_e4_final/`](jbook_dashboard_e4_final/). El Jupyter Book anterior del dashboard se conserva en la raíz del sitio como informe complementario.
+
 ## Enlaces
 
 - [Dashboard publicado en Render](https://precalculo-dashboard.onrender.com/).
-- [Informe técnico final del Tercer Entregable](https://r041292.github.io/jbook_ml202630_2/e4_final/): estructura de la guía (correcciones, datos, benchmarks, literatura, modelos originales, validación estadística, dashboard, conclusiones y reproducibilidad).
+- [**Informe final del proyecto (Tercer Entregable)**](https://r041292.github.io/jbook_ml202630_2/e4_final/): Jupyter Book con la estructura solicitada en la guía del entregable.
 - [Jupyter Book del proyecto: informe del dashboard](https://r041292.github.io/jbook_ml202630_2/): desarrollo, EDA, modelos lineales, clásicos y originales, y metodología.
 - [Jupyter Book del entregable 1: datos, EDA y modelo base](https://r041292.github.io/jbook_ml202630_1/).
 
