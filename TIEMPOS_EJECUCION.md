@@ -18047,3 +18047,19 @@ La plantilla anterior no representa una ejecución real.
 | Inferencia | Ridge | 0.000112300 | 1 | 1 | completa | Total; eventos.jsonl línea 17 |
 | Inferencia | XGBRegressor | 0.010392100 | 1 | 1 | completa | Total; eventos.jsonl línea 18 |
 | Total del experimento | Verificación/preparación · Dash/validate_package.py | 11.652435100 | No aplica | 1 | completa | Total; eventos.jsonl línea 19 |
+
+### Ejecución `20261024_084947_9191ce1a`
+
+- **Modelo/motivo:** XGBoost · TreeSHAP exacto y verificación del pipeline.
+- **Fecha/zona:** 2026-10-24T08:49:47.921590-05:00 a 2026-10-24T08:49:48.145565-05:00; America/Bogota.
+- **Estado:** completa. **Entorno/configuración/código/datos:** [tiempos/20261024_084947_9191ce1a/metadata.json](tiempos/20261024_084947_9191ce1a/metadata.json).
+- **Alcance:** CPU, segundos de pared con perf_counter. Búsqueda incluye preprocesamiento y scoring; refit separado (refit=False). Inferencia incluye transformaciones, excluye carga y E/S; una repetición por lote, sin calentamiento explícito. Estado frío/caliente no controlado. No sumar llamadas anidadas ni etapas con el total.
+- **Evidencia cruda:** [eventos](tiempos/20261024_084947_9191ce1a/eventos.jsonl).
+
+| Etapa | Fold / partición / lote | Duración de pared (s) | Filas del lote | Repetición | Estado | Incluida en otra medida / evidencia |
+| --- | --- | ---: | ---: | --- | --- | --- |
+| Transformación explicativa | Pipeline guardado sin fit | 0.012966900 | 1497 | 1 | completa | Total; eventos.jsonl línea 1 |
+| Inferencia | Verificación pipeline final · train + test | 0.015000900 | 1497 | 1 | completa | Total; eventos.jsonl línea 2 |
+| Explicación SHAP | TreeSHAP exacto · train + test | 0.123675100 | 1497 | 1 | completa | Total; eventos.jsonl línea 3 |
+| Validación de aditividad | Base + aportes = predicción · todas las filas | 0.000287400 | 1497 | 1 | completa | Total; eventos.jsonl línea 4 |
+| Total del experimento | XGBoost · TreeSHAP exacto y verificación del pipeline | 0.224862100 | No aplica | 1 | completa | Total; eventos.jsonl línea 5 |
