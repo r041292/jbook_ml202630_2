@@ -6,9 +6,9 @@ description: Protocolo común, supuestos, siete pruebas de hipótesis con ajuste
 (sec-validacion)=
 # Validación estadística
 
-La condición R3 —**superioridad estadísticamente verificada**— exige que el modelo original tenga menor error que la mejor combinación benchmark y que cada uno de los 7 modelos base, que al menos tres pruebas distintas rechacen la igualdad con p ajustado por comparaciones múltiples, y que el efecto no sea despreciable (§6.1 de la guía). Este capítulo aplica ese protocolo a los tres originales. Reúne lo ya calculado para el dashboard —que comparaba sobre todo contra el SVM lineal— y las pruebas nuevas de `analisis/pruebas_r3.py`, que comparan **cada original contra cada modelo base**, en especial contra el mejor benchmark, **XGBoost**.
+La condición R3 —**superioridad estadísticamente verificada**— exige que el modelo original tenga menor error que la mejor combinación benchmark y que cada uno de los 7 modelos base, que al menos tres pruebas distintas rechacen la igualdad con p ajustado por comparaciones múltiples, y que el efecto no sea despreciable (§6.1 de la guía). Este capítulo aplica ese protocolo a los tres originales con las pruebas de `analisis/pruebas_r3.py`, que comparan **cada original contra cada modelo base**, en especial contra el mejor benchmark, **XGBoost**.
 
-Además del mejor benchmark, se evalúa la superioridad frente al **SVM lineal**, el modelo de referencia con el que el proyecto se planteó desde su inicio. Ninguna prueba reentrena modelos ni vuelve a predecir: todas usan las predicciones OOF guardadas, que reproducen exactamente las métricas por fold registradas (prueba `test_pares_usan_los_mismos_folds_y_reproducen_metricas`).
+Esta sección también incorpora una comparación directa con el **SVM lineal**, el modelo de referencia del proyecto, que es la comparación publicada en el dashboard. Ninguna prueba reentrena modelos ni vuelve a predecir: todas usan las predicciones OOF guardadas, que reproducen exactamente las métricas por fold registradas (prueba `test_pares_usan_los_mismos_folds_y_reproducen_metricas`).
 
 (sec-protocolo-comun)=
 ## Protocolo común
@@ -123,13 +123,17 @@ Friedman rechaza la igualdad de rangos en U10 (χ² = 29,07; gl = 9; p = 0,0006)
 
 El MCS de U10 ({numref}`tab-mcs-u10`) conserva **exactamente los tres originales** (p MCS = 1, 0,446 y 0,341) y elimina a todos los benchmarks: XGBoost sale con p = 0,0003 y los lineales con p entre 0,009 y 0,022. El MCS es el procedimiento global con control del *data snooping* que pide el Cuadro 3. Su limitación es que el remuestreo de cinco folds dependientes no garantiza la cobertura nominal del 90 %, y un p MCS no es la probabilidad de que un modelo sea el mejor.
 
-El cálculo complementario U16 ({numref}`tab-mcs-u16`) confirma que añadir Decision Tree al universo del dashboard no cambia el conjunto: siguen KRR centrado, GPR–XGBoost, TN-KRR y SVR RBF (Friedman χ² = 51,22; gl = 15; p < 0,0001).
+El cálculo complementario U16 ({numref}`tab-mcs-u16`), que incluye modelos candidatos adicionales del dashboard (véase la nota de la sección [](#sec-migrado)), confirma que añadir Decision Tree al universo del dashboard no cambia el conjunto: siguen KRR centrado, GPR–XGBoost, TN-KRR y SVR RBF (Friedman χ² = 51,22; gl = 15; p < 0,0001).
 
 ```{include} analisis/tablas/mcs_u16.md
 ```
 
 (sec-migrado)=
 ## Comparación estadística publicada en el dashboard
+
+:::{note} Modelos adicionales del dashboard
+En el dashboard se evaluaron más modelos candidatos, además de los tres originales que se decidió presentar en este informe (KRR centrado, TN-KRR y GPR–XGBoost): SVR RBF, DenseWeight-XGBoost, TCR-XGBoost, LinXGBoost, logicDT y RIM. Por eso aparecen en las tablas siguientes. La lista completa, con la explicación y el artículo de referencia de cada modelo, puede consultarse en el dashboard o en la sección [Explicación de cada modelo](https://r041292.github.io/jbook_ml202630_2/modelos-originales/#explicaci-n-de-cada-modelo) del informe anterior.
+:::
 
 Las tablas de esta sección se regeneran desde los CSV de la comparación del dashboard (`analisis/salidas/heredadas/originales/`, con hash en `source_manifest.json`) y documentan la comparación que publica el dashboard sobre el universo U15.
 

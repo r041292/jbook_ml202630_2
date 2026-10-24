@@ -1,5 +1,5 @@
 {
- "generado": "2026-10-24T11:58:53-05:00",
+ "generado": "2026-10-24T16:43:51-05:00",
  "ejecuciones_fuente": {
   "busqueda_activa_base": "20261018_102325_af643f83",
   "originales_activa": "20261020_153034_consolidada"
@@ -242,9 +242,9 @@
   "03_benchmarks.md": "d8fc05bc50bde2875f6f2565074b77fd99629e650b84d31ee3c86be459f8fabb",
   "04_literatura.md": "b4e7499495feda7ee15bcec498e9276363d58dc75faa9cc803f108126d65ce3f",
   "05_modelo_original.md": "a0f759e9e0602bde6217ae3c8d8d06fe3805304a64bbedbad85d3cddef257a22",
-  "06_validacion.md": "ed119ec923657d4f39e8973d68a405468b0d89911808ee368ab9c4d90f6e12f1",
+  "06_validacion.md": "f38d3a9c20e1f8716a886a039a7f32a66b4fbfcc4826812c3fda3f32a437d17e",
   "07_dashboard.md": "25f6e5e76438e9af53040f278154d2e9f37f42bcf6c9d36e8bcc0c4d16f27105",
-  "08_conclusiones.md": "c41443ef84651e682c779d1ce521897ce7b1e70d3cd0968ad1898d37143e00be",
+  "08_conclusiones.md": "95bb3fa2d289ae331f5dd236737668942f52939bd160244bbb2b29c1a6ef7291",
   "09_reproducibilidad.md": "82f0961f658da9ced47d71017414b7005d65efc6ffbc7c1a1d81371a4aa797ad",
   "analisis/bibliografia.py": "b628750fa3cec369eb2aa30176a1b7152ebc6b1e5b05389584cb8c019bf24301",
   "analisis/busqueda_literatura.py": "cba5e54294dbc4d0e7abda60e0756e24222f5662ac7eb6189191a224be4fdce4",

@@ -27,7 +27,7 @@ La {numref}`tab-veredicto-final` resume la evaluación de cada original frente a
 
 | Modelo | R1 · novedad en la aplicación | R2 · implementación propia | R3 · superioridad estadísticamente verificada |
 | --- | --- | --- | --- |
-| KRR centrado | **Discutible.** Sin aplicaciones del KRR centrado al problema, pero KRR ya se usó como comparador para notas de Matemáticas de Ingeniería {cite:p}`ahmed2022` ({ref}`sec-declaraciones-novedad`). | **Débil.** Composición de `KernelRidge`, `TransformedTargetRegressor` y `StandardScaler` sin clase propia; aceptado por el profesor ({ref}`sec-krr-r2`). | **Sí.** Frente al SVM lineal: permutación, BCa, DM-HLN y MCS con Holm por prueba; permutación, BCa y MCS también con Holm global. Frente a XGBoost: permutación, BCa y MCS con Holm por prueba y BH. |
+| KRR centrado | **Discutible.** Sin aplicaciones del KRR centrado al problema, pero KRR ya se usó como comparador para notas de Matemáticas de Ingeniería {cite:p}`ahmed2022` ({ref}`sec-declaraciones-novedad`). | **Discutible.** Composición de `KernelRidge`, `TransformedTargetRegressor` y `StandardScaler` sin clase propia ({ref}`sec-krr-r2`). | **Sí.** Frente al SVM lineal: permutación, BCa, DM-HLN y MCS con Holm por prueba; permutación, BCa y MCS también con Holm global. Frente a XGBoost: permutación, BCa y MCS con Holm por prueba y BH. |
 | TN-KRR | **Sí.** Solo existen el artículo del método y una aplicación a porosidad ({ref}`sec-declaraciones-novedad`). | **Sí.** Clase propia con el solver CG truncado en NumPy, verificada contra la solución exacta; el algoritmo es publicado ({ref}`sec-tnkrr-r2`). | **Sí frente al SVM lineal**, su referencia: menor RMSE en los cinco folds; permutación (p Holm = 0,0030), BCa (0,0008), DM-HLN (0,0041) y MCS, las tres primeras también con Holm global (0,021; 0,005; 0,022); δ = −0,20, $d_z$ = −1,03 ({ref}`sec-tnkrr-svm`). Frente a XGBoost solo el MCS lo separa. |
 | GPR–XGBoost | **Sí.** Sin aplicaciones educativas del híbrido; los cercanos son de ingeniería ({ref}`sec-trabajos-cercanos`). | **Condicionado.** Clase propia con regla de combinación OOF agrupada, pero la ablación no demuestra que esa regla mejore al GPR solo, como exige el Cuadro 1 para híbridos ({ref}`sec-ablacion`). | **Sí** con Holm por prueba y con BH, frente al SVM lineal (permutación, BCa y MCS) y frente a XGBoost (permutación, BCa y MCS). |
 :::
@@ -52,6 +52,7 @@ En síntesis, el **TN-KRR** es el modelo con la contribución más clara en los 
 4. Validar en otros periodos y, si es posible, en datos de otras instituciones.
 5. Modelar la nota como variable acotada (regresión beta u ordinal) o estimar la varianza condicional para atender la heterocedasticidad.
 6. Calcular SHAP para TN-KRR y GPR–XGBoost y añadir al simulador un intervalo de predicción y la explicación local del caso ingresado.
+7. Repetir el análisis cuando sea posible obtener más variables que ayuden a explicar el desempeño de los estudiantes, como la asistencia a clases.
 
 (sec-declaracion-ia)=
 ## Uso de herramientas de IA
