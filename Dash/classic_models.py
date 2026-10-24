@@ -19,6 +19,7 @@ from classic_posthoc import analyze, section as statistical_section
 from student_comparison import load as load_student_comparison
 from search_results import optimization_section
 from lazy_content import defer_details
+from model_math import math_section
 
 DIRECTORY = CACHE / 'clasicos'
 REPORT = json.loads((DIRECTORY / 'comparacion.json').read_text(encoding='utf-8'))
@@ -127,6 +128,7 @@ def create_classics(app, ui):
             html.Summary(spec['name'] + f' · {spec["combinations"]} combinaciones Grid'
                          + (' + cuatro estrategias' if spec.get('optimization') else '')),
             md(f'[Artículo de fundamento]({CLASSIC_PAPERS[key]})'),
+            math_section(key),
             md(spec['preparation']), table(parameters),
             md(f'RMSE de selección conjunta final en train: **{spec["selection_rmse"]:.4f}**. '
                'Es una métrica de selección; la evaluación independiente usa los folds externos y el test.'),

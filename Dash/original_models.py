@@ -17,6 +17,7 @@ from original_analysis import table_statistics, section as original_statistics
 from classic_friedman import conclusion as friedman_conclusion
 from search_results import optimization_section
 from lazy_content import defer_details
+from model_math import math_section
 from model_groups import IMPORT_ONLY, validate as validate_groups
 
 ROOT = Path(__file__).resolve().parent
@@ -127,6 +128,7 @@ def create_originals(app, ui):
         docs[key] = (html.Details([
             html.Summary(spec['name']), md(spec['description']),
             md(f'[Artículo de fundamento]({spec["paper"]})' if spec.get('paper') else 'Referencia de control: media del objetivo aprendida solo en fit; sin paper específico.'),
+            math_section(key),
             md(spec.get('preparation', '')), md(spec.get('method', '')),
             table(parameters) if not parameters.empty else md('Sin grilla de hiperparámetros; configuración fija o ajuste propio del estimador.'),
             md('**Estado:** '+spec.get('status','Histórico')),

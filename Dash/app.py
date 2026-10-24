@@ -20,6 +20,7 @@ from charts import numeric_density
 from prediction import build_form, coefficient_report, input_id, predict_record
 from model_interpretation import linear_pipeline_section, beta_examples
 from display_labels import COURSES, course_text, display_tree
+from model_math import math_section
 from eda_statistics import (normality, group_test, frequency_test, missing_test,
                             comparison_text, association_tests)
 from residual_diagnostics import residual_diagnostics, format_p, diagnostic_reading
@@ -333,6 +334,7 @@ MODELS = html.Div([
         'Se minimiza RMSE agrupado usando únicamente train. Todo el preprocesamiento se ajusta dentro de cada fold. '
         'La configuración final resulta de comparar las cinco estrategias en validación interna, cuando están disponibles. '
         'ID, periodo y nota_final quedan fuera de las predictoras.'),
+    math_section('svm'),
     card('Resultados de la búsqueda en train',
          'Grid Search conservada: RMSE medio de cinco folds agrupados para cada combinación. '
          'La selección final compara además Random, TPE, DEAP y Halving cuando están disponibles; '
